@@ -1,0 +1,195 @@
+# ===========================================================================
+# shinra-culture.ttl  — 文化・習慣・スポーツドメイン (Phase 5-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/culture>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 文化・習慣・スポーツドメイン"@ja ,
+                    "Shinra Ontology — Culture, Custom & Sport Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 文化慣行 ─────────────────────────────────────────────────────
+
+shinra:CulturalPractice
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "文化的慣行"@ja ; rdfs:label "Cultural Practice"@en ;
+    skos:altLabel "慣習"@ja ;
+    rdfs:comment "特定の社会・集団が継承する行動・様式・慣行。冠婚葬祭・祭り・礼儀・タブーなど。"@ja ;
+    rdfs:comment "Behaviors, patterns, and practices inherited by a specific society or group, including rites of passage, festivals, etiquette, and taboos."@en ;
+    skos:notation "SHINRA_0000901" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Ritual
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "儀式"@ja ; rdfs:label "Ritual"@en ;
+    skos:altLabel "儀礼"@ja ;
+    rdfs:comment "宗教的・社会的意義を持つ定型化された一連の行為。洗礼・葬儀・成人式・卒業式など。"@ja ;
+    rdfs:comment "A prescribed sequence of actions with religious or social significance, including baptism, funerals, coming-of-age ceremonies, and graduations."@en ;
+    skos:notation "SHINRA_0000902" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Festival
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "祭り"@ja ; rdfs:label "Festival"@en ;
+    skos:altLabel "祭祀"@ja ;
+    rdfs:comment "宗教的・季節的・社会的目的のために行われる集団的祝祭行事。祇園祭・カーニバル・お盆など。"@ja ;
+    rdfs:comment "A collective celebratory event for religious, seasonal, or social purposes, including the Gion Festival, Carnival, and Obon."@en ;
+    skos:notation "SHINRA_0000903" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Cuisine
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "料理文化"@ja ; rdfs:label "Cuisine"@en ;
+    skos:altLabel "食文化"@ja ;
+    rdfs:comment "特定の地域・文化に根ざした食材・調理法・食習慣の体系。日本食・フランス料理・中華料理など。"@ja ;
+    rdfs:comment "A characteristic style of cooking rooted in a specific region or culture, including Japanese, French, and Chinese cuisines."@en ;
+    skos:notation "SHINRA_0000904" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Fashion
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "ファッション"@ja ; rdfs:label "Fashion"@en ;
+    skos:altLabel "流行・服飾"@ja ;
+    rdfs:comment "社会的に共有される服飾・外見・スタイルの流行様式。和服・ストリートファッション・ハイファッションなど。"@ja ;
+    rdfs:comment "A socially shared trend in clothing, appearance, and style, including kimono, streetwear, and haute couture."@en ;
+    skos:notation "SHINRA_0000905" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── スポーツ・競技 ────────────────────────────────────────────────
+
+shinra:Sport
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "スポーツ"@ja ; rdfs:label "Sport"@en ;
+    skos:altLabel "競技"@ja ;
+    rdfs:comment "競争・技能・身体活動を含む制度化された遊び・娯楽の形式。サッカー・柔道・水泳・体操など。"@ja ;
+    rdfs:comment "An institutionalized form of play and recreation involving competition, skill, and physical activity, including soccer, judo, swimming, and gymnastics."@en ;
+    skos:notation "SHINRA_0000911" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:TeamSport
+    a owl:Class ; rdfs:subClassOf shinra:Sport ;
+    rdfs:label "チームスポーツ"@ja ; rdfs:label "Team Sport"@en ;
+    skos:altLabel "団体競技"@ja ;
+    rdfs:comment "チームによって競う競技。サッカー・野球・バスケットボール・ラグビーなど。"@ja ;
+    rdfs:comment "A sport competed by teams, including soccer, baseball, basketball, and rugby."@en ;
+    skos:notation "SHINRA_0000912" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:IndividualSport
+    a owl:Class ; rdfs:subClassOf shinra:Sport ;
+    rdfs:label "個人競技"@ja ; rdfs:label "Individual Sport"@en ;
+    rdfs:comment "個人として競う競技。テニス・陸上競技・水泳・体操・柔道・ボクシングなど。"@ja ;
+    rdfs:comment "A sport competed individually, including tennis, track and field, swimming, gymnastics, judo, and boxing."@en ;
+    skos:notation "SHINRA_0000913" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MartialArt
+    a owl:Class ; rdfs:subClassOf shinra:Sport ;
+    rdfs:label "武道・格闘技"@ja ; rdfs:label "Martial Art"@en ;
+    skos:altLabel "武術"@ja ;
+    rdfs:comment "戦闘技術に由来する体系化された身体的・精神的鍛錬体系。柔道・空手・剣道・相撲・カポエイラなど。"@ja ;
+    rdfs:comment "A systematized physical and mental discipline originating from combat techniques, including judo, karate, kendo, sumo, and capoeira."@en ;
+    skos:notation "SHINRA_0000914" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SportingEvent
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "スポーツイベント"@ja ; rdfs:label "Sporting Event"@en ;
+    skos:altLabel "大会"@ja ;
+    rdfs:comment "競技が行われる組織的な大会・試合。オリンピック・ワールドカップ・グランドスラムなど。"@ja ;
+    rdfs:comment "An organized competition where sports are contested, including the Olympics, World Cup, and Grand Slam tournaments."@en ;
+    skos:notation "SHINRA_0000915" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 教育・学習 ───────────────────────────────────────────────────
+
+shinra:EducationalProcess
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "教育過程"@ja ; rdfs:label "Educational Process"@en ;
+    skos:altLabel "教育"@ja ;
+    rdfs:comment "知識・技能・態度を体系的に伝達・習得させる社会過程。学校教育・職業訓練・独学など。"@ja ;
+    rdfs:comment "A social process systematically transmitting and developing knowledge, skills, and attitudes, including formal schooling, vocational training, and self-study."@en ;
+    skos:notation "SHINRA_0000921" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Curriculum
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "カリキュラム"@ja ; rdfs:label "Curriculum"@en ;
+    skos:altLabel "教育課程"@ja ;
+    rdfs:comment "教育機関が定める学習内容・順序・目標の体系的計画。学習指導要領・シラバスなど。"@ja ;
+    rdfs:comment "A systematic plan of learning content, sequence, and goals set by an educational institution, including national curricula and course syllabi."@en ;
+    skos:notation "SHINRA_0000922" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 娯楽・遊び ───────────────────────────────────────────────────
+
+shinra:Game
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "ゲーム"@ja ; rdfs:label "Game"@en ;
+    skos:altLabel "遊び"@ja ;
+    rdfs:comment "明確なルールを持ち、遊び・競争・娯楽を目的とする活動。チェス・将棋・ビデオゲーム・カードゲームなど。"@ja ;
+    rdfs:comment "An activity with defined rules aimed at play, competition, or entertainment, including chess, shogi, video games, and card games."@en ;
+    skos:notation "SHINRA_0000931" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:VideoGame
+    a owl:Class ; rdfs:subClassOf shinra:Game ;
+    rdfs:label "ビデオゲーム"@ja ; rdfs:label "Video Game"@en ;
+    skos:altLabel "コンピュータゲーム"@ja ;
+    rdfs:comment "電子的なインタラクティブメディアを通じてプレイするゲーム。RPG・シューティング・パズルなど。"@ja ;
+    rdfs:comment "A game played through electronic interactive media, including role-playing games, shooters, and puzzles."@en ;
+    skos:notation "SHINRA_0000932" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:TraditionalGame
+    a owl:Class ; rdfs:subClassOf shinra:Game ;
+    rdfs:label "伝統的遊戯"@ja ; rdfs:label "Traditional Game"@en ;
+    skos:altLabel "伝統遊び"@ja ;
+    rdfs:comment "世代を超えて伝承される伝統的な遊び・競技。囲碁・将棋・チェス・双六・かるたなど。"@ja ;
+    rdfs:comment "A game transmitted across generations as cultural tradition, including Go, shogi, chess, sugoroku, and karuta."@en ;
+    skos:notation "SHINRA_0000933" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 文化プロパティ ────────────────────────────────────────────────
+
+shinra:hasOriginCulture
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:Civilization ;
+    rdfs:label  "起源文化"@ja ; rdfs:label "has origin culture"@en ;
+    rdfs:comment "慣行・芸術・制度が発生した文化圏。"@ja ;
+    skos:notation "SHINRA_R000201" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasSportEquipment
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:Sport ;
+    rdfs:range  shinra:Tool ;
+    rdfs:label  "競技用具"@ja ; rdfs:label "has sport equipment"@en ;
+    rdfs:comment "競技に使用される道具・用具。"@ja ;
+    skos:notation "SHINRA_R000202" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:olympic-games-001
+    a shinra:SportingEvent ;
+    rdfs:label "オリンピック競技大会"@ja ; rdfs:label "Olympic Games"@en ;
+    shinra:wikidataId "Q5389" ;
+    skos:notation "SHINRA_I000100" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:soccer-001
+    a shinra:TeamSport ;
+    rdfs:label "サッカー"@ja ; rdfs:label "Association Football"@en ;
+    shinra:wikidataId "Q2736" ;
+    skos:notation "SHINRA_I000101" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:judo-001
+    a shinra:MartialArt ;
+    rdfs:label "柔道"@ja ; rdfs:label "Judo"@en ;
+    shinra:wikidataId "Q41447" ;
+    skos:notation "SHINRA_I000102" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:japanese-cuisine-001
+    a shinra:Cuisine ;
+    rdfs:label "日本食"@ja ; rdfs:label "Japanese Cuisine"@en ;
+    shinra:wikidataId "Q234886" ;
+    skos:notation "SHINRA_I000103" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:chess-001
+    a shinra:TraditionalGame ;
+    rdfs:label "チェス"@ja ; rdfs:label "Chess"@en ;
+    shinra:wikidataId "Q41" ;
+    skos:notation "SHINRA_I000104" ; dcterms:created "2026-05-12"^^xsd:date .

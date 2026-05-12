@@ -31,6 +31,7 @@ ALL_MODULES = [
     "shinra-geography.ttl",
     "shinra-history.ttl",
     "shinra-abstract.ttl",
+    "shinra-culture.ttl",
 ]
 
 def parse_args():
