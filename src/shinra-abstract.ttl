@@ -1,0 +1,192 @@
+# ===========================================================================
+# shinra-abstract.ttl  — 抽象・形式・価値ドメイン (Phase 4-b / Phase 5)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/abstract>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 抽象・形式・価値ドメイン"@ja ,
+                    "Shinra Ontology — Abstract, Formal & Value Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 数学的対象 ───────────────────────────────────────────────────
+
+shinra:MathematicalObject
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "数学的対象"@ja ; rdfs:label "Mathematical Object"@en ;
+    skos:altLabel "数学的実体"@ja ;
+    rdfs:comment "数学の探究対象となる抽象的実体。数・集合・関数・空間・群など。"@ja ;
+    rdfs:comment "An abstract entity studied in mathematics, including numbers, sets, functions, spaces, and groups."@en ;
+    skos:notation "SHINRA_0000801" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Number
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "数"@ja ; rdfs:label "Number"@en ;
+    rdfs:comment "量・順序・測定を表すために用いる数学的対象。自然数・整数・有理数・実数・複素数など。"@ja ;
+    rdfs:comment "A mathematical object used to express quantity, order, and measurement, including natural, integer, rational, real, and complex numbers."@en ;
+    skos:notation "SHINRA_0000802" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Set
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "集合"@ja ; rdfs:label "Set"@en ;
+    rdfs:comment "明確に区別された対象の集まり。集合論の基本的概念。有限集合・無限集合・べき集合など。"@ja ;
+    rdfs:comment "A well-defined collection of distinct objects; the foundational concept in set theory, including finite, infinite, and power sets."@en ;
+    skos:notation "SHINRA_0000803" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Function
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "関数"@ja ; rdfs:label "Function"@en ;
+    skos:altLabel "写像"@ja ;
+    rdfs:comment "ある集合の各要素を別の集合の一意の要素に対応させる数学的規則。連続関数・微分可能関数・変換など。"@ja ;
+    rdfs:comment "A mathematical rule mapping each element of one set to a unique element of another, including continuous functions, differentiable functions, and transformations."@en ;
+    skos:notation "SHINRA_0000804" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:AlgebraicStructure
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "代数的構造"@ja ; rdfs:label "Algebraic Structure"@en ;
+    skos:altLabel "代数系"@ja ;
+    rdfs:comment "演算を持つ集合からなる数学的構造。群・環・体・ベクトル空間・格子など。"@ja ;
+    rdfs:comment "A mathematical structure consisting of a set equipped with operations, including groups, rings, fields, vector spaces, and lattices."@en ;
+    skos:notation "SHINRA_0000805" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Proof
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "証明"@ja ; rdfs:label "Mathematical Proof"@en ;
+    skos:altLabel "数学的証明"@ja ;
+    rdfs:comment "公理・推論規則に基づき命題の真偽を論理的に確立する論証。演繹的証明・帰納法・背理法など。"@ja ;
+    rdfs:comment "A logical argument establishing the truth of a proposition from axioms and inference rules, including deductive proofs, induction, and reductio ad absurdum."@en ;
+    skos:notation "SHINRA_0000806" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 論理・認識論 ─────────────────────────────────────────────────
+
+shinra:LogicalStatement
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "論理的命題"@ja ; rdfs:label "Logical Statement"@en ;
+    skos:altLabel "命題"@ja ;
+    rdfs:comment "真または偽の値を持つことができる宣言的表現。公理・定理・仮説・推論規則など。"@ja ;
+    rdfs:comment "A declarative expression that can be assigned a truth value, including axioms, theorems, hypotheses, and inference rules."@en ;
+    skos:notation "SHINRA_0000811" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Axiom
+    a owl:Class ; rdfs:subClassOf shinra:LogicalStatement ;
+    rdfs:label "公理"@ja ; rdfs:label "Axiom"@en ;
+    rdfs:comment "証明なく前提として受け入れられる基本的命題。ユークリッド公理・集合論の公理など。"@ja ;
+    rdfs:comment "A fundamental proposition accepted as a premise without proof, including Euclidean axioms and the axioms of set theory."@en ;
+    skos:notation "SHINRA_0000812" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Theorem
+    a owl:Class ; rdfs:subClassOf shinra:LogicalStatement ;
+    rdfs:label "定理"@ja ; rdfs:label "Theorem"@en ;
+    rdfs:comment "公理・既証定理から論理的推論によって証明された命題。ピタゴラスの定理・フェルマーの最終定理など。"@ja ;
+    rdfs:comment "A proposition proved by logical reasoning from axioms and previously established theorems, including the Pythagorean theorem and Fermat's Last Theorem."@en ;
+    skos:notation "SHINRA_0000813" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Paradox
+    a owl:Class ; rdfs:subClassOf shinra:LogicalStatement ;
+    rdfs:label "パラドックス"@ja ; rdfs:label "Paradox"@en ;
+    skos:altLabel "逆説"@ja ;
+    rdfs:comment "一見正当な前提から矛盾または驚くべき結論が導かれる議論。ラッセルのパラドックス・嘘つきのパラドックスなど。"@ja ;
+    rdfs:comment "An argument leading to a contradiction or surprising conclusion from apparently valid premises, including Russell's paradox and the liar's paradox."@en ;
+    skos:notation "SHINRA_0000814" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 価値・規範 ───────────────────────────────────────────────────
+
+shinra:EthicalValue
+    a owl:Class ; rdfs:subClassOf shinra:Value ;
+    rdfs:label "倫理的価値"@ja ; rdfs:label "Ethical Value"@en ;
+    skos:altLabel "道徳的価値"@ja ;
+    rdfs:comment "行為・性格の善悪を判断する規範的基準。正義・誠実・慈悲・自律・平等など。"@ja ;
+    rdfs:comment "A normative criterion for judging the rightness or wrongness of actions and character, including justice, honesty, compassion, autonomy, and equality."@en ;
+    skos:notation "SHINRA_0000821" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:AestheticValue
+    a owl:Class ; rdfs:subClassOf shinra:Value ;
+    rdfs:label "審美的価値"@ja ; rdfs:label "Aesthetic Value"@en ;
+    skos:altLabel "美的価値"@ja ;
+    rdfs:comment "芸術・自然の美的質を評価する規範的基準。美・崇高・優雅・コミック・悲劇的など。"@ja ;
+    rdfs:comment "A normative criterion for evaluating the aesthetic quality of art and nature, including beauty, the sublime, elegance, the comic, and the tragic."@en ;
+    skos:notation "SHINRA_0000822" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:EpistemicValue
+    a owl:Class ; rdfs:subClassOf shinra:Value ;
+    rdfs:label "認識的価値"@ja ; rdfs:label "Epistemic Value"@en ;
+    skos:altLabel "知識的価値"@ja ;
+    rdfs:comment "知識・信念・推論の質を評価する規範的基準。真理・証拠・整合性・説明力・単純性など。"@ja ;
+    rdfs:comment "A normative criterion for evaluating the quality of knowledge, belief, and reasoning, including truth, evidence, coherence, explanatory power, and simplicity."@en ;
+    skos:notation "SHINRA_0000823" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:LegalNorm
+    a owl:Class ; rdfs:subClassOf shinra:Norm ;
+    rdfs:label "法的規範"@ja ; rdfs:label "Legal Norm"@en ;
+    skos:altLabel "法規範"@ja ;
+    rdfs:comment "法体系によって権威付けられた義務・禁止・許容を定める規範。法律・判例・慣習法など。"@ja ;
+    rdfs:comment "A norm establishing obligations, prohibitions, and permissions sanctioned by a legal system, including statutes, case law, and customary law."@en ;
+    skos:notation "SHINRA_0000824" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SocialNorm
+    a owl:Class ; rdfs:subClassOf shinra:Norm ;
+    rdfs:label "社会規範"@ja ; rdfs:label "Social Norm"@en ;
+    skos:altLabel "慣習"@ja ;
+    rdfs:comment "社会集団内で期待される行動様式・慣習。礼儀・タブー・慣習・役割期待など。"@ja ;
+    rdfs:comment "An expected pattern of behavior within a social group, including etiquette, taboos, customs, and role expectations."@en ;
+    skos:notation "SHINRA_0000825" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 形而上学的概念 ───────────────────────────────────────────────
+
+shinra:Identity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "同一性"@ja ; rdfs:label "Identity"@en ;
+    rdfs:comment "同じ実体または異なる実体の同一であることを示す形而上学的概念。数値的同一性・質的同一性・個人的同一性など。"@ja ;
+    rdfs:comment "A metaphysical concept expressing that something is the same as itself or identical to another, including numerical, qualitative, and personal identity."@en ;
+    skos:notation "SHINRA_0000831" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Causality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "因果性"@ja ; rdfs:label "Causality"@en ;
+    skos:altLabel "因果関係"@ja ;
+    rdfs:comment "原因と結果の間の必然的関係を記述する形而上学的概念。決定論・確率的因果・反事実的条件など。"@ja ;
+    rdfs:comment "A metaphysical concept describing the necessary relation between cause and effect, including determinism, probabilistic causation, and counterfactuals."@en ;
+    skos:notation "SHINRA_0000832" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Possibility
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "可能性"@ja ; rdfs:label "Possibility"@en ;
+    skos:altLabel "様相"@ja ;
+    rdfs:comment "あることが起こりうる・ありうるという様相的概念。必然性・偶然性・可能性・不可能性など。"@ja ;
+    rdfs:comment "A modal concept expressing that something can occur or exist, including necessity, contingency, possibility, and impossibility."@en ;
+    skos:notation "SHINRA_0000833" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:justice-001
+    a shinra:EthicalValue ;
+    rdfs:label "正義"@ja ; rdfs:label "Justice"@en ;
+    shinra:wikidataId "Q5891" ;
+    skos:notation "SHINRA_I000090" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:pythagorean-theorem-001
+    a shinra:Theorem ;
+    rdfs:label "ピタゴラスの定理"@ja ; rdfs:label "Pythagorean Theorem"@en ;
+    shinra:wikidataId "Q11518" ;
+    skos:notation "SHINRA_I000091" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:natural-numbers-001
+    a shinra:Set ;
+    rdfs:label "自然数の集合"@ja ; rdfs:label "Set of Natural Numbers"@en ;
+    shinra:wikidataId "Q28777" ;
+    skos:notation "SHINRA_I000092" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:russells-paradox-001
+    a shinra:Paradox ;
+    rdfs:label "ラッセルのパラドックス"@ja ; rdfs:label "Russell's Paradox"@en ;
+    shinra:wikidataId "Q133753" ;
+    skos:notation "SHINRA_I000093" ; dcterms:created "2026-05-12"^^xsd:date .

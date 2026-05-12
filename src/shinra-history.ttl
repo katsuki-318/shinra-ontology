@@ -1,0 +1,203 @@
+# ===========================================================================
+# shinra-history.ttl  — 歴史・文明ドメイン (Phase 4-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/history>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 歴史・文明ドメイン"@ja ,
+                    "Shinra Ontology — History & Civilization Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 時代区分 ─────────────────────────────────────────────────────
+
+shinra:HistoricalPeriod
+    a owl:Class ; rdfs:subClassOf shinra:Era ;
+    rdfs:label "歴史的時代"@ja ; rdfs:label "Historical Period"@en ;
+    skos:altLabel "時代"@ja ;
+    rdfs:comment "特定の文化的・政治的・技術的特徴によって区分された歴史の時間的単位。石器時代・中世・近代など。"@ja ;
+    rdfs:comment "A temporal unit of history distinguished by cultural, political, or technological characteristics, including the Stone Age, Middle Ages, and modern era."@en ;
+    skos:notation "SHINRA_0000701" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Prehistory
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "先史時代"@ja ; rdfs:label "Prehistory"@en ;
+    rdfs:comment "文字記録が存在する以前の人類の歴史。旧石器・新石器・青銅器・鉄器時代を含む。"@ja ;
+    rdfs:comment "The period of human history before the existence of written records, including the Palaeolithic, Neolithic, Bronze Age, and Iron Age."@en ;
+    skos:notation "SHINRA_0000702" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:AncientHistory
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "古代"@ja ; rdfs:label "Ancient History"@en ;
+    rdfs:comment "最初の文字記録から西ローマ帝国滅亡（476年）までの歴史的時代。メソポタミア・エジプト・ギリシャ・ローマ文明など。"@ja ;
+    rdfs:comment "The historical period from the first written records to the fall of the Western Roman Empire (476 CE), including Mesopotamian, Egyptian, Greek, and Roman civilizations."@en ;
+    skos:notation "SHINRA_0000703" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MedievalHistory
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "中世"@ja ; rdfs:label "Medieval History"@en ;
+    rdfs:comment "西ローマ帝国滅亡（476年）から15世紀末までの歴史的時代。封建制・十字軍・黒死病・百年戦争など。"@ja ;
+    rdfs:comment "The historical period from the fall of the Western Roman Empire to the late 15th century, including feudalism, the Crusades, the Black Death, and the Hundred Years' War."@en ;
+    skos:notation "SHINRA_0000704" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ModernHistory
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "近現代"@ja ; rdfs:label "Modern History"@en ;
+    rdfs:comment "15世紀末から現代までの歴史的時代。大航海時代・産業革命・世界大戦・冷戦・グローバル化を含む。"@ja ;
+    rdfs:comment "The historical period from the late 15th century to the present, including the Age of Exploration, Industrial Revolution, World Wars, Cold War, and globalization."@en ;
+    skos:notation "SHINRA_0000705" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 文明・帝国 ───────────────────────────────────────────────────
+
+shinra:Civilization
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "文明"@ja ; rdfs:label "Civilization"@en ;
+    rdfs:comment "都市・文字・国家・分業を特徴とする複雑な社会文化的発展段階。メソポタミア文明・インダス文明・中華文明など。"@ja ;
+    rdfs:comment "A complex stage of social and cultural development characterized by cities, writing, states, and division of labor, including Mesopotamian, Indus, and Chinese civilizations."@en ;
+    skos:notation "SHINRA_0000711" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Empire
+    a owl:Class ; rdfs:subClassOf shinra:Organization ;
+    rdfs:label "帝国"@ja ; rdfs:label "Empire"@en ;
+    rdfs:comment "複数の民族・地域を皇帝や最高権力者が支配する大規模な政治体。ローマ帝国・モンゴル帝国・大英帝国など。"@ja ;
+    rdfs:comment "A large polity in which multiple ethnicities and territories are ruled by an emperor or supreme authority, including the Roman, Mongol, and British Empires."@en ;
+    skos:notation "SHINRA_0000712" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Dynasty
+    a owl:Class ; rdfs:subClassOf shinra:Organization ;
+    rdfs:label "王朝"@ja ; rdfs:label "Dynasty"@en ;
+    rdfs:comment "同一血統・家系による連続した統治者が国家を支配した政治体。漢王朝・ムガル朝・ハプスブルク朝など。"@ja ;
+    rdfs:comment "A succession of rulers from the same lineage or family governing a state, including the Han, Mughal, and Habsburg dynasties."@en ;
+    skos:notation "SHINRA_0000713" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 歴史的出来事 ──────────────────────────────────────────────
+
+shinra:Revolution
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "革命"@ja ; rdfs:label "Revolution"@en ;
+    rdfs:comment "既存の政治・社会・経済体制を根本的に変革する急激な変動。フランス革命・産業革命・明治維新など。"@ja ;
+    rdfs:comment "A rapid and fundamental transformation of a political, social, or economic order, including the French Revolution, Industrial Revolution, and Meiji Restoration."@en ;
+    skos:notation "SHINRA_0000721" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Treaty
+    a owl:Class ; rdfs:subClassOf shinra:LegalText ;
+    rdfs:label "条約"@ja ; rdfs:label "Treaty"@en ;
+    rdfs:comment "国家間の権利・義務を定める拘束力のある国際合意。講和条約・通商条約・軍縮条約など。"@ja ;
+    rdfs:comment "A binding international agreement establishing rights and obligations between states, including peace treaties, trade agreements, and arms reduction treaties."@en ;
+    skos:notation "SHINRA_0000722" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Expedition
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "遠征・探検"@ja ; rdfs:label "Expedition"@en ;
+    skos:altLabel "探検"@ja ;
+    rdfs:comment "地理的探索・軍事・科学的目的のための組織的な長距離行動。コロンブスの航海・南極探検・月探査など。"@ja ;
+    rdfs:comment "An organized long-distance journey for geographic exploration, military, or scientific purposes, including Columbus's voyages, Antarctic expeditions, and lunar missions."@en ;
+    skos:notation "SHINRA_0000723" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Disaster
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "災害"@ja ; rdfs:label "Disaster"@en ;
+    skos:altLabel "天災"@ja ;
+    rdfs:comment "人命・財産・社会に甚大な被害をもたらす自然または人為的な出来事。地震・洪水・噴火・パンデミックなど。"@ja ;
+    rdfs:comment "A natural or human-caused event causing severe loss of life, property, and social disruption, including earthquakes, floods, volcanic eruptions, and pandemics."@en ;
+    skos:notation "SHINRA_0000724" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 人物関連 ─────────────────────────────────────────────────────
+
+shinra:HistoricalFigure
+    a owl:Class ; rdfs:subClassOf shinra:Person ;
+    rdfs:label "歴史上の人物"@ja ; rdfs:label "Historical Figure"@en ;
+    skos:altLabel "歴史人物"@ja ;
+    rdfs:comment "歴史的記録に残り、後世に影響を与えた人物。政治家・科学者・芸術家・宗教家など。"@ja ;
+    rdfs:comment "A person documented in historical records who exerted lasting influence, including politicians, scientists, artists, and religious figures."@en ;
+    skos:notation "SHINRA_0000731" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Monarch
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalFigure ;
+    rdfs:label "君主"@ja ; rdfs:label "Monarch"@en ;
+    skos:altLabel "王・女王"@ja ;
+    rdfs:comment "世襲または選出により国家の最高位を占める統治者。王・女王・皇帝・ファラオなど。"@ja ;
+    rdfs:comment "A ruler holding the highest position of a state by heredity or election, including kings, queens, emperors, and pharaohs."@en ;
+    skos:notation "SHINRA_0000732" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Inventor
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalFigure ;
+    rdfs:label "発明家"@ja ; rdfs:label "Inventor"@en ;
+    rdfs:comment "新たな技術・装置・方法を独創的に生み出した人物。エジソン・ダ・ヴィンチ・ライト兄弟など。"@ja ;
+    rdfs:comment "A person who creatively devised new technologies, devices, or methods, including Edison, da Vinci, and the Wright brothers."@en ;
+    skos:notation "SHINRA_0000733" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 歴史プロパティ ────────────────────────────────────────────────
+
+shinra:hasStartYear
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "開始年"@ja ; rdfs:label "start year"@en ;
+    rdfs:comment "歴史的時代・出来事の開始年（BCE は負の整数）。"@ja ;
+    skos:notation "SHINRA_D000501" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasEndYear
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "終了年"@ja ; rdfs:label "end year"@en ;
+    rdfs:comment "歴史的時代・出来事の終了年（BCE は負の整数。継続中の場合は省略）。"@ja ;
+    skos:notation "SHINRA_D000502" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasSuccessor
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:Organization ;
+    rdfs:range  shinra:Organization ;
+    rdfs:label  "後継"@ja ; rdfs:label "has successor"@en ;
+    rdfs:comment "国家・王朝・組織の後継となる政治体や組織。"@ja ;
+    skos:notation "SHINRA_R000101" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasPredecessor
+    a owl:ObjectProperty ;
+    owl:inverseOf shinra:hasSuccessor ;
+    rdfs:domain shinra:Organization ;
+    rdfs:range  shinra:Organization ;
+    rdfs:label  "前身"@ja ; rdfs:label "has predecessor"@en ;
+    rdfs:comment "国家・王朝・組織の前身となる政治体や組織。"@ja ;
+    skos:notation "SHINRA_R000102" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:roman-empire-001
+    a shinra:Empire ;
+    rdfs:label "ローマ帝国"@ja ; rdfs:label "Roman Empire"@en ;
+    shinra:wikidataId "Q2277" ;
+    shinra:hasStartYear -27 ;
+    shinra:hasEndYear   476 ;
+    skos:notation "SHINRA_I000080" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:french-revolution-001
+    a shinra:Revolution ;
+    rdfs:label "フランス革命"@ja ; rdfs:label "French Revolution"@en ;
+    shinra:wikidataId "Q6534" ;
+    shinra:hasStartYear 1789 ;
+    shinra:hasEndYear   1799 ;
+    skos:notation "SHINRA_I000081" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:ww2-001
+    a shinra:War ;
+    rdfs:label "第二次世界大戦"@ja ; rdfs:label "World War II"@en ;
+    shinra:wikidataId "Q362" ;
+    shinra:hasStartYear 1939 ;
+    shinra:hasEndYear   1945 ;
+    skos:notation "SHINRA_I000082" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:meiji-restoration-001
+    a shinra:Revolution ;
+    rdfs:label "明治維新"@ja ; rdfs:label "Meiji Restoration"@en ;
+    shinra:wikidataId "Q42308" ;
+    shinra:hasStartYear 1868 ;
+    skos:notation "SHINRA_I000083" ; dcterms:created "2026-05-12"^^xsd:date .
