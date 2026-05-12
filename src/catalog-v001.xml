@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- Shinra Ontology — local URI → file mapping -->
+    <uri name="https://w3id.org/shinra/ont/core" uri="shinra-core.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/mid"  uri="shinra-mid.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/physical" uri="shinra-physical.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/social"      uri="shinra-social.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/information" uri="shinra-information.ttl"/>
+    <!-- BFO 2020 -->
+    <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"
+         uri="../imports/bfo-2020.owl"/>
+</catalog>

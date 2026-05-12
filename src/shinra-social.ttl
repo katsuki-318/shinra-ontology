@@ -1,0 +1,205 @@
+# ===========================================================================
+# shinra-social.ttl  — 社会・人間・制度ドメイン (Phase 3-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/social>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会・人間・制度ドメイン"@ja ,
+                    "Shinra Ontology — Social, Human & Institution Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 人間の状態・属性 ─────────────────────────────────────────────
+
+shinra:LifeStage
+    a owl:Class ; rdfs:subClassOf shinra:Role ;
+    rdfs:label "人生段階"@ja ; rdfs:label "Life Stage"@en ;
+    rdfs:comment "人間が経る発達段階における役割。乳児・子ども・青年・成人・高齢者など。"@ja ;
+    rdfs:comment "A role corresponding to a developmental stage in human life, including infant, child, adolescent, adult, and elder."@en ;
+    skos:notation "SHINRA_0000301" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Occupation
+    a owl:Class ; rdfs:subClassOf shinra:SocialRole ;
+    rdfs:label "職業"@ja ; rdfs:label "Occupation"@en ;
+    skos:altLabel "仕事"@ja ;
+    rdfs:comment "生計を立てるために継続的に従事する社会的役割。医師・教師・エンジニアなど。"@ja ;
+    rdfs:comment "A sustained social role performed for livelihood, including doctor, teacher, and engineer."@en ;
+    skos:notation "SHINRA_0000302" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Nationality
+    a owl:Class ; rdfs:subClassOf shinra:SocialRole ;
+    rdfs:label "国籍"@ja ; rdfs:label "Nationality"@en ;
+    rdfs:comment "個人が特定の国家に属することを示す社会的役割・法的地位。"@ja ;
+    rdfs:comment "A social and legal status indicating a person's membership in a nation-state."@en ;
+    skos:notation "SHINRA_0000303" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 社会制度・仕組み ──────────────────────────────────────────────
+
+shinra:SocialInstitution
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会制度"@ja ; rdfs:label "Social Institution"@en ;
+    skos:altLabel "制度"@ja ;
+    rdfs:comment "社会的に確立された規則・慣行・組織の体系。婚姻・教育・宗教・市場など。"@ja ;
+    rdfs:comment "An established system of rules, practices, and organizations in society, including marriage, education, religion, and markets."@en ;
+    skos:notation "SHINRA_0000311" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:LegalSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "法体系"@ja ; rdfs:label "Legal System"@en ;
+    rdfs:comment "規範・手続き・機関からなる法的秩序の体系。コモンロー・大陸法・イスラム法など。"@ja ;
+    rdfs:comment "A system of norms, procedures, and institutions constituting a legal order, including common law and civil law."@en ;
+    skos:notation "SHINRA_0000312" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:EconomicSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "経済体制"@ja ; rdfs:label "Economic System"@en ;
+    rdfs:comment "財・サービスの生産・分配・消費を組織する社会制度。市場経済・計画経済・混合経済など。"@ja ;
+    rdfs:comment "A system organizing production, distribution, and consumption of goods and services, including market and planned economies."@en ;
+    skos:notation "SHINRA_0000313" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:PoliticalSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "政治体制"@ja ; rdfs:label "Political System"@en ;
+    rdfs:comment "権力の配分と行使を規定する社会制度。民主主義・君主制・連邦制など。"@ja ;
+    rdfs:comment "A system defining the distribution and exercise of power, including democracy, monarchy, and federalism."@en ;
+    skos:notation "SHINRA_0000314" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Religion
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "宗教"@ja ; rdfs:label "Religion"@en ;
+    rdfs:comment "超自然的存在・道徳規範・儀式を中心とした信念体系。仏教・キリスト教・イスラム教など。"@ja ;
+    rdfs:comment "A belief system centered on supernatural beings, moral norms, and rituals, including Buddhism, Christianity, and Islam."@en ;
+    skos:notation "SHINRA_0000315" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 社会的出来事 ─────────────────────────────────────────────────
+
+shinra:War
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "戦争"@ja ; rdfs:label "War"@en ;
+    rdfs:comment "国家・集団間の組織的暴力による武力衝突。第二次世界大戦・南北戦争など。"@ja ;
+    rdfs:comment "An organized armed conflict between states or groups, such as World War II and the American Civil War."@en ;
+    skos:notation "SHINRA_0000321" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Election
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "選挙"@ja ; rdfs:label "Election"@en ;
+    rdfs:comment "投票によって代表者・指導者を選出する社会過程。総選挙・大統領選挙など。"@ja ;
+    rdfs:comment "A social process selecting representatives or leaders through voting, including general elections and presidential elections."@en ;
+    skos:notation "SHINRA_0000322" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:EconomicTransaction
+    a owl:Class ; rdfs:subClassOf shinra:TransferProcess ;
+    rdfs:label "経済取引"@ja ; rdfs:label "Economic Transaction"@en ;
+    skos:altLabel "取引"@ja ;
+    rdfs:comment "財・サービス・貨幣のやりとりを伴う社会過程。売買・贈与・融資・投資など。"@ja ;
+    rdfs:comment "A social process involving the exchange of goods, services, or money, including sales, gifts, loans, and investments."@en ;
+    skos:notation "SHINRA_0000323" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Communication
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "コミュニケーション"@ja ; rdfs:label "Communication"@en ;
+    skos:altLabel "伝達"@ja ;
+    rdfs:comment "情報・意味をエージェント間で交換する過程。会話・文書・放送・デジタル通信など。"@ja ;
+    rdfs:comment "A process of exchanging information or meaning between agents, including conversation, writing, broadcasting, and digital communication."@en ;
+    skos:notation "SHINRA_0000324" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 技術・工学 ───────────────────────────────────────────────────
+
+shinra:Technology
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "技術"@ja ; rdfs:label "Technology"@en ;
+    rdfs:comment "特定の目的を達成するための知識・手段・方法の体系。情報技術・医療技術・農業技術など。"@ja ;
+    rdfs:comment "A body of knowledge, methods, and means for achieving specific purposes, including IT, medical technology, and agriculture."@en ;
+    skos:notation "SHINRA_0000331" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Infrastructure
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "インフラ"@ja ; rdfs:label "Infrastructure"@en ;
+    skos:altLabel "社会基盤"@ja ;
+    rdfs:comment "社会・経済活動を支える大規模な物的施設・システム。道路・電力網・通信網・上下水道など。"@ja ;
+    rdfs:comment "Large-scale physical facilities and systems supporting social and economic activities, including roads, power grids, and water systems."@en ;
+    skos:notation "SHINRA_0000332" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Tool
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "道具"@ja ; rdfs:label "Tool"@en ;
+    skos:altLabel "器具"@ja ;
+    rdfs:comment "特定の作業・目的のために使用される人工物。手工具・機械・ソフトウェアなど。"@ja ;
+    rdfs:comment "An artifact used to perform specific tasks, including hand tools, machines, and software."@en ;
+    skos:notation "SHINRA_0000333" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Vehicle
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "乗り物"@ja ; rdfs:label "Vehicle"@en ;
+    skos:altLabel "輸送機器"@ja ;
+    rdfs:comment "人・物を輸送するための人工物。自動車・船舶・航空機・鉄道車両など。"@ja ;
+    rdfs:comment "An artifact designed to transport people or goods, including cars, ships, aircraft, and trains."@en ;
+    skos:notation "SHINRA_0000334" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Building
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "建築物"@ja ; rdfs:label "Building"@en ;
+    skos:altLabel "建物"@ja ;
+    rdfs:comment "居住・業務・文化等のために建設された構造物。住宅・オフィス・神社仏閣・橋梁など。"@ja ;
+    rdfs:comment "A structure built for habitation, work, or culture, including houses, offices, temples, and bridges."@en ;
+    skos:notation "SHINRA_0000335" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 社会プロパティ ────────────────────────────────────────────────
+
+shinra:hasFoundingDate
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Organization ;
+    rdfs:range  xsd:date ;
+    rdfs:label  "設立日"@ja ; rdfs:label "founding date"@en ;
+    rdfs:comment "組織が設立された日付。"@ja ;
+    skos:notation "SHINRA_D000101" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasBirthDate
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Person ;
+    rdfs:range  xsd:date ;
+    rdfs:label  "生年月日"@ja ; rdfs:label "birth date"@en ;
+    skos:notation "SHINRA_D000102" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasDeathDate
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Person ;
+    rdfs:range  xsd:date ;
+    rdfs:label  "没年月日"@ja ; rdfs:label "death date"@en ;
+    skos:notation "SHINRA_D000103" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasPopulation
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "人口"@ja ; rdfs:label "population"@en ;
+    rdfs:comment "地域・組織・集団が持つ人口・人員数。"@ja ;
+    skos:notation "SHINRA_D000104" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:united-nations-001
+    a shinra:Organization ;
+    rdfs:label "国際連合"@ja ; rdfs:label "United Nations"@en ;
+    shinra:wikidataId "Q1065" ;
+    skos:notation "SHINRA_I000040" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:buddhism-001
+    a shinra:Religion ;
+    rdfs:label "仏教"@ja ; rdfs:label "Buddhism"@en ;
+    shinra:wikidataId "Q748" ;
+    skos:notation "SHINRA_I000041" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:democracy-001
+    a shinra:PoliticalSystem ;
+    rdfs:label "民主主義"@ja ; rdfs:label "Democracy"@en ;
+    shinra:wikidataId "Q7174" ;
+    skos:notation "SHINRA_I000042" ; dcterms:created "2026-05-12"^^xsd:date .

@@ -25,7 +25,7 @@
     a owl:Ontology ;
     owl:versionIRI    <https://w3id.org/shinra/ont/mid/2026-05-12/> ;
     owl:versionInfo   "0.2.0" ;
-    owl:imports       <https://w3id.org/shinra/ont/> ;
+    owl:imports       <https://w3id.org/shinra/ont/core> ;
     dcterms:title     "神羅万象オントロジー — 中位骨格"@ja ,
                       "Shinra Ontology — Mid-level Backbone"@en ;
     dcterms:created   "2026-05-12"^^xsd:date .

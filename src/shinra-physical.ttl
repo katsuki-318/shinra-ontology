@@ -1,0 +1,186 @@
+# ===========================================================================
+# shinra-physical.ttl  — 物理・自然科学ドメイン (Phase 3-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix bfo:         <http://purl.obolibrary.org/obo/BFO_> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/physical>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 物理・自然科学ドメイン"@ja ,
+                    "Shinra Ontology — Physical & Natural Science Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 物質 ────────────────────────────────────────────────────────
+
+shinra:Element
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "元素"@ja ; rdfs:label "Chemical Element"@en ;
+    rdfs:comment "単一の原子番号を持つ純粋な化学物質。水素・炭素・鉄など。"@ja ;
+    rdfs:comment "A pure chemical substance consisting of atoms with the same atomic number."@en ;
+    skos:notation "SHINRA_0000201" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Compound
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "化合物"@ja ; rdfs:label "Chemical Compound"@en ;
+    rdfs:comment "2種類以上の元素が化学結合した物質。水・塩化ナトリウム・エタノールなど。"@ja ;
+    rdfs:comment "A substance formed by chemical bonding of two or more elements, such as water and ethanol."@en ;
+    skos:notation "SHINRA_0000202" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Mixture
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "混合物"@ja ; rdfs:label "Mixture"@en ;
+    rdfs:comment "化学結合を形成せずに複数の物質が混在したもの。空気・血液・合金など。"@ja ;
+    rdfs:comment "A combination of substances not chemically bonded, such as air, blood, and alloys."@en ;
+    skos:notation "SHINRA_0000203" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 天体 ────────────────────────────────────────────────────────
+
+shinra:Star
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "恒星"@ja ; rdfs:label "Star"@en ;
+    rdfs:comment "核融合によってエネルギーを放射するプラズマの球体。太陽・シリウスなど。"@ja ;
+    rdfs:comment "A luminous plasma sphere that radiates energy through nuclear fusion, such as the Sun and Sirius."@en ;
+    skos:notation "SHINRA_0000211" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Planet
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "惑星"@ja ; rdfs:label "Planet"@en ;
+    rdfs:comment "恒星の周囲を公転し、自己重力で球形を保つ天体。地球・火星・木星など。"@ja ;
+    rdfs:comment "A celestial body orbiting a star with sufficient mass for a spherical shape, such as Earth, Mars, and Jupiter."@en ;
+    skos:notation "SHINRA_0000212" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Moon
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "衛星"@ja ; rdfs:label "Natural Satellite"@en ;
+    skos:altLabel "自然衛星"@ja ;
+    rdfs:comment "惑星や小惑星の周囲を公転する天体。月・エウロパ・タイタンなど。"@ja ;
+    rdfs:comment "A natural body orbiting a planet or minor planet, such as the Moon, Europa, and Titan."@en ;
+    skos:notation "SHINRA_0000213" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Galaxy
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "銀河"@ja ; rdfs:label "Galaxy"@en ;
+    rdfs:comment "恒星・ガス・ダークマターが重力で束縛された大規模な天体系。天の川・アンドロメダなど。"@ja ;
+    rdfs:comment "A large system of stars, gas, and dark matter bound by gravity, such as the Milky Way and Andromeda."@en ;
+    skos:notation "SHINRA_0000214" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 物理現象 ─────────────────────────────────────────────────────
+
+shinra:MechanicalPhenomenon
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "力学現象"@ja ; rdfs:label "Mechanical Phenomenon"@en ;
+    rdfs:comment "力・運動・エネルギーに関する物理現象。重力・摩擦・弾性変形など。"@ja ;
+    rdfs:comment "Physical phenomena related to forces, motion, and energy, including gravity, friction, and elastic deformation."@en ;
+    skos:notation "SHINRA_0000221" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ElectromagneticPhenomenon
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "電磁気現象"@ja ; rdfs:label "Electromagnetic Phenomenon"@en ;
+    rdfs:comment "電荷・電流・電磁場に関する物理現象。電流・磁場・光・電波など。"@ja ;
+    rdfs:comment "Physical phenomena related to electric charges, currents, and fields, including electricity, magnetism, light, and radio waves."@en ;
+    skos:notation "SHINRA_0000222" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ThermalPhenomenon
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "熱現象"@ja ; rdfs:label "Thermal Phenomenon"@en ;
+    rdfs:comment "熱・温度・相変化に関する物理現象。伝熱・対流・気化・凝固など。"@ja ;
+    rdfs:comment "Physical phenomena related to heat and temperature, including heat transfer, convection, vaporization, and solidification."@en ;
+    skos:notation "SHINRA_0000223" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:QuantumPhenomenon
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "量子現象"@ja ; rdfs:label "Quantum Phenomenon"@en ;
+    rdfs:comment "量子力学的効果が顕著な物理現象。波動関数・量子もつれ・トンネル効果など。"@ja ;
+    rdfs:comment "Physical phenomena governed by quantum mechanics, including wave functions, quantum entanglement, and tunneling."@en ;
+    skos:notation "SHINRA_0000224" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 生命過程 ─────────────────────────────────────────────────────
+
+shinra:Metabolism
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "代謝"@ja ; rdfs:label "Metabolism"@en ;
+    rdfs:comment "生命体内で起こる化学反応の総体。エネルギー代謝・物質代謝など。"@ja ;
+    rdfs:comment "The totality of chemical reactions occurring within an organism, including energy and material metabolism."@en ;
+    skos:notation "SHINRA_0000231" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Reproduction
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "生殖"@ja ; rdfs:label "Reproduction"@en ;
+    rdfs:comment "生命体が子孫を残す生物学的過程。有性生殖・無性生殖・細胞分裂など。"@ja ;
+    rdfs:comment "The biological process by which organisms produce offspring, including sexual and asexual reproduction."@en ;
+    skos:notation "SHINRA_0000232" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Evolution
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "進化"@ja ; rdfs:label "Evolution"@en ;
+    rdfs:comment "世代を超えた生物集団の遺伝的変化。自然選択・突然変異・遺伝的浮動など。"@ja ;
+    rdfs:comment "Heritable change in populations over generations, driven by natural selection, mutation, and genetic drift."@en ;
+    skos:notation "SHINRA_0000233" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 地球科学 ─────────────────────────────────────────────────────
+
+shinra:GeologicalProcess
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "地質過程"@ja ; rdfs:label "Geological Process"@en ;
+    rdfs:comment "地球の地殻・マントル・岩石に関わる自然過程。地震・火山活動・侵食・プレート移動など。"@ja ;
+    rdfs:comment "Natural processes involving Earth's crust, mantle, and rocks, including earthquakes, volcanism, erosion, and plate tectonics."@en ;
+    skos:notation "SHINRA_0000241" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MeteorologicalProcess
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "気象過程"@ja ; rdfs:label "Meteorological Process"@en ;
+    rdfs:comment "大気中で起こる自然過程。降水・台風・前線・気温変化など。"@ja ;
+    rdfs:comment "Natural processes in the atmosphere, including precipitation, typhoons, fronts, and temperature changes."@en ;
+    skos:notation "SHINRA_0000242" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 物理量 ───────────────────────────────────────────────────────
+
+shinra:Mass
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "質量"@ja ; rdfs:label "Mass"@en ;
+    rdfs:comment "物体の慣性と重力の源となる物理量。SI単位はキログラム(kg)。"@ja ;
+    rdfs:comment "The physical quantity that is the source of inertia and gravity. SI unit: kilogram (kg)."@en ;
+    skos:notation "SHINRA_0000251" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Temperature
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "温度"@ja ; rdfs:label "Temperature"@en ;
+    rdfs:comment "物体の熱的状態を表す物理量。SI単位はケルビン(K)。"@ja ;
+    rdfs:comment "The physical quantity representing the thermal state of matter. SI unit: kelvin (K)."@en ;
+    skos:notation "SHINRA_0000252" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Energy
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "エネルギー"@ja ; rdfs:label "Energy"@en ;
+    rdfs:comment "仕事をする能力を表す物理量。SI単位はジュール(J)。運動・位置・熱・化学エネルギーなど。"@ja ;
+    rdfs:comment "The physical quantity representing the capacity to do work. SI unit: joule (J)."@en ;
+    skos:notation "SHINRA_0000253" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:earth-001
+    a shinra:Planet ;
+    rdfs:label "地球"@ja ; rdfs:label "Earth"@en ;
+    shinra:wikidataId "Q2" ;
+    skos:notation "SHINRA_I000030" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:hydrogen-001
+    a shinra:Element ;
+    rdfs:label "水素"@ja ; rdfs:label "Hydrogen"@en ;
+    shinra:wikidataId "Q556" ;
+    skos:notation "SHINRA_I000031" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:dna-001
+    a shinra:Compound ;
+    rdfs:label "デオキシリボ核酸"@ja ; rdfs:label "DNA"@en ;
+    shinra:wikidataId "Q7430" ;
+    skos:notation "SHINRA_I000032" ; dcterms:created "2026-05-12"^^xsd:date .

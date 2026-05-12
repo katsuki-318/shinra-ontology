@@ -1,0 +1,237 @@
+# ===========================================================================
+# shinra-information.ttl  — 情報・知識・文化ドメイン (Phase 3-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/information>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 情報・知識・文化ドメイン"@ja ,
+                    "Shinra Ontology — Information, Knowledge & Culture Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── テキスト・文書 ──────────────────────────────────────────────────
+
+shinra:Book
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "本"@ja ; rdfs:label "Book"@en ;
+    skos:altLabel "書籍"@ja ;
+    rdfs:comment "一定の長さを持ち独立した形態で流通するテキスト著作物。小説・学術書・詩集など。"@ja ;
+    rdfs:comment "A textual work of substantial length issued as a standalone publication, including novels, scholarly books, and poetry collections."@en ;
+    skos:notation "SHINRA_0000401" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Article
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "記事"@ja ; rdfs:label "Article"@en ;
+    skos:altLabel "論文"@ja ;
+    rdfs:comment "雑誌・新聞・ウェブサイト等に掲載される個別のテキスト著作物。学術論文・新聞記事・ブログ記事など。"@ja ;
+    rdfs:comment "A discrete textual work published in a periodical, newspaper, or online medium, including academic papers, news articles, and blog posts."@en ;
+    skos:notation "SHINRA_0000402" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:LegalText
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "法的文書"@ja ; rdfs:label "Legal Text"@en ;
+    skos:altLabel "法文"@ja ;
+    rdfs:comment "法的効力を持つテキスト著作物。法律・条例・契約書・判決文・条約など。"@ja ;
+    rdfs:comment "A textual document having legal force or authority, including statutes, ordinances, contracts, judgments, and treaties."@en ;
+    skos:notation "SHINRA_0000403" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ReligiousText
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "宗教文書"@ja ; rdfs:label "Religious Text"@en ;
+    skos:altLabel "聖典"@ja ;
+    rdfs:comment "宗教的権威を持つテキスト著作物。聖書・クルアーン・仏典・神話など。"@ja ;
+    rdfs:comment "A textual document held to be sacred or authoritative within a religion, including the Bible, Quran, Buddhist sutras, and mythologies."@en ;
+    skos:notation "SHINRA_0000404" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 視覚・音響コンテンツ ──────────────────────────────────────────
+
+shinra:VisualArtWork
+    a owl:Class ; rdfs:subClassOf shinra:ArtWork ;
+    rdfs:label "視覚芸術作品"@ja ; rdfs:label "Visual Art Work"@en ;
+    skos:altLabel "美術作品"@ja ;
+    rdfs:comment "絵画・彫刻・版画・写真・映像など視覚を主要媒体とする芸術作品。"@ja ;
+    rdfs:comment "An artwork whose primary medium is visual, including paintings, sculptures, prints, photographs, and films."@en ;
+    skos:notation "SHINRA_0000411" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MusicalWork
+    a owl:Class ; rdfs:subClassOf shinra:ArtWork ;
+    rdfs:label "音楽作品"@ja ; rdfs:label "Musical Work"@en ;
+    rdfs:comment "音・リズム・旋律・和声を主要媒体とする芸術作品。交響曲・民謡・ポップスなど。"@ja ;
+    rdfs:comment "An artwork whose primary medium is organized sound, including symphonies, folk songs, and popular music."@en ;
+    skos:notation "SHINRA_0000412" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:FilmWork
+    a owl:Class ; rdfs:subClassOf shinra:ArtWork ;
+    rdfs:label "映像作品"@ja ; rdfs:label "Film Work"@en ;
+    skos:altLabel "映画"@ja ;
+    rdfs:comment "動く映像（と音）を媒体とする著作物。映画・テレビドラマ・アニメーション・ドキュメンタリーなど。"@ja ;
+    rdfs:comment "A work whose medium is moving images (and sound), including cinema, television drama, animation, and documentaries."@en ;
+    skos:notation "SHINRA_0000413" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:PerformativeWork
+    a owl:Class ; rdfs:subClassOf shinra:ArtWork ;
+    rdfs:label "上演芸術作品"@ja ; rdfs:label "Performative Work"@en ;
+    skos:altLabel "舞台芸術"@ja ;
+    rdfs:comment "舞台上の上演・演技・舞踊を媒体とする芸術作品。演劇・オペラ・バレエ・能・歌舞伎など。"@ja ;
+    rdfs:comment "An artwork whose medium is live performance on a stage, including theatre, opera, ballet, Noh, and Kabuki."@en ;
+    skos:notation "SHINRA_0000414" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── デジタル情報 ──────────────────────────────────────────────────
+
+shinra:WebResource
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "ウェブリソース"@ja ; rdfs:label "Web Resource"@en ;
+    rdfs:comment "URI で識別されウェブ上でアクセスできる情報資源。ウェブページ・API・データフィードなど。"@ja ;
+    rdfs:comment "An information resource identified by a URI and accessible on the web, including web pages, APIs, and data feeds."@en ;
+    skos:notation "SHINRA_0000421" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:KnowledgeBase
+    a owl:Class ; rdfs:subClassOf shinra:Dataset ;
+    rdfs:label "知識ベース"@ja ; rdfs:label "Knowledge Base"@en ;
+    skos:altLabel "ナレッジベース"@ja ;
+    rdfs:comment "構造化された知識を集積したデータセット。Wikidata・WordNet・Cyc・医学用語集など。"@ja ;
+    rdfs:comment "A structured collection of accumulated knowledge, including Wikidata, WordNet, Cyc, and medical terminologies."@en ;
+    skos:notation "SHINRA_0000422" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Ontology
+    a owl:Class ; rdfs:subClassOf shinra:KnowledgeBase ;
+    rdfs:label "オントロジー"@ja ; rdfs:label "Ontology"@en ;
+    rdfs:comment "概念・クラス・関係を形式的に定義した知識表現。BFO・DOLCE・Schema.org・本オントロジー自体など。"@ja ;
+    rdfs:comment "A formal representation of concepts, classes, and their relations. Examples include BFO, DOLCE, Schema.org, and this ontology itself."@en ;
+    skos:notation "SHINRA_0000423" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Algorithm
+    a owl:Class ; rdfs:subClassOf shinra:SoftwareCode ;
+    rdfs:label "アルゴリズム"@ja ; rdfs:label "Algorithm"@en ;
+    rdfs:comment "問題解決のための有限・確定的・効果的な手順の形式的記述。ソートアルゴリズム・機械学習モデルなど。"@ja ;
+    rdfs:comment "A formal description of a finite, deterministic, and effective procedure for solving a problem, including sorting algorithms and ML models."@en ;
+    skos:notation "SHINRA_0000424" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 言語・記号 ────────────────────────────────────────────────────
+
+shinra:NaturalLanguage
+    a owl:Class ; rdfs:subClassOf shinra:Language ;
+    rdfs:label "自然言語"@ja ; rdfs:label "Natural Language"@en ;
+    rdfs:comment "人間社会で自然に発達した言語。日本語・英語・アラビア語・スワヒリ語など。"@ja ;
+    rdfs:comment "A language that has developed naturally in human societies, including Japanese, English, Arabic, and Swahili."@en ;
+    skos:notation "SHINRA_0000431" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:FormalLanguage
+    a owl:Class ; rdfs:subClassOf shinra:Language ;
+    rdfs:label "形式言語"@ja ; rdfs:label "Formal Language"@en ;
+    rdfs:comment "厳密な文法規則で定義された人工的言語。プログラミング言語・数式・論理式など。"@ja ;
+    rdfs:comment "An artificially constructed language defined by strict syntactic rules, including programming languages, mathematical notation, and logical formulas."@en ;
+    skos:notation "SHINRA_0000432" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SignSystem
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "記号体系"@ja ; rdfs:label "Sign System"@en ;
+    skos:altLabel "記号系"@ja ;
+    rdfs:comment "意味を伝達するために社会的に合意された記号の体系。文字・数字・旗・手話など。"@ja ;
+    rdfs:comment "A socially agreed system of signs used to convey meaning, including alphabets, numerals, flags, and sign languages."@en ;
+    skos:notation "SHINRA_0000433" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 知識・認識 ───────────────────────────────────────────────────
+
+shinra:ScientificTheory
+    a owl:Class ; rdfs:subClassOf shinra:Theory ;
+    rdfs:label "科学理論"@ja ; rdfs:label "Scientific Theory"@en ;
+    rdfs:comment "実験・観察によって繰り返し検証された包括的説明体系。進化論・相対性理論・量子力学など。"@ja ;
+    rdfs:comment "A well-substantiated explanatory framework confirmed by repeated experiment and observation, including evolution, relativity, and quantum mechanics."@en ;
+    skos:notation "SHINRA_0000441" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Philosophy
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "哲学"@ja ; rdfs:label "Philosophy"@en ;
+    rdfs:comment "存在・知識・価値・言語・論理などの根本問題を批判的に探究する学問領域。"@ja ;
+    rdfs:comment "An academic discipline critically examining foundational questions about existence, knowledge, value, language, and logic."@en ;
+    skos:notation "SHINRA_0000442" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Mathematics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "数学"@ja ; rdfs:label "Mathematics"@en ;
+    rdfs:comment "抽象的構造・量・変化・空間を演繹的に探究する学問領域。代数・解析・幾何・論理など。"@ja ;
+    rdfs:comment "An academic discipline deductively exploring abstract structures, quantity, change, and space, including algebra, analysis, geometry, and logic."@en ;
+    skos:notation "SHINRA_0000443" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Mythology
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "神話"@ja ; rdfs:label "Mythology"@en ;
+    rdfs:comment "神・英雄・宇宙の起源などを語る伝承的物語の体系。ギリシャ神話・日本神話・北欧神話など。"@ja ;
+    rdfs:comment "A body of traditional stories involving gods, heroes, and cosmogony, including Greek, Japanese, and Norse mythologies."@en ;
+    skos:notation "SHINRA_0000444" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 情報プロパティ ────────────────────────────────────────────────
+
+shinra:hasISBN
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Book ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "ISBN"@ja ; rdfs:label "ISBN"@en ;
+    rdfs:comment "書籍に付与された国際標準図書番号。"@ja ;
+    skos:notation "SHINRA_D000201" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasPublicationYear
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:gYear ;
+    rdfs:label  "出版年"@ja ; rdfs:label "publication year"@en ;
+    rdfs:comment "著作物が初めて出版・公開された年。"@ja ;
+    skos:notation "SHINRA_D000202" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasURL
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:WebResource ;
+    rdfs:range  xsd:anyURI ;
+    rdfs:label  "URL"@ja ; rdfs:label "URL"@en ;
+    rdfs:comment "ウェブリソースの統一資源位置指定子。"@ja ;
+    skos:notation "SHINRA_D000203" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasISO639Code
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Language ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "ISO 639コード"@ja ; rdfs:label "ISO 639 code"@en ;
+    rdfs:comment "言語に付与されたISO 639言語コード（例: ja, en, zh）。"@ja ;
+    skos:notation "SHINRA_D000204" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:genji-monogatari-001
+    a shinra:Book ;
+    rdfs:label "源氏物語"@ja ; rdfs:label "The Tale of Genji"@en ;
+    shinra:wikidataId "Q164800" ;
+    skos:notation "SHINRA_I000050" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:wikipedia-001
+    a shinra:KnowledgeBase ;
+    rdfs:label "ウィキペディア"@ja ; rdfs:label "Wikipedia"@en ;
+    shinra:wikidataId "Q52" ;
+    skos:notation "SHINRA_I000051" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:beethoven-9th-001
+    a shinra:MusicalWork ;
+    rdfs:label "交響曲第9番（ベートーヴェン）"@ja ; rdfs:label "Symphony No. 9 (Beethoven)"@en ;
+    shinra:wikidataId "Q216197" ;
+    skos:notation "SHINRA_I000052" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:evolution-theory-001
+    a shinra:ScientificTheory ;
+    rdfs:label "進化論"@ja ; rdfs:label "Theory of Evolution"@en ;
+    shinra:wikidataId "Q9268" ;
+    skos:notation "SHINRA_I000053" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:english-language-001
+    a shinra:NaturalLanguage ;
+    rdfs:label "英語"@ja ; rdfs:label "English"@en ;
+    shinra:wikidataId "Q1860" ;
+    shinra:hasISO639Code "en" ;
+    skos:notation "SHINRA_I000054" ; dcterms:created "2026-05-12"^^xsd:date .
