@@ -1,0 +1,464 @@
+# ===========================================================================
+# shinra-mid.ttl
+# 神羅万象オントロジー — 中位骨格 (Phase 2)
+#
+# shinra-core.ttl の上に積む中位クラス群。
+# OWL-Time / PROV-O を import し、各ドメインモジュールへ橋渡しする。
+#
+# バージョン : 0.2.0
+# 作成日     : 2026-05-12
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix bfo:         <http://purl.obolibrary.org/obo/BFO_> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix time:        <http://www.w3.org/2006/time#> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
+
+<https://w3id.org/shinra/ont/mid>
+    a owl:Ontology ;
+    owl:versionIRI    <https://w3id.org/shinra/ont/mid/2026-05-12/> ;
+    owl:versionInfo   "0.2.0" ;
+    owl:imports       <https://w3id.org/shinra/ont/> ;
+    dcterms:title     "神羅万象オントロジー — 中位骨格"@ja ,
+                      "Shinra Ontology — Mid-level Backbone"@en ;
+    dcterms:created   "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 1. 時間ドメイン（OWL-Time ブリッジ）
+# ===========================================================================
+
+shinra:Era
+    a owl:Class ;
+    rdfs:subClassOf shinra:TemporalInterval ;
+    rdfs:label      "時代"@ja ;
+    rdfs:label      "Era"@en ;
+    skos:altLabel   "紀元"@ja ;
+    rdfs:comment    "歴史的・地質学的・文化的に定義された時間区間。縄文時代・中生代・江戸時代など。"@ja ;
+    rdfs:comment    "A named temporal interval defined historically, geologically, or culturally, such as the Edo period or Mesozoic era."@en ;
+    skos:notation   "SHINRA_0000101" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Duration
+    a owl:Class ;
+    rdfs:subClassOf shinra:Quality ;
+    rdfs:label      "継続時間"@ja ;
+    rdfs:label      "Duration"@en ;
+    rdfs:comment    "過程や区間が持つ長さの質。秒・分・年などで表現される。"@ja ;
+    rdfs:comment    "The quality of a process or interval representing its length in time."@en ;
+    skos:exactMatch time:Duration ;
+    skos:notation   "SHINRA_0000102" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:RecurringPattern
+    a owl:Class ;
+    rdfs:subClassOf shinra:TemporalRegion ;
+    rdfs:label      "反復パターン"@ja ;
+    rdfs:label      "Recurring Pattern"@en ;
+    skos:altLabel   "周期"@ja ;
+    rdfs:comment    "繰り返し発生する時間パターン。年次サイクル・週次リズム・季節変化など。"@ja ;
+    rdfs:comment    "A temporal pattern that repeats, such as annual cycles, weekly rhythms, or seasonal patterns."@en ;
+    skos:notation   "SHINRA_0000103" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 2. 空間・地理ドメイン
+# ===========================================================================
+
+shinra:Coordinate
+    a owl:Class ;
+    rdfs:subClassOf shinra:Quality ;
+    rdfs:label      "座標"@ja ;
+    rdfs:label      "Coordinate"@en ;
+    rdfs:comment    "空間上の位置を数値で表す質。緯度・経度・高度・xyz座標など。"@ja ;
+    rdfs:comment    "A quality representing a position in space numerically, including latitude, longitude, altitude, or xyz coordinates."@en ;
+    skos:notation   "SHINRA_0000111" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Boundary
+    a owl:Class ;
+    rdfs:subClassOf shinra:ImmaterialEntity ;
+    rdfs:label      "境界"@ja ;
+    rdfs:label      "Boundary"@en ;
+    rdfs:comment    "二つの領域を隔てる非物質的な境界面・境界線。国境・海岸線・細胞膜の内外境界など。"@ja ;
+    rdfs:comment    "An immaterial boundary separating two regions, such as national borders, coastlines, or cell membrane boundaries."@en ;
+    skos:notation   "SHINRA_0000112" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Landform
+    a owl:Class ;
+    rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label      "地形"@ja ;
+    rdfs:label      "Landform"@en ;
+    skos:altLabel   "地貌"@ja ;
+    rdfs:comment    "地球表面の自然的な形態的特徴。山・谷・平野・海岸・火山など。"@ja ;
+    rdfs:comment    "A natural feature of the Earth's surface, including mountains, valleys, plains, coasts, and volcanoes."@en ;
+    skos:notation   "SHINRA_0000113" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:WaterBody
+    a owl:Class ;
+    rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label      "水域"@ja ;
+    rdfs:label      "Water Body"@en ;
+    rdfs:comment    "海・川・湖・地下水など、水が集積している地理的領域。"@ja ;
+    rdfs:comment    "A geographic region where water accumulates, including seas, rivers, lakes, and groundwater."@en ;
+    skos:notation   "SHINRA_0000114" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 3. 人間・組織ドメイン
+# ===========================================================================
+
+shinra:Person
+    a owl:Class ;
+    rdfs:subClassOf shinra:Organism ;
+    rdfs:label      "人"@ja ;
+    rdfs:label      "Person"@en ;
+    skos:altLabel   "人間"@ja ;
+    skos:altLabel   "human being"@en ;
+    rdfs:comment    "ホモ・サピエンスに属する個人。生存・死亡を問わず、歴史上の人物・架空の人物は含まない。"@ja ;
+    rdfs:comment    "An individual member of Homo sapiens, living or deceased. Fictional persons are excluded."@en ;
+    skos:notation   "SHINRA_0000121" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Organization
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "組織"@ja ;
+    rdfs:label      "Organization"@en ;
+    rdfs:comment    "共通の目的のもとに協働する人の集まりとその構造。企業・政府・団体・家族など。"@ja ;
+    rdfs:comment    "A structured group of persons working toward common purposes, including companies, governments, and families."@en ;
+    skos:notation   "SHINRA_0000122" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Company
+    a owl:Class ;
+    rdfs:subClassOf shinra:Organization ;
+    rdfs:label      "企業"@ja ;
+    rdfs:label      "Company"@en ;
+    skos:altLabel   "会社"@ja ;
+    rdfs:comment    "営利を目的として設立された法人組織。株式会社・合同会社・LLC など。"@ja ;
+    rdfs:comment    "A legal entity organized for commercial purposes, including corporations, LLCs, and partnerships."@en ;
+    skos:notation   "SHINRA_0000123" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:GovernmentBody
+    a owl:Class ;
+    rdfs:subClassOf shinra:Organization ;
+    rdfs:label      "政府機関"@ja ;
+    rdfs:label      "Government Body"@en ;
+    skos:altLabel   "行政機関"@ja ;
+    rdfs:comment    "国家・地方公共団体の統治機能を担う組織。議会・省庁・裁判所・地方自治体など。"@ja ;
+    rdfs:comment    "An organization exercising governmental authority, including parliaments, ministries, courts, and municipalities."@en ;
+    skos:notation   "SHINRA_0000124" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:EducationalInstitution
+    a owl:Class ;
+    rdfs:subClassOf shinra:Organization ;
+    rdfs:label      "教育機関"@ja ;
+    rdfs:label      "Educational Institution"@en ;
+    rdfs:comment    "教育・研究を目的とする組織。大学・学校・研究所・図書館など。"@ja ;
+    rdfs:comment    "An organization whose primary purpose is education or research, including universities, schools, and libraries."@en ;
+    skos:notation   "SHINRA_0000125" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:CommunityGroup
+    a owl:Class ;
+    rdfs:subClassOf shinra:Organization ;
+    rdfs:label      "コミュニティ集団"@ja ;
+    rdfs:label      "Community Group"@en ;
+    skos:altLabel   "集団"@ja ;
+    rdfs:comment    "共通の文化・宗教・目的・地域によって結びついた非公式〜半公式の集まり。宗教団体・同好会・民族集団など。"@ja ;
+    rdfs:comment    "An informal or semi-formal group united by shared culture, religion, purpose, or geography, including religious groups and ethnic communities."@en ;
+    skos:notation   "SHINRA_0000126" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 4. 知識・言語ドメイン
+# ===========================================================================
+
+shinra:Language
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "言語"@ja ;
+    rdfs:label      "Language"@en ;
+    rdfs:comment    "意思疎通のための記号・規則体系。自然言語・プログラミング言語・手話など。"@ja ;
+    rdfs:comment    "A system of signs and rules for communication, including natural languages, programming languages, and sign languages."@en ;
+    skos:notation   "SHINRA_0000131" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ScientificDiscipline
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "学問分野"@ja ;
+    rdfs:label      "Scientific Discipline"@en ;
+    skos:altLabel   "学術領域"@ja ;
+    rdfs:comment    "体系化された知識と研究方法を持つ学術領域。物理学・歴史学・哲学・経済学など。"@ja ;
+    rdfs:comment    "A field of organized knowledge and systematic inquiry, including physics, history, philosophy, and economics."@en ;
+    skos:notation   "SHINRA_0000132" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ArtWork
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "芸術作品"@ja ;
+    rdfs:label      "Art Work"@en ;
+    skos:altLabel   "作品"@ja ;
+    rdfs:comment    "美的・表現的意図をもって制作された情報内容実体。絵画・音楽・映画・文学作品など。"@ja ;
+    rdfs:comment    "An information content entity created with aesthetic or expressive intent, including paintings, music, films, and literary works."@en ;
+    skos:notation   "SHINRA_0000133" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ScientificPublication
+    a owl:Class ;
+    rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label      "学術出版物"@ja ;
+    rdfs:label      "Scientific Publication"@en ;
+    skos:altLabel   "論文"@ja ;
+    rdfs:comment    "査読付き論文・書籍・技術報告書など、科学的知見を報告する出版物。"@ja ;
+    rdfs:comment    "A publication reporting scientific findings, including peer-reviewed papers, books, and technical reports."@en ;
+    skos:notation   "SHINRA_0000134" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:LegalDocument
+    a owl:Class ;
+    rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label      "法的文書"@ja ;
+    rdfs:label      "Legal Document"@en ;
+    skos:altLabel   "法令"@ja ;
+    rdfs:comment    "法的効力を持つ文書。法律・条例・契約書・判決文・特許など。"@ja ;
+    rdfs:comment    "A document with legal effect, including laws, ordinances, contracts, judicial decisions, and patents."@en ;
+    skos:notation   "SHINRA_0000135" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 5. 自然科学ドメイン中位クラス
+# ===========================================================================
+
+shinra:ChemicalSubstance
+    a owl:Class ;
+    rdfs:subClassOf shinra:Substance ;
+    rdfs:label      "化学物質"@ja ;
+    rdfs:label      "Chemical Substance"@en ;
+    rdfs:comment    "定まった化学組成を持つ物質。元素・化合物・混合物など。"@ja ;
+    rdfs:comment    "A substance with a definite chemical composition, including elements, compounds, and mixtures."@en ;
+    skos:notation   "SHINRA_0000141" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:BiologicalTaxon
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "生物分類群"@ja ;
+    rdfs:label      "Biological Taxon"@en ;
+    skos:altLabel   "タクソン"@ja ;
+    rdfs:comment    "生物学的分類の単位。種・属・科・目・綱・門・界など。"@ja ;
+    rdfs:comment    "A unit of biological classification, including species, genus, family, order, class, phylum, and kingdom."@en ;
+    skos:notation   "SHINRA_0000142" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:CelestialObject
+    a owl:Class ;
+    rdfs:subClassOf shinra:AstronomicalBody ;
+    rdfs:label      "天体"@ja ;
+    rdfs:label      "Celestial Object"@en ;
+    rdfs:comment    "宇宙に存在する個別の天体。恒星・惑星・衛星・小惑星・彗星・銀河・星雲など。"@ja ;
+    rdfs:comment    "An individual object in space, including stars, planets, moons, asteroids, comets, galaxies, and nebulae."@en ;
+    skos:notation   "SHINRA_0000143" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:PhysicalPhenomenon
+    a owl:Class ;
+    rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label      "物理現象"@ja ;
+    rdfs:label      "Physical Phenomenon"@en ;
+    rdfs:comment    "物理法則に従って起こる自然現象。重力・電磁波・熱伝導・核融合など。"@ja ;
+    rdfs:comment    "A natural process governed by physical laws, including gravity, electromagnetic radiation, heat conduction, and nuclear fusion."@en ;
+    skos:notation   "SHINRA_0000144" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:BiologicalProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label      "生物学的過程"@ja ;
+    rdfs:label      "Biological Process"@en ;
+    rdfs:comment    "生命体の中または間で起こる生物学的な過程。代謝・発生・進化・免疫応答など。"@ja ;
+    rdfs:comment    "A process occurring within or between organisms, including metabolism, development, evolution, and immune responses."@en ;
+    skos:notation   "SHINRA_0000145" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 6. 来歴・変化ドメイン（PROV-O ブリッジ）
+# ===========================================================================
+
+shinra:CreationProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Action ;
+    rdfs:label      "生成過程"@ja ;
+    rdfs:label      "Creation Process"@en ;
+    skos:altLabel   "制作"@ja ;
+    rdfs:comment    "何かを新たに生み出す過程。著作・発明・制作・合成など。"@ja ;
+    rdfs:comment    "A process that brings something new into existence, including authoring, invention, manufacturing, and synthesis."@en ;
+    skos:notation   "SHINRA_0000151" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:DestructionProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "消滅過程"@ja ;
+    rdfs:label      "Destruction Process"@en ;
+    skos:altLabel   "破壊"@ja ;
+    rdfs:comment    "何かが存在しなくなる過程。死・崩壊・消去・絶滅など。"@ja ;
+    rdfs:comment    "A process in which something ceases to exist, including death, decay, deletion, and extinction."@en ;
+    skos:notation   "SHINRA_0000152" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:TransformationProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "変換過程"@ja ;
+    rdfs:label      "Transformation Process"@en ;
+    skos:altLabel   "変化"@ja ;
+    rdfs:comment    "ある実体が別の状態・形態に変わる過程。相転移・翻訳・発酵・改宗など。"@ja ;
+    rdfs:comment    "A process in which an entity changes its state or form, including phase transitions, translation, fermentation, and conversion."@en ;
+    skos:notation   "SHINRA_0000153" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:TransferProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label      "移転過程"@ja ;
+    rdfs:label      "Transfer Process"@en ;
+    skos:altLabel   "移動・移譲"@ja ;
+    rdfs:comment    "ある実体・所有権・情報が一方から他方へ移る過程。売買・贈与・通信・輸送など。"@ja ;
+    rdfs:comment    "A process in which an entity, ownership, or information moves from one party to another, including trade, gift, communication, and transport."@en ;
+    skos:notation   "SHINRA_0000154" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 7. 中位プロパティ
+# ===========================================================================
+
+shinra:hasCreator
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf shinra:hasAgent ;
+    rdfs:range      shinra:Person ;
+    rdfs:label      "作者を持つ"@ja ;
+    rdfs:label      "has creator"@en ;
+    rdfs:comment    "情報内容実体・人工物などが誰によって作られたかを示す関係。"@ja ;
+    rdfs:comment    "Relation between an entity and the person who created it."@en ;
+    skos:notation   "SHINRA_P000101" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:memberOfOrganization
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf shinra:memberOf ;
+    rdfs:domain     shinra:Person ;
+    rdfs:range      shinra:Organization ;
+    rdfs:label      "組織に所属する"@ja ;
+    rdfs:label      "member of organization"@en ;
+    rdfs:comment    "人が組織のメンバーであることを示す関係。"@ja ;
+    rdfs:comment    "Relation between a person and an organization they belong to."@en ;
+    skos:notation   "SHINRA_P000102" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasLocation
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf shinra:locatedAt ;
+    rdfs:label      "所在地を持つ"@ja ;
+    rdfs:label      "has location"@en ;
+    rdfs:comment    "組織・施設・出来事が特定の場所に存在・発生することを示す関係。"@ja ;
+    rdfs:comment    "Relation between an entity and its geographic or administrative location."@en ;
+    skos:notation   "SHINRA_P000103" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasLanguage
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:TextualEntity ;
+    rdfs:range      shinra:Language ;
+    rdfs:label      "言語を持つ"@ja ;
+    rdfs:label      "has language"@en ;
+    rdfs:comment    "テキスト実体が使用する言語を示す関係。"@ja ;
+    rdfs:comment    "Relation between a textual entity and the language it is written in."@en ;
+    skos:notation   "SHINRA_P000104" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:classifiedAs
+    a owl:ObjectProperty ;
+    rdfs:range      shinra:ConceptualEntity ;
+    rdfs:label      "〜に分類される"@ja ;
+    rdfs:label      "classified as"@en ;
+    rdfs:comment    "ある実体が特定の概念・分類カテゴリに属することを示す関係。"@ja ;
+    rdfs:comment    "Relation between an entity and the concept or category it belongs to."@en ;
+    skos:notation   "SHINRA_P000105" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasWikidataMatch
+    a owl:ObjectProperty ;
+    rdfs:label      "Wikidata対応を持つ"@ja ;
+    rdfs:label      "has Wikidata match"@en ;
+    rdfs:comment    "このエンティティに対応する Wikidata アイテム（owl:sameAs の軽量版）。"@ja ;
+    rdfs:comment    "A lightweight alignment to the corresponding Wikidata item."@en ;
+    skos:notation   "SHINRA_P000106" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# 8. 追加インスタンス（各中位クラスの典型例）
+# ===========================================================================
+
+shinra-data:toyota-001
+    a shinra:Company ;
+    rdfs:label      "トヨタ自動車"@ja ;
+    rdfs:label      "Toyota Motor Corporation"@en ;
+    shinra:wikidataId "Q53268" ;
+    shinra:hasLocation shinra-data:japan-001 ;
+    skos:notation   "SHINRA_I000020" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:university-of-tokyo-001
+    a shinra:EducationalInstitution ;
+    rdfs:label      "東京大学"@ja ;
+    rdfs:label      "University of Tokyo"@en ;
+    shinra:wikidataId "Q7842" ;
+    shinra:hasLocation shinra-data:japan-001 ;
+    skos:notation   "SHINRA_I000021" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:japanese-language-001
+    a shinra:Language ;
+    rdfs:label      "日本語"@ja ;
+    rdfs:label      "Japanese language"@en ;
+    shinra:wikidataId "Q5287" ;
+    skos:notation   "SHINRA_I000022" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:milky-way-001
+    a shinra:CelestialObject ;
+    rdfs:label      "天の川銀河"@ja ;
+    rdfs:label      "Milky Way Galaxy"@en ;
+    shinra:wikidataId "Q321" ;
+    skos:notation   "SHINRA_I000023" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:water-001
+    a shinra:ChemicalSubstance ;
+    rdfs:label      "水"@ja ;
+    rdfs:label      "Water"@en ;
+    shinra:wikidataId "Q283" ;
+    skos:notation   "SHINRA_I000024" ;
+    dcterms:created "2026-05-12"^^xsd:date .
