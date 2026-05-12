@@ -1,0 +1,203 @@
+# ===========================================================================
+# shinra-biology.ttl  — 生物・生命科学ドメイン (Phase 3-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/biology>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 生物・生命科学ドメイン"@ja ,
+                    "Shinra Ontology — Biology & Life Science Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 生物分類 ─────────────────────────────────────────────────────
+
+shinra:Animal
+    a owl:Class ; rdfs:subClassOf shinra:Organism ;
+    rdfs:label "動物"@ja ; rdfs:label "Animal"@en ;
+    rdfs:comment "多細胞真核生物で従属栄養性を持つ生物。哺乳類・鳥類・魚類・昆虫など。"@ja ;
+    rdfs:comment "A multicellular eukaryotic organism that is heterotrophic, including mammals, birds, fish, and insects."@en ;
+    skos:notation "SHINRA_0000501" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Plant
+    a owl:Class ; rdfs:subClassOf shinra:Organism ;
+    rdfs:label "植物"@ja ; rdfs:label "Plant"@en ;
+    rdfs:comment "光合成により独立栄養性を持つ多細胞真核生物。被子植物・裸子植物・シダ・コケなど。"@ja ;
+    rdfs:comment "A multicellular eukaryotic organism that is autotrophic through photosynthesis, including angiosperms, gymnosperms, ferns, and mosses."@en ;
+    skos:notation "SHINRA_0000502" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Fungus
+    a owl:Class ; rdfs:subClassOf shinra:Organism ;
+    rdfs:label "菌類"@ja ; rdfs:label "Fungus"@en ;
+    skos:altLabel "真菌"@ja ;
+    rdfs:comment "キチン質の細胞壁を持つ従属栄養性の真核生物。キノコ・酵母・カビなど。"@ja ;
+    rdfs:comment "A heterotrophic eukaryote with chitin cell walls, including mushrooms, yeasts, and molds."@en ;
+    skos:notation "SHINRA_0000503" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Microorganism
+    a owl:Class ; rdfs:subClassOf shinra:Organism ;
+    rdfs:label "微生物"@ja ; rdfs:label "Microorganism"@en ;
+    skos:altLabel "微細生物"@ja ;
+    rdfs:comment "肉眼では見えない微小な生物の総称。細菌・古細菌・原生生物・一部の菌類など。"@ja ;
+    rdfs:comment "An organism too small to be seen with the naked eye, including bacteria, archaea, protists, and some fungi."@en ;
+    skos:notation "SHINRA_0000504" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Virus
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "ウイルス"@ja ; rdfs:label "Virus"@en ;
+    rdfs:comment "核酸とタンパク質の殻からなり宿主細胞内でのみ複製できる感染性粒子。インフルエンザウイルス・HIVなど。"@ja ;
+    rdfs:comment "An infectious particle composed of nucleic acid and a protein coat, replicating only inside host cells, such as influenza virus and HIV."@en ;
+    skos:notation "SHINRA_0000505" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 解剖・細胞 ───────────────────────────────────────────────────
+
+shinra:BodyPart
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "身体部位"@ja ; rdfs:label "Body Part"@en ;
+    skos:altLabel "体部"@ja ;
+    rdfs:comment "生物体の解剖学的構成単位。臓器・四肢・骨格・皮膚など。"@ja ;
+    rdfs:comment "An anatomical component of an organism, including organs, limbs, skeleton, and skin."@en ;
+    skos:notation "SHINRA_0000511" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Organ
+    a owl:Class ; rdfs:subClassOf shinra:BodyPart ;
+    rdfs:label "臓器"@ja ; rdfs:label "Organ"@en ;
+    skos:altLabel "器官"@ja ;
+    rdfs:comment "特定の機能を担う組織から構成される身体部位。心臓・肝臓・脳・肺など。"@ja ;
+    rdfs:comment "A body part composed of tissues that performs a specific function, including the heart, liver, brain, and lungs."@en ;
+    skos:notation "SHINRA_0000512" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Cell
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "細胞"@ja ; rdfs:label "Cell"@en ;
+    rdfs:comment "生命の構造的・機能的基本単位。原核細胞・真核細胞・神経細胞・幹細胞など。"@ja ;
+    rdfs:comment "The basic structural and functional unit of life, including prokaryotic, eukaryotic, neuron, and stem cells."@en ;
+    skos:notation "SHINRA_0000513" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 遺伝・分子生物学 ──────────────────────────────────────────────
+
+shinra:Gene
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "遺伝子"@ja ; rdfs:label "Gene"@en ;
+    rdfs:comment "タンパク質または機能的 RNA をコードするゲノム上の特定の DNA 配列。"@ja ;
+    rdfs:comment "A specific DNA sequence on the genome that encodes a protein or functional RNA."@en ;
+    skos:notation "SHINRA_0000521" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Genome
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "ゲノム"@ja ; rdfs:label "Genome"@en ;
+    rdfs:comment "生物が持つすべての遺伝情報の総体。核ゲノム・ミトコンドリアゲノムなど。"@ja ;
+    rdfs:comment "The complete set of genetic information of an organism, including nuclear and mitochondrial genomes."@en ;
+    skos:notation "SHINRA_0000522" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Protein
+    a owl:Class ; rdfs:subClassOf shinra:Compound ;
+    rdfs:label "タンパク質"@ja ; rdfs:label "Protein"@en ;
+    skos:altLabel "蛋白質"@ja ;
+    rdfs:comment "アミノ酸が連結した高分子で、酵素・構造体・シグナル分子として機能する。"@ja ;
+    rdfs:comment "A polymer of amino acids that functions as enzymes, structural components, and signaling molecules."@en ;
+    skos:notation "SHINRA_0000523" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 生態系 ───────────────────────────────────────────────────────
+
+shinra:Ecosystem
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "生態系"@ja ; rdfs:label "Ecosystem"@en ;
+    rdfs:comment "生物群集と非生物環境が相互作用する機能的な生物地理学的単位。熱帯雨林・珊瑚礁・湿地など。"@ja ;
+    rdfs:comment "A functional biogeographic unit where biotic communities interact with the abiotic environment, including rainforests, coral reefs, and wetlands."@en ;
+    skos:notation "SHINRA_0000531" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Biome
+    a owl:Class ; rdfs:subClassOf shinra:Ecosystem ;
+    rdfs:label "バイオーム"@ja ; rdfs:label "Biome"@en ;
+    skos:altLabel "生物群系"@ja ;
+    rdfs:comment "気候・植生・動物相が類似した大規模な生物群系。熱帯林・サバンナ・ツンドラ・砂漠など。"@ja ;
+    rdfs:comment "A large-scale biological community characterized by similar climate, vegetation, and fauna, including tropical forests, savannas, tundra, and deserts."@en ;
+    skos:notation "SHINRA_0000532" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:FoodWeb
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "食物網"@ja ; rdfs:label "Food Web"@en ;
+    skos:altLabel "食物連鎖"@ja ;
+    rdfs:comment "生態系内における捕食・被食関係のネットワーク。"@ja ;
+    rdfs:comment "A network of predator-prey relationships within an ecosystem."@en ;
+    skos:notation "SHINRA_0000533" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 健康・疾患 ───────────────────────────────────────────────────
+
+shinra:Disease
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "疾患"@ja ; rdfs:label "Disease"@en ;
+    skos:altLabel "病気"@ja ;
+    rdfs:comment "生物体における機能的・構造的異常の状態。感染症・遺伝病・精神疾患・がんなど。"@ja ;
+    rdfs:comment "A condition of functional or structural abnormality in an organism, including infectious diseases, genetic disorders, mental illness, and cancer."@en ;
+    skos:notation "SHINRA_0000541" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Symptom
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "症状"@ja ; rdfs:label "Symptom"@en ;
+    rdfs:comment "疾患や障害が引き起こす主観的・客観的な身体的・精神的徴候。発熱・疼痛・倦怠感など。"@ja ;
+    rdfs:comment "A subjective or objective manifestation of disease or disorder, including fever, pain, and fatigue."@en ;
+    skos:notation "SHINRA_0000542" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MedicalTreatment
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "医療処置"@ja ; rdfs:label "Medical Treatment"@en ;
+    skos:altLabel "治療"@ja ;
+    rdfs:comment "疾患や傷害を治癒・軽減・管理するために行う処置。外科手術・薬物療法・放射線治療など。"@ja ;
+    rdfs:comment "An intervention to cure, alleviate, or manage a disease or injury, including surgery, pharmacotherapy, and radiotherapy."@en ;
+    skos:notation "SHINRA_0000543" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 生物プロパティ ────────────────────────────────────────────────
+
+shinra:hasTaxonRank
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:BiologicalTaxon ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "分類階級"@ja ; rdfs:label "taxon rank"@en ;
+    rdfs:comment "生物分類学上の階級。界・門・綱・目・科・属・種など。"@ja ;
+    skos:notation "SHINRA_D000301" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasScientificName
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Organism ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "学名"@ja ; rdfs:label "scientific name"@en ;
+    rdfs:comment "国際命名規約に基づく生物の二名法学名。例: Homo sapiens。"@ja ;
+    skos:notation "SHINRA_D000302" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:homo-sapiens-001
+    a shinra:Animal ;
+    rdfs:label "ヒト"@ja ; rdfs:label "Homo sapiens"@en ;
+    shinra:wikidataId "Q15978631" ;
+    shinra:hasScientificName "Homo sapiens" ;
+    skos:notation "SHINRA_I000060" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:arabidopsis-001
+    a shinra:Plant ;
+    rdfs:label "シロイヌナズナ"@ja ; rdfs:label "Arabidopsis thaliana"@en ;
+    shinra:wikidataId "Q147096" ;
+    shinra:hasScientificName "Arabidopsis thaliana" ;
+    skos:notation "SHINRA_I000061" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:covid19-001
+    a shinra:Disease ;
+    rdfs:label "新型コロナウイルス感染症"@ja ; rdfs:label "COVID-19"@en ;
+    shinra:wikidataId "Q84263196" ;
+    skos:notation "SHINRA_I000062" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:amazon-rainforest-001
+    a shinra:Biome ;
+    rdfs:label "アマゾン熱帯雨林"@ja ; rdfs:label "Amazon Rainforest"@en ;
+    shinra:wikidataId "Q177567" ;
+    skos:notation "SHINRA_I000063" ; dcterms:created "2026-05-12"^^xsd:date .

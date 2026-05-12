@@ -6,6 +6,8 @@
     <uri name="https://w3id.org/shinra/ont/physical" uri="shinra-physical.ttl"/>
     <uri name="https://w3id.org/shinra/ont/social"      uri="shinra-social.ttl"/>
     <uri name="https://w3id.org/shinra/ont/information" uri="shinra-information.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/biology"     uri="shinra-biology.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/geography"   uri="shinra-geography.ttl"/>
     <!-- BFO 2020 -->
     <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"
          uri="../imports/bfo-2020.owl"/>

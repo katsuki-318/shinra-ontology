@@ -1,0 +1,214 @@
+# ===========================================================================
+# shinra-geography.ttl  — 地理・地球空間ドメイン (Phase 3-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/geography>
+    a owl:Ontology ;
+    owl:versionInfo "0.3.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 地理・地球空間ドメイン"@ja ,
+                    "Shinra Ontology — Geography & Geospatial Domain"@en ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 行政・政治地理 ────────────────────────────────────────────────
+
+shinra:Country
+    a owl:Class ; rdfs:subClassOf shinra:AdministrativeRegion ;
+    rdfs:label "国家"@ja ; rdfs:label "Country"@en ;
+    skos:altLabel "国"@ja ;
+    rdfs:comment "主権を持ち、国際的に承認された政治的単位。日本・フランス・ブラジルなど。"@ja ;
+    rdfs:comment "A sovereign, internationally recognized political unit, including Japan, France, and Brazil."@en ;
+    skos:notation "SHINRA_0000601" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:City
+    a owl:Class ; rdfs:subClassOf shinra:AdministrativeRegion ;
+    rdfs:label "都市"@ja ; rdfs:label "City"@en ;
+    skos:altLabel "市"@ja ;
+    rdfs:comment "行政的に定義された人口集中地域。東京・ニューヨーク・上海・パリなど。"@ja ;
+    rdfs:comment "An administratively defined concentrated population area, including Tokyo, New York, Shanghai, and Paris."@en ;
+    skos:notation "SHINRA_0000602" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Region
+    a owl:Class ; rdfs:subClassOf shinra:AdministrativeRegion ;
+    rdfs:label "地域"@ja ; rdfs:label "Region"@en ;
+    skos:altLabel "地方"@ja ;
+    rdfs:comment "文化・行政・自然的特徴によって区分された地理的領域。関東地方・中東・東南アジアなど。"@ja ;
+    rdfs:comment "A geographic area defined by cultural, administrative, or natural characteristics, including the Kanto region, the Middle East, and Southeast Asia."@en ;
+    skos:notation "SHINRA_0000603" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Continent
+    a owl:Class ; rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label "大陸"@ja ; rdfs:label "Continent"@en ;
+    rdfs:comment "地球の陸地を分割する大規模な地理的単位。アジア・ヨーロッパ・アフリカ・北アメリカなど。"@ja ;
+    rdfs:comment "A large-scale geographic unit dividing Earth's landmass, including Asia, Europe, Africa, and North America."@en ;
+    skos:notation "SHINRA_0000604" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Capital
+    a owl:Class ; rdfs:subClassOf shinra:City ;
+    rdfs:label "首都"@ja ; rdfs:label "Capital"@en ;
+    skos:altLabel "首府"@ja ;
+    rdfs:comment "国家の政府が置かれる最高位の都市。東京・ワシントン D.C.・北京など。"@ja ;
+    rdfs:comment "The highest-ranking city where the national government is seated, including Tokyo, Washington D.C., and Beijing."@en ;
+    skos:notation "SHINRA_0000605" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 自然地理 ─────────────────────────────────────────────────────
+
+shinra:Mountain
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "山"@ja ; rdfs:label "Mountain"@en ;
+    skos:altLabel "山岳"@ja ;
+    rdfs:comment "周囲の地形より高く突出した地形。エベレスト・富士山・アルプスなど。"@ja ;
+    rdfs:comment "A landform that rises prominently above its surroundings, including Everest, Mt. Fuji, and the Alps."@en ;
+    skos:notation "SHINRA_0000611" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:River
+    a owl:Class ; rdfs:subClassOf shinra:WaterBody ;
+    rdfs:label "河川"@ja ; rdfs:label "River"@en ;
+    skos:altLabel "川"@ja ;
+    rdfs:comment "高所から低所へ流れる自然の水流。アマゾン川・ナイル川・ライン川など。"@ja ;
+    rdfs:comment "A natural flowing watercourse from higher to lower elevations, including the Amazon, Nile, and Rhine rivers."@en ;
+    skos:notation "SHINRA_0000612" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Lake
+    a owl:Class ; rdfs:subClassOf shinra:WaterBody ;
+    rdfs:label "湖"@ja ; rdfs:label "Lake"@en ;
+    rdfs:comment "陸地に囲まれた静水の水域。カスピ海・バイカル湖・琵琶湖など。"@ja ;
+    rdfs:comment "A body of still water surrounded by land, including the Caspian Sea, Lake Baikal, and Lake Biwa."@en ;
+    skos:notation "SHINRA_0000613" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Ocean
+    a owl:Class ; rdfs:subClassOf shinra:WaterBody ;
+    rdfs:label "海洋"@ja ; rdfs:label "Ocean"@en ;
+    skos:altLabel "大洋"@ja ;
+    rdfs:comment "地球の表面を覆う大規模な塩水域。太平洋・大西洋・インド洋・北極海・南極海。"@ja ;
+    rdfs:comment "A large body of saline water covering Earth's surface, including the Pacific, Atlantic, Indian, Arctic, and Antarctic Oceans."@en ;
+    skos:notation "SHINRA_0000614" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Desert
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "砂漠"@ja ; rdfs:label "Desert"@en ;
+    rdfs:comment "年間降水量が極めて少ない乾燥地帯。サハラ砂漠・ゴビ砂漠・アタカマ砂漠など。"@ja ;
+    rdfs:comment "An arid region with very low annual precipitation, including the Sahara, Gobi, and Atacama deserts."@en ;
+    skos:notation "SHINRA_0000615" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Island
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "島"@ja ; rdfs:label "Island"@en ;
+    skos:altLabel "島嶼"@ja ;
+    rdfs:comment "水に囲まれた陸地。本州・グリーンランド・マダガスカル・ハワイ諸島など。"@ja ;
+    rdfs:comment "A landmass surrounded by water, including Honshu, Greenland, Madagascar, and the Hawaiian Islands."@en ;
+    skos:notation "SHINRA_0000616" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 人工空間 ─────────────────────────────────────────────────────
+
+shinra:UrbanArea
+    a owl:Class ; rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label "都市圏"@ja ; rdfs:label "Urban Area"@en ;
+    skos:altLabel "都市域"@ja ;
+    rdfs:comment "高密度な人口・建築・経済活動が集積した地域。大都市圏・メガシティ・コナーベーションなど。"@ja ;
+    rdfs:comment "A region with high-density population, built environment, and economic activity, including metropolitan areas, megacities, and conurbations."@en ;
+    skos:notation "SHINRA_0000621" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Port
+    a owl:Class ; rdfs:subClassOf shinra:Facility ;
+    rdfs:label "港湾"@ja ; rdfs:label "Port"@en ;
+    skos:altLabel "港"@ja ;
+    rdfs:comment "船舶の入出港・荷役・旅客乗降のための施設。神戸港・ロッテルダム港・シンガポール港など。"@ja ;
+    rdfs:comment "A facility for the arrival, departure, and handling of ships and passengers, including the ports of Kobe, Rotterdam, and Singapore."@en ;
+    skos:notation "SHINRA_0000622" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Airport
+    a owl:Class ; rdfs:subClassOf shinra:Facility ;
+    rdfs:label "空港"@ja ; rdfs:label "Airport"@en ;
+    rdfs:comment "航空機の離着陸・旅客・貨物輸送のための施設。羽田空港・ヒースロー空港・ドバイ空港など。"@ja ;
+    rdfs:comment "A facility for aircraft takeoff, landing, and handling of passengers and cargo, including Haneda, Heathrow, and Dubai airports."@en ;
+    skos:notation "SHINRA_0000623" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:NationalPark
+    a owl:Class ; rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label "国立公園"@ja ; rdfs:label "National Park"@en ;
+    rdfs:comment "国家が自然・景観保護のために指定した公有地。イエローストーン・富士箱根伊豆・屋久島など。"@ja ;
+    rdfs:comment "A nationally designated area for protecting nature and landscape, including Yellowstone, Fuji-Hakone-Izu, and Yakushima."@en ;
+    skos:notation "SHINRA_0000624" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 地理プロパティ ────────────────────────────────────────────────
+
+shinra:hasLatitude
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "緯度"@ja ; rdfs:label "latitude"@en ;
+    rdfs:comment "地点の緯度。十進数度数で表す（例: 35.6762）。"@ja ;
+    skos:notation "SHINRA_D000401" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasLongitude
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "経度"@ja ; rdfs:label "longitude"@en ;
+    rdfs:comment "地点の経度。十進数度数で表す（例: 139.6503）。"@ja ;
+    skos:notation "SHINRA_D000402" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasElevation
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "標高"@ja ; rdfs:label "elevation"@en ;
+    rdfs:comment "海面を基準とした地点の高度。単位はメートル(m)。"@ja ;
+    skos:notation "SHINRA_D000403" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasArea
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "面積"@ja ; rdfs:label "area"@en ;
+    rdfs:comment "地域・国家・土地の面積。単位は平方キロメートル(km²)。"@ja ;
+    skos:notation "SHINRA_D000404" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasISOCountryCode
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Country ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "ISO国コード"@ja ; rdfs:label "ISO country code"@en ;
+    rdfs:comment "国家に付与されたISO 3166-1 alpha-2コード（例: JP, US, CN）。"@ja ;
+    skos:notation "SHINRA_D000405" ; dcterms:created "2026-05-12"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:japan-001
+    a shinra:Country ;
+    rdfs:label "日本"@ja ; rdfs:label "Japan"@en ;
+    shinra:wikidataId "Q17" ;
+    shinra:hasISOCountryCode "JP" ;
+    skos:notation "SHINRA_I000070" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:tokyo-001
+    a shinra:Capital ;
+    rdfs:label "東京"@ja ; rdfs:label "Tokyo"@en ;
+    shinra:wikidataId "Q1490" ;
+    shinra:hasLatitude 35.6762 ;
+    shinra:hasLongitude 139.6503 ;
+    skos:notation "SHINRA_I000071" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:mt-fuji-001
+    a shinra:Mountain ;
+    rdfs:label "富士山"@ja ; rdfs:label "Mount Fuji"@en ;
+    shinra:wikidataId "Q39231" ;
+    shinra:hasElevation 3776.24 ;
+    skos:notation "SHINRA_I000072" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:pacific-ocean-001
+    a shinra:Ocean ;
+    rdfs:label "太平洋"@ja ; rdfs:label "Pacific Ocean"@en ;
+    shinra:wikidataId "Q98" ;
+    skos:notation "SHINRA_I000073" ; dcterms:created "2026-05-12"^^xsd:date .
+
+shinra-data:sahara-001
+    a shinra:Desert ;
+    rdfs:label "サハラ砂漠"@ja ; rdfs:label "Sahara Desert"@en ;
+    shinra:wikidataId "Q82070" ;
+    skos:notation "SHINRA_I000074" ; dcterms:created "2026-05-12"^^xsd:date .
