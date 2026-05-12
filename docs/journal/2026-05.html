@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年5月 ジャーナル — 神羅万象オントロジー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@600;800&display=swap');
+:root{--bg:#0c0f18;--bg2:#131724;--bg3:#1a1f30;--bg4:#212640;--border:#252c45;--text:#dde3f0;--muted:#7a869e;--accent:#5b8dee;--green:#10b981;--amber:#f59e0b;--red:#f04f59;--purple:#8b5cf6}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.75}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+#sb{width:220px;min-width:220px;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;padding:0 0 40px}
+.sb-head{padding:22px 18px 18px;border-bottom:1px solid var(--border)}
+.sb-label{font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.sb-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+.sb-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.sb-back{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-top:6px}
+.sb-back:hover{color:var(--accent)}
+.sb-group{margin-top:6px}.sb-group-label{font-size:9.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);padding:10px 18px 3px}
+.sb-link{display:block;padding:6px 18px;font-size:12px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .15s}
+.sb-link:hover{color:var(--text);background:var(--bg3)}.sb-link.active{color:var(--accent);border-left-color:var(--accent);background:rgba(91,141,238,.06)}
+#main{margin-left:220px;flex:1;max-width:900px;padding:52px 52px 100px}
+.sec{margin-bottom:64px;scroll-margin-top:36px}
+.sec-hd{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.sec-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sec-title{font-size:19px;font-weight:700}
+.page-title{margin-bottom:40px}
+.page-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.page-h1{font-size:26px;font-weight:700;margin-bottom:8px}
+.page-meta{color:var(--muted);font-size:13px}
+
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg3)}
+td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+tr:hover td{background:rgba(255,255,255,.02)}
+
+.klass-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.klass-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.klass-id{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:4px}
+.klass-name{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:3px}
+.klass-label{font-size:12px;color:var(--text);margin-bottom:4px}
+.klass-parent{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace}
+
+.decision-list{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.decision{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.decision-q{font-size:13px;font-weight:700;color:var(--amber);margin-bottom:6px}
+.decision-a{font-size:13px;color:var(--text);margin-bottom:4px}
+.decision-r{font-size:12px;color:var(--muted)}
+
+.letter{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:24px 28px}
+.letter-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.letter ol{padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.letter li{color:var(--muted);font-size:13px;line-height:1.7}
+.letter li strong{color:var(--text)}
+
+.checklist{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.checklist li{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+.check{width:18px;height:18px;border-radius:4px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px}
+.check.done{background:var(--green);border-color:var(--green);color:#fff}
+.check.pending{border-color:var(--border)}
+
+p{margin-bottom:14px;color:var(--muted)}strong{color:var(--text)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav id="sb">
+  <div class="sb-head">
+    <div class="sb-label">ジャーナル</div>
+    <div class="sb-title">2026年5月</div>
+    <div class="sb-sub">開始月 · Phase 0</div>
+    <a class="sb-back" href="../../README.html">← プロジェクト概要へ</a>
+  </div>
+  <div class="sb-group">
+    <div class="sb-group-label">目次</div>
+    <a class="sb-link active" href="#done">今月やったこと</a>
+    <a class="sb-link" href="#decisions">確定した主要決断</a>
+    <a class="sb-link" href="#classes">最初の10クラス</a>
+    <a class="sb-link" href="#properties">最初のプロパティ</a>
+    <a class="sb-link" href="#issues">悩んだこと</a>
+    <a class="sb-link" href="#next">来月の予定</a>
+    <a class="sb-link" href="#letter">3ヶ月後の自分へ</a>
+  </div>
+</nav>
+<main id="main">
+  <div class="page-title">
+    <div class="page-label">Shinra Ontology · 月次ジャーナル</div>
+    <div class="page-h1">2026年5月 — プロジェクト開始月</div>
+    <div class="page-meta">Phase 0（設計確定）· 開始日: 2026-05-12</div>
+  </div>
+
+  <section class="sec" id="done">
+    <div class="sec-hd"><span class="sec-num">01</span><span class="sec-title">今月やったこと</span></div>
+    <ul class="checklist">
+      <li><span class="check done">✓</span><span>リポジトリ構造（src / imports / tests / docs / releases）を作成</span></li>
+      <li><span class="check done">✓</span><span>README.md / README.html — プロジェクト憲章</span></li>
+      <li><span class="check done">✓</span><span>docs/URI-policy.md / HTML — URI 設計戦略を確定・凍結</span></li>
+      <li><span class="check done">✓</span><span>docs/naming-conventions.md / HTML — 命名規約を確定・凍結</span></li>
+      <li><span class="check done">✓</span><span>src/shinra-core.ttl — BFO 2020 import + 最初の10クラス + 4プロパティ</span></li>
+      <li><span class="check done">✓</span><span>LICENSE-CC（CC-BY 4.0）/ LICENSE-APACHE（Apache 2.0）配置</span></li>
+      <li><span class="check done">✓</span><span>CHANGELOG.md 開始</span></li>
+      <li><span class="check pending"></span><span>w3id.org への PR 提出（来月に実施）</span></li>
+      <li><span class="check pending"></span><span>ROBOT / Oxigraph / Protégé のインストール（来月に実施）</span></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="decisions">
+    <div class="sec-hd"><span class="sec-num">02</span><span class="sec-title">確定した主要決断</span></div>
+    <table>
+      <thead><tr><th>決断</th><th>結論</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>上位オントロジー</td><td>BFO 2020</td><td>ISO/IEC 21838-2 標準・37クラスのミニマル設計・650+実績</td></tr>
+        <tr><td>永続URI</td><td>w3id.org 経由</td><td>個人ドメイン廃止リスクを回避</td></tr>
+        <tr><td>編集ツール（主）</td><td>VS Code + Turtle拡張</td><td>テキストファースト・Git連携・diff が取りやすい</td></tr>
+        <tr><td>ストレージ</td><td>Oxigraph</td><td>個人用に最軽量・SPARQL 1.1 完全対応</td></tr>
+        <tr><td>推論器</td><td>ELK（日常）/ HermiT（リリース前）</td><td>ELK は高速・HermiT は OWL 2 DL 完全</td></tr>
+        <tr><td>ドメイン積み順</td><td>具体→抽象（時空・物理→生物・人間→文化・抽象）</td><td>下から検証可能</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec" id="classes">
+    <div class="sec-hd"><span class="sec-num">03</span><span class="sec-title">最初の10クラス</span></div>
+    <div class="klass-grid">
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000001</div>
+        <div class="klass-name">MaterialEntity</div>
+        <div class="klass-label">物質的実体</div>
+        <div class="klass-parent">⊑ bfo:0000030 (object)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000002</div>
+        <div class="klass-name">ImmaterialEntity</div>
+        <div class="klass-label">非物質的実体</div>
+        <div class="klass-parent">⊑ bfo:0000141 (immaterial entity)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000003</div>
+        <div class="klass-name">Site</div>
+        <div class="klass-label">場所</div>
+        <div class="klass-parent">⊑ bfo:0000029 (site)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000004</div>
+        <div class="klass-name">InformationContentEntity</div>
+        <div class="klass-label">情報内容実体</div>
+        <div class="klass-parent">⊑ bfo:0000017 (generically dependent continuant)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000005</div>
+        <div class="klass-name">ConceptualEntity</div>
+        <div class="klass-label">概念的実体</div>
+        <div class="klass-parent">⊑ bfo:0000017 (generically dependent continuant)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000006</div>
+        <div class="klass-name">Quality</div>
+        <div class="klass-label">質</div>
+        <div class="klass-parent">⊑ bfo:0000019 (quality)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000007</div>
+        <div class="klass-name">Role</div>
+        <div class="klass-label">役割</div>
+        <div class="klass-parent">⊑ bfo:0000023 (role)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000008</div>
+        <div class="klass-name">Disposition</div>
+        <div class="klass-label">傾向性</div>
+        <div class="klass-parent">⊑ bfo:0000016 (disposition)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000009</div>
+        <div class="klass-name">Process</div>
+        <div class="klass-label">過程</div>
+        <div class="klass-parent">⊑ bfo:0000015 (process)</div>
+      </div>
+      <div class="klass-card">
+        <div class="klass-id">SHINRA_0000010</div>
+        <div class="klass-name">TemporalRegion</div>
+        <div class="klass-label">時間領域</div>
+        <div class="klass-parent">⊑ bfo:0000108 (temporal region)</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="properties">
+    <div class="sec-hd"><span class="sec-num">04</span><span class="sec-title">最初の4プロパティ</span></div>
+    <table>
+      <thead><tr><th>ID</th><th>プロパティ名</th><th>日本語ラベル</th></tr></thead>
+      <tbody>
+        <tr><td>SHINRA_P000001</td><td>aboutness</td><td>〜について</td></tr>
+        <tr><td>SHINRA_P000002</td><td>hasRole</td><td>役割を持つ</td></tr>
+        <tr><td>SHINRA_P000003</td><td>roleOf</td><td>〜の役割</td></tr>
+        <tr><td>SHINRA_P000004</td><td>realizes</td><td>を実現する</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec" id="issues">
+    <div class="sec-hd"><span class="sec-num">05</span><span class="sec-title">悩んだこと・保留にしたこと</span></div>
+    <div class="decision-list">
+      <div class="decision">
+        <div class="decision-q">ConceptualEntity の位置づけ</div>
+        <div class="decision-a">→ bfo:0000017 (generically dependent continuant) の下に置くことに決定</div>
+        <div class="decision-r">BFO は「概念は心的表象であり generically dependent continuant として扱える」という立場。プラトン的イデアとしたい衝動はあるが、BFO 公式の立場に従い再解釈しない。</div>
+      </div>
+      <div class="decision">
+        <div class="decision-q">SpatiotemporalRegion を今月作るか</div>
+        <div class="decision-a">→ Phase 3（時空ドメイン）に先送り</div>
+        <div class="decision-r">今月は TemporalRegion のみ定義。時空間領域は時空ドメイン整備時に作る。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="next">
+    <div class="sec-hd"><span class="sec-num">06</span><span class="sec-title">来月の予定（2026年6月）</span></div>
+    <ul class="checklist">
+      <li><span class="check pending"></span><span>w3id.org への PR 提出・マージ確認</span></li>
+      <li><span class="check pending"></span><span>Oxigraph CLI / ROBOT (JAR) / Protégé 5.6+ のインストール</span></li>
+      <li><span class="check pending"></span><span>ROBOT ELK で shinra-core.ttl の矛盾チェック（exit 0 を確認）</span></li>
+      <li><span class="check pending"></span><span>プロパティを20個へ拡張（hasPart / partOf / participatesIn / locatedAt / occursAt 等）</span></li>
+      <li><span class="check pending"></span><span>各クラスに典型インスタンスを3件ずつ追加</span></li>
+      <li><span class="check pending"></span><span>WebVOWL で可視化スクリーンショットを docs/ に保存</span></li>
+      <li><span class="check pending"></span><span>v0.1.0 リリース候補の準備</span></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="letter">
+    <div class="sec-hd"><span class="sec-num">07</span><span class="sec-title">3ヶ月後の自分へ</span></div>
+    <div class="letter">
+      <div class="letter-title">To my future self — 2026年8月に読んでいるあなたへ</div>
+      <ol>
+        <li><strong>BFO を信じる</strong> — 「なぜ BFO はこう分類するのか」という哲学的議論に深入りしない。BFO 公式が言っている通りに従う。再解釈に費やす時間は全部クラス追加に使え。</li>
+        <li><strong>インスタンス3個でDone</strong> — クラスを完璧に定義しようとしない。典型例3個入れたら次へ進む。それだけで十分。</li>
+        <li><strong>Wikidata は参照するが飲まれない</strong> — クラス定義後は Wikidata で対応例を3つ確認して終わり。Wikidata の階層構造を自分のオントロジーに取り込まない。</li>
+        <li><strong>ツールは凍結</strong> — Phase 1 終了時点でツールチェーンは固定。新しいツールに浮気しない。</li>
+        <li><strong>月次リリースを守る</strong> — 完璧でなくても毎月タグを打つ。それが唯一のリズムで、継続の証拠になる。</li>
+      </ol>
+    </div>
+  </section>
+</main>
+<script>
+const links=document.querySelectorAll('.sb-link');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const t=document.querySelector(`.sb-link[href="#${e.target.id}"]`);if(t)t.classList.add('active')}})},{threshold:0.3});
+document.querySelectorAll('.sec[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

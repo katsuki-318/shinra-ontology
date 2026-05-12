@@ -1,0 +1,20 @@
+# ツール
+tools/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/settings.json
+*.swp
+
+# Oxigraph データ
+data/

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>神羅万象オントロジー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@600;800&display=swap');
+
+:root {
+  --bg:     #0c0f18;
+  --bg2:    #131724;
+  --bg3:    #1a1f30;
+  --bg4:    #212640;
+  --border: #252c45;
+  --text:   #dde3f0;
+  --muted:  #7a869e;
+  --accent: #5b8dee;
+  --green:  #10b981;
+  --amber:  #f59e0b;
+  --red:    #f04f59;
+  --purple: #8b5cf6;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  display:flex;
+  min-height:100vh;
+  font-size:14px;
+  line-height:1.75;
+}
+
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+#sb{
+  width:220px;min-width:220px;
+  background:var(--bg2);
+  border-right:1px solid var(--border);
+  position:fixed;top:0;left:0;bottom:0;
+  overflow-y:auto;z-index:100;
+  padding:0 0 40px;
+}
+.sb-head{padding:22px 18px 18px;border-bottom:1px solid var(--border)}
+.sb-label{font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.sb-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+.sb-sub{font-size:11px;color:var(--muted);margin-top:3px}
+.sb-group{margin-top:6px}
+.sb-group-label{font-size:9.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);padding:10px 18px 3px}
+.sb-link{display:block;padding:6px 18px;font-size:12px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .15s}
+.sb-link:hover{color:var(--text);background:var(--bg3)}
+.sb-link.active{color:var(--accent);border-left-color:var(--accent);background:rgba(91,141,238,.06)}
+
+#main{margin-left:220px;flex:1;max-width:940px;padding:52px 52px 100px}
+
+.sec{margin-bottom:72px;scroll-margin-top:36px}
+.sec-hd{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.sec-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sec-title{font-size:20px;font-weight:700}
+
+/* Hero */
+.hero{margin-bottom:64px;padding:40px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(91,141,238,.15) 0%,transparent 70%);pointer-events:none}
+.hero-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.hero-title{font-size:28px;font-weight:700;margin-bottom:8px;line-height:1.3}
+.hero-sub{color:var(--muted);font-size:14px;max-width:500px;line-height:1.7;margin-bottom:20px}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;border:1px solid}
+.badge-blue{color:var(--accent);border-color:rgba(91,141,238,.35);background:rgba(91,141,238,.08)}
+.badge-green{color:var(--green);border-color:rgba(16,185,129,.35);background:rgba(16,185,129,.08)}
+.badge-amber{color:var(--amber);border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.08)}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color .2s}
+.card:hover{border-color:var(--accent)}
+.card-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card-title{font-size:15px;font-weight:700;margin-bottom:6px}
+.card-body{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg3)}
+td:first-child{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:12px}
+tr:hover td{background:rgba(255,255,255,.02)}
+
+/* Code block */
+.code-block{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;overflow-x:auto;white-space:pre}
+.code-block .c{color:var(--muted)}
+.code-block .kw{color:var(--purple)}
+.code-block .cls{color:var(--accent)}
+.code-block .str{color:var(--green)}
+
+/* Phase roadmap */
+.phase-list{display:flex;flex-direction:column;gap:12px}
+.phase-item{display:grid;grid-template-columns:36px 1fr auto;gap:14px;align-items:start;padding:16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px}
+.phase-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;background:var(--bg4);color:var(--accent);border:1px solid var(--border);flex-shrink:0}
+.phase-content{}
+.phase-title{font-weight:700;font-size:14px;margin-bottom:3px}
+.phase-desc{font-size:12.5px;color:var(--muted)}
+.phase-range{font-size:11px;color:var(--muted);white-space:nowrap;padding-top:2px}
+
+p{margin-bottom:12px;color:var(--muted)}
+strong{color:var(--text)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<nav id="sb">
+  <div class="sb-head">
+    <div class="sb-label">Ontology Project</div>
+    <div class="sb-title">神羅万象<br>オントロジー</div>
+    <div class="sb-sub">v0.0.1 · 2026-05-12</div>
+  </div>
+  <div class="sb-group">
+    <div class="sb-group-label">概要</div>
+    <a class="sb-link active" href="#overview">プロジェクト概要</a>
+    <a class="sb-link" href="#upper">上位オントロジー</a>
+    <a class="sb-link" href="#structure">リポジトリ構造</a>
+    <a class="sb-link" href="#roadmap">ロードマップ</a>
+    <a class="sb-link" href="#tools">ツールチェーン</a>
+    <a class="sb-link" href="#docs">ドキュメント</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- Hero -->
+  <div class="hero" id="overview">
+    <div class="hero-label">Shinra Ontology · 個人プロジェクト</div>
+    <div class="hero-title">神羅万象を<br>セマンティックレイヤーで整理する</div>
+    <div class="hero-sub">
+      公開情報をもとに、世の中に存在するあらゆる事物・現象・概念を
+      RDF/OWL オントロジーとして外在化する。完璧な網羅ではなく、
+      自分の脳内モデルを段階的に明示化するプロセス。
+    </div>
+    <div class="badge-row">
+      <span class="badge badge-blue">BFO 2020 準拠</span>
+      <span class="badge badge-green">CC-BY 4.0</span>
+      <span class="badge badge-amber">開発中 Phase 0</span>
+    </div>
+  </div>
+
+  <!-- 目的 -->
+  <section class="sec">
+    <div class="sec-hd">
+      <span class="sec-num">01</span>
+      <span class="sec-title">目的・スコープ・非ゴール</span>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">目的</div>
+        <div class="card-title">脳内モデルの外在化</div>
+        <div class="card-body">「世の中にある事物・現象・概念のすべて」を公開情報を根拠として推論可能な RDF/OWL オントロジーとして整理する。知的探索のツールとして使う。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">スコープ</div>
+        <div class="card-title">あらゆる存在領域</div>
+        <div class="card-body">時空・物理・生物・人間・社会・文化・技術・抽象概念。日本語を主ラベル、英語を必須サブラベルとして両方記述。根拠は Wikipedia / Wikidata / 政府統計 / 学術論文等。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">非ゴール</div>
+        <div class="card-title">やらないこと</div>
+        <div class="card-body">Wikidata の全データ取り込みは目指さない。ビジネス用途・商用配布を目的としない。特定ドメインに閉じた専門オントロジーにしない。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">設計哲学</div>
+        <div class="card-title">整合性 > 網羅性</div>
+        <div class="card-body">完璧より進化可能性。抽象→具体ではなく具体→抽象の順でドメインを積む。インスタンス 3 個入れたら Done をルールとし、完璧主義を防ぐ。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 上位オントロジー -->
+  <section class="sec" id="upper">
+    <div class="sec-hd">
+      <span class="sec-num">02</span>
+      <span class="sec-title">上位オントロジー：BFO 2020</span>
+    </div>
+    <p><strong>BFO 2020 (ISO/IEC 21838-2:2021)</strong> を採用。37 クラスからなるミニマルな骨格に独自の中位クラス・ドメインクラスを積み上げる。採用根拠：国際標準・37 クラスのミニマル設計・650+ プロジェクトでの採用実績・継続物/生起物の二項分割が直感的。</p>
+    <div class="code-block"><span class="cls">bfo:Entity</span>
+├── <span class="cls">bfo:Continuant</span>          <span class="c">← 存在し続けるもの</span>
+│   ├── <span class="cls">bfo:IndependentContinuant</span>
+│   │   ├── <span class="cls">shinra:MaterialEntity</span>        <span class="c">物体・生物・物質</span>
+│   │   ├── <span class="cls">shinra:ImmaterialEntity</span>      <span class="c">空間領域・境界</span>
+│   │   └── <span class="cls">shinra:Site</span>                  <span class="c">場所・サイト</span>
+│   ├── <span class="cls">bfo:GenericallyDependentContinuant</span>
+│   │   ├── <span class="cls">shinra:InformationContentEntity</span>  <span class="c">テキスト・画像</span>
+│   │   └── <span class="cls">shinra:ConceptualEntity</span>          <span class="c">概念・観念・価値</span>
+│   └── <span class="cls">bfo:SpecificallyDependentContinuant</span>
+│       ├── <span class="cls">shinra:Quality</span>               <span class="c">質（色・温度等）</span>
+│       ├── <span class="cls">shinra:Role</span>                  <span class="c">役割</span>
+│       └── <span class="cls">shinra:Disposition</span>           <span class="c">傾向性・能力</span>
+└── <span class="cls">bfo:Occurrent</span>           <span class="c">← 起こること</span>
+    ├── <span class="cls">shinra:Process</span>
+    │   ├── <span class="cls">shinra:NaturalProcess</span>        <span class="c">自然現象</span>
+    │   ├── <span class="cls">shinra:Action</span>                <span class="c">行為（意図あり）</span>
+    │   └── <span class="cls">shinra:SocialProcess</span>         <span class="c">社会的過程</span>
+    ├── <span class="cls">shinra:TemporalRegion</span>        <span class="c">OWL-Time へ橋渡し</span>
+    └── <span class="cls">shinra:SpatiotemporalRegion</span></div>
+  </section>
+
+  <!-- リポジトリ構造 -->
+  <section class="sec" id="structure">
+    <div class="sec-hd">
+      <span class="sec-num">03</span>
+      <span class="sec-title">リポジトリ構造</span>
+    </div>
+    <div class="code-block">shinra-ontology/
+├── src/                    <span class="c">主オントロジーファイル（Turtle）</span>
+│   ├── <span class="cls">shinra-core.ttl</span>     <span class="c">上位骨格（BFO ブリッジクラス）</span>
+│   ├── <span class="cls">shinra-mid.ttl</span>      <span class="c">中位骨格（8カテゴリ）</span>
+│   └── modules/            <span class="c">ドメイン別モジュール</span>
+├── imports/                <span class="c">外部オントロジーのローカルミラー</span>
+│   └── bfo-2020.owl
+├── tests/                  <span class="c">SHACL / SPARQL テスト</span>
+├── docs/
+│   ├── URI-policy.md
+│   ├── naming-conventions.md
+│   └── journal/            <span class="c">月次進捗ジャーナル</span>
+└── releases/               <span class="c">バージョン付きスナップショット</span></div>
+  </section>
+
+  <!-- ロードマップ -->
+  <section class="sec" id="roadmap">
+    <div class="sec-hd">
+      <span class="sec-num">04</span>
+      <span class="sec-title">構築ロードマップ（7フェーズ）</span>
+    </div>
+    <div class="phase-list">
+      <div class="phase-item">
+        <div class="phase-num">0</div>
+        <div class="phase-content">
+          <div class="phase-title">設計確定</div>
+          <div class="phase-desc">URI・憲章・ツール選定の凍結。3ヶ月後の自分が判断を再現できるレベルで文書化。</div>
+        </div>
+        <div class="phase-range">Day 0–14</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">1</div>
+        <div class="phase-content">
+          <div class="phase-title">上位骨格</div>
+          <div class="phase-desc">BFO 直下にブリッジクラスを構築（自前 10–20 クラス）。ELK で矛盾なく classify できることを確認。</div>
+        </div>
+        <div class="phase-range">Day 15–45</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">2</div>
+        <div class="phase-content">
+          <div class="phase-title">中位骨格</div>
+          <div class="phase-desc">時間・空間・物理・社会・情報・行為・属性・出来事の 8 カテゴリを骨格化（50–80 クラス）。OWL-Time / QUDT / PROV-O を import。</div>
+        </div>
+        <div class="phase-range">Day 46–120</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">3</div>
+        <div class="phase-content">
+          <div class="phase-title">時空・物理・情報</div>
+          <div class="phase-desc">論争の少ないドメインから着手して足腰を作る。具体例 100 件で推論が破綻しないことを確認。（累計 200–400 クラス）</div>
+        </div>
+        <div class="phase-range">Day 121–240</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">4</div>
+        <div class="phase-content">
+          <div class="phase-title">生物・人間・社会</div>
+          <div class="phase-desc">Wikidata 接続を本格化。歴史人物・国家・組織の上位型付けが可能になることを確認。（累計 400–800 クラス）</div>
+        </div>
+        <div class="phase-range">Day 241–450</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">5</div>
+        <div class="phase-content">
+          <div class="phase-title">文化・技術・抽象概念</div>
+          <div class="phase-desc">論争的・メタなドメイン。「正義」「美」「公理系」が BFO の generically dependent continuant 下に位置付けられることを確認。（累計 1500–2500 クラス）</div>
+        </div>
+        <div class="phase-range">Day 451–720</div>
+      </div>
+      <div class="phase-item">
+        <div class="phase-num">6</div>
+        <div class="phase-content">
+          <div class="phase-title">統合・自己記述</div>
+          <div class="phase-desc">「神羅万象」を自オントロジーが自己定義できる。メタオントロジーで全体を閉じる。</div>
+        </div>
+        <div class="phase-range">Day 721〜</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ツールチェーン -->
+  <section class="sec" id="tools">
+    <div class="sec-hd">
+      <span class="sec-num">05</span>
+      <span class="sec-title">ツールチェーン</span>
+    </div>
+    <table>
+      <thead><tr><th>役割</th><th>ツール</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td>編集（主）</td><td>VS Code + Turtle 拡張</td><td>テキストファースト・Git 連携・diff が取りやすい</td></tr>
+        <tr><td>編集（副）</td><td>Protégé 5.6+</td><td>DL 推論結果の可視化検証用</td></tr>
+        <tr><td>CLI ワークフロー</td><td>ROBOT</td><td>merge / reason / extract / report が一発。OBO Foundry 標準</td></tr>
+        <tr><td>ストレージ</td><td>Oxigraph</td><td>Rust 製・単一バイナリ・個人用に最軽量</td></tr>
+        <tr><td>推論</td><td>ELK / HermiT</td><td>ELK は高速（日常）、HermiT は OWL 2 DL 完全（リリース前）</td></tr>
+        <tr><td>バリデーション</td><td>SHACL + pySHACL</td><td>データ品質ガード</td></tr>
+        <tr><td>可視化</td><td>WebVOWL</td><td>ブラウザのみで動く</td></tr>
+        <tr><td>ホスティング</td><td>GitHub + GitHub Pages + w3id.org</td><td>永続 URI・無料・Git 連動</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ドキュメント -->
+  <section class="sec" id="docs">
+    <div class="sec-hd">
+      <span class="sec-num">06</span>
+      <span class="sec-title">詳細ドキュメント</span>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">設計文書</div>
+        <div class="card-title"><a href="docs/URI-policy.html">URI 設計戦略</a></div>
+        <div class="card-body">永続 URI の取得方針、名前空間の分離設計、バージョニング戦略を記述。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">設計文書</div>
+        <div class="card-title"><a href="docs/naming-conventions.html">命名規約</a></div>
+        <div class="card-body">クラス・プロパティ・インスタンスの命名規則と多言語ラベル方針を記述。</div>
+      </div>
+      <div class="card">
+        <div class="card-label">ジャーナル</div>
+        <div class="card-title"><a href="docs/journal/2026-05.html">2026年5月 — 開始月</a></div>
+        <div class="card-body">プロジェクト開始時の設計判断・ツール選定・最初のクラス定義の記録。</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+const links = document.querySelectorAll('.sb-link');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      links.forEach(l => l.classList.remove('active'));
+      const t = document.querySelector(`.sb-link[href="#${e.target.id}"]`);
+      if(t) t.classList.add('active');
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('.sec[id], .hero[id]').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

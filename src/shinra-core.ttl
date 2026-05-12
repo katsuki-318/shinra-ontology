@@ -1,0 +1,966 @@
+# ===========================================================================
+# shinra-core.ttl
+# 神羅万象オントロジー — 上位骨格 + 第1層ドメインクラス
+#
+# BFO 2020 (ISO/IEC 21838-2:2021) をインポートし、
+# 10の中位クラス + 40の第1層子クラス + 20プロパティを定義する。
+#
+# バージョン : 0.1.0
+# 作成日     : 2026-05-12
+# ライセンス : CC-BY 4.0 (文書・語彙) / Apache 2.0 (コード)
+#
+# BFO 2020 クラス ID 早見表（このファイルで参照するもの）:
+#   BFO_0000001 = entity
+#   BFO_0000002 = continuant
+#   BFO_0000003 = occurrent
+#   BFO_0000004 = independent continuant
+#   BFO_0000006 = spatial region
+#   BFO_0000008 = temporal region          ← ★ 0000108 は誤り
+#   BFO_0000015 = process
+#   BFO_0000016 = disposition
+#   BFO_0000017 = realizable entity        ← role/disposition の親
+#   BFO_0000019 = quality
+#   BFO_0000020 = specifically dependent continuant
+#   BFO_0000023 = role
+#   BFO_0000027 = object aggregate
+#   BFO_0000029 = site
+#   BFO_0000030 = object
+#   BFO_0000031 = generically dependent continuant  ← ★ 0000017 は誤り
+#   BFO_0000034 = function
+#   BFO_0000038 = one-dimensional temporal region
+#   BFO_0000040 = material entity          ← object/fiat object part/object aggregate の親
+#   BFO_0000141 = immaterial entity
+#   BFO_0000148 = zero-dimensional temporal region  (= temporal instant)
+#   BFO_0000182 = history
+#   BFO_0000202 = temporal interval
+#   BFO_0000203 = temporal instant
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix bfo:         <http://purl.obolibrary.org/obo/BFO_> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+
+# ---------------------------------------------------------------------------
+# オントロジーメタデータ
+# ---------------------------------------------------------------------------
+
+<https://w3id.org/shinra/ont/>
+    a owl:Ontology ;
+    owl:versionIRI    <https://w3id.org/shinra/ont/2026-05-12/> ;
+    owl:versionInfo   "0.1.0" ;
+    owl:imports       <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ;
+    dcterms:title     "神羅万象オントロジー"@ja ,
+                      "Shinra Ontology"@en ;
+    dcterms:description
+        "公開情報をもとに世の神羅万象をオントロジー／セマンティックレイヤーで整理する個人プロジェクト。BFO 2020 を上位オントロジーとして採用し、段階的にドメインクラスを積み上げる。"@ja ,
+        "A personal ontology project to organize all things in the world using public information, built on BFO 2020."@en ;
+    dcterms:created   "2026-05-12"^^xsd:date ;
+    dcterms:creator   shinra-data:katsuki-miwa-000001 ;
+    dcterms:license   <https://creativecommons.org/licenses/by/4.0/> .
+
+
+# ===========================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# A. 中位クラス（BFO 直下のブリッジ、10クラス）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ===========================================================================
+
+# A-1. MaterialEntity（物質的実体）⊑ bfo:material entity (BFO_0000040)
+shinra:MaterialEntity
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000040 ;
+    rdfs:label      "物質的実体"@ja ;
+    rdfs:label      "Material Entity"@en ;
+    skos:altLabel   "物理的対象"@ja ;
+    rdfs:comment    "空間的に位置を持ち独立して存在する物質的なもの。物体・生物・物質などを含む。"@ja ;
+    rdfs:comment    "A material entity existing independently in space, including objects, organisms, and substances."@en ;
+    skos:notation   "SHINRA_0000001" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-2. ImmaterialEntity（非物質的実体）⊑ bfo:immaterial entity (BFO_0000141)
+shinra:ImmaterialEntity
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000141 ;
+    rdfs:label      "非物質的実体"@ja ;
+    rdfs:label      "Immaterial Entity"@en ;
+    rdfs:comment    "物質を持たない独立継続物。空間領域・境界・void などを含む。"@ja ;
+    rdfs:comment    "An independent continuant without matter, such as spatial regions and boundaries."@en ;
+    skos:notation   "SHINRA_0000002" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-3. Site（場所）⊑ bfo:site (BFO_0000029)
+shinra:Site
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000029 ;
+    rdfs:label      "場所"@ja ;
+    rdfs:label      "Site"@en ;
+    skos:altLabel   "サイト"@ja ;
+    skos:altLabel   "location"@en ;
+    rdfs:comment    "物体が占有・移動できる空間的なサイト。地点・地域・施設などを含む。"@ja ;
+    rdfs:comment    "A site at or in which material entities are located, including places, regions, and facilities."@en ;
+    skos:notation   "SHINRA_0000003" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-4. InformationContentEntity（情報内容実体）⊑ bfo:generically dependent continuant (BFO_0000031)
+shinra:InformationContentEntity
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000031 ;
+    rdfs:label      "情報内容実体"@ja ;
+    rdfs:label      "Information Content Entity"@en ;
+    skos:altLabel   "情報実体"@ja ;
+    skos:altLabel   "ICE"@en ;
+    rdfs:comment    "情報内容を持つ一般的依存継続物。テキスト・画像・データセット・ソフトウェアなどを含む。"@ja ;
+    rdfs:comment    "A generically dependent continuant bearing information content, including texts, images, datasets, and software."@en ;
+    skos:notation   "SHINRA_0000004" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-5. ConceptualEntity（概念的実体）⊑ bfo:generically dependent continuant (BFO_0000031)
+shinra:ConceptualEntity
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000031 ;
+    rdfs:label      "概念的実体"@ja ;
+    rdfs:label      "Conceptual Entity"@en ;
+    skos:altLabel   "観念的実体"@ja ;
+    rdfs:comment    "概念・理論・価値・規範・信念など、心的・社会的文脈に依存する観念的実体。"@ja ;
+    rdfs:comment    "A generically dependent continuant representing concepts, theories, values, norms, and beliefs."@en ;
+    skos:notation   "SHINRA_0000005" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-6. Quality（質）⊑ bfo:quality (BFO_0000019)
+shinra:Quality
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000019 ;
+    rdfs:label      "質"@ja ;
+    rdfs:label      "Quality"@en ;
+    skos:altLabel   "属性"@ja ;
+    rdfs:comment    "物体に内在する性質。色・温度・質量・形状などを含む。"@ja ;
+    rdfs:comment    "A quality inhering in a material entity, such as color, temperature, or mass."@en ;
+    skos:notation   "SHINRA_0000006" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-7. Role（役割）⊑ bfo:role (BFO_0000023)
+shinra:Role
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000023 ;
+    rdfs:label      "役割"@ja ;
+    rdfs:label      "Role"@en ;
+    rdfs:comment    "担い手が持つ役割。社会的役割・機能的役割などを含む。"@ja ;
+    rdfs:comment    "A role inhering in a bearer and realized in processes, including social and functional roles."@en ;
+    skos:notation   "SHINRA_0000007" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-8. Disposition（傾向性）⊑ bfo:disposition (BFO_0000016)
+shinra:Disposition
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000016 ;
+    rdfs:label      "傾向性"@ja ;
+    rdfs:label      "Disposition"@en ;
+    skos:altLabel   "能力"@ja ;
+    rdfs:comment    "実現されうる潜在的性質。機能・能力・傾向などを含む。"@ja ;
+    rdfs:comment    "A specifically dependent continuant realized in a process under suitable conditions, including functions, capabilities."@en ;
+    skos:notation   "SHINRA_0000008" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-9. Process（過程）⊑ bfo:process (BFO_0000015)
+shinra:Process
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000015 ;
+    rdfs:label      "過程"@ja ;
+    rdfs:label      "Process"@en ;
+    skos:altLabel   "出来事"@ja ;
+    skos:altLabel   "event"@en ;
+    rdfs:comment    "時間的に展開する出来事。自然現象・行為・社会過程などを含む。"@ja ;
+    rdfs:comment    "An occurrent unfolding over time, including natural processes, actions, and social processes."@en ;
+    skos:notation   "SHINRA_0000009" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# A-10. TemporalRegion（時間領域）⊑ bfo:temporal region (BFO_0000008)
+shinra:TemporalRegion
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000008 ;
+    rdfs:label      "時間領域"@ja ;
+    rdfs:label      "Temporal Region"@en ;
+    skos:altLabel   "時間区間"@ja ;
+    rdfs:comment    "時間の区間または瞬間を表す。OWL-Time の時間表現へのブリッジとなる。"@ja ;
+    rdfs:comment    "A temporal region representing a time interval or instant, bridging to OWL-Time."@en ;
+    skos:notation   "SHINRA_0000010" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# B. 第1層子クラス（各中位クラスの直接サブクラス、40クラス）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+# B-1. MaterialEntity 配下（5クラス）
+# ---------------------------------------------------------------------------
+
+shinra:PhysicalObject
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "物体"@ja ;
+    rdfs:label      "Physical Object"@en ;
+    skos:altLabel   "物品"@ja ;
+    rdfs:comment    "離散的な物体。机・岩・車など。生物でも人工物でもない自然物も含む。"@ja ;
+    rdfs:comment    "A discrete physical object, including natural objects, not classified as organism or artifact."@en ;
+    skos:notation   "SHINRA_0000011" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Substance
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "物質"@ja ;
+    rdfs:label      "Substance"@en ;
+    skos:altLabel   "素材"@ja ;
+    rdfs:comment    "特定の形を持たない物質量。水・金属・空気など。化学的組成で特徴付けられる。"@ja ;
+    rdfs:comment    "A material entity without fixed shape, characterized by chemical composition, such as water, metal, or air."@en ;
+    skos:notation   "SHINRA_0000012" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Organism
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "生命体"@ja ;
+    rdfs:label      "Organism"@en ;
+    skos:altLabel   "生物"@ja ;
+    rdfs:comment    "生命を持つ物質的実体。植物・動物・微生物・菌類などを含む。"@ja ;
+    rdfs:comment    "A material entity that has life, including plants, animals, microorganisms, and fungi."@en ;
+    skos:notation   "SHINRA_0000013" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ArtifactualObject
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "人工物"@ja ;
+    rdfs:label      "Artifactual Object"@en ;
+    skos:altLabel   "製造物"@ja ;
+    rdfs:comment    "人間またはエージェントが意図的に作った物体。製品・建造物・道具など。"@ja ;
+    rdfs:comment    "A material entity intentionally created by an agent, including products, buildings, and tools."@en ;
+    skos:notation   "SHINRA_0000014" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:AstronomicalBody
+    a owl:Class ;
+    rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label      "天体"@ja ;
+    rdfs:label      "Astronomical Body"@en ;
+    skos:altLabel   "宇宙天体"@ja ;
+    rdfs:comment    "宇宙空間に存在する自然の物体。恒星・惑星・衛星・彗星・銀河など。"@ja ;
+    rdfs:comment    "A natural material object in space, including stars, planets, moons, comets, and galaxies."@en ;
+    skos:notation   "SHINRA_0000015" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-2. Site 配下（4クラス）
+# ---------------------------------------------------------------------------
+
+shinra:GeographicRegion
+    a owl:Class ;
+    rdfs:subClassOf shinra:Site ;
+    rdfs:label      "地理的地域"@ja ;
+    rdfs:label      "Geographic Region"@en ;
+    skos:altLabel   "地域"@ja ;
+    rdfs:comment    "地球上の地理的に定義された空間的領域。大陸・海洋・山岳など。"@ja ;
+    rdfs:comment    "A geographically defined spatial region on Earth, including continents, oceans, and mountain ranges."@en ;
+    skos:notation   "SHINRA_0000016" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:AdministrativeRegion
+    a owl:Class ;
+    rdfs:subClassOf shinra:Site ;
+    rdfs:label      "行政区域"@ja ;
+    rdfs:label      "Administrative Region"@en ;
+    skos:altLabel   "行政地域"@ja ;
+    rdfs:comment    "法律や社会的合意によって定められた行政的な空間的領域。国・都道府県・市区町村など。"@ja ;
+    rdfs:comment    "A spatially defined administrative unit established by law or social agreement, including countries, prefectures, and municipalities."@en ;
+    skos:notation   "SHINRA_0000017" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Facility
+    a owl:Class ;
+    rdfs:subClassOf shinra:Site ;
+    rdfs:label      "施設"@ja ;
+    rdfs:label      "Facility"@en ;
+    skos:altLabel   "設備"@ja ;
+    rdfs:comment    "特定の用途のために設けられた場所・設備。駅・病院・学校・工場など。"@ja ;
+    rdfs:comment    "A site established for a specific purpose, including stations, hospitals, schools, and factories."@en ;
+    skos:notation   "SHINRA_0000018" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:VirtualSpace
+    a owl:Class ;
+    rdfs:subClassOf shinra:Site ;
+    rdfs:label      "仮想空間"@ja ;
+    rdfs:label      "Virtual Space"@en ;
+    skos:altLabel   "サイバー空間"@ja ;
+    rdfs:comment    "コンピュータネットワーク上に存在する仮想的なサイト。ウェブサイト・オンラインプラットフォームなど。"@ja ;
+    rdfs:comment    "A virtual site existing in computer networks, including websites and online platforms."@en ;
+    skos:notation   "SHINRA_0000019" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-3. InformationContentEntity 配下（5クラス）
+# ---------------------------------------------------------------------------
+
+shinra:TextualEntity
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "テキスト実体"@ja ;
+    rdfs:label      "Textual Entity"@en ;
+    skos:altLabel   "文書"@ja ;
+    rdfs:comment    "言語的記号によって情報を表現する実体。書籍・論文・記事・法律文書など。"@ja ;
+    rdfs:comment    "An information content entity expressed through linguistic symbols, including books, papers, articles, and legal documents."@en ;
+    skos:notation   "SHINRA_0000020" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:ImageEntity
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "画像実体"@ja ;
+    rdfs:label      "Image Entity"@en ;
+    skos:altLabel   "映像"@ja ;
+    rdfs:comment    "視覚的情報を持つ実体。写真・絵画・動画・図面など。"@ja ;
+    rdfs:comment    "An information content entity with visual content, including photographs, paintings, videos, and diagrams."@en ;
+    skos:notation   "SHINRA_0000021" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Dataset
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "データセット"@ja ;
+    rdfs:label      "Dataset"@en ;
+    rdfs:comment    "構造化されたデータの集合。統計データ・研究データ・知識ベースなど。"@ja ;
+    rdfs:comment    "A structured collection of data, including statistical data, research data, and knowledge bases."@en ;
+    skos:notation   "SHINRA_0000022" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SoftwareCode
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "ソフトウェアコード"@ja ;
+    rdfs:label      "Software Code"@en ;
+    skos:altLabel   "プログラム"@ja ;
+    rdfs:comment    "コンピュータによって実行可能な指示の集合。プログラム・スクリプト・アルゴリズムなど。"@ja ;
+    rdfs:comment    "A set of instructions executable by a computer, including programs, scripts, and algorithms."@en ;
+    skos:notation   "SHINRA_0000023" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MathematicalFormula
+    a owl:Class ;
+    rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label      "数学的表式"@ja ;
+    rdfs:label      "Mathematical Formula"@en ;
+    skos:altLabel   "数式"@ja ;
+    rdfs:comment    "数学的関係を記号で表現したもの。方程式・定理・証明・公理などを含む。"@ja ;
+    rdfs:comment    "A symbolic expression of mathematical relations, including equations, theorems, proofs, and axioms."@en ;
+    skos:notation   "SHINRA_0000024" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-4. ConceptualEntity 配下（5クラス）
+# ---------------------------------------------------------------------------
+
+shinra:Concept
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "概念"@ja ;
+    rdfs:label      "Concept"@en ;
+    rdfs:comment    "心的または社会的に共有された抽象的な観念の単位。"@ja ;
+    rdfs:comment    "An abstract unit of thought shared mentally or socially."@en ;
+    skos:notation   "SHINRA_0000025" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Theory
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "理論"@ja ;
+    rdfs:label      "Theory"@en ;
+    skos:altLabel   "学説"@ja ;
+    rdfs:comment    "現象を説明・予測するための概念的枠組み。科学理論・哲学説・経済理論など。"@ja ;
+    rdfs:comment    "A conceptual framework for explaining and predicting phenomena, including scientific theories and philosophical doctrines."@en ;
+    skos:notation   "SHINRA_0000026" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Value
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "価値"@ja ;
+    rdfs:label      "Value"@en ;
+    skos:altLabel   "価値観"@ja ;
+    rdfs:comment    "望ましさ・重要性の基準となる概念的実体。正義・自由・美・善など。"@ja ;
+    rdfs:comment    "A conceptual entity serving as a criterion of desirability or importance, such as justice, freedom, beauty, and goodness."@en ;
+    skos:notation   "SHINRA_0000027" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Norm
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "規範"@ja ;
+    rdfs:label      "Norm"@en ;
+    skos:altLabel   "規則"@ja ;
+    rdfs:comment    "行為・状態に関する義務・禁止・許可を定める概念的実体。法規範・道徳規範・社会規範など。"@ja ;
+    rdfs:comment    "A conceptual entity defining obligations, prohibitions, or permissions regarding actions or states, including legal norms and moral norms."@en ;
+    skos:notation   "SHINRA_0000028" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Belief
+    a owl:Class ;
+    rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label      "信念"@ja ;
+    rdfs:label      "Belief"@en ;
+    skos:altLabel   "思想"@ja ;
+    rdfs:comment    "ある主体が真として保持する命題的態度。宗教的信念・イデオロギーなど。"@ja ;
+    rdfs:comment    "A propositional attitude held as true by an agent, including religious beliefs and ideologies."@en ;
+    skos:notation   "SHINRA_0000029" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-5. Quality 配下（3クラス）
+# ---------------------------------------------------------------------------
+
+shinra:PhysicalQuality
+    a owl:Class ;
+    rdfs:subClassOf shinra:Quality ;
+    rdfs:label      "物理的質"@ja ;
+    rdfs:label      "Physical Quality"@en ;
+    rdfs:comment    "物体の物理的な性質。質量・温度・色・硬さ・電荷など。"@ja ;
+    rdfs:comment    "A quality of a material entity regarding its physical properties, such as mass, temperature, color, and hardness."@en ;
+    skos:notation   "SHINRA_0000030" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:PerceptualQuality
+    a owl:Class ;
+    rdfs:subClassOf shinra:Quality ;
+    rdfs:label      "知覚的質"@ja ;
+    rdfs:label      "Perceptual Quality"@en ;
+    skos:altLabel   "感覚的質"@ja ;
+    rdfs:comment    "感覚によって知覚される質。音・匂い・味・触感・見た目など。"@ja ;
+    rdfs:comment    "A quality perceived through sensory modalities, including sound, smell, taste, touch, and appearance."@en ;
+    skos:notation   "SHINRA_0000031" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SocialQuality
+    a owl:Class ;
+    rdfs:subClassOf shinra:Quality ;
+    rdfs:label      "社会的質"@ja ;
+    rdfs:label      "Social Quality"@en ;
+    rdfs:comment    "社会的・文化的文脈の中で意味を持つ質。地位・名声・信頼性など。"@ja ;
+    rdfs:comment    "A quality having meaning in social or cultural context, such as status, reputation, and credibility."@en ;
+    skos:notation   "SHINRA_0000032" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-6. Role 配下（3クラス）
+# ---------------------------------------------------------------------------
+
+shinra:SocialRole
+    a owl:Class ;
+    rdfs:subClassOf shinra:Role ;
+    rdfs:label      "社会的役割"@ja ;
+    rdfs:label      "Social Role"@en ;
+    rdfs:comment    "社会構造の中で個人や組織が担う役割。親・市民・顧客・指導者など。"@ja ;
+    rdfs:comment    "A role borne by an individual or organization within a social structure, such as parent, citizen, customer, or leader."@en ;
+    skos:notation   "SHINRA_0000033" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:FunctionalRole
+    a owl:Class ;
+    rdfs:subClassOf shinra:Role ;
+    rdfs:label      "機能的役割"@ja ;
+    rdfs:label      "Functional Role"@en ;
+    rdfs:comment    "特定の機能を果たすために担う役割。触媒・基質・受容体など。主に科学・工学的文脈。"@ja ;
+    rdfs:comment    "A role borne to fulfill a specific function, such as catalyst, substrate, or receptor, mainly in scientific and engineering contexts."@en ;
+    skos:notation   "SHINRA_0000034" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:OrganizationalRole
+    a owl:Class ;
+    rdfs:subClassOf shinra:Role ;
+    rdfs:label      "組織的役割"@ja ;
+    rdfs:label      "Organizational Role"@en ;
+    rdfs:comment    "組織内で担う役割。CEO・部長・委員・メンバーなど。"@ja ;
+    rdfs:comment    "A role borne within an organization, such as CEO, director, committee member, or employee."@en ;
+    skos:notation   "SHINRA_0000035" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-7. Disposition 配下（2クラス）
+# ---------------------------------------------------------------------------
+
+shinra:Capability
+    a owl:Class ;
+    rdfs:subClassOf shinra:Disposition ;
+    rdfs:label      "能力"@ja ;
+    rdfs:label      "Capability"@en ;
+    skos:altLabel   "機能"@ja ;
+    rdfs:comment    "担い手が持つ能力・機能。走る能力・消化する機能・演算する機能など。"@ja ;
+    rdfs:comment    "A disposition of a bearer to perform actions or fulfill functions, such as the ability to run or the function to digest."@en ;
+    skos:notation   "SHINRA_0000036" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Tendency
+    a owl:Class ;
+    rdfs:subClassOf shinra:Disposition ;
+    rdfs:label      "傾向"@ja ;
+    rdfs:label      "Tendency"@en ;
+    skos:altLabel   "性質"@ja ;
+    rdfs:comment    "特定の条件下で特定の過程が生じる傾向。金属の錆びやすさ・ガラスの割れやすさなど。"@ja ;
+    rdfs:comment    "A disposition to undergo a specific process under specific conditions, such as the tendency of metal to rust."@en ;
+    skos:notation   "SHINRA_0000037" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-8. Process 配下（4クラス）
+# ---------------------------------------------------------------------------
+
+shinra:NaturalProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "自然過程"@ja ;
+    rdfs:label      "Natural Process"@en ;
+    skos:altLabel   "自然現象"@ja ;
+    rdfs:comment    "自然界で自発的に起こる過程。化学反応・気象現象・生命過程・天体運動など。"@ja ;
+    rdfs:comment    "A process occurring spontaneously in nature, including chemical reactions, meteorological phenomena, biological processes, and celestial motions."@en ;
+    skos:notation   "SHINRA_0000038" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:Action
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "行為"@ja ;
+    rdfs:label      "Action"@en ;
+    skos:altLabel   "行動"@ja ;
+    rdfs:comment    "意図を持つエージェントによって実行される過程。発話・移動・創作・決定など。"@ja ;
+    rdfs:comment    "A process performed by an intentional agent, including speech acts, movements, creative acts, and decisions."@en ;
+    skos:notation   "SHINRA_0000039" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:SocialProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "社会過程"@ja ;
+    rdfs:label      "Social Process"@en ;
+    skos:altLabel   "社会的出来事"@ja ;
+    rdfs:comment    "複数のエージェントが関与する社会的な過程。選挙・取引・戦争・祭礼など。"@ja ;
+    rdfs:comment    "A process involving multiple agents in a social context, including elections, transactions, wars, and ceremonies."@en ;
+    skos:notation   "SHINRA_0000040" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:MentalProcess
+    a owl:Class ;
+    rdfs:subClassOf shinra:Process ;
+    rdfs:label      "心的過程"@ja ;
+    rdfs:label      "Mental Process"@en ;
+    skos:altLabel   "認知過程"@ja ;
+    rdfs:comment    "心またはエージェントの内部で起こる過程。知覚・思考・記憶・感情・意図形成など。"@ja ;
+    rdfs:comment    "A process occurring within a mind or agent, including perception, thinking, memory, emotion, and intention formation."@en ;
+    skos:notation   "SHINRA_0000041" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-9. TemporalRegion 配下（2クラス）
+# ---------------------------------------------------------------------------
+
+shinra:TemporalInterval
+    a owl:Class ;
+    rdfs:subClassOf shinra:TemporalRegion ;
+    rdfs:subClassOf bfo:0000202 ;
+    rdfs:label      "時間区間"@ja ;
+    rdfs:label      "Temporal Interval"@en ;
+    rdfs:comment    "始点と終点を持つ有限の時間領域。OWL-Time の time:Interval に対応。"@ja ;
+    rdfs:comment    "A temporal region with a beginning and an end, corresponding to time:Interval in OWL-Time."@en ;
+    skos:notation   "SHINRA_0000042" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:TemporalInstant
+    a owl:Class ;
+    rdfs:subClassOf shinra:TemporalRegion ;
+    rdfs:subClassOf bfo:0000203 ;
+    rdfs:label      "瞬間"@ja ;
+    rdfs:label      "Temporal Instant"@en ;
+    skos:altLabel   "時点"@ja ;
+    rdfs:comment    "長さを持たない時間の点。OWL-Time の time:Instant に対応。"@ja ;
+    rdfs:comment    "A temporal region with no duration, corresponding to time:Instant in OWL-Time."@en ;
+    skos:notation   "SHINRA_0000043" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# ---------------------------------------------------------------------------
+# B-10. 追加中位クラス（ImmaterialEntity の整理用）
+# ---------------------------------------------------------------------------
+
+shinra:SpatiotemporalRegion
+    a owl:Class ;
+    rdfs:subClassOf bfo:0000011 ;
+    rdfs:label      "時空領域"@ja ;
+    rdfs:label      "Spatiotemporal Region"@en ;
+    rdfs:comment    "空間と時間の両方にまたがる領域。出来事が占有する時空的拡がり。"@ja ;
+    rdfs:comment    "A region spanning both space and time, representing the spatiotemporal extent occupied by an occurrent."@en ;
+    skos:notation   "SHINRA_0000044" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# C. オブジェクトプロパティ（20プロパティ）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 注: BFO 既存プロパティ（bfo:has-part 等）は再定義しない。
+#     以下は shinra 名前空間の補完・拡張プロパティのみ。
+# ===========================================================================
+
+# C-1. aboutness（情報実体 → 対象）
+shinra:aboutness
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:InformationContentEntity ;
+    rdfs:label      "〜について"@ja ;
+    rdfs:label      "is about"@en ;
+    rdfs:comment    "情報内容実体がある実体について記述・表現している関係。"@ja ;
+    rdfs:comment    "The relation between an information content entity and the entity it is about."@en ;
+    skos:notation   "SHINRA_P000001" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-2. hasRole / roleOf
+shinra:hasRole
+    a owl:ObjectProperty ;
+    rdfs:range      shinra:Role ;
+    owl:inverseOf   shinra:roleOf ;
+    rdfs:label      "役割を持つ"@ja ;
+    rdfs:label      "has role"@en ;
+    rdfs:comment    "継続物が特定の役割を持つ関係。"@ja ;
+    rdfs:comment    "Relation between a continuant and a role it bears."@en ;
+    skos:notation   "SHINRA_P000002" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:roleOf
+    a owl:ObjectProperty ;
+    owl:inverseOf   shinra:hasRole ;
+    rdfs:label      "〜の役割"@ja ;
+    rdfs:label      "role of"@en ;
+    skos:notation   "SHINRA_P000003" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-3. realizes（過程 → 役割/傾向性を実現する）
+shinra:realizes
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:Process ;
+    rdfs:label      "を実現する"@ja ;
+    rdfs:label      "realizes"@en ;
+    rdfs:comment    "過程が役割や傾向性を実現する関係。"@ja ;
+    rdfs:comment    "Relation between a process and the role or disposition it realizes."@en ;
+    skos:notation   "SHINRA_P000004" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-4. hasParticipant / participatesIn（BFO の補完版）
+shinra:hasParticipant
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:Process ;
+    rdfs:range      bfo:0000004 ;
+    owl:inverseOf   shinra:participatesIn ;
+    rdfs:label      "参与者を持つ"@ja ;
+    rdfs:label      "has participant"@en ;
+    rdfs:comment    "過程にどの継続物が参与しているかを示す関係。"@ja ;
+    rdfs:comment    "Relation between a process and a continuant that participates in it."@en ;
+    skos:notation   "SHINRA_P000005" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:participatesIn
+    a owl:ObjectProperty ;
+    rdfs:domain     bfo:0000004 ;
+    rdfs:range      shinra:Process ;
+    owl:inverseOf   shinra:hasParticipant ;
+    rdfs:label      "〜に参与する"@ja ;
+    rdfs:label      "participates in"@en ;
+    rdfs:comment    "継続物が特定の過程に参与している関係。"@ja ;
+    rdfs:comment    "Relation between a continuant and a process it participates in."@en ;
+    skos:notation   "SHINRA_P000006" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-5. hasAgent（過程 → 行為者）
+shinra:hasAgent
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf shinra:hasParticipant ;
+    rdfs:domain     shinra:Action ;
+    rdfs:range      shinra:Organism ;
+    rdfs:label      "行為者を持つ"@ja ;
+    rdfs:label      "has agent"@en ;
+    rdfs:comment    "行為がどのエージェントによって実行されるかを示す関係。"@ja ;
+    rdfs:comment    "Relation between an action and the agent that performs it."@en ;
+    skos:notation   "SHINRA_P000007" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-6. locatedAt（継続物 → 場所）
+shinra:locatedAt
+    a owl:ObjectProperty ;
+    rdfs:domain     bfo:0000004 ;
+    rdfs:range      shinra:Site ;
+    rdfs:label      "〜に位置する"@ja ;
+    rdfs:label      "located at"@en ;
+    rdfs:comment    "独立継続物が特定の場所・サイトに位置していることを示す関係。"@ja ;
+    rdfs:comment    "Relation between an independent continuant and the site where it is located."@en ;
+    skos:notation   "SHINRA_P000008" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-7. occursAt（過程 → 場所）
+shinra:occursAt
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:Process ;
+    rdfs:range      shinra:Site ;
+    rdfs:label      "〜で起こる"@ja ;
+    rdfs:label      "occurs at"@en ;
+    rdfs:comment    "過程が特定の場所・サイトで起こることを示す関係。"@ja ;
+    rdfs:comment    "Relation between a process and the site at which it occurs."@en ;
+    skos:notation   "SHINRA_P000009" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-8. hasQuality（実体 → 質）
+shinra:hasQuality
+    a owl:ObjectProperty ;
+    rdfs:range      shinra:Quality ;
+    rdfs:label      "質を持つ"@ja ;
+    rdfs:label      "has quality"@en ;
+    rdfs:comment    "実体が特定の質を持つ（内在させる）関係。"@ja ;
+    rdfs:comment    "Relation between an entity and a quality that inheres in it."@en ;
+    skos:notation   "SHINRA_P000010" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-9. hasDisposition（実体 → 傾向性）
+shinra:hasDisposition
+    a owl:ObjectProperty ;
+    rdfs:range      shinra:Disposition ;
+    rdfs:label      "傾向性を持つ"@ja ;
+    rdfs:label      "has disposition"@en ;
+    rdfs:comment    "実体が特定の傾向性や能力を持つ関係。"@ja ;
+    rdfs:comment    "Relation between an entity and a disposition or capability it bears."@en ;
+    skos:notation   "SHINRA_P000011" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-10. derivedFrom（情報実体の出典）
+shinra:derivedFrom
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:InformationContentEntity ;
+    rdfs:label      "〜に由来する"@ja ;
+    rdfs:label      "derived from"@en ;
+    rdfs:comment    "情報内容実体が別の情報内容実体や過程を起源・根拠とすることを示す関係。"@ja ;
+    rdfs:comment    "Relation between an information content entity and the entity or process it was derived from."@en ;
+    skos:notation   "SHINRA_P000012" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-11. hasPart / partOf（BFO 補完）
+shinra:hasPart
+    a owl:ObjectProperty , owl:TransitiveProperty ;
+    owl:inverseOf   shinra:partOf ;
+    rdfs:label      "部分を持つ"@ja ;
+    rdfs:label      "has part"@en ;
+    rdfs:comment    "ある実体が別の実体を部分として含む関係。推移的。"@ja ;
+    rdfs:comment    "Relation between a whole and its part. Transitive."@en ;
+    skos:notation   "SHINRA_P000013" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:partOf
+    a owl:ObjectProperty , owl:TransitiveProperty ;
+    owl:inverseOf   shinra:hasPart ;
+    rdfs:label      "〜の部分である"@ja ;
+    rdfs:label      "part of"@en ;
+    skos:notation   "SHINRA_P000014" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-12. precedes / follows（時間的先後関係）
+shinra:precedes
+    a owl:ObjectProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+    rdfs:domain     bfo:0000003 ;
+    rdfs:range      bfo:0000003 ;
+    owl:inverseOf   shinra:follows ;
+    rdfs:label      "〜より先に起こる"@ja ;
+    rdfs:label      "precedes"@en ;
+    rdfs:comment    "ある生起物が別の生起物より時間的に先であることを示す関係。推移的・非反射的。"@ja ;
+    rdfs:comment    "Relation between two occurrents where the first temporally precedes the second. Transitive, irreflexive."@en ;
+    skos:notation   "SHINRA_P000015" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:follows
+    a owl:ObjectProperty , owl:TransitiveProperty , owl:IrreflexiveProperty ;
+    owl:inverseOf   shinra:precedes ;
+    rdfs:label      "〜の後に起こる"@ja ;
+    rdfs:label      "follows"@en ;
+    skos:notation   "SHINRA_P000016" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-13. causedBy / causes（因果関係）
+shinra:causes
+    a owl:ObjectProperty ;
+    rdfs:domain     shinra:Process ;
+    rdfs:range      shinra:Process ;
+    owl:inverseOf   shinra:causedBy ;
+    rdfs:label      "を引き起こす"@ja ;
+    rdfs:label      "causes"@en ;
+    rdfs:comment    "ある過程が別の過程を引き起こす因果関係。"@ja ;
+    rdfs:comment    "Causal relation between two processes where the first brings about the second."@en ;
+    skos:notation   "SHINRA_P000017" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:causedBy
+    a owl:ObjectProperty ;
+    owl:inverseOf   shinra:causes ;
+    rdfs:label      "〜によって引き起こされる"@ja ;
+    rdfs:label      "caused by"@en ;
+    skos:notation   "SHINRA_P000018" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-14. exemplifies（インスタンス → 概念の例示）
+shinra:exemplifies
+    a owl:ObjectProperty ;
+    rdfs:range      shinra:ConceptualEntity ;
+    rdfs:label      "を例示する"@ja ;
+    rdfs:label      "exemplifies"@en ;
+    rdfs:comment    "ある実体が概念・型の具体例であることを示す関係。"@ja ;
+    rdfs:comment    "Relation between an entity and a concept or type that it exemplifies."@en ;
+    skos:notation   "SHINRA_P000019" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# C-15. memberOf / hasMember（集合・グループ関係）
+shinra:memberOf
+    a owl:ObjectProperty ;
+    owl:inverseOf   shinra:hasMember ;
+    rdfs:label      "〜のメンバーである"@ja ;
+    rdfs:label      "member of"@en ;
+    rdfs:comment    "ある実体が集合・集団・組織のメンバーであることを示す関係。"@ja ;
+    rdfs:comment    "Relation between an individual and the group or collection it belongs to."@en ;
+    skos:notation   "SHINRA_P000020" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:hasMember
+    a owl:ObjectProperty ;
+    owl:inverseOf   shinra:memberOf ;
+    rdfs:label      "メンバーを持つ"@ja ;
+    rdfs:label      "has member"@en ;
+    skos:notation   "SHINRA_P000021" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# D. データプロパティ（基本的なもの）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ===========================================================================
+
+shinra:hasName
+    a owl:DatatypeProperty ;
+    rdfs:range      xsd:string ;
+    rdfs:label      "名前を持つ"@ja ;
+    rdfs:label      "has name"@en ;
+    rdfs:comment    "実体の一般的な名称。rdfs:label と重複するが、推論で使う用途のため別定義。"@ja ;
+    skos:notation   "SHINRA_D000001" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:startDate
+    a owl:DatatypeProperty ;
+    rdfs:range      xsd:date ;
+    rdfs:label      "開始日"@ja ;
+    rdfs:label      "start date"@en ;
+    rdfs:comment    "過程・区間・組織などの開始日付。"@ja ;
+    skos:notation   "SHINRA_D000002" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:endDate
+    a owl:DatatypeProperty ;
+    rdfs:range      xsd:date ;
+    rdfs:label      "終了日"@ja ;
+    rdfs:label      "end date"@en ;
+    rdfs:comment    "過程・区間・組織などの終了日付。"@ja ;
+    skos:notation   "SHINRA_D000003" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+shinra:wikidataId
+    a owl:DatatypeProperty ;
+    rdfs:range      xsd:string ;
+    rdfs:label      "Wikidata ID"@ja ;
+    rdfs:label      "Wikidata ID"@en ;
+    rdfs:comment    "対応する Wikidata アイテムの Q番号（例: Q35120）。外部IDマッピング用。"@ja ;
+    skos:notation   "SHINRA_D000004" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+
+# ===========================================================================
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# E. 代表インスタンス（各クラスの典型例 × 1〜3件）
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ===========================================================================
+
+# --- MaterialEntity > Organism ---
+shinra-data:homo-sapiens-001
+    a shinra:Organism ;
+    rdfs:label      "ホモ・サピエンス"@ja ;
+    rdfs:label      "Homo sapiens"@en ;
+    shinra:wikidataId "Q15978631" ;
+    skos:notation   "SHINRA_I000010" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- MaterialEntity > AstronomicalBody ---
+shinra-data:sun-001
+    a shinra:AstronomicalBody ;
+    rdfs:label      "太陽"@ja ;
+    rdfs:label      "The Sun"@en ;
+    shinra:wikidataId "Q525" ;
+    skos:notation   "SHINRA_I000011" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- Site > AdministrativeRegion ---
+shinra-data:japan-001
+    a shinra:AdministrativeRegion ;
+    rdfs:label      "日本"@ja ;
+    rdfs:label      "Japan"@en ;
+    shinra:wikidataId "Q17" ;
+    skos:notation   "SHINRA_I000012" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- Site > Facility ---
+shinra-data:tokyo-station-001
+    a shinra:Facility ;
+    rdfs:label      "東京駅"@ja ;
+    rdfs:label      "Tokyo Station"@en ;
+    shinra:locatedAt shinra-data:japan-001 ;
+    shinra:wikidataId "Q941320" ;
+    skos:notation   "SHINRA_I000013" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- InformationContentEntity > TextualEntity ---
+shinra-data:genji-monogatari-001
+    a shinra:TextualEntity ;
+    rdfs:label      "源氏物語"@ja ;
+    rdfs:label      "The Tale of Genji"@en ;
+    shinra:wikidataId "Q130371" ;
+    skos:notation   "SHINRA_I000014" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- ConceptualEntity > Value ---
+shinra-data:justice-001
+    a shinra:Value ;
+    rdfs:label      "正義"@ja ;
+    rdfs:label      "Justice"@en ;
+    shinra:wikidataId "Q5891" ;
+    skos:notation   "SHINRA_I000015" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- Process > NaturalProcess ---
+shinra-data:photosynthesis-001
+    a shinra:NaturalProcess ;
+    rdfs:label      "光合成"@ja ;
+    rdfs:label      "Photosynthesis"@en ;
+    shinra:wikidataId "Q61476" ;
+    skos:notation   "SHINRA_I000016" ;
+    dcterms:created "2026-05-12"^^xsd:date .
+
+# --- プロジェクト作者 ---
+shinra-data:katsuki-miwa-000001
+    a owl:NamedIndividual ;
+    rdfs:label      "三輪勝樹"@ja ;
+    rdfs:label      "Katsuki Miwa"@en ;
+    skos:notation   "SHINRA_I000001" ;
+    dcterms:created "2026-05-12"^^xsd:date .

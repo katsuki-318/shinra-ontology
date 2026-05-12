@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URI 設計戦略 — 神羅万象オントロジー</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@600;800&display=swap');
+:root{--bg:#0c0f18;--bg2:#131724;--bg3:#1a1f30;--bg4:#212640;--border:#252c45;--text:#dde3f0;--muted:#7a869e;--accent:#5b8dee;--green:#10b981;--amber:#f59e0b;--red:#f04f59;--purple:#8b5cf6}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;font-size:14px;line-height:1.75}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+#sb{width:220px;min-width:220px;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;padding:0 0 40px}
+.sb-head{padding:22px 18px 18px;border-bottom:1px solid var(--border)}
+.sb-label{font-family:'Syne',sans-serif;font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.sb-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+.sb-back{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-top:6px}
+.sb-back:hover{color:var(--accent)}
+.sb-group{margin-top:6px}.sb-group-label{font-size:9.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);padding:10px 18px 3px}
+.sb-link{display:block;padding:6px 18px;font-size:12px;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .15s}
+.sb-link:hover{color:var(--text);background:var(--bg3)}.sb-link.active{color:var(--accent);border-left-color:var(--accent);background:rgba(91,141,238,.06)}
+#main{margin-left:220px;flex:1;max-width:900px;padding:52px 52px 100px}
+.sec{margin-bottom:64px;scroll-margin-top:36px}
+.sec-hd{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.sec-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.sec-title{font-size:19px;font-weight:700}
+.page-title{margin-bottom:40px}
+.page-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.page-h1{font-size:26px;font-weight:700;margin-bottom:8px}
+.page-meta{color:var(--muted);font-size:13px}
+.callout{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:16px 20px;margin-bottom:24px}
+.callout strong{color:var(--text)}
+.code-block{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;overflow-x:auto;white-space:pre;margin-bottom:20px}
+.code-block .kw{color:var(--purple)}.code-block .str{color:var(--green)}.code-block .cls{color:var(--accent)}.code-block .c{color:var(--muted)}.code-block .pfx{color:var(--amber)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--bg3)}
+td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent)}
+tr:hover td{background:rgba(255,255,255,.02)}
+p{margin-bottom:14px;color:var(--muted)}strong{color:var(--text)}
+.rule-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.rule-list li{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px}
+.rule-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);padding-top:1px;flex-shrink:0}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav id="sb">
+  <div class="sb-head">
+    <div class="sb-label">設計文書</div>
+    <div class="sb-title">URI 設計戦略</div>
+    <a class="sb-back" href="../README.html">← プロジェクト概要へ</a>
+  </div>
+  <div class="sb-group">
+    <div class="sb-group-label">目次</div>
+    <a class="sb-link active" href="#principle">原則</a>
+    <a class="sb-link" href="#base">ベース URI</a>
+    <a class="sb-link" href="#prefix">Prefix 宣言</a>
+    <a class="sb-link" href="#design">クラス・プロパティ設計</a>
+    <a class="sb-link" href="#versioning">バージョニング</a>
+    <a class="sb-link" href="#external">外部語彙との整合</a>
+    <a class="sb-link" href="#freeze">凍結ルール</a>
+  </div>
+</nav>
+<main id="main">
+  <div class="page-title">
+    <div class="page-label">Shinra Ontology · 設計文書</div>
+    <div class="page-h1">URI 設計戦略</div>
+    <div class="page-meta">v1.0.0 · 2026-05-12 · 状態: 確定（凍結）</div>
+  </div>
+
+  <section class="sec" id="principle">
+    <div class="sec-hd"><span class="sec-num">01</span><span class="sec-title">原則</span></div>
+    <div class="callout"><strong>URI は変えない。URI が変わるとリンクが死ぬ。</strong></div>
+    <p>オントロジーの価値はリンクの安定性に依存する。個人ドメイン（例: <code>miwa.dev</code>）は廃止リスクがあるため、永続 URI サービス <strong>w3id.org</strong> を使用する。w3id.org への PR を提出し、GitHub Pages へのリダイレクトを設定する。</p>
+  </section>
+
+  <section class="sec" id="base">
+    <div class="sec-hd"><span class="sec-num">02</span><span class="sec-title">ベース URI</span></div>
+    <table>
+      <thead><tr><th>名前空間</th><th>URI</th></tr></thead>
+      <tbody>
+        <tr><td>クラス・プロパティ</td><td><code>https://w3id.org/shinra/ont/</code></td></tr>
+        <tr><td>インスタンス（データ）</td><td><code>https://w3id.org/shinra/data/</code></td></tr>
+        <tr><td>バージョン付き</td><td><code>https://w3id.org/shinra/ont/YYYY-MM-DD/</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sec" id="prefix">
+    <div class="sec-hd"><span class="sec-num">03</span><span class="sec-title">Prefix 宣言（Turtle ファイルの冒頭）</span></div>
+    <div class="code-block"><span class="pfx">@prefix</span> <span class="cls">shinra:</span>      &lt;https://w3id.org/shinra/ont/&gt; .
+<span class="pfx">@prefix</span> <span class="cls">shinra-data:</span> &lt;https://w3id.org/shinra/data/&gt; .
+<span class="pfx">@prefix</span> <span class="cls">bfo:</span>         &lt;http://purl.obolibrary.org/obo/BFO_&gt; .
+<span class="pfx">@prefix</span> <span class="cls">owl:</span>         &lt;http://www.w3.org/2002/07/owl#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">rdf:</span>         &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">rdfs:</span>        &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">xsd:</span>         &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">skos:</span>        &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">dcterms:</span>     &lt;http://purl.org/dc/terms/&gt; .
+<span class="pfx">@prefix</span> <span class="cls">prov:</span>        &lt;http://www.w3.org/ns/prov#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">time:</span>        &lt;http://www.w3.org/2006/time#&gt; .
+<span class="pfx">@prefix</span> <span class="cls">qudt:</span>        &lt;http://qudt.org/schema/qudt/&gt; .</div>
+  </section>
+
+  <section class="sec" id="design">
+    <div class="sec-hd"><span class="sec-num">04</span><span class="sec-title">クラス・プロパティ・インスタンスの URI 設計</span></div>
+    <p><strong>クラス</strong> — 名前空間直後に PascalCase の英語名（単数形）</p>
+    <div class="code-block">https://w3id.org/shinra/ont/<span class="cls">MaterialEntity</span>
+https://w3id.org/shinra/ont/<span class="cls">InformationContentEntity</span>
+https://w3id.org/shinra/ont/<span class="cls">ConceptualEntity</span></div>
+    <p><strong>プロパティ</strong> — 名前空間直後に lowerCamelCase の英語動詞句</p>
+    <div class="code-block">https://w3id.org/shinra/ont/<span class="cls">participatesIn</span>
+https://w3id.org/shinra/ont/<span class="cls">hasPart</span>
+https://w3id.org/shinra/ont/<span class="cls">aboutness</span></div>
+    <p><strong>インスタンス</strong> — 意味のある slug（英語小文字・ハイフン区切り）+ UUID 短縮（6文字）</p>
+    <div class="code-block">https://w3id.org/shinra/data/<span class="str">tokyo-station-a3f4c9</span>
+https://w3id.org/shinra/data/<span class="str">natsume-soseki-b2e7d1</span></div>
+    <p>slug は人間可読性のため。UUID 部分がリネームへの耐性を担保する。</p>
+  </section>
+
+  <section class="sec" id="versioning">
+    <div class="sec-hd"><span class="sec-num">05</span><span class="sec-title">バージョニング</span></div>
+    <table>
+      <thead><tr><th>種別</th><th>変更の例</th></tr></thead>
+      <tbody>
+        <tr><td>MAJOR</td><td>BFO ブリッジクラスの再設計、上位階層の根本変更</td></tr>
+        <tr><td>MINOR</td><td>新ドメインモジュール（shinra-bio.ttl 等）の追加</td></tr>
+        <tr><td>PATCH</td><td>ラベル修正、コメント追加、外部 ID マッピング追記</td></tr>
+      </tbody>
+    </table>
+    <p><strong>OWL バージョン宣言の書き方:</strong></p>
+    <div class="code-block">&lt;https://w3id.org/shinra/ont/&gt;
+  <span class="kw">a</span> <span class="cls">owl:Ontology</span> ;
+  <span class="cls">owl:versionIRI</span> &lt;https://w3id.org/shinra/ont/2026-05-12/&gt; ;
+  <span class="cls">owl:versionInfo</span> <span class="str">"0.0.1"</span> ;
+  <span class="cls">dcterms:created</span> <span class="str">"2026-05-12"</span>^^xsd:date ;
+  <span class="cls">dcterms:title</span>   <span class="str">"神羅万象オントロジー"</span><span class="amber">@ja</span> , <span class="str">"Shinra Ontology"</span><span class="amber">@en</span> ;
+  <span class="cls">dcterms:license</span> &lt;https://creativecommons.org/licenses/by/4.0/&gt; .</div>
+  </section>
+
+  <section class="sec" id="external">
+    <div class="sec-hd"><span class="sec-num">06</span><span class="sec-title">外部語彙との整合</span></div>
+    <table>
+      <thead><tr><th>語彙</th><th>再利用方法</th><th>import</th></tr></thead>
+      <tbody>
+        <tr><td>BFO 2020</td><td>クラス・プロパティを継承</td><td>owl:imports で完全 import</td></tr>
+        <tr><td>OWL-Time</td><td>時間表現の型</td><td>完全 import（Phase 2）</td></tr>
+        <tr><td>QUDT</td><td>量・単位の型</td><td>完全 import（Phase 2）</td></tr>
+        <tr><td>PROV-O</td><td>来歴の記述</td><td>完全 import（Phase 2）</td></tr>
+        <tr><td>SKOS</td><td>概念マッピング述語</td><td>語彙のみ参照（import しない）</td></tr>
+        <tr><td>FOAF</td><td>人物プロパティ</td><td>語彙のみ参照（import しない）</td></tr>
+        <tr><td>Dublin Core</td><td>メタデータ</td><td>語彙のみ参照</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Wikidata マッピングのルール:</strong> インスタンスは <code>owl:sameAs</code>、クラスは <code>skos:exactMatch</code> / <code>skos:closeMatch</code>。クラスへの <code>owl:equivalentClass</code> は推論爆発の原因になるため禁止。</p>
+  </section>
+
+  <section class="sec" id="freeze">
+    <div class="sec-hd"><span class="sec-num">07</span><span class="sec-title">凍結ルール（変更禁止事項）</span></div>
+    <ul class="rule-list">
+      <li><span class="rule-num">1</span><span>ベース URI（<code>https://w3id.org/shinra/</code>）は変更しない</span></li>
+      <li><span class="rule-num">2</span><span>クラス・プロパティ名の ASCII slug は変更しない。<code>skos:notation</code> の連番 ID でリネームを追跡する</span></li>
+      <li><span class="rule-num">3</span><span>名前空間の分離方式（<code>/ont/</code> と <code>/data/</code> の区別）は変更しない</span></li>
+    </ul>
+    <p>クラス名を変えたい場合は、旧クラスに <code>owl:deprecated true</code> を追加して残し、新クラスに <code>owl:sameAs</code> 参照を追記する。旧クラスは削除しない。</p>
+  </section>
+</main>
+<script>
+const links=document.querySelectorAll('.sb-link');
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const t=document.querySelector(`.sb-link[href="#${e.target.id}"]`);if(t)t.classList.add('active')}})},{threshold:0.3});
+document.querySelectorAll('.sec[id]').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
