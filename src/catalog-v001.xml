@@ -14,6 +14,10 @@
     <uri name="https://w3id.org/shinra/ont/mind"        uri="shinra-mind.ttl"/>
     <uri name="https://w3id.org/shinra/ont/technology"  uri="shinra-technology.ttl"/>
     <uri name="https://w3id.org/shinra/ont/economics"   uri="shinra-economics.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/linguistics" uri="shinra-linguistics.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/law"         uri="shinra-law.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/environment" uri="shinra-environment.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/meta"        uri="shinra-meta.ttl"/>
     <!-- BFO 2020 -->
     <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"
          uri="../imports/bfo-2020.owl"/>
