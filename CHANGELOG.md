@@ -47,8 +47,42 @@ Format: `MAJOR.MINOR.PATCH` — SemVer
 - `tests/validate.py`: ALL_MODULES をハードコードリストから `src/` 自動スキャン方式に変更
 - `src/catalog-v001.xml`: mind / technology / economics エントリ追加
 
-### Stats
+### Stats (v0.4.0 中間)
 - クラス: 266（+60）  ObjectProperty: 32（+1）  DataProperty: 26（+5）  トリプル: 3,192（+661）
+
+---
+
+## [0.4.1] — 2026-05-27
+
+### Added
+- **shinra-linguistics.ttl** (Phase 5-e): 言語学詳細ドメイン
+  - 言語単位: LanguageFamily / Dialect / Script / Grammar / Vocabulary / Phoneme / Morpheme
+  - 下位分野: Phonology / Morphology / Syntax / Semantics / Pragmatics / Sociolinguistics
+  - 言語過程: Translation / LanguageAcquisition / LanguageChange / Discourse
+  - プロパティ: hasLanguageFamily / hasSpeakerCount
+  - インスタンス: indo-european-family-001 / latin-alphabet-001 / kana-001 / universal-grammar-001
+- **shinra-law.ttl** (Phase 5-f): 法律・権利詳細ドメイン
+  - 規範的概念: LegalRight / HumanRight / IntellectualPropertyRight / LegalObligation / Jurisdiction
+  - 法的文書: Constitution / Statute / Contract / Treaty / Precedent
+  - 法的過程: LegalProcedure / Trial / Crime / Punishment / LegalReform
+  - プロパティ: hasEnactmentYear / hasJurisdiction
+  - インスタンス: universal-declaration-001 / japan-constitution-001 / magna-carta-001 / copyright-001
+- **shinra-environment.ttl** (Phase 5-g): 環境・生態系詳細ドメイン
+  - 気候: ClimateZone / ClimateChange / GreenhouseEffect / NutrientCycle
+  - 資源・多様性: NaturalResource / Biodiversity / Habitat / ExtinctionEvent
+  - 環境問題: Pollution / Deforestation / EcologicalCrisis
+  - 政策・保全: Conservation / WasteManagement / Sustainability / EnvironmentalPolicy
+  - プロパティ: hasCarbonFootprint / hasConservationStatus
+  - インスタンス: paris-agreement-001 / great-barrier-reef-001 / kt-extinction-001 / ozone-layer-001
+- **shinra-meta.ttl** (Phase 6): メタオントロジー・自己記述
+  - メタクラス: OntologyModule / OntologyDesignPattern / KnowledgeGap / AlignmentMapping / EditorialDecision / OntologyVersion
+  - プロパティ: coversModule / addressesGap / hasVersionString / hasModuleCount
+  - 自己記述インスタンス: shinra-ontology-itself / module-core / module-mid / version-0-4-0
+  - 知識ギャップ記録: gap-neuroscience / gap-formal-logic / gap-music-theory
+
+### Stats (v0.4.1 最終)
+- クラス: 318（+52）  ObjectProperty: 36（+4）  DataProperty: 32（+6）  トリプル: 3,871（+679）
+- モジュール総数: 17
 
 ---
 

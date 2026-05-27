@@ -1,0 +1,197 @@
+# ===========================================================================
+# shinra-linguistics.ttl  — 言語学詳細ドメイン (Phase 5-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/linguistics>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 言語学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Linguistics Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 言語単位・構造 ────────────────────────────────────────────────
+
+shinra:LanguageFamily
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "語族"@ja ; rdfs:label "Language Family"@en ;
+    rdfs:comment "共通の祖先言語から派生した言語の集合。インド・ヨーロッパ語族・アフロ・アジア語族・シナ・チベット語族など。"@ja ;
+    rdfs:comment "A group of languages descended from a common ancestor, including Indo-European, Afro-Asiatic, and Sino-Tibetan language families."@en ;
+    skos:notation "SHINRA_0001301" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Dialect
+    a owl:Class ; rdfs:subClassOf shinra:NaturalLanguage ;
+    rdfs:label "方言"@ja ; rdfs:label "Dialect"@en ;
+    skos:altLabel "変種"@ja ;
+    rdfs:comment "地域・社会集団に特有の言語変種。関西弁・広東語・アメリカ英語など。"@ja ;
+    rdfs:comment "A language variety specific to a region or social group, including Kansai dialect, Cantonese, and American English."@en ;
+    skos:notation "SHINRA_0001302" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Script
+    a owl:Class ; rdfs:subClassOf shinra:SignSystem ;
+    rdfs:label "文字体系"@ja ; rdfs:label "Writing System"@en ;
+    skos:altLabel "文字"@ja ;
+    rdfs:comment "言語を視覚的に表記するための記号体系。アルファベット・漢字・アラビア文字・ひらがななど。"@ja ;
+    rdfs:comment "A system of visual symbols for representing language, including alphabets, Chinese characters, Arabic script, and hiragana."@en ;
+    skos:notation "SHINRA_0001303" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Grammar
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文法"@ja ; rdfs:label "Grammar"@en ;
+    rdfs:comment "言語の構造規則の体系。形態論・統語論・音韻論・意味論などを含む言語の規則的組織。"@ja ;
+    rdfs:comment "The system of structural rules governing a language, encompassing morphology, syntax, phonology, and semantics."@en ;
+    skos:notation "SHINRA_0001304" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Vocabulary
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "語彙"@ja ; rdfs:label "Vocabulary"@en ;
+    skos:altLabel "レキシコン"@ja ;
+    rdfs:comment "特定の言語・分野・話者が持つ単語・表現の総体。基本語彙・専門語彙・スラングなど。"@ja ;
+    rdfs:comment "The totality of words and expressions of a language, field, or speaker, including core vocabulary, technical vocabulary, and slang."@en ;
+    skos:notation "SHINRA_0001305" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Phoneme
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "音素"@ja ; rdfs:label "Phoneme"@en ;
+    rdfs:comment "言語において意味の区別に機能する最小の音声単位。/p/ と /b/ のような対立をなす抽象的音単位。"@ja ;
+    rdfs:comment "The smallest unit of sound that distinguishes meaning in a language, forming contrasts such as /p/ vs. /b/."@en ;
+    skos:notation "SHINRA_0001306" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Morpheme
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "形態素"@ja ; rdfs:label "Morpheme"@en ;
+    rdfs:comment "意味を持つ言語の最小単位。語根・接頭辞・接尾辞・屈折語尾など。"@ja ;
+    rdfs:comment "The smallest meaningful unit of language, including roots, prefixes, suffixes, and inflectional endings."@en ;
+    skos:notation "SHINRA_0001307" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 言語学の下位分野 ──────────────────────────────────────────────
+
+shinra:Phonology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "音韻論"@ja ; rdfs:label "Phonology"@en ;
+    rdfs:comment "言語における音体系の組織と機能を研究する言語学の下位分野。音素・音節・韻律など。"@ja ;
+    rdfs:comment "A subfield of linguistics studying the organization and function of sound systems in language, including phonemes, syllables, and prosody."@en ;
+    skos:notation "SHINRA_0001311" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Morphology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "形態論"@ja ; rdfs:label "Morphology"@en ;
+    rdfs:comment "語の内部構造と語形成規則を研究する言語学の下位分野。屈折・派生・複合など。"@ja ;
+    rdfs:comment "A subfield of linguistics studying the internal structure of words and word-formation rules, including inflection, derivation, and compounding."@en ;
+    skos:notation "SHINRA_0001312" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Syntax
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "統語論"@ja ; rdfs:label "Syntax"@en ;
+    skos:altLabel "構文論"@ja ;
+    rdfs:comment "文の構造と文構成規則を研究する言語学の下位分野。句構造・変形・格文法など。"@ja ;
+    rdfs:comment "A subfield of linguistics studying sentence structure and grammatical rules, including phrase structure, transformations, and case grammar."@en ;
+    skos:notation "SHINRA_0001313" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Semantics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "意味論"@ja ; rdfs:label "Semantics"@en ;
+    rdfs:comment "言語表現の意味・指示・意味関係を研究する言語学の下位分野。語義・文意・含意・前提など。"@ja ;
+    rdfs:comment "A subfield of linguistics studying meaning, reference, and semantic relations in language, including word sense, sentence meaning, implicature, and presupposition."@en ;
+    skos:notation "SHINRA_0001314" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Pragmatics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "語用論"@ja ; rdfs:label "Pragmatics"@en ;
+    rdfs:comment "文脈における言語使用と解釈を研究する言語学の下位分野。発話行為・会話含意・礼節など。"@ja ;
+    rdfs:comment "A subfield of linguistics studying language use and interpretation in context, including speech acts, conversational implicature, and politeness."@en ;
+    skos:notation "SHINRA_0001315" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Sociolinguistics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "社会言語学"@ja ; rdfs:label "Sociolinguistics"@en ;
+    rdfs:comment "言語と社会・文化・アイデンティティの関係を研究する分野。言語変異・言語政策・多言語使用など。"@ja ;
+    rdfs:comment "A field studying the relationship between language and society, culture, and identity, including language variation, language policy, and multilingualism."@en ;
+    skos:notation "SHINRA_0001316" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 言語過程 ─────────────────────────────────────────────────────
+
+shinra:Translation
+    a owl:Class ; rdfs:subClassOf shinra:TransformationProcess ;
+    rdfs:label "翻訳"@ja ; rdfs:label "Translation"@en ;
+    skos:altLabel "訳出"@ja ;
+    rdfs:comment "ある言語のテキスト・発話を別の言語に変換する過程。文学翻訳・機械翻訳・逐次通訳など。"@ja ;
+    rdfs:comment "The process of converting text or speech from one language into another, including literary translation, machine translation, and consecutive interpreting."@en ;
+    skos:notation "SHINRA_0001321" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:LanguageAcquisition
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "言語習得"@ja ; rdfs:label "Language Acquisition"@en ;
+    rdfs:comment "母語・第二言語・外国語を習得する心的・認知的過程。児童言語習得・第二言語習得など。"@ja ;
+    rdfs:comment "The mental and cognitive process of acquiring a first, second, or foreign language, including child language acquisition and second language acquisition."@en ;
+    skos:notation "SHINRA_0001322" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:LanguageChange
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "言語変化"@ja ; rdfs:label "Language Change"@en ;
+    skos:altLabel "言語変化・進化"@ja ;
+    rdfs:comment "時間の経過とともに言語の音・語彙・文法が変化する過程。音変化・語義変化・文法化など。"@ja ;
+    rdfs:comment "The process by which the sounds, vocabulary, and grammar of a language change over time, including sound change, semantic change, and grammaticalization."@en ;
+    skos:notation "SHINRA_0001323" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Discourse
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "談話"@ja ; rdfs:label "Discourse"@en ;
+    skos:altLabel "ディスコース"@ja ;
+    rdfs:comment "文を超えた単位で組織された言語使用。会話・物語・論証・議論などのテキスト・発話の連鎖。"@ja ;
+    rdfs:comment "Language use organized in units beyond the sentence, including conversations, narratives, arguments, and connected sequences of text or speech."@en ;
+    skos:notation "SHINRA_0001324" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 言語学プロパティ ──────────────────────────────────────────────
+
+shinra:hasLanguageFamily
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:NaturalLanguage ;
+    rdfs:range  shinra:LanguageFamily ;
+    rdfs:label  "語族"@ja ; rdfs:label "language family"@en ;
+    rdfs:comment "自然言語が属する語族との関係。"@ja ;
+    rdfs:comment "Relation between a natural language and the language family it belongs to."@en ;
+    skos:notation "SHINRA_R001301" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasSpeakerCount
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:NaturalLanguage ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "話者数"@ja ; rdfs:label "speaker count"@en ;
+    rdfs:comment "ある言語の母語話者・第二言語話者を含むおよその総話者数。"@ja ;
+    rdfs:comment "The approximate total number of speakers of a language, including native and second-language speakers."@en ;
+    skos:notation "SHINRA_D001301" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:indo-european-family-001
+    a shinra:LanguageFamily ;
+    rdfs:label "インド・ヨーロッパ語族"@ja ; rdfs:label "Indo-European Language Family"@en ;
+    shinra:wikidataId "Q19860" ;
+    skos:notation "SHINRA_I001301" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:latin-alphabet-001
+    a shinra:Script ;
+    rdfs:label "ラテン文字"@ja ; rdfs:label "Latin Alphabet"@en ;
+    shinra:wikidataId "Q8229" ;
+    skos:notation "SHINRA_I001302" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:kana-001
+    a shinra:Script ;
+    rdfs:label "仮名"@ja ; rdfs:label "Kana"@en ;
+    shinra:wikidataId "Q82467" ;
+    skos:notation "SHINRA_I001303" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:universal-grammar-001
+    a shinra:ScientificTheory ;
+    rdfs:label "普遍文法"@ja ; rdfs:label "Universal Grammar"@en ;
+    shinra:wikidataId "Q183949" ;
+    skos:notation "SHINRA_I001304" ; dcterms:created "2026-05-27"^^xsd:date .

@@ -1,0 +1,185 @@
+# ===========================================================================
+# shinra-environment.ttl  — 環境・生態系詳細ドメイン (Phase 5-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/environment>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 環境・生態系詳細ドメイン"@ja ,
+                    "Shinra Ontology — Environment & Ecology Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 環境・気候 ────────────────────────────────────────────────────
+
+shinra:ClimateZone
+    a owl:Class ; rdfs:subClassOf shinra:GeographicRegion ;
+    rdfs:label "気候帯"@ja ; rdfs:label "Climate Zone"@en ;
+    skos:altLabel "気候区"@ja ;
+    rdfs:comment "気温・降水量・季節変動パターンによって区分される地理的領域。熱帯・温帯・寒帯・乾燥帯など。"@ja ;
+    rdfs:comment "A geographic region classified by patterns of temperature, precipitation, and seasonal variation, including tropical, temperate, polar, and arid zones."@en ;
+    skos:notation "SHINRA_0001501" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:ClimateChange
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "気候変動"@ja ; rdfs:label "Climate Change"@en ;
+    skos:altLabel "地球温暖化"@ja ;
+    rdfs:comment "数十年以上の時間スケールで気温・降水量・海面水位などが変化する過程。人為的温暖化・自然変動など。"@ja ;
+    rdfs:comment "The process of change in temperature, precipitation, sea level, and other climate variables over decades or longer, including anthropogenic warming and natural variability."@en ;
+    skos:notation "SHINRA_0001502" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:GreenhouseEffect
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "温室効果"@ja ; rdfs:label "Greenhouse Effect"@en ;
+    rdfs:comment "大気中の温室効果ガスが赤外線を吸収・再放射し地表を温める自然過程。CO₂・CH₄・H₂Oが主要ガス。"@ja ;
+    rdfs:comment "The natural process by which greenhouse gases in the atmosphere absorb and re-emit infrared radiation, warming the surface, with CO₂, CH₄, and H₂O as key gases."@en ;
+    skos:notation "SHINRA_0001503" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:NutrientCycle
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "物質循環"@ja ; rdfs:label "Nutrient Cycle"@en ;
+    skos:altLabel "生物地球化学的循環"@ja ;
+    rdfs:comment "生態系内で元素・化合物が生物・非生物的経路を循環する過程。炭素循環・窒素循環・水循環など。"@ja ;
+    rdfs:comment "The process by which elements and compounds cycle through biotic and abiotic pathways in an ecosystem, including carbon, nitrogen, and water cycles."@en ;
+    skos:notation "SHINRA_0001504" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 資源・生物多様性 ──────────────────────────────────────────────
+
+shinra:NaturalResource
+    a owl:Class ; rdfs:subClassOf shinra:Substance ;
+    rdfs:label "天然資源"@ja ; rdfs:label "Natural Resource"@en ;
+    skos:altLabel "自然資源"@ja ;
+    rdfs:comment "自然界に存在し人間活動に有用な物質・エネルギー・空間。鉱物資源・水資源・森林・土壌など。"@ja ;
+    rdfs:comment "Naturally occurring materials, energy, or space useful for human activities, including mineral resources, water, forests, and soil."@en ;
+    skos:notation "SHINRA_0001511" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Biodiversity
+    a owl:Class ; rdfs:subClassOf shinra:Quality ;
+    rdfs:label "生物多様性"@ja ; rdfs:label "Biodiversity"@en ;
+    rdfs:comment "遺伝的・種・生態系の各レベルにおける生命の多様さの度合い。熱帯雨林・珊瑚礁などで高い。"@ja ;
+    rdfs:comment "The degree of variety in life at genetic, species, and ecosystem levels, notably high in tropical rainforests and coral reefs."@en ;
+    skos:notation "SHINRA_0001512" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Habitat
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "生息域"@ja ; rdfs:label "Habitat"@en ;
+    skos:altLabel "ハビタット"@ja ;
+    rdfs:comment "特定の生物種が生活・繁殖する環境。熱帯雨林・深海・湿地・砂漠・都市環境など。"@ja ;
+    rdfs:comment "The environment where a species lives and reproduces, including tropical rainforests, deep oceans, wetlands, deserts, and urban environments."@en ;
+    skos:notation "SHINRA_0001513" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:ExtinctionEvent
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "絶滅事象"@ja ; rdfs:label "Extinction Event"@en ;
+    skos:altLabel "大量絶滅"@ja ;
+    rdfs:comment "生物種の多様性が急激に減少する地質学的・生態学的出来事。K-Pg絶滅・オルドビス紀末絶滅など。"@ja ;
+    rdfs:comment "A geological or ecological event in which species diversity decreases sharply, including the K-Pg extinction and the end-Ordovician extinction."@en ;
+    skos:notation "SHINRA_0001514" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 環境問題・汚染 ────────────────────────────────────────────────
+
+shinra:Pollution
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "汚染"@ja ; rdfs:label "Pollution"@en ;
+    skos:altLabel "環境汚染"@ja ;
+    rdfs:comment "有害物質・エネルギーが環境に導入され生態系・人間健康に悪影響を与える過程。大気汚染・水質汚染・土壌汚染など。"@ja ;
+    rdfs:comment "The process by which harmful substances or energy are introduced into the environment with adverse effects on ecosystems and human health, including air, water, and soil pollution."@en ;
+    skos:notation "SHINRA_0001521" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Deforestation
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "森林破壊"@ja ; rdfs:label "Deforestation"@en ;
+    skos:altLabel "森林伐採"@ja ;
+    rdfs:comment "農業・都市化・伐採等によって森林が非森林用途に転換される過程。生物多様性損失・炭素放出をもたらす。"@ja ;
+    rdfs:comment "The conversion of forested land to non-forest uses through agriculture, urbanization, or logging, leading to biodiversity loss and carbon release."@en ;
+    skos:notation "SHINRA_0001522" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:EcologicalCrisis
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "生態学的危機"@ja ; rdfs:label "Ecological Crisis"@en ;
+    rdfs:comment "生態系のバランスが急激に崩れ生物多様性・生態系サービスが損なわれる状態。サンゴ礁白化・湖の富栄養化など。"@ja ;
+    rdfs:comment "A state of rapid ecological imbalance causing loss of biodiversity and ecosystem services, including coral bleaching and lake eutrophication."@en ;
+    skos:notation "SHINRA_0001523" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 環境政策・保全 ────────────────────────────────────────────────
+
+shinra:Conservation
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "自然保護"@ja ; rdfs:label "Conservation"@en ;
+    skos:altLabel "保全"@ja ;
+    rdfs:comment "自然環境・野生生物・生態系を保護・管理・回復する社会的取り組み。保護区設置・種の保全・生態系修復など。"@ja ;
+    rdfs:comment "Social efforts to protect, manage, and restore natural environments, wildlife, and ecosystems, including protected areas, species conservation, and ecosystem restoration."@en ;
+    skos:notation "SHINRA_0001531" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:WasteManagement
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "廃棄物管理"@ja ; rdfs:label "Waste Management"@en ;
+    rdfs:comment "廃棄物の収集・処理・処分・リサイクルを体系的に行う社会的過程。埋立・焼却・資源回収・循環型経済など。"@ja ;
+    rdfs:comment "A systematic social process of collecting, treating, disposing of, and recycling waste, including landfill, incineration, resource recovery, and circular economy approaches."@en ;
+    skos:notation "SHINRA_0001532" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Sustainability
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "持続可能性"@ja ; rdfs:label "Sustainability"@en ;
+    rdfs:comment "現在の需要を満たしながら将来世代の需要も満たす能力。環境的・社会的・経済的持続可能性の三側面を持つ。"@ja ;
+    rdfs:comment "The capacity to meet present needs without compromising the ability of future generations to meet their own needs, encompassing environmental, social, and economic dimensions."@en ;
+    skos:notation "SHINRA_0001533" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:EnvironmentalPolicy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "環境政策"@ja ; rdfs:label "Environmental Policy"@en ;
+    rdfs:comment "環境保護・資源管理・汚染規制を目的とした政府・国際機関の方針・規制・協定。パリ協定・京都議定書など。"@ja ;
+    rdfs:comment "Policies, regulations, and agreements by governments or international bodies aimed at environmental protection, resource management, and pollution control, including the Paris Agreement."@en ;
+    skos:notation "SHINRA_0001534" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 環境プロパティ ────────────────────────────────────────────────
+
+shinra:hasCarbonFootprint
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "炭素フットプリント"@ja ; rdfs:label "carbon footprint"@en ;
+    rdfs:comment "活動・製品・組織が排出するCO₂換算の温室効果ガス量（tCO₂e）。"@ja ;
+    rdfs:comment "The total greenhouse gas emissions caused by an activity, product, or organization, expressed in tonnes of CO₂ equivalent (tCO₂e)."@en ;
+    skos:notation "SHINRA_D001501" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasConservationStatus
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "保全状況"@ja ; rdfs:label "conservation status"@en ;
+    rdfs:comment "IUCNレッドリストによる種の保全状況。EX・EW・CR・EN・VU・NT・LCなど。"@ja ;
+    rdfs:comment "The conservation status of a species according to the IUCN Red List: EX, EW, CR, EN, VU, NT, LC, etc."@en ;
+    skos:notation "SHINRA_D001502" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:paris-agreement-001
+    a shinra:EnvironmentalPolicy ;
+    rdfs:label "パリ協定"@ja ; rdfs:label "Paris Agreement"@en ;
+    shinra:wikidataId "Q21197855" ;
+    skos:notation "SHINRA_I001501" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:great-barrier-reef-001
+    a shinra:Ecosystem ;
+    rdfs:label "グレート・バリア・リーフ"@ja ; rdfs:label "Great Barrier Reef"@en ;
+    shinra:wikidataId "Q7066" ;
+    skos:notation "SHINRA_I001502" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:kt-extinction-001
+    a shinra:ExtinctionEvent ;
+    rdfs:label "白亜紀-古第三紀絶滅事変"@ja ; rdfs:label "Cretaceous-Paleogene Extinction Event"@en ;
+    shinra:wikidataId "Q182751" ;
+    skos:notation "SHINRA_I001503" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:ozone-layer-001
+    a shinra:NaturalResource ;
+    rdfs:label "オゾン層"@ja ; rdfs:label "Ozone Layer"@en ;
+    shinra:wikidataId "Q45585" ;
+    skos:notation "SHINRA_I001504" ; dcterms:created "2026-05-27"^^xsd:date .

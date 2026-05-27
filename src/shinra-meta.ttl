@@ -1,0 +1,168 @@
+# ===========================================================================
+# shinra-meta.ttl  — メタオントロジー・自己記述 (Phase 6)
+# ===========================================================================
+# 神羅万象オントロジー自身をオントロジーで記述する。
+# 「神羅万象」という概念が、このオントロジーの中で自己定義できることを示す。
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
+
+<https://w3id.org/shinra/ont/meta>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — メタオントロジー・自己記述"@ja ,
+                    "Shinra Ontology — Meta-Ontology & Self-Description"@en ;
+    dcterms:description
+        "神羅万象オントロジー自身の構造・設計判断・進化を記述するメタ層。オントロジーモジュール・設計パターン・知識ギャップ・外部オントロジーとの対応関係を管理する。"@ja ,
+        "A meta-layer describing the structure, design decisions, and evolution of the Shinra Ontology itself, managing ontology modules, design patterns, knowledge gaps, and alignment mappings."@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── オントロジーメタクラス ─────────────────────────────────────────
+
+shinra:OntologyModule
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "オントロジーモジュール"@ja ; rdfs:label "Ontology Module"@en ;
+    rdfs:comment "独立した名前空間と関心領域を持つオントロジーの構成単位。shinra-core・shinra-mid・各ドメインファイルなど。"@ja ;
+    rdfs:comment "A constituent unit of an ontology with its own namespace and domain of concern, such as shinra-core, shinra-mid, and individual domain files."@en ;
+    skos:notation "SHINRA_0001601" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:OntologyDesignPattern
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "オントロジー設計パターン"@ja ; rdfs:label "Ontology Design Pattern"@en ;
+    skos:altLabel "ODP"@ja ;
+    rdfs:comment "オントロジー設計上の繰り返し現れる問題を解決する再利用可能なパターン。役割パターン・関与パターン・時間区間パターンなど。"@ja ;
+    rdfs:comment "A reusable pattern solving recurring ontology design problems, including role patterns, participation patterns, and temporal interval patterns."@en ;
+    skos:notation "SHINRA_0001602" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:KnowledgeGap
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "知識ギャップ"@ja ; rdfs:label "Knowledge Gap"@en ;
+    rdfs:comment "オントロジーが現時点でカバーしていない領域・クラス・関係の特定。将来の拡張計画と連動する。"@ja ;
+    rdfs:comment "An identified area, class, or relation not yet covered by the ontology, linked to future expansion plans."@en ;
+    skos:notation "SHINRA_0001603" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:AlignmentMapping
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "アライメントマッピング"@ja ; rdfs:label "Alignment Mapping"@en ;
+    skos:altLabel "外部オントロジー対応"@ja ;
+    rdfs:comment "神羅オントロジーのクラス・プロパティと外部オントロジー（BFO・schema.org・Wikidata等）との対応関係の記述。"@ja ;
+    rdfs:comment "A description of the correspondence between Shinra ontology classes/properties and those in external ontologies such as BFO, schema.org, and Wikidata."@en ;
+    skos:notation "SHINRA_0001604" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:EditorialDecision
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "編集的判断"@ja ; rdfs:label "Editorial Decision"@en ;
+    rdfs:comment "オントロジー構築において下した設計上の選択とその根拠。クラス配置・プロパティ方向・BFO ID選択などの判断記録。"@ja ;
+    rdfs:comment "A recorded design choice made during ontology construction, including class placement, property direction, and BFO ID selection, with rationale."@en ;
+    skos:notation "SHINRA_0001605" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:OntologyVersion
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "オントロジーバージョン"@ja ; rdfs:label "Ontology Version"@en ;
+    rdfs:comment "SemVer で管理されたオントロジーの特定リリース。バージョン番号・リリース日・変更内容を持つ。"@ja ;
+    rdfs:comment "A specific release of the ontology managed under SemVer, with a version number, release date, and change log."@en ;
+    skos:notation "SHINRA_0001606" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── メタプロパティ ────────────────────────────────────────────────
+
+shinra:coversModule
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:OntologyVersion ;
+    rdfs:range  shinra:OntologyModule ;
+    rdfs:label  "モジュールを含む"@ja ; rdfs:label "covers module"@en ;
+    rdfs:comment "オントロジーバージョンが含むモジュールとの関係。"@ja ;
+    rdfs:comment "Relation between an ontology version and the modules it includes."@en ;
+    skos:notation "SHINRA_R001601" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:addressesGap
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:OntologyModule ;
+    rdfs:range  shinra:KnowledgeGap ;
+    rdfs:label  "ギャップに対処する"@ja ; rdfs:label "addresses gap"@en ;
+    rdfs:comment "あるモジュールが解消を意図した知識ギャップとの関係。"@ja ;
+    rdfs:comment "Relation between a module and a knowledge gap it is intended to address."@en ;
+    skos:notation "SHINRA_R001602" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasVersionString
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:OntologyVersion ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "バージョン文字列"@ja ; rdfs:label "version string"@en ;
+    rdfs:comment "SemVer 形式のバージョン文字列。例: '0.4.0'。"@ja ;
+    rdfs:comment "A SemVer version string, e.g. '0.4.0'."@en ;
+    skos:notation "SHINRA_D001601" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasModuleCount
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:OntologyVersion ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "モジュール数"@ja ; rdfs:label "module count"@en ;
+    rdfs:comment "当該バージョンに含まれるドメインモジュールの総数。"@ja ;
+    rdfs:comment "The total number of domain modules included in this version."@en ;
+    skos:notation "SHINRA_D001602" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 「神羅万象」の自己定義 ────────────────────────────────────────
+
+shinra-data:shinra-ontology-itself
+    a shinra:Ontology ;
+    rdfs:label "神羅万象オントロジー"@ja ; rdfs:label "Shinra Ontology"@en ;
+    dcterms:description
+        "世の神羅万象（宇宙に存在するすべてのもの）を公開情報をもとにBFO 2020に準拠したRDF/OWLで整理する個人的知的探索プロジェクト。"@ja ,
+        "A personal intellectual project organizing all things in the universe (shinra-bansho) in RDF/OWL conforming to BFO 2020, based on public information."@en ;
+    shinra:wikidataId "Q324254" ;
+    skos:notation "SHINRA_I001601" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── モジュールインスタンス ────────────────────────────────────────
+
+shinra-data:module-core
+    a shinra:OntologyModule ;
+    rdfs:label "shinra-core モジュール"@ja ; rdfs:label "shinra-core module"@en ;
+    dcterms:description "BFO 2020 への 10 ブリッジクラス、21 オブジェクトプロパティ、基本インスタンスを定義する上位骨格モジュール。"@ja ;
+    skos:notation "SHINRA_I001602" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:module-mid
+    a shinra:OntologyModule ;
+    rdfs:label "shinra-mid モジュール"@ja ; rdfs:label "shinra-mid module"@en ;
+    dcterms:description "時空・人間組織・知識・自然科学・来歴の 6 カテゴリをカバーする中位骨格モジュール。"@ja ;
+    skos:notation "SHINRA_I001603" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── バージョンインスタンス ────────────────────────────────────────
+
+shinra-data:version-0-4-0
+    a shinra:OntologyVersion ;
+    rdfs:label "神羅万象オントロジー v0.4.0"@ja ; rdfs:label "Shinra Ontology v0.4.0"@en ;
+    shinra:hasVersionString "0.4.0" ;
+    shinra:hasModuleCount 17 ;
+    dcterms:date "2026-05-27"^^xsd:date ;
+    dcterms:description
+        "Phase 5-b〜g・Phase 6 完了。精神・技術・経済・言語学・法律・環境・メタの7新モジュールを追加。"@ja ,
+        "Completes Phase 5-b through 5-g and Phase 6, adding 7 new modules: mind, technology, economics, linguistics, law, environment, and meta."@en ;
+    skos:notation "SHINRA_I001604" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 知識ギャップ（将来課題）────────────────────────────────────────
+
+shinra-data:gap-neuroscience
+    a shinra:KnowledgeGap ;
+    rdfs:label "神経科学詳細の未整備"@ja ; rdfs:label "Neuroscience detail gap"@en ;
+    dcterms:description "神経回路・シナプス・脳部位の詳細クラス体系がまだ存在しない。shinra-neuroscience.ttl として将来追加予定。"@ja ;
+    skos:notation "SHINRA_I001605" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:gap-formal-logic
+    a shinra:KnowledgeGap ;
+    rdfs:label "形式論理・証明論の未整備"@ja ; rdfs:label "Formal logic and proof theory gap"@en ;
+    dcterms:description "命題論理・述語論理・モーダル論理・証明論の詳細クラスが不足。shinra-logic.ttl として将来追加予定。"@ja ;
+    skos:notation "SHINRA_I001606" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:gap-music-theory
+    a shinra:KnowledgeGap ;
+    rdfs:label "音楽理論の未整備"@ja ; rdfs:label "Music theory gap"@en ;
+    dcterms:description "音階・和声・リズム・形式などの音楽理論クラスがまだ存在しない。文化ドメインの拡張として将来追加予定。"@ja ;
+    skos:notation "SHINRA_I001607" ; dcterms:created "2026-05-27"^^xsd:date .

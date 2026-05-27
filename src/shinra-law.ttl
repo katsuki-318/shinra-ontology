@@ -1,0 +1,182 @@
+# ===========================================================================
+# shinra-law.ttl  — 法律・権利詳細ドメイン (Phase 5-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/law>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 法律・権利詳細ドメイン"@ja ,
+                    "Shinra Ontology — Law & Rights Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 規範的概念 ────────────────────────────────────────────────────
+
+shinra:LegalRight
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "権利"@ja ; rdfs:label "Legal Right"@en ;
+    skos:altLabel "法的権利"@ja ;
+    rdfs:comment "法的秩序が個人・団体に付与する利益・自由・請求を行使できる地位。財産権・人格権・参政権など。"@ja ;
+    rdfs:comment "A legally recognized position entitling an individual or entity to exercise interests, freedoms, or claims, including property rights, personality rights, and voting rights."@en ;
+    skos:notation "SHINRA_0001401" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:HumanRight
+    a owl:Class ; rdfs:subClassOf shinra:LegalRight ;
+    rdfs:label "人権"@ja ; rdfs:label "Human Right"@en ;
+    rdfs:comment "すべての人間が生まれながらに有する普遍的・不可侵の権利。生命権・自由権・社会権・平等権など。"@ja ;
+    rdfs:comment "Universal and inalienable rights inherent to all human beings, including the right to life, liberty, social rights, and equality."@en ;
+    skos:notation "SHINRA_0001402" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:IntellectualPropertyRight
+    a owl:Class ; rdfs:subClassOf shinra:LegalRight ;
+    rdfs:label "知的財産権"@ja ; rdfs:label "Intellectual Property Right"@en ;
+    skos:altLabel "知財権"@ja ;
+    rdfs:comment "知的創造物に対する法的権利。著作権・特許権・商標権・意匠権など。"@ja ;
+    rdfs:comment "A legal right in intellectual creations, including copyright, patent, trademark, and design rights."@en ;
+    skos:notation "SHINRA_0001403" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:LegalObligation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "義務"@ja ; rdfs:label "Legal Obligation"@en ;
+    skos:altLabel "法的義務"@ja ;
+    rdfs:comment "法的秩序が個人・団体に課す行為・不作為の要求。契約上の義務・不法行為法上の注意義務など。"@ja ;
+    rdfs:comment "A legally imposed requirement for an individual or entity to act or refrain from acting, including contractual obligations and duty of care in tort law."@en ;
+    skos:notation "SHINRA_0001404" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Jurisdiction
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "管轄"@ja ; rdfs:label "Jurisdiction"@en ;
+    rdfs:comment "法的規範を制定・適用・強制する機関・地域の権限範囲。国家管轄・州管轄・国際裁判管轄など。"@ja ;
+    rdfs:comment "The scope of authority of an institution or territory to create, apply, and enforce legal norms, including national, state, and international jurisdiction."@en ;
+    skos:notation "SHINRA_0001405" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 法的文書・規範 ────────────────────────────────────────────────
+
+shinra:Constitution
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "憲法"@ja ; rdfs:label "Constitution"@en ;
+    rdfs:comment "国家の根本規範として政府の構造・権限・国民の権利を定める最高法規。日本国憲法・アメリカ合衆国憲法など。"@ja ;
+    rdfs:comment "The supreme law defining the structure and powers of government and the rights of citizens, including the Constitution of Japan and the U.S. Constitution."@en ;
+    skos:notation "SHINRA_0001411" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Statute
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "法律"@ja ; rdfs:label "Statute"@en ;
+    skos:altLabel "制定法"@ja ;
+    rdfs:comment "立法機関によって制定された成文法規。民法・刑法・商法・行政法など。"@ja ;
+    rdfs:comment "A written law enacted by a legislative body, including civil, criminal, commercial, and administrative law."@en ;
+    skos:notation "SHINRA_0001412" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Contract
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "契約"@ja ; rdfs:label "Contract"@en ;
+    rdfs:comment "複数当事者間で法的強制力を持つ合意。売買契約・雇用契約・賃貸借契約・ライセンス契約など。"@ja ;
+    rdfs:comment "A legally enforceable agreement between two or more parties, including sales, employment, lease, and license contracts."@en ;
+    skos:notation "SHINRA_0001413" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Treaty
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "条約"@ja ; rdfs:label "Treaty"@en ;
+    rdfs:comment "国家・国際機関間で締結される法的拘束力を持つ協定。国際人権条約・貿易協定・安全保障条約など。"@ja ;
+    rdfs:comment "A legally binding agreement concluded between states or international organizations, including human rights treaties, trade agreements, and security treaties."@en ;
+    skos:notation "SHINRA_0001414" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Precedent
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "判例"@ja ; rdfs:label "Legal Precedent"@en ;
+    skos:altLabel "先例"@ja ;
+    rdfs:comment "裁判所が過去の判決を将来の類似事件に適用する法原則。コモンロー体系での拘束的先例（stare decisis）など。"@ja ;
+    rdfs:comment "A court decision applied as a legal principle to future similar cases, including binding precedent under stare decisis in common law systems."@en ;
+    skos:notation "SHINRA_0001415" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 法的過程 ─────────────────────────────────────────────────────
+
+shinra:LegalProcedure
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "法的手続き"@ja ; rdfs:label "Legal Procedure"@en ;
+    rdfs:comment "法的権利・義務を確定・強制するための制度的過程。訴訟・仲裁・調停・行政手続きなど。"@ja ;
+    rdfs:comment "An institutional process for determining or enforcing legal rights and obligations, including litigation, arbitration, mediation, and administrative procedure."@en ;
+    skos:notation "SHINRA_0001421" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Trial
+    a owl:Class ; rdfs:subClassOf shinra:LegalProcedure ;
+    rdfs:label "裁判"@ja ; rdfs:label "Trial"@en ;
+    skos:altLabel "公判"@ja ;
+    rdfs:comment "裁判所において事実認定・法適用によって紛争を解決する手続き。民事裁判・刑事裁判・行政訴訟など。"@ja ;
+    rdfs:comment "A court procedure resolving disputes through fact-finding and law application, including civil, criminal, and administrative trials."@en ;
+    skos:notation "SHINRA_0001422" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Crime
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "犯罪"@ja ; rdfs:label "Crime"@en ;
+    rdfs:comment "刑事法によって禁止され刑罰が科される行為。殺人・窃盗・詐欺・サイバー犯罪など。"@ja ;
+    rdfs:comment "An act prohibited by criminal law and subject to punishment, including murder, theft, fraud, and cybercrime."@en ;
+    skos:notation "SHINRA_0001423" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Punishment
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "刑罰"@ja ; rdfs:label "Punishment"@en ;
+    skos:altLabel "制裁"@ja ;
+    rdfs:comment "犯罪に対して国家が科す制裁。死刑・懲役・罰金・社会奉仕命令など。"@ja ;
+    rdfs:comment "A sanction imposed by the state for crime, including capital punishment, imprisonment, fines, and community service orders."@en ;
+    skos:notation "SHINRA_0001424" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:LegalReform
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "法改正"@ja ; rdfs:label "Legal Reform"@en ;
+    rdfs:comment "既存の法律・制度を改変・廃止・新設する社会的過程。司法制度改革・民法改正・憲法改正など。"@ja ;
+    rdfs:comment "A social process amending, abolishing, or creating laws and legal institutions, including judicial reform, civil code revision, and constitutional amendment."@en ;
+    skos:notation "SHINRA_0001425" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 法律プロパティ ────────────────────────────────────────────────
+
+shinra:hasEnactmentYear
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:LegalDocument ;
+    rdfs:range  xsd:gYear ;
+    rdfs:label  "制定年"@ja ; rdfs:label "enactment year"@en ;
+    rdfs:comment "法律・条約・憲法が制定・発効した年。"@ja ;
+    rdfs:comment "The year a law, treaty, or constitution was enacted or entered into force."@en ;
+    skos:notation "SHINRA_D001401" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasJurisdiction
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:Jurisdiction ;
+    rdfs:label  "管轄"@ja ; rdfs:label "has jurisdiction"@en ;
+    rdfs:comment "法的文書・手続きが適用される管轄との関係。"@ja ;
+    rdfs:comment "Relation between a legal document or procedure and the jurisdiction to which it applies."@en ;
+    skos:notation "SHINRA_R001401" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:universal-declaration-001
+    a shinra:LegalDocument ;
+    rdfs:label "世界人権宣言"@ja ; rdfs:label "Universal Declaration of Human Rights"@en ;
+    shinra:wikidataId "Q7813" ;
+    skos:notation "SHINRA_I001401" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:japan-constitution-001
+    a shinra:Constitution ;
+    rdfs:label "日本国憲法"@ja ; rdfs:label "Constitution of Japan"@en ;
+    shinra:wikidataId "Q199660" ;
+    skos:notation "SHINRA_I001402" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:magna-carta-001
+    a shinra:LegalDocument ;
+    rdfs:label "マグナ・カルタ"@ja ; rdfs:label "Magna Carta"@en ;
+    shinra:wikidataId "Q174173" ;
+    skos:notation "SHINRA_I001403" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:copyright-001
+    a shinra:IntellectualPropertyRight ;
+    rdfs:label "著作権"@ja ; rdfs:label "Copyright"@en ;
+    shinra:wikidataId "Q14075" ;
+    skos:notation "SHINRA_I001404" ; dcterms:created "2026-05-27"^^xsd:date .
