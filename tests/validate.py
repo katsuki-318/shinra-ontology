@@ -20,19 +20,13 @@ ROOT   = pathlib.Path(__file__).parent.parent
 SRC    = ROOT / "src"
 SHINRA = Namespace("https://w3id.org/shinra/ont/")
 
-# デフォルトで読み込む全ドメインファイル（依存順）
-ALL_MODULES = [
-    "shinra-core.ttl",
-    "shinra-mid.ttl",
-    "shinra-physical.ttl",
-    "shinra-social.ttl",
-    "shinra-information.ttl",
-    "shinra-biology.ttl",
-    "shinra-geography.ttl",
-    "shinra-history.ttl",
-    "shinra-abstract.ttl",
-    "shinra-culture.ttl",
-]
+# 依存順の先頭2ファイル + 残りは src/ を自動スキャン
+_PRIORITY = ["shinra-core.ttl", "shinra-mid.ttl"]
+_AUTO = sorted(
+    p.name for p in (ROOT / "src").glob("shinra-*.ttl")
+    if p.name not in _PRIORITY and p.name != "catalog-v001.xml"
+)
+ALL_MODULES = _PRIORITY + _AUTO
 
 def parse_args():
     p = argparse.ArgumentParser(description="神羅万象オントロジー バリデーター")

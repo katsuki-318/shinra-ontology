@@ -11,6 +11,9 @@
     <uri name="https://w3id.org/shinra/ont/history"     uri="shinra-history.ttl"/>
     <uri name="https://w3id.org/shinra/ont/abstract"    uri="shinra-abstract.ttl"/>
     <uri name="https://w3id.org/shinra/ont/culture"     uri="shinra-culture.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/mind"        uri="shinra-mind.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/technology"  uri="shinra-technology.ttl"/>
+    <uri name="https://w3id.org/shinra/ont/economics"   uri="shinra-economics.ttl"/>
     <!-- BFO 2020 -->
     <uri name="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"
          uri="../imports/bfo-2020.owl"/>

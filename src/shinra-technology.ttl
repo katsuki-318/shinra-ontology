@@ -1,0 +1,244 @@
+# ===========================================================================
+# shinra-technology.ttl  — 技術・工学詳細ドメイン (Phase 5-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/technology>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 技術・工学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Technology & Engineering Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 情報技術・計算機 ──────────────────────────────────────────────
+
+shinra:ComputerSystem
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "計算機システム"@ja ; rdfs:label "Computer System"@en ;
+    skos:altLabel "コンピュータ"@ja ;
+    rdfs:comment "演算・記憶・入出力装置から構成される情報処理用の人工物。スマートフォン・サーバ・組み込みシステムなど。"@ja ;
+    rdfs:comment "An artifact consisting of processing, memory, and I/O units for information processing, including smartphones, servers, and embedded systems."@en ;
+    skos:notation "SHINRA_0001101" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Software
+    a owl:Class ; rdfs:subClassOf shinra:SoftwareCode ;
+    rdfs:label "ソフトウェア"@ja ; rdfs:label "Software"@en ;
+    rdfs:comment "特定の機能を実現するプログラム・データ・ドキュメントの集合体。OS・アプリケーション・ライブラリなど。"@ja ;
+    rdfs:comment "A collection of programs, data, and documentation implementing specific functions, including operating systems, applications, and libraries."@en ;
+    skos:notation "SHINRA_0001102" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:OperatingSystem
+    a owl:Class ; rdfs:subClassOf shinra:Software ;
+    rdfs:label "オペレーティングシステム"@ja ; rdfs:label "Operating System"@en ;
+    skos:altLabel "OS"@ja ;
+    rdfs:comment "ハードウェア資源を管理しアプリケーションに抽象化を提供するシステムソフトウェア。Linux・Windows・macOSなど。"@ja ;
+    rdfs:comment "System software that manages hardware resources and provides abstractions for applications, including Linux, Windows, and macOS."@en ;
+    skos:notation "SHINRA_0001103" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Database
+    a owl:Class ; rdfs:subClassOf shinra:Dataset ;
+    rdfs:label "データベース"@ja ; rdfs:label "Database"@en ;
+    skos:altLabel "DB"@ja ;
+    rdfs:comment "構造化されたデータを永続的に格納・管理・検索するシステム。リレーショナルDB・グラフDB・ドキュメントDBなど。"@ja ;
+    rdfs:comment "A system for persistently storing, managing, and retrieving structured data, including relational, graph, and document databases."@en ;
+    skos:notation "SHINRA_0001104" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:ComputerNetwork
+    a owl:Class ; rdfs:subClassOf shinra:Infrastructure ;
+    rdfs:label "コンピュータネットワーク"@ja ; rdfs:label "Computer Network"@en ;
+    skos:altLabel "通信網"@ja ;
+    rdfs:comment "計算機・デバイスが通信プロトコルで接続された情報インフラ。LAN・WAN・インターネット・5Gなど。"@ja ;
+    rdfs:comment "An information infrastructure connecting computers and devices via communication protocols, including LAN, WAN, the Internet, and 5G networks."@en ;
+    skos:notation "SHINRA_0001105" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 人工知能・機械学習 ───────────────────────────────────────────
+
+shinra:ArtificialIntelligence
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "人工知能"@ja ; rdfs:label "Artificial Intelligence"@en ;
+    skos:altLabel "AI"@ja ;
+    rdfs:comment "人間の知的能力（推論・学習・知覚・言語理解）を計算機上で実現する技術分野。機械学習・深層学習・記号AIなど。"@ja ;
+    rdfs:comment "The technology field implementing human-like intellectual capabilities (reasoning, learning, perception, language) on computers, including machine learning, deep learning, and symbolic AI."@en ;
+    skos:notation "SHINRA_0001111" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:MachineLearning
+    a owl:Class ; rdfs:subClassOf shinra:ArtificialIntelligence ;
+    rdfs:label "機械学習"@ja ; rdfs:label "Machine Learning"@en ;
+    skos:altLabel "ML"@ja ;
+    rdfs:comment "データから統計的パターンを学習し予測・分類・生成を行うAI手法。教師あり・教師なし・強化学習など。"@ja ;
+    rdfs:comment "An AI approach that learns statistical patterns from data for prediction, classification, and generation, including supervised, unsupervised, and reinforcement learning."@en ;
+    skos:notation "SHINRA_0001112" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:DeepLearning
+    a owl:Class ; rdfs:subClassOf shinra:MachineLearning ;
+    rdfs:label "深層学習"@ja ; rdfs:label "Deep Learning"@en ;
+    rdfs:comment "多層のニューラルネットワークを用いる機械学習手法。画像認識・自然言語処理・音声認識などで高性能。"@ja ;
+    rdfs:comment "A machine learning approach using multi-layer neural networks, achieving high performance in image recognition, natural language processing, and speech recognition."@en ;
+    skos:notation "SHINRA_0001113" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:LargeLanguageModel
+    a owl:Class ; rdfs:subClassOf shinra:DeepLearning ;
+    rdfs:label "大規模言語モデル"@ja ; rdfs:label "Large Language Model"@en ;
+    skos:altLabel "LLM"@ja ;
+    rdfs:comment "大量テキストデータで事前学習された大規模なニューラル言語モデル。GPT・Claude・Geminiなど。"@ja ;
+    rdfs:comment "A large-scale neural language model pre-trained on massive text corpora, including GPT, Claude, and Gemini."@en ;
+    skos:notation "SHINRA_0001114" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 医療技術・生命工学 ───────────────────────────────────────────
+
+shinra:MedicalTechnology
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "医療技術"@ja ; rdfs:label "Medical Technology"@en ;
+    skos:altLabel "医工学"@ja ;
+    rdfs:comment "疾患の診断・治療・予防・リハビリを支援する技術体系。医療機器・診断技術・手術技術・再生医療など。"@ja ;
+    rdfs:comment "A body of technology supporting diagnosis, treatment, prevention, and rehabilitation, including medical devices, diagnostic techniques, surgical techniques, and regenerative medicine."@en ;
+    skos:notation "SHINRA_0001121" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Drug
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "薬剤"@ja ; rdfs:label "Drug"@en ;
+    skos:altLabel "医薬品"@ja ;
+    rdfs:comment "疾患の治療・予防・診断に用いられる化学物質。抗生物質・ワクチン・鎮痛剤・抗がん剤など。"@ja ;
+    rdfs:comment "A chemical substance used for treating, preventing, or diagnosing disease, including antibiotics, vaccines, analgesics, and anticancer agents."@en ;
+    skos:notation "SHINRA_0001122" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Vaccine
+    a owl:Class ; rdfs:subClassOf shinra:Drug ;
+    rdfs:label "ワクチン"@ja ; rdfs:label "Vaccine"@en ;
+    rdfs:comment "免疫系を刺激して特定の病原体に対する抵抗性を誘導する生物学的製剤。mRNAワクチン・不活化ワクチンなど。"@ja ;
+    rdfs:comment "A biological preparation that stimulates the immune system to develop resistance against specific pathogens, including mRNA vaccines and inactivated vaccines."@en ;
+    skos:notation "SHINRA_0001123" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Biotechnology
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "バイオテクノロジー"@ja ; rdfs:label "Biotechnology"@en ;
+    skos:altLabel "生命工学"@ja ;
+    rdfs:comment "生物・細胞・分子生物学的プロセスを応用する技術分野。遺伝子工学・細胞培養・CRISPR・バイオ医薬品など。"@ja ;
+    rdfs:comment "A technology field applying biological, cellular, and molecular processes, including genetic engineering, cell culture, CRISPR, and biopharmaceuticals."@en ;
+    skos:notation "SHINRA_0001124" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── エネルギー技術 ────────────────────────────────────────────────
+
+shinra:EnergyTechnology
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "エネルギー技術"@ja ; rdfs:label "Energy Technology"@en ;
+    rdfs:comment "エネルギーの生産・変換・貯蔵・輸送・利用に関する技術体系。発電・送電・蓄電・省エネ技術など。"@ja ;
+    rdfs:comment "A body of technology related to energy production, conversion, storage, transmission, and use, including power generation, transmission, storage, and efficiency."@en ;
+    skos:notation "SHINRA_0001131" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:RenewableEnergy
+    a owl:Class ; rdfs:subClassOf shinra:EnergyTechnology ;
+    rdfs:label "再生可能エネルギー"@ja ; rdfs:label "Renewable Energy"@en ;
+    skos:altLabel "自然エネルギー"@ja ;
+    rdfs:comment "自然界で継続的に補充されるエネルギー源を利用する技術。太陽光・風力・水力・地熱・バイオマスなど。"@ja ;
+    rdfs:comment "Technology harnessing energy sources continuously replenished by nature, including solar, wind, hydropower, geothermal, and biomass."@en ;
+    skos:notation "SHINRA_0001132" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:NuclearTechnology
+    a owl:Class ; rdfs:subClassOf shinra:EnergyTechnology ;
+    rdfs:label "核技術"@ja ; rdfs:label "Nuclear Technology"@en ;
+    skos:altLabel "原子力技術"@ja ;
+    rdfs:comment "核分裂・核融合反応を利用するエネルギー・応用技術。原子力発電・核融合炉・放射線医療など。"@ja ;
+    rdfs:comment "Technology exploiting nuclear fission or fusion reactions, including nuclear power generation, fusion reactors, and radiation medicine."@en ;
+    skos:notation "SHINRA_0001133" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 農業・食料技術 ────────────────────────────────────────────────
+
+shinra:AgriculturalTechnology
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "農業技術"@ja ; rdfs:label "Agricultural Technology"@en ;
+    skos:altLabel "アグリテック"@ja ;
+    rdfs:comment "作物・家畜・水産物の生産・管理・収穫に関する技術体系。品種改良・精密農業・垂直農場・アグリロボなど。"@ja ;
+    rdfs:comment "A body of technology for producing, managing, and harvesting crops, livestock, and aquatic products, including crop improvement, precision agriculture, vertical farming, and agri-robots."@en ;
+    skos:notation "SHINRA_0001141" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:FoodProcessing
+    a owl:Class ; rdfs:subClassOf shinra:TransformationProcess ;
+    rdfs:label "食品加工"@ja ; rdfs:label "Food Processing"@en ;
+    rdfs:comment "食材を安全・保存可能・消費可能な形態に変換する過程。発酵・殺菌・乾燥・冷凍・調理など。"@ja ;
+    rdfs:comment "The process of transforming raw ingredients into safe, storable, and consumable forms, including fermentation, sterilization, drying, freezing, and cooking."@en ;
+    skos:notation "SHINRA_0001142" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 土木・建設・材料 ──────────────────────────────────────────────
+
+shinra:CivilEngineering
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "土木工学"@ja ; rdfs:label "Civil Engineering"@en ;
+    rdfs:comment "道路・橋梁・トンネル・ダム・上下水道などの社会インフラを設計・建設・維持管理する工学分野。"@ja ;
+    rdfs:comment "The engineering discipline designing, constructing, and maintaining social infrastructure such as roads, bridges, tunnels, dams, and water systems."@en ;
+    skos:notation "SHINRA_0001151" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Material
+    a owl:Class ; rdfs:subClassOf shinra:Substance ;
+    rdfs:label "材料"@ja ; rdfs:label "Material"@en ;
+    skos:altLabel "素材"@ja ;
+    rdfs:comment "製品・構造物の製造に使用される物質。金属・セラミックス・高分子・複合材料・半導体など。"@ja ;
+    rdfs:comment "A substance used in manufacturing products or structures, including metals, ceramics, polymers, composites, and semiconductors."@en ;
+    skos:notation "SHINRA_0001152" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Semiconductor
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "半導体"@ja ; rdfs:label "Semiconductor"@en ;
+    rdfs:comment "電気伝導性が絶縁体と導体の中間にある材料。シリコン・ゲルマニウム・化合物半導体など。電子デバイスの基盤。"@ja ;
+    rdfs:comment "A material with electrical conductivity between insulators and conductors, including silicon, germanium, and compound semiconductors, forming the foundation of electronic devices."@en ;
+    skos:notation "SHINRA_0001153" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 技術プロパティ ────────────────────────────────────────────────
+
+shinra:hasTechnologyReadinessLevel
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Technology ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "技術成熟度"@ja ; rdfs:label "technology readiness level"@en ;
+    rdfs:comment "技術の成熟度を示すNASA由来の指標（TRL）。1（基礎研究）から9（実証済み）の整数値。"@ja ;
+    rdfs:comment "A NASA-originated maturity indicator (TRL) for technologies, ranging from 1 (basic research) to 9 (proven deployment)."@en ;
+    skos:notation "SHINRA_D001101" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasInventionYear
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Technology ;
+    rdfs:range  xsd:gYear ;
+    rdfs:label  "発明年"@ja ; rdfs:label "invention year"@en ;
+    rdfs:comment "技術・発明が初めて実現・公開された年。"@ja ;
+    rdfs:comment "The year a technology or invention was first realized or made public."@en ;
+    skos:notation "SHINRA_D001102" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────名前─────────────────
+
+shinra-data:internet-001
+    a shinra:ComputerNetwork ;
+    rdfs:label "インターネット"@ja ; rdfs:label "Internet"@en ;
+    shinra:wikidataId "Q75" ;
+    skos:notation "SHINRA_I001101" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:crispr-001
+    a shinra:Biotechnology ;
+    rdfs:label "CRISPR-Cas9"@ja ; rdfs:label "CRISPR-Cas9"@en ;
+    shinra:wikidataId "Q22711915" ;
+    skos:notation "SHINRA_I001102" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:solar-cell-001
+    a shinra:RenewableEnergy ;
+    rdfs:label "太陽電池"@ja ; rdfs:label "Solar Cell"@en ;
+    shinra:wikidataId "Q189069" ;
+    skos:notation "SHINRA_I001103" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:penicillin-001
+    a shinra:Drug ;
+    rdfs:label "ペニシリン"@ja ; rdfs:label "Penicillin"@en ;
+    shinra:wikidataId "Q79082" ;
+    skos:notation "SHINRA_I001104" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:linux-001
+    a shinra:OperatingSystem ;
+    rdfs:label "Linux"@ja ; rdfs:label "Linux"@en ;
+    shinra:wikidataId "Q388" ;
+    skos:notation "SHINRA_I001105" ; dcterms:created "2026-05-27"^^xsd:date .

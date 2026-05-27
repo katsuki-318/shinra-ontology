@@ -1,0 +1,256 @@
+# ===========================================================================
+# shinra-mind.ttl  — 精神・認知・心理ドメイン (Phase 5-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/mind>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 精神・認知・心理ドメイン"@ja ,
+                    "Shinra Ontology — Mind, Cognition & Psychology Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 認知過程 ─────────────────────────────────────────────────────
+
+shinra:Cognition
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "認知過程"@ja ; rdfs:label "Cognition"@en ;
+    rdfs:comment "情報の知覚・処理・解釈・記憶・使用に関わる心的過程の総称。注意・記憶・推論・言語理解など。"@ja ;
+    rdfs:comment "The collective term for mental processes involved in perceiving, processing, interpreting, remembering, and using information, including attention, memory, and reasoning."@en ;
+    skos:notation "SHINRA_0001001" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Perception
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "知覚"@ja ; rdfs:label "Perception"@en ;
+    rdfs:comment "感覚入力を組織化・解釈し、環境を理解する心的過程。視覚・聴覚・触覚・嗅覚・味覚など。"@ja ;
+    rdfs:comment "The mental process of organizing and interpreting sensory input to understand the environment, including vision, hearing, touch, smell, and taste."@en ;
+    skos:notation "SHINRA_0001002" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Memory
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "記憶"@ja ; rdfs:label "Memory"@en ;
+    skos:altLabel "記憶過程"@ja ;
+    rdfs:comment "情報を符号化・保持・想起する心的過程。作業記憶・長期記憶・手続き記憶・エピソード記憶など。"@ja ;
+    rdfs:comment "The mental process of encoding, retaining, and retrieving information, including working memory, long-term memory, procedural memory, and episodic memory."@en ;
+    skos:notation "SHINRA_0001003" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Learning
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "学習"@ja ; rdfs:label "Learning"@en ;
+    rdfs:comment "経験・練習・教授によって知識・技能・行動が変化する心的過程。条件づけ・洞察学習・観察学習など。"@ja ;
+    rdfs:comment "The mental process by which knowledge, skills, or behavior change through experience, practice, or instruction, including conditioning, insight learning, and observational learning."@en ;
+    skos:notation "SHINRA_0001004" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Reasoning
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "推論"@ja ; rdfs:label "Reasoning"@en ;
+    rdfs:comment "前提から結論を導出する心的過程。演繹的推論・帰納的推論・アブダクションなど。"@ja ;
+    rdfs:comment "The mental process of drawing conclusions from premises, including deductive, inductive, and abductive reasoning."@en ;
+    skos:notation "SHINRA_0001005" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:DecisionMaking
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "意思決定"@ja ; rdfs:label "Decision Making"@en ;
+    skos:altLabel "判断"@ja ;
+    rdfs:comment "複数の選択肢から一つを選ぶ心的過程。合理的意思決定・直感的判断・ヒューリスティクスなど。"@ja ;
+    rdfs:comment "The mental process of selecting among alternatives, including rational decision-making, intuitive judgment, and heuristics."@en ;
+    skos:notation "SHINRA_0001006" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Imagination
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "想像"@ja ; rdfs:label "Imagination"@en ;
+    skos:altLabel "創造的想像力"@ja ;
+    rdfs:comment "直接経験していない対象・状況・出来事を心的に表象する能力と過程。創造性・空想・未来予測など。"@ja ;
+    rdfs:comment "The capacity and process of mentally representing objects, situations, or events not directly experienced, including creativity, fantasy, and future thinking."@en ;
+    skos:notation "SHINRA_0001007" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Attention
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "注意"@ja ; rdfs:label "Attention"@en ;
+    rdfs:comment "特定の刺激・課題・思考に認知資源を選択的に向ける心的過程。選択的注意・持続的注意・分割注意など。"@ja ;
+    rdfs:comment "The mental process of selectively directing cognitive resources toward specific stimuli, tasks, or thoughts, including selective, sustained, and divided attention."@en ;
+    skos:notation "SHINRA_0001008" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 感情・動機 ────────────────────────────────────────────────────
+
+shinra:Emotion
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "感情"@ja ; rdfs:label "Emotion"@en ;
+    skos:altLabel "情動"@ja ;
+    rdfs:comment "主観的な感じ・生理的変化・行動傾向を伴う複合的な心的状態。喜び・悲しみ・怒り・恐怖・嫌悪・驚きなど。"@ja ;
+    rdfs:comment "A complex mental state involving subjective feelings, physiological changes, and behavioral tendencies, including joy, sadness, anger, fear, disgust, and surprise."@en ;
+    skos:notation "SHINRA_0001011" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Motivation
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "動機"@ja ; rdfs:label "Motivation"@en ;
+    skos:altLabel "モチベーション"@ja ;
+    rdfs:comment "目標指向行動を開始・持続・方向づける心的力。内発的動機・外発的動機・欲求階層など。"@ja ;
+    rdfs:comment "A mental force that initiates, sustains, and directs goal-oriented behavior, including intrinsic motivation, extrinsic motivation, and need hierarchies."@en ;
+    skos:notation "SHINRA_0001012" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Mood
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "気分"@ja ; rdfs:label "Mood"@en ;
+    rdfs:comment "特定の対象を持たない持続的な感情的状態。抑うつ気分・高揚感・不安感・平静など。"@ja ;
+    rdfs:comment "A diffuse and long-lasting emotional state without a specific object, including depressed mood, elation, anxiety, and equanimity."@en ;
+    skos:notation "SHINRA_0001013" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Stress
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "ストレス"@ja ; rdfs:label "Stress"@en ;
+    skos:altLabel "心理的ストレス"@ja ;
+    rdfs:comment "要求が対処資源を超えると知覚されたときに生じる心理・生理的反応。急性ストレス・慢性ストレスなど。"@ja ;
+    rdfs:comment "A psychological and physiological response arising when perceived demands exceed coping resources, including acute and chronic stress."@en ;
+    skos:notation "SHINRA_0001014" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 心的傾向・態度 ────────────────────────────────────────────────
+
+shinra:Desire
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "欲求"@ja ; rdfs:label "Desire"@en ;
+    skos:altLabel "欲望"@ja ;
+    rdfs:comment "特定の状態・対象・結果を求める心的傾向。生理的欲求・社会的欲求・自己実現欲求など。"@ja ;
+    rdfs:comment "A mental disposition directed toward a specific state, object, or outcome, including physiological needs, social needs, and self-actualization."@en ;
+    skos:notation "SHINRA_0001021" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Intention
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "意図"@ja ; rdfs:label "Intention"@en ;
+    rdfs:comment "将来の行為・状態を実現しようとする心的コミットメント。目標設定・計画・意志など。"@ja ;
+    rdfs:comment "A mental commitment to realizing a future action or state, including goal-setting, planning, and volition."@en ;
+    skos:notation "SHINRA_0001022" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Attitude
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "態度"@ja ; rdfs:label "Attitude"@en ;
+    rdfs:comment "対象・人・状況に対する持続的な評価的傾向。好意的態度・否定的態度・偏見・ステレオタイプなど。"@ja ;
+    rdfs:comment "A persistent evaluative tendency toward objects, people, or situations, including favorable and negative attitudes, prejudice, and stereotypes."@en ;
+    skos:notation "SHINRA_0001023" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:CognitiveBias
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "認知バイアス"@ja ; rdfs:label "Cognitive Bias"@en ;
+    rdfs:comment "情報処理の系統的な偏りを引き起こす心的傾向。確証バイアス・アンカリング・利用可能性ヒューリスティックなど。"@ja ;
+    rdfs:comment "A systematic pattern of deviation in judgment affecting information processing, including confirmation bias, anchoring, and availability heuristic."@en ;
+    skos:notation "SHINRA_0001024" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 意識・自己 ───────────────────────────────────────────────────
+
+shinra:Consciousness
+    a owl:Class ; rdfs:subClassOf shinra:Quality ;
+    rdfs:label "意識"@ja ; rdfs:label "Consciousness"@en ;
+    skos:altLabel "意識状態"@ja ;
+    rdfs:comment "主観的経験（クオリア）・気づき・自己認識を伴う心的状態の質。覚醒・夢・変性意識状態・無意識など。"@ja ;
+    rdfs:comment "The quality of mental states involving subjective experience (qualia), awareness, and self-recognition, including wakefulness, dreaming, altered states, and the unconscious."@en ;
+    skos:notation "SHINRA_0001031" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:SelfConcept
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "自己概念"@ja ; rdfs:label "Self-Concept"@en ;
+    skos:altLabel "自己認識"@ja ;
+    rdfs:comment "自分自身についての信念・評価・期待の総体。自己効力感・自尊心・アイデンティティ・自己像など。"@ja ;
+    rdfs:comment "The totality of beliefs, evaluations, and expectations about oneself, including self-efficacy, self-esteem, identity, and self-image."@en ;
+    skos:notation "SHINRA_0001032" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Personality
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "性格"@ja ; rdfs:label "Personality"@en ;
+    skos:altLabel "パーソナリティ"@ja ;
+    rdfs:comment "個人に固有の思考・感情・行動の持続的なパターン。ビッグファイブ特性・内向性/外向性・神経症傾向など。"@ja ;
+    rdfs:comment "A persistent pattern of thought, emotion, and behavior unique to an individual, including the Big Five traits, introversion/extraversion, and neuroticism."@en ;
+    skos:notation "SHINRA_0001033" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 社会的認知 ────────────────────────────────────────────────────
+
+shinra:SocialCognition
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "社会的認知"@ja ; rdfs:label "Social Cognition"@en ;
+    rdfs:comment "他者の心・意図・感情・行動を理解・予測する心的過程。心の理論・共感・帰属など。"@ja ;
+    rdfs:comment "The mental process of understanding, predicting, and interpreting the minds, intentions, emotions, and behavior of others, including theory of mind, empathy, and attribution."@en ;
+    skos:notation "SHINRA_0001041" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Empathy
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "共感"@ja ; rdfs:label "Empathy"@en ;
+    rdfs:comment "他者の感情・視点を理解し共有する心的能力と過程。情動的共感・認知的共感・同情との区別など。"@ja ;
+    rdfs:comment "The mental capacity and process of understanding and sharing the feelings and perspectives of others, including affective and cognitive empathy."@en ;
+    skos:notation "SHINRA_0001042" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 心理・神経科学 ────────────────────────────────────────────────
+
+shinra:PsychologicalTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "心理理論"@ja ; rdfs:label "Psychological Theory"@en ;
+    rdfs:comment "心・行動・精神過程を説明・予測する科学的理論。行動主義・認知主義・精神分析・人本主義など。"@ja ;
+    rdfs:comment "A scientific theory explaining and predicting mind, behavior, and mental processes, including behaviorism, cognitivism, psychoanalysis, and humanism."@en ;
+    skos:notation "SHINRA_0001051" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:MentalDisorder
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "精神疾患"@ja ; rdfs:label "Mental Disorder"@en ;
+    skos:altLabel "精神障害"@ja ;
+    rdfs:comment "思考・感情・行動に持続的な障害をもたらす臨床的に有意な傾向。うつ病・統合失調症・不安障害・発達障害など。"@ja ;
+    rdfs:comment "A clinically significant disposition causing persistent disruption to thought, emotion, or behavior, including depression, schizophrenia, anxiety disorders, and developmental disorders."@en ;
+    skos:notation "SHINRA_0001052" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:NeuroscientificProcess
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "神経科学的過程"@ja ; rdfs:label "Neuroscientific Process"@en ;
+    skos:altLabel "神経過程"@ja ;
+    rdfs:comment "神経系において起こる生物学的過程のうち認知・感情・行動と関連するもの。シナプス可塑性・神経伝達・神経回路活動など。"@ja ;
+    rdfs:comment "Biological processes occurring in the nervous system related to cognition, emotion, and behavior, including synaptic plasticity, neurotransmission, and neural circuit activity."@en ;
+    skos:notation "SHINRA_0001053" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 心理プロパティ ────────────────────────────────────────────────
+
+shinra:hasEmotionalValence
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Emotion ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "感情価"@ja ; rdfs:label "emotional valence"@en ;
+    rdfs:comment "感情の快・不快の方向性。'positive' / 'negative' / 'ambivalent'。"@ja ;
+    rdfs:comment "The hedonic direction of an emotion: 'positive', 'negative', or 'ambivalent'."@en ;
+    skos:notation "SHINRA_D001001" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasCognitiveAgent
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:Person ;
+    rdfs:label  "認知エージェント"@ja ; rdfs:label "cognitive agent"@en ;
+    rdfs:comment "ある心的過程・状態を経験する主体（人間）との関係。"@ja ;
+    rdfs:comment "Relation between a mental process or state and the person who experiences it."@en ;
+    skos:notation "SHINRA_R001001" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:maslow-hierarchy-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "マズローの欲求段階説"@ja ; rdfs:label "Maslow's Hierarchy of Needs"@en ;
+    shinra:wikidataId "Q191936" ;
+    skos:notation "SHINRA_I001001" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:cognitive-dissonance-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "認知的不協和"@ja ; rdfs:label "Cognitive Dissonance"@en ;
+    shinra:wikidataId "Q278123" ;
+    skos:notation "SHINRA_I001002" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:depression-001
+    a shinra:MentalDisorder ;
+    rdfs:label "うつ病"@ja ; rdfs:label "Major Depressive Disorder"@en ;
+    shinra:wikidataId "Q42844" ;
+    skos:notation "SHINRA_I001003" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:freudian-unconscious-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "フロイトの無意識論"@ja ; rdfs:label "Freudian Unconscious"@en ;
+    shinra:wikidataId "Q131036" ;
+    skos:notation "SHINRA_I001004" ; dcterms:created "2026-05-27"^^xsd:date .

@@ -1,0 +1,184 @@
+# ===========================================================================
+# shinra-economics.ttl  — 経済・金融詳細ドメイン (Phase 5-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/economics>
+    a owl:Ontology ;
+    owl:versionInfo "0.4.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 経済・金融詳細ドメイン"@ja ,
+                    "Shinra Ontology — Economics & Finance Domain"@en ;
+    dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 経済主体 ─────────────────────────────────────────────────────
+
+shinra:Market
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "市場"@ja ; rdfs:label "Market"@en ;
+    rdfs:comment "買い手と売り手が財・サービス・資産を交換する制度的な場。商品市場・労働市場・金融市場など。"@ja ;
+    rdfs:comment "An institutional arena where buyers and sellers exchange goods, services, or assets, including commodity, labor, and financial markets."@en ;
+    skos:notation "SHINRA_0001201" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Industry
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "産業"@ja ; rdfs:label "Industry"@en ;
+    skos:altLabel "業界"@ja ;
+    rdfs:comment "同種の財・サービスを生産する企業・事業者の集合。製造業・農業・金融業・IT産業など。"@ja ;
+    rdfs:comment "A collection of enterprises producing similar goods or services, including manufacturing, agriculture, finance, and IT industries."@en ;
+    skos:notation "SHINRA_0001202" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:SupplyChain
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "サプライチェーン"@ja ; rdfs:label "Supply Chain"@en ;
+    skos:altLabel "供給連鎖"@ja ;
+    rdfs:comment "原材料調達から最終消費者への製品・サービス提供までの一連の活動・組織のネットワーク。"@ja ;
+    rdfs:comment "A network of activities and organizations spanning from raw material sourcing to delivering products or services to end consumers."@en ;
+    skos:notation "SHINRA_0001203" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 金融・資産 ────────────────────────────────────────────────────
+
+shinra:FinancialInstrument
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "金融商品"@ja ; rdfs:label "Financial Instrument"@en ;
+    skos:altLabel "有価証券"@ja ;
+    rdfs:comment "金融上の請求権を体化した契約・証書。株式・債券・デリバティブ・通貨・保険など。"@ja ;
+    rdfs:comment "A contract or document embodying a financial claim, including stocks, bonds, derivatives, currencies, and insurance."@en ;
+    skos:notation "SHINRA_0001211" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Currency
+    a owl:Class ; rdfs:subClassOf shinra:FinancialInstrument ;
+    rdfs:label "通貨"@ja ; rdfs:label "Currency"@en ;
+    skos:altLabel "貨幣"@ja ;
+    rdfs:comment "交換媒体・価値尺度・価値貯蔵の機能を持つ金融手段。法定通貨・暗号通貨・地域通貨など。"@ja ;
+    rdfs:comment "A financial medium serving as a medium of exchange, unit of account, and store of value, including fiat currency, cryptocurrency, and local currency."@en ;
+    skos:notation "SHINRA_0001212" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Stock
+    a owl:Class ; rdfs:subClassOf shinra:FinancialInstrument ;
+    rdfs:label "株式"@ja ; rdfs:label "Stock"@en ;
+    skos:altLabel "株"@ja ;
+    rdfs:comment "企業の所有権の一部を表す金融商品。普通株・優先株・インデックスファンドなど。"@ja ;
+    rdfs:comment "A financial instrument representing partial ownership in a corporation, including common stock, preferred stock, and index funds."@en ;
+    skos:notation "SHINRA_0001213" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Bond
+    a owl:Class ; rdfs:subClassOf shinra:FinancialInstrument ;
+    rdfs:label "債券"@ja ; rdfs:label "Bond"@en ;
+    rdfs:comment "発行体が元本と利息の返済を約束した負債性金融商品。国債・社債・地方債など。"@ja ;
+    rdfs:comment "A debt financial instrument in which the issuer promises repayment of principal and interest, including government bonds, corporate bonds, and municipal bonds."@en ;
+    skos:notation "SHINRA_0001214" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Cryptocurrency
+    a owl:Class ; rdfs:subClassOf shinra:Currency ;
+    rdfs:label "暗号通貨"@ja ; rdfs:label "Cryptocurrency"@en ;
+    skos:altLabel "仮想通貨"@ja ;
+    rdfs:comment "暗号技術とブロックチェーンに基づく分散型デジタル通貨。ビットコイン・イーサリアム・ステーブルコインなど。"@ja ;
+    rdfs:comment "A decentralized digital currency based on cryptography and blockchain technology, including Bitcoin, Ethereum, and stablecoins."@en ;
+    skos:notation "SHINRA_0001215" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 経済過程 ─────────────────────────────────────────────────────
+
+shinra:Production
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "生産"@ja ; rdfs:label "Production"@en ;
+    rdfs:comment "労働・資本・資源を投入して財・サービスを創出する経済的過程。製造・農業・サービス提供など。"@ja ;
+    rdfs:comment "An economic process creating goods or services through inputs of labor, capital, and resources, including manufacturing, agriculture, and service provision."@en ;
+    skos:notation "SHINRA_0001221" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Consumption
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "消費"@ja ; rdfs:label "Consumption"@en ;
+    rdfs:comment "財・サービスを利用・享受する経済的過程。家計消費・政府消費・中間消費など。"@ja ;
+    rdfs:comment "An economic process of using or enjoying goods and services, including household, government, and intermediate consumption."@en ;
+    skos:notation "SHINRA_0001222" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Investment
+    a owl:Class ; rdfs:subClassOf shinra:EconomicTransaction ;
+    rdfs:label "投資"@ja ; rdfs:label "Investment"@en ;
+    rdfs:comment "将来の収益・便益を期待して資産・資本を投入する経済的行為。設備投資・金融投資・人的投資など。"@ja ;
+    rdfs:comment "An economic act of committing assets or capital in expectation of future returns, including capital, financial, and human capital investment."@en ;
+    skos:notation "SHINRA_0001223" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:Taxation
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "課税"@ja ; rdfs:label "Taxation"@en ;
+    skos:altLabel "税制"@ja ;
+    rdfs:comment "政府が公共財源のために個人・法人から強制的に徴収する過程・制度。所得税・消費税・法人税など。"@ja ;
+    rdfs:comment "The process and system by which a government compulsorily collects revenue from individuals and corporations for public finance, including income, consumption, and corporate taxes."@en ;
+    skos:notation "SHINRA_0001224" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 経済理論・指標 ────────────────────────────────────────────────
+
+shinra:EconomicTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "経済理論"@ja ; rdfs:label "Economic Theory"@en ;
+    rdfs:comment "経済現象を説明・予測する科学的理論体系。古典派経済学・ケインズ経済学・新古典派・行動経済学など。"@ja ;
+    rdfs:comment "A systematic scientific theory explaining and predicting economic phenomena, including classical economics, Keynesianism, neoclassical economics, and behavioral economics."@en ;
+    skos:notation "SHINRA_0001231" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:EconomicIndicator
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "経済指標"@ja ; rdfs:label "Economic Indicator"@en ;
+    rdfs:comment "経済活動の状態・変化を測定・表現する統計量。GDP・インフレ率・失業率・貿易収支など。"@ja ;
+    rdfs:comment "A statistical measure quantifying the state or change of economic activity, including GDP, inflation rate, unemployment rate, and trade balance."@en ;
+    skos:notation "SHINRA_0001232" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:EconomicCrisis
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "経済危機"@ja ; rdfs:label "Economic Crisis"@en ;
+    skos:altLabel "金融危機"@ja ;
+    rdfs:comment "経済活動・金融システムが急激に悪化する過程。恐慌・バブル崩壊・通貨危機・債務危機など。"@ja ;
+    rdfs:comment "A process of rapid deterioration in economic activity or the financial system, including depressions, asset bubble collapses, currency crises, and debt crises."@en ;
+    skos:notation "SHINRA_0001233" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 経済プロパティ ────────────────────────────────────────────────
+
+shinra:hasGDP
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "GDP"@ja ; rdfs:label "GDP"@en ;
+    rdfs:comment "国内総生産（10億USD単位）。国・地域に適用。"@ja ;
+    rdfs:comment "Gross domestic product in billions of USD, applicable to countries and regions."@en ;
+    skos:notation "SHINRA_D001201" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra:hasInflationRate
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "インフレ率"@ja ; rdfs:label "inflation rate"@en ;
+    rdfs:comment "物価水準の年間変化率（%）。"@ja ;
+    rdfs:comment "Annual percentage change in the price level."@en ;
+    skos:notation "SHINRA_D001202" ; dcterms:created "2026-05-27"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:bitcoin-001
+    a shinra:Cryptocurrency ;
+    rdfs:label "ビットコイン"@ja ; rdfs:label "Bitcoin"@en ;
+    shinra:wikidataId "Q131723" ;
+    skos:notation "SHINRA_I001201" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:new-york-stock-exchange-001
+    a shinra:Market ;
+    rdfs:label "ニューヨーク証券取引所"@ja ; rdfs:label "New York Stock Exchange"@en ;
+    shinra:wikidataId "Q82059" ;
+    skos:notation "SHINRA_I001202" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:great-depression-001
+    a shinra:EconomicCrisis ;
+    rdfs:label "世界恐慌"@ja ; rdfs:label "Great Depression"@en ;
+    shinra:wikidataId "Q47528" ;
+    skos:notation "SHINRA_I001203" ; dcterms:created "2026-05-27"^^xsd:date .
+
+shinra-data:keynesian-economics-001
+    a shinra:EconomicTheory ;
+    rdfs:label "ケインズ経済学"@ja ; rdfs:label "Keynesian Economics"@en ;
+    shinra:wikidataId "Q178050" ;
+    skos:notation "SHINRA_I001204" ; dcterms:created "2026-05-27"^^xsd:date .

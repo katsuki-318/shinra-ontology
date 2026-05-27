@@ -13,6 +13,45 @@ Format: `MAJOR.MINOR.PATCH` — SemVer
 
 ---
 
+## [0.4.0] — 2026-05-27
+
+### Added
+- **shinra-mind.ttl** (Phase 5-b): 精神・認知・心理ドメイン
+  - 認知過程: Cognition / Perception / Memory / Learning / Reasoning / DecisionMaking / Imagination / Attention
+  - 感情・動機: Emotion / Motivation / Mood / Stress
+  - 心的傾向: Desire / Intention / Attitude / CognitiveBias / Personality
+  - 意識・自己: Consciousness / SelfConcept
+  - 社会的認知: SocialCognition / Empathy
+  - 心理・神経科学: PsychologicalTheory / MentalDisorder / NeuroscientificProcess
+  - データプロパティ: hasEmotionalValence
+  - オブジェクトプロパティ: hasCognitiveAgent
+  - インスタンス: maslow-hierarchy-001 / cognitive-dissonance-001 / depression-001 / freudian-unconscious-001
+- **shinra-technology.ttl** (Phase 5-c): 技術・工学詳細ドメイン
+  - 情報技術: ComputerSystem / Software / OperatingSystem / Database / ComputerNetwork
+  - AI・機械学習: ArtificialIntelligence / MachineLearning / DeepLearning / LargeLanguageModel
+  - 医療・生命工学: MedicalTechnology / Drug / Vaccine / Biotechnology
+  - エネルギー: EnergyTechnology / RenewableEnergy / NuclearTechnology
+  - 農業・食料: AgriculturalTechnology / FoodProcessing
+  - 材料・建設: CivilEngineering / Material / Semiconductor
+  - データプロパティ: hasTechnologyReadinessLevel / hasInventionYear
+  - インスタンス: internet-001 / crispr-001 / solar-cell-001 / penicillin-001 / linux-001
+- **shinra-economics.ttl** (Phase 5-d): 経済・金融詳細ドメイン
+  - 経済主体・制度: Market / Industry / SupplyChain
+  - 金融商品: FinancialInstrument / Currency / Stock / Bond / Cryptocurrency
+  - 経済過程: Production / Consumption / Investment / Taxation
+  - 経済理論・指標: EconomicTheory / EconomicIndicator / EconomicCrisis
+  - データプロパティ: hasGDP / hasInflationRate
+  - インスタンス: bitcoin-001 / new-york-stock-exchange-001 / great-depression-001 / keynesian-economics-001
+
+### Changed
+- `tests/validate.py`: ALL_MODULES をハードコードリストから `src/` 自動スキャン方式に変更
+- `src/catalog-v001.xml`: mind / technology / economics エントリ追加
+
+### Stats
+- クラス: 266（+60）  ObjectProperty: 32（+1）  DataProperty: 26（+5）  トリプル: 3,192（+661）
+
+---
+
 ## [0.3.0] — 2026-05-12
 
 ### Added
