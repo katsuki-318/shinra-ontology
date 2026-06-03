@@ -1,0 +1,119 @@
+# ===========================================================================
+# shinra-ethics-applied.ttl  — 応用倫理学ドメイン (Phase 7-r)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/ethics-applied>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 応用倫理学ドメイン"@ja ,
+                    "Shinra Ontology — Applied Ethics Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 応用倫理学の分野 ──────────────────────────────────────────────
+
+shinra:Bioethics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "生命倫理学"@ja ; rdfs:label "Bioethics"@en ;
+    rdfs:comment "生命科学・医療における倫理的問題を研究する分野。安楽死・遺伝子編集・臓器移植・研究倫理など。"@ja ;
+    rdfs:comment "The field examining ethical issues in life sciences and medicine, including euthanasia, gene editing, organ transplantation, and research ethics."@en ;
+    skos:notation "SHINRA_0003401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AIEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "AI倫理"@ja ; rdfs:label "AI Ethics"@en ;
+    skos:altLabel "人工知能倫理"@ja ;
+    rdfs:comment "AIの設計・開発・利用における倫理的問題を研究する分野。公平性・説明可能性・プライバシー・自律性など。"@ja ;
+    rdfs:comment "The field examining ethical issues in the design, development, and use of AI, including fairness, explainability, privacy, and autonomy."@en ;
+    skos:notation "SHINRA_0003402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:BusinessEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "企業倫理"@ja ; rdfs:label "Business Ethics"@en ;
+    skos:altLabel "ビジネス倫理"@ja ;
+    rdfs:comment "企業・経済活動における倫理的行動・義務を研究する分野。CSR・ESG・ステークホルダー理論・汚職防止など。"@ja ;
+    rdfs:comment "The field studying ethical conduct and obligations in business and economic activity, including CSR, ESG, stakeholder theory, and anti-corruption."@en ;
+    skos:notation "SHINRA_0003403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EnvironmentalEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "環境倫理学"@ja ; rdfs:label "Environmental Ethics"@en ;
+    rdfs:comment "人間と自然環境の倫理的関係を研究する分野。自然の内在的価値・世代間倫理・動物の権利・ディープエコロジーなど。"@ja ;
+    rdfs:comment "The field studying the ethical relationship between humans and the natural environment, including the intrinsic value of nature, intergenerational ethics, animal rights, and deep ecology."@en ;
+    skos:notation "SHINRA_0003404" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 倫理的概念 ────────────────────────────────────────────────────
+
+shinra:MoralDilemma
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "道徳的ジレンマ"@ja ; rdfs:label "Moral Dilemma"@en ;
+    rdfs:comment "複数の道徳的義務が相互に矛盾し選択を迫られる状況。トロッコ問題・医療資源配分・嘘と約束の衝突など。"@ja ;
+    rdfs:comment "A situation in which multiple moral obligations conflict and a choice must be made, including the trolley problem, medical resource allocation, and conflicts between lying and promise-keeping."@en ;
+    skos:notation "SHINRA_0003411" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Consent
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "同意"@ja ; rdfs:label "Consent"@en ;
+    skos:altLabel "インフォームドコンセント"@ja ;
+    rdfs:comment "自律的な主体が十分な情報に基づいて自発的に与える承認。医療同意・研究参加同意・データ利用同意など。"@ja ;
+    rdfs:comment "Voluntary approval given by an autonomous agent based on sufficient information, including medical consent, research participation consent, and data use consent."@en ;
+    skos:notation "SHINRA_0003412" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Privacy
+    a owl:Class ; rdfs:subClassOf shinra:LegalRight ;
+    rdfs:label "プライバシー"@ja ; rdfs:label "Privacy"@en ;
+    skos:altLabel "個人情報保護"@ja ;
+    rdfs:comment "個人が自己に関する情報を管理・制御する権利と状態。情報プライバシー・身体的プライバシー・GDPRなど。"@ja ;
+    rdfs:comment "The right and state of individuals to control information about themselves, including informational privacy, bodily privacy, and frameworks like GDPR."@en ;
+    skos:notation "SHINRA_0003413" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Fairness
+    a owl:Class ; rdfs:subClassOf shinra:EthicalValue ;
+    rdfs:label "公正"@ja ; rdfs:label "Fairness"@en ;
+    skos:altLabel "公平性"@ja ;
+    rdfs:comment "利益・負担・機会が適切な原則に従って配分される規範的性質。手続き的公正・分配的公正・修復的公正など。"@ja ;
+    rdfs:comment "The normative property of benefits, burdens, and opportunities being allocated according to appropriate principles, including procedural, distributive, and restorative fairness."@en ;
+    skos:notation "SHINRA_0003414" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Autonomy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "自律性"@ja ; rdfs:label "Autonomy"@en ;
+    rdfs:comment "個人・集団が外的強制なく自己の原則に従って行動・決定する能力。医療倫理・AI倫理・政治哲学の中心概念。"@ja ;
+    rdfs:comment "The capacity of individuals or groups to act and decide according to their own principles without external coercion, a central concept in medical ethics, AI ethics, and political philosophy."@en ;
+    skos:notation "SHINRA_0003415" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Accountability
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "説明責任"@ja ; rdfs:label "Accountability"@en ;
+    skos:altLabel "アカウンタビリティ"@ja ;
+    rdfs:comment "行為者が自己の決定・行動の結果について他者に説明・正当化する義務。AI説明可能性・企業ガバナンスなど。"@ja ;
+    rdfs:comment "The obligation of agents to explain and justify their decisions and actions to others, including AI explainability and corporate governance."@en ;
+    skos:notation "SHINRA_0003416" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:gdpr-001
+    a shinra:EnvironmentalPolicy ;
+    rdfs:label "一般データ保護規則（GDPR）"@ja ; rdfs:label "General Data Protection Regulation"@en ;
+    shinra:wikidataId "Q1190816" ;
+    skos:notation "SHINRA_I003401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:nuremberg-code-001
+    a shinra:LegalDocument ;
+    rdfs:label "ニュルンベルク綱領"@ja ; rdfs:label "Nuremberg Code"@en ;
+    shinra:wikidataId "Q215369" ;
+    skos:notation "SHINRA_I003402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:un-ai-ethics-001
+    a shinra:EnvironmentalPolicy ;
+    rdfs:label "UNESCO AI倫理勧告"@ja ; rdfs:label "UNESCO Recommendation on AI Ethics"@en ;
+    shinra:wikidataId "Q108812426" ;
+    skos:notation "SHINRA_I003403" ; dcterms:created "2026-06-03"^^xsd:date .

@@ -1,0 +1,120 @@
+# ===========================================================================
+# shinra-semiotics.ttl  — 記号論・意味論ドメイン (Phase 7-p)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/semiotics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 記号論・意味論ドメイン"@ja ,
+                    "Shinra Ontology — Semiotics & Meaning Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 記号の基本構造 ────────────────────────────────────────────────
+
+shinra:Sign
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "記号"@ja ; rdfs:label "Sign"@en ;
+    rdfs:comment "意味を伝達する表現と内容の結合体。シニフィアン（表現）・シニフィエ（内容）・指示対象からなる三項関係。"@ja ;
+    rdfs:comment "A unit combining expression and content to communicate meaning, structured as a triadic relation of signifier, signified, and referent."@en ;
+    skos:notation "SHINRA_0003201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Symbol
+    a owl:Class ; rdfs:subClassOf shinra:Sign ;
+    rdfs:label "象徴"@ja ; rdfs:label "Symbol"@en ;
+    skos:altLabel "シンボル"@ja ;
+    rdfs:comment "恣意的・慣習的関係によって意味を担う記号。言語記号・旗・数字・アイコンなど。パースの三分類の一つ。"@ja ;
+    rdfs:comment "A sign bearing meaning through arbitrary and conventional relations, including linguistic signs, flags, numerals, and icons. One of Peirce's three sign types."@en ;
+    skos:notation "SHINRA_0003202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Icon
+    a owl:Class ; rdfs:subClassOf shinra:Sign ;
+    rdfs:label "図像記号"@ja ; rdfs:label "Icon"@en ;
+    skos:altLabel "イコン"@ja ;
+    rdfs:comment "指示対象と類似関係を持つ記号。写真・地図・肖像画・擬音語など。パースの記号三分類の一つ。"@ja ;
+    rdfs:comment "A sign bearing resemblance to its referent, including photographs, maps, portraits, and onomatopoeia. One of Peirce's three sign types."@en ;
+    skos:notation "SHINRA_0003203" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Index
+    a owl:Class ; rdfs:subClassOf shinra:Sign ;
+    rdfs:label "指標記号"@ja ; rdfs:label "Index"@en ;
+    skos:altLabel "インデックス"@ja ;
+    rdfs:comment "指示対象と因果・存在的隣接関係を持つ記号。煙（火のインデックス）・足跡・症状・指差しなど。"@ja ;
+    rdfs:comment "A sign bearing a causal or existential contiguity to its referent, including smoke (index of fire), footprints, symptoms, and pointing gestures."@en ;
+    skos:notation "SHINRA_0003204" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Signification
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "意味作用"@ja ; rdfs:label "Signification"@en ;
+    skos:altLabel "記号過程"@ja ;
+    rdfs:comment "記号が意味を産出・伝達・解釈される社会的過程。コノテーション・デノテーション・神話（バルト）など。"@ja ;
+    rdfs:comment "The social process by which signs produce, transmit, and are interpreted for meaning, including connotation, denotation, and myth (Barthes)."@en ;
+    skos:notation "SHINRA_0003205" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 言語・文化の記号論 ────────────────────────────────────────────
+
+shinra:Narrative
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "物語"@ja ; rdfs:label "Narrative"@en ;
+    skos:altLabel "ナラティブ"@ja ;
+    rdfs:comment "出来事・行為者・時間を構造化して意味を産出する言語的・文化的形式。神話・小説・歴史叙述・個人の語りなど。"@ja ;
+    rdfs:comment "A linguistic and cultural form structuring events, agents, and time to produce meaning, including myths, novels, historical narratives, and personal stories."@en ;
+    skos:notation "SHINRA_0003211" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Metaphor
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "比喩"@ja ; rdfs:label "Metaphor"@en ;
+    skos:altLabel "メタファー"@ja ;
+    rdfs:comment "ある領域の構造を別の領域に写像する言語・思考の仕組み。直喩・隠喩・換喩・提喩・アイロニーを含む。"@ja ;
+    rdfs:comment "A linguistic and cognitive mechanism mapping the structure of one domain onto another, including simile, metaphor, metonymy, synecdoche, and irony."@en ;
+    skos:notation "SHINRA_0003212" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Intertextuality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "間テクスト性"@ja ; rdfs:label "Intertextuality"@en ;
+    rdfs:comment "テキストが他のテキストを参照・引用・変形する関係。引用・パロディ・パスティーシュ・影響関係など。"@ja ;
+    rdfs:comment "The relationship in which texts reference, quote, or transform other texts, including quotation, parody, pastiche, and influence."@en ;
+    skos:notation "SHINRA_0003213" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Ideology
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "イデオロギー"@ja ; rdfs:label "Ideology"@en ;
+    rdfs:comment "社会・政治的現実を解釈・正当化する信念・価値・規範の体系。自由主義・社会主義・民族主義・フェミニズムなど。"@ja ;
+    rdfs:comment "A system of beliefs, values, and norms interpreting and legitimizing social and political reality, including liberalism, socialism, nationalism, and feminism."@en ;
+    skos:notation "SHINRA_0003214" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Discourse
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "言説"@ja ; rdfs:label "Discourse"@en ;
+    skos:altLabel "ディスクール"@ja ;
+    rdfs:comment "社会・権力関係の中で知識・主体を形成する言語実践の体系。フーコー的意味での制度的言説・支配的言説など。"@ja ;
+    rdfs:comment "A system of linguistic practices forming knowledge and subjects within social and power relations, including Foucauldian institutional and dominant discourses."@en ;
+    skos:notation "SHINRA_0003215" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:saussure-linguistics-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ソシュールの言語学"@ja ; rdfs:label "Saussurean Linguistics"@en ;
+    shinra:wikidataId "Q35802" ;
+    skos:notation "SHINRA_I003201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:peirce-semiotics-001
+    a shinra:ScientificTheory ;
+    rdfs:label "パースの記号論"@ja ; rdfs:label "Peircean Semiotics"@en ;
+    shinra:wikidataId "Q208635" ;
+    skos:notation "SHINRA_I003202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:hero-journey-001
+    a shinra:Narrative ;
+    rdfs:label "英雄の旅"@ja ; rdfs:label "Hero's Journey"@en ;
+    shinra:wikidataId "Q847301" ;
+    skos:notation "SHINRA_I003203" ; dcterms:created "2026-06-03"^^xsd:date .

@@ -1,0 +1,129 @@
+# ===========================================================================
+# shinra-anthropology.ttl  — 人類学・考古学ドメイン (Phase 7-l)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/anthropology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 人類学・考古学ドメイン"@ja ,
+                    "Shinra Ontology — Anthropology & Archaeology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 人類学の下位分野 ──────────────────────────────────────────────
+
+shinra:CulturalAnthropology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "文化人類学"@ja ; rdfs:label "Cultural Anthropology"@en ;
+    rdfs:comment "人間の文化・社会・行動を比較研究する人類学の下位分野。民族誌・フィールドワーク・親族論・儀礼研究など。"@ja ;
+    rdfs:comment "A subfield of anthropology comparatively studying human culture, society, and behavior, including ethnography, fieldwork, kinship studies, and ritual research."@en ;
+    skos:notation "SHINRA_0002801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhysicalAnthropology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "自然人類学"@ja ; rdfs:label "Physical Anthropology"@en ;
+    skos:altLabel "生物人類学"@ja ;
+    rdfs:comment "人類の生物学的側面・進化・変異・適応を研究する分野。霊長類学・古人類学・法医人類学・人体計測など。"@ja ;
+    rdfs:comment "The field studying the biological aspects, evolution, variation, and adaptation of humans, including primatology, paleoanthropology, forensic anthropology, and anthropometry."@en ;
+    skos:notation "SHINRA_0002802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Archaeology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "考古学"@ja ; rdfs:label "Archaeology"@en ;
+    rdfs:comment "物質的遺物・遺跡・遺構から過去の人間活動を研究する分野。発掘調査・年代測定・遺物分析・文化層序など。"@ja ;
+    rdfs:comment "The field studying past human activity through material remains, sites, and structures, including excavation, dating, artifact analysis, and cultural stratigraphy."@en ;
+    skos:notation "SHINRA_0002803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LinguisticAnthropology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "言語人類学"@ja ; rdfs:label "Linguistic Anthropology"@en ;
+    rdfs:comment "言語と文化・社会・認知の関係を人類学的視点から研究する分野。言語相対論・言語と権力・多言語状況など。"@ja ;
+    rdfs:comment "A field studying the relationship between language and culture, society, and cognition from an anthropological perspective, including linguistic relativity, language and power, and multilingualism."@en ;
+    skos:notation "SHINRA_0002804" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 人類学的概念 ──────────────────────────────────────────────────
+
+shinra:Ethnicity
+    a owl:Class ; rdfs:subClassOf shinra:SocialRole ;
+    rdfs:label "民族"@ja ; rdfs:label "Ethnicity"@en ;
+    skos:altLabel "エスニシティ"@ja ;
+    rdfs:comment "共通の文化・言語・歴史・起源を持つ集団としての帰属意識。民族的アイデンティティ・民族集団・エスニック境界など。"@ja ;
+    rdfs:comment "A sense of belonging to a group sharing common culture, language, history, or origin, including ethnic identity, ethnic groups, and ethnic boundaries."@en ;
+    skos:notation "SHINRA_0002811" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:KinshipSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "親族体系"@ja ; rdfs:label "Kinship System"@en ;
+    rdfs:comment "血縁・婚姻関係に基づく社会的絆の組織原理。父系制・母系制・双系制・外婚制・親族用語体系など。"@ja ;
+    rdfs:comment "The organizing principle of social bonds based on descent and marriage, including patrilineal, matrilineal, bilateral systems, exogamy, and kinship terminology."@en ;
+    skos:notation "SHINRA_0002812" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Taboo
+    a owl:Class ; rdfs:subClassOf shinra:Norm ;
+    rdfs:label "タブー"@ja ; rdfs:label "Taboo"@en ;
+    skos:altLabel "禁忌"@ja ;
+    rdfs:comment "社会・宗教的に禁止された行為・対象・言葉。近親相姦タブー・食物禁忌・聖域侵犯禁止など。"@ja ;
+    rdfs:comment "A socially or religiously prohibited act, object, or word, including incest taboo, food taboos, and prohibitions against violating sacred spaces."@en ;
+    skos:notation "SHINRA_0002813" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MigrationProcess
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "移住過程"@ja ; rdfs:label "Migration Process"@en ;
+    skos:altLabel "人口移動"@ja ;
+    rdfs:comment "個人・集団が居住地を移動する社会的過程。経済移民・難民・強制移住・都市化・ディアスポラなど。"@ja ;
+    rdfs:comment "The social process of individuals or groups moving their place of residence, including economic migration, refugees, forced displacement, urbanization, and diaspora."@en ;
+    skos:notation "SHINRA_0002814" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 考古学的概念 ──────────────────────────────────────────────────
+
+shinra:ArchaeologicalSite
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "遺跡"@ja ; rdfs:label "Archaeological Site"@en ;
+    skos:altLabel "考古学的遺跡"@ja ;
+    rdfs:comment "過去の人間活動の証拠が保存されている場所。集落址・墳墓・神殿址・ゴミ捨て場（貝塚）など。"@ja ;
+    rdfs:comment "A place preserving evidence of past human activity, including settlement remains, burial sites, temple ruins, and middens."@en ;
+    skos:notation "SHINRA_0002821" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Artifact
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "遺物"@ja ; rdfs:label "Artifact"@en ;
+    skos:altLabel "考古学的遺物"@ja ;
+    rdfs:comment "人間が製作・使用・改変した過去の物質的残存物。土器・石器・金属器・骨角器・文字資料など。"@ja ;
+    rdfs:comment "A material remnant of the past made, used, or modified by humans, including pottery, stone tools, metal implements, bone tools, and written documents."@en ;
+    skos:notation "SHINRA_0002822" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HominidSpecies
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalTaxon ;
+    rdfs:label "ヒト族"@ja ; rdfs:label "Hominid Species"@en ;
+    skos:altLabel "ホミニン"@ja ;
+    rdfs:comment "人類とその近縁絶滅種を含む分類群。ホモ・サピエンス・ネアンデルタール人・ホモ・エレクトスなど。"@ja ;
+    rdfs:comment "The taxon encompassing humans and their closely related extinct species, including Homo sapiens, Neanderthals, and Homo erectus."@en ;
+    skos:notation "SHINRA_0002823" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:stonehenge-001
+    a shinra:ArchaeologicalSite ;
+    rdfs:label "ストーンヘンジ"@ja ; rdfs:label "Stonehenge"@en ;
+    shinra:wikidataId "Q39671" ;
+    skos:notation "SHINRA_I002801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:neanderthal-001
+    a shinra:HominidSpecies ;
+    rdfs:label "ネアンデルタール人"@ja ; rdfs:label "Neanderthal"@en ;
+    shinra:wikidataId "Q42979" ;
+    skos:notation "SHINRA_I002802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:silk-road-001
+    a shinra:MigrationProcess ;
+    rdfs:label "シルクロード"@ja ; rdfs:label "Silk Road"@en ;
+    shinra:wikidataId "Q42937" ;
+    skos:notation "SHINRA_I002803" ; dcterms:created "2026-06-03"^^xsd:date .

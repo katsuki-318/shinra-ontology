@@ -1,0 +1,138 @@
+# ===========================================================================
+# shinra-nutrition.ttl  — 栄養学・食品科学ドメイン (Phase 7-n)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/nutrition>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 栄養学・食品科学ドメイン"@ja ,
+                    "Shinra Ontology — Nutrition & Food Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 栄養素 ───────────────────────────────────────────────────────
+
+shinra:Nutrient
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "栄養素"@ja ; rdfs:label "Nutrient"@en ;
+    rdfs:comment "生物が生命活動・成長・健康維持のために必要とする化学物質。大栄養素・微量栄養素・必須栄養素など。"@ja ;
+    rdfs:comment "A chemical substance required by organisms for life, growth, and health maintenance, including macronutrients, micronutrients, and essential nutrients."@en ;
+    skos:notation "SHINRA_0003001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Macronutrient
+    a owl:Class ; rdfs:subClassOf shinra:Nutrient ;
+    rdfs:label "大栄養素"@ja ; rdfs:label "Macronutrient"@en ;
+    skos:altLabel "三大栄養素"@ja ;
+    rdfs:comment "エネルギー産生に必要な大量摂取栄養素。炭水化物・タンパク質・脂質の三大栄養素。"@ja ;
+    rdfs:comment "Nutrients required in large amounts for energy production, comprising the three major macronutrients: carbohydrates, proteins, and fats."@en ;
+    skos:notation "SHINRA_0003002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Micronutrient
+    a owl:Class ; rdfs:subClassOf shinra:Nutrient ;
+    rdfs:label "微量栄養素"@ja ; rdfs:label "Micronutrient"@en ;
+    skos:altLabel "ビタミン・ミネラル"@ja ;
+    rdfs:comment "微量で必要な栄養素。ビタミン（A・B群・C・D・E・K）・ミネラル（鉄・カルシウム・亜鉛など）。"@ja ;
+    rdfs:comment "Nutrients required in small amounts, including vitamins (A, B complex, C, D, E, K) and minerals (iron, calcium, zinc, etc.)."@en ;
+    skos:notation "SHINRA_0003003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DietaryFiber
+    a owl:Class ; rdfs:subClassOf shinra:Nutrient ;
+    rdfs:label "食物繊維"@ja ; rdfs:label "Dietary Fiber"@en ;
+    rdfs:comment "消化酵素で分解されない植物性炭水化物。腸内環境改善・血糖値調整・コレステロール低下に寄与する。"@ja ;
+    rdfs:comment "Plant carbohydrates resistant to digestive enzymes, contributing to gut health improvement, blood glucose regulation, and cholesterol reduction."@en ;
+    skos:notation "SHINRA_0003004" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 食品・食事パターン ────────────────────────────────────────────
+
+shinra:FoodItem
+    a owl:Class ; rdfs:subClassOf shinra:Substance ;
+    rdfs:label "食品"@ja ; rdfs:label "Food Item"@en ;
+    skos:altLabel "食べ物"@ja ;
+    rdfs:comment "人間が摂取するために生産・加工・調理された物質。穀物・野菜・肉類・乳製品・加工食品など。"@ja ;
+    rdfs:comment "A substance produced, processed, or prepared for human consumption, including grains, vegetables, meat, dairy products, and processed foods."@en ;
+    skos:notation "SHINRA_0003011" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DietaryPattern
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "食事パターン"@ja ; rdfs:label "Dietary Pattern"@en ;
+    skos:altLabel "食生活"@ja ;
+    rdfs:comment "個人・集団が習慣的に摂取する食品・栄養素の組み合わせ。地中海食・和食・菜食主義・ケトジェニック食など。"@ja ;
+    rdfs:comment "The habitual combination of foods and nutrients consumed by an individual or group, including the Mediterranean diet, Japanese diet, vegetarianism, and ketogenic diet."@en ;
+    skos:notation "SHINRA_0003012" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FoodAllergy
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "食物アレルギー"@ja ; rdfs:label "Food Allergy"@en ;
+    rdfs:comment "特定の食品タンパク質に対する免疫系の過剰反応。ピーナッツ・卵・乳・小麦・甲殻類アレルギーなど。"@ja ;
+    rdfs:comment "An immune system overreaction to specific food proteins, including peanut, egg, milk, wheat, and shellfish allergies."@en ;
+    skos:notation "SHINRA_0003013" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Malnutrition
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "栄養不良"@ja ; rdfs:label "Malnutrition"@en ;
+    rdfs:comment "栄養素の過不足による健康障害状態。飢餓・過栄養・微量栄養素欠乏・肥満・低体重など。"@ja ;
+    rdfs:comment "A health disorder resulting from nutritional excess or deficiency, including starvation, overnutrition, micronutrient deficiency, obesity, and underweight."@en ;
+    skos:notation "SHINRA_0003014" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 栄養・代謝過程 ────────────────────────────────────────────────
+
+shinra:Digestion
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "消化"@ja ; rdfs:label "Digestion"@en ;
+    rdfs:comment "食物を吸収可能な分子に分解する生物学的過程。機械的消化・化学的消化・腸内細菌による発酵など。"@ja ;
+    rdfs:comment "The biological process of breaking down food into absorbable molecules, including mechanical digestion, chemical digestion, and intestinal bacterial fermentation."@en ;
+    skos:notation "SHINRA_0003021" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GutMicrobiome
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalTaxon ;
+    rdfs:label "腸内マイクロバイオーム"@ja ; rdfs:label "Gut Microbiome"@en ;
+    skos:altLabel "腸内細菌叢"@ja ;
+    rdfs:comment "消化管に生息する微生物（細菌・古細菌・真菌・ウイルス）の集合体。免疫・代謝・精神健康に影響する。"@ja ;
+    rdfs:comment "The community of microorganisms (bacteria, archaea, fungi, viruses) inhabiting the digestive tract, influencing immunity, metabolism, and mental health."@en ;
+    skos:notation "SHINRA_0003022" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EnergyBalance
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "エネルギーバランス"@ja ; rdfs:label "Energy Balance"@en ;
+    rdfs:comment "摂取エネルギーと消費エネルギーの関係。正のバランス（体重増加）・負のバランス（体重減少）・均衡状態。"@ja ;
+    rdfs:comment "The relationship between energy intake and energy expenditure, including positive balance (weight gain), negative balance (weight loss), and equilibrium."@en ;
+    skos:notation "SHINRA_0003023" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 栄養プロパティ ────────────────────────────────────────────────
+
+shinra:hasCalorificValue
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:FoodItem ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "カロリー"@ja ; rdfs:label "calorific value"@en ;
+    rdfs:comment "食品100gあたりのエネルギー量（kcal）。"@ja ;
+    rdfs:comment "The energy content of a food item per 100g in kilocalories (kcal)."@en ;
+    skos:notation "SHINRA_D003001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:mediterranean-diet-001
+    a shinra:DietaryPattern ;
+    rdfs:label "地中海食"@ja ; rdfs:label "Mediterranean Diet"@en ;
+    shinra:wikidataId "Q1234363" ;
+    skos:notation "SHINRA_I003001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:vitamin-c-001
+    a shinra:Micronutrient ;
+    rdfs:label "ビタミンC"@ja ; rdfs:label "Vitamin C"@en ;
+    shinra:wikidataId "Q192995" ;
+    skos:notation "SHINRA_I003002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:obesity-001
+    a shinra:Malnutrition ;
+    rdfs:label "肥満"@ja ; rdfs:label "Obesity"@en ;
+    shinra:wikidataId "Q12174" ;
+    skos:notation "SHINRA_I003003" ; dcterms:created "2026-06-03"^^xsd:date .

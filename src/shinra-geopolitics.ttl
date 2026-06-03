@@ -1,0 +1,121 @@
+# ===========================================================================
+# shinra-geopolitics.ttl  — 地政学・国際関係ドメイン (Phase 7-m)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/geopolitics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 地政学・国際関係ドメイン"@ja ,
+                    "Shinra Ontology — Geopolitics & International Relations Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 国際関係の概念 ────────────────────────────────────────────────
+
+shinra:Sovereignty
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "主権"@ja ; rdfs:label "Sovereignty"@en ;
+    rdfs:comment "国家が領土・国民・政府に対して持つ最高権力。国内主権・対外主権・ウェストファリア体制など。"@ja ;
+    rdfs:comment "The supreme authority a state holds over its territory, people, and government, including internal sovereignty, external sovereignty, and the Westphalian system."@en ;
+    skos:notation "SHINRA_0002901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Diplomacy
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "外交"@ja ; rdfs:label "Diplomacy"@en ;
+    rdfs:comment "国家・国際機関が交渉・協議によって相互関係を管理する過程。二国間外交・多国間外交・公共外交など。"@ja ;
+    rdfs:comment "The process by which states and international organizations manage their relationships through negotiation and consultation, including bilateral, multilateral, and public diplomacy."@en ;
+    skos:notation "SHINRA_0002902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Alliance
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "同盟"@ja ; rdfs:label "Alliance"@en ;
+    skos:altLabel "条約同盟"@ja ;
+    rdfs:comment "共通の目標・安全保障のために国家が結ぶ協力関係。軍事同盟・経済同盟・集団安全保障・NATO・ASEAN など。"@ja ;
+    rdfs:comment "A cooperative relationship formed between states for common goals or security, including military alliances, economic alliances, collective security arrangements, NATO, and ASEAN."@en ;
+    skos:notation "SHINRA_0002903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Sanction
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "制裁"@ja ; rdfs:label "Sanction"@en ;
+    skos:altLabel "経済制裁"@ja ;
+    rdfs:comment "国際社会が規範違反国に科す強制的措置。経済制裁・貿易禁輸・資産凍結・外交的制裁など。"@ja ;
+    rdfs:comment "Coercive measures imposed by the international community on norm-violating states, including economic sanctions, trade embargoes, asset freezes, and diplomatic sanctions."@en ;
+    skos:notation "SHINRA_0002904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Geopolitics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "地政学"@ja ; rdfs:label "Geopolitics"@en ;
+    rdfs:comment "地理的要因と政治権力の関係を研究する学問。シーパワー・ランドパワー・リムランド・資源地政学など。"@ja ;
+    rdfs:comment "The study of the relationship between geographical factors and political power, including sea power, land power, rimland theory, and resource geopolitics."@en ;
+    skos:notation "SHINRA_0002905" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InternationalOrganization
+    a owl:Class ; rdfs:subClassOf shinra:Organization ;
+    rdfs:label "国際機関"@ja ; rdfs:label "International Organization"@en ;
+    skos:altLabel "国際組織"@ja ;
+    rdfs:comment "複数の国家が条約に基づいて設立する恒久的な機構。国連・WTO・IMF・WHO・NATO・EUなど。"@ja ;
+    rdfs:comment "A permanent institution established by multiple states through treaty, including the UN, WTO, IMF, WHO, NATO, and EU."@en ;
+    skos:notation "SHINRA_0002906" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PowerBalance
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "勢力均衡"@ja ; rdfs:label "Balance of Power"@en ;
+    rdfs:comment "複数の国家が相互に抑制し合い安定を保つ国際秩序の概念。単極・双極・多極システム・覇権安定論など。"@ja ;
+    rdfs:comment "The concept of international order in which states mutually restrain each other to maintain stability, including unipolar, bipolar, multipolar systems, and hegemonic stability theory."@en ;
+    skos:notation "SHINRA_0002907" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Colonialism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "植民地主義"@ja ; rdfs:label "Colonialism"@en ;
+    rdfs:comment "ある国家が他の領土・民族を支配・搾取する政治経済的支配過程。帝国主義・新植民地主義・脱植民地化など。"@ja ;
+    rdfs:comment "The political-economic process of domination and exploitation of territories and peoples by a state, including imperialism, neo-colonialism, and decolonization."@en ;
+    skos:notation "SHINRA_0002908" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Terrorism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "テロリズム"@ja ; rdfs:label "Terrorism"@en ;
+    rdfs:comment "政治的・宗教的・イデオロギー的目標のために暴力・脅迫を用いる非国家的戦略。国内テロ・国際テロ・サイバーテロなど。"@ja ;
+    rdfs:comment "A non-state strategy using violence and intimidation for political, religious, or ideological goals, including domestic terrorism, international terrorism, and cyberterrorism."@en ;
+    skos:notation "SHINRA_0002909" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HumanitarianAid
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "人道支援"@ja ; rdfs:label "Humanitarian Aid"@en ;
+    skos:altLabel "人道援助"@ja ;
+    rdfs:comment "紛争・自然災害等の危機において命を守り苦難を軽減する支援活動。食料援助・医療支援・避難民保護など。"@ja ;
+    rdfs:comment "Assistance activities protecting lives and alleviating suffering in crises such as conflict and natural disaster, including food aid, medical assistance, and refugee protection."@en ;
+    skos:notation "SHINRA_0002910" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:nato-001
+    a shinra:Alliance ;
+    rdfs:label "NATO（北大西洋条約機構）"@ja ; rdfs:label "NATO"@en ;
+    shinra:wikidataId "Q7184" ;
+    skos:notation "SHINRA_I002901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:eu-001
+    a shinra:InternationalOrganization ;
+    rdfs:label "欧州連合"@ja ; rdfs:label "European Union"@en ;
+    shinra:wikidataId "Q458" ;
+    skos:notation "SHINRA_I002902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:cold-war-001
+    a shinra:War ;
+    rdfs:label "冷戦"@ja ; rdfs:label "Cold War"@en ;
+    shinra:wikidataId "Q8463" ;
+    skos:notation "SHINRA_I002903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:wto-001
+    a shinra:InternationalOrganization ;
+    rdfs:label "世界貿易機関"@ja ; rdfs:label "World Trade Organization"@en ;
+    shinra:wikidataId "Q7825" ;
+    skos:notation "SHINRA_I002904" ; dcterms:created "2026-06-03"^^xsd:date .

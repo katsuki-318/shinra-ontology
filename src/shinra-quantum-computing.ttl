@@ -1,0 +1,109 @@
+# ===========================================================================
+# shinra-quantum-computing.ttl  — 量子情報・量子コンピューティングドメイン (Phase 7-q)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/quantum-computing>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 量子情報・量子コンピューティングドメイン"@ja ,
+                    "Shinra Ontology — Quantum Information & Computing Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 量子情報の基本概念 ────────────────────────────────────────────
+
+shinra:Qubit
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "量子ビット"@ja ; rdfs:label "Qubit"@en ;
+    skos:altLabel "キュービット"@ja ;
+    rdfs:comment "量子コンピュータの基本情報単位。|0⟩と|1⟩の重ね合わせ状態をとり得る二準位量子系。"@ja ;
+    rdfs:comment "The basic information unit of a quantum computer, a two-level quantum system that can exist in superposition of |0⟩ and |1⟩ states."@en ;
+    skos:notation "SHINRA_0003301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumSuperposition
+    a owl:Class ; rdfs:subClassOf shinra:QuantumPhenomenon ;
+    rdfs:label "量子重ね合わせ"@ja ; rdfs:label "Quantum Superposition"@en ;
+    rdfs:comment "量子系が測定前に複数の状態を同時にとり得る量子力学的性質。量子並列計算の基礎となる。"@ja ;
+    rdfs:comment "The quantum mechanical property allowing a quantum system to exist in multiple states simultaneously before measurement, forming the basis of quantum parallelism."@en ;
+    skos:notation "SHINRA_0003302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumEntanglement
+    a owl:Class ; rdfs:subClassOf shinra:QuantumPhenomenon ;
+    rdfs:label "量子もつれ"@ja ; rdfs:label "Quantum Entanglement"@en ;
+    rdfs:comment "二つ以上の量子系が非局所的に相関し、一方の測定が他方に即座に影響する量子力学的現象。"@ja ;
+    rdfs:comment "A quantum mechanical phenomenon in which two or more quantum systems are non-locally correlated such that measuring one instantaneously affects the other."@en ;
+    skos:notation "SHINRA_0003303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumDecoherence
+    a owl:Class ; rdfs:subClassOf shinra:QuantumPhenomenon ;
+    rdfs:label "量子デコヒーレンス"@ja ; rdfs:label "Quantum Decoherence"@en ;
+    rdfs:comment "量子系が環境との相互作用によって重ね合わせを失い古典的状態に移行する過程。量子コンピュータの主要な課題。"@ja ;
+    rdfs:comment "The process by which a quantum system loses its superposition through interaction with the environment and transitions to a classical state, a key challenge for quantum computers."@en ;
+    skos:notation "SHINRA_0003304" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 量子コンピューティング ────────────────────────────────────────
+
+shinra:QuantumComputer
+    a owl:Class ; rdfs:subClassOf shinra:ComputerSystem ;
+    rdfs:label "量子コンピュータ"@ja ; rdfs:label "Quantum Computer"@en ;
+    rdfs:comment "量子力学的原理（重ね合わせ・もつれ・干渉）を利用して計算を行う計算機。超電導・イオントラップ・光量子方式など。"@ja ;
+    rdfs:comment "A computing device exploiting quantum mechanical principles (superposition, entanglement, interference) for computation, including superconducting, ion trap, and photonic approaches."@en ;
+    skos:notation "SHINRA_0003311" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumAlgorithm
+    a owl:Class ; rdfs:subClassOf shinra:Algorithm ;
+    rdfs:label "量子アルゴリズム"@ja ; rdfs:label "Quantum Algorithm"@en ;
+    rdfs:comment "量子コンピュータ上で動作し古典アルゴリズムより高速に問題を解くアルゴリズム。ショアのアルゴリズム・グローバーのアルゴリズムなど。"@ja ;
+    rdfs:comment "An algorithm running on a quantum computer that solves problems faster than classical algorithms, including Shor's algorithm and Grover's algorithm."@en ;
+    skos:notation "SHINRA_0003312" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumErrorCorrection
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "量子誤り訂正"@ja ; rdfs:label "Quantum Error Correction"@en ;
+    rdfs:comment "デコヒーレンス・ゲートエラーによる量子情報の劣化を検出・修正する技術。表面符号・スタビライザー符号など。"@ja ;
+    rdfs:comment "Technology for detecting and correcting degradation of quantum information due to decoherence and gate errors, including surface codes and stabilizer codes."@en ;
+    skos:notation "SHINRA_0003313" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumCryptography
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "量子暗号"@ja ; rdfs:label "Quantum Cryptography"@en ;
+    skos:altLabel "量子鍵配送"@ja ;
+    rdfs:comment "量子力学的原理に基づく情報セキュリティ技術。BB84プロトコル・量子鍵配送・量子乱数生成など。"@ja ;
+    rdfs:comment "Information security technology based on quantum mechanical principles, including the BB84 protocol, quantum key distribution, and quantum random number generation."@en ;
+    skos:notation "SHINRA_0003314" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumSupremacy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "量子超越性"@ja ; rdfs:label "Quantum Supremacy"@en ;
+    skos:altLabel "量子優位性"@ja ;
+    rdfs:comment "量子コンピュータが最高の古典コンピュータでも現実的な時間内に解けない問題を解ける状態・マイルストーン。"@ja ;
+    rdfs:comment "The milestone at which a quantum computer can solve a problem that the best classical computer cannot solve in any reasonable time."@en ;
+    skos:notation "SHINRA_0003315" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:shors-algorithm-001
+    a shinra:QuantumAlgorithm ;
+    rdfs:label "ショアのアルゴリズム"@ja ; rdfs:label "Shor's Algorithm"@en ;
+    shinra:wikidataId "Q604400" ;
+    skos:notation "SHINRA_I003301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:bb84-001
+    a shinra:QuantumCryptography ;
+    rdfs:label "BB84プロトコル"@ja ; rdfs:label "BB84 Protocol"@en ;
+    shinra:wikidataId "Q836639" ;
+    skos:notation "SHINRA_I003302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:schrodingers-cat-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "シュレーディンガーの猫"@ja ; rdfs:label "Schrödinger's Cat"@en ;
+    shinra:wikidataId "Q191768" ;
+    skos:notation "SHINRA_I003303" ; dcterms:created "2026-06-03"^^xsd:date .

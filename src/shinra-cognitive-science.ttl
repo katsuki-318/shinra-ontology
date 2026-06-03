@@ -1,0 +1,126 @@
+# ===========================================================================
+# shinra-cognitive-science.ttl  — 認知科学ドメイン (Phase 7-o)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cognitive-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 認知科学ドメイン"@ja ,
+                    "Shinra Ontology — Cognitive Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 認知科学の下位分野 ────────────────────────────────────────────
+
+shinra:CognitiveScience
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "認知科学"@ja ; rdfs:label "Cognitive Science"@en ;
+    rdfs:comment "心・知性・認知を多角的に研究する学際分野。心理学・神経科学・AI・言語学・哲学・人類学を統合する。"@ja ;
+    rdfs:comment "An interdisciplinary field studying mind, intelligence, and cognition, integrating psychology, neuroscience, AI, linguistics, philosophy, and anthropology."@en ;
+    skos:notation "SHINRA_0003101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ComputationalCognition
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "計算論的認知科学"@ja ; rdfs:label "Computational Cognition"@en ;
+    rdfs:comment "認知を計算過程としてモデル化・シミュレーションする研究領域。ベイズ脳仮説・予測符号化・計算モデルなど。"@ja ;
+    rdfs:comment "A research area modeling and simulating cognition as computational processes, including the Bayesian brain hypothesis, predictive coding, and computational models."@en ;
+    skos:notation "SHINRA_0003102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EmbodiedCognition
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "身体化認知"@ja ; rdfs:label "Embodied Cognition"@en ;
+    skos:altLabel "身体認知"@ja ;
+    rdfs:comment "認知が脳だけでなく身体と環境の相互作用から生じるという理論。拡張心・状況的認知・アフォーダンスなど。"@ja ;
+    rdfs:comment "The theory that cognition arises not from the brain alone but from the interaction of body and environment, including extended mind, situated cognition, and affordances."@en ;
+    skos:notation "SHINRA_0003103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 認知的構造と表現 ──────────────────────────────────────────────
+
+shinra:MentalRepresentation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "心的表象"@ja ; rdfs:label "Mental Representation"@en ;
+    rdfs:comment "心が対象・状況・関係を内的に符号化した構造。概念・イメージ・命題・スキーマ・フレームなど。"@ja ;
+    rdfs:comment "An internal structure by which the mind encodes objects, situations, and relations, including concepts, images, propositions, schemas, and frames."@en ;
+    skos:notation "SHINRA_0003111" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Schema
+    a owl:Class ; rdfs:subClassOf shinra:MentalRepresentation ;
+    rdfs:label "スキーマ"@ja ; rdfs:label "Schema"@en ;
+    skos:altLabel "図式"@ja ;
+    rdfs:comment "経験から形成された知識の構造的な枠組み。状況スキーマ・役割スキーマ・プロトタイプ・スクリプトなど。"@ja ;
+    rdfs:comment "A structured framework of knowledge formed from experience, including situational schemas, role schemas, prototypes, and scripts."@en ;
+    skos:notation "SHINRA_0003112" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ConceptualMetaphor
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "概念メタファー"@ja ; rdfs:label "Conceptual Metaphor"@en ;
+    rdfs:comment "抽象的な概念を具体的な領域の構造で理解するメカニズム。「議論は戦争」「時間は資源」など。"@ja ;
+    rdfs:comment "A mechanism by which abstract concepts are understood through the structure of concrete domains, such as 'argument is war' and 'time is a resource'."@en ;
+    skos:notation "SHINRA_0003113" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:WorkingMemory
+    a owl:Class ; rdfs:subClassOf shinra:Memory ;
+    rdfs:label "作業記憶"@ja ; rdfs:label "Working Memory"@en ;
+    skos:altLabel "ワーキングメモリ"@ja ;
+    rdfs:comment "情報を一時的に保持しながら操作する認知システム。中央実行系・音韻ループ・視空間メモ帳からなる。"@ja ;
+    rdfs:comment "A cognitive system that temporarily holds and manipulates information, comprising the central executive, phonological loop, and visuospatial sketchpad."@en ;
+    skos:notation "SHINRA_0003114" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ExecutiveFunction
+    a owl:Class ; rdfs:subClassOf shinra:Cognition ;
+    rdfs:label "実行機能"@ja ; rdfs:label "Executive Function"@en ;
+    rdfs:comment "目標指向行動を計画・制御・監視する高次認知機能。抑制・更新・切り替え・計画立案・認知的柔軟性など。"@ja ;
+    rdfs:comment "Higher-order cognitive functions planning, controlling, and monitoring goal-directed behavior, including inhibition, updating, shifting, planning, and cognitive flexibility."@en ;
+    skos:notation "SHINRA_0003115" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 言語と認知 ───────────────────────────────────────────────────
+
+shinra:LanguageComprehension
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "言語理解"@ja ; rdfs:label "Language Comprehension"@en ;
+    rdfs:comment "音声・文字言語を解析し意味を構築する認知過程。語彙アクセス・統語解析・談話統合・推論など。"@ja ;
+    rdfs:comment "The cognitive process of parsing spoken or written language to construct meaning, including lexical access, syntactic parsing, discourse integration, and inference."@en ;
+    skos:notation "SHINRA_0003121" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NumberCognition
+    a owl:Class ; rdfs:subClassOf shinra:Cognition ;
+    rdfs:label "数認知"@ja ; rdfs:label "Number Cognition"@en ;
+    rdfs:comment "数・量・算術を処理する認知能力。近似数感覚・正確な数表象・算術的推論・数学的思考など。"@ja ;
+    rdfs:comment "The cognitive capacity to process numbers, quantities, and arithmetic, including the approximate number sense, exact number representation, arithmetic reasoning, and mathematical thinking."@en ;
+    skos:notation "SHINRA_0003122" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:TheoryOfMind
+    a owl:Class ; rdfs:subClassOf shinra:SocialCognition ;
+    rdfs:label "心の理論"@ja ; rdfs:label "Theory of Mind"@en ;
+    skos:altLabel "ToM"@ja ;
+    rdfs:comment "他者が自分とは異なる信念・欲求・意図・知識を持つことを理解する認知能力。誤信念課題・共感との関連など。"@ja ;
+    rdfs:comment "The cognitive capacity to understand that others have beliefs, desires, intentions, and knowledge different from one's own, related to false belief tasks and empathy."@en ;
+    skos:notation "SHINRA_0003123" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:turing-test-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "チューリングテスト"@ja ; rdfs:label "Turing Test"@en ;
+    shinra:wikidataId "Q170427" ;
+    skos:notation "SHINRA_I003101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:chinese-room-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "中国語の部屋"@ja ; rdfs:label "Chinese Room"@en ;
+    shinra:wikidataId "Q275163" ;
+    skos:notation "SHINRA_I003102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:dual-process-theory-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "二重過程理論"@ja ; rdfs:label "Dual Process Theory"@en ;
+    shinra:wikidataId "Q1475501" ;
+    skos:notation "SHINRA_I003103" ; dcterms:created "2026-06-03"^^xsd:date .
