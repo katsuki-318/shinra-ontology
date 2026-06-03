@@ -1,0 +1,115 @@
+# ===========================================================================
+# shinra-political-science.ttl  — 政治学詳細ドメイン (Phase 7-y)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/political-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 政治学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Political Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 政治の基本概念 ────────────────────────────────────────────────
+
+shinra:Power
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "権力"@ja ; rdfs:label "Power"@en ;
+    rdfs:comment "他者の行動・信念・意思を変容させる能力。強制力・説得力・規範的権力・構造的権力など。"@ja ;
+    rdfs:comment "The capacity to alter the actions, beliefs, or will of others, including coercive, persuasive, normative, and structural power."@en ;
+    skos:notation "SHINRA_0004101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Legitimacy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "正統性"@ja ; rdfs:label "Legitimacy"@en ;
+    rdfs:comment "政治的権威・制度が正当に承認される根拠。伝統的・カリスマ的・合法的＝合理的正統性（ウェーバー）など。"@ja ;
+    rdfs:comment "The basis on which political authority and institutions are recognized as rightful, including Weber's traditional, charismatic, and legal-rational legitimacy."@en ;
+    skos:notation "SHINRA_0004102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PoliticalIdeology
+    a owl:Class ; rdfs:subClassOf shinra:Ideology ;
+    rdfs:label "政治的イデオロギー"@ja ; rdfs:label "Political Ideology"@en ;
+    rdfs:comment "政治的秩序・権力・権利についての体系的信念。自由主義・保守主義・社会主義・無政府主義・ポピュリズムなど。"@ja ;
+    rdfs:comment "A systematic set of beliefs about political order, power, and rights, including liberalism, conservatism, socialism, anarchism, and populism."@en ;
+    skos:notation "SHINRA_0004103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Nation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "国民・民族"@ja ; rdfs:label "Nation"@en ;
+    skos:altLabel "ネーション"@ja ;
+    rdfs:comment "共通の文化・言語・歴史・政治的帰属意識で結びついた集団。国民国家・民族自決・ナショナリズムの基盤。"@ja ;
+    rdfs:comment "A group bound by shared culture, language, history, and political belonging, forming the basis of nation-states, self-determination, and nationalism."@en ;
+    skos:notation "SHINRA_0004104" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 政治制度・過程 ────────────────────────────────────────────────
+
+shinra:Democracy
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalSystem ;
+    rdfs:label "民主主義制度"@ja ; rdfs:label "Democratic System"@en ;
+    rdfs:comment "国民主権・多数決・少数者保護・法の支配を原則とする政治体制。直接民主制・代議制・自由民主主義など。"@ja ;
+    rdfs:comment "A political system based on popular sovereignty, majority rule, minority protection, and rule of law, including direct democracy, representative democracy, and liberal democracy."@en ;
+    skos:notation "SHINRA_0004111" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Authoritarianism
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalSystem ;
+    rdfs:label "権威主義体制"@ja ; rdfs:label "Authoritarianism"@en ;
+    rdfs:comment "政治的自由・多元主義を制限し指導者・党・軍が権力を集中させる体制。独裁・全体主義・ハイブリッド体制など。"@ja ;
+    rdfs:comment "A political system in which a leader, party, or military concentrates power by restricting political freedoms and pluralism, including dictatorship, totalitarianism, and hybrid regimes."@en ;
+    skos:notation "SHINRA_0004112" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Federalism
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalSystem ;
+    rdfs:label "連邦制"@ja ; rdfs:label "Federalism"@en ;
+    rdfs:comment "主権が中央政府と地方政府の間で憲法的に分割される統治構造。米国・ドイツ・スイス・インドなど。"@ja ;
+    rdfs:comment "A governance structure in which sovereignty is constitutionally divided between central and regional governments, as in the US, Germany, Switzerland, and India."@en ;
+    skos:notation "SHINRA_0004113" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PublicPolicy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "公共政策"@ja ; rdfs:label "Public Policy"@en ;
+    rdfs:comment "政府・公的機関が社会問題を解決するために策定・実施する方針・計画・行動の体系。政策立案・実施・評価のサイクル。"@ja ;
+    rdfs:comment "A system of principles, plans, and actions formulated and implemented by governments or public institutions to address social issues, including the policy cycle of formulation, implementation, and evaluation."@en ;
+    skos:notation "SHINRA_0004114" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PoliticalParty
+    a owl:Class ; rdfs:subClassOf shinra:Organization ;
+    rdfs:label "政党"@ja ; rdfs:label "Political Party"@en ;
+    rdfs:comment "共通の政治的目標・イデオロギーを持ち選挙で権力獲得を目指す組織。二大政党制・多党制・一党制など。"@ja ;
+    rdfs:comment "An organization sharing common political goals and ideology that seeks to gain power through elections, existing in two-party, multi-party, and one-party systems."@en ;
+    skos:notation "SHINRA_0004115" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Voting
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "投票行動"@ja ; rdfs:label "Voting Behavior"@en ;
+    skos:altLabel "選挙行動"@ja ;
+    rdfs:comment "有権者が選挙で候補者・政党を選択する行為とそのパターン。投票率・争点投票・政党帰属意識・世論調査など。"@ja ;
+    rdfs:comment "The act and patterns by which voters select candidates or parties in elections, including turnout, issue voting, party identification, and opinion polling."@en ;
+    skos:notation "SHINRA_0004116" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:un-security-council-001
+    a shinra:Organization ;
+    rdfs:label "国連安全保障理事会"@ja ; rdfs:label "UN Security Council"@en ;
+    shinra:wikidataId "Q37470" ;
+    skos:notation "SHINRA_I004101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:social-contract-001
+    a shinra:ScientificTheory ;
+    rdfs:label "社会契約論"@ja ; rdfs:label "Social Contract Theory"@en ;
+    shinra:wikidataId "Q14827" ;
+    skos:notation "SHINRA_I004102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:magna-carta-political-001
+    a shinra:PoliticalIdeology ;
+    rdfs:label "自由主義"@ja ; rdfs:label "Liberalism"@en ;
+    shinra:wikidataId "Q6216" ;
+    skos:notation "SHINRA_I004103" ; dcterms:created "2026-06-03"^^xsd:date .

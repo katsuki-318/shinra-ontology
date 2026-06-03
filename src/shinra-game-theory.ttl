@@ -1,0 +1,116 @@
+# ===========================================================================
+# shinra-game-theory.ttl  — ゲーム理論・意思決定科学ドメイン (Phase 7-z)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/game-theory>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — ゲーム理論・意思決定科学ドメイン"@ja ,
+                    "Shinra Ontology — Game Theory & Decision Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── ゲーム理論の基本概念 ──────────────────────────────────────────
+
+shinra:StrategicGame
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "戦略的ゲーム"@ja ; rdfs:label "Strategic Game"@en ;
+    skos:altLabel "ゲーム"@ja ;
+    rdfs:comment "複数のプレイヤーが戦略を選択し相互の利得を決定する数学的モデル。協力ゲーム・非協力ゲーム・繰り返しゲームなど。"@ja ;
+    rdfs:comment "A mathematical model in which multiple players choose strategies that determine each other's payoffs, including cooperative, non-cooperative, and repeated games."@en ;
+    skos:notation "SHINRA_0004201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Strategy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "戦略"@ja ; rdfs:label "Strategy"@en ;
+    skos:altLabel "行動計画"@ja ;
+    rdfs:comment "ゲーム内でプレイヤーが取りうる行動の完全な計画。純粋戦略・混合戦略・支配戦略・最適反応など。"@ja ;
+    rdfs:comment "A complete plan of action a player can take in a game, including pure strategies, mixed strategies, dominant strategies, and best responses."@en ;
+    skos:notation "SHINRA_0004202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NashEquilibrium
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "ナッシュ均衡"@ja ; rdfs:label "Nash Equilibrium"@en ;
+    rdfs:comment "すべてのプレイヤーが他者の戦略を所与として最適反応をとっている状態。ゲーム理論の中心的概念。"@ja ;
+    rdfs:comment "A state in which all players are playing a best response given the strategies of others. The central concept of game theory."@en ;
+    skos:notation "SHINRA_0004203" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PrisonersDilemma
+    a owl:Class ; rdfs:subClassOf shinra:StrategicGame ;
+    rdfs:label "囚人のジレンマ"@ja ; rdfs:label "Prisoner's Dilemma"@en ;
+    rdfs:comment "個人の合理的選択が集合的に最適でない結果をもたらすゲーム構造。協力・裏切り・公共財問題の原型。"@ja ;
+    rdfs:comment "A game structure in which individually rational choices lead to collectively suboptimal outcomes, serving as the archetype of cooperation, defection, and public goods problems."@en ;
+    skos:notation "SHINRA_0004204" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AuctionMechanism
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "オークション機構"@ja ; rdfs:label "Auction Mechanism"@en ;
+    rdfs:comment "入札によって財・サービスの価格と配分を決定する制度。英国式・ダッチ式・封印入札・ビックリー式など。"@ja ;
+    rdfs:comment "An institution determining the price and allocation of goods or services through bidding, including English, Dutch, sealed-bid, and Vickrey auctions."@en ;
+    skos:notation "SHINRA_0004205" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 意思決定理論 ─────────────────────────────────────────────────
+
+shinra:ExpectedUtility
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "期待効用理論"@ja ; rdfs:label "Expected Utility Theory"@en ;
+    rdfs:comment "不確実な状況での選択を確率加重された効用の最大化として説明する規範的意思決定理論。フォン・ノイマン＝モルゲンシュテルン。"@ja ;
+    rdfs:comment "A normative decision theory explaining choices under uncertainty as maximization of probability-weighted utility, developed by von Neumann and Morgenstern."@en ;
+    skos:notation "SHINRA_0004211" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ProspectTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "プロスペクト理論"@ja ; rdfs:label "Prospect Theory"@en ;
+    rdfs:comment "損失回避・確率の過大過小評価を取り込んだ記述的意思決定理論。カーネマン＆トベルスキーが提唱。"@ja ;
+    rdfs:comment "A descriptive decision theory incorporating loss aversion and probability weighting, developed by Kahneman and Tversky."@en ;
+    skos:notation "SHINRA_0004212" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:BehavioralEconomics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "行動経済学"@ja ; rdfs:label "Behavioral Economics"@en ;
+    rdfs:comment "心理学的知見を経済モデルに統合し実際の意思決定を研究する分野。ナッジ・フレーミング・ヒューリスティクスなど。"@ja ;
+    rdfs:comment "A field integrating psychological insights into economic models to study actual decision-making, including nudges, framing effects, and heuristics."@en ;
+    skos:notation "SHINRA_0004213" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MechanismDesign
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "メカニズムデザイン"@ja ; rdfs:label "Mechanism Design"@en ;
+    skos:altLabel "逆ゲーム理論"@ja ;
+    rdfs:comment "目標とする結果を実現するゲーム・制度を設計する理論。逆ゲーム理論・マーケットデザイン・マッチング理論など。"@ja ;
+    rdfs:comment "The theory of designing games and institutions to achieve desired outcomes, including reverse game theory, market design, and matching theory."@en ;
+    skos:notation "SHINRA_0004214" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CooperativeGame
+    a owl:Class ; rdfs:subClassOf shinra:StrategicGame ;
+    rdfs:label "協力ゲーム"@ja ; rdfs:label "Cooperative Game"@en ;
+    rdfs:comment "プレイヤーが連合を形成し共同で戦略を選択できるゲームモデル。シャープレイ値・コア・交渉解など。"@ja ;
+    rdfs:comment "A game model in which players can form coalitions and choose strategies jointly, analyzed using the Shapley value, core, and bargaining solutions."@en ;
+    skos:notation "SHINRA_0004215" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:nash-equilibrium-instance-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ナッシュの均衡定理"@ja ; rdfs:label "Nash Equilibrium Theorem"@en ;
+    shinra:wikidataId "Q188522" ;
+    skos:notation "SHINRA_I004201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:tragedy-of-commons-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "コモンズの悲劇"@ja ; rdfs:label "Tragedy of the Commons"@en ;
+    shinra:wikidataId "Q471722" ;
+    skos:notation "SHINRA_I004202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:deferred-acceptance-001
+    a shinra:MechanismDesign ;
+    rdfs:label "延期受入アルゴリズム"@ja ; rdfs:label "Deferred Acceptance Algorithm"@en ;
+    shinra:wikidataId "Q1182159" ;
+    skos:notation "SHINRA_I004203" ; dcterms:created "2026-06-03"^^xsd:date .
