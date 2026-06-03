@@ -1,0 +1,135 @@
+# ===========================================================================
+# shinra-materials-science.ttl  — 材料科学詳細ドメイン (Phase 7-w)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/materials-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 材料科学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Materials Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 材料の分類 ───────────────────────────────────────────────────
+
+shinra:Metal
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "金属"@ja ; rdfs:label "Metal"@en ;
+    rdfs:comment "良導体・光沢・延性を特徴とする材料。鉄・アルミニウム・銅・チタン・ステンレス鋼・超合金など。"@ja ;
+    rdfs:comment "A material characterized by electrical conductivity, metallic luster, and ductility, including iron, aluminum, copper, titanium, stainless steel, and superalloys."@en ;
+    skos:notation "SHINRA_0003901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Ceramic
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "セラミックス"@ja ; rdfs:label "Ceramic"@en ;
+    rdfs:comment "高温焼成された無機非金属材料。アルミナ・窒化ケイ素・ジルコニア・ガラス・圧電セラミックスなど。"@ja ;
+    rdfs:comment "An inorganic non-metallic material formed at high temperature, including alumina, silicon nitride, zirconia, glass, and piezoelectric ceramics."@en ;
+    skos:notation "SHINRA_0003902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Polymer
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "高分子材料"@ja ; rdfs:label "Polymer"@en ;
+    skos:altLabel "プラスチック"@ja ;
+    rdfs:comment "繰り返し単位（モノマー）が連結した大分子からなる材料。熱可塑性・熱硬化性・エラストマー・生分解性プラスチックなど。"@ja ;
+    rdfs:comment "A material consisting of large molecules formed from repeating units (monomers), including thermoplastics, thermosets, elastomers, and biodegradable plastics."@en ;
+    skos:notation "SHINRA_0003903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CompositeMaterial
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "複合材料"@ja ; rdfs:label "Composite Material"@en ;
+    rdfs:comment "異なる材料を組み合わせて単独材料より優れた特性を実現した材料。炭素繊維強化プラスチック・コンクリート・木材など。"@ja ;
+    rdfs:comment "A material combining different materials to achieve properties superior to any single component, including carbon fiber reinforced plastics, concrete, and wood."@en ;
+    skos:notation "SHINRA_0003904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Biomaterial
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "生体材料"@ja ; rdfs:label "Biomaterial"@en ;
+    skos:altLabel "バイオマテリアル"@ja ;
+    rdfs:comment "医療用途で生体と接触・相互作用するよう設計された材料。人工骨・縫合糸・インプラント・薬物送達材料など。"@ja ;
+    rdfs:comment "A material designed to contact and interact with biological systems for medical purposes, including artificial bone, sutures, implants, and drug delivery materials."@en ;
+    skos:notation "SHINRA_0003905" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Nanomaterial
+    a owl:Class ; rdfs:subClassOf shinra:Material ;
+    rdfs:label "ナノ材料"@ja ; rdfs:label "Nanomaterial"@en ;
+    rdfs:comment "少なくとも一次元がナノスケール（1–100nm）の材料。カーボンナノチューブ・グラフェン・量子ドット・ナノ粒子など。"@ja ;
+    rdfs:comment "A material with at least one dimension at the nanoscale (1–100nm), including carbon nanotubes, graphene, quantum dots, and nanoparticles."@en ;
+    skos:notation "SHINRA_0003906" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 材料の特性・過程 ──────────────────────────────────────────────
+
+shinra:MaterialProperty
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "材料特性"@ja ; rdfs:label "Material Property"@en ;
+    rdfs:comment "材料の物理的・化学的・機械的・電気的特性。強度・硬度・導電性・熱伝導率・耐食性など。"@ja ;
+    rdfs:comment "Physical, chemical, mechanical, or electrical characteristics of a material, including strength, hardness, conductivity, thermal conductivity, and corrosion resistance."@en ;
+    skos:notation "SHINRA_0003911" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhaseTransition
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "相転移"@ja ; rdfs:label "Phase Transition"@en ;
+    rdfs:comment "物質が固体・液体・気体・プラズマなど異なる相へ移行する過程。融解・凝固・蒸発・昇華・超伝導転移など。"@ja ;
+    rdfs:comment "The process by which matter transitions between different phases such as solid, liquid, gas, and plasma, including melting, solidification, vaporization, sublimation, and superconducting transition."@en ;
+    skos:notation "SHINRA_0003912" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Superconductivity
+    a owl:Class ; rdfs:subClassOf shinra:ElectromagneticPhenomenon ;
+    rdfs:label "超伝導"@ja ; rdfs:label "Superconductivity"@en ;
+    rdfs:comment "特定温度以下で電気抵抗がゼロになる量子現象。BCS理論・高温超伝導体・マイスナー効果・超伝導磁石など。"@ja ;
+    rdfs:comment "A quantum phenomenon in which electrical resistance drops to zero below a critical temperature, including BCS theory, high-temperature superconductors, the Meissner effect, and superconducting magnets."@en ;
+    skos:notation "SHINRA_0003913" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Crystallography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "結晶学"@ja ; rdfs:label "Crystallography"@en ;
+    rdfs:comment "結晶の構造・性質・形成を研究する科学。X線結晶構造解析・タンパク質結晶学・鉱物学との関連など。"@ja ;
+    rdfs:comment "The science studying the structure, properties, and formation of crystals, including X-ray crystallography, protein crystallography, and its connection to mineralogy."@en ;
+    skos:notation "SHINRA_0003914" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 材料プロパティ ────────────────────────────────────────────────
+
+shinra:hasMeltingPoint
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Material ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "融点"@ja ; rdfs:label "melting point"@en ;
+    rdfs:comment "材料の融点（℃）。"@ja ;
+    rdfs:comment "The melting point of a material in degrees Celsius."@en ;
+    skos:notation "SHINRA_D003901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasTensileStrength
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Material ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "引張強度"@ja ; rdfs:label "tensile strength"@en ;
+    rdfs:comment "材料が破断前に耐えられる最大引張応力（MPa）。"@ja ;
+    rdfs:comment "The maximum tensile stress a material can withstand before fracture, in megapascals (MPa)."@en ;
+    skos:notation "SHINRA_D003902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:graphene-001
+    a shinra:Nanomaterial ;
+    rdfs:label "グラフェン"@ja ; rdfs:label "Graphene"@en ;
+    shinra:wikidataId "Q106688" ;
+    skos:notation "SHINRA_I003901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:silicon-001
+    a shinra:Semiconductor ;
+    rdfs:label "シリコン"@ja ; rdfs:label "Silicon"@en ;
+    shinra:wikidataId "Q670" ;
+    skos:notation "SHINRA_I003902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:carbon-fiber-001
+    a shinra:CompositeMaterial ;
+    rdfs:label "炭素繊維強化プラスチック"@ja ; rdfs:label "Carbon Fiber Reinforced Plastic"@en ;
+    shinra:wikidataId "Q214609" ;
+    skos:notation "SHINRA_I003903" ; dcterms:created "2026-06-03"^^xsd:date .

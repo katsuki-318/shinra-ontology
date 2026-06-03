@@ -1,0 +1,118 @@
+# ===========================================================================
+# shinra-finance-detail.ttl  — 金融・会計詳細ドメイン (Phase 7-x)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/finance-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 金融・会計詳細ドメイン"@ja ,
+                    "Shinra Ontology — Finance & Accounting Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 金融機関 ─────────────────────────────────────────────────────
+
+shinra:CentralBank
+    a owl:Class ; rdfs:subClassOf shinra:GovernmentBody ;
+    rdfs:label "中央銀行"@ja ; rdfs:label "Central Bank"@en ;
+    rdfs:comment "国家の通貨発行・金融政策・銀行監督を担う政府機関。FRB・ECB・日本銀行・イングランド銀行など。"@ja ;
+    rdfs:comment "A government institution responsible for currency issuance, monetary policy, and banking supervision, including the Fed, ECB, Bank of Japan, and Bank of England."@en ;
+    skos:notation "SHINRA_0004001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CommercialBank
+    a owl:Class ; rdfs:subClassOf shinra:Company ;
+    rdfs:label "商業銀行"@ja ; rdfs:label "Commercial Bank"@en ;
+    skos:altLabel "市中銀行"@ja ;
+    rdfs:comment "預金の受け入れと融資を主業務とする民間金融機関。メガバンク・地方銀行・信用組合・ネット銀行など。"@ja ;
+    rdfs:comment "A private financial institution whose main business is accepting deposits and making loans, including megabanks, regional banks, credit unions, and online banks."@en ;
+    skos:notation "SHINRA_0004002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InvestmentFund
+    a owl:Class ; rdfs:subClassOf shinra:FinancialInstrument ;
+    rdfs:label "投資ファンド"@ja ; rdfs:label "Investment Fund"@en ;
+    skos:altLabel "펀드"@ja ;
+    rdfs:comment "多数の投資家から資金を集めて運用する集合投資スキーム。投資信託・ETF・ヘッジファンド・PEファンドなど。"@ja ;
+    rdfs:comment "A collective investment scheme pooling capital from multiple investors, including mutual funds, ETFs, hedge funds, and private equity funds."@en ;
+    skos:notation "SHINRA_0004003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 金融政策・制度 ────────────────────────────────────────────────
+
+shinra:MonetaryPolicy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "金融政策"@ja ; rdfs:label "Monetary Policy"@en ;
+    rdfs:comment "中央銀行が通貨供給量・金利を操作して経済目標を達成する政策。量的緩和・利上げ・マイナス金利・フォワードガイダンスなど。"@ja ;
+    rdfs:comment "Policy by which a central bank manipulates money supply and interest rates to achieve economic objectives, including quantitative easing, rate hikes, negative rates, and forward guidance."@en ;
+    skos:notation "SHINRA_0004011" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FiscalPolicy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "財政政策"@ja ; rdfs:label "Fiscal Policy"@en ;
+    rdfs:comment "政府が税収・支出を調整して経済活動に影響を与える政策。景気刺激・財政健全化・自動安定化装置など。"@ja ;
+    rdfs:comment "Policy by which the government adjusts tax revenues and spending to influence economic activity, including economic stimulus, fiscal consolidation, and automatic stabilizers."@en ;
+    skos:notation "SHINRA_0004012" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FinancialRegulation
+    a owl:Class ; rdfs:subClassOf shinra:LegalSystem ;
+    rdfs:label "金融規制"@ja ; rdfs:label "Financial Regulation"@en ;
+    rdfs:comment "金融機関・市場・商品を監督・規制する法的枠組み。バーゼルIII・ドッド＝フランク法・MiFID・金融庁規制など。"@ja ;
+    rdfs:comment "The legal framework supervising and regulating financial institutions, markets, and products, including Basel III, Dodd-Frank Act, MiFID, and FSA regulations."@en ;
+    skos:notation "SHINRA_0004013" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 会計・財務 ────────────────────────────────────────────────────
+
+shinra:FinancialStatement
+    a owl:Class ; rdfs:subClassOf shinra:LegalDocument ;
+    rdfs:label "財務諸表"@ja ; rdfs:label "Financial Statement"@en ;
+    rdfs:comment "企業・組織の財務状況を報告する文書。損益計算書・貸借対照表・キャッシュフロー計算書・株主資本変動計算書など。"@ja ;
+    rdfs:comment "Documents reporting the financial condition of an enterprise or organization, including income statements, balance sheets, cash flow statements, and statements of changes in equity."@en ;
+    skos:notation "SHINRA_0004021" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Accounting
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "会計学"@ja ; rdfs:label "Accounting"@en ;
+    rdfs:comment "財務情報の記録・分類・要約・報告を研究する分野。財務会計・管理会計・税務会計・監査など。"@ja ;
+    rdfs:comment "The field studying recording, classifying, summarizing, and reporting financial information, including financial accounting, managerial accounting, tax accounting, and auditing."@en ;
+    skos:notation "SHINRA_0004022" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Valuation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "バリュエーション"@ja ; rdfs:label "Valuation"@en ;
+    skos:altLabel "企業価値評価"@ja ;
+    rdfs:comment "企業・資産・金融商品の経済的価値を推計するプロセス。DCF法・マルチプル法・純資産法・オプション価格理論など。"@ja ;
+    rdfs:comment "The process of estimating the economic value of a company, asset, or financial instrument, including DCF, multiples, net asset value, and option pricing theory."@en ;
+    skos:notation "SHINRA_0004023" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Risk
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "リスク"@ja ; rdfs:label "Risk"@en ;
+    rdfs:comment "将来の不確実な損失・変動の可能性。市場リスク・信用リスク・流動性リスク・オペレーショナルリスクなど。"@ja ;
+    rdfs:comment "The possibility of future uncertain loss or variation, including market risk, credit risk, liquidity risk, and operational risk."@en ;
+    skos:notation "SHINRA_0004024" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:federal-reserve-001
+    a shinra:CentralBank ;
+    rdfs:label "連邦準備制度"@ja ; rdfs:label "Federal Reserve System"@en ;
+    shinra:wikidataId "Q48378" ;
+    skos:notation "SHINRA_I004001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:black-scholes-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ブラック＝ショールズ方程式"@ja ; rdfs:label "Black–Scholes Model"@en ;
+    shinra:wikidataId "Q272525" ;
+    skos:notation "SHINRA_I004002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:basel-iii-001
+    a shinra:FinancialRegulation ;
+    rdfs:label "バーゼルIII"@ja ; rdfs:label "Basel III"@en ;
+    shinra:wikidataId "Q892941" ;
+    skos:notation "SHINRA_I004003" ; dcterms:created "2026-06-03"^^xsd:date .

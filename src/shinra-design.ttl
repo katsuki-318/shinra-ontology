@@ -1,0 +1,111 @@
+# ===========================================================================
+# shinra-design.ttl  — デザイン・創造性ドメイン (Phase 7-s)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/design>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — デザイン・創造性ドメイン"@ja ,
+                    "Shinra Ontology — Design & Creativity Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── デザインの分野 ────────────────────────────────────────────────
+
+shinra:DesignDiscipline
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "デザイン分野"@ja ; rdfs:label "Design Discipline"@en ;
+    rdfs:comment "人工物・環境・体験を計画・形成する実践的学問分野。工業デザイン・グラフィック・UI/UX・建築・ファッションなど。"@ja ;
+    rdfs:comment "A practical academic field planning and shaping artifacts, environments, and experiences, including industrial, graphic, UI/UX, architectural, and fashion design."@en ;
+    skos:notation "SHINRA_0003501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DesignProcess
+    a owl:Class ; rdfs:subClassOf shinra:CreationProcess ;
+    rdfs:label "デザインプロセス"@ja ; rdfs:label "Design Process"@en ;
+    rdfs:comment "問題発見から解決策の実装までのデザイン活動の過程。デザイン思考・ダブルダイヤモンド・人間中心設計など。"@ja ;
+    rdfs:comment "The process of design activities from problem discovery to solution implementation, including design thinking, the double diamond, and human-centered design."@en ;
+    skos:notation "SHINRA_0003502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:UserExperience
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ユーザー体験"@ja ; rdfs:label "User Experience"@en ;
+    skos:altLabel "UX"@ja ;
+    rdfs:comment "製品・サービス・システムとのインタラクションを通じてユーザーが得る総合的な体験。使いやすさ・感情・意味を含む。"@ja ;
+    rdfs:comment "The totality of experience a user has through interaction with a product, service, or system, encompassing usability, emotion, and meaning."@en ;
+    skos:notation "SHINRA_0003503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Prototype
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "プロトタイプ"@ja ; rdfs:label "Prototype"@en ;
+    skos:altLabel "試作品"@ja ;
+    rdfs:comment "検証・テストのために製作されるデザイン解決策の初期実物モデル。ペーパープロトタイプ・デジタルモックアップなど。"@ja ;
+    rdfs:comment "An initial physical or digital model of a design solution created for testing and validation, including paper prototypes and digital mockups."@en ;
+    skos:notation "SHINRA_0003504" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DesignPattern
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "デザインパターン"@ja ; rdfs:label "Design Pattern"@en ;
+    rdfs:comment "繰り返し現れる設計問題への再利用可能な解決策の記述。建築・ソフトウェア・UI設計で用いられる。"@ja ;
+    rdfs:comment "A reusable description of a solution to a recurring design problem, used in architecture, software, and UI design."@en ;
+    skos:notation "SHINRA_0003505" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 創造性 ───────────────────────────────────────────────────────
+
+shinra:Creativity
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "創造性"@ja ; rdfs:label "Creativity"@en ;
+    skos:altLabel "創造力"@ja ;
+    rdfs:comment "新規かつ有用・適切なアイデア・産物・解決策を生み出す能力。発散的思考・収束的思考・インキュベーションなど。"@ja ;
+    rdfs:comment "The capacity to produce novel and useful or appropriate ideas, products, and solutions, including divergent thinking, convergent thinking, and incubation."@en ;
+    skos:notation "SHINRA_0003511" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Innovation
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "イノベーション"@ja ; rdfs:label "Innovation"@en ;
+    skos:altLabel "技術革新"@ja ;
+    rdfs:comment "新しいアイデア・方法・製品を導入して価値を創出する社会的過程。破壊的イノベーション・漸進的革新・オープンイノベーションなど。"@ja ;
+    rdfs:comment "The social process of introducing new ideas, methods, or products to create value, including disruptive innovation, incremental innovation, and open innovation."@en ;
+    skos:notation "SHINRA_0003512" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Affordance
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "アフォーダンス"@ja ; rdfs:label "Affordance"@en ;
+    rdfs:comment "環境・物体が行為者に提供する行為可能性。ギブソンの生態心理学的アフォーダンス・デザインにおける知覚的アフォーダンスなど。"@ja ;
+    rdfs:comment "The action possibilities an environment or object offers to an agent, including Gibson's ecological affordances and perceived affordances in design."@en ;
+    skos:notation "SHINRA_0003513" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Aesthetics_Experience
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "美的体験"@ja ; rdfs:label "Aesthetic Experience"@en ;
+    skos:altLabel "審美的体験"@ja ;
+    rdfs:comment "芸術・自然・デザインと接したときに生じる感動・快・意味の豊かな知覚体験。崇高・優美・悲劇的など。"@ja ;
+    rdfs:comment "A perceptual experience of emotion, pleasure, and rich meaning arising from engagement with art, nature, or design, including the sublime, grace, and the tragic."@en ;
+    skos:notation "SHINRA_0003514" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:bauhaus-design-001
+    a shinra:DesignDiscipline ;
+    rdfs:label "バウハウスデザイン"@ja ; rdfs:label "Bauhaus Design"@en ;
+    shinra:wikidataId "Q161524" ;
+    skos:notation "SHINRA_I003501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:design-thinking-001
+    a shinra:DesignProcess ;
+    rdfs:label "デザイン思考"@ja ; rdfs:label "Design Thinking"@en ;
+    shinra:wikidataId "Q1203836" ;
+    skos:notation "SHINRA_I003502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:golden-ratio-001
+    a shinra:MathematicalObject ;
+    rdfs:label "黄金比"@ja ; rdfs:label "Golden Ratio"@en ;
+    shinra:wikidataId "Q41690" ;
+    skos:notation "SHINRA_I003503" ; dcterms:created "2026-06-03"^^xsd:date .

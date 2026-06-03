@@ -1,0 +1,133 @@
+# ===========================================================================
+# shinra-climate-science.ttl  — 気候科学・地球システム科学ドメイン (Phase 7-v)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/climate-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 気候科学・地球システム科学ドメイン"@ja ,
+                    "Shinra Ontology — Climate Science & Earth System Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 気候システムの構成要素 ────────────────────────────────────────
+
+shinra:Atmosphere
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "大気"@ja ; rdfs:label "Atmosphere"@en ;
+    rdfs:comment "惑星を取り巻くガスの層。地球大気は対流圏・成層圏・中間圏・熱圏・外気圏からなる。"@ja ;
+    rdfs:comment "The layer of gases surrounding a planet. Earth's atmosphere consists of the troposphere, stratosphere, mesosphere, thermosphere, and exosphere."@en ;
+    skos:notation "SHINRA_0003801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Hydrosphere
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "水圏"@ja ; rdfs:label "Hydrosphere"@en ;
+    rdfs:comment "地球上のすべての水（液体・固体・気体）の総体。海洋・河川・湖・地下水・氷河・大気中の水蒸気など。"@ja ;
+    rdfs:comment "The totality of water on Earth in all states (liquid, solid, gas), including oceans, rivers, lakes, groundwater, glaciers, and atmospheric water vapor."@en ;
+    skos:notation "SHINRA_0003802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Cryosphere
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "雪氷圏"@ja ; rdfs:label "Cryosphere"@en ;
+    rdfs:comment "地球上で水が固体（氷・雪）として存在する領域の総体。氷河・氷床・海氷・永久凍土・積雪など。"@ja ;
+    rdfs:comment "The totality of regions on Earth where water exists as a solid (ice, snow), including glaciers, ice sheets, sea ice, permafrost, and snowpack."@en ;
+    skos:notation "SHINRA_0003803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Biosphere
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "生物圏"@ja ; rdfs:label "Biosphere"@en ;
+    rdfs:comment "地球上で生命が存在するすべての領域と生物の総体。深海底から成層圏下部まで。"@ja ;
+    rdfs:comment "The totality of all living organisms and the regions of Earth where life exists, from the deep ocean floor to the lower stratosphere."@en ;
+    skos:notation "SHINRA_0003804" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 気候過程・現象 ────────────────────────────────────────────────
+
+shinra:OceanCurrentSystem
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "海流系"@ja ; rdfs:label "Ocean Current System"@en ;
+    skos:altLabel "海洋循環"@ja ;
+    rdfs:comment "温度・塩分・風によって駆動される大規模な海洋循環。表層循環・深層循環（熱塩循環）・エルニーニョなど。"@ja ;
+    rdfs:comment "Large-scale ocean circulation driven by temperature, salinity, and wind, including surface circulation, deep circulation (thermohaline circulation), and El Niño."@en ;
+    skos:notation "SHINRA_0003811" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AtmosphericCirculation
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "大気循環"@ja ; rdfs:label "Atmospheric Circulation"@en ;
+    rdfs:comment "熱・エネルギー・水蒸気を地球規模で輸送する大気の大規模運動。ハドレー循環・偏西風・ジェット気流・モンスーンなど。"@ja ;
+    rdfs:comment "Large-scale atmospheric motion transporting heat, energy, and water vapor globally, including Hadley cells, westerlies, jet streams, and monsoons."@en ;
+    skos:notation "SHINRA_0003812" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ClimateModel
+    a owl:Class ; rdfs:subClassOf shinra:Software ;
+    rdfs:label "気候モデル"@ja ; rdfs:label "Climate Model"@en ;
+    skos:altLabel "地球システムモデル"@ja ;
+    rdfs:comment "気候システムの物理・化学・生物学的過程を数値的にシミュレーションするコンピュータモデル。GCM・ESMなど。"@ja ;
+    rdfs:comment "A computer model numerically simulating the physical, chemical, and biological processes of the climate system, including General Circulation Models (GCMs) and Earth System Models (ESMs)."@en ;
+    skos:notation "SHINRA_0003813" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ClimateTippingPoint
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "気候ティッピングポイント"@ja ; rdfs:label "Climate Tipping Point"@en ;
+    rdfs:comment "わずかな変化で気候システムが不可逆的に新しい状態に移行する臨界点。西南極氷床崩壊・アマゾン転換・永久凍土融解など。"@ja ;
+    rdfs:comment "A critical threshold at which a small change causes the climate system to irreversibly transition to a new state, including West Antarctic ice sheet collapse, Amazon dieback, and permafrost thaw."@en ;
+    skos:notation "SHINRA_0003814" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SeaLevelRise
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "海面上昇"@ja ; rdfs:label "Sea Level Rise"@en ;
+    rdfs:comment "気候変動による氷河・氷床融解・海水熱膨張で海面が上昇する過程。沿岸浸水・島嶼国消失・塩水浸透などの影響。"@ja ;
+    rdfs:comment "The process of rising sea levels due to glacier and ice sheet melt and thermal expansion of seawater caused by climate change, with impacts including coastal flooding, island nation submersion, and saltwater intrusion."@en ;
+    skos:notation "SHINRA_0003815" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CarbonCycle
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "炭素循環"@ja ; rdfs:label "Carbon Cycle"@en ;
+    rdfs:comment "炭素が大気・海洋・生物・岩石圏を循環する生物地球化学的過程。光合成・呼吸・化石燃料燃焼・海洋吸収など。"@ja ;
+    rdfs:comment "The biogeochemical process by which carbon cycles through the atmosphere, ocean, biosphere, and lithosphere, including photosynthesis, respiration, fossil fuel combustion, and ocean uptake."@en ;
+    skos:notation "SHINRA_0003816" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 気候プロパティ ────────────────────────────────────────────────
+
+shinra:hasGlobalMeanTemperature
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "全球平均気温"@ja ; rdfs:label "global mean temperature"@en ;
+    rdfs:comment "産業革命前比の全球平均気温変化（℃）。"@ja ;
+    rdfs:comment "Change in global mean temperature relative to pre-industrial levels in degrees Celsius."@en ;
+    skos:notation "SHINRA_D003801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasCO2Concentration
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "CO₂濃度"@ja ; rdfs:label "CO₂ concentration"@en ;
+    rdfs:comment "大気中のCO₂濃度（ppm）。"@ja ;
+    rdfs:comment "Atmospheric CO₂ concentration in parts per million (ppm)."@en ;
+    skos:notation "SHINRA_D003802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:ipcc-001
+    a shinra:Organization ;
+    rdfs:label "気候変動に関する政府間パネル"@ja ; rdfs:label "IPCC"@en ;
+    shinra:wikidataId "Q134566" ;
+    skos:notation "SHINRA_I003801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:el-nino-001
+    a shinra:OceanCurrentSystem ;
+    rdfs:label "エルニーニョ現象"@ja ; rdfs:label "El Niño"@en ;
+    shinra:wikidataId "Q170196" ;
+    skos:notation "SHINRA_I003802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:amazon-tipping-001
+    a shinra:ClimateTippingPoint ;
+    rdfs:label "アマゾン森林転換"@ja ; rdfs:label "Amazon Dieback"@en ;
+    shinra:wikidataId "Q4740026" ;
+    skos:notation "SHINRA_I003803" ; dcterms:created "2026-06-03"^^xsd:date .

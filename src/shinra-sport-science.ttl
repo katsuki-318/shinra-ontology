@@ -1,0 +1,118 @@
+# ===========================================================================
+# shinra-sport-science.ttl  — スポーツ科学ドメイン (Phase 7-t)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/sport-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — スポーツ科学ドメイン"@ja ,
+                    "Shinra Ontology — Sport Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── スポーツ科学の分野 ────────────────────────────────────────────
+
+shinra:ExercisePhysiology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "運動生理学"@ja ; rdfs:label "Exercise Physiology"@en ;
+    rdfs:comment "運動・身体活動が人体の生理的機能に与える影響を研究する分野。有酸素能力・筋肥大・エネルギー代謝など。"@ja ;
+    rdfs:comment "The field studying the effects of exercise and physical activity on human physiological functions, including aerobic capacity, muscle hypertrophy, and energy metabolism."@en ;
+    skos:notation "SHINRA_0003601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SportsPsychology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "スポーツ心理学"@ja ; rdfs:label "Sports Psychology"@en ;
+    rdfs:comment "スポーツ・運動における心理的要因を研究する分野。集中・自己効力感・チームコヒージョン・メンタルトレーニングなど。"@ja ;
+    rdfs:comment "The field studying psychological factors in sport and exercise, including concentration, self-efficacy, team cohesion, and mental training."@en ;
+    skos:notation "SHINRA_0003602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Biomechanics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "バイオメカニクス"@ja ; rdfs:label "Biomechanics"@en ;
+    skos:altLabel "生体力学"@ja ;
+    rdfs:comment "生体の力学的特性・運動を研究する分野。動作解析・筋骨格モデル・スポーツ動作最適化・傷害予防など。"@ja ;
+    rdfs:comment "The field studying the mechanical properties and motion of biological systems, including motion analysis, musculoskeletal modeling, sport technique optimization, and injury prevention."@en ;
+    skos:notation "SHINRA_0003603" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── トレーニング・パフォーマンス ──────────────────────────────────
+
+shinra:TrainingProgram
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "トレーニングプログラム"@ja ; rdfs:label "Training Program"@en ;
+    rdfs:comment "競技力・体力向上を目的とした体系的な運動計画。周期化・漸進性過負荷・特異性・回復の原則に基づく。"@ja ;
+    rdfs:comment "A systematic exercise plan aimed at improving athletic performance or physical fitness, based on principles of periodization, progressive overload, specificity, and recovery."@en ;
+    skos:notation "SHINRA_0003611" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AthleticPerformance
+    a owl:Class ; rdfs:subClassOf shinra:Quality ;
+    rdfs:label "競技パフォーマンス"@ja ; rdfs:label "Athletic Performance"@en ;
+    rdfs:comment "競技場面での身体的・技術的・戦術的・心理的能力の総合的発揮。最大筋力・持久力・敏捷性・技術精度など。"@ja ;
+    rdfs:comment "The integrated expression of physical, technical, tactical, and psychological capacities in competitive settings, including maximal strength, endurance, agility, and technical precision."@en ;
+    skos:notation "SHINRA_0003612" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SportInjury
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "スポーツ傷害"@ja ; rdfs:label "Sport Injury"@en ;
+    skos:altLabel "スポーツ外傷"@ja ;
+    rdfs:comment "スポーツ活動中に生じる筋骨格系の損傷。捻挫・骨折・筋断裂・疲労骨折・脳震盪など。"@ja ;
+    rdfs:comment "Musculoskeletal damage occurring during sports activities, including sprains, fractures, muscle tears, stress fractures, and concussions."@en ;
+    skos:notation "SHINRA_0003613" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Doping
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "ドーピング"@ja ; rdfs:label "Doping"@en ;
+    rdfs:comment "競技能力増強を目的とした禁止薬物・方法の使用。ステロイド・EPO・血液ドーピング・WADA禁止リストなど。"@ja ;
+    rdfs:comment "The use of prohibited substances or methods to enhance athletic performance, including steroids, EPO, blood doping, and substances on the WADA prohibited list."@en ;
+    skos:notation "SHINRA_0003614" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SportNutrition
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "スポーツ栄養"@ja ; rdfs:label "Sport Nutrition"@en ;
+    rdfs:comment "運動パフォーマンス・回復・健康を最適化するための栄養戦略。炭水化物ローディング・タンパク質摂取・水分補給など。"@ja ;
+    rdfs:comment "Nutritional strategies to optimize exercise performance, recovery, and health, including carbohydrate loading, protein intake timing, and hydration."@en ;
+    skos:notation "SHINRA_0003615" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── スポーツと社会 ────────────────────────────────────────────────
+
+shinra:SportGovernance
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "スポーツガバナンス"@ja ; rdfs:label "Sport Governance"@en ;
+    rdfs:comment "スポーツ組織・競技の管理・規制・意思決定の体制。IOC・国際競技連盟・ドーピング規制・選手権規定など。"@ja ;
+    rdfs:comment "The framework of management, regulation, and decision-making in sport organizations and competitions, including the IOC, international federations, doping control, and championship rules."@en ;
+    skos:notation "SHINRA_0003621" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:eSport
+    a owl:Class ; rdfs:subClassOf shinra:Sport ;
+    rdfs:label "eスポーツ"@ja ; rdfs:label "eSport"@en ;
+    skos:altLabel "電子スポーツ"@ja ;
+    rdfs:comment "デジタルゲームを競技として行う組織的活動。FPS・MOBA・RTS・格闘ゲーム・スポーツゲームなどのジャンルがある。"@ja ;
+    rdfs:comment "Organized competitive activity using digital games, including FPS, MOBA, RTS, fighting games, and sports game genres."@en ;
+    skos:notation "SHINRA_0003622" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:marathon-001
+    a shinra:Sport ;
+    rdfs:label "マラソン"@ja ; rdfs:label "Marathon"@en ;
+    shinra:wikidataId "Q182629" ;
+    skos:notation "SHINRA_I003601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:ioc-001
+    a shinra:SportGovernance ;
+    rdfs:label "国際オリンピック委員会"@ja ; rdfs:label "International Olympic Committee"@en ;
+    shinra:wikidataId "Q40970" ;
+    skos:notation "SHINRA_I003602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:wada-001
+    a shinra:SportGovernance ;
+    rdfs:label "世界アンチ・ドーピング機関"@ja ; rdfs:label "World Anti-Doping Agency"@en ;
+    shinra:wikidataId "Q183222" ;
+    skos:notation "SHINRA_I003603" ; dcterms:created "2026-06-03"^^xsd:date .

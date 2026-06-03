@@ -1,0 +1,120 @@
+# ===========================================================================
+# shinra-network-science.ttl  — ネットワーク科学ドメイン (Phase 7-u)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/network-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — ネットワーク科学ドメイン"@ja ,
+                    "Shinra Ontology — Network Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── ネットワークの基本概念 ────────────────────────────────────────
+
+shinra:NetworkGraph
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "ネットワーク（グラフ）"@ja ; rdfs:label "Network Graph"@en ;
+    skos:altLabel "グラフ"@ja ;
+    rdfs:comment "ノード（頂点）とエッジ（辺）からなる数学的構造。有向・無向・重み付き・多重グラフなど。"@ja ;
+    rdfs:comment "A mathematical structure of nodes (vertices) and edges, including directed, undirected, weighted, and multigraphs."@en ;
+    skos:notation "SHINRA_0003701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Node
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "ノード"@ja ; rdfs:label "Node"@en ;
+    skos:altLabel "頂点"@ja ;
+    rdfs:comment "ネットワークの基本単位。個人・組織・タンパク質・ウェブページ・都市など何でも表現できる。"@ja ;
+    rdfs:comment "The fundamental unit of a network, representing entities such as individuals, organizations, proteins, web pages, or cities."@en ;
+    skos:notation "SHINRA_0003702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Edge
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "エッジ"@ja ; rdfs:label "Edge"@en ;
+    skos:altLabel "辺・リンク"@ja ;
+    rdfs:comment "ネットワーク内のノード間の関係・接続を表す要素。友人関係・神経接続・ハイパーリンク・取引関係など。"@ja ;
+    rdfs:comment "An element representing the relationship or connection between nodes in a network, including friendship, neural connections, hyperlinks, and transaction relationships."@en ;
+    skos:notation "SHINRA_0003703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NetworkTopology
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ネットワーク位相"@ja ; rdfs:label "Network Topology"@en ;
+    rdfs:comment "ネットワークの構造的特性・パターン。スケールフリー・スモールワールド・ランダム・階層的ネットワークなど。"@ja ;
+    rdfs:comment "The structural characteristics and patterns of a network, including scale-free, small-world, random, and hierarchical networks."@en ;
+    skos:notation "SHINRA_0003704" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Hub
+    a owl:Class ; rdfs:subClassOf shinra:Node ;
+    rdfs:label "ハブ"@ja ; rdfs:label "Hub"@en ;
+    rdfs:comment "ネットワーク内で突出して多くの接続を持つノード。スケールフリーネットワークの中心的ノード。"@ja ;
+    rdfs:comment "A node with an exceptionally high number of connections within a network, serving as a central node in scale-free networks."@en ;
+    skos:notation "SHINRA_0003705" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── ネットワーク過程・現象 ────────────────────────────────────────
+
+shinra:Cascading
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "カスケード障害"@ja ; rdfs:label "Cascading Failure"@en ;
+    skos:altLabel "連鎖的崩壊"@ja ;
+    rdfs:comment "ネットワーク内で一部の障害が連鎖的に広がる現象。電力網の停電・金融連鎖破綻・インターネット障害など。"@ja ;
+    rdfs:comment "A phenomenon in which partial failure propagates through a network, including power grid blackouts, financial contagion, and internet outages."@en ;
+    skos:notation "SHINRA_0003711" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Community
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "コミュニティ（ネットワーク）"@ja ; rdfs:label "Network Community"@en ;
+    skos:altLabel "クラスター"@ja ;
+    rdfs:comment "ネットワーク内で互いに密に接続し外部との接続が疎なノードの集団。モジュール検出・クラスタリングで同定される。"@ja ;
+    rdfs:comment "A group of nodes densely connected to each other with sparse connections to the outside, identified through modularity detection and clustering."@en ;
+    skos:notation "SHINRA_0003712" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Centrality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "中心性"@ja ; rdfs:label "Centrality"@en ;
+    rdfs:comment "ネットワーク内のノードの重要度を測る指標。次数中心性・媒介中心性・固有ベクトル中心性・PageRankなど。"@ja ;
+    rdfs:comment "A measure of the importance of a node in a network, including degree, betweenness, eigenvector centrality, and PageRank."@en ;
+    skos:notation "SHINRA_0003713" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NetworkResilience
+    a owl:Class ; rdfs:subClassOf shinra:Quality ;
+    rdfs:label "ネットワーク耐性"@ja ; rdfs:label "Network Resilience"@en ;
+    skos:altLabel "ロバスト性"@ja ;
+    rdfs:comment "ノード・エッジの除去・攻撃に対してネットワークが機能を維持する能力。標的攻撃への脆弱性・ランダム障害への頑健性など。"@ja ;
+    rdfs:comment "The capacity of a network to maintain functionality under node or edge removal or attack, including vulnerability to targeted attacks and robustness to random failures."@en ;
+    skos:notation "SHINRA_0003714" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Contagion
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "伝染過程"@ja ; rdfs:label "Contagion Process"@en ;
+    skos:altLabel "拡散過程"@ja ;
+    rdfs:comment "ネットワーク上を情報・感染・行動・意見が広まる過程。SIRモデル・閾値モデル・複雑感染などの数理モデルで記述される。"@ja ;
+    rdfs:comment "The process by which information, infection, behavior, or opinion spreads through a network, described by SIR models, threshold models, and complex contagion."@en ;
+    skos:notation "SHINRA_0003715" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:world-wide-web-001
+    a shinra:NetworkGraph ;
+    rdfs:label "ワールド・ワイド・ウェブ"@ja ; rdfs:label "World Wide Web"@en ;
+    shinra:wikidataId "Q466" ;
+    skos:notation "SHINRA_I003701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:six-degrees-001
+    a shinra:ScientificTheory ;
+    rdfs:label "六次の隔たり"@ja ; rdfs:label "Six Degrees of Separation"@en ;
+    shinra:wikidataId "Q189708" ;
+    skos:notation "SHINRA_I003702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:barabasi-albert-001
+    a shinra:ScientificTheory ;
+    rdfs:label "バラバシ・アルバートモデル"@ja ; rdfs:label "Barabási–Albert Model"@en ;
+    shinra:wikidataId "Q900778" ;
+    skos:notation "SHINRA_I003703" ; dcterms:created "2026-06-03"^^xsd:date .
