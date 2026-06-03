@@ -1,0 +1,135 @@
+# ===========================================================================
+# shinra-geography-detail.ttl  — 地理学詳細ドメイン (Phase 8-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/geography-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 地理学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Geography Detail Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 地理学の下位分野 ──────────────────────────────────────────────
+
+shinra:PhysicalGeography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "自然地理学"@ja ; rdfs:label "Physical Geography"@en ;
+    rdfs:comment "地形・気候・土壌・植生・水文など地球表面の自然的特徴を研究する地理学の下位分野。"@ja ;
+    rdfs:comment "A subfield of geography studying the natural characteristics of the Earth's surface, including landforms, climate, soils, vegetation, and hydrology."@en ;
+    skos:notation "SHINRA_0004601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HumanGeography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "人文地理学"@ja ; rdfs:label "Human Geography"@en ;
+    rdfs:comment "人間の活動・文化・経済・政治と空間・場所の関係を研究する地理学の下位分野。都市地理・経済地理・政治地理など。"@ja ;
+    rdfs:comment "A subfield of geography studying the relationship between human activity, culture, economy, politics, and space or place, including urban, economic, and political geography."@en ;
+    skos:notation "SHINRA_0004602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GIS
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "地理情報システム"@ja ; rdfs:label "Geographic Information System"@en ;
+    skos:altLabel "GIS"@ja ;
+    rdfs:comment "地理空間データを収集・管理・分析・可視化するデジタルシステム。リモートセンシング・GPSと統合して利用される。"@ja ;
+    rdfs:comment "A digital system for collecting, managing, analyzing, and visualizing geospatial data, integrated with remote sensing and GPS."@en ;
+    skos:notation "SHINRA_0004603" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Cartography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "地図学"@ja ; rdfs:label "Cartography"@en ;
+    rdfs:comment "地図の作成・研究・利用を扱う学問。地図投影法・地図記号・デジタル地図・ウェブマッピングなど。"@ja ;
+    rdfs:comment "The study of map creation, research, and use, including map projections, map symbols, digital cartography, and web mapping."@en ;
+    skos:notation "SHINRA_0004604" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 地形・地理的特徴 ──────────────────────────────────────────────
+
+shinra:Plateau
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "高原"@ja ; rdfs:label "Plateau"@en ;
+    skos:altLabel "台地"@ja ;
+    rdfs:comment "周囲より高い位置にある比較的平坦な地形。チベット高原・コロラド高原・デカン高原など。"@ja ;
+    rdfs:comment "A relatively flat elevated area higher than surrounding terrain, including the Tibetan Plateau, Colorado Plateau, and Deccan Plateau."@en ;
+    skos:notation "SHINRA_0004611" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Valley
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "谷"@ja ; rdfs:label "Valley"@en ;
+    skos:altLabel "渓谷"@ja ;
+    rdfs:comment "山・丘の間の低い地形。V字谷・U字谷・リフトバレー・カルスト谷など。"@ja ;
+    rdfs:comment "A low area between mountains or hills, including V-shaped valleys, U-shaped valleys, rift valleys, and karst valleys."@en ;
+    skos:notation "SHINRA_0004612" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Cave
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "洞窟"@ja ; rdfs:label "Cave"@en ;
+    rdfs:comment "岩石内の自然にできた空洞。石灰岩洞（カルスト）・溶岩洞・海食洞・氷河洞など。"@ja ;
+    rdfs:comment "A natural hollow space within rock, including limestone caves (karst), lava tubes, sea caves, and glacier caves."@en ;
+    skos:notation "SHINRA_0004613" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Peninsula
+    a owl:Class ; rdfs:subClassOf shinra:Landform ;
+    rdfs:label "半島"@ja ; rdfs:label "Peninsula"@en ;
+    rdfs:comment "三方を水に囲まれた陸地。イタリア半島・朝鮮半島・アラビア半島・スカンジナビア半島など。"@ja ;
+    rdfs:comment "A landmass surrounded by water on three sides, including the Italian, Korean, Arabian, and Scandinavian peninsulas."@en ;
+    skos:notation "SHINRA_0004614" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 地理的過程 ────────────────────────────────────────────────────
+
+shinra:Erosion
+    a owl:Class ; rdfs:subClassOf shinra:GeologicalProcess ;
+    rdfs:label "侵食"@ja ; rdfs:label "Erosion"@en ;
+    rdfs:comment "水・風・氷河・波浪が地表を削り取る地質過程。河川侵食・風食・海岸侵食・氷河侵食など。"@ja ;
+    rdfs:comment "The geological process of water, wind, glaciers, or waves wearing away the Earth's surface, including fluvial, aeolian, coastal, and glacial erosion."@en ;
+    skos:notation "SHINRA_0004621" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Sedimentation
+    a owl:Class ; rdfs:subClassOf shinra:GeologicalProcess ;
+    rdfs:label "堆積"@ja ; rdfs:label "Sedimentation"@en ;
+    rdfs:comment "粒子・有機物が水底・地表に蓄積する地質過程。三角州・扇状地・砂丘・石灰岩の形成など。"@ja ;
+    rdfs:comment "The geological process of particles and organic matter accumulating on the seafloor or land surface, including delta, alluvial fan, sand dune, and limestone formation."@en ;
+    skos:notation "SHINRA_0004622" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Urbanization
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "都市化"@ja ; rdfs:label "Urbanization"@en ;
+    rdfs:comment "農村人口が都市に移動し都市的生活様式が拡大する社会・地理的過程。メガシティ・スプロール・ジェントリフィケーションなど。"@ja ;
+    rdfs:comment "The social and geographical process of rural population moving to cities and urban lifestyles expanding, including megacities, sprawl, and gentrification."@en ;
+    skos:notation "SHINRA_0004623" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 地理プロパティ ────────────────────────────────────────────────
+
+shinra:hasTimezone
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "タイムゾーン"@ja ; rdfs:label "timezone"@en ;
+    rdfs:comment "地域・都市のタイムゾーン識別子（IANA形式: Asia/Tokyo等）。"@ja ;
+    rdfs:comment "The timezone identifier of a region or city in IANA format (e.g. Asia/Tokyo)."@en ;
+    skos:notation "SHINRA_D004601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:grand-canyon-001
+    a shinra:Valley ;
+    rdfs:label "グランド・キャニオン"@ja ; rdfs:label "Grand Canyon"@en ;
+    shinra:wikidataId "Q183440" ;
+    skos:notation "SHINRA_I004601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:tibetan-plateau-001
+    a shinra:Plateau ;
+    rdfs:label "チベット高原"@ja ; rdfs:label "Tibetan Plateau"@en ;
+    shinra:wikidataId "Q41062" ;
+    skos:notation "SHINRA_I004602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:amazon-river-001
+    a shinra:WaterBody ;
+    rdfs:label "アマゾン川"@ja ; rdfs:label "Amazon River"@en ;
+    shinra:wikidataId "Q3783" ;
+    skos:notation "SHINRA_I004603" ; dcterms:created "2026-06-03"^^xsd:date .

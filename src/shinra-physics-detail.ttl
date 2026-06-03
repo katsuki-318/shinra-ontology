@@ -1,0 +1,114 @@
+# ===========================================================================
+# shinra-physics-detail.ttl  — 物理学詳細ドメイン (Phase 8-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/physics-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 物理学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Physics Detail Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 物理学の下位分野 ──────────────────────────────────────────────
+
+shinra:ClassicalMechanics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "古典力学"@ja ; rdfs:label "Classical Mechanics"@en ;
+    rdfs:comment "ニュートン力学を基礎とする巨視的物体の運動・力を研究する分野。ラグランジュ力学・ハミルトン力学・流体力学など。"@ja ;
+    rdfs:comment "The field studying motion and forces of macroscopic objects based on Newtonian mechanics, including Lagrangian mechanics, Hamiltonian mechanics, and fluid dynamics."@en ;
+    skos:notation "SHINRA_0004801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Thermodynamics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "熱力学"@ja ; rdfs:label "Thermodynamics"@en ;
+    rdfs:comment "熱・温度・エネルギーの変換を研究する物理学の分野。熱力学四法則・エントロピー・カルノーサイクルなど。"@ja ;
+    rdfs:comment "The field of physics studying heat, temperature, and energy conversion, including the four laws of thermodynamics, entropy, and the Carnot cycle."@en ;
+    skos:notation "SHINRA_0004802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Electromagnetism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "電磁気学"@ja ; rdfs:label "Electromagnetism"@en ;
+    rdfs:comment "電荷・電流・電磁場の相互作用を研究する分野。マクスウェル方程式・電磁波・光学・プラズマ物理など。"@ja ;
+    rdfs:comment "The field studying the interactions of electric charges, currents, and electromagnetic fields, including Maxwell's equations, electromagnetic waves, optics, and plasma physics."@en ;
+    skos:notation "SHINRA_0004803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:QuantumMechanics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "量子力学"@ja ; rdfs:label "Quantum Mechanics"@en ;
+    rdfs:comment "原子・素粒子スケールの物理現象を記述する理論。シュレーディンガー方程式・不確定性原理・スピン・場の量子論など。"@ja ;
+    rdfs:comment "The theory describing physical phenomena at atomic and subatomic scales, including the Schrödinger equation, uncertainty principle, spin, and quantum field theory."@en ;
+    skos:notation "SHINRA_0004804" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GeneralRelativity
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "一般相対性理論"@ja ; rdfs:label "General Relativity"@en ;
+    rdfs:comment "重力を時空の曲率として記述するアインシュタインの理論。ブラックホール・重力波・宇宙膨張・GPS補正に応用。"@ja ;
+    rdfs:comment "Einstein's theory describing gravity as curvature of spacetime, with applications including black holes, gravitational waves, cosmic expansion, and GPS correction."@en ;
+    skos:notation "SHINRA_0004805" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:StandardModel
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "素粒子標準模型"@ja ; rdfs:label "Standard Model of Particle Physics"@en ;
+    rdfs:comment "素粒子と基本相互作用（電磁力・弱い力・強い力）を記述する量子場理論。クォーク・レプトン・ゲージボソン・ヒッグス粒子など。"@ja ;
+    rdfs:comment "The quantum field theory describing elementary particles and fundamental interactions (electromagnetic, weak, and strong forces), including quarks, leptons, gauge bosons, and the Higgs boson."@en ;
+    skos:notation "SHINRA_0004806" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 物理的概念・対象 ──────────────────────────────────────────────
+
+shinra:ElementaryParticle
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalObject ;
+    rdfs:label "素粒子"@ja ; rdfs:label "Elementary Particle"@en ;
+    rdfs:comment "それ以上分割できない物質・力の基本単位。クォーク・電子・光子・ニュートリノ・ヒッグス粒子など。"@ja ;
+    rdfs:comment "The fundamental indivisible units of matter and force, including quarks, electrons, photons, neutrinos, and the Higgs boson."@en ;
+    skos:notation "SHINRA_0004811" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FundamentalForce
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "基本相互作用"@ja ; rdfs:label "Fundamental Force"@en ;
+    skos:altLabel "基本力"@ja ;
+    rdfs:comment "自然界の4種の基本的な力。重力・電磁力・弱い核力・強い核力。統一理論・超対称性・超弦理論との関係。"@ja ;
+    rdfs:comment "The four fundamental forces of nature: gravity, electromagnetism, weak nuclear force, and strong nuclear force, related to unification theories, supersymmetry, and string theory."@en ;
+    skos:notation "SHINRA_0004812" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:WaveParticleDuality
+    a owl:Class ; rdfs:subClassOf shinra:QuantumPhenomenon ;
+    rdfs:label "波粒二重性"@ja ; rdfs:label "Wave-Particle Duality"@en ;
+    rdfs:comment "量子対象が波と粒子の両方の性質を示す量子力学的性質。二重スリット実験・ド・ブロイ波・コペンハーゲン解釈など。"@ja ;
+    rdfs:comment "The quantum mechanical property by which quantum objects exhibit both wave and particle characteristics, related to the double-slit experiment, de Broglie waves, and the Copenhagen interpretation."@en ;
+    skos:notation "SHINRA_0004813" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Entropy
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "エントロピー"@ja ; rdfs:label "Entropy"@en ;
+    rdfs:comment "系の無秩序・不確実性の度合いを表す物理量。熱力学第二法則・情報エントロピー・ボルツマンの統計力学との関係。"@ja ;
+    rdfs:comment "A physical quantity representing the degree of disorder or uncertainty in a system, related to the second law of thermodynamics, information entropy, and Boltzmann's statistical mechanics."@en ;
+    skos:notation "SHINRA_0004814" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:higgs-boson-001
+    a shinra:ElementaryParticle ;
+    rdfs:label "ヒッグス粒子"@ja ; rdfs:label "Higgs Boson"@en ;
+    shinra:wikidataId "Q11996" ;
+    skos:notation "SHINRA_I004801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:special-relativity-001
+    a shinra:ScientificTheory ;
+    rdfs:label "特殊相対性理論"@ja ; rdfs:label "Special Theory of Relativity"@en ;
+    shinra:wikidataId "Q41631" ;
+    skos:notation "SHINRA_I004802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:double-slit-experiment-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "二重スリット実験"@ja ; rdfs:label "Double-Slit Experiment"@en ;
+    shinra:wikidataId "Q2069842" ;
+    skos:notation "SHINRA_I004803" ; dcterms:created "2026-06-03"^^xsd:date .

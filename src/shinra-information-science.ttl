@@ -1,0 +1,115 @@
+# ===========================================================================
+# shinra-information-science.ttl  — 情報科学・計算理論詳細ドメイン (Phase 8-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/information-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 情報科学・計算理論詳細ドメイン"@ja ,
+                    "Shinra Ontology — Information Science & Computation Theory Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── データ構造・アルゴリズム ──────────────────────────────────────
+
+shinra:DataStructure
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "データ構造"@ja ; rdfs:label "Data Structure"@en ;
+    rdfs:comment "データを効率的に格納・操作するための構造。配列・リスト・木・グラフ・ハッシュ表・スタック・キューなど。"@ja ;
+    rdfs:comment "A structure for efficiently storing and manipulating data, including arrays, lists, trees, graphs, hash tables, stacks, and queues."@en ;
+    skos:notation "SHINRA_0004701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ComputationalComplexity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "計算複雑性"@ja ; rdfs:label "Computational Complexity"@en ;
+    rdfs:comment "問題を解くのに必要な計算資源（時間・空間）の量を表す概念。P・NP・NP困難・PSPACE・EXPTIMEなど。"@ja ;
+    rdfs:comment "The amount of computational resources (time, space) required to solve a problem, including complexity classes P, NP, NP-hard, PSPACE, and EXPTIME."@en ;
+    skos:notation "SHINRA_0004702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Cryptography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "暗号学"@ja ; rdfs:label "Cryptography"@en ;
+    rdfs:comment "情報を第三者から保護するための数学的技術。公開鍵暗号・対称暗号・ハッシュ関数・デジタル署名など。"@ja ;
+    rdfs:comment "Mathematical techniques protecting information from unauthorized parties, including public-key cryptography, symmetric encryption, hash functions, and digital signatures."@en ;
+    skos:notation "SHINRA_0004703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DistributedSystem
+    a owl:Class ; rdfs:subClassOf shinra:ComputerSystem ;
+    rdfs:label "分散システム"@ja ; rdfs:label "Distributed System"@en ;
+    rdfs:comment "ネットワークで接続された複数の計算機が協調動作するシステム。クラスタ・P2P・クラウドコンピューティング・ブロックチェーンなど。"@ja ;
+    rdfs:comment "A system in which multiple networked computers cooperate, including clusters, P2P, cloud computing, and blockchain."@en ;
+    skos:notation "SHINRA_0004704" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Blockchain
+    a owl:Class ; rdfs:subClassOf shinra:DistributedSystem ;
+    rdfs:label "ブロックチェーン"@ja ; rdfs:label "Blockchain"@en ;
+    rdfs:comment "暗号的に連鎖したブロックに取引記録を保持する分散型台帳技術。ビットコイン・イーサリアム・スマートコントラクトなど。"@ja ;
+    rdfs:comment "A distributed ledger technology storing transaction records in cryptographically chained blocks, including Bitcoin, Ethereum, and smart contracts."@en ;
+    skos:notation "SHINRA_0004705" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 情報理論・知識管理 ────────────────────────────────────────────
+
+shinra:KnowledgeRepresentation
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "知識表現"@ja ; rdfs:label "Knowledge Representation"@en ;
+    rdfs:comment "コンピュータが知識を推論・活用できる形式で表現する研究分野。論理・フレーム・意味ネット・オントロジー・グラフなど。"@ja ;
+    rdfs:comment "The field of representing knowledge in forms that computers can reason about and use, including logic, frames, semantic nets, ontologies, and knowledge graphs."@en ;
+    skos:notation "SHINRA_0004711" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SemanticWeb
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "セマンティックウェブ"@ja ; rdfs:label "Semantic Web"@en ;
+    rdfs:comment "ウェブ上のデータに機械可読な意味を付与してリンクする技術・ビジョン。RDF・OWL・SPARQL・Linked Dataなど。"@ja ;
+    rdfs:comment "A technology and vision of adding machine-readable meaning to and linking web data, including RDF, OWL, SPARQL, and Linked Data."@en ;
+    skos:notation "SHINRA_0004712" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NaturalLanguageProcessing
+    a owl:Class ; rdfs:subClassOf shinra:ArtificialIntelligence ;
+    rdfs:label "自然言語処理"@ja ; rdfs:label "Natural Language Processing"@en ;
+    skos:altLabel "NLP"@ja ;
+    rdfs:comment "コンピュータが人間の言語を理解・生成・変換する技術分野。形態解析・構文解析・機械翻訳・感情分析・LLMなど。"@ja ;
+    rdfs:comment "The technology field enabling computers to understand, generate, and transform human language, including morphological analysis, parsing, machine translation, sentiment analysis, and LLMs."@en ;
+    skos:notation "SHINRA_0004713" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ComputerVision
+    a owl:Class ; rdfs:subClassOf shinra:ArtificialIntelligence ;
+    rdfs:label "コンピュータビジョン"@ja ; rdfs:label "Computer Vision"@en ;
+    rdfs:comment "コンピュータが画像・映像から意味情報を取得・理解する技術分野。物体認識・セグメンテーション・顔認識・医療画像解析など。"@ja ;
+    rdfs:comment "The technology field enabling computers to extract and understand semantic information from images and video, including object recognition, segmentation, face recognition, and medical image analysis."@en ;
+    skos:notation "SHINRA_0004714" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Cybersecurity
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "サイバーセキュリティ"@ja ; rdfs:label "Cybersecurity"@en ;
+    skos:altLabel "情報セキュリティ"@ja ;
+    rdfs:comment "デジタルシステム・ネットワーク・データを不正アクセス・攻撃・損害から保護する技術と実践。マルウェア・ゼロデイ・SOCなど。"@ja ;
+    rdfs:comment "The technology and practice of protecting digital systems, networks, and data from unauthorized access, attacks, and damage, including malware, zero-day exploits, and SOC."@en ;
+    skos:notation "SHINRA_0004715" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:p-np-problem-001
+    a shinra:ComputationalComplexity ;
+    rdfs:label "P対NP問題"@ja ; rdfs:label "P vs NP Problem"@en ;
+    shinra:wikidataId "Q182455" ;
+    skos:notation "SHINRA_I004701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:rsa-encryption-001
+    a shinra:Cryptography ;
+    rdfs:label "RSA暗号"@ja ; rdfs:label "RSA Encryption"@en ;
+    shinra:wikidataId "Q181995" ;
+    skos:notation "SHINRA_I004702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:world-wide-web-consortium-001
+    a shinra:Organization ;
+    rdfs:label "W3C"@ja ; rdfs:label "World Wide Web Consortium"@en ;
+    shinra:wikidataId "Q37033" ;
+    skos:notation "SHINRA_I004703" ; dcterms:created "2026-06-03"^^xsd:date .

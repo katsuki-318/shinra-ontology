@@ -1,0 +1,121 @@
+# ===========================================================================
+# shinra-visual-arts.ttl  — 視覚芸術詳細ドメイン (Phase 8-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/visual-arts>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 視覚芸術詳細ドメイン"@ja ,
+                    "Shinra Ontology — Visual Arts Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 視覚芸術の媒体・技法 ──────────────────────────────────────────
+
+shinra:Painting
+    a owl:Class ; rdfs:subClassOf shinra:VisualArtWork ;
+    rdfs:label "絵画"@ja ; rdfs:label "Painting"@en ;
+    rdfs:comment "顔料・インクなどを支持体に塗布して制作する視覚芸術作品。油彩・水彩・アクリル・フレスコ・日本画など。"@ja ;
+    rdfs:comment "A visual artwork created by applying pigments or inks to a support, including oil, watercolor, acrylic, fresco, and Japanese painting."@en ;
+    skos:notation "SHINRA_0004301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Sculpture
+    a owl:Class ; rdfs:subClassOf shinra:VisualArtWork ;
+    rdfs:label "彫刻"@ja ; rdfs:label "Sculpture"@en ;
+    rdfs:comment "三次元の形を作り出す視覚芸術。石・木・金属・粘土・ガラス・インスタレーションなどの素材と技法。"@ja ;
+    rdfs:comment "A visual art creating three-dimensional forms, using materials and techniques including stone, wood, metal, clay, glass, and installation."@en ;
+    skos:notation "SHINRA_0004302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Photography
+    a owl:Class ; rdfs:subClassOf shinra:VisualArtWork ;
+    rdfs:label "写真"@ja ; rdfs:label "Photography"@en ;
+    rdfs:comment "光を記録して画像を作る技術と芸術。記録写真・芸術写真・ドキュメンタリー・コンセプチュアルなど。"@ja ;
+    rdfs:comment "The technology and art of recording light to create images, including documentary, artistic, conceptual, and photojournalistic photography."@en ;
+    skos:notation "SHINRA_0004303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PrintArt
+    a owl:Class ; rdfs:subClassOf shinra:VisualArtWork ;
+    rdfs:label "版画"@ja ; rdfs:label "Print Art"@en ;
+    skos:altLabel "版芸術"@ja ;
+    rdfs:comment "版を通じて複数の画像を生み出す芸術技法。木版・銅版・石版・シルクスクリーン・デジタルプリントなど。"@ja ;
+    rdfs:comment "An artistic technique producing multiple images through a matrix, including woodblock, intaglio, lithography, screenprint, and digital print."@en ;
+    skos:notation "SHINRA_0004304" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DigitalArt
+    a owl:Class ; rdfs:subClassOf shinra:VisualArtWork ;
+    rdfs:label "デジタルアート"@ja ; rdfs:label "Digital Art"@en ;
+    rdfs:comment "デジタル技術を媒体・手段として用いる芸術。コンピュータグラフィックス・generative art・NFTアート・XRアートなど。"@ja ;
+    rdfs:comment "Art using digital technology as medium or tool, including computer graphics, generative art, NFT art, and XR art."@en ;
+    skos:notation "SHINRA_0004305" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 芸術の概念・理論 ──────────────────────────────────────────────
+
+shinra:ArtMovement
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "芸術運動"@ja ; rdfs:label "Art Movement"@en ;
+    skos:altLabel "芸術様式"@ja ;
+    rdfs:comment "共通の様式・理念・技法で結びついた芸術家・作品の歴史的潮流。印象派・キュビスム・抽象表現主義・コンセプチュアルアートなど。"@ja ;
+    rdfs:comment "A historical current of artists and works sharing common style, philosophy, or technique, including Impressionism, Cubism, Abstract Expressionism, and Conceptual Art."@en ;
+    skos:notation "SHINRA_0004311" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Composition
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "構図"@ja ; rdfs:label "Composition"@en ;
+    rdfs:comment "視覚芸術における要素の配置・組織化。黄金比・三分割法・対称・非対称・律動・焦点など。"@ja ;
+    rdfs:comment "The arrangement and organization of elements in visual art, including the golden ratio, rule of thirds, symmetry, asymmetry, rhythm, and focal points."@en ;
+    skos:notation "SHINRA_0004312" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Iconography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "図像学"@ja ; rdfs:label "Iconography"@en ;
+    rdfs:comment "芸術作品における図像・象徴の識別・記述・解釈を研究する学問。パノフスキーの三層解釈・宗教的図像・神話的図像など。"@ja ;
+    rdfs:comment "The study of identification, description, and interpretation of images and symbols in artworks, including Panofsky's three levels of interpretation and religious and mythological iconography."@en ;
+    skos:notation "SHINRA_0004313" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ArtCriticism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "美術批評"@ja ; rdfs:label "Art Criticism"@en ;
+    rdfs:comment "芸術作品の記述・分析・解釈・評価を行う実践的学問。形式批評・文脈批評・フェミニスト批評・ポストコロニアル批評など。"@ja ;
+    rdfs:comment "The practical discipline of describing, analyzing, interpreting, and evaluating artworks, including formal, contextual, feminist, and postcolonial criticism."@en ;
+    skos:notation "SHINRA_0004314" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Museum
+    a owl:Class ; rdfs:subClassOf shinra:Facility ;
+    rdfs:label "博物館・美術館"@ja ; rdfs:label "Museum"@en ;
+    rdfs:comment "芸術・歴史・科学・自然の収集品を保存・展示・研究・教育する機関。美術館・歴史博物館・自然史博物館など。"@ja ;
+    rdfs:comment "An institution preserving, exhibiting, researching, and educating about collections of art, history, science, or nature, including art galleries, history museums, and natural history museums."@en ;
+    skos:notation "SHINRA_0004315" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:impressionism-001
+    a shinra:ArtMovement ;
+    rdfs:label "印象派"@ja ; rdfs:label "Impressionism"@en ;
+    shinra:wikidataId "Q40415" ;
+    skos:notation "SHINRA_I004301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:mona-lisa-001
+    a shinra:Painting ;
+    rdfs:label "モナ・リザ"@ja ; rdfs:label "Mona Lisa"@en ;
+    shinra:wikidataId "Q12418" ;
+    skos:notation "SHINRA_I004302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:louvre-001
+    a shinra:Museum ;
+    rdfs:label "ルーブル美術館"@ja ; rdfs:label "Louvre Museum"@en ;
+    shinra:wikidataId "Q19675" ;
+    skos:notation "SHINRA_I004303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:ukiyo-e-001
+    a shinra:ArtMovement ;
+    rdfs:label "浮世絵"@ja ; rdfs:label "Ukiyo-e"@en ;
+    shinra:wikidataId "Q35549" ;
+    skos:notation "SHINRA_I004304" ; dcterms:created "2026-06-03"^^xsd:date .

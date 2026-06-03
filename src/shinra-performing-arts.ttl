@@ -1,0 +1,119 @@
+# ===========================================================================
+# shinra-performing-arts.ttl  — 舞台・パフォーミングアーツドメイン (Phase 8-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/performing-arts>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 舞台・パフォーミングアーツドメイン"@ja ,
+                    "Shinra Ontology — Performing Arts Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 舞台芸術の形式 ────────────────────────────────────────────────
+
+shinra:Theatre
+    a owl:Class ; rdfs:subClassOf shinra:PerformativeWork ;
+    rdfs:label "演劇"@ja ; rdfs:label "Theatre"@en ;
+    skos:altLabel "劇"@ja ;
+    rdfs:comment "俳優が台本・即興に基づき観客の前で演じる舞台芸術。悲劇・喜劇・ミュージカル・能・歌舞伎・現代演劇など。"@ja ;
+    rdfs:comment "A performing art in which actors perform before an audience based on script or improvisation, including tragedy, comedy, musical theatre, Noh, Kabuki, and contemporary theatre."@en ;
+    skos:notation "SHINRA_0004401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Dance
+    a owl:Class ; rdfs:subClassOf shinra:PerformativeWork ;
+    rdfs:label "舞踊"@ja ; rdfs:label "Dance"@en ;
+    skos:altLabel "ダンス"@ja ;
+    rdfs:comment "身体の動きを芸術的表現の媒体とする舞台芸術。バレエ・コンテンポラリー・民族舞踊・日本舞踊・ヒップホップなど。"@ja ;
+    rdfs:comment "A performing art using bodily movement as artistic expression, including ballet, contemporary dance, folk dance, Japanese classical dance, and hip-hop."@en ;
+    skos:notation "SHINRA_0004402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Opera
+    a owl:Class ; rdfs:subClassOf shinra:PerformativeWork ;
+    rdfs:label "オペラ"@ja ; rdfs:label "Opera"@en ;
+    rdfs:comment "歌唱・演技・舞台美術・オーケストラを統合した総合舞台芸術。グランドオペラ・オペレッタ・現代オペラなど。"@ja ;
+    rdfs:comment "A total theatrical art form integrating singing, acting, stagecraft, and orchestra, including grand opera, operetta, and contemporary opera."@en ;
+    skos:notation "SHINRA_0004403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Circus
+    a owl:Class ; rdfs:subClassOf shinra:PerformativeWork ;
+    rdfs:label "サーカス"@ja ; rdfs:label "Circus"@en ;
+    skos:altLabel "曲芸"@ja ;
+    rdfs:comment "曲芸・アクロバット・道化・動物芸などを組み合わせた舞台芸術。現代サーカス（シルク・ドゥ・ソレイユ等）を含む。"@ja ;
+    rdfs:comment "A performing art combining acrobatics, juggling, clowning, and animal acts, including contemporary circus forms such as Cirque du Soleil."@en ;
+    skos:notation "SHINRA_0004404" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Puppetry
+    a owl:Class ; rdfs:subClassOf shinra:PerformativeWork ;
+    rdfs:label "人形劇"@ja ; rdfs:label "Puppetry"@en ;
+    skos:altLabel "操り人形"@ja ;
+    rdfs:comment "人形・マリオネット・影絵などを操作して物語を演じる舞台芸術。文楽・影絵芝居・現代人形劇など。"@ja ;
+    rdfs:comment "A performing art in which puppets, marionettes, or shadow figures are manipulated to enact stories, including Bunraku, shadow theatre, and contemporary puppetry."@en ;
+    skos:notation "SHINRA_0004405" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 舞台の構成要素 ────────────────────────────────────────────────
+
+shinra:Script
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "台本"@ja ; rdfs:label "Script"@en ;
+    skos:altLabel "脚本"@ja ;
+    rdfs:comment "演劇・映画・放送のための対話・場面・舞台指定を含む文書。戯曲・シナリオ・リブレットなど。"@ja ;
+    rdfs:comment "A document containing dialogue, scenes, and stage directions for theatre, film, or broadcast, including plays, screenplays, and libretti."@en ;
+    skos:notation "SHINRA_0004411" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Choreography
+    a owl:Class ; rdfs:subClassOf shinra:CreationProcess ;
+    rdfs:label "振付"@ja ; rdfs:label "Choreography"@en ;
+    rdfs:comment "舞踊・ダンスの動作・構成を設計・記録する創造的過程。バレエ振付・コンテンポラリー振付・武道型など。"@ja ;
+    rdfs:comment "The creative process of designing and recording the movements and structure of dance, including ballet choreography, contemporary choreography, and martial arts kata."@en ;
+    skos:notation "SHINRA_0004412" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:StageDesign
+    a owl:Class ; rdfs:subClassOf shinra:CreationProcess ;
+    rdfs:label "舞台美術"@ja ; rdfs:label "Stage Design"@en ;
+    skos:altLabel "セットデザイン"@ja ;
+    rdfs:comment "舞台上の視覚的環境を設計する芸術。セット・照明・衣裳・音響・映像を含む舞台空間の総合設計。"@ja ;
+    rdfs:comment "The art of designing the visual environment on stage, including the integrated design of sets, lighting, costumes, sound, and video."@en ;
+    skos:notation "SHINRA_0004413" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Improvisation
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "即興"@ja ; rdfs:label "Improvisation"@en ;
+    skos:altLabel "インプロビゼーション"@ja ;
+    rdfs:comment "事前の計画なしにその場で創造・表現する行為。ジャズ即興演奏・インプロシアター・即興ダンスなど。"@ja ;
+    rdfs:comment "The act of creating and expressing without prior planning, including jazz improvisation, improvisational theatre, and contact improvisation in dance."@en ;
+    skos:notation "SHINRA_0004414" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:kabuki-001
+    a shinra:Theatre ;
+    rdfs:label "歌舞伎"@ja ; rdfs:label "Kabuki"@en ;
+    shinra:wikidataId "Q161936" ;
+    skos:notation "SHINRA_I004401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:ballet-001
+    a shinra:Dance ;
+    rdfs:label "バレエ"@ja ; rdfs:label "Ballet"@en ;
+    shinra:wikidataId "Q81881" ;
+    skos:notation "SHINRA_I004402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:shakespeare-hamlet-001
+    a shinra:Theatre ;
+    rdfs:label "ハムレット"@ja ; rdfs:label "Hamlet"@en ;
+    shinra:wikidataId "Q41567" ;
+    skos:notation "SHINRA_I004403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:noh-001
+    a shinra:Theatre ;
+    rdfs:label "能"@ja ; rdfs:label "Noh Theatre"@en ;
+    shinra:wikidataId "Q193068" ;
+    skos:notation "SHINRA_I004404" ; dcterms:created "2026-06-03"^^xsd:date .

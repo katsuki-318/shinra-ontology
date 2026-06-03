@@ -1,0 +1,123 @@
+# ===========================================================================
+# shinra-religion-detail.ttl  — 比較宗教学・宗教哲学ドメイン (Phase 8-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/religion-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 比較宗教学・宗教哲学ドメイン"@ja ,
+                    "Shinra Ontology — Comparative Religion & Philosophy of Religion Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 宗教の構成要素 ────────────────────────────────────────────────
+
+shinra:ReligiousBelief
+    a owl:Class ; rdfs:subClassOf shinra:Belief ;
+    rdfs:label "宗教的信念"@ja ; rdfs:label "Religious Belief"@en ;
+    rdfs:comment "超自然的存在・来世・神聖・意味についての命題的態度。有神論・無神論・不可知論・汎神論・多神論など。"@ja ;
+    rdfs:comment "A propositional attitude concerning supernatural beings, afterlife, the sacred, and ultimate meaning, including theism, atheism, agnosticism, pantheism, and polytheism."@en ;
+    skos:notation "SHINRA_0004501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ReligiousRitual
+    a owl:Class ; rdfs:subClassOf shinra:Ritual ;
+    rdfs:label "宗教儀礼"@ja ; rdfs:label "Religious Ritual"@en ;
+    rdfs:comment "宗教的文脈で繰り返し行われる象徴的行為。礼拝・祈祷・洗礼・法事・巡礼・成年礼など。"@ja ;
+    rdfs:comment "Symbolic acts repeatedly performed in religious contexts, including worship, prayer, baptism, memorial services, pilgrimage, and rites of passage."@en ;
+    skos:notation "SHINRA_0004502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Scripture
+    a owl:Class ; rdfs:subClassOf shinra:ReligiousText ;
+    rdfs:label "聖典"@ja ; rdfs:label "Scripture"@en ;
+    skos:altLabel "聖書・経典"@ja ;
+    rdfs:comment "宗教共同体が神聖・権威あるとして受け入れる文書・口承テキスト。聖書・クルアーン・仏典・ヴェーダ・論語など。"@ja ;
+    rdfs:comment "Texts accepted as sacred and authoritative by a religious community, including the Bible, Quran, Buddhist canon, Vedas, and Analects."@en ;
+    skos:notation "SHINRA_0004503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Theology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "神学"@ja ; rdfs:label "Theology"@en ;
+    rdfs:comment "神・宗教・信仰について体系的に研究・考察する学問。組織神学・歴史神学・比較宗教学・宗教哲学など。"@ja ;
+    rdfs:comment "The systematic study and reflection on God, religion, and faith, including systematic theology, historical theology, comparative religion, and philosophy of religion."@en ;
+    skos:notation "SHINRA_0004504" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ReligiousCommunity
+    a owl:Class ; rdfs:subClassOf shinra:CommunityGroup ;
+    rdfs:label "宗教共同体"@ja ; rdfs:label "Religious Community"@en ;
+    skos:altLabel "宗教団体"@ja ;
+    rdfs:comment "共通の信仰・実践・組織で結びついた集団。教区・教団・サンガ・ウンマ・シナゴーグ・神社氏子など。"@ja ;
+    rdfs:comment "A group bound by shared belief, practice, and organization, including parishes, denominations, Sangha, Ummah, synagogues, and Shinto shrine communities."@en ;
+    skos:notation "SHINRA_0004505" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 宗教的概念 ────────────────────────────────────────────────────
+
+shinra:Sacred
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "聖なるもの"@ja ; rdfs:label "The Sacred"@en ;
+    skos:altLabel "聖性"@ja ;
+    rdfs:comment "世俗から区別され畏敬・崇拝の対象となる存在・場所・時・行為。デュルケームの聖/俗二分法・ヌミノーゼなど。"@ja ;
+    rdfs:comment "Beings, places, times, and acts set apart from the profane and worthy of reverence, including Durkheim's sacred/profane dichotomy and Otto's numinous."@en ;
+    skos:notation "SHINRA_0004511" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Soteriology
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "救済論"@ja ; rdfs:label "Soteriology"@en ;
+    rdfs:comment "宗教的救済・解脱・悟り・救いの条件・経路についての教義。キリスト教の贖罪・仏教の涅槃・ヒンドゥーのモークシャなど。"@ja ;
+    rdfs:comment "Religious doctrine concerning the conditions and path to salvation, liberation, or enlightenment, including Christian atonement, Buddhist Nirvana, and Hindu Moksha."@en ;
+    skos:notation "SHINRA_0004512" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Mysticism
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "神秘主義"@ja ; rdfs:label "Mysticism"@en ;
+    rdfs:comment "神・絶対者・宇宙との直接的合一体験を追求する宗教的・哲学的立場。スーフィズム・禅・カバラ・新プラトン主義など。"@ja ;
+    rdfs:comment "A religious and philosophical orientation seeking direct union with God, the absolute, or the cosmos, including Sufism, Zen, Kabbalah, and Neo-Platonism."@en ;
+    skos:notation "SHINRA_0004513" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Eschatology
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "終末論"@ja ; rdfs:label "Eschatology"@en ;
+    rdfs:comment "歴史の終末・死後の世界・最後の審判・来世についての宗教的教義。キリスト教終末論・仏教の輪廻転生など。"@ja ;
+    rdfs:comment "Religious doctrine concerning the end of history, afterlife, final judgment, and the next world, including Christian eschatology and Buddhist samsara."@en ;
+    skos:notation "SHINRA_0004514" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ReligiousSyncretism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "宗教習合"@ja ; rdfs:label "Religious Syncretism"@en ;
+    skos:altLabel "シンクレティズム"@ja ;
+    rdfs:comment "異なる宗教・信仰体系が融合・混交する過程。神仏習合・ヴードゥー・ラスタファリなど。"@ja ;
+    rdfs:comment "The process of fusion and blending of different religions and belief systems, including Shintoism-Buddhism syncretism, Voodoo, and Rastafari."@en ;
+    skos:notation "SHINRA_0004515" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:quran-001
+    a shinra:Scripture ;
+    rdfs:label "クルアーン"@ja ; rdfs:label "Quran"@en ;
+    shinra:wikidataId "Q428" ;
+    skos:notation "SHINRA_I004501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:zen-buddhism-001
+    a shinra:Religion ;
+    rdfs:label "禅"@ja ; rdfs:label "Zen Buddhism"@en ;
+    shinra:wikidataId "Q43473" ;
+    skos:notation "SHINRA_I004502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:hinduism-001
+    a shinra:Religion ;
+    rdfs:label "ヒンドゥー教"@ja ; rdfs:label "Hinduism"@en ;
+    shinra:wikidataId "Q9089" ;
+    skos:notation "SHINRA_I004503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:shinto-001
+    a shinra:Religion ;
+    rdfs:label "神道"@ja ; rdfs:label "Shinto"@en ;
+    shinra:wikidataId "Q812767" ;
+    skos:notation "SHINRA_I004504" ; dcterms:created "2026-06-03"^^xsd:date .
