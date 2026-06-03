@@ -1,0 +1,176 @@
+# ===========================================================================
+# shinra-medicine.ttl  — 医学・臨床科学ドメイン (Phase 7-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/medicine>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 医学・臨床科学ドメイン"@ja ,
+                    "Shinra Ontology — Medicine & Clinical Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 医学の下位分野 ────────────────────────────────────────────────
+
+shinra:Anatomy
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "解剖学"@ja ; rdfs:label "Anatomy"@en ;
+    rdfs:comment "生物体の構造を研究する医学・生物学の基礎分野。肉眼解剖学・組織学・発生学・神経解剖学など。"@ja ;
+    rdfs:comment "The foundational biomedical field studying the structure of organisms, including gross anatomy, histology, embryology, and neuroanatomy."@en ;
+    skos:notation "SHINRA_0002001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Physiology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "生理学"@ja ; rdfs:label "Physiology"@en ;
+    rdfs:comment "生物体の機能・メカニズムを研究する医学・生物学の基礎分野。循環生理・神経生理・内分泌生理など。"@ja ;
+    rdfs:comment "The foundational biomedical field studying the functions and mechanisms of organisms, including cardiovascular, neurological, and endocrine physiology."@en ;
+    skos:notation "SHINRA_0002002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Pathology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "病理学"@ja ; rdfs:label "Pathology"@en ;
+    rdfs:comment "疾病の原因・機序・形態変化を研究する医学の基礎分野。解剖病理・臨床病理・分子病理など。"@ja ;
+    rdfs:comment "The foundational medical field studying the causes, mechanisms, and morphological changes of disease, including anatomical, clinical, and molecular pathology."@en ;
+    skos:notation "SHINRA_0002003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Epidemiology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "疫学"@ja ; rdfs:label "Epidemiology"@en ;
+    rdfs:comment "集団における疾病の分布・決定要因・予防を研究する公衆衛生の基礎分野。コホート研究・症例対照研究など。"@ja ;
+    rdfs:comment "The foundational public health field studying the distribution, determinants, and prevention of disease in populations, including cohort studies and case-control studies."@en ;
+    skos:notation "SHINRA_0002004" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Pharmacology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "薬理学"@ja ; rdfs:label "Pharmacology"@en ;
+    rdfs:comment "薬物と生物系の相互作用を研究する医学・薬学の分野。薬物動態・薬力学・毒性学・臨床薬理など。"@ja ;
+    rdfs:comment "The biomedical field studying interactions between drugs and biological systems, including pharmacokinetics, pharmacodynamics, toxicology, and clinical pharmacology."@en ;
+    skos:notation "SHINRA_0002005" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Immunology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "免疫学"@ja ; rdfs:label "Immunology"@en ;
+    rdfs:comment "免疫系の構造・機能・疾患を研究する医学・生物学の分野。自然免疫・獲得免疫・自己免疫・アレルギーなど。"@ja ;
+    rdfs:comment "The biomedical field studying the structure, function, and disorders of the immune system, including innate immunity, adaptive immunity, autoimmunity, and allergy."@en ;
+    skos:notation "SHINRA_0002006" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PublicHealth
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "公衆衛生"@ja ; rdfs:label "Public Health"@en ;
+    rdfs:comment "集団の健康増進・疾病予防・寿命延長を目指す学際的分野。感染症対策・健康政策・衛生管理・保健教育など。"@ja ;
+    rdfs:comment "An interdisciplinary field aimed at improving population health, preventing disease, and extending lifespan, including infectious disease control, health policy, sanitation, and health education."@en ;
+    skos:notation "SHINRA_0002007" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 臨床過程 ─────────────────────────────────────────────────────
+
+shinra:Diagnosis
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "診断"@ja ; rdfs:label "Diagnosis"@en ;
+    rdfs:comment "症状・検査・病歴から疾患を特定する臨床的行為。鑑別診断・画像診断・病理診断・遺伝子診断など。"@ja ;
+    rdfs:comment "A clinical act of identifying a disease from symptoms, tests, and history, including differential diagnosis, imaging, pathological, and genetic diagnosis."@en ;
+    skos:notation "SHINRA_0002011" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Prognosis
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "予後"@ja ; rdfs:label "Prognosis"@en ;
+    rdfs:comment "疾患・治療の経過・転帰についての予測的評価。生存率・再発率・機能回復の見通しなど。"@ja ;
+    rdfs:comment "A predictive assessment of the course and outcome of a disease or treatment, including survival rate, recurrence rate, and functional recovery outlook."@en ;
+    skos:notation "SHINRA_0002012" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ClinicalTrial
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "臨床試験"@ja ; rdfs:label "Clinical Trial"@en ;
+    rdfs:comment "医薬品・医療機器・治療法の安全性・有効性を人間集団で検証する科学的過程。第I〜IV相試験・RCTなど。"@ja ;
+    rdfs:comment "A scientific process testing the safety and efficacy of drugs, devices, or treatments in human populations, including Phase I-IV trials and randomized controlled trials."@en ;
+    skos:notation "SHINRA_0002013" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Surgery
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "外科手術"@ja ; rdfs:label "Surgery"@en ;
+    skos:altLabel "手術"@ja ;
+    rdfs:comment "器具・技術を用いて身体に直接介入する医療行為。開腹・腹腔鏡・内視鏡・ロボット支援手術など。"@ja ;
+    rdfs:comment "A medical act directly intervening in the body using instruments and techniques, including open, laparoscopic, endoscopic, and robot-assisted surgery."@en ;
+    skos:notation "SHINRA_0002014" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Pandemic
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "パンデミック"@ja ; rdfs:label "Pandemic"@en ;
+    rdfs:comment "感染症が複数大陸・世界規模に拡大した状態・過程。スペイン風邪・COVID-19・エイズパンデミックなど。"@ja ;
+    rdfs:comment "A state or process in which an infectious disease spreads across multiple continents or globally, including the Spanish flu, COVID-19, and the AIDS pandemic."@en ;
+    skos:notation "SHINRA_0002015" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 生理・病理過程 ────────────────────────────────────────────────
+
+shinra:ImmuneResponse
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "免疫応答"@ja ; rdfs:label "Immune Response"@en ;
+    rdfs:comment "病原体・異物に対して免疫系が活性化される生物学的過程。自然免疫応答・獲得免疫応答・炎症など。"@ja ;
+    rdfs:comment "The biological process by which the immune system activates against pathogens or foreign substances, including innate and adaptive immune responses and inflammation."@en ;
+    skos:notation "SHINRA_0002021" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Inflammation
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "炎症"@ja ; rdfs:label "Inflammation"@en ;
+    rdfs:comment "組織損傷・感染に対する免疫系の保護的応答過程。発赤・腫脹・発熱・疼痛・機能障害を特徴とする。"@ja ;
+    rdfs:comment "A protective immune response to tissue injury or infection, characterized by redness, swelling, heat, pain, and loss of function."@en ;
+    skos:notation "SHINRA_0002022" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Homeostasis
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "恒常性"@ja ; rdfs:label "Homeostasis"@en ;
+    skos:altLabel "ホメオスタシス"@ja ;
+    rdfs:comment "生体が内部環境（体温・pH・血糖値・浸透圧）を一定範囲に維持する自己調節過程。"@ja ;
+    rdfs:comment "The self-regulatory process by which an organism maintains its internal environment (temperature, pH, blood glucose, osmolarity) within a stable range."@en ;
+    skos:notation "SHINRA_0002023" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 医学プロパティ ────────────────────────────────────────────────
+
+shinra:hasICD11Code
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "ICD-11コード"@ja ; rdfs:label "ICD-11 code"@en ;
+    rdfs:comment "WHO国際疾病分類第11版（ICD-11）における疾患コード。"@ja ;
+    rdfs:comment "The disease code in the WHO International Classification of Diseases, 11th revision (ICD-11)."@en ;
+    skos:notation "SHINRA_D002001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasMortality
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "死亡率"@ja ; rdfs:label "mortality rate"@en ;
+    rdfs:comment "疾患・事象による死亡率（%または10万人当たり）。"@ja ;
+    rdfs:comment "The mortality rate caused by a disease or event, expressed as a percentage or per 100,000 population."@en ;
+    skos:notation "SHINRA_D002002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:alzheimer-001
+    a shinra:NeurologicalDisorder ;
+    rdfs:label "アルツハイマー病"@ja ; rdfs:label "Alzheimer's Disease"@en ;
+    shinra:wikidataId "Q11085" ;
+    skos:notation "SHINRA_I002001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:mrna-vaccine-001
+    a shinra:Vaccine ;
+    rdfs:label "mRNAワクチン"@ja ; rdfs:label "mRNA Vaccine"@en ;
+    shinra:wikidataId "Q105740584" ;
+    skos:notation "SHINRA_I002002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:spanish-flu-001
+    a shinra:Pandemic ;
+    rdfs:label "スペイン風邪"@ja ; rdfs:label "Spanish Flu"@en ;
+    shinra:wikidataId "Q16386538" ;
+    skos:notation "SHINRA_I002003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:hippocratic-oath-001
+    a shinra:ConceptualEntity ;
+    rdfs:label "ヒポクラテスの誓い"@ja ; rdfs:label "Hippocratic Oath"@en ;
+    shinra:wikidataId "Q131538" ;
+    skos:notation "SHINRA_I002004" ; dcterms:created "2026-06-03"^^xsd:date .

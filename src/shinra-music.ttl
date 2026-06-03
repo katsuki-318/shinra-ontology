@@ -1,0 +1,179 @@
+# ===========================================================================
+# shinra-music.ttl  — 音楽理論・音楽学ドメイン (Phase 7-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/music>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 音楽理論・音楽学ドメイン"@ja ,
+                    "Shinra Ontology — Music Theory & Musicology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 音楽の基本要素 ────────────────────────────────────────────────
+
+shinra:MusicalPitch
+    a owl:Class ; rdfs:subClassOf shinra:PerceptualQuality ;
+    rdfs:label "音高"@ja ; rdfs:label "Musical Pitch"@en ;
+    skos:altLabel "ピッチ"@ja ;
+    rdfs:comment "音の高さを表す知覚的属性。周波数によって決まり、ドレミなどの音名・音符で表記される。"@ja ;
+    rdfs:comment "The perceptual attribute of sound height determined by frequency, represented by note names (do, re, mi) and musical notation."@en ;
+    skos:notation "SHINRA_0001901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalInterval
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "音程"@ja ; rdfs:label "Musical Interval"@en ;
+    rdfs:comment "二つの音高の間の距離。半音・全音・長三度・完全五度・オクターブなど。協和・不協和の区別がある。"@ja ;
+    rdfs:comment "The distance between two pitches, including semitone, whole tone, major third, perfect fifth, and octave, with distinctions between consonance and dissonance."@en ;
+    skos:notation "SHINRA_0001902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalScale
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "音階"@ja ; rdfs:label "Musical Scale"@en ;
+    rdfs:comment "一定の音程パターンで配列された音高の集合。長音階・短音階・ペンタトニック・全音音階・旋法など。"@ja ;
+    rdfs:comment "A set of pitches arranged in a specific interval pattern, including major, minor, pentatonic, whole-tone scales, and modes."@en ;
+    skos:notation "SHINRA_0001903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Chord
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "和音"@ja ; rdfs:label "Chord"@en ;
+    skos:altLabel "コード"@ja ;
+    rdfs:comment "同時に鳴らされる3音以上の音高の集合。三和音・七の和音・テンションコード・増和音・減和音など。"@ja ;
+    rdfs:comment "A set of three or more pitches sounded simultaneously, including triads, seventh chords, tension chords, augmented, and diminished chords."@en ;
+    skos:notation "SHINRA_0001904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Harmony
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "和声"@ja ; rdfs:label "Harmony"@en ;
+    rdfs:comment "和音の連続と進行の原理・体系。機能和声・対位法的和声・モーダル和声・無調和声など。"@ja ;
+    rdfs:comment "The principles and system governing chord progressions and successions, including functional harmony, contrapuntal harmony, modal harmony, and atonality."@en ;
+    skos:notation "SHINRA_0001905" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Melody
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "旋律"@ja ; rdfs:label "Melody"@en ;
+    skos:altLabel "メロディー"@ja ;
+    rdfs:comment "時間的に連続した音高の系列。動機・フレーズ・楽節・テーマなどの階層的構造を持つ。"@ja ;
+    rdfs:comment "A temporally successive series of pitches, organized in hierarchical structures including motifs, phrases, periods, and themes."@en ;
+    skos:notation "SHINRA_0001906" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Rhythm
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "リズム"@ja ; rdfs:label "Rhythm"@en ;
+    rdfs:comment "音・休止の時間的パターン。拍・拍子・テンポ・シンコペーション・ポリリズムなどを含む。"@ja ;
+    rdfs:comment "The temporal pattern of sounds and silences, including beat, meter, tempo, syncopation, and polyrhythm."@en ;
+    skos:notation "SHINRA_0001907" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Timbre
+    a owl:Class ; rdfs:subClassOf shinra:PerceptualQuality ;
+    rdfs:label "音色"@ja ; rdfs:label "Timbre"@en ;
+    skos:altLabel "音質"@ja ;
+    rdfs:comment "同じ音高・音量でも異なる楽器・声が区別される知覚的音質。倍音構造・エンベロープによって決まる。"@ja ;
+    rdfs:comment "The perceptual quality that distinguishes different instruments or voices at the same pitch and loudness, determined by harmonic structure and envelope."@en ;
+    skos:notation "SHINRA_0001908" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 音楽の構造・形式 ──────────────────────────────────────────────
+
+shinra:MusicalForm
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "楽式"@ja ; rdfs:label "Musical Form"@en ;
+    skos:altLabel "曲式"@ja ;
+    rdfs:comment "楽曲の大規模構造原理。ソナタ形式・変奏曲・ロンド・フーガ・二部形式・三部形式など。"@ja ;
+    rdfs:comment "The large-scale structural principle of a musical work, including sonata form, theme and variations, rondo, fugue, binary, and ternary form."@en ;
+    skos:notation "SHINRA_0001911" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Counterpoint
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "対位法"@ja ; rdfs:label "Counterpoint"@en ;
+    rdfs:comment "独立した旋律を組み合わせる作曲技法。厳格対位法・フーガ・カノン・インベンションなどに用いられる。"@ja ;
+    rdfs:comment "A compositional technique combining independent melodic lines, used in strict counterpoint, fugues, canons, and inventions."@en ;
+    skos:notation "SHINRA_0001912" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalGenre
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "音楽ジャンル"@ja ; rdfs:label "Musical Genre"@en ;
+    skos:altLabel "音楽様式"@ja ;
+    rdfs:comment "共通の様式的特徴・文化的文脈・社会的機能で区分される音楽の種類。クラシック・ジャズ・ロック・民族音楽など。"@ja ;
+    rdfs:comment "A category of music distinguished by common stylistic features, cultural context, or social function, including classical, jazz, rock, and folk music."@en ;
+    skos:notation "SHINRA_0001913" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalInstrument
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "楽器"@ja ; rdfs:label "Musical Instrument"@en ;
+    rdfs:comment "音楽を演奏するために設計された人工物。弦楽器・管楽器・打楽器・鍵盤楽器・電子楽器など。"@ja ;
+    rdfs:comment "An artifact designed for producing music, including string, wind, percussion, keyboard, and electronic instruments."@en ;
+    skos:notation "SHINRA_0001914" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalNotation
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "楽譜"@ja ; rdfs:label "Musical Notation"@en ;
+    rdfs:comment "音楽を視覚的記号で表現する体系。五線譜・タブ譜・数字譜・グラフィック記譜など。"@ja ;
+    rdfs:comment "A system of visual symbols representing music, including staff notation, tablature, numbered musical notation, and graphic scores."@en ;
+    skos:notation "SHINRA_0001915" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MusicalPerformance
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "音楽演奏"@ja ; rdfs:label "Musical Performance"@en ;
+    skos:altLabel "演奏"@ja ;
+    rdfs:comment "楽器・声・電子手段によって音楽を実演する行為。独奏・合奏・即興・ライブパフォーマンスなど。"@ja ;
+    rdfs:comment "The act of producing music through instruments, voice, or electronic means, including solo performance, ensemble, improvisation, and live performance."@en ;
+    skos:notation "SHINRA_0001916" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 音楽プロパティ ────────────────────────────────────────────────
+
+shinra:hasBeatsPerMinute
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Rhythm ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "テンポ（BPM）"@ja ; rdfs:label "beats per minute"@en ;
+    rdfs:comment "リズムの速さを示す1分間の拍数（BPM）。"@ja ;
+    rdfs:comment "The tempo expressed as the number of beats per minute (BPM)."@en ;
+    skos:notation "SHINRA_D001901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasTonality
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:MusicalScale ;
+    rdfs:label  "調性"@ja ; rdfs:label "has tonality"@en ;
+    rdfs:comment "楽曲・和声が基盤とする音階・調との関係。"@ja ;
+    rdfs:comment "Relation between a musical work or harmonic passage and the scale or key on which it is based."@en ;
+    skos:notation "SHINRA_R001901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:equal-temperament-001
+    a shinra:MusicalScale ;
+    rdfs:label "平均律"@ja ; rdfs:label "Equal Temperament"@en ;
+    shinra:wikidataId "Q213601" ;
+    skos:notation "SHINRA_I001901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:sonata-form-001
+    a shinra:MusicalForm ;
+    rdfs:label "ソナタ形式"@ja ; rdfs:label "Sonata Form"@en ;
+    shinra:wikidataId "Q182709" ;
+    skos:notation "SHINRA_I001902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:jazz-001
+    a shinra:MusicalGenre ;
+    rdfs:label "ジャズ"@ja ; rdfs:label "Jazz"@en ;
+    shinra:wikidataId "Q8341" ;
+    skos:notation "SHINRA_I001903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:piano-001
+    a shinra:MusicalInstrument ;
+    rdfs:label "ピアノ"@ja ; rdfs:label "Piano"@en ;
+    shinra:wikidataId "Q5994" ;
+    skos:notation "SHINRA_I001904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:blues-scale-001
+    a shinra:MusicalScale ;
+    rdfs:label "ブルース音階"@ja ; rdfs:label "Blues Scale"@en ;
+    shinra:wikidataId "Q849462" ;
+    skos:notation "SHINRA_I001905" ; dcterms:created "2026-06-03"^^xsd:date .

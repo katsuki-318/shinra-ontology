@@ -1,0 +1,155 @@
+# ===========================================================================
+# shinra-philosophy.ttl  — 哲学詳細ドメイン (Phase 7-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 哲学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 哲学の下位分野 ────────────────────────────────────────────────
+
+shinra:Epistemology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "認識論"@ja ; rdfs:label "Epistemology"@en ;
+    rdfs:comment "知識の本質・起源・範囲・限界を研究する哲学の分野。正当化・真理・信念・懐疑論・合理論・経験論など。"@ja ;
+    rdfs:comment "The philosophical field studying the nature, origin, scope, and limits of knowledge, including justification, truth, belief, skepticism, rationalism, and empiricism."@en ;
+    skos:notation "SHINRA_0002101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Metaphysics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "形而上学"@ja ; rdfs:label "Metaphysics"@en ;
+    rdfs:comment "存在・実在・時間・空間・因果・必然性の究極的本質を研究する哲学の分野。存在論・宇宙論・心身問題など。"@ja ;
+    rdfs:comment "The philosophical field studying the ultimate nature of being, reality, time, space, causation, and necessity, including ontology, cosmology, and the mind-body problem."@en ;
+    skos:notation "SHINRA_0002102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Ethics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "倫理学"@ja ; rdfs:label "Ethics"@en ;
+    skos:altLabel "道徳哲学"@ja ;
+    rdfs:comment "道徳的行為・善悪・義務・徳を研究する哲学の分野。功利主義・義務論・徳倫理学・メタ倫理学など。"@ja ;
+    rdfs:comment "The philosophical field studying moral conduct, good and evil, duty, and virtue, including utilitarianism, deontology, virtue ethics, and meta-ethics."@en ;
+    skos:notation "SHINRA_0002103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Aesthetics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "美学"@ja ; rdfs:label "Aesthetics"@en ;
+    rdfs:comment "美・崇高・芸術・趣味判断を研究する哲学の分野。カントの美学・芸術定義論・表現論・様式論など。"@ja ;
+    rdfs:comment "The philosophical field studying beauty, the sublime, art, and aesthetic judgment, including Kantian aesthetics, theories of art definition, expression, and style."@en ;
+    skos:notation "SHINRA_0002104" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PoliticalPhilosophy
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "政治哲学"@ja ; rdfs:label "Political Philosophy"@en ;
+    rdfs:comment "政治権力・正義・自由・権利・国家の正当性を研究する哲学の分野。社会契約論・リベラリズム・共和主義など。"@ja ;
+    rdfs:comment "The philosophical field studying political power, justice, liberty, rights, and state legitimacy, including social contract theory, liberalism, and republicanism."@en ;
+    skos:notation "SHINRA_0002105" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhilosophyOfMind
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "心の哲学"@ja ; rdfs:label "Philosophy of Mind"@en ;
+    rdfs:comment "意識・意図・クオリア・心身問題・志向性を研究する哲学の分野。機能主義・二元論・物理主義・現象学など。"@ja ;
+    rdfs:comment "The philosophical field studying consciousness, intentionality, qualia, and the mind-body problem, including functionalism, dualism, physicalism, and phenomenology."@en ;
+    skos:notation "SHINRA_0002106" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhilosophyOfScience
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "科学哲学"@ja ; rdfs:label "Philosophy of Science"@en ;
+    rdfs:comment "科学の方法・説明・確証・実在論・科学革命を研究する哲学の分野。反証主義・科学的実在論・構造主義など。"@ja ;
+    rdfs:comment "The philosophical field studying scientific method, explanation, confirmation, realism, and scientific revolutions, including falsificationism, scientific realism, and structuralism."@en ;
+    skos:notation "SHINRA_0002107" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhilosophyOfLanguage
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "言語哲学"@ja ; rdfs:label "Philosophy of Language"@en ;
+    rdfs:comment "意味・指示・真理・言語行為・解釈を研究する哲学の分野。フレーゲの意義と指示・クリプキの固定指示子など。"@ja ;
+    rdfs:comment "The philosophical field studying meaning, reference, truth, speech acts, and interpretation, including Frege's sense and reference and Kripke's rigid designators."@en ;
+    skos:notation "SHINRA_0002108" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Phenomenology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "現象学"@ja ; rdfs:label "Phenomenology"@en ;
+    rdfs:comment "意識の第一人称的経験構造を記述する哲学の方法・分野。フッサール・ハイデガー・メルロ＝ポンティなど。"@ja ;
+    rdfs:comment "A philosophical method and field describing the first-person structure of conscious experience, associated with Husserl, Heidegger, and Merleau-Ponty."@en ;
+    skos:notation "SHINRA_0002109" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 哲学的概念 ────────────────────────────────────────────────────
+
+shinra:FreeWill
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "自由意志"@ja ; rdfs:label "Free Will"@en ;
+    rdfs:comment "行為者が因果的・社会的制約から独立して選択・行為できる能力についての概念。自由意志論・決定論・両立論など。"@ja ;
+    rdfs:comment "The concept of an agent's capacity to choose and act independently of causal or social constraints, related to libertarianism, determinism, and compatibilism."@en ;
+    skos:notation "SHINRA_0002111" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Determinism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "決定論"@ja ; rdfs:label "Determinism"@en ;
+    rdfs:comment "すべての出来事・状態が先行する原因によって必然的に決まるという哲学的立場。物理的決定論・因果決定論など。"@ja ;
+    rdfs:comment "The philosophical position that all events and states are necessarily determined by prior causes, including physical and causal determinism."@en ;
+    skos:notation "SHINRA_0002112" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:TruthTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "真理論"@ja ; rdfs:label "Theory of Truth"@en ;
+    rdfs:comment "命題・信念・発話が真であることの条件を説明する哲学的理論。対応説・整合説・プラグマティズム・余剰説など。"@ja ;
+    rdfs:comment "A philosophical theory explaining the conditions under which propositions, beliefs, or utterances are true, including correspondence, coherence, pragmatic, and deflationary theories."@en ;
+    skos:notation "SHINRA_0002113" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhilosophicalThought
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "哲学思想"@ja ; rdfs:label "Philosophical Movement"@en ;
+    skos:altLabel "哲学的潮流"@ja ;
+    rdfs:comment "共通の問題意識・方法論・世界観を持つ哲学的立場の歴史的潮流。実存主義・分析哲学・プラグマティズム・ポスト構造主義など。"@ja ;
+    rdfs:comment "A historical current of philosophical positions sharing common concerns, methodology, and worldview, including existentialism, analytic philosophy, pragmatism, and post-structuralism."@en ;
+    skos:notation "SHINRA_0002114" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ThoughtExperiment
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "思考実験"@ja ; rdfs:label "Thought Experiment"@en ;
+    rdfs:comment "実際の実験なしに想像的シナリオを用いて概念・理論を検討する哲学・科学的手法。トロッコ問題・中国語の部屋・スワンプマンなど。"@ja ;
+    rdfs:comment "A philosophical and scientific method examining concepts or theories through imaginary scenarios without actual experimentation, including the trolley problem, Chinese room, and swampman."@en ;
+    skos:notation "SHINRA_0002115" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:utilitarianism-001
+    a shinra:PhilosophicalThought ;
+    rdfs:label "功利主義"@ja ; rdfs:label "Utilitarianism"@en ;
+    shinra:wikidataId "Q62932" ;
+    skos:notation "SHINRA_I002101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:existentialism-001
+    a shinra:PhilosophicalThought ;
+    rdfs:label "実存主義"@ja ; rdfs:label "Existentialism"@en ;
+    shinra:wikidataId "Q170514" ;
+    skos:notation "SHINRA_I002102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:trolley-problem-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "トロッコ問題"@ja ; rdfs:label "Trolley Problem"@en ;
+    shinra:wikidataId "Q1322482" ;
+    skos:notation "SHINRA_I002103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:analytic-philosophy-001
+    a shinra:PhilosophicalThought ;
+    rdfs:label "分析哲学"@ja ; rdfs:label "Analytic Philosophy"@en ;
+    shinra:wikidataId "Q33829" ;
+    skos:notation "SHINRA_I002104" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:categorical-imperative-001
+    a shinra:ScientificTheory ;
+    rdfs:label "定言命法"@ja ; rdfs:label "Categorical Imperative"@en ;
+    shinra:wikidataId "Q190026" ;
+    skos:notation "SHINRA_I002105" ; dcterms:created "2026-06-03"^^xsd:date .

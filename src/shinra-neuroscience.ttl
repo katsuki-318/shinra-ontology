@@ -1,0 +1,154 @@
+# ===========================================================================
+# shinra-neuroscience.ttl  — 神経科学詳細ドメイン (Phase 7-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/neuroscience>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 神経科学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Neuroscience Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 神経系の構造 ──────────────────────────────────────────────────
+
+shinra:NervousSystem
+    a owl:Class ; rdfs:subClassOf shinra:BodyPart ;
+    rdfs:label "神経系"@ja ; rdfs:label "Nervous System"@en ;
+    rdfs:comment "神経細胞のネットワークからなる信号伝達・制御システム。中枢神経系・末梢神経系・自律神経系など。"@ja ;
+    rdfs:comment "A signal transmission and control system comprising networks of nerve cells, including the central, peripheral, and autonomic nervous systems."@en ;
+    skos:notation "SHINRA_0001701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:BrainRegion
+    a owl:Class ; rdfs:subClassOf shinra:BodyPart ;
+    rdfs:label "脳領域"@ja ; rdfs:label "Brain Region"@en ;
+    rdfs:comment "特定の機能を担う脳の解剖学的区画。大脳皮質・海馬・扁桃体・小脳・脳幹など。"@ja ;
+    rdfs:comment "An anatomical subdivision of the brain with specific functions, including the cerebral cortex, hippocampus, amygdala, cerebellum, and brainstem."@en ;
+    skos:notation "SHINRA_0001702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Neuron
+    a owl:Class ; rdfs:subClassOf shinra:Cell ;
+    rdfs:label "ニューロン"@ja ; rdfs:label "Neuron"@en ;
+    skos:altLabel "神経細胞"@ja ;
+    rdfs:comment "電気信号・化学信号で情報を伝達する神経系の基本細胞。感覚ニューロン・運動ニューロン・介在ニューロンなど。"@ja ;
+    rdfs:comment "The fundamental cell of the nervous system transmitting information via electrical and chemical signals, including sensory, motor, and interneurons."@en ;
+    skos:notation "SHINRA_0001703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Synapse
+    a owl:Class ; rdfs:subClassOf shinra:BodyPart ;
+    rdfs:label "シナプス"@ja ; rdfs:label "Synapse"@en ;
+    rdfs:comment "ニューロン間またはニューロンと効果器の間の機能的接合部。化学シナプス・電気シナプスがある。"@ja ;
+    rdfs:comment "The functional junction between neurons or between a neuron and an effector, including chemical and electrical synapses."@en ;
+    skos:notation "SHINRA_0001704" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Neurotransmitter
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "神経伝達物質"@ja ; rdfs:label "Neurotransmitter"@en ;
+    rdfs:comment "シナプスで放出されニューロン間の信号伝達を媒介する化学物質。ドーパミン・セロトニン・グルタミン酸・GABA など。"@ja ;
+    rdfs:comment "A chemical substance released at synapses to mediate signal transmission between neurons, including dopamine, serotonin, glutamate, and GABA."@en ;
+    skos:notation "SHINRA_0001705" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NeuralCircuit
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "神経回路"@ja ; rdfs:label "Neural Circuit"@en ;
+    rdfs:comment "特定の機能を実行するニューロンと接続の集合体。報酬回路・恐怖回路・運動制御回路など。"@ja ;
+    rdfs:comment "A collection of neurons and connections performing a specific function, including reward circuits, fear circuits, and motor control circuits."@en ;
+    skos:notation "SHINRA_0001706" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 神経過程 ─────────────────────────────────────────────────────
+
+shinra:Neuroplasticity
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "神経可塑性"@ja ; rdfs:label "Neuroplasticity"@en ;
+    skos:altLabel "シナプス可塑性"@ja ;
+    rdfs:comment "経験・学習・損傷に応じて神経系が構造・機能を変化させる能力と過程。長期増強・シナプス剪定など。"@ja ;
+    rdfs:comment "The capacity and process of the nervous system to change its structure and function in response to experience, learning, or injury, including long-term potentiation and synaptic pruning."@en ;
+    skos:notation "SHINRA_0001711" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SleepProcess
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "睡眠過程"@ja ; rdfs:label "Sleep Process"@en ;
+    rdfs:comment "意識レベルが低下し記憶固定・身体修復が行われる周期的生物学的状態。REM睡眠・ノンREM睡眠・概日リズムなど。"@ja ;
+    rdfs:comment "A periodic biological state of reduced consciousness during which memory consolidation and physical repair occur, including REM sleep, non-REM sleep, and circadian rhythms."@en ;
+    skos:notation "SHINRA_0001712" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CognitiveDevelopment
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "認知発達"@ja ; rdfs:label "Cognitive Development"@en ;
+    rdfs:comment "生涯にわたる認知能力（知覚・注意・記憶・言語・推論）の発達過程。ピアジェの発達段階・言語習得期など。"@ja ;
+    rdfs:comment "The developmental process of cognitive abilities across the lifespan, including perception, attention, memory, language, and reasoning, as in Piaget's stages and the critical period for language acquisition."@en ;
+    skos:notation "SHINRA_0001713" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SensoryReception
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "感覚受容"@ja ; rdfs:label "Sensory Reception"@en ;
+    rdfs:comment "環境刺激を神経信号に変換する生物学的過程。光受容・聴覚受容・皮膚感覚・嗅覚受容・味覚受容など。"@ja ;
+    rdfs:comment "The biological process of converting environmental stimuli into neural signals, including photoreception, auditory reception, somatosensation, olfaction, and gustation."@en ;
+    skos:notation "SHINRA_0001714" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NeuroendocrineProcess
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "神経内分泌過程"@ja ; rdfs:label "Neuroendocrine Process"@en ;
+    rdfs:comment "神経系とホルモン系の相互作用を介した生理調節過程。ストレス応答・性ホルモン分泌・概日リズム調節など。"@ja ;
+    rdfs:comment "A physiological regulatory process mediated by the interaction of the nervous and endocrine systems, including stress response, sex hormone secretion, and circadian rhythm regulation."@en ;
+    skos:notation "SHINRA_0001715" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NeurologicalDisorder
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "神経疾患"@ja ; rdfs:label "Neurological Disorder"@en ;
+    skos:altLabel "神経障害"@ja ;
+    rdfs:comment "神経系の構造・機能的異常による疾患。アルツハイマー病・パーキンソン病・てんかん・脳卒中など。"@ja ;
+    rdfs:comment "A disorder arising from structural or functional abnormalities of the nervous system, including Alzheimer's disease, Parkinson's disease, epilepsy, and stroke."@en ;
+    skos:notation "SHINRA_0001716" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 神経科学プロパティ ────────────────────────────────────────────
+
+shinra:hasBrainRegion
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:BrainRegion ;
+    rdfs:label  "脳領域"@ja ; rdfs:label "has brain region"@en ;
+    rdfs:comment "神経過程・認知機能と関連する脳領域との関係。"@ja ;
+    rdfs:comment "Relation between a neural process or cognitive function and the associated brain region."@en ;
+    skos:notation "SHINRA_R001701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasNeurotransmitter
+    a owl:ObjectProperty ;
+    rdfs:range  shinra:Neurotransmitter ;
+    rdfs:label  "神経伝達物質"@ja ; rdfs:label "has neurotransmitter"@en ;
+    rdfs:comment "神経過程・シナプスが使用する神経伝達物質との関係。"@ja ;
+    rdfs:comment "Relation between a neural process or synapse and the neurotransmitter it uses."@en ;
+    skos:notation "SHINRA_R001702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:cerebral-cortex-001
+    a shinra:BrainRegion ;
+    rdfs:label "大脳皮質"@ja ; rdfs:label "Cerebral Cortex"@en ;
+    shinra:wikidataId "Q192858" ;
+    skos:notation "SHINRA_I001701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:hippocampus-001
+    a shinra:BrainRegion ;
+    rdfs:label "海馬"@ja ; rdfs:label "Hippocampus"@en ;
+    shinra:wikidataId "Q48810" ;
+    skos:notation "SHINRA_I001702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:dopamine-001
+    a shinra:Neurotransmitter ;
+    rdfs:label "ドーパミン"@ja ; rdfs:label "Dopamine"@en ;
+    shinra:wikidataId "Q170304" ;
+    skos:notation "SHINRA_I001703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:serotonin-001
+    a shinra:Neurotransmitter ;
+    rdfs:label "セロトニン"@ja ; rdfs:label "Serotonin"@en ;
+    shinra:wikidataId "Q167934" ;
+    skos:notation "SHINRA_I001704" ; dcterms:created "2026-06-03"^^xsd:date .

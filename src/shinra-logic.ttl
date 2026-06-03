@@ -1,0 +1,148 @@
+# ===========================================================================
+# shinra-logic.ttl  — 形式論理・証明論ドメイン (Phase 7-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/logic>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 形式論理・証明論ドメイン"@ja ,
+                    "Shinra Ontology — Formal Logic & Proof Theory Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 論理学の下位分野 ──────────────────────────────────────────────
+
+shinra:PropositionalLogic
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "命題論理"@ja ; rdfs:label "Propositional Logic"@en ;
+    skos:altLabel "命題計算"@ja ;
+    rdfs:comment "命題を基本単位とし論理結合子（AND・OR・NOT・→）で構成する形式論理体系。真理値表・トートロジー・充足可能性など。"@ja ;
+    rdfs:comment "A formal logical system using propositions as basic units combined by connectives (AND, OR, NOT, →), including truth tables, tautologies, and satisfiability."@en ;
+    skos:notation "SHINRA_0001801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PredicateLogic
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "述語論理"@ja ; rdfs:label "Predicate Logic"@en ;
+    skos:altLabel "一階述語論理"@ja ;
+    rdfs:comment "個体・述語・量化子（∀・∃）を用いる形式論理体系。命題論理を包含し数学の基礎として機能する。"@ja ;
+    rdfs:comment "A formal logical system using individuals, predicates, and quantifiers (∀, ∃), subsuming propositional logic and serving as the foundation of mathematics."@en ;
+    skos:notation "SHINRA_0001802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ModalLogic
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "様相論理"@ja ; rdfs:label "Modal Logic"@en ;
+    rdfs:comment "必然性（□）と可能性（◇）を扱う論理体系。義務論理・時相論理・認識論理などの拡張がある。"@ja ;
+    rdfs:comment "A logical system dealing with necessity (□) and possibility (◇), with extensions including deontic, temporal, and epistemic logics."@en ;
+    skos:notation "SHINRA_0001803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SetTheoryDiscipline
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "集合論"@ja ; rdfs:label "Set Theory"@en ;
+    rdfs:comment "集合を基本概念とする数学の基礎理論。ZFC公理系・無限基数・順序数・連続体仮説など。"@ja ;
+    rdfs:comment "The foundational mathematical theory based on sets, including the ZFC axiom system, infinite cardinals, ordinals, and the continuum hypothesis."@en ;
+    skos:notation "SHINRA_0001804" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CategoryTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "圏論"@ja ; rdfs:label "Category Theory"@en ;
+    rdfs:comment "対象と射の抽象的構造を研究する数学の分野。関手・自然変換・随伴・モナドなど。数学・型理論・物理学に応用。"@ja ;
+    rdfs:comment "A branch of mathematics studying abstract structures of objects and morphisms, including functors, natural transformations, adjunctions, and monads, with applications in mathematics, type theory, and physics."@en ;
+    skos:notation "SHINRA_0001805" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ComputabilityTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "計算可能性理論"@ja ; rdfs:label "Computability Theory"@en ;
+    skos:altLabel "再帰理論"@ja ;
+    rdfs:comment "どの問題が計算可能かを研究する理論計算機科学の分野。チューリング機械・停止問題・計算複雑性など。"@ja ;
+    rdfs:comment "The branch of theoretical computer science studying which problems are computable, including Turing machines, the halting problem, and computational complexity."@en ;
+    skos:notation "SHINRA_0001806" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InformationTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "情報理論"@ja ; rdfs:label "Information Theory"@en ;
+    rdfs:comment "情報の定量化・符号化・伝送を研究するシャノンが創始した理論。エントロピー・通信路容量・符号理論など。"@ja ;
+    rdfs:comment "The theory founded by Shannon quantifying, encoding, and transmitting information, including entropy, channel capacity, and coding theory."@en ;
+    skos:notation "SHINRA_0001807" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 論理的オブジェクト ────────────────────────────────────────────
+
+shinra:LogicalConnective
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "論理結合子"@ja ; rdfs:label "Logical Connective"@en ;
+    skos:altLabel "論理演算子"@ja ;
+    rdfs:comment "命題を結合して複合命題を作る演算子。連言（∧）・選言（∨）・否定（¬）・含意（→）・同値（↔）など。"@ja ;
+    rdfs:comment "An operator combining propositions into compound propositions, including conjunction (∧), disjunction (∨), negation (¬), implication (→), and equivalence (↔)."@en ;
+    skos:notation "SHINRA_0001811" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ProofSystem
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "証明体系"@ja ; rdfs:label "Proof System"@en ;
+    skos:altLabel "推論体系"@ja ;
+    rdfs:comment "公理と推論規則から定理を導出する形式的体系。自然演繹・シーケント計算・公理的証明論など。"@ja ;
+    rdfs:comment "A formal system deriving theorems from axioms and inference rules, including natural deduction, sequent calculus, and axiomatic proof theory."@en ;
+    skos:notation "SHINRA_0001812" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LogicalFallacy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "論理的誤謬"@ja ; rdfs:label "Logical Fallacy"@en ;
+    skos:altLabel "論証の誤り"@ja ;
+    rdfs:comment "形式的または非形式的に誤った推論パターン。人身攻撃・藁人形論法・後件肯定・循環論法など。"@ja ;
+    rdfs:comment "A formally or informally invalid pattern of reasoning, including ad hominem, straw man, affirming the consequent, and circular reasoning."@en ;
+    skos:notation "SHINRA_0001813" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FormalGrammar
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "形式文法"@ja ; rdfs:label "Formal Grammar"@en ;
+    rdfs:comment "形式言語を生成する規則の集合。チョムスキー階層（正規・文脈自由・文脈依存・句構造文法）など。"@ja ;
+    rdfs:comment "A set of rules generating a formal language, organized in the Chomsky hierarchy including regular, context-free, context-sensitive, and unrestricted grammars."@en ;
+    skos:notation "SHINRA_0001814" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Tautology
+    a owl:Class ; rdfs:subClassOf shinra:LogicalStatement ;
+    rdfs:label "トートロジー"@ja ; rdfs:label "Tautology"@en ;
+    skos:altLabel "恒真式"@ja ;
+    rdfs:comment "すべての真理値割り当てで真となる論理式。同一律（P→P）・排中律（P∨¬P）・二重否定（¬¬P→P）など。"@ja ;
+    rdfs:comment "A logical formula that is true under all truth value assignments, including the law of identity (P→P), law of excluded middle (P∨¬P), and double negation (¬¬P→P)."@en ;
+    skos:notation "SHINRA_0001815" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Contradiction
+    a owl:Class ; rdfs:subClassOf shinra:LogicalStatement ;
+    rdfs:label "矛盾"@ja ; rdfs:label "Contradiction"@en ;
+    skos:altLabel "恒偽式"@ja ;
+    rdfs:comment "すべての真理値割り当てで偽となる論理式。P∧¬P など。矛盾からは任意の命題が導ける（爆発律）。"@ja ;
+    rdfs:comment "A logical formula that is false under all truth value assignments, such as P∧¬P. From a contradiction, any proposition follows (principle of explosion)."@en ;
+    skos:notation "SHINRA_0001816" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:gödel-incompleteness-001
+    a shinra:Theorem ;
+    rdfs:label "ゲーデルの不完全性定理"@ja ; rdfs:label "Gödel's Incompleteness Theorems"@en ;
+    shinra:wikidataId "Q200787" ;
+    skos:notation "SHINRA_I001801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:turing-machine-001
+    a shinra:MathematicalObject ;
+    rdfs:label "チューリング機械"@ja ; rdfs:label "Turing Machine"@en ;
+    shinra:wikidataId "Q163310" ;
+    skos:notation "SHINRA_I001802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:boolean-algebra-001
+    a shinra:AlgebraicStructure ;
+    rdfs:label "ブール代数"@ja ; rdfs:label "Boolean Algebra"@en ;
+    shinra:wikidataId "Q173183" ;
+    skos:notation "SHINRA_I001803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:zfc-axioms-001
+    a shinra:Axiom ;
+    rdfs:label "ZFC公理系"@ja ; rdfs:label "ZFC Axioms"@en ;
+    shinra:wikidataId "Q191996" ;
+    skos:notation "SHINRA_I001804" ; dcterms:created "2026-06-03"^^xsd:date .
