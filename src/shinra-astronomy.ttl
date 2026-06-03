@@ -1,0 +1,149 @@
+# ===========================================================================
+# shinra-astronomy.ttl  — 天文学詳細ドメイン (Phase 7-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/astronomy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 天文学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Astronomy Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 天体の詳細分類 ────────────────────────────────────────────────
+
+shinra:BlackHole
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "ブラックホール"@ja ; rdfs:label "Black Hole"@en ;
+    rdfs:comment "重力が強すぎて光さえ脱出できない時空領域。恒星質量ブラックホール・超大質量ブラックホール・中間質量など。"@ja ;
+    rdfs:comment "A spacetime region with gravity so strong that not even light can escape, including stellar-mass, supermassive, and intermediate-mass black holes."@en ;
+    skos:notation "SHINRA_0002501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Nebula
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "星雲"@ja ; rdfs:label "Nebula"@en ;
+    rdfs:comment "星間ガス・塵が集まった雲状天体。発光星雲・反射星雲・暗黒星雲・惑星状星雲・超新星残骸など。"@ja ;
+    rdfs:comment "A cloud-like celestial object of interstellar gas and dust, including emission nebulae, reflection nebulae, dark nebulae, planetary nebulae, and supernova remnants."@en ;
+    skos:notation "SHINRA_0002502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:StarCluster
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "星団"@ja ; rdfs:label "Star Cluster"@en ;
+    rdfs:comment "重力で束縛された恒星の集団。散開星団（若い恒星）・球状星団（古い恒星）に大別される。"@ja ;
+    rdfs:comment "A gravitationally bound group of stars, broadly divided into open clusters (young stars) and globular clusters (old stars)."@en ;
+    skos:notation "SHINRA_0002503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Exoplanet
+    a owl:Class ; rdfs:subClassOf shinra:Planet ;
+    rdfs:label "系外惑星"@ja ; rdfs:label "Exoplanet"@en ;
+    skos:altLabel "太陽系外惑星"@ja ;
+    rdfs:comment "太陽系外の恒星を公転する惑星。ホットジュピター・スーパーアース・ハビタブルゾーン惑星など。"@ja ;
+    rdfs:comment "A planet orbiting a star outside the Solar System, including hot Jupiters, super-Earths, and habitable zone planets."@en ;
+    skos:notation "SHINRA_0002504" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Comet
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "彗星"@ja ; rdfs:label "Comet"@en ;
+    rdfs:comment "氷・塵・岩石からなり太陽接近時に尾を形成する小天体。ハレー彗星・ヘール・ボップ彗星など。"@ja ;
+    rdfs:comment "A small body of ice, dust, and rock that develops a tail when approaching the Sun, including Halley's Comet and Hale-Bopp."@en ;
+    skos:notation "SHINRA_0002505" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Asteroid
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "小惑星"@ja ; rdfs:label "Asteroid"@en ;
+    rdfs:comment "主に岩石・金属からなる惑星より小さい太陽系天体。小惑星帯・近地球小惑星・トロヤ群など。"@ja ;
+    rdfs:comment "A small Solar System body composed mainly of rock and metal, including main-belt asteroids, near-Earth asteroids, and Trojan asteroids."@en ;
+    skos:notation "SHINRA_0002506" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 宇宙論・天体物理 ──────────────────────────────────────────────
+
+shinra:Cosmology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "宇宙論"@ja ; rdfs:label "Cosmology"@en ;
+    rdfs:comment "宇宙の起源・進化・大規模構造・最終状態を研究する物理学・天文学の分野。ビッグバン・インフレーション・ダークエネルギーなど。"@ja ;
+    rdfs:comment "The field of physics and astronomy studying the origin, evolution, large-scale structure, and ultimate fate of the universe, including the Big Bang, inflation, and dark energy."@en ;
+    skos:notation "SHINRA_0002511" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DarkMatter
+    a owl:Class ; rdfs:subClassOf shinra:Substance ;
+    rdfs:label "暗黒物質"@ja ; rdfs:label "Dark Matter"@en ;
+    skos:altLabel "ダークマター"@ja ;
+    rdfs:comment "電磁波と相互作用せず重力効果のみで存在が示唆される未知の物質。宇宙の質量エネルギーの約27%を占めるとされる。"@ja ;
+    rdfs:comment "An unknown form of matter that does not interact electromagnetically and is inferred only through gravitational effects, constituting approximately 27% of the universe's mass-energy."@en ;
+    skos:notation "SHINRA_0002512" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DarkEnergy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "暗黒エネルギー"@ja ; rdfs:label "Dark Energy"@en ;
+    skos:altLabel "ダークエネルギー"@ja ;
+    rdfs:comment "宇宙の加速膨張を引き起こす未知のエネルギー成分。宇宙の全エネルギーの約68%を占めるとされる。"@ja ;
+    rdfs:comment "An unknown energy component driving the accelerating expansion of the universe, constituting approximately 68% of the universe's total energy."@en ;
+    skos:notation "SHINRA_0002513" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:StellarEvolution
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "恒星進化"@ja ; rdfs:label "Stellar Evolution"@en ;
+    rdfs:comment "恒星が誕生から消滅までたどる物理的変化の過程。主系列・赤色巨星・白色矮星・中性子星・ブラックホールなど。"@ja ;
+    rdfs:comment "The physical changes a star undergoes from birth to death, including the main sequence, red giant, white dwarf, neutron star, and black hole stages."@en ;
+    skos:notation "SHINRA_0002514" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GravitationalWave
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "重力波"@ja ; rdfs:label "Gravitational Wave"@en ;
+    rdfs:comment "大質量天体の加速運動によって時空の曲率が波として伝播する現象。LIGO・VIRGOで2015年に初検出。"@ja ;
+    rdfs:comment "A phenomenon in which curvature of spacetime propagates as waves due to accelerating massive objects, first detected by LIGO and VIRGO in 2015."@en ;
+    skos:notation "SHINRA_0002515" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 天文学プロパティ ──────────────────────────────────────────────
+
+shinra:hasLightYearDistance
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:CelestialObject ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "距離（光年）"@ja ; rdfs:label "distance in light-years"@en ;
+    rdfs:comment "天体までの距離（光年単位）。"@ja ;
+    rdfs:comment "The distance to a celestial object measured in light-years."@en ;
+    skos:notation "SHINRA_D002501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasMagnitude
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:CelestialObject ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "等級"@ja ; rdfs:label "apparent magnitude"@en ;
+    rdfs:comment "地球から見た天体の見かけの明るさを表す等級。値が小さいほど明るい。"@ja ;
+    rdfs:comment "The apparent brightness of a celestial object as seen from Earth; smaller values indicate greater brightness."@en ;
+    skos:notation "SHINRA_D002502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:sagittarius-a-001
+    a shinra:BlackHole ;
+    rdfs:label "いて座A*"@ja ; rdfs:label "Sagittarius A*"@en ;
+    shinra:wikidataId "Q192496" ;
+    skos:notation "SHINRA_I002501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:orion-nebula-001
+    a shinra:Nebula ;
+    rdfs:label "オリオン星雲"@ja ; rdfs:label "Orion Nebula"@en ;
+    shinra:wikidataId "Q44996" ;
+    skos:notation "SHINRA_I002502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:big-bang-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ビッグバン理論"@ja ; rdfs:label "Big Bang Theory"@en ;
+    shinra:wikidataId "Q184485" ;
+    skos:notation "SHINRA_I002503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:halley-comet-001
+    a shinra:Comet ;
+    rdfs:label "ハレー彗星"@ja ; rdfs:label "Halley's Comet"@en ;
+    shinra:wikidataId "Q683" ;
+    skos:notation "SHINRA_I002504" ; dcterms:created "2026-06-03"^^xsd:date .

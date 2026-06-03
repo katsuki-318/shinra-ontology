@@ -1,0 +1,137 @@
+# ===========================================================================
+# shinra-media.ttl  — メディア・情報流通ドメイン (Phase 7-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/media>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — メディア・情報流通ドメイン"@ja ,
+                    "Shinra Ontology — Media & Information Distribution Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── メディア形態 ─────────────────────────────────────────────────
+
+shinra:MassMedia
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "マスメディア"@ja ; rdfs:label "Mass Media"@en ;
+    rdfs:comment "大衆に向けて情報を伝達する社会制度的コミュニケーション手段。新聞・テレビ・ラジオ・インターネットメディアなど。"@ja ;
+    rdfs:comment "Institutional communication means transmitting information to a mass audience, including newspapers, television, radio, and internet media."@en ;
+    skos:notation "SHINRA_0002401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Journalism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "ジャーナリズム"@ja ; rdfs:label "Journalism"@en ;
+    skos:altLabel "報道"@ja ;
+    rdfs:comment "公共の関心事に関する情報を収集・検証・編集・配信する専門的社会活動。調査報道・速報・解説報道など。"@ja ;
+    rdfs:comment "The professional social activity of gathering, verifying, editing, and distributing information on matters of public interest, including investigative, breaking, and explanatory journalism."@en ;
+    skos:notation "SHINRA_0002402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Broadcasting
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "放送"@ja ; rdfs:label "Broadcasting"@en ;
+    rdfs:comment "電波・ケーブル・衛星・インターネットを通じて音声・映像を不特定多数に送信するコミュニケーション過程。"@ja ;
+    rdfs:comment "The process of transmitting audio or video to an unspecified audience via radio waves, cable, satellite, or the internet."@en ;
+    skos:notation "SHINRA_0002403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialMedia
+    a owl:Class ; rdfs:subClassOf shinra:WebResource ;
+    rdfs:label "ソーシャルメディア"@ja ; rdfs:label "Social Media"@en ;
+    rdfs:comment "ユーザーがコンテンツを生成・共有・交流できるデジタルプラットフォーム。SNS・動画共有・ブログ・フォーラムなど。"@ja ;
+    rdfs:comment "Digital platforms enabling users to create, share, and interact with content, including social networks, video sharing, blogs, and forums."@en ;
+    skos:notation "SHINRA_0002404" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Advertising
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "広告"@ja ; rdfs:label "Advertising"@en ;
+    rdfs:comment "商品・サービス・思想を対象者に知らせ行動を促すコミュニケーション活動。テレビCM・デジタル広告・OOHなど。"@ja ;
+    rdfs:comment "A communication activity informing target audiences about products, services, or ideas to prompt action, including TV commercials, digital advertising, and out-of-home media."@en ;
+    skos:notation "SHINRA_0002405" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 情報の性質 ────────────────────────────────────────────────────
+
+shinra:Propaganda
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "プロパガンダ"@ja ; rdfs:label "Propaganda"@en ;
+    skos:altLabel "宣伝"@ja ;
+    rdfs:comment "特定の政治的・イデオロギー的目的のために感情・信念・行動を操作する偏向的コミュニケーション。"@ja ;
+    rdfs:comment "Biased communication manipulating emotions, beliefs, and behavior for specific political or ideological purposes."@en ;
+    skos:notation "SHINRA_0002411" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Misinformation
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "誤情報"@ja ; rdfs:label "Misinformation"@en ;
+    skos:altLabel "フェイクニュース"@ja ;
+    rdfs:comment "意図の有無にかかわらず不正確な情報。フェイクニュース・デマ・誤解を招く情報・ディープフェイクなど。"@ja ;
+    rdfs:comment "Inaccurate information regardless of intent to deceive, including fake news, rumors, misleading information, and deepfakes."@en ;
+    skos:notation "SHINRA_0002412" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CensorshipProcess
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "検閲"@ja ; rdfs:label "Censorship"@en ;
+    rdfs:comment "権力者・機関が表現・情報の公開を抑制・削除・改変する社会的過程。政府検閲・自己検閲・プラットフォーム規制など。"@ja ;
+    rdfs:comment "A social process by which authorities or institutions suppress, remove, or alter expression and information, including government censorship, self-censorship, and platform moderation."@en ;
+    skos:notation "SHINRA_0002413" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InformationDiffusion
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "情報拡散"@ja ; rdfs:label "Information Diffusion"@en ;
+    skos:altLabel "情報伝播"@ja ;
+    rdfs:comment "情報が社会ネットワークを通じて広まる過程。口コミ・バイラル拡散・イノベーション普及などのモデルで分析される。"@ja ;
+    rdfs:comment "The process by which information spreads through social networks, analyzed through models such as word-of-mouth, viral diffusion, and innovation diffusion."@en ;
+    skos:notation "SHINRA_0002414" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PublicOpinion
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "世論"@ja ; rdfs:label "Public Opinion"@en ;
+    rdfs:comment "特定の問題に対する社会集団の支配的な見解・態度の集積。世論調査・フレーミング効果・議題設定理論などで研究。"@ja ;
+    rdfs:comment "The aggregate of dominant views and attitudes of a social group on a specific issue, studied through opinion polling, framing effects, and agenda-setting theory."@en ;
+    skos:notation "SHINRA_0002415" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── メディアプロパティ ────────────────────────────────────────────
+
+shinra:hasCirculation
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:MassMedia ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "発行部数・視聴者数"@ja ; rdfs:label "circulation"@en ;
+    rdfs:comment "メディアの発行部数・視聴者数・ユニークユーザー数。"@ja ;
+    rdfs:comment "The circulation, viewership, or unique user count of a media outlet."@en ;
+    skos:notation "SHINRA_D002401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasMediaType
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:MassMedia ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "メディア種別"@ja ; rdfs:label "media type"@en ;
+    rdfs:comment "メディアの種別。'print' / 'broadcast' / 'digital' / 'social' など。"@ja ;
+    rdfs:comment "The type of media: 'print', 'broadcast', 'digital', 'social', etc."@en ;
+    skos:notation "SHINRA_D002402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:bbc-001
+    a shinra:MassMedia ;
+    rdfs:label "BBC"@ja ; rdfs:label "BBC"@en ;
+    shinra:wikidataId "Q9531" ;
+    skos:notation "SHINRA_I002401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:gutenberg-press-001
+    a shinra:Technology ;
+    rdfs:label "グーテンベルクの印刷機"@ja ; rdfs:label "Gutenberg's Printing Press"@en ;
+    shinra:wikidataId "Q1373162" ;
+    skos:notation "SHINRA_I002402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:internet-archive-001
+    a shinra:WebResource ;
+    rdfs:label "インターネット・アーカイブ"@ja ; rdfs:label "Internet Archive"@en ;
+    shinra:wikidataId "Q461" ;
+    skos:notation "SHINRA_I002403" ; dcterms:created "2026-06-03"^^xsd:date .

@@ -1,0 +1,130 @@
+# ===========================================================================
+# shinra-architecture.ttl  — 建築・都市設計ドメイン (Phase 7-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/architecture>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 建築・都市設計ドメイン"@ja ,
+                    "Shinra Ontology — Architecture & Urban Design Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 建築様式・理論 ────────────────────────────────────────────────
+
+shinra:ArchitecturalStyle
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "建築様式"@ja ; rdfs:label "Architectural Style"@en ;
+    rdfs:comment "共通の形態・構造・装飾原理を持つ建築の歴史的・地域的分類。ゴシック・バロック・モダニズム・和風など。"@ja ;
+    rdfs:comment "A historical or regional classification of architecture sharing common formal, structural, and decorative principles, including Gothic, Baroque, Modernism, and Japanese style."@en ;
+    skos:notation "SHINRA_0002201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ArchitecturalElement
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "建築要素"@ja ; rdfs:label "Architectural Element"@en ;
+    rdfs:comment "建築物を構成する機能的・装飾的構成要素。柱・アーチ・ドーム・ファサード・扉・窓など。"@ja ;
+    rdfs:comment "A functional or decorative component constituting a building, including columns, arches, domes, facades, doors, and windows."@en ;
+    skos:notation "SHINRA_0002202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Monument
+    a owl:Class ; rdfs:subClassOf shinra:Building ;
+    rdfs:label "記念建築物"@ja ; rdfs:label "Monument"@en ;
+    skos:altLabel "モニュメント"@ja ;
+    rdfs:comment "歴史的・文化的・政治的重要性を持つ建築的構造物。凱旋門・戦争記念碑・世界遺産建造物など。"@ja ;
+    rdfs:comment "An architectural structure of historical, cultural, or political significance, including triumphal arches, war memorials, and World Heritage buildings."@en ;
+    skos:notation "SHINRA_0002203" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ArchitecturalDesign
+    a owl:Class ; rdfs:subClassOf shinra:CreationProcess ;
+    rdfs:label "建築設計"@ja ; rdfs:label "Architectural Design"@en ;
+    rdfs:comment "建築物の形態・機能・構造・環境性能を計画する創造的過程。概念設計・基本設計・実施設計など。"@ja ;
+    rdfs:comment "The creative process of planning the form, function, structure, and environmental performance of a building, including conceptual, schematic, and detailed design."@en ;
+    skos:notation "SHINRA_0002204" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 都市・空間計画 ────────────────────────────────────────────────
+
+shinra:UrbanPlanning
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "都市計画"@ja ; rdfs:label "Urban Planning"@en ;
+    skos:altLabel "まちづくり"@ja ;
+    rdfs:comment "都市の土地利用・交通・住宅・公共空間・インフラを計画・設計・管理する社会的過程。ゾーニング・総合計画など。"@ja ;
+    rdfs:comment "The social process of planning, designing, and managing urban land use, transportation, housing, public space, and infrastructure, including zoning and master planning."@en ;
+    skos:notation "SHINRA_0002211" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PublicSpace
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "公共空間"@ja ; rdfs:label "Public Space"@en ;
+    rdfs:comment "誰もが自由に使用・通行できる都市・地域の空間。広場・公園・歩行者道・海浜・図書館前庭など。"@ja ;
+    rdfs:comment "An urban or communal space freely accessible and usable by anyone, including plazas, parks, pedestrian streets, waterfronts, and library courtyards."@en ;
+    skos:notation "SHINRA_0002212" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Neighborhood
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "近隣地区"@ja ; rdfs:label "Neighborhood"@en ;
+    skos:altLabel "地区"@ja ;
+    rdfs:comment "共通のアイデンティティ・社会的絆・物理的境界を持つ都市内の居住区域。下町・商業地区・住宅街など。"@ja ;
+    rdfs:comment "A residential area within a city with shared identity, social bonds, and physical boundaries, including historic districts, commercial zones, and residential suburbs."@en ;
+    skos:notation "SHINRA_0002213" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LandUse
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "土地利用"@ja ; rdfs:label "Land Use"@en ;
+    rdfs:comment "土地の機能的分類・管理方法。住宅・商業・工業・農業・緑地・公共施設用地などのゾーニング区分。"@ja ;
+    rdfs:comment "The functional classification and management of land, including residential, commercial, industrial, agricultural, green space, and public facility zoning."@en ;
+    skos:notation "SHINRA_0002214" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SustainableDesign
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "持続可能な設計"@ja ; rdfs:label "Sustainable Design"@en ;
+    skos:altLabel "グリーン建築"@ja ;
+    rdfs:comment "環境負荷の低減・資源効率・居住者の健康を重視する建築・都市設計の原則・手法。ZEB・LEED・BREEAM認証など。"@ja ;
+    rdfs:comment "Design principles and methods emphasizing environmental load reduction, resource efficiency, and occupant health, including ZEB, LEED, and BREEAM certification."@en ;
+    skos:notation "SHINRA_0002215" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 建築プロパティ ────────────────────────────────────────────────
+
+shinra:hasArchitecturalStyle
+    a owl:ObjectProperty ;
+    rdfs:domain shinra:Building ;
+    rdfs:range  shinra:ArchitecturalStyle ;
+    rdfs:label  "建築様式"@ja ; rdfs:label "has architectural style"@en ;
+    rdfs:comment "建築物が属する建築様式との関係。"@ja ;
+    rdfs:comment "Relation between a building and the architectural style it belongs to."@en ;
+    skos:notation "SHINRA_R002201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:hasFloorArea
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Building ;
+    rdfs:range  xsd:decimal ;
+    rdfs:label  "延床面積"@ja ; rdfs:label "floor area"@en ;
+    rdfs:comment "建築物の延床面積（m²）。"@ja ;
+    rdfs:comment "The total floor area of a building in square metres."@en ;
+    skos:notation "SHINRA_D002201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:gothic-style-001
+    a shinra:ArchitecturalStyle ;
+    rdfs:label "ゴシック建築"@ja ; rdfs:label "Gothic Architecture"@en ;
+    shinra:wikidataId "Q46261" ;
+    skos:notation "SHINRA_I002201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:sagrada-familia-001
+    a shinra:Building ;
+    rdfs:label "サグラダ・ファミリア"@ja ; rdfs:label "Sagrada Família"@en ;
+    shinra:wikidataId "Q9329" ;
+    skos:notation "SHINRA_I002202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:bauhaus-001
+    a shinra:ArchitecturalStyle ;
+    rdfs:label "バウハウス"@ja ; rdfs:label "Bauhaus"@en ;
+    shinra:wikidataId "Q161524" ;
+    skos:notation "SHINRA_I002203" ; dcterms:created "2026-06-03"^^xsd:date .

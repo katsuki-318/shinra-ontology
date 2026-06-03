@@ -1,0 +1,147 @@
+# ===========================================================================
+# shinra-mathematics.ttl  — 数学詳細ドメイン (Phase 7-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/mathematics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 数学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Mathematics Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 数学の下位分野 ────────────────────────────────────────────────
+
+shinra:Geometry
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "幾何学"@ja ; rdfs:label "Geometry"@en ;
+    rdfs:comment "空間・形・大きさ・相対的位置を研究する数学の分野。ユークリッド幾何・非ユークリッド幾何・位相幾何・代数幾何など。"@ja ;
+    rdfs:comment "The mathematical field studying space, shape, size, and relative position, including Euclidean, non-Euclidean, topological, and algebraic geometry."@en ;
+    skos:notation "SHINRA_0002601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Algebra
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "代数学"@ja ; rdfs:label "Algebra"@en ;
+    rdfs:comment "演算・関係・構造を抽象的に研究する数学の分野。群論・環論・体論・線形代数・ホモロジー代数など。"@ja ;
+    rdfs:comment "The mathematical field studying operations, relations, and structures abstractly, including group theory, ring theory, field theory, linear algebra, and homological algebra."@en ;
+    skos:notation "SHINRA_0002602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Analysis
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "解析学"@ja ; rdfs:label "Mathematical Analysis"@en ;
+    skos:altLabel "微積分学"@ja ;
+    rdfs:comment "極限・連続・微分・積分・無限級数を研究する数学の分野。実解析・複素解析・汎関数解析・測度論など。"@ja ;
+    rdfs:comment "The mathematical field studying limits, continuity, differentiation, integration, and infinite series, including real analysis, complex analysis, functional analysis, and measure theory."@en ;
+    skos:notation "SHINRA_0002603" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Topology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "位相幾何学"@ja ; rdfs:label "Topology"@en ;
+    skos:altLabel "トポロジー"@ja ;
+    rdfs:comment "連続変換で保存される空間の性質を研究する数学の分野。位相空間・コンパクト性・連結性・ホモトピーなど。"@ja ;
+    rdfs:comment "The mathematical field studying properties of spaces preserved under continuous transformations, including topological spaces, compactness, connectedness, and homotopy."@en ;
+    skos:notation "SHINRA_0002604" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NumberTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "数論"@ja ; rdfs:label "Number Theory"@en ;
+    rdfs:comment "整数の性質を研究する数学の分野。素数・約数・合同式・ディオファントス方程式・代数的数論など。"@ja ;
+    rdfs:comment "The mathematical field studying properties of integers, including primes, divisibility, congruences, Diophantine equations, and algebraic number theory."@en ;
+    skos:notation "SHINRA_0002605" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Statistics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "統計学"@ja ; rdfs:label "Statistics"@en ;
+    rdfs:comment "データの収集・分析・解釈・提示を研究する数学の応用分野。記述統計・推測統計・ベイズ統計・多変量解析など。"@ja ;
+    rdfs:comment "The applied mathematical field studying data collection, analysis, interpretation, and presentation, including descriptive statistics, inferential statistics, Bayesian statistics, and multivariate analysis."@en ;
+    skos:notation "SHINRA_0002606" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Probability
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "確率論"@ja ; rdfs:label "Probability Theory"@en ;
+    rdfs:comment "不確実な事象の数学的モデルを研究する分野。確率空間・確率変数・期待値・確率過程・大数の法則など。"@ja ;
+    rdfs:comment "The mathematical field studying models of uncertain events, including probability spaces, random variables, expectation, stochastic processes, and the law of large numbers."@en ;
+    skos:notation "SHINRA_0002607" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CombinatoricsField
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "組合せ論"@ja ; rdfs:label "Combinatorics"@en ;
+    rdfs:comment "有限構造の数え上げ・存在・構成を研究する数学の分野。グラフ理論・計数組合せ論・離散最適化など。"@ja ;
+    rdfs:comment "The mathematical field studying counting, existence, and construction of finite structures, including graph theory, enumerative combinatorics, and discrete optimization."@en ;
+    skos:notation "SHINRA_0002608" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 数学的オブジェクト詳細 ───────────────────────────────────────
+
+shinra:GeometricObject
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "幾何学的対象"@ja ; rdfs:label "Geometric Object"@en ;
+    rdfs:comment "幾何学が研究する抽象的対象。点・直線・曲線・面・多面体・多様体・位相空間など。"@ja ;
+    rdfs:comment "Abstract objects studied in geometry, including points, lines, curves, surfaces, polyhedra, manifolds, and topological spaces."@en ;
+    skos:notation "SHINRA_0002611" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Equation
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalFormula ;
+    rdfs:label "方程式"@ja ; rdfs:label "Equation"@en ;
+    rdfs:comment "等号で結ばれた数学的表現。代数方程式・微分方程式・積分方程式・関数方程式など。"@ja ;
+    rdfs:comment "A mathematical expression connected by an equality sign, including algebraic equations, differential equations, integral equations, and functional equations."@en ;
+    skos:notation "SHINRA_0002612" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MathematicalSequence
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "数列"@ja ; rdfs:label "Mathematical Sequence"@en ;
+    skos:altLabel "列"@ja ;
+    rdfs:comment "順序付けられた数・対象の列。等差数列・等比数列・フィボナッチ数列・収束・発散など。"@ja ;
+    rdfs:comment "An ordered list of numbers or objects, including arithmetic, geometric, and Fibonacci sequences, and concepts of convergence and divergence."@en ;
+    skos:notation "SHINRA_0002613" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Manifold
+    a owl:Class ; rdfs:subClassOf shinra:GeometricObject ;
+    rdfs:label "多様体"@ja ; rdfs:label "Manifold"@en ;
+    rdfs:comment "局所的にユークリッド空間と同相な位相空間。曲線・曲面・リーマン多様体・微分多様体など。"@ja ;
+    rdfs:comment "A topological space locally homeomorphic to Euclidean space, including curves, surfaces, Riemannian manifolds, and smooth manifolds."@en ;
+    skos:notation "SHINRA_0002614" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 数学プロパティ ────────────────────────────────────────────────
+
+shinra:hasDimension
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:GeometricObject ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "次元"@ja ; rdfs:label "dimension"@en ;
+    rdfs:comment "幾何学的対象の次元数。0（点）・1（曲線）・2（曲面）・3（立体）・n（n次元多様体）。"@ja ;
+    rdfs:comment "The dimension of a geometric object: 0 (point), 1 (curve), 2 (surface), 3 (solid), n (n-dimensional manifold)."@en ;
+    skos:notation "SHINRA_D002601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:riemann-hypothesis-001
+    a shinra:Axiom ;
+    rdfs:label "リーマン予想"@ja ; rdfs:label "Riemann Hypothesis"@en ;
+    shinra:wikidataId "Q42984" ;
+    skos:notation "SHINRA_I002601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:euclid-elements-001
+    a shinra:ScientificPublication ;
+    rdfs:label "原論"@ja ; rdfs:label "Euclid's Elements"@en ;
+    shinra:wikidataId "Q175944" ;
+    skos:notation "SHINRA_I002602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:fermats-last-theorem-001
+    a shinra:Theorem ;
+    rdfs:label "フェルマーの最終定理"@ja ; rdfs:label "Fermat's Last Theorem"@en ;
+    shinra:wikidataId "Q208460" ;
+    skos:notation "SHINRA_I002603" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:fibonacci-sequence-001
+    a shinra:MathematicalSequence ;
+    rdfs:label "フィボナッチ数列"@ja ; rdfs:label "Fibonacci Sequence"@en ;
+    shinra:wikidataId "Q23835349" ;
+    skos:notation "SHINRA_I002604" ; dcterms:created "2026-06-03"^^xsd:date .

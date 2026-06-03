@@ -1,0 +1,114 @@
+# ===========================================================================
+# shinra-sociology.ttl  — 社会学詳細ドメイン (Phase 7-k)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/sociology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Sociology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 社会学の基本概念 ──────────────────────────────────────────────
+
+shinra:SocialStructure
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会構造"@ja ; rdfs:label "Social Structure"@en ;
+    rdfs:comment "社会における個人・集団・制度の持続的な関係パターン。階層・ネットワーク・制度的配置など。"@ja ;
+    rdfs:comment "The persistent pattern of relationships among individuals, groups, and institutions in society, including hierarchies, networks, and institutional arrangements."@en ;
+    skos:notation "SHINRA_0002701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialClass
+    a owl:Class ; rdfs:subClassOf shinra:SocialRole ;
+    rdfs:label "社会階級"@ja ; rdfs:label "Social Class"@en ;
+    skos:altLabel "階層"@ja ;
+    rdfs:comment "経済的資源・権力・社会的威信によって区分された社会集団。上流・中流・労働者・下層階級など。"@ja ;
+    rdfs:comment "A social group stratified by economic resources, power, and social prestige, including upper, middle, working, and lower classes."@en ;
+    skos:notation "SHINRA_0002702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialMobility
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "社会移動"@ja ; rdfs:label "Social Mobility"@en ;
+    rdfs:comment "個人・集団が社会階層内で地位を変化させる過程。上昇移動・下降移動・世代間移動・水平移動など。"@ja ;
+    rdfs:comment "The process by which individuals or groups change their position within the social hierarchy, including upward, downward, intergenerational, and horizontal mobility."@en ;
+    skos:notation "SHINRA_0002703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialNetwork
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会的ネットワーク"@ja ; rdfs:label "Social Network"@en ;
+    rdfs:comment "社会的行為者間の関係・相互作用のパターン。弱い紐帯・強い紐帯・ハブ・ブリッジ・社会関係資本など。"@ja ;
+    rdfs:comment "The pattern of relationships and interactions among social actors, including weak ties, strong ties, hubs, bridges, and social capital."@en ;
+    skos:notation "SHINRA_0002704" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Socialization
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "社会化"@ja ; rdfs:label "Socialization"@en ;
+    rdfs:comment "個人が社会の規範・価値・役割を内面化する過程。一次社会化（家族）・二次社会化（学校・職場）など。"@ja ;
+    rdfs:comment "The process by which individuals internalize the norms, values, and roles of society, including primary socialization (family) and secondary socialization (school, workplace)."@en ;
+    skos:notation "SHINRA_0002705" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialMovement
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "社会運動"@ja ; rdfs:label "Social Movement"@en ;
+    rdfs:comment "社会変革を目指す集合的・組織的行動。公民権運動・環境運動・フェミニズム運動・労働運動など。"@ja ;
+    rdfs:comment "Collective and organized action aimed at social change, including civil rights, environmental, feminist, and labor movements."@en ;
+    skos:notation "SHINRA_0002706" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Inequality
+    a owl:Class ; rdfs:subClassOf shinra:SocialQuality ;
+    rdfs:label "社会的不平等"@ja ; rdfs:label "Social Inequality"@en ;
+    skos:altLabel "格差"@ja ;
+    rdfs:comment "社会における資源・機会・権力の不均等な分配状態。所得格差・ジェンダー不平等・人種差別・教育格差など。"@ja ;
+    rdfs:comment "The unequal distribution of resources, opportunities, and power in society, including income inequality, gender inequality, racial discrimination, and educational disparities."@en ;
+    skos:notation "SHINRA_0002707" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Deviance
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "逸脱"@ja ; rdfs:label "Deviance"@en ;
+    rdfs:comment "社会規範・期待から逸脱した行動・状態。犯罪・スティグマ・ラベリング理論・アノミーなどと関連。"@ja ;
+    rdfs:comment "Behavior or states that deviate from social norms and expectations, related to crime, stigma, labeling theory, and anomie."@en ;
+    skos:notation "SHINRA_0002708" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Culture
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文化"@ja ; rdfs:label "Culture"@en ;
+    rdfs:comment "集団が共有する価値・規範・信念・慣習・象徴・物質的産物の総体。高文化・大衆文化・サブカルチャーなど。"@ja ;
+    rdfs:comment "The totality of values, norms, beliefs, practices, symbols, and material products shared by a group, including high culture, popular culture, and subculture."@en ;
+    skos:notation "SHINRA_0002709" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Globalization
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "グローバル化"@ja ; rdfs:label "Globalization"@en ;
+    skos:altLabel "グローバリゼーション"@ja ;
+    rdfs:comment "経済・文化・政治・技術が国境を超えて統合・拡散する過程。経済グローバル化・文化的均質化・反グローバリズムなど。"@ja ;
+    rdfs:comment "The process of integrating and diffusing economic, cultural, political, and technological systems across national borders, including economic globalization, cultural homogenization, and anti-globalism."@en ;
+    skos:notation "SHINRA_0002710" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:civil-rights-movement-001
+    a shinra:SocialMovement ;
+    rdfs:label "公民権運動"@ja ; rdfs:label "Civil Rights Movement"@en ;
+    shinra:wikidataId "Q41690" ;
+    skos:notation "SHINRA_I002701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:feminism-001
+    a shinra:SocialMovement ;
+    rdfs:label "フェミニズム"@ja ; rdfs:label "Feminism"@en ;
+    shinra:wikidataId "Q7252" ;
+    skos:notation "SHINRA_I002702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:gini-coefficient-001
+    a shinra:EconomicIndicator ;
+    rdfs:label "ジニ係数"@ja ; rdfs:label "Gini Coefficient"@en ;
+    shinra:wikidataId "Q474068" ;
+    skos:notation "SHINRA_I002703" ; dcterms:created "2026-06-03"^^xsd:date .

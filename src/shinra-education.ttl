@@ -1,0 +1,138 @@
+# ===========================================================================
+# shinra-education.ttl  — 教育・学習科学ドメイン (Phase 7-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/education>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 教育・学習科学ドメイン"@ja ,
+                    "Shinra Ontology — Education & Learning Science Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 教育の理論・方法 ──────────────────────────────────────────────
+
+shinra:Pedagogy
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "教授学"@ja ; rdfs:label "Pedagogy"@en ;
+    skos:altLabel "教育学"@ja ;
+    rdfs:comment "教授・学習の理論・方法・実践を研究する学問。構成主義・行動主義・社会文化的学習理論など。"@ja ;
+    rdfs:comment "The study of the theory, methods, and practice of teaching and learning, including constructivism, behaviorism, and sociocultural learning theory."@en ;
+    skos:notation "SHINRA_0002301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LearningTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "学習理論"@ja ; rdfs:label "Learning Theory"@en ;
+    rdfs:comment "学習がどのように起こるかを説明する理論体系。認知的学習理論・行動主義・人本主義・コネクティビズムなど。"@ja ;
+    rdfs:comment "A theoretical framework explaining how learning occurs, including cognitive, behavioral, humanistic, and connectivist learning theories."@en ;
+    skos:notation "SHINRA_0002302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InstructionalDesign
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "教授設計"@ja ; rdfs:label "Instructional Design"@en ;
+    skos:altLabel "インストラクショナルデザイン"@ja ;
+    rdfs:comment "学習目標の達成を最適化するための教授・学習経験を体系的に設計する原則・方法。ADDIE・ガニェの9教授事象など。"@ja ;
+    rdfs:comment "The systematic design of teaching and learning experiences to optimize achievement of learning objectives, including the ADDIE model and Gagné's nine events of instruction."@en ;
+    skos:notation "SHINRA_0002303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Assessment
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "評価"@ja ; rdfs:label "Assessment"@en ;
+    skos:altLabel "学習評価"@ja ;
+    rdfs:comment "学習者の知識・技能・態度を測定・評価する過程。形成的評価・総括的評価・真正評価・ルーブリック評価など。"@ja ;
+    rdfs:comment "The process of measuring and evaluating learners' knowledge, skills, and attitudes, including formative, summative, authentic, and rubric-based assessment."@en ;
+    skos:notation "SHINRA_0002304" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 教育制度・機関 ────────────────────────────────────────────────
+
+shinra:EducationSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "教育制度"@ja ; rdfs:label "Education System"@en ;
+    rdfs:comment "社会における教育の提供・管理・規制の体系。初等・中等・高等・職業・生涯教育などのレベルと制度。"@ja ;
+    rdfs:comment "The system of providing, managing, and regulating education in society, encompassing primary, secondary, higher, vocational, and lifelong education."@en ;
+    skos:notation "SHINRA_0002311" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AcademicDegree
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "学位"@ja ; rdfs:label "Academic Degree"@en ;
+    rdfs:comment "高等教育機関が授与する学術的資格。学士・修士・博士・専門職学位など。"@ja ;
+    rdfs:comment "An academic qualification awarded by a higher education institution, including bachelor's, master's, doctoral, and professional degrees."@en ;
+    skos:notation "SHINRA_0002312" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Scholarship
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "奨学金"@ja ; rdfs:label "Scholarship"@en ;
+    rdfs:comment "学業・研究を支援するための財政的援助。給付型奨学金・貸与型奨学金・フェローシップなど。"@ja ;
+    rdfs:comment "Financial assistance supporting academic study or research, including grants, loans, and fellowships."@en ;
+    skos:notation "SHINRA_0002313" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 教育過程 ─────────────────────────────────────────────────────
+
+shinra:Teaching
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "教授行為"@ja ; rdfs:label "Teaching"@en ;
+    skos:altLabel "指導"@ja ;
+    rdfs:comment "知識・技能・価値を他者に伝達・促進する意図的行為。講義・演習・実験・対話・コーチングなど。"@ja ;
+    rdfs:comment "An intentional act of transmitting or facilitating knowledge, skills, and values in others, including lecturing, exercises, experiments, dialogue, and coaching."@en ;
+    skos:notation "SHINRA_0002321" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ELearning
+    a owl:Class ; rdfs:subClassOf shinra:EducationalProcess ;
+    rdfs:label "eラーニング"@ja ; rdfs:label "E-Learning"@en ;
+    skos:altLabel "オンライン学習"@ja ;
+    rdfs:comment "デジタル技術・インターネットを活用した学習形態。MOOC・LMS・フリップドクラスルーム・適応学習など。"@ja ;
+    rdfs:comment "A learning modality leveraging digital technology and the internet, including MOOCs, LMS, flipped classrooms, and adaptive learning."@en ;
+    skos:notation "SHINRA_0002322" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LiteracySkill
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "リテラシー"@ja ; rdfs:label "Literacy Skill"@en ;
+    skos:altLabel "識字能力"@ja ;
+    rdfs:comment "特定の分野を理解・活用する基礎的能力。読み書き能力・数的リテラシー・情報リテラシー・メディアリテラシーなど。"@ja ;
+    rdfs:comment "A foundational capability to understand and use knowledge in a specific domain, including reading/writing literacy, numeracy, information literacy, and media literacy."@en ;
+    skos:notation "SHINRA_0002323" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CriticalThinking
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "批判的思考"@ja ; rdfs:label "Critical Thinking"@en ;
+    rdfs:comment "証拠・論理・文脈を評価し合理的判断を下す知的能力。分析・評価・推論・解釈・説明・自己調整を含む。"@ja ;
+    rdfs:comment "The intellectual capacity to evaluate evidence, logic, and context to make reasoned judgments, including analysis, evaluation, inference, interpretation, explanation, and self-regulation."@en ;
+    skos:notation "SHINRA_0002324" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 教育プロパティ ────────────────────────────────────────────────
+
+shinra:hasEducationLevel
+    a owl:DatatypeProperty ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "教育段階"@ja ; rdfs:label "education level"@en ;
+    rdfs:comment "教育の段階。'primary' / 'secondary' / 'tertiary' / 'vocational' / 'lifelong'。"@ja ;
+    rdfs:comment "The level of education: 'primary', 'secondary', 'tertiary', 'vocational', or 'lifelong'."@en ;
+    skos:notation "SHINRA_D002301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:mooc-001
+    a shinra:ELearning ;
+    rdfs:label "MOOC（大規模公開オンライン講座）"@ja ; rdfs:label "Massive Open Online Course"@en ;
+    shinra:wikidataId "Q1361660" ;
+    skos:notation "SHINRA_I002301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:montessori-001
+    a shinra:LearningTheory ;
+    rdfs:label "モンテッソーリ教育"@ja ; rdfs:label "Montessori Education"@en ;
+    shinra:wikidataId "Q37044" ;
+    skos:notation "SHINRA_I002302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:phd-001
+    a shinra:AcademicDegree ;
+    rdfs:label "博士号"@ja ; rdfs:label "Doctor of Philosophy"@en ;
+    shinra:wikidataId "Q849697" ;
+    skos:notation "SHINRA_I002303" ; dcterms:created "2026-06-03"^^xsd:date .
