@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-urban-studies.ttl  — 都市研究・都市社会学ドメイン (Phase 8-m)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/urban-studies>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 都市研究・都市社会学ドメイン"@ja ,
+                    "Shinra Ontology — Urban Studies & Urban Sociology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Megacity
+    a owl:Class ; rdfs:subClassOf shinra:City ;
+    rdfs:label "メガシティ"@ja ; rdfs:label "Megacity"@en ;
+    rdfs:comment "人口1000万人以上の超大規模都市圏。東京・上海・ムンバイ・ニューヨーク・ラゴスなど。"@ja ;
+    rdfs:comment "An urban agglomeration with a population exceeding 10 million, including Tokyo, Shanghai, Mumbai, New York, and Lagos."@en ;
+    skos:notation "SHINRA_0005501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SmartCity
+    a owl:Class ; rdfs:subClassOf shinra:City ;
+    rdfs:label "スマートシティ"@ja ; rdfs:label "Smart City"@en ;
+    rdfs:comment "ICT・データ・センサを活用してインフラ・サービスを最適化する都市。IoT・ビッグデータ・AIによる交通・エネルギー管理など。"@ja ;
+    rdfs:comment "A city optimizing infrastructure and services through ICT, data, and sensors, including IoT-based traffic and energy management using big data and AI."@en ;
+    skos:notation "SHINRA_0005502" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Gentrification
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "ジェントリフィケーション"@ja ; rdfs:label "Gentrification"@en ;
+    rdfs:comment "低所得者層の居住地区が高所得層に再開発・置き換えられる都市変容過程。住民立退き・文化的変容・地価上昇など。"@ja ;
+    rdfs:comment "The urban transformation process in which lower-income residential areas are redeveloped and replaced by higher-income residents, including displacement, cultural change, and rising property values."@en ;
+    skos:notation "SHINRA_0005503" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:UrbanInformalSettlement
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "インフォーマル居住地"@ja ; rdfs:label "Urban Informal Settlement"@en ;
+    skos:altLabel "スラム"@ja ;
+    rdfs:comment "法的権利・十分なインフラなしに形成された都市居住地。スラム・バラック・ファベーラ・非公式集落など。"@ja ;
+    rdfs:comment "An urban settlement formed without legal tenure or adequate infrastructure, including slums, shantytowns, favelas, and squatter settlements."@en ;
+    skos:notation "SHINRA_0005504" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PublicTransport
+    a owl:Class ; rdfs:subClassOf shinra:Infrastructure ;
+    rdfs:label "公共交通"@ja ; rdfs:label "Public Transport"@en ;
+    skos:altLabel "公共交通機関"@ja ;
+    rdfs:comment "多数の乗客を共有路線・時刻表に従って輸送するシステム。鉄道・地下鉄・バス・トラム・フェリーなど。"@ja ;
+    rdfs:comment "A system transporting multiple passengers along shared routes and schedules, including railways, subways, buses, trams, and ferries."@en ;
+    skos:notation "SHINRA_0005505" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SocialCohesion
+    a owl:Class ; rdfs:subClassOf shinra:SocialQuality ;
+    rdfs:label "社会的結束"@ja ; rdfs:label "Social Cohesion"@en ;
+    rdfs:comment "共同体成員間の連帯感・信頼・帰属意識の強さ。社会資本・近隣効果・共同体の絆などと関連する。"@ja ;
+    rdfs:comment "The strength of solidarity, trust, and belonging among community members, related to social capital, neighborhood effects, and community bonds."@en ;
+    skos:notation "SHINRA_0005506" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:tokyo-metropolis-001
+    a shinra:Megacity ;
+    rdfs:label "東京都市圏"@ja ; rdfs:label "Greater Tokyo Area"@en ;
+    shinra:wikidataId "Q1490" ;
+    skos:notation "SHINRA_I005501" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:songdo-001
+    a shinra:SmartCity ;
+    rdfs:label "松島国際都市"@ja ; rdfs:label "Songdo International Business District"@en ;
+    shinra:wikidataId "Q493502" ;
+    skos:notation "SHINRA_I005502" ; dcterms:created "2026-06-03"^^xsd:date .

@@ -1,0 +1,90 @@
+# ===========================================================================
+# shinra-literature.ttl  — 文学・比較文学ドメイン (Phase 8-n)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/literature>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 文学・比較文学ドメイン"@ja ,
+                    "Shinra Ontology — Literature & Comparative Literature Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LiteraryGenre
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文学ジャンル"@ja ; rdfs:label "Literary Genre"@en ;
+    rdfs:comment "共通の形式・主題・慣習で区分される文学の種類。詩・小説・戯曲・随筆・短編・SF・ミステリーなど。"@ja ;
+    rdfs:comment "A category of literature distinguished by common form, themes, and conventions, including poetry, novel, drama, essay, short story, science fiction, and mystery."@en ;
+    skos:notation "SHINRA_0005601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LiteraryMovement
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文学運動"@ja ; rdfs:label "Literary Movement"@en ;
+    skos:altLabel "文学様式"@ja ;
+    rdfs:comment "共通の美学・思想・技法で結びついた作家・作品の歴史的潮流。ロマン主義・自然主義・モダニズム・ポストモダニズムなど。"@ja ;
+    rdfs:comment "A historical current of writers and works sharing common aesthetics, philosophy, or technique, including Romanticism, Naturalism, Modernism, and Postmodernism."@en ;
+    skos:notation "SHINRA_0005602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:NarrativeTechnique
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "語りの技法"@ja ; rdfs:label "Narrative Technique"@en ;
+    skos:altLabel "叙述技法"@ja ;
+    rdfs:comment "物語を構成・伝達する文学的手法。一人称・三人称・信頼できない語り手・意識の流れ・額縁構造など。"@ja ;
+    rdfs:comment "Literary methods of constructing and communicating narrative, including first-person, third-person, unreliable narrator, stream of consciousness, and frame narrative."@en ;
+    skos:notation "SHINRA_0005603" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LiteraryTheme
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文学的主題"@ja ; rdfs:label "Literary Theme"@en ;
+    rdfs:comment "文学作品が繰り返し探求する中心的問題・思想。愛と死・個人と社会・記憶と忘却・善悪・成長など。"@ja ;
+    rdfs:comment "A central problem or idea a literary work repeatedly explores, including love and death, individual and society, memory and forgetting, good and evil, and growth."@en ;
+    skos:notation "SHINRA_0005604" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:LiteraryCanon
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文学的正典"@ja ; rdfs:label "Literary Canon"@en ;
+    skos:altLabel "カノン"@ja ;
+    rdfs:comment "特定の文化・言語圏で権威ある・研究・教育の対象として認められた作品群。西洋文学正典・日本古典正典など。"@ja ;
+    rdfs:comment "A body of works recognized as authoritative and worthy of study and teaching in a particular culture or language tradition, including the Western literary canon and Japanese classical canon."@en ;
+    skos:notation "SHINRA_0005605" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Translation_Literary
+    a owl:Class ; rdfs:subClassOf shinra:ArtWork ;
+    rdfs:label "文学翻訳"@ja ; rdfs:label "Literary Translation"@en ;
+    rdfs:comment "文学作品を別の言語に移し替える創造的実践。等価性・翻訳不可能性・翻訳の倫理・世界文学との関係など。"@ja ;
+    rdfs:comment "The creative practice of transposing a literary work into another language, related to equivalence, untranslatability, ethics of translation, and world literature."@en ;
+    skos:notation "SHINRA_0005606" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FolkLiterature
+    a owl:Class ; rdfs:subClassOf shinra:TextualEntity ;
+    rdfs:label "民間文学"@ja ; rdfs:label "Folk Literature"@en ;
+    skos:altLabel "民話・伝承文学"@ja ;
+    rdfs:comment "特定の集団に口承・書承で伝わる物語・詩・歌の体系。神話・伝説・昔話・民話・叙事詩など。"@ja ;
+    rdfs:comment "A body of stories, poems, and songs transmitted orally or in writing within a particular community, including myths, legends, fairy tales, folk tales, and epics."@en ;
+    skos:notation "SHINRA_0005607" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:don-quixote-001
+    a shinra:Book ;
+    rdfs:label "ドン・キホーテ"@ja ; rdfs:label "Don Quixote"@en ;
+    shinra:wikidataId "Q480" ;
+    skos:notation "SHINRA_I005601" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:one-thousand-nights-001
+    a shinra:FolkLiterature ;
+    rdfs:label "千夜一夜物語"@ja ; rdfs:label "One Thousand and One Nights"@en ;
+    shinra:wikidataId "Q8258" ;
+    skos:notation "SHINRA_I005602" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:modernism-lit-001
+    a shinra:LiteraryMovement ;
+    rdfs:label "文学的モダニズム"@ja ; rdfs:label "Literary Modernism"@en ;
+    shinra:wikidataId "Q1428" ;
+    skos:notation "SHINRA_I005603" ; dcterms:created "2026-06-03"^^xsd:date .

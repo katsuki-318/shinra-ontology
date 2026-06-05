@@ -1,0 +1,77 @@
+# ===========================================================================
+# shinra-mental-health.ttl  — 精神保健・臨床心理ドメイン (Phase 8-l)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/mental-health>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 精神保健・臨床心理ドメイン"@ja ,
+                    "Shinra Ontology — Mental Health & Clinical Psychology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Psychotherapy
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "心理療法"@ja ; rdfs:label "Psychotherapy"@en ;
+    rdfs:comment "心理的問題・精神疾患を言語・行動・関係を通じて治療する専門的実践。CBT・精神分析・人本主義療法・DBTなど。"@ja ;
+    rdfs:comment "A professional practice treating psychological problems and mental disorders through language, behavior, and relationship, including CBT, psychoanalysis, humanistic therapy, and DBT."@en ;
+    skos:notation "SHINRA_0005401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Trauma
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "トラウマ"@ja ; rdfs:label "Trauma"@en ;
+    skos:altLabel "心的外傷"@ja ;
+    rdfs:comment "圧倒的な出来事による持続的な心理的傷つき。PTSD・複雑性PTSD・トラウマインフォームドケアなど。"@ja ;
+    rdfs:comment "Persistent psychological wounding from overwhelming events, including PTSD, complex PTSD, and trauma-informed care."@en ;
+    skos:notation "SHINRA_0005402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Resilience
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "レジリエンス"@ja ; rdfs:label "Resilience"@en ;
+    skos:altLabel "回復力"@ja ;
+    rdfs:comment "逆境・困難・トラウマから適応的に回復する心理的能力。保護因子・ストレス耐性・ポスト外傷的成長など。"@ja ;
+    rdfs:comment "The psychological capacity to adaptively recover from adversity, hardship, or trauma, including protective factors, stress tolerance, and post-traumatic growth."@en ;
+    skos:notation "SHINRA_0005403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Wellbeing
+    a owl:Class ; rdfs:subClassOf shinra:Quality ;
+    rdfs:label "ウェルビーイング"@ja ; rdfs:label "Wellbeing"@en ;
+    skos:altLabel "幸福感"@ja ;
+    rdfs:comment "身体・精神・社会的に良好な状態。主観的幸福感・心理的幸福感・ポジティブ感情・生活満足度など。"@ja ;
+    rdfs:comment "A state of physical, psychological, and social flourishing, including subjective wellbeing, psychological wellbeing, positive emotions, and life satisfaction."@en ;
+    skos:notation "SHINRA_0005404" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AnxietyDisorder
+    a owl:Class ; rdfs:subClassOf shinra:MentalDisorder ;
+    rdfs:label "不安障害"@ja ; rdfs:label "Anxiety Disorder"@en ;
+    rdfs:comment "過度・持続的な不安・恐怖を特徴とする精神疾患群。全般性不安障害・パニック障害・社交不安・恐怖症など。"@ja ;
+    rdfs:comment "A group of mental disorders characterized by excessive and persistent anxiety or fear, including generalized anxiety disorder, panic disorder, social anxiety, and phobias."@en ;
+    skos:notation "SHINRA_0005405" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Addiction
+    a owl:Class ; rdfs:subClassOf shinra:MentalDisorder ;
+    rdfs:label "依存症"@ja ; rdfs:label "Addiction"@en ;
+    skos:altLabel "嗜癖"@ja ;
+    rdfs:comment "物質・行動への強迫的な使用・関与と制御困難を特徴とする状態。アルコール・薬物・ゲーム・ギャンブル依存など。"@ja ;
+    rdfs:comment "A condition characterized by compulsive use of or involvement with a substance or behavior despite loss of control, including alcohol, drug, gaming, and gambling addiction."@en ;
+    skos:notation "SHINRA_0005406" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:cbt-001
+    a shinra:Psychotherapy ;
+    rdfs:label "認知行動療法"@ja ; rdfs:label "Cognitive Behavioral Therapy"@en ;
+    shinra:wikidataId "Q474193" ;
+    skos:notation "SHINRA_I005401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:ptsd-001
+    a shinra:Trauma ;
+    rdfs:label "心的外傷後ストレス障害"@ja ; rdfs:label "Post-Traumatic Stress Disorder"@en ;
+    shinra:wikidataId "Q202387" ;
+    skos:notation "SHINRA_I005402" ; dcterms:created "2026-06-03"^^xsd:date .

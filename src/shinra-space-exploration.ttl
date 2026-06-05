@@ -1,0 +1,80 @@
+# ===========================================================================
+# shinra-space-exploration.ttl  — 宇宙探査・宇宙工学ドメイン (Phase 8-k)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/space-exploration>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 宇宙探査・宇宙工学ドメイン"@ja ,
+                    "Shinra Ontology — Space Exploration & Astronautics Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Spacecraft
+    a owl:Class ; rdfs:subClassOf shinra:Vehicle ;
+    rdfs:label "宇宙機"@ja ; rdfs:label "Spacecraft"@en ;
+    rdfs:comment "宇宙空間を飛行するために設計された人工物。人工衛星・探査機・宇宙船・宇宙ステーションなど。"@ja ;
+    rdfs:comment "An artifact designed to fly in outer space, including artificial satellites, probes, crewed spacecraft, and space stations."@en ;
+    skos:notation "SHINRA_0005301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:RocketPropulsion
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "ロケット推進"@ja ; rdfs:label "Rocket Propulsion"@en ;
+    rdfs:comment "推進剤の燃焼・噴射によって宇宙機を加速する技術。化学推進・電気推進・核推進・太陽光圧推進など。"@ja ;
+    rdfs:comment "Technology accelerating spacecraft through combustion and ejection of propellant, including chemical, electric, nuclear, and solar sail propulsion."@en ;
+    skos:notation "SHINRA_0005302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SpaceMission
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "宇宙ミッション"@ja ; rdfs:label "Space Mission"@en ;
+    rdfs:comment "特定の科学・技術・探査目的で遂行される宇宙活動。月探査・火星探査・惑星探査・有人宇宙飛行など。"@ja ;
+    rdfs:comment "A space activity conducted for specific scientific, technological, or exploration purposes, including lunar, Mars, and planetary missions, and crewed spaceflight."@en ;
+    skos:notation "SHINRA_0005303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SpaceDebris
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "宇宙デブリ"@ja ; rdfs:label "Space Debris"@en ;
+    skos:altLabel "スペースデブリ"@ja ;
+    rdfs:comment "地球軌道上に漂う廃棄された人工物・破片。衝突リスク・ケスラーシンドローム・軌道汚染など。"@ja ;
+    rdfs:comment "Discarded artificial objects and fragments orbiting Earth, related to collision risk, Kessler syndrome, and orbital pollution."@en ;
+    skos:notation "SHINRA_0005304" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Orbit
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "軌道"@ja ; rdfs:label "Orbit"@en ;
+    rdfs:comment "天体・宇宙機が重力によって周回する曲線経路。低軌道・静止軌道・月軌道・惑星間軌道など。"@ja ;
+    rdfs:comment "A curved path traced by a celestial body or spacecraft under gravity, including low Earth orbit, geostationary orbit, lunar orbit, and interplanetary trajectories."@en ;
+    skos:notation "SHINRA_0005305" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SpaceAgency
+    a owl:Class ; rdfs:subClassOf shinra:GovernmentBody ;
+    rdfs:label "宇宙機関"@ja ; rdfs:label "Space Agency"@en ;
+    rdfs:comment "宇宙探査・利用を担当する政府機関。NASA・ESA・JAXA・Roscosmos・CNSA・ISROなど。"@ja ;
+    rdfs:comment "A government body responsible for space exploration and utilization, including NASA, ESA, JAXA, Roscosmos, CNSA, and ISRO."@en ;
+    skos:notation "SHINRA_0005306" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:iss-001
+    a shinra:Spacecraft ;
+    rdfs:label "国際宇宙ステーション"@ja ; rdfs:label "International Space Station"@en ;
+    shinra:wikidataId "Q259463" ;
+    skos:notation "SHINRA_I005301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:apollo-11-001
+    a shinra:SpaceMission ;
+    rdfs:label "アポロ11号"@ja ; rdfs:label "Apollo 11"@en ;
+    shinra:wikidataId "Q182252" ;
+    skos:notation "SHINRA_I005302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:nasa-001
+    a shinra:SpaceAgency ;
+    rdfs:label "NASA"@ja ; rdfs:label "NASA"@en ;
+    shinra:wikidataId "Q23548" ;
+    skos:notation "SHINRA_I005303" ; dcterms:created "2026-06-03"^^xsd:date .

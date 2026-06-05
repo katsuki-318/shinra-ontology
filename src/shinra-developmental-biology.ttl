@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-developmental-biology.ttl  — 発生生物学ドメイン (Phase 8-o)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/developmental-biology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 発生生物学ドメイン"@ja ,
+                    "Shinra Ontology — Developmental Biology Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Embryo
+    a owl:Class ; rdfs:subClassOf shinra:Organism ;
+    rdfs:label "胚"@ja ; rdfs:label "Embryo"@en ;
+    rdfs:comment "受精卵から初期器官形成までの発生段階にある生物体。受精卵・桑実胚・胚盤胞・原腸胚など。"@ja ;
+    rdfs:comment "An organism in early developmental stages from fertilized egg to initial organogenesis, including zygote, morula, blastocyst, and gastrula."@en ;
+    skos:notation "SHINRA_0005701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:StemCell
+    a owl:Class ; rdfs:subClassOf shinra:Cell ;
+    rdfs:label "幹細胞"@ja ; rdfs:label "Stem Cell"@en ;
+    rdfs:comment "自己複製能と多分化能を持つ未分化細胞。胚性幹細胞・成体幹細胞・iPS細胞・造血幹細胞など。"@ja ;
+    rdfs:comment "An undifferentiated cell with self-renewal capacity and potential for differentiation, including embryonic stem cells, adult stem cells, iPS cells, and hematopoietic stem cells."@en ;
+    skos:notation "SHINRA_0005702" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CellDifferentiation
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "細胞分化"@ja ; rdfs:label "Cell Differentiation"@en ;
+    rdfs:comment "未分化細胞が特定の機能・形態を持つ細胞型に変化する過程。遺伝子発現制御・転写因子・細胞運命決定など。"@ja ;
+    rdfs:comment "The process by which undifferentiated cells change into specific cell types with distinct functions and morphologies, involving gene expression regulation, transcription factors, and cell fate determination."@en ;
+    skos:notation "SHINRA_0005703" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Organogenesis
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "器官形成"@ja ; rdfs:label "Organogenesis"@en ;
+    rdfs:comment "胚発生過程で器官が形成される段階。心臓形成・神経管閉鎖・四肢発生・形態形成運動など。"@ja ;
+    rdfs:comment "The stage in embryonic development when organs are formed, including cardiogenesis, neural tube closure, limb development, and morphogenetic movements."@en ;
+    skos:notation "SHINRA_0005704" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:RegenerativeMedicine
+    a owl:Class ; rdfs:subClassOf shinra:MedicalTechnology ;
+    rdfs:label "再生医療"@ja ; rdfs:label "Regenerative Medicine"@en ;
+    rdfs:comment "損傷・疾患組織の修復・再生・置換を目的とする医療技術分野。幹細胞治療・組織工学・臓器再生・iPS細胞応用など。"@ja ;
+    rdfs:comment "A medical technology field aiming to repair, regenerate, or replace damaged or diseased tissues, including stem cell therapy, tissue engineering, organ regeneration, and iPS cell applications."@en ;
+    skos:notation "SHINRA_0005705" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:ips-cells-001
+    a shinra:StemCell ;
+    rdfs:label "人工多能性幹細胞"@ja ; rdfs:label "Induced Pluripotent Stem Cells"@en ;
+    shinra:wikidataId "Q179571" ;
+    skos:notation "SHINRA_I005701" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:dolly-001
+    a shinra:Organism ;
+    rdfs:label "ドリー（クローン羊）"@ja ; rdfs:label "Dolly the Sheep"@en ;
+    shinra:wikidataId "Q82647" ;
+    skos:notation "SHINRA_I005702" ; dcterms:created "2026-06-03"^^xsd:date .

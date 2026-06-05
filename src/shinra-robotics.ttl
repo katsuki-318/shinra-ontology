@@ -1,0 +1,81 @@
+# ===========================================================================
+# shinra-robotics.ttl  — ロボット工学・自動化ドメイン (Phase 8-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/robotics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — ロボット工学・自動化ドメイン"@ja ,
+                    "Shinra Ontology — Robotics & Automation Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Robot
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "ロボット"@ja ; rdfs:label "Robot"@en ;
+    rdfs:comment "センサ・アクチュエータ・制御システムを持ち自律的または半自律的に作業を実行する機械。産業用・サービス用・ヒューマノイドなど。"@ja ;
+    rdfs:comment "A machine with sensors, actuators, and a control system that performs tasks autonomously or semi-autonomously, including industrial, service, and humanoid robots."@en ;
+    skos:notation "SHINRA_0005201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Actuator
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "アクチュエータ"@ja ; rdfs:label "Actuator"@en ;
+    rdfs:comment "電気・油圧・空気圧エネルギーを機械的運動に変換する装置。モータ・油圧シリンダ・人工筋肉など。"@ja ;
+    rdfs:comment "A device converting electrical, hydraulic, or pneumatic energy into mechanical motion, including motors, hydraulic cylinders, and artificial muscles."@en ;
+    skos:notation "SHINRA_0005202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Sensor
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "センサ"@ja ; rdfs:label "Sensor"@en ;
+    rdfs:comment "物理量・化学量を計測し信号に変換する装置。カメラ・LiDAR・IMU・温度センサ・力覚センサなど。"@ja ;
+    rdfs:comment "A device measuring and converting physical or chemical quantities into signals, including cameras, LiDAR, IMU, temperature sensors, and force sensors."@en ;
+    skos:notation "SHINRA_0005203" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:AutonomousSystem
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "自律システム"@ja ; rdfs:label "Autonomous System"@en ;
+    rdfs:comment "人間の介入なしに環境を認識・判断・行動できるシステム。自動運転車・無人航空機・自律ロボットなど。"@ja ;
+    rdfs:comment "A system capable of perceiving, deciding, and acting in its environment without human intervention, including self-driving cars, unmanned aerial vehicles, and autonomous robots."@en ;
+    skos:notation "SHINRA_0005204" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ControlSystem
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "制御システム"@ja ; rdfs:label "Control System"@en ;
+    rdfs:comment "動的システムの挙動を望ましい状態に制御する技術体系。PID制御・フィードバック制御・最適制御・適応制御など。"@ja ;
+    rdfs:comment "A technology system controlling the behavior of dynamic systems toward desired states, including PID control, feedback control, optimal control, and adaptive control."@en ;
+    skos:notation "SHINRA_0005205" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HumanRobotInteraction
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "人間ロボット相互作用"@ja ; rdfs:label "Human-Robot Interaction"@en ;
+    skos:altLabel "HRI"@ja ;
+    rdfs:comment "人間とロボットの協働・コミュニケーション・信頼関係を研究・設計する分野。ソーシャルロボット・共同作業・安全設計など。"@ja ;
+    rdfs:comment "The field studying and designing collaboration, communication, and trust between humans and robots, including social robots, collaborative work, and safety design."@en ;
+    skos:notation "SHINRA_0005206" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ManufacturingProcess
+    a owl:Class ; rdfs:subClassOf shinra:TransformationProcess ;
+    rdfs:label "製造プロセス"@ja ; rdfs:label "Manufacturing Process"@en ;
+    rdfs:comment "原材料を製品に変換する工業的過程。切削・溶接・鋳造・積層造形（3Dプリント）・組み立てなど。"@ja ;
+    rdfs:comment "An industrial process transforming raw materials into products, including machining, welding, casting, additive manufacturing (3D printing), and assembly."@en ;
+    skos:notation "SHINRA_0005207" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:industrial-robot-001
+    a shinra:Robot ;
+    rdfs:label "産業用ロボット"@ja ; rdfs:label "Industrial Robot"@en ;
+    shinra:wikidataId "Q127430" ;
+    skos:notation "SHINRA_I005201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:self-driving-car-001
+    a shinra:AutonomousSystem ;
+    rdfs:label "自動運転車"@ja ; rdfs:label "Self-Driving Car"@en ;
+    shinra:wikidataId "Q1080705" ;
+    skos:notation "SHINRA_I005202" ; dcterms:created "2026-06-03"^^xsd:date .
