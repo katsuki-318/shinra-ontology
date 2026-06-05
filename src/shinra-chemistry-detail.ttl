@@ -1,0 +1,107 @@
+# ===========================================================================
+# shinra-chemistry-detail.ttl  — 化学詳細ドメイン (Phase 8-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/chemistry-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 化学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Chemistry Detail Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 化学の下位分野 ────────────────────────────────────────────────
+
+shinra:OrganicChemistry
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "有機化学"@ja ; rdfs:label "Organic Chemistry"@en ;
+    rdfs:comment "炭素化合物の構造・性質・反応を研究する化学の分野。官能基・立体化学・反応機構・合成化学など。"@ja ;
+    rdfs:comment "The field of chemistry studying the structure, properties, and reactions of carbon compounds, including functional groups, stereochemistry, reaction mechanisms, and synthetic chemistry."@en ;
+    skos:notation "SHINRA_0004901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InorganicChemistry
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "無機化学"@ja ; rdfs:label "Inorganic Chemistry"@en ;
+    rdfs:comment "金属・非金属・ミネラルなど非炭素系化合物を研究する化学の分野。配位化学・固体化学・触媒化学など。"@ja ;
+    rdfs:comment "The field of chemistry studying non-carbon compounds including metals, nonmetals, and minerals, including coordination chemistry, solid-state chemistry, and catalysis."@en ;
+    skos:notation "SHINRA_0004902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhysicalChemistry
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "物理化学"@ja ; rdfs:label "Physical Chemistry"@en ;
+    rdfs:comment "化学現象の物理的原理・理論を研究する分野。熱力学・量子化学・分光学・電気化学・化学動力学など。"@ja ;
+    rdfs:comment "The field studying the physical principles and theories underlying chemical phenomena, including thermodynamics, quantum chemistry, spectroscopy, electrochemistry, and chemical kinetics."@en ;
+    skos:notation "SHINRA_0004903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Biochemistry
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "生化学"@ja ; rdfs:label "Biochemistry"@en ;
+    rdfs:comment "生命体内の化学反応・分子を研究する分野。酵素・核酸・タンパク質・脂質・代謝経路・シグナル伝達など。"@ja ;
+    rdfs:comment "The field studying chemical reactions and molecules within living organisms, including enzymes, nucleic acids, proteins, lipids, metabolic pathways, and signal transduction."@en ;
+    skos:notation "SHINRA_0004904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 化学的概念・対象 ──────────────────────────────────────────────
+
+shinra:ChemicalReaction
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "化学反応"@ja ; rdfs:label "Chemical Reaction"@en ;
+    rdfs:comment "物質が化学変化する過程。酸塩基反応・酸化還元反応・付加反応・置換反応・重合反応など。"@ja ;
+    rdfs:comment "A process in which substances undergo chemical change, including acid-base, redox, addition, substitution, and polymerization reactions."@en ;
+    skos:notation "SHINRA_0004911" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ChemicalBond
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "化学結合"@ja ; rdfs:label "Chemical Bond"@en ;
+    rdfs:comment "原子・分子間の引力。共有結合・イオン結合・金属結合・水素結合・ファンデルワールス力など。"@ja ;
+    rdfs:comment "The attractive force between atoms or molecules, including covalent, ionic, metallic, hydrogen bonds, and van der Waals forces."@en ;
+    skos:notation "SHINRA_0004912" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PeriodicTable
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "元素周期表"@ja ; rdfs:label "Periodic Table"@en ;
+    rdfs:comment "元素を原子番号・電子配置・化学的性質に基づいて配列した表。族・周期・金属・非金属・ハロゲン・希ガスなど。"@ja ;
+    rdfs:comment "A table arranging elements by atomic number, electron configuration, and chemical properties, including groups, periods, metals, nonmetals, halogens, and noble gases."@en ;
+    skos:notation "SHINRA_0004913" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Catalyst
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "触媒"@ja ; rdfs:label "Catalyst"@en ;
+    rdfs:comment "化学反応の活性化エネルギーを下げ反応速度を増加させる物質。自身は消費されない。酵素・金属触媒・酸塩基触媒など。"@ja ;
+    rdfs:comment "A substance that lowers the activation energy and increases the rate of a chemical reaction without being consumed, including enzymes, metal catalysts, and acid-base catalysts."@en ;
+    skos:notation "SHINRA_0004914" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Polymer_Chemistry
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "高分子"@ja ; rdfs:label "Polymer (Chemistry)"@en ;
+    skos:altLabel "ポリマー"@ja ;
+    rdfs:comment "繰り返し構造単位（モノマー）が共有結合で連結した大分子。天然高分子（DNA・タンパク質）・合成高分子（ナイロン・PET）など。"@ja ;
+    rdfs:comment "A large molecule in which repeating structural units (monomers) are covalently bonded, including natural polymers (DNA, proteins) and synthetic polymers (nylon, PET)."@en ;
+    skos:notation "SHINRA_0004915" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:periodic-table-001
+    a shinra:PeriodicTable ;
+    rdfs:label "メンデレーエフの元素周期表"@ja ; rdfs:label "Mendeleev's Periodic Table"@en ;
+    shinra:wikidataId "Q10693" ;
+    skos:notation "SHINRA_I004901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:water-molecule-001
+    a shinra:Compound ;
+    rdfs:label "水（H₂O）"@ja ; rdfs:label "Water (H₂O)"@en ;
+    shinra:wikidataId "Q283" ;
+    skos:notation "SHINRA_I004902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:carbon-dioxide-001
+    a shinra:Compound ;
+    rdfs:label "二酸化炭素"@ja ; rdfs:label "Carbon Dioxide"@en ;
+    shinra:wikidataId "Q1997" ;
+    skos:notation "SHINRA_I004903" ; dcterms:created "2026-06-03"^^xsd:date .

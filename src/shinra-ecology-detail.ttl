@@ -1,0 +1,121 @@
+# ===========================================================================
+# shinra-ecology-detail.ttl  — 生態学詳細ドメイン (Phase 8-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/ecology-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 生態学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Ecology Detail Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 生態系の概念 ─────────────────────────────────────────────────
+
+shinra:Population
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "個体群"@ja ; rdfs:label "Population"@en ;
+    skos:altLabel "集団"@ja ;
+    rdfs:comment "同一地域に生息する同種個体の集合。個体群密度・成長率・年齢構造・キャリングキャパシティなど。"@ja ;
+    rdfs:comment "A group of individuals of the same species living in the same area, characterized by population density, growth rate, age structure, and carrying capacity."@en ;
+    skos:notation "SHINRA_0005001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Community
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "群集"@ja ; rdfs:label "Ecological Community"@en ;
+    skos:altLabel "生物群集"@ja ;
+    rdfs:comment "一定地域に共存する複数種の個体群の集合体。種多様性・優占種・ニッチ・種間相互作用などで特徴付けられる。"@ja ;
+    rdfs:comment "An assemblage of multiple species populations coexisting in an area, characterized by species diversity, dominant species, niches, and interspecific interactions."@en ;
+    skos:notation "SHINRA_0005002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EcologicalNiche
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "生態的ニッチ"@ja ; rdfs:label "Ecological Niche"@en ;
+    skos:altLabel "ニッチ"@ja ;
+    rdfs:comment "生態系内で生物種が占める機能的役割・環境条件の範囲。基本ニッチ・実現ニッチ・ニッチ分割など。"@ja ;
+    rdfs:comment "The functional role and range of environmental conditions a species occupies in an ecosystem, including fundamental niche, realized niche, and niche partitioning."@en ;
+    skos:notation "SHINRA_0005003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:TrophicLevel
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "栄養段階"@ja ; rdfs:label "Trophic Level"@en ;
+    rdfs:comment "食物連鎖における栄養獲得の位置。生産者（一次）・一次消費者・二次消費者・分解者など。"@ja ;
+    rdfs:comment "The position in a food chain at which nutrition is obtained, including producers (primary), primary consumers, secondary consumers, and decomposers."@en ;
+    skos:notation "SHINRA_0005004" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 生態学的相互作用 ──────────────────────────────────────────────
+
+shinra:Predation
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "捕食"@ja ; rdfs:label "Predation"@en ;
+    rdfs:comment "捕食者が被食者を殺傷・摂食する生態学的相互作用。捕食-被食関係・コ進化・捕食圧など。"@ja ;
+    rdfs:comment "An ecological interaction in which a predator kills and consumes prey, including predator-prey relationships, coevolution, and predation pressure."@en ;
+    skos:notation "SHINRA_0005011" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Symbiosis
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "共生"@ja ; rdfs:label "Symbiosis"@en ;
+    rdfs:comment "異種生物が密接に共存する関係。相利共生・片利共生・寄生・根粒菌-マメ科植物・クマノミ-イソギンチャクなど。"@ja ;
+    rdfs:comment "A relationship in which different species live in close association, including mutualism, commensalism, parasitism, Rhizobium-legume, and clownfish-anemone relationships."@en ;
+    skos:notation "SHINRA_0005012" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EcologicalSuccession
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "生態遷移"@ja ; rdfs:label "Ecological Succession"@en ;
+    rdfs:comment "時間とともに群集の種構成が変化する過程。一次遷移・二次遷移・極相群落・撹乱など。"@ja ;
+    rdfs:comment "The process by which species composition of a community changes over time, including primary succession, secondary succession, climax community, and disturbance."@en ;
+    skos:notation "SHINRA_0005013" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:KeystoneSpecies
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalTaxon ;
+    rdfs:label "キーストーン種"@ja ; rdfs:label "Keystone Species"@en ;
+    rdfs:comment "生態系の構造・機能に不釣り合いに大きな影響を持つ種。ラッコ・オオカミ・ビーバー・サンゴなど。"@ja ;
+    rdfs:comment "A species with a disproportionately large impact on the structure and function of an ecosystem, including sea otters, wolves, beavers, and corals."@en ;
+    skos:notation "SHINRA_0005014" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:InvasiveSpecies
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalTaxon ;
+    rdfs:label "外来種"@ja ; rdfs:label "Invasive Species"@en ;
+    skos:altLabel "侵略的外来種"@ja ;
+    rdfs:comment "本来の生息域外に持ち込まれ在来種・生態系に害を与える種。セイヨウオオマルハナバチ・ミドリガメ・ニホンウナギなど。"@ja ;
+    rdfs:comment "A species introduced outside its native range that causes harm to native species and ecosystems, including buff-tailed bumblebees, red-eared sliders, and various other invasive organisms."@en ;
+    skos:notation "SHINRA_0005015" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 生態学プロパティ ──────────────────────────────────────────────
+
+shinra:hasPopulationSize
+    a owl:DatatypeProperty ;
+    rdfs:domain shinra:Population ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "個体数"@ja ; rdfs:label "population size"@en ;
+    rdfs:comment "個体群の推定個体数。"@ja ;
+    rdfs:comment "The estimated number of individuals in a population."@en ;
+    skos:notation "SHINRA_D005001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:coral-reef-ecosystem-001
+    a shinra:Ecosystem ;
+    rdfs:label "珊瑚礁生態系"@ja ; rdfs:label "Coral Reef Ecosystem"@en ;
+    shinra:wikidataId "Q11399" ;
+    skos:notation "SHINRA_I005001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:wolf-yellowstone-001
+    a shinra:KeystoneSpecies ;
+    rdfs:label "イエローストーンのオオカミ"@ja ; rdfs:label "Yellowstone Wolf"@en ;
+    shinra:wikidataId "Q18498" ;
+    skos:notation "SHINRA_I005002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:nitrogen-cycle-001
+    a shinra:NutrientCycle ;
+    rdfs:label "窒素循環"@ja ; rdfs:label "Nitrogen Cycle"@en ;
+    shinra:wikidataId "Q170282" ;
+    skos:notation "SHINRA_I005003" ; dcterms:created "2026-06-03"^^xsd:date .

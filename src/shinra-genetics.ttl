@@ -1,0 +1,109 @@
+# ===========================================================================
+# shinra-genetics.ttl  — 遺伝学・ゲノム科学ドメイン (Phase 8-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/genetics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 遺伝学・ゲノム科学ドメイン"@ja ,
+                    "Shinra Ontology — Genetics & Genomics Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 遺伝学の基本概念 ──────────────────────────────────────────────
+
+shinra:Allele
+    a owl:Class ; rdfs:subClassOf shinra:Gene ;
+    rdfs:label "対立遺伝子"@ja ; rdfs:label "Allele"@en ;
+    skos:altLabel "アレル"@ja ;
+    rdfs:comment "染色体上の特定の遺伝子座に位置する遺伝子の代替形態。優性・劣性・共優性・複対立遺伝子など。"@ja ;
+    rdfs:comment "An alternative form of a gene at a specific locus on a chromosome, including dominant, recessive, codominant, and multiple alleles."@en ;
+    skos:notation "SHINRA_0005101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Chromosome
+    a owl:Class ; rdfs:subClassOf shinra:BodyPart ;
+    rdfs:label "染色体"@ja ; rdfs:label "Chromosome"@en ;
+    rdfs:comment "DNAとタンパク質からなる遺伝情報の担体。常染色体・性染色体・多倍性・核型など。"@ja ;
+    rdfs:comment "A structure of DNA and proteins carrying genetic information, including autosomes, sex chromosomes, polyploidy, and karyotype."@en ;
+    skos:notation "SHINRA_0005102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Mutation
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "突然変異"@ja ; rdfs:label "Mutation"@en ;
+    rdfs:comment "DNA塩基配列が変化する過程。点突然変異・挿入・欠失・逆位・転座・コピー数変化など。"@ja ;
+    rdfs:comment "The process of change in DNA base sequence, including point mutations, insertions, deletions, inversions, translocations, and copy number variations."@en ;
+    skos:notation "SHINRA_0005103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GeneExpression
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "遺伝子発現"@ja ; rdfs:label "Gene Expression"@en ;
+    rdfs:comment "遺伝情報がmRNA・タンパク質に変換される過程。転写・翻訳・後成的制御・遺伝子スイッチなど。"@ja ;
+    rdfs:comment "The process by which genetic information is converted into mRNA and proteins, including transcription, translation, epigenetic regulation, and gene switches."@en ;
+    skos:notation "SHINRA_0005104" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Epigenetics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "エピジェネティクス"@ja ; rdfs:label "Epigenetics"@en ;
+    rdfs:comment "DNA塩基配列変化によらない遺伝子発現の変化を研究する分野。DNAメチル化・ヒストン修飾・クロマチン構造など。"@ja ;
+    rdfs:comment "The field studying changes in gene expression not involving DNA sequence changes, including DNA methylation, histone modification, and chromatin structure."@en ;
+    skos:notation "SHINRA_0005105" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── ゲノム科学 ───────────────────────────────────────────────────
+
+shinra:Genomics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "ゲノミクス"@ja ; rdfs:label "Genomics"@en ;
+    rdfs:comment "生物のゲノム全体を解析・比較・理解する学問。全ゲノム解読・比較ゲノム学・機能ゲノム学・メタゲノム学など。"@ja ;
+    rdfs:comment "The field analyzing, comparing, and understanding entire genomes of organisms, including whole-genome sequencing, comparative genomics, functional genomics, and metagenomics."@en ;
+    skos:notation "SHINRA_0005111" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GeneSequencing
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "遺伝子解読"@ja ; rdfs:label "Gene Sequencing"@en ;
+    skos:altLabel "シークエンシング"@ja ;
+    rdfs:comment "DNA・RNAの塩基配列を決定する技術的過程。サンガー法・次世代シークエンシング・ナノポアシークエンシングなど。"@ja ;
+    rdfs:comment "The technical process of determining the nucleotide sequence of DNA or RNA, including Sanger sequencing, next-generation sequencing, and nanopore sequencing."@en ;
+    skos:notation "SHINRA_0005112" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GeneticEngineeringProcess
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "遺伝子工学的操作"@ja ; rdfs:label "Genetic Engineering Process"@en ;
+    skos:altLabel "遺伝子改変"@ja ;
+    rdfs:comment "生物のDNAを人工的に改変する技術的過程。CRISPR-Cas9・遺伝子ノックアウト・トランスジェニック・遺伝子治療など。"@ja ;
+    rdfs:comment "A technical process of artificially modifying an organism's DNA, including CRISPR-Cas9, gene knockout, transgenesis, and gene therapy."@en ;
+    skos:notation "SHINRA_0005113" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PopulationGenetics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "集団遺伝学"@ja ; rdfs:label "Population Genetics"@en ;
+    rdfs:comment "集団内の遺伝的変異・頻度変化を研究する分野。ハーディ・ワインベルク平衡・遺伝的浮動・自然選択など。"@ja ;
+    rdfs:comment "The field studying genetic variation and changes in allele frequency within populations, including Hardy-Weinberg equilibrium, genetic drift, and natural selection."@en ;
+    skos:notation "SHINRA_0005114" ; dcterms:created "2026-06-03"^^xsd:date .
+
+# ── 代表インスタンス ──────────────────────────────────────────────
+
+shinra-data:human-genome-project-001
+    a shinra:Genomics ;
+    rdfs:label "ヒトゲノム計画"@ja ; rdfs:label "Human Genome Project"@en ;
+    shinra:wikidataId "Q51351" ;
+    skos:notation "SHINRA_I005101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:mendels-laws-001
+    a shinra:ScientificTheory ;
+    rdfs:label "メンデルの法則"@ja ; rdfs:label "Mendel's Laws of Inheritance"@en ;
+    shinra:wikidataId "Q170581" ;
+    skos:notation "SHINRA_I005102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:double-helix-001
+    a shinra:Compound ;
+    rdfs:label "DNAの二重らせん構造"@ja ; rdfs:label "DNA Double Helix"@en ;
+    shinra:wikidataId "Q7430" ;
+    skos:notation "SHINRA_I005103" ; dcterms:created "2026-06-03"^^xsd:date .
