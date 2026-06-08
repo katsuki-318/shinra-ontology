@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-language-typology.ttl  — 言語類型論・語用論詳細ドメイン (Phase 9-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/language-typology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 言語類型論・語用論詳細ドメイン"@ja ,
+                    "Shinra Ontology — Language Typology & Pragmatics Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:LanguageTypology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "言語類型論"@ja ; rdfs:label "Language Typology"@en ;
+    rdfs:comment "言語の構造的特徴を比較・分類する言語学の分野。語順類型・形態論的類型・音韻類型・含意的普遍性など。"@ja ;
+    rdfs:comment "A linguistic field comparatively classifying structural features of languages, including word order typology, morphological typology, phonological typology, and implicational universals."@en ;
+    skos:notation "SHINRA_0006901" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:WordOrder
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "語順"@ja ; rdfs:label "Word Order"@en ;
+    rdfs:comment "文中の主語・動詞・目的語の配列パターン。SOV型（日本語・トルコ語）・SVO型（英語・中国語）・VSO型（アラビア語）など。"@ja ;
+    rdfs:comment "The arrangement pattern of subject, verb, and object in a sentence, including SOV (Japanese, Turkish), SVO (English, Chinese), and VSO (Arabic)."@en ;
+    skos:notation "SHINRA_0006902" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SpeechAct
+    a owl:Class ; rdfs:subClassOf shinra:Communication ;
+    rdfs:label "発話行為"@ja ; rdfs:label "Speech Act"@en ;
+    rdfs:comment "発話によって遂行される行為。オースティン・サールの発話行為論。断言・命令・約束・宣言など。"@ja ;
+    rdfs:comment "An action performed by utterance, as in Austin and Searle's speech act theory, including assertions, directives, commissives, and declarations."@en ;
+    skos:notation "SHINRA_0006903" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ImplicatureConversational
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "会話含意"@ja ; rdfs:label "Conversational Implicature"@en ;
+    rdfs:comment "発話の文字通りの意味を超えて伝達される意味。グライスの協調原理・量・質・関係・様態の格率など。"@ja ;
+    rdfs:comment "Meaning communicated beyond the literal content of an utterance, based on Grice's cooperative principle and maxims of quantity, quality, relation, and manner."@en ;
+    skos:notation "SHINRA_0006904" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Politeness
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ポライトネス"@ja ; rdfs:label "Politeness"@en ;
+    skos:altLabel "言語礼節"@ja ;
+    rdfs:comment "社会関係を維持するための言語的・非言語的方略。ブラウン＆レヴィンソンのフェイス理論・ポジティブ・ネガティブポライトネスなど。"@ja ;
+    rdfs:comment "Linguistic and non-linguistic strategies for maintaining social relationships, including Brown and Levinson's face theory and positive and negative politeness."@en ;
+    skos:notation "SHINRA_0006905" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:LanguageContact
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "言語接触"@ja ; rdfs:label "Language Contact"@en ;
+    rdfs:comment "異なる言語の話者が相互作用する状況と結果。借用・ピジン語・クレオール語・コードスイッチング・言語死など。"@ja ;
+    rdfs:comment "Situations and outcomes of speakers of different languages interacting, including borrowing, pidgin languages, creole languages, code-switching, and language death."@en ;
+    skos:notation "SHINRA_0006906" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:esperanto-001
+    a shinra:NaturalLanguage ;
+    rdfs:label "エスペラント"@ja ; rdfs:label "Esperanto"@en ;
+    shinra:wikidataId "Q143" ;
+    skos:notation "SHINRA_I006901" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:sign-language-001
+    a shinra:NaturalLanguage ;
+    rdfs:label "手話"@ja ; rdfs:label "Sign Language"@en ;
+    shinra:wikidataId "Q34228" ;
+    skos:notation "SHINRA_I006902" ; dcterms:created "2026-06-08"^^xsd:date .

@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-epistemology-detail.ttl  — 認識論詳細ドメイン (Phase 9-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/epistemology-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 認識論詳細ドメイン"@ja ,
+                    "Shinra Ontology — Epistemology Detail Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:JustifiedTrueBelief
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "正当化された真の信念"@ja ; rdfs:label "Justified True Belief"@en ;
+    skos:altLabel "JTB"@ja ;
+    rdfs:comment "プラトン以来の伝統的知識の定義。信念・真・正当化の三条件。ゲティア問題による反例で修正を迫られた。"@ja ;
+    rdfs:comment "The traditional definition of knowledge since Plato requiring belief, truth, and justification. Challenged by Gettier counterexamples requiring subsequent modification."@en ;
+    skos:notation "SHINRA_0007201" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Skepticism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "懐疑主義"@ja ; rdfs:label "Skepticism"@en ;
+    rdfs:comment "知識の可能性・確実性を疑問視する哲学的立場。デカルトの方法的懐疑・外的世界懐疑・悪魔仮説・水槽の脳など。"@ja ;
+    rdfs:comment "A philosophical stance questioning the possibility or certainty of knowledge, including Descartes' methodological doubt, external world skepticism, evil demon hypothesis, and brain-in-a-vat."@en ;
+    skos:notation "SHINRA_0007202" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Rationalism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "合理論"@ja ; rdfs:label "Rationalism"@en ;
+    rdfs:comment "理性・生得的観念を知識の主要源泉とする認識論的立場。デカルト・スピノザ・ライプニッツの大陸合理論など。"@ja ;
+    rdfs:comment "An epistemological stance treating reason and innate ideas as the primary source of knowledge, including the Continental Rationalism of Descartes, Spinoza, and Leibniz."@en ;
+    skos:notation "SHINRA_0007203" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Empiricism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "経験論"@ja ; rdfs:label "Empiricism"@en ;
+    rdfs:comment "感覚経験を知識の唯一の源泉とする認識論的立場。ロック・バークリー・ヒュームの英国経験論など。"@ja ;
+    rdfs:comment "An epistemological stance treating sensory experience as the sole source of knowledge, including British Empiricism of Locke, Berkeley, and Hume."@en ;
+    skos:notation "SHINRA_0007204" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SocialEpistemology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "社会的認識論"@ja ; rdfs:label "Social Epistemology"@en ;
+    rdfs:comment "知識の社会的次元を研究する認識論の分野。証言・専門知識・認識的権威・フィルターバブル・集合知など。"@ja ;
+    rdfs:comment "A field of epistemology studying the social dimensions of knowledge, including testimony, expertise, epistemic authority, filter bubbles, and collective intelligence."@en ;
+    skos:notation "SHINRA_0007205" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ScientificMethod
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "科学的方法"@ja ; rdfs:label "Scientific Method"@en ;
+    rdfs:comment "仮説設定・実験・観察・検証のサイクルによって知識を獲得する方法論。帰納法・演繹法・仮説演繹法・反証主義など。"@ja ;
+    rdfs:comment "A methodology for acquiring knowledge through cycles of hypothesis, experiment, observation, and verification, including induction, deduction, hypothetico-deduction, and falsificationism."@en ;
+    skos:notation "SHINRA_0007206" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:gettier-problem-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "ゲティア問題"@ja ; rdfs:label "Gettier Problem"@en ;
+    shinra:wikidataId "Q1428047" ;
+    skos:notation "SHINRA_I007201" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:kants-critique-001
+    a shinra:ScientificTheory ;
+    rdfs:label "カントの純粋理性批判"@ja ; rdfs:label "Critique of Pure Reason"@en ;
+    shinra:wikidataId "Q36534" ;
+    skos:notation "SHINRA_I007202" ; dcterms:created "2026-06-08"^^xsd:date .

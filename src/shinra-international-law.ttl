@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-international-law.ttl  — 国際法・国際規範ドメイン (Phase 9-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/international-law>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 国際法・国際規範ドメイン"@ja ,
+                    "Shinra Ontology — International Law & Norms Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:InternationalLaw
+    a owl:Class ; rdfs:subClassOf shinra:LegalSystem ;
+    rdfs:label "国際法"@ja ; rdfs:label "International Law"@en ;
+    rdfs:comment "国家・国際機関間の関係を規律する法体系。条約法・慣習国際法・強行規範・国際司法裁判所など。"@ja ;
+    rdfs:comment "The legal system governing relations between states and international organizations, including treaty law, customary international law, jus cogens, and the International Court of Justice."@en ;
+    skos:notation "SHINRA_0007101" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:HumanitarianLaw
+    a owl:Class ; rdfs:subClassOf shinra:InternationalLaw ;
+    rdfs:label "国際人道法"@ja ; rdfs:label "International Humanitarian Law"@en ;
+    skos:altLabel "戦時国際法"@ja ;
+    rdfs:comment "武力紛争の影響を制限し人道を保護する国際法の分野。ジュネーブ条約・戦闘員・民間人の区別・比例性原則など。"@ja ;
+    rdfs:comment "A branch of international law limiting the effects of armed conflict and protecting humanity, including the Geneva Conventions, combatant/civilian distinction, and proportionality."@en ;
+    skos:notation "SHINRA_0007102" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:InternationalCriminalLaw
+    a owl:Class ; rdfs:subClassOf shinra:InternationalLaw ;
+    rdfs:label "国際刑事法"@ja ; rdfs:label "International Criminal Law"@en ;
+    rdfs:comment "ジェノサイド・戦争犯罪・人道に対する罪・侵略罪などの国際犯罪を定義・訴追する法体系。ICC・ニュルンベルク裁判など。"@ja ;
+    rdfs:comment "The legal framework defining and prosecuting international crimes such as genocide, war crimes, crimes against humanity, and aggression, including the ICC and Nuremberg Trials."@en ;
+    skos:notation "SHINRA_0007103" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SeaLaw
+    a owl:Class ; rdfs:subClassOf shinra:InternationalLaw ;
+    rdfs:label "海洋法"@ja ; rdfs:label "Law of the Sea"@en ;
+    rdfs:comment "海洋の利用・管理・保護を規律する国際法。UNCLOS・領海・排他的経済水域・公海・大陸棚など。"@ja ;
+    rdfs:comment "International law governing the use, management, and protection of the oceans, including UNCLOS, territorial sea, exclusive economic zone, high seas, and continental shelf."@en ;
+    skos:notation "SHINRA_0007104" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Genocide
+    a owl:Class ; rdfs:subClassOf shinra:Crime ;
+    rdfs:label "ジェノサイド"@ja ; rdfs:label "Genocide"@en ;
+    skos:altLabel "集団殺害"@ja ;
+    rdfs:comment "国民的・民族的・人種的・宗教的集団を全部または一部破壊する意図で行われる行為。ホロコースト・ルワンダなど。"@ja ;
+    rdfs:comment "Acts committed with intent to destroy, in whole or in part, a national, ethnical, racial, or religious group, including the Holocaust and Rwanda genocide."@en ;
+    skos:notation "SHINRA_0007105" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:NormativeFramework
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "規範的枠組み"@ja ; rdfs:label "Normative Framework"@en ;
+    rdfs:comment "行動・制度を規律する規範・原則・基準の体系。国際規範・ソフトロー・ハードロー・規範の成立と拡散など。"@ja ;
+    rdfs:comment "A system of norms, principles, and standards governing behavior and institutions, including international norms, soft law, hard law, and norm emergence and diffusion."@en ;
+    skos:notation "SHINRA_0007106" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:icc-001
+    a shinra:Organization ;
+    rdfs:label "国際刑事裁判所"@ja ; rdfs:label "International Criminal Court"@en ;
+    shinra:wikidataId "Q188822" ;
+    skos:notation "SHINRA_I007101" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:geneva-conventions-001
+    a shinra:HumanitarianLaw ;
+    rdfs:label "ジュネーブ条約"@ja ; rdfs:label "Geneva Conventions"@en ;
+    shinra:wikidataId "Q131502" ;
+    skos:notation "SHINRA_I007102" ; dcterms:created "2026-06-08"^^xsd:date .

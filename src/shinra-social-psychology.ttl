@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-social-psychology.ttl  — 社会心理学ドメイン (Phase 9-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/social-psychology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会心理学ドメイン"@ja ,
+                    "Shinra Ontology — Social Psychology Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Conformity
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "同調"@ja ; rdfs:label "Conformity"@en ;
+    rdfs:comment "集団の規範・期待に合わせて態度・行動を変化させる社会心理的過程。アッシュの同調実験・規範的影響など。"@ja ;
+    rdfs:comment "A social psychological process of changing attitudes or behavior to match group norms and expectations, including Asch's conformity experiments and normative influence."@en ;
+    skos:notation "SHINRA_0007001" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Obedience
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "服従"@ja ; rdfs:label "Obedience"@en ;
+    rdfs:comment "権威ある存在の指示に従う社会心理的行動。ミルグラムの電気ショック実験・権威への盲目的服従など。"@ja ;
+    rdfs:comment "The social psychological behavior of following the instructions of an authority figure, including Milgram's electric shock experiments and blind obedience to authority."@en ;
+    skos:notation "SHINRA_0007002" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:GroupDynamics
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "集団力学"@ja ; rdfs:label "Group Dynamics"@en ;
+    skos:altLabel "グループダイナミクス"@ja ;
+    rdfs:comment "集団内の相互作用・役割・凝集性・リーダーシップを研究する分野。集団思考・社会的手抜き・内集団バイアスなど。"@ja ;
+    rdfs:comment "The study of interactions, roles, cohesion, and leadership within groups, including groupthink, social loafing, and in-group bias."@en ;
+    skos:notation "SHINRA_0007003" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Attribution
+    a owl:Class ; rdfs:subClassOf shinra:SocialCognition ;
+    rdfs:label "帰属"@ja ; rdfs:label "Attribution"@en ;
+    skos:altLabel "原因帰属"@ja ;
+    rdfs:comment "行動・出来事の原因を推論する認知過程。内的帰属・外的帰属・基本的帰属誤り・自己奉仕バイアスなど。"@ja ;
+    rdfs:comment "The cognitive process of inferring causes of behavior and events, including internal attribution, external attribution, fundamental attribution error, and self-serving bias."@en ;
+    skos:notation "SHINRA_0007004" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Prejudice
+    a owl:Class ; rdfs:subClassOf shinra:Attitude ;
+    rdfs:label "偏見"@ja ; rdfs:label "Prejudice"@en ;
+    rdfs:comment "特定の集団に対する根拠の薄い否定的態度。ステレオタイプ・差別・内集団優遇・接触仮説による低減など。"@ja ;
+    rdfs:comment "An unfounded negative attitude toward a specific group, including stereotypes, discrimination, in-group favoritism, and reduction through the contact hypothesis."@en ;
+    skos:notation "SHINRA_0007005" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Altruism
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "利他主義"@ja ; rdfs:label "Altruism"@en ;
+    skos:altLabel "向社会的行動"@ja ;
+    rdfs:comment "他者の利益のために自己犠牲を払う行動傾向。共感・互恵的利他主義・傍観者効果・援助行動の決定因など。"@ja ;
+    rdfs:comment "A behavioral tendency to sacrifice for the benefit of others, including empathy, reciprocal altruism, the bystander effect, and determinants of helping behavior."@en ;
+    skos:notation "SHINRA_0007006" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:milgram-experiment-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "ミルグラム実験"@ja ; rdfs:label "Milgram Experiment"@en ;
+    shinra:wikidataId "Q1021209" ;
+    skos:notation "SHINRA_I007001" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:stanford-prison-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "スタンフォード監獄実験"@ja ; rdfs:label "Stanford Prison Experiment"@en ;
+    shinra:wikidataId "Q1052292" ;
+    skos:notation "SHINRA_I007002" ; dcterms:created "2026-06-08"^^xsd:date .
