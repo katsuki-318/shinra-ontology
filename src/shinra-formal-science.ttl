@@ -1,0 +1,80 @@
+# ===========================================================================
+# shinra-formal-science.ttl  — 形式科学・システム理論ドメイン (Phase 9-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/formal-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 形式科学・システム理論ドメイン"@ja ,
+                    "Shinra Ontology — Formal Science & Systems Theory Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SystemsTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "システム理論"@ja ; rdfs:label "Systems Theory"@en ;
+    rdfs:comment "複雑な全体を構成要素の相互作用として研究する学際的理論。創発・フィードバック・自己組織化・複雑系など。"@ja ;
+    rdfs:comment "An interdisciplinary theory studying complex wholes through the interactions of their components, including emergence, feedback, self-organization, and complex systems."@en ;
+    skos:notation "SHINRA_0006701" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ChaosTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "カオス理論"@ja ; rdfs:label "Chaos Theory"@en ;
+    rdfs:comment "決定論的システムが初期条件に鋭敏に依存し予測困難な振る舞いを示す理論。バタフライ効果・フラクタル・奇妙なアトラクタなど。"@ja ;
+    rdfs:comment "The theory describing deterministic systems exhibiting unpredictable behavior due to sensitive dependence on initial conditions, including the butterfly effect, fractals, and strange attractors."@en ;
+    skos:notation "SHINRA_0006702" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Cybernetics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "サイバネティクス"@ja ; rdfs:label "Cybernetics"@en ;
+    rdfs:comment "動物・機械における制御・通信を研究する学問。フィードバック制御・情報理論・AIの源流・ウィーナーなど。"@ja ;
+    rdfs:comment "The study of control and communication in animals and machines, including feedback control, information theory, and foundational contributions to AI by Norbert Wiener."@en ;
+    skos:notation "SHINRA_0006703" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ComplexSystem
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "複雑系"@ja ; rdfs:label "Complex System"@en ;
+    rdfs:comment "多数の相互作用する構成要素から創発的特性が生じるシステム。生態系・脳・経済・都市・インターネットなど。"@ja ;
+    rdfs:comment "A system in which emergent properties arise from many interacting components, including ecosystems, brains, economies, cities, and the internet."@en ;
+    skos:notation "SHINRA_0006704" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Emergence
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "創発"@ja ; rdfs:label "Emergence"@en ;
+    rdfs:comment "システムの構成要素には還元できない高次の特性・パターンが全体として現れる現象。強い創発・弱い創発など。"@ja ;
+    rdfs:comment "A phenomenon in which higher-level properties and patterns appear at the system level that cannot be reduced to its components, including strong and weak emergence."@en ;
+    skos:notation "SHINRA_0006705" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Fractal
+    a owl:Class ; rdfs:subClassOf shinra:GeometricObject ;
+    rdfs:label "フラクタル"@ja ; rdfs:label "Fractal"@en ;
+    rdfs:comment "自己相似性を持つ幾何学的対象。マンデルブロ集合・コッホ曲線・自然界のフラクタル構造（海岸線・雪片）など。"@ja ;
+    rdfs:comment "A geometric object with self-similarity, including the Mandelbrot set, Koch snowflake, and fractal structures in nature such as coastlines and snowflakes."@en ;
+    skos:notation "SHINRA_0006706" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Optimization
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "最適化"@ja ; rdfs:label "Optimization"@en ;
+    rdfs:comment "与えられた制約下で目的関数を最大化・最小化する数学的問題と手法。線形計画・非線形最適化・遺伝的アルゴリズムなど。"@ja ;
+    rdfs:comment "Mathematical problems and methods of maximizing or minimizing an objective function under given constraints, including linear programming, nonlinear optimization, and genetic algorithms."@en ;
+    skos:notation "SHINRA_0006707" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:mandelbrot-set-001
+    a shinra:Fractal ;
+    rdfs:label "マンデルブロ集合"@ja ; rdfs:label "Mandelbrot Set"@en ;
+    shinra:wikidataId "Q80229" ;
+    skos:notation "SHINRA_I006701" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:lorenz-attractor-001
+    a shinra:ChaosTheory ;
+    rdfs:label "ローレンツアトラクタ"@ja ; rdfs:label "Lorenz Attractor"@en ;
+    shinra:wikidataId "Q1068428" ;
+    skos:notation "SHINRA_I006702" ; dcterms:created "2026-06-08"^^xsd:date .

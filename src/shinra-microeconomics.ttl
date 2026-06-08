@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-microeconomics.ttl  — ミクロ経済学詳細ドメイン (Phase 9-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/microeconomics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — ミクロ経済学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Microeconomics Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SupplyDemand
+    a owl:Class ; rdfs:subClassOf shinra:EconomicTheory ;
+    rdfs:label "需給理論"@ja ; rdfs:label "Supply and Demand"@en ;
+    rdfs:comment "財・サービスの価格と数量を需要・供給曲線の均衡として説明するミクロ経済理論の中核。価格弾力性・市場均衡など。"@ja ;
+    rdfs:comment "The core microeconomic theory explaining prices and quantities through equilibrium of supply and demand curves, including price elasticity and market equilibrium."@en ;
+    skos:notation "SHINRA_0006501" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:MarketStructure
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "市場構造"@ja ; rdfs:label "Market Structure"@en ;
+    rdfs:comment "市場内の競争の性質・形態。完全競争・独占・寡占・独占的競争・自然独占など。"@ja ;
+    rdfs:comment "The nature and form of competition within a market, including perfect competition, monopoly, oligopoly, monopolistic competition, and natural monopoly."@en ;
+    skos:notation "SHINRA_0006502" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ExternalityEffect
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "外部性"@ja ; rdfs:label "Externality"@en ;
+    skos:altLabel "外部効果"@ja ;
+    rdfs:comment "経済活動が市場取引外の第三者に与える費用・便益。正の外部性（教育・ワクチン）・負の外部性（公害）など。"@ja ;
+    rdfs:comment "Costs or benefits of economic activity imposed on third parties outside the market transaction, including positive externalities (education, vaccines) and negative externalities (pollution)."@en ;
+    skos:notation "SHINRA_0006503" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:PublicGood
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "公共財"@ja ; rdfs:label "Public Good"@en ;
+    rdfs:comment "非排除性と非競合性を持つ財。国防・灯台・公共放送・純粋知識など。市場の失敗・フリーライダー問題と関連。"@ja ;
+    rdfs:comment "A good with non-excludability and non-rivalry, including national defense, lighthouses, public broadcasting, and pure knowledge, related to market failure and the free-rider problem."@en ;
+    skos:notation "SHINRA_0006504" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:InformationAsymmetry
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "情報の非対称性"@ja ; rdfs:label "Information Asymmetry"@en ;
+    rdfs:comment "市場参加者間での情報の不均等な分布。逆選択（レモン問題）・モラルハザード・シグナリング・スクリーニングなど。"@ja ;
+    rdfs:comment "Unequal distribution of information among market participants, including adverse selection (lemon problem), moral hazard, signaling, and screening."@en ;
+    skos:notation "SHINRA_0006505" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:UtilityFunction
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "効用関数"@ja ; rdfs:label "Utility Function"@en ;
+    rdfs:comment "消費者の選好を数値的に表現する数学的関数。限界効用・無差別曲線・効用最大化・予算制約など。"@ja ;
+    rdfs:comment "A mathematical function numerically representing consumer preferences, including marginal utility, indifference curves, utility maximization, and budget constraints."@en ;
+    skos:notation "SHINRA_0006506" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:coase-theorem-001
+    a shinra:EconomicTheory ;
+    rdfs:label "コースの定理"@ja ; rdfs:label "Coase Theorem"@en ;
+    shinra:wikidataId "Q905015" ;
+    skos:notation "SHINRA_I006501" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:market-failure-001
+    a shinra:EconomicTheory ;
+    rdfs:label "市場の失敗"@ja ; rdfs:label "Market Failure"@en ;
+    shinra:wikidataId "Q1127766" ;
+    skos:notation "SHINRA_I006502" ; dcterms:created "2026-06-08"^^xsd:date .

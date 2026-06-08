@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-consciousness.ttl  — 意識・主観性・クオリアドメイン (Phase 9-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/consciousness>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 意識・主観性・クオリアドメイン"@ja ,
+                    "Shinra Ontology — Consciousness, Subjectivity & Qualia Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Qualia
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "クオリア"@ja ; rdfs:label "Qualia"@en ;
+    skos:altLabel "感覚質"@ja ;
+    rdfs:comment "意識的経験の主観的・定性的側面。赤の赤さ・痛みの痛さなど。説明のギャップ・感覚転倒と関連する。"@ja ;
+    rdfs:comment "The subjective and qualitative aspects of conscious experience, such as the redness of red or the painfulness of pain, related to the explanatory gap and inverted spectrum."@en ;
+    skos:notation "SHINRA_0006801" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:HardProblemOfConsciousness
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "意識のハード問題"@ja ; rdfs:label "Hard Problem of Consciousness"@en ;
+    rdfs:comment "なぜ物理的過程から主観的経験（クオリア）が生まれるかを説明する困難さ。チャーマーズが命名。説明のギャップとも。"@ja ;
+    rdfs:comment "The difficulty of explaining why physical processes give rise to subjective experience (qualia), named by Chalmers and also called the explanatory gap."@en ;
+    skos:notation "SHINRA_0006802" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Intentionality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "志向性"@ja ; rdfs:label "Intentionality"@en ;
+    rdfs:comment "心的状態が何かについてある（何かを指向する）性質。信念・欲求・知覚・想像などの「〜について」という性格。"@ja ;
+    rdfs:comment "The property of mental states of being about or directed at something, including the 'aboutness' of beliefs, desires, perceptions, and imagination."@en ;
+    skos:notation "SHINRA_0006803" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SelfAwareness
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "自己認識"@ja ; rdfs:label "Self-Awareness"@en ;
+    skos:altLabel "自己意識"@ja ;
+    rdfs:comment "自己の存在・思考・感情・行動を意識的に認識する能力。メタ認知・自己参照・鏡像テストなど。"@ja ;
+    rdfs:comment "The capacity to consciously recognize one's own existence, thoughts, emotions, and actions, including metacognition, self-reference, and mirror self-recognition tests."@en ;
+    skos:notation "SHINRA_0006804" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ArtificialConsciousness
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "人工意識"@ja ; rdfs:label "Artificial Consciousness"@en ;
+    skos:altLabel "機械意識"@ja ;
+    rdfs:comment "人工システムが主観的経験・意識を持ちうるかという問題と研究領域。統合情報理論・グローバルワークスペース理論・哲学的ゾンビなど。"@ja ;
+    rdfs:comment "The question and research area of whether artificial systems can possess subjective experience and consciousness, including Integrated Information Theory, Global Workspace Theory, and philosophical zombies."@en ;
+    skos:notation "SHINRA_0006805" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:MindBodyProblem
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "心身問題"@ja ; rdfs:label "Mind-Body Problem"@en ;
+    rdfs:comment "心（意識・精神）と身体（物質・脳）の関係についての哲学的問題。物理主義・二元論・随伴現象説・汎心論など。"@ja ;
+    rdfs:comment "The philosophical problem of the relationship between mind (consciousness, mental states) and body (matter, brain), including physicalism, dualism, epiphenomenalism, and panpsychism."@en ;
+    skos:notation "SHINRA_0006806" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:integrated-information-theory-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "統合情報理論"@ja ; rdfs:label "Integrated Information Theory"@en ;
+    shinra:wikidataId "Q2628596" ;
+    skos:notation "SHINRA_I006801" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:philosophical-zombie-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "哲学的ゾンビ"@ja ; rdfs:label "Philosophical Zombie"@en ;
+    shinra:wikidataId "Q1090566" ;
+    skos:notation "SHINRA_I006802" ; dcterms:created "2026-06-08"^^xsd:date .

@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-macroeconomics.ttl  — マクロ経済学詳細ドメイン (Phase 9-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/macroeconomics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — マクロ経済学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Macroeconomics Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:BusinessCycle
+    a owl:Class ; rdfs:subClassOf shinra:EconomicProcess ;
+    rdfs:label "景気循環"@ja ; rdfs:label "Business Cycle"@en ;
+    rdfs:comment "経済活動が拡張と収縮を繰り返す周期的変動。好況・後退・不況・回復の四局面とその要因分析。"@ja ;
+    rdfs:comment "The periodic fluctuation of economic activity alternating between expansion and contraction, analyzed through boom, recession, depression, and recovery phases."@en ;
+    skos:notation "SHINRA_0006601" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Inflation
+    a owl:Class ; rdfs:subClassOf shinra:EconomicProcess ;
+    rdfs:label "インフレーション"@ja ; rdfs:label "Inflation"@en ;
+    skos:altLabel "物価上昇"@ja ;
+    rdfs:comment "物価水準が持続的に上昇する経済過程。需要牽引型・コストプッシュ型・ハイパーインフレ・スタグフレーションなど。"@ja ;
+    rdfs:comment "An economic process of sustained rise in the general price level, including demand-pull, cost-push, hyperinflation, and stagflation."@en ;
+    skos:notation "SHINRA_0006602" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Unemployment
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "失業"@ja ; rdfs:label "Unemployment"@en ;
+    rdfs:comment "労働可能・就業希望があるにも関わらず職に就いていない状態。摩擦的・構造的・循環的・自然失業率など。"@ja ;
+    rdfs:comment "The state of being willing and able to work but without employment, including frictional, structural, cyclical unemployment, and the natural rate of unemployment."@en ;
+    skos:notation "SHINRA_0006603" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:TradeBalance
+    a owl:Class ; rdfs:subClassOf shinra:EconomicIndicator ;
+    rdfs:label "貿易収支"@ja ; rdfs:label "Trade Balance"@en ;
+    skos:altLabel "国際収支"@ja ;
+    rdfs:comment "一国の輸出と輸入の差額。経常収支・資本収支・外貨準備・為替レートとの関係など。"@ja ;
+    rdfs:comment "The difference between a country's exports and imports, including current account, capital account, foreign exchange reserves, and exchange rate relationships."@en ;
+    skos:notation "SHINRA_0006604" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:EconomicGrowth
+    a owl:Class ; rdfs:subClassOf shinra:EconomicProcess ;
+    rdfs:label "経済成長"@ja ; rdfs:label "Economic Growth"@en ;
+    rdfs:comment "国内総生産・一人当たり所得が長期的に増加する過程。技術進歩・資本蓄積・人的資本・制度・ソロー成長モデルなど。"@ja ;
+    rdfs:comment "The long-term increase in GDP and per capita income, driven by technological progress, capital accumulation, human capital, institutions, and analyzed through the Solow growth model."@en ;
+    skos:notation "SHINRA_0006605" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ExchangeRate
+    a owl:Class ; rdfs:subClassOf shinra:EconomicIndicator ;
+    rdfs:label "為替レート"@ja ; rdfs:label "Exchange Rate"@en ;
+    rdfs:comment "ある通貨と他の通貨の交換比率。固定相場制・変動相場制・購買力平価・通貨危機との関連など。"@ja ;
+    rdfs:comment "The rate at which one currency exchanges for another, including fixed and floating exchange rate systems, purchasing power parity, and currency crises."@en ;
+    skos:notation "SHINRA_0006606" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:gdp-concept-001
+    a shinra:EconomicIndicator ;
+    rdfs:label "国内総生産（GDP）"@ja ; rdfs:label "Gross Domestic Product"@en ;
+    shinra:wikidataId "Q83267" ;
+    skos:notation "SHINRA_I006601" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:phillips-curve-001
+    a shinra:EconomicTheory ;
+    rdfs:label "フィリップス曲線"@ja ; rdfs:label "Phillips Curve"@en ;
+    shinra:wikidataId "Q318491" ;
+    skos:notation "SHINRA_I006602" ; dcterms:created "2026-06-08"^^xsd:date .
