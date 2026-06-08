@@ -1,0 +1,73 @@
+# ===========================================================================
+# shinra-time-detail.ttl  — 時間・暦・時制ドメイン (Phase 8-u)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/time-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 時間・暦・時制ドメイン"@ja ,
+                    "Shinra Ontology — Time, Calendar & Tense Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Calendar
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "暦"@ja ; rdfs:label "Calendar"@en ;
+    rdfs:comment "時間を日・月・年などの単位で組織化する体系。グレゴリオ暦・ユリウス暦・和暦・イスラム暦・ユダヤ暦など。"@ja ;
+    rdfs:comment "A system organizing time into units such as days, months, and years, including Gregorian, Julian, Japanese, Islamic, and Hebrew calendars."@en ;
+    skos:notation "SHINRA_0006301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:TimeZoneSystem
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "標準時制度"@ja ; rdfs:label "Time Zone System"@en ;
+    rdfs:comment "地球を経度帯で区切り標準時を定める制度。UTC・夏時間・IANA時間帯データベース・協定世界時など。"@ja ;
+    rdfs:comment "A system dividing the Earth into longitude-based zones with standard times, including UTC, daylight saving time, the IANA timezone database, and Coordinated Universal Time."@en ;
+    skos:notation "SHINRA_0006302" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ChronologicalOrder
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "年代順"@ja ; rdfs:label "Chronological Order"@en ;
+    rdfs:comment "出来事を時間的な順序に並べた関係・体系。絶対年代・相対年代・年代測定法・時系列分析など。"@ja ;
+    rdfs:comment "A relational system ordering events in temporal sequence, including absolute dating, relative dating, dating methods, and time series analysis."@en ;
+    skos:notation "SHINRA_0006303" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:GeologicalTimescale
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "地質年代"@ja ; rdfs:label "Geological Time Scale"@en ;
+    rdfs:comment "地球の歴史を岩石・化石に基づいて区分した時間体系。冥王代・太古代・原生代・顕生代・各紀など。"@ja ;
+    rdfs:comment "A time system dividing Earth's history based on rocks and fossils, including the Hadean, Archean, Proterozoic, Phanerozoic eons, and their subdivisions."@en ;
+    skos:notation "SHINRA_0006304" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CosmicTime
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "宇宙時間"@ja ; rdfs:label "Cosmic Time"@en ;
+    rdfs:comment "宇宙の年齢・進化を記述する時間尺度。ビッグバンからの経過時間・宇宙の膨張率・プランク時間など。"@ja ;
+    rdfs:comment "The timescale describing the age and evolution of the universe, including elapsed time since the Big Bang, expansion rate of the universe, and Planck time."@en ;
+    skos:notation "SHINRA_0006305" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:TimePerception
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "時間知覚"@ja ; rdfs:label "Time Perception"@en ;
+    rdfs:comment "生物が時間の経過・継続・順序を主観的に体験する心的過程。時間感覚・概日リズム・時間的自己意識など。"@ja ;
+    rdfs:comment "The mental process by which organisms subjectively experience the passage, duration, and sequence of time, including time sense, circadian rhythms, and temporal self-awareness."@en ;
+    skos:notation "SHINRA_0006306" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:gregorian-calendar-001
+    a shinra:Calendar ;
+    rdfs:label "グレゴリオ暦"@ja ; rdfs:label "Gregorian Calendar"@en ;
+    shinra:wikidataId "Q12138" ;
+    skos:notation "SHINRA_I006301" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:unix-time-001
+    a shinra:TimeZoneSystem ;
+    rdfs:label "Unix時間"@ja ; rdfs:label "Unix Time"@en ;
+    shinra:wikidataId "Q182645" ;
+    skos:notation "SHINRA_I006302" ; dcterms:created "2026-06-03"^^xsd:date .

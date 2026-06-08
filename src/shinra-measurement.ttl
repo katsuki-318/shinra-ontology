@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-measurement.ttl  — 計測・単位・量ドメイン (Phase 8-t)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/measurement>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 計測・単位・量ドメイン"@ja ,
+                    "Shinra Ontology — Measurement, Units & Quantities Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:UnitOfMeasurement
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "測定単位"@ja ; rdfs:label "Unit of Measurement"@en ;
+    rdfs:comment "量を表現するための標準的な参照値。SI単位・ヤード・ポンド単位・自然単位・プランク単位など。"@ja ;
+    rdfs:comment "A standardized reference value for expressing quantities, including SI units, imperial units, natural units, and Planck units."@en ;
+    skos:notation "SHINRA_0006201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SIUnit
+    a owl:Class ; rdfs:subClassOf shinra:UnitOfMeasurement ;
+    rdfs:label "SI単位"@ja ; rdfs:label "SI Unit"@en ;
+    skos:altLabel "国際単位系"@ja ;
+    rdfs:comment "国際単位系（SI）の7基本単位と誘導単位。メートル・キログラム・秒・アンペア・ケルビン・モル・カンデラ。"@ja ;
+    rdfs:comment "The 7 base units and derived units of the International System of Units (SI): metre, kilogram, second, ampere, kelvin, mole, and candela."@en ;
+    skos:notation "SHINRA_0006202" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Measurement
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "測定"@ja ; rdfs:label "Measurement"@en ;
+    rdfs:comment "量を数値・単位で表現するための観察・比較・記録のプロセス。精度・確度・不確かさ・誤差分析など。"@ja ;
+    rdfs:comment "The process of observing, comparing, and recording quantities numerically with units, including precision, accuracy, uncertainty, and error analysis."@en ;
+    skos:notation "SHINRA_0006203" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Scale
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "尺度"@ja ; rdfs:label "Scale"@en ;
+    skos:altLabel "スケール"@ja ;
+    rdfs:comment "測定・評価のための体系的な連続体または離散的な段階。名義尺度・順序尺度・間隔尺度・比例尺度など。"@ja ;
+    rdfs:comment "A systematic continuum or discrete levels for measurement and evaluation, including nominal, ordinal, interval, and ratio scales."@en ;
+    skos:notation "SHINRA_0006204" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhysicalConstant
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "物理定数"@ja ; rdfs:label "Physical Constant"@en ;
+    rdfs:comment "自然界の基本的な量を表す固定値。光速・プランク定数・重力定数・アボガドロ数・電気素量など。"@ja ;
+    rdfs:comment "Fixed values representing fundamental quantities of nature, including the speed of light, Planck constant, gravitational constant, Avogadro number, and elementary charge."@en ;
+    skos:notation "SHINRA_0006205" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:VectorQuantity
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalQuality ;
+    rdfs:label "ベクトル量"@ja ; rdfs:label "Vector Quantity"@en ;
+    rdfs:comment "大きさと方向を持つ物理量。速度・加速度・力・電場・磁場など。スカラー量との対比。"@ja ;
+    rdfs:comment "A physical quantity having both magnitude and direction, including velocity, acceleration, force, electric field, and magnetic field, in contrast to scalar quantities."@en ;
+    skos:notation "SHINRA_0006206" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:speed-of-light-001
+    a shinra:PhysicalConstant ;
+    rdfs:label "光速"@ja ; rdfs:label "Speed of Light"@en ;
+    shinra:wikidataId "Q2111" ;
+    skos:notation "SHINRA_I006201" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:planck-constant-001
+    a shinra:PhysicalConstant ;
+    rdfs:label "プランク定数"@ja ; rdfs:label "Planck Constant"@en ;
+    shinra:wikidataId "Q25107" ;
+    skos:notation "SHINRA_I006202" ; dcterms:created "2026-06-03"^^xsd:date .

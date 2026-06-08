@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-energy-systems.ttl  — エネルギーシステム詳細ドメイン (Phase 8-p)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/energy-systems>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — エネルギーシステム詳細ドメイン"@ja ,
+                    "Shinra Ontology — Energy Systems Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:ElectricGrid
+    a owl:Class ; rdfs:subClassOf shinra:Infrastructure ;
+    rdfs:label "電力系統"@ja ; rdfs:label "Electric Grid"@en ;
+    skos:altLabel "送電網"@ja ;
+    rdfs:comment "発電・送電・変電・配電設備からなる電力供給システム。スマートグリッド・分散型電源・系統安定化など。"@ja ;
+    rdfs:comment "A power supply system comprising generation, transmission, transformation, and distribution facilities, including smart grids, distributed generation, and grid stability."@en ;
+    skos:notation "SHINRA_0005801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FossilFuel
+    a owl:Class ; rdfs:subClassOf shinra:NaturalResource ;
+    rdfs:label "化石燃料"@ja ; rdfs:label "Fossil Fuel"@en ;
+    rdfs:comment "古生物の遺骸が地中で変成した炭素系燃料。石炭・石油・天然ガス・オイルサンドなど。CO₂排出源。"@ja ;
+    rdfs:comment "Carbon-based fuels formed from ancient organic matter in the Earth, including coal, petroleum, natural gas, and oil sands. Major CO₂ emission sources."@en ;
+    skos:notation "SHINRA_0005802" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HydrogenEconomy
+    a owl:Class ; rdfs:subClassOf shinra:EconomicSystem ;
+    rdfs:label "水素経済"@ja ; rdfs:label "Hydrogen Economy"@en ;
+    rdfs:comment "水素を主要エネルギーキャリアとして利用するエネルギーシステム。グリーン水素・燃料電池・水素輸送・アンモニアなど。"@ja ;
+    rdfs:comment "An energy system using hydrogen as a primary energy carrier, including green hydrogen, fuel cells, hydrogen transport, and ammonia."@en ;
+    skos:notation "SHINRA_0005803" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EnergyStorage
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "エネルギー貯蔵"@ja ; rdfs:label "Energy Storage"@en ;
+    rdfs:comment "エネルギーを後で使用するために蓄積する技術。リチウムイオン電池・揚水発電・圧縮空気・フライホイールなど。"@ja ;
+    rdfs:comment "Technology for storing energy for later use, including lithium-ion batteries, pumped hydro, compressed air, and flywheel storage."@en ;
+    skos:notation "SHINRA_0005804" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:EnergyTransition
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "エネルギー転換"@ja ; rdfs:label "Energy Transition"@en ;
+    skos:altLabel "脱炭素化"@ja ;
+    rdfs:comment "化石燃料依存から再生可能エネルギー主体の低炭素エネルギーシステムへの移行過程。脱炭素・電化・分散化など。"@ja ;
+    rdfs:comment "The process of transitioning from fossil fuel dependence to a low-carbon energy system centered on renewable energy, including decarbonization, electrification, and decentralization."@en ;
+    skos:notation "SHINRA_0005805" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:paris-agreement-energy-001
+    a shinra:EnergyTransition ;
+    rdfs:label "1.5℃目標（パリ協定）"@ja ; rdfs:label "Paris 1.5°C Target"@en ;
+    shinra:wikidataId "Q21197855" ;
+    skos:notation "SHINRA_I005801" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:lithium-battery-001
+    a shinra:EnergyStorage ;
+    rdfs:label "リチウムイオン電池"@ja ; rdfs:label "Lithium-Ion Battery"@en ;
+    shinra:wikidataId "Q130901" ;
+    skos:notation "SHINRA_I005802" ; dcterms:created "2026-06-03"^^xsd:date .

@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-oceanography.ttl  — 海洋学ドメイン (Phase 8-r)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/oceanography>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 海洋学ドメイン"@ja ,
+                    "Shinra Ontology — Oceanography Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:OceanZone
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "海洋帯"@ja ; rdfs:label "Ocean Zone"@en ;
+    rdfs:comment "深度・光量・生物相に基づく海洋の垂直区分。表海帯・中深海帯・漸深海帯・超深海帯・無光帯など。"@ja ;
+    rdfs:comment "Vertical divisions of the ocean based on depth, light, and biota, including the epipelagic, mesopelagic, bathypelagic, abyssopelagic, and hadopelagic zones."@en ;
+    skos:notation "SHINRA_0006001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Tide
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "潮汐"@ja ; rdfs:label "Tide"@en ;
+    rdfs:comment "月・太陽の引力による海面の周期的な昇降。大潮・小潮・潮流・潮力発電との関連など。"@ja ;
+    rdfs:comment "The periodic rise and fall of sea level caused by the gravitational pull of the Moon and Sun, including spring tides, neap tides, tidal currents, and tidal energy."@en ;
+    skos:notation "SHINRA_0006002" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Wave
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "波浪"@ja ; rdfs:label "Ocean Wave"@en ;
+    skos:altLabel "波"@ja ;
+    rdfs:comment "風・地震・潮汐によって海面に生じるエネルギーの伝播。風浪・うねり・津波・内部波など。"@ja ;
+    rdfs:comment "The propagation of energy at the ocean surface caused by wind, earthquakes, or tides, including wind waves, swell, tsunamis, and internal waves."@en ;
+    skos:notation "SHINRA_0006003" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:OceanAcidification
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "海洋酸性化"@ja ; rdfs:label "Ocean Acidification"@en ;
+    rdfs:comment "大気CO₂の海洋吸収による海水pHの低下過程。貝類・珊瑚・石灰化生物への影響・炭酸系化学など。"@ja ;
+    rdfs:comment "The process of decreasing ocean pH due to absorption of atmospheric CO₂, affecting shellfish, corals, calcifying organisms, and carbonate chemistry."@en ;
+    skos:notation "SHINRA_0006004" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DeepSeaVent
+    a owl:Class ; rdfs:subClassOf shinra:Site ;
+    rdfs:label "熱水噴出孔"@ja ; rdfs:label "Hydrothermal Vent"@en ;
+    skos:altLabel "ブラックスモーカー"@ja ;
+    rdfs:comment "深海底から熱水・化学物質が噴出する地質構造。独自の化学合成生態系・生命起源との関連など。"@ja ;
+    rdfs:comment "A geological structure on the deep ocean floor from which hot water and chemicals are ejected, supporting unique chemosynthetic ecosystems and related to the origin of life."@en ;
+    skos:notation "SHINRA_0006005" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:mariana-trench-001
+    a shinra:OceanZone ;
+    rdfs:label "マリアナ海溝"@ja ; rdfs:label "Mariana Trench"@en ;
+    shinra:wikidataId "Q165668" ;
+    skos:notation "SHINRA_I006001" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:great-ocean-conveyor-001
+    a shinra:OceanCurrentSystem ;
+    rdfs:label "大洋大循環"@ja ; rdfs:label "Thermohaline Circulation"@en ;
+    shinra:wikidataId "Q179467" ;
+    skos:notation "SHINRA_I006002" ; dcterms:created "2026-06-03"^^xsd:date .

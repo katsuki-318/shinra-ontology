@@ -1,0 +1,81 @@
+# ===========================================================================
+# shinra-global-issues.ttl  — グローバル課題・国際開発ドメイン (Phase 8-q)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/global-issues>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — グローバル課題・国際開発ドメイン"@ja ,
+                    "Shinra Ontology — Global Issues & International Development Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Poverty
+    a owl:Class ; rdfs:subClassOf shinra:SocialQuality ;
+    rdfs:label "貧困"@ja ; rdfs:label "Poverty"@en ;
+    rdfs:comment "基本的ニーズを満たすのに必要な資源・機会が欠如した状態。絶対的貧困・相対的貧困・多次元貧困指数など。"@ja ;
+    rdfs:comment "A state of lacking resources and opportunities to meet basic needs, including absolute poverty, relative poverty, and the Multidimensional Poverty Index."@en ;
+    skos:notation "SHINRA_0005901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:FoodSecurity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "食料安全保障"@ja ; rdfs:label "Food Security"@en ;
+    rdfs:comment "すべての人が常に活発で健康な生活に必要な食料を得られる状態。食料入手可能性・アクセス・利用・安定性の四要素。"@ja ;
+    rdfs:comment "A state in which all people always have access to sufficient food for an active and healthy life, defined by four pillars: availability, access, utilization, and stability."@en ;
+    skos:notation "SHINRA_0005902" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:WaterSecurity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "水安全保障"@ja ; rdfs:label "Water Security"@en ;
+    rdfs:comment "人間・生態系・経済のニーズを満たす水への持続可能なアクセスの確保。水不足・水質汚染・水紛争などと関連。"@ja ;
+    rdfs:comment "Ensuring sustainable access to water for human, ecological, and economic needs, related to water scarcity, contamination, and water conflicts."@en ;
+    skos:notation "SHINRA_0005903" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HumanDevelopment
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "人間開発"@ja ; rdfs:label "Human Development"@en ;
+    rdfs:comment "人間の能力・選択肢・自由を拡大するための社会的過程と状態。HDI・教育・保健・ジェンダー平等・アマルティア・センの潜在能力アプローチなど。"@ja ;
+    rdfs:comment "A social process and state expanding human capabilities, choices, and freedoms, including the HDI, education, health, gender equality, and Amartya Sen's capability approach."@en ;
+    skos:notation "SHINRA_0005904" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SDGs
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "持続可能な開発目標"@ja ; rdfs:label "Sustainable Development Goals"@en ;
+    skos:altLabel "SDGs"@ja ;
+    rdfs:comment "2030年までに達成すべき17の国際目標。貧困・飢餓・保健・教育・ジェンダー・環境・平和など全分野を包括。"@ja ;
+    rdfs:comment "17 international goals to be achieved by 2030, encompassing poverty, hunger, health, education, gender equality, environment, and peace."@en ;
+    skos:notation "SHINRA_0005905" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:DigitalDivide
+    a owl:Class ; rdfs:subClassOf shinra:Inequality ;
+    rdfs:label "デジタル格差"@ja ; rdfs:label "Digital Divide"@en ;
+    rdfs:comment "デジタル技術・インターネットへのアクセス・利活用能力における格差。国家間格差・都市農村格差・世代間格差など。"@ja ;
+    rdfs:comment "Disparity in access to and ability to use digital technology and the internet, including gaps between nations, between urban and rural areas, and between generations."@en ;
+    skos:notation "SHINRA_0005906" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:RefugeeCrisis
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "難民危機"@ja ; rdfs:label "Refugee Crisis"@en ;
+    rdfs:comment "紛争・迫害・環境変化により大規模な人口移動が生じる社会的状況。難民・国内避難民・庇護申請者・無国籍者など。"@ja ;
+    rdfs:comment "A social situation of large-scale population displacement caused by conflict, persecution, or environmental change, including refugees, internally displaced persons, asylum seekers, and stateless persons."@en ;
+    skos:notation "SHINRA_0005907" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:sdgs-001
+    a shinra:SDGs ;
+    rdfs:label "国連持続可能な開発目標"@ja ; rdfs:label "UN Sustainable Development Goals"@en ;
+    shinra:wikidataId "Q5060955" ;
+    skos:notation "SHINRA_I005901" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:unhcr-001
+    a shinra:InternationalOrganization ;
+    rdfs:label "国連難民高等弁務官事務所"@ja ; rdfs:label "UNHCR"@en ;
+    shinra:wikidataId "Q40178" ;
+    skos:notation "SHINRA_I005902" ; dcterms:created "2026-06-03"^^xsd:date .

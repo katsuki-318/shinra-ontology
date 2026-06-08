@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-sport-culture.ttl  — 武道・伝統武芸・身体文化ドメイン (Phase 8-v)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/sport-culture>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 武道・伝統武芸・身体文化ドメイン"@ja ,
+                    "Shinra Ontology — Martial Arts, Traditional Combat Arts & Body Culture Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:MartialArtStyle
+    a owl:Class ; rdfs:subClassOf shinra:MartialArt ;
+    rdfs:label "武術流派"@ja ; rdfs:label "Martial Art Style"@en ;
+    rdfs:comment "特定の技術・哲学・伝統を持つ武道・武術の様式。柔道・剣道・空手・合気道・カンフー・ムエタイなど。"@ja ;
+    rdfs:comment "A martial art style with specific techniques, philosophy, and tradition, including judo, kendo, karate, aikido, kung fu, and muay thai."@en ;
+    skos:notation "SHINRA_0006401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhysicalCulture
+    a owl:Class ; rdfs:subClassOf shinra:CulturalPractice ;
+    rdfs:label "身体文化"@ja ; rdfs:label "Physical Culture"@en ;
+    rdfs:comment "身体の鍛練・表現・儀礼化を中心とする文化的実践。体育・ヨガ・太極拳・ピラティス・フィットネス文化など。"@ja ;
+    rdfs:comment "Cultural practices centered on the training, expression, and ritualization of the body, including physical education, yoga, tai chi, Pilates, and fitness culture."@en ;
+    skos:notation "SHINRA_0006402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:OlympicSport
+    a owl:Class ; rdfs:subClassOf shinra:Sport ;
+    rdfs:label "オリンピック競技"@ja ; rdfs:label "Olympic Sport"@en ;
+    rdfs:comment "オリンピックプログラムに採用されたスポーツ競技。陸上・水泳・体操・球技・格闘技・冬季競技など。"@ja ;
+    rdfs:comment "A sport included in the Olympic programme, including athletics, swimming, gymnastics, ball sports, combat sports, and winter sports."@en ;
+    skos:notation "SHINRA_0006403" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:SportTactics
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "戦術"@ja ; rdfs:label "Sport Tactics"@en ;
+    skos:altLabel "作戦"@ja ;
+    rdfs:comment "競技において勝利を目的として採用する短期的行動計画・判断。フォーメーション・プレスディフェンス・速攻など。"@ja ;
+    rdfs:comment "Short-term action plans and decisions adopted in competition to achieve victory, including formations, pressing defense, and fast breaks."@en ;
+    skos:notation "SHINRA_0006404" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:sumo-001
+    a shinra:MartialArt ;
+    rdfs:label "相撲"@ja ; rdfs:label "Sumo"@en ;
+    shinra:wikidataId "Q34954" ;
+    skos:notation "SHINRA_I006401" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:yoga-001
+    a shinra:PhysicalCulture ;
+    rdfs:label "ヨガ"@ja ; rdfs:label "Yoga"@en ;
+    shinra:wikidataId "Q82571" ;
+    skos:notation "SHINRA_I006402" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:kendo-001
+    a shinra:MartialArtStyle ;
+    rdfs:label "剣道"@ja ; rdfs:label "Kendo"@en ;
+    shinra:wikidataId "Q131514" ;
+    skos:notation "SHINRA_I006403" ; dcterms:created "2026-06-03"^^xsd:date .

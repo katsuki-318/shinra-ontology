@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-history-philosophy.ttl  — 歴史哲学・歴史理論ドメイン (Phase 8-s)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/history-philosophy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 歴史哲学・歴史理論ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of History & Historical Theory Domain"@en ;
+    dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:PhilosophyOfHistory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "歴史哲学"@ja ; rdfs:label "Philosophy of History"@en ;
+    rdfs:comment "歴史の本質・意味・方法・説明を研究する哲学の分野。ヘーゲルの弁証法・マルクスの唯物史観・ランケの歴史主義など。"@ja ;
+    rdfs:comment "The philosophical field studying the nature, meaning, method, and explanation of history, including Hegel's dialectic, Marx's historical materialism, and Ranke's historicism."@en ;
+    skos:notation "SHINRA_0006101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Historiography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "史学史"@ja ; rdfs:label "Historiography"@en ;
+    skos:altLabel "歴史記述論"@ja ;
+    rdfs:comment "歴史の書き方・解釈の変遷を研究する分野。アナール学派・社会史・文化史・ポストコロニアル史学など。"@ja ;
+    rdfs:comment "The study of how history has been written and interpreted over time, including the Annales school, social history, cultural history, and postcolonial historiography."@en ;
+    skos:notation "SHINRA_0006102" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HistoricalCausation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "歴史的因果"@ja ; rdfs:label "Historical Causation"@en ;
+    rdfs:comment "歴史的出来事の原因と結果の関係についての理論。単一因果・複合因果・構造と行為者・反事実的推論など。"@ja ;
+    rdfs:comment "Theories about cause-and-effect relationships in historical events, including mono-causality, multi-causality, structure vs. agency, and counterfactual reasoning."@en ;
+    skos:notation "SHINRA_0006103" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:HistoricalPeriodization
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "時代区分"@ja ; rdfs:label "Historical Periodization"@en ;
+    rdfs:comment "歴史を時代・時期に区切る分析的枠組み。古代・中世・近世・近代・現代の区分や地域別時代区分など。"@ja ;
+    rdfs:comment "An analytical framework dividing history into periods or eras, including ancient, medieval, early modern, modern, and contemporary divisions, and region-specific periodizations."@en ;
+    skos:notation "SHINRA_0006104" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:Counterfactual
+    a owl:Class ; rdfs:subClassOf shinra:ThoughtExperiment ;
+    rdfs:label "反事実的歴史"@ja ; rdfs:label "Historical Counterfactual"@en ;
+    skos:altLabel "仮想歴史"@ja ;
+    rdfs:comment "「もし〜だったら」という仮定で歴史的出来事を再考する思考実験。歴史的因果の解明・教育的ツールとして使用。"@ja ;
+    rdfs:comment "A thought experiment reconsidering historical events through 'what if' hypotheses, used as a tool for understanding historical causation and for educational purposes."@en ;
+    skos:notation "SHINRA_0006105" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra:CollectiveMemory
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "集合的記憶"@ja ; rdfs:label "Collective Memory"@en ;
+    skos:altLabel "社会的記憶"@ja ;
+    rdfs:comment "集団・社会が共有する過去についての記憶・表象。記念碑・国民神話・歴史教育・トラウマの記憶などと関連。"@ja ;
+    rdfs:comment "The shared memory and representations of the past held by a group or society, related to monuments, national myths, history education, and traumatic memory."@en ;
+    skos:notation "SHINRA_0006106" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:annales-school-001
+    a shinra:Historiography ;
+    rdfs:label "アナール学派"@ja ; rdfs:label "Annales School"@en ;
+    shinra:wikidataId "Q254624" ;
+    skos:notation "SHINRA_I006101" ; dcterms:created "2026-06-03"^^xsd:date .
+
+shinra-data:hegelian-dialectic-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ヘーゲルの弁証法"@ja ; rdfs:label "Hegelian Dialectic"@en ;
+    shinra:wikidataId "Q211364" ;
+    skos:notation "SHINRA_I006102" ; dcterms:created "2026-06-03"^^xsd:date .
