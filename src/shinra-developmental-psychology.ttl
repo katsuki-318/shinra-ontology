@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-developmental-psychology.ttl  — 発達心理学ドメイン (Phase 10-r)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/developmental-psychology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 発達心理学ドメイン"@ja ,
+                    "Shinra Ontology — Developmental Psychology Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DevelopmentalStage
+    a owl:Class ; rdfs:subClassOf shinra:LifeStage ;
+    rdfs:label "発達段階"@ja ; rdfs:label "Developmental Stage"@en ;
+    rdfs:comment "心理的・認知的・社会的発達の質的に異なる段階。ピアジェの認知発達段階・エリクソンの心理社会的段階など。"@ja ;
+    rdfs:comment "Qualitatively distinct stages of psychological, cognitive, and social development, including Piaget's stages of cognitive development and Erikson's psychosocial stages."@en ;
+    skos:notation "SHINRA_0009901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Attachment
+    a owl:Class ; rdfs:subClassOf shinra:Disposition ;
+    rdfs:label "愛着"@ja ; rdfs:label "Attachment"@en ;
+    skos:altLabel "アタッチメント"@ja ;
+    rdfs:comment "乳幼児が養育者に形成する情動的絆。ボウルビィの愛着理論・安全基地・安全型・回避型・不安型・無秩序型など。"@ja ;
+    rdfs:comment "The emotional bond an infant forms with a caregiver, including Bowlby's attachment theory, secure base, secure, avoidant, anxious, and disorganized attachment types."@en ;
+    skos:notation "SHINRA_0009902" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MoralDevelopment
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveDevelopment ;
+    rdfs:label "道徳性発達"@ja ; rdfs:label "Moral Development"@en ;
+    rdfs:comment "生涯を通じて道徳的判断・推論・行動が発達する過程。コールバーグの道徳性発達段階・ケアの倫理・道徳的基盤など。"@ja ;
+    rdfs:comment "The developmental process of moral judgment, reasoning, and behavior across the lifespan, including Kohlberg's stages of moral development, ethics of care, and moral foundations."@en ;
+    skos:notation "SHINRA_0009903" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LanguageDevelopment
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveDevelopment ;
+    rdfs:label "言語発達"@ja ; rdfs:label "Language Development"@en ;
+    rdfs:comment "乳幼児から成人にかけて言語能力が発達する過程。言語爆発・文法獲得・クリティカルピリオド・バイリンガル発達など。"@ja ;
+    rdfs:comment "The developmental process of language ability from infancy to adulthood, including the vocabulary explosion, grammar acquisition, critical period, and bilingual development."@en ;
+    skos:notation "SHINRA_0009904" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Adolescence
+    a owl:Class ; rdfs:subClassOf shinra:DevelopmentalStage ;
+    rdfs:label "青年期"@ja ; rdfs:label "Adolescence"@en ;
+    rdfs:comment "子ども期から成人期への移行期（約10〜24歳）。思春期・アイデンティティ形成・リスク行動・脳の発達・自律性の獲得など。"@ja ;
+    rdfs:comment "The transitional period from childhood to adulthood (approximately 10-24 years), including puberty, identity formation, risk behavior, brain development, and acquisition of autonomy."@en ;
+    skos:notation "SHINRA_0009905" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AgingProcess
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "加齢過程"@ja ; rdfs:label "Aging Process"@en ;
+    skos:altLabel "老化"@ja ;
+    rdfs:comment "時間とともに生物体の構造・機能が変化する過程。細胞老化・テロメア短縮・認知的老化・successful aging・寿命研究など。"@ja ;
+    rdfs:comment "The process of structural and functional change in organisms over time, including cellular senescence, telomere shortening, cognitive aging, successful aging, and longevity research."@en ;
+    skos:notation "SHINRA_0009906" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:piaget-stages-001
+    a shinra:DevelopmentalStage ;
+    rdfs:label "ピアジェの発達段階"@ja ; rdfs:label "Piaget's Stages of Development"@en ;
+    shinra:wikidataId "Q34583" ;
+    skos:notation "SHINRA_I009901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:bowlby-attachment-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "ボウルビィの愛着理論"@ja ; rdfs:label "Bowlby's Attachment Theory"@en ;
+    shinra:wikidataId "Q473685" ;
+    skos:notation "SHINRA_I009902" ; dcterms:created "2026-06-10"^^xsd:date .

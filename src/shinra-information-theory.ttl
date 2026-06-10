@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-information-theory.ttl  — 情報理論・エントロピー詳細ドメイン (Phase 10-p)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/information-theory>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 情報理論・エントロピー詳細ドメイン"@ja ,
+                    "Shinra Ontology — Information Theory & Entropy Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ShannonEntropy
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "シャノンエントロピー"@ja ; rdfs:label "Shannon Entropy"@en ;
+    rdfs:comment "情報源の不確実性・情報量を定量化するシャノンの概念。H = -Σ p(x) log p(x)。ビット・通信路容量・圧縮限界など。"@ja ;
+    rdfs:comment "Shannon's measure quantifying uncertainty and information content of a source, H = -Σ p(x) log p(x), related to bits, channel capacity, and compression limits."@en ;
+    skos:notation "SHINRA_0009701" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Channel
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "通信路"@ja ; rdfs:label "Communication Channel"@en ;
+    rdfs:comment "情報を伝達する媒体・経路とその雑音特性。無雑音通信路・加法的白色ガウス雑音路・通信路容量定理など。"@ja ;
+    rdfs:comment "The medium and path transmitting information and its noise characteristics, including noiseless channels, AWGN channels, and the channel capacity theorem."@en ;
+    skos:notation "SHINRA_0009702" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DataCompression
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "データ圧縮"@ja ; rdfs:label "Data Compression"@en ;
+    rdfs:comment "データの冗長性を除去してサイズを削減する技術。可逆圧縮（ZIP・PNG）・非可逆圧縮（JPEG・MP3）・ハフマン符号など。"@ja ;
+    rdfs:comment "Technology reducing data size by removing redundancy, including lossless compression (ZIP, PNG), lossy compression (JPEG, MP3), and Huffman coding."@en ;
+    skos:notation "SHINRA_0009703" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ErrorCorrectingCode
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "誤り訂正符号"@ja ; rdfs:label "Error-Correcting Code"@en ;
+    rdfs:comment "通信・記録における誤りを検出・訂正する符号。ハミング符号・リード・ソロモン符号・ターボ符号・LDPC符号など。"@ja ;
+    rdfs:comment "Codes detecting and correcting errors in communication and storage, including Hamming codes, Reed-Solomon codes, turbo codes, and LDPC codes."@en ;
+    skos:notation "SHINRA_0009704" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:KolmogorovComplexity
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "コルモゴロフ複雑性"@ja ; rdfs:label "Kolmogorov Complexity"@en ;
+    skos:altLabel "アルゴリズム情報量"@ja ;
+    rdfs:comment "データを生成する最短プログラム長で定義される情報量の概念。ランダム性・圧縮不可能性・MDL原理など。"@ja ;
+    rdfs:comment "An information measure defined by the length of the shortest program generating data, related to randomness, incompressibility, and the minimum description length principle."@en ;
+    skos:notation "SHINRA_0009705" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MutualInformation
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "相互情報量"@ja ; rdfs:label "Mutual Information"@en ;
+    rdfs:comment "二つの確率変数が共有する情報量を測る指標。I(X;Y) = H(X) - H(X|Y)。特徴選択・因果推論・機械学習に応用。"@ja ;
+    rdfs:comment "A measure of the information shared between two random variables, I(X;Y) = H(X) - H(X|Y), applied to feature selection, causal inference, and machine learning."@en ;
+    skos:notation "SHINRA_0009706" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:shannons-mathematical-theory-001
+    a shinra:ScientificTheory ;
+    rdfs:label "シャノンの通信の数学的理論"@ja ; rdfs:label "Shannon's Mathematical Theory of Communication"@en ;
+    shinra:wikidataId "Q1279902" ;
+    skos:notation "SHINRA_I009701" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:rsa-001
+    a shinra:ErrorCorrectingCode ;
+    rdfs:label "リード・ソロモン符号"@ja ; rdfs:label "Reed-Solomon Code"@en ;
+    shinra:wikidataId "Q1285068" ;
+    skos:notation "SHINRA_I009702" ; dcterms:created "2026-06-10"^^xsd:date .

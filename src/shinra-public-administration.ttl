@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-public-administration.ttl  — 行政学・公共管理ドメイン (Phase 10-s)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/public-administration>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 行政学・公共管理ドメイン"@ja ,
+                    "Shinra Ontology — Public Administration & Governance Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Bureaucracy
+    a owl:Class ; rdfs:subClassOf shinra:Organization ;
+    rdfs:label "官僚制"@ja ; rdfs:label "Bureaucracy"@en ;
+    rdfs:comment "規則・階層・専門化に基づく合理的行政組織。ウェーバーの理想型官僚制・官僚的非効率・行政の裁量など。"@ja ;
+    rdfs:comment "A rational administrative organization based on rules, hierarchy, and specialization, including Weber's ideal-type bureaucracy, bureaucratic inefficiency, and administrative discretion."@en ;
+    skos:notation "SHINRA_0010001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GovernanceFramework
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ガバナンス枠組み"@ja ; rdfs:label "Governance Framework"@en ;
+    rdfs:comment "公共問題を解決するための多主体参加・調整・意思決定の仕組み。ネットワークガバナンス・マルチレベルガバナンスなど。"@ja ;
+    rdfs:comment "A framework for multi-stakeholder participation, coordination, and decision-making in solving public problems, including network governance and multi-level governance."@en ;
+    skos:notation "SHINRA_0010002" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:PublicService
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "公共サービス"@ja ; rdfs:label "Public Service"@en ;
+    rdfs:comment "政府・公的機関が市民に提供する財・サービス。教育・医療・社会保障・インフラ・公共放送・行政手続きなど。"@ja ;
+    rdfs:comment "Goods and services provided by governments and public bodies to citizens, including education, healthcare, social security, infrastructure, public broadcasting, and administrative procedures."@en ;
+    skos:notation "SHINRA_0010003" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RegulationPolicy
+    a owl:Class ; rdfs:subClassOf shinra:PublicPolicy ;
+    rdfs:label "規制政策"@ja ; rdfs:label "Regulation Policy"@en ;
+    rdfs:comment "政府が市場・行動を規制する政策。経済規制・社会規制・環境規制・規制改革・規制影響評価など。"@ja ;
+    rdfs:comment "Government policies regulating markets and behavior, including economic regulation, social regulation, environmental regulation, regulatory reform, and regulatory impact assessment."@en ;
+    skos:notation "SHINRA_0010004" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:EGovernment
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "電子政府"@ja ; rdfs:label "E-Government"@en ;
+    skos:altLabel "デジタル政府"@ja ;
+    rdfs:comment "ICTを活用して行政サービス・手続きをデジタル化する取り組み。オンライン手続き・オープンデータ・デジタル庁・DXなど。"@ja ;
+    rdfs:comment "The use of ICT to digitize administrative services and procedures, including online procedures, open data, digital government agencies, and digital transformation."@en ;
+    skos:notation "SHINRA_0010005" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CivilSociety
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "市民社会"@ja ; rdfs:label "Civil Society"@en ;
+    rdfs:comment "国家・市場から独立した自発的結社・NPO・市民運動の領域。アレクシス・ド・トクヴィル・ハーバーマスの公共圏など。"@ja ;
+    rdfs:comment "The realm of voluntary associations, NGOs, and citizen movements independent of the state and market, related to Tocqueville's voluntary associations and Habermas's public sphere."@en ;
+    skos:notation "SHINRA_0010006" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:un-charter-001
+    a shinra:LegalDocument ;
+    rdfs:label "国連憲章"@ja ; rdfs:label "United Nations Charter"@en ;
+    shinra:wikidataId "Q131427" ;
+    skos:notation "SHINRA_I010001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:weberian-bureaucracy-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ウェーバーの官僚制論"@ja ; rdfs:label "Weberian Bureaucracy"@en ;
+    shinra:wikidataId "Q152388" ;
+    skos:notation "SHINRA_I010002" ; dcterms:created "2026-06-10"^^xsd:date .

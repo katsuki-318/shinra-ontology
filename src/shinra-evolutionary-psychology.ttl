@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-evolutionary-psychology.ttl  — 進化心理学ドメイン (Phase 10-q)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/evolutionary-psychology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 進化心理学ドメイン"@ja ,
+                    "Shinra Ontology — Evolutionary Psychology Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AdaptedMechanism
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "適応的メカニズム"@ja ; rdfs:label "Psychological Adaptation"@en ;
+    skos:altLabel "心理的適応"@ja ;
+    rdfs:comment "進化によって形成された心理的問題解決機能。配偶者選択・親投資・近親相姦回避・感染回避システムなど。"@ja ;
+    rdfs:comment "A psychological problem-solving function shaped by evolution, including mate selection, parental investment, incest avoidance, and pathogen avoidance systems."@en ;
+    skos:notation "SHINRA_0009801" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SexualSelection
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "性的選択"@ja ; rdfs:label "Sexual Selection"@en ;
+    rdfs:comment "配偶者をめぐる競争によって形質が進化する過程。ダーウィンの性的選択・雌選好・雄間競争・ランナウェイ仮説など。"@ja ;
+    rdfs:comment "The process by which traits evolve through competition for mates, including Darwin's sexual selection, female choice, male-male competition, and the runaway hypothesis."@en ;
+    skos:notation "SHINRA_0009802" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:KinSelection
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "血縁選択"@ja ; rdfs:label "Kin Selection"@en ;
+    rdfs:comment "血縁関係を持つ個体への利他行動を自然選択が促進するメカニズム。ハミルトンの血縁選択理論・包括適応度など。"@ja ;
+    rdfs:comment "The mechanism by which natural selection promotes altruistic behavior toward relatives, including Hamilton's kin selection theory and inclusive fitness."@en ;
+    skos:notation "SHINRA_0009803" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ReciprocicalAltruism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "互恵的利他主義"@ja ; rdfs:label "Reciprocal Altruism"@en ;
+    rdfs:comment "非血縁個体間で利他行動が進化するメカニズム。トリヴァースの互恵的利他主義・繰り返しゲームと協力・フリーライダー問題など。"@ja ;
+    rdfs:comment "The mechanism by which altruistic behavior evolves between unrelated individuals, including Trivers's reciprocal altruism, iterated games and cooperation, and the free-rider problem."@en ;
+    skos:notation "SHINRA_0009804" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:EvolutionaryMismatch
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "進化的ミスマッチ"@ja ; rdfs:label "Evolutionary Mismatch"@en ;
+    rdfs:comment "進化的適応が現代環境で機能不全を引き起こす状態。肥満・不安障害・依存症・現代病の進化的説明など。"@ja ;
+    rdfs:comment "The state in which evolutionary adaptations cause dysfunction in the modern environment, providing evolutionary explanations for obesity, anxiety disorders, addiction, and modern diseases."@en ;
+    skos:notation "SHINRA_0009805" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MoralFoundations
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "道徳基盤理論"@ja ; rdfs:label "Moral Foundations Theory"@en ;
+    rdfs:comment "進化によって形成された道徳的直感の基盤を特定するハイトの理論。ケア・公正・忠誠・権威・純粋・自由の六基盤。"@ja ;
+    rdfs:comment "Haidt's theory identifying evolutionarily formed foundations of moral intuitions: Care, Fairness, Loyalty, Authority, Sanctity, and Liberty."@en ;
+    skos:notation "SHINRA_0009806" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:selfish-gene-001
+    a shinra:ScientificTheory ;
+    rdfs:label "利己的な遺伝子"@ja ; rdfs:label "The Selfish Gene"@en ;
+    shinra:wikidataId "Q210016" ;
+    skos:notation "SHINRA_I009801" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:sexual-selection-darwin-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ダーウィンの性的選択論"@ja ; rdfs:label "Darwin's Theory of Sexual Selection"@en ;
+    shinra:wikidataId "Q82817" ;
+    skos:notation "SHINRA_I009802" ; dcterms:created "2026-06-10"^^xsd:date .
