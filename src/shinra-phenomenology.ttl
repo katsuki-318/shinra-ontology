@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-phenomenology.ttl  — 現象学・存在論詳細ドメイン (Phase 10-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/phenomenology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 現象学・存在論詳細ドメイン"@ja ,
+                    "Shinra Ontology — Phenomenology & Ontology Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Being
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "存在"@ja ; rdfs:label "Being"@en ;
+    skos:altLabel "存在者"@ja ;
+    rdfs:comment "存在するということ・あるということの根本概念。ハイデガーの存在と存在者の区別・存在忘却・現存在（ダーザイン）など。"@ja ;
+    rdfs:comment "The fundamental concept of what it means to be or to exist, including Heidegger's distinction between Being and beings, oblivion of Being, and Dasein."@en ;
+    skos:notation "SHINRA_0008201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Dasein
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "現存在"@ja ; rdfs:label "Dasein"@en ;
+    rdfs:comment "ハイデガーが人間存在を指すために用いた術語。世界内存在・気遣い・時間性・死への存在・本来性など。"@ja ;
+    rdfs:comment "Heidegger's term for human existence, including being-in-the-world, care, temporality, being-toward-death, and authenticity."@en ;
+    skos:notation "SHINRA_0008202" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Intentional
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "志向的体験"@ja ; rdfs:label "Intentional Experience"@en ;
+    skos:altLabel "フッサールの志向性"@ja ;
+    rdfs:comment "フッサール現象学の核心概念。意識はつねに何かについての意識である。ノエシス・ノエマ・エポケー・現象学的還元など。"@ja ;
+    rdfs:comment "The core concept of Husserl's phenomenology: consciousness is always consciousness of something. Including noesis, noema, epoché, and phenomenological reduction."@en ;
+    skos:notation "SHINRA_0008203" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Lifeworld
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "生活世界"@ja ; rdfs:label "Lifeworld"@en ;
+    skos:altLabel "レーベンスヴェルト"@ja ;
+    rdfs:comment "フッサール・シュッツの現象学的概念。科学的理論以前の日常的・前反省的な経験の世界。間主観性・文化世界との関係。"@ja ;
+    rdfs:comment "Husserl and Schutz's phenomenological concept of the pre-theoretical, everyday world of lived experience prior to scientific abstraction, related to intersubjectivity and cultural worlds."@en ;
+    skos:notation "SHINRA_0008204" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Temporality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "時間性"@ja ; rdfs:label "Temporality"@en ;
+    rdfs:comment "現象学・存在論における時間の構造的分析。過去・現在・未来の統一としての時間性・内的時間意識・ハイデガーの時間性など。"@ja ;
+    rdfs:comment "The structural analysis of time in phenomenology and ontology, including temporality as the unity of past, present, and future, inner time-consciousness, and Heidegger's temporality."@en ;
+    skos:notation "SHINRA_0008205" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Intersubjectivity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "間主観性"@ja ; rdfs:label "Intersubjectivity"@en ;
+    rdfs:comment "複数の主体が共有する経験・意味・世界についての現象学的概念。フッサールの類推・シュッツの複数の現実・他者問題など。"@ja ;
+    rdfs:comment "The phenomenological concept of experience, meaning, and world shared among multiple subjects, including Husserl's analogical apperception, Schutz's multiple realities, and the problem of other minds."@en ;
+    skos:notation "SHINRA_0008206" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:being-and-time-001
+    a shinra:ScientificTheory ;
+    rdfs:label "存在と時間"@ja ; rdfs:label "Being and Time"@en ;
+    shinra:wikidataId "Q190524" ;
+    skos:notation "SHINRA_I008201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:logical-investigations-001
+    a shinra:ScientificTheory ;
+    rdfs:label "論理学研究（フッサール）"@ja ; rdfs:label "Logical Investigations"@en ;
+    shinra:wikidataId "Q1862862" ;
+    skos:notation "SHINRA_I008202" ; dcterms:created "2026-06-10"^^xsd:date .

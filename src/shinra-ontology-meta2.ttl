@@ -1,0 +1,81 @@
+# ===========================================================================
+# shinra-ontology-meta2.ttl  — オントロジーメタ情報更新 (Phase 10-d)
+# 構築完了時点での自己記述・統計・ギャップ更新
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/ontology-meta2>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — メタ情報更新 v0.5"@ja ,
+                    "Shinra Ontology — Meta Information Update v0.5"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+# ── v0.5.0 バージョンインスタンス ─────────────────────────────────
+
+shinra-data:version-0-5-0
+    a shinra:OntologyVersion ;
+    rdfs:label "神羅万象オントロジー v0.5.0"@ja ; rdfs:label "Shinra Ontology v0.5.0"@en ;
+    shinra:hasVersionString "0.5.0" ;
+    shinra:hasModuleCount 85 ;
+    dcterms:date "2026-06-10"^^xsd:date ;
+    dcterms:description
+        "Phase 7〜10 完了。精神・技術・経済・言語学・法律・環境・メタ・神経科学・論理・音楽・医学・哲学・建築・教育・メディア・天文・数学・社会学・人類学・地政学・栄養・認知科学・記号論・量子計算・応用倫理・デザイン・スポーツ科学・ネットワーク科学・気候科学・材料科学・金融詳細・政治学・ゲーム理論・視覚芸術・舞台芸術・比較宗教・地理詳細・情報科学・物理詳細・化学詳細・生態学・遺伝学・ロボット工学・宇宙探査・精神保健・都市研究・文学・発生生物学・エネルギー・グローバル課題・海洋学・歴史哲学・計測・時間詳細・スポーツ文化・ミクロ経済・マクロ経済・形式科学・意識・言語類型論・社会心理学・国際法・認識論詳細・美学詳細・知識管理・神話学・計算生物学・科学哲学・文化研究・宇宙論・応用倫理・未来学・現象学・言語進化・生物記号論の各ドメインモジュールを追加。"@ja ,
+        "Completes Phase 7-10 adding 68+ domain modules covering mind, technology, economics, linguistics, law, environment, meta, neuroscience, logic, music, medicine, philosophy, architecture, education, media, astronomy, mathematics, sociology, anthropology, geopolitics, nutrition, cognitive science, semiotics, quantum computing, applied ethics, design, sport science, network science, climate science, materials science, finance, political science, game theory, visual arts, performing arts, comparative religion, geography detail, information science, physics detail, chemistry detail, ecology, genetics, robotics, space exploration, mental health, urban studies, literature, developmental biology, energy systems, global issues, oceanography, history philosophy, measurement, time detail, sport culture, microeconomics, macroeconomics, formal science, consciousness, language typology, social psychology, international law, epistemology detail, aesthetics detail, knowledge management, mythology, computational biology, philosophy of science, cultural studies, cosmology, applied ethics, future studies, phenomenology, language evolution, and biosemiotics."@en ;
+    skos:notation "SHINRA_I008501" ; dcterms:created "2026-06-10"^^xsd:date .
+
+# ── 追加ギャップ記録 ──────────────────────────────────────────────
+
+shinra-data:gap-jurisprudence
+    a shinra:KnowledgeGap ;
+    rdfs:label "法哲学・法理学の未整備"@ja ; rdfs:label "Jurisprudence gap"@en ;
+    dcterms:description "法の本質・法と道徳の関係・法解釈論の詳細クラスが不足。shinra-jurisprudence.ttl として将来追加予定。"@ja ;
+    skos:notation "SHINRA_I008502" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:gap-animal-cognition
+    a shinra:KnowledgeGap ;
+    rdfs:label "動物認知の未整備"@ja ; rdfs:label "Animal cognition gap"@en ;
+    dcterms:description "類人猿の認知・イルカの知性・カラスの問題解決など動物認知の詳細クラスが不足。将来追加予定。"@ja ;
+    skos:notation "SHINRA_I008503" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:gap-indigenous-knowledge
+    a shinra:KnowledgeGap ;
+    rdfs:label "先住民知識の未整備"@ja ; rdfs:label "Indigenous knowledge gap"@en ;
+    dcterms:description "伝統的生態学的知識・先住民の世界観・口承知識体系のクラスが不足。将来追加予定。"@ja ;
+    skos:notation "SHINRA_I008504" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:gap-music-cognition
+    a shinra:KnowledgeGap ;
+    rdfs:label "音楽認知の未整備"@ja ; rdfs:label "Music cognition gap"@en ;
+    dcterms:description "音楽知覚・感情反応・音楽記憶・リズム認知の詳細クラスが不足。将来追加予定。"@ja ;
+    skos:notation "SHINRA_I008505" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:gap-philosophy-of-mathematics
+    a shinra:KnowledgeGap ;
+    rdfs:label "数学哲学の未整備"@ja ; rdfs:label "Philosophy of mathematics gap"@en ;
+    dcterms:description "数学的実在論・形式主義・直観主義・数学的対象の存在論の詳細クラスが不足。将来追加予定。"@ja ;
+    skos:notation "SHINRA_I008506" ; dcterms:created "2026-06-10"^^xsd:date .
+
+# ── v0.5完了アライメント記録 ──────────────────────────────────────
+
+shinra-data:alignment-bfo-mid
+    a shinra:AlignmentMapping ;
+    rdfs:label "BFO 2020 ↔ shinra-mid アライメント"@ja ; rdfs:label "BFO 2020 ↔ shinra-mid Alignment"@en ;
+    dcterms:description
+        "shinra:MaterialEntity ⊑ bfo:0000040 / shinra:InformationContentEntity ⊑ bfo:0000031 / shinra:Process ⊑ bfo:0000015 / shinra:TemporalRegion ⊑ bfo:0000008。BFO IDは実際のOWLファイルから確認済み。"@ja ;
+    skos:notation "SHINRA_I008507" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:alignment-wikidata
+    a shinra:AlignmentMapping ;
+    rdfs:label "Wikidata ↔ shinra インスタンスアライメント"@ja ; rdfs:label "Wikidata ↔ Shinra Instance Alignment"@en ;
+    dcterms:description
+        "全インスタンスに shinra:wikidataId を付与。owl:sameAs は推論爆発回避のため使用せず skos:exactMatch 相当として運用。"@ja ;
+    skos:notation "SHINRA_I008508" ; dcterms:created "2026-06-10"^^xsd:date .

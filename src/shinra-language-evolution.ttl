@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-language-evolution.ttl  — 言語進化・認知言語学ドメイン (Phase 10-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/language-evolution>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 言語進化・認知言語学ドメイン"@ja ,
+                    "Shinra Ontology — Language Evolution & Cognitive Linguistics Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CognitiveLinguistics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "認知言語学"@ja ; rdfs:label "Cognitive Linguistics"@en ;
+    rdfs:comment "言語と認知・身体・経験の関係を研究する言語学の分野。概念メタファー・プロトタイプ・スキーマ・フレーム意味論など。"@ja ;
+    rdfs:comment "A linguistic field studying the relationship between language and cognition, embodiment, and experience, including conceptual metaphor, prototype theory, schema, and frame semantics."@en ;
+    skos:notation "SHINRA_0008301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LanguageOrigin
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "言語起源論"@ja ; rdfs:label "Language Origin Theory"@en ;
+    rdfs:comment "人類における言語の起源・進化を説明する理論。身振り説・口内音起源説・共進化仮説・ピンカーの言語本能など。"@ja ;
+    rdfs:comment "Theories explaining the origin and evolution of language in humans, including gesture theory, vocal origin theory, co-evolution hypothesis, and Pinker's language instinct."@en ;
+    skos:notation "SHINRA_0008302" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:FrameSemantics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "フレーム意味論"@ja ; rdfs:label "Frame Semantics"@en ;
+    rdfs:comment "語の意味が活性化するより大きな概念構造（フレーム）を研究する意味論。フィルモア・FrameNet・政治的フレーミングなど。"@ja ;
+    rdfs:comment "The semantic theory that word meanings activate larger conceptual structures (frames), including Fillmore's frames, FrameNet, and political framing."@en ;
+    skos:notation "SHINRA_0008303" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:PrototypicalCategory
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "プロトタイプ的カテゴリー"@ja ; rdfs:label "Prototype Category"@en ;
+    rdfs:comment "明確な境界を持たずプロトタイプ（典型例）を中心に構成される認知カテゴリー。ロッシュのカテゴリー研究・基本レベルカテゴリーなど。"@ja ;
+    rdfs:comment "A cognitive category organized around prototypes (typical examples) without clear boundaries, including Rosch's category research and basic level categories."@en ;
+    skos:notation "SHINRA_0008304" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GrammaticalConstruction
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文法的構文"@ja ; rdfs:label "Grammatical Construction"@en ;
+    skos:altLabel "構文"@ja ;
+    rdfs:comment "形式と意味がペアをなす文法的単位。構文文法・用法基盤モデル・構文の生産性・イディオム的構文など。"@ja ;
+    rdfs:comment "A grammatical unit pairing form and meaning, including construction grammar, usage-based model, constructional productivity, and idiomatic constructions."@en ;
+    skos:notation "SHINRA_0008305" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LanguageEndangerment
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "言語の消滅危機"@ja ; rdfs:label "Language Endangerment"@en ;
+    skos:altLabel "言語消滅"@ja ;
+    rdfs:comment "話者数の減少により言語が消滅の危機にさらされる過程。ユネスコ消滅危機言語・言語記録化・言語復興など。"@ja ;
+    rdfs:comment "The process by which a language faces extinction due to declining speaker numbers, including UNESCO endangered languages, language documentation, and language revitalization."@en ;
+    skos:notation "SHINRA_0008306" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:sapir-whorf-001
+    a shinra:ScientificTheory ;
+    rdfs:label "サピア＝ウォーフ仮説"@ja ; rdfs:label "Sapir–Whorf Hypothesis"@en ;
+    shinra:wikidataId "Q204843" ;
+    skos:notation "SHINRA_I008301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:ainu-language-001
+    a shinra:NaturalLanguage ;
+    rdfs:label "アイヌ語"@ja ; rdfs:label "Ainu Language"@en ;
+    shinra:wikidataId "Q56447" ;
+    skos:notation "SHINRA_I008302" ; dcterms:created "2026-06-10"^^xsd:date .
