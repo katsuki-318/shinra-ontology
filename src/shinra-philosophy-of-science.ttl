@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-philosophy-of-science.ttl  — 科学哲学・科学論詳細ドメイン (Phase 9-m)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 科学哲学・科学論詳細ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Science Detail Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ScientificParadigm
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "科学的パラダイム"@ja ; rdfs:label "Scientific Paradigm"@en ;
+    rdfs:comment "科学共同体が共有する枠組み・世界観・問題設定・解法の体系。クーンのパラダイム論・通常科学・科学革命など。"@ja ;
+    rdfs:comment "The shared framework, worldview, and problem-setting of a scientific community, including Kuhn's paradigm theory, normal science, and scientific revolutions."@en ;
+    skos:notation "SHINRA_0007701" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ScientificRealism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "科学的実在論"@ja ; rdfs:label "Scientific Realism"@en ;
+    rdfs:comment "科学理論が観察不可能な実体を含めた世界の真の記述を目指すという立場。反実在論・道具主義・構成的経験主義と対比。"@ja ;
+    rdfs:comment "The philosophical position that scientific theories aim at a true description of the world including unobservable entities, contrasted with anti-realism, instrumentalism, and constructive empiricism."@en ;
+    skos:notation "SHINRA_0007702" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Falsificationism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "反証主義"@ja ; rdfs:label "Falsificationism"@en ;
+    skos:altLabel "ポパーの反証可能性"@ja ;
+    rdfs:comment "科学的仮説は原理的に反証可能でなければならないというポパーの科学哲学。反証可能性・境界設定問題・批判的合理主義など。"@ja ;
+    rdfs:comment "Popper's philosophy of science holding that scientific hypotheses must be in principle falsifiable, including falsifiability, the demarcation problem, and critical rationalism."@en ;
+    skos:notation "SHINRA_0007703" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ScientificExplanation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "科学的説明"@ja ; rdfs:label "Scientific Explanation"@en ;
+    rdfs:comment "科学が現象の理由・原因・仕組みを説明する様式。演繹法則的モデル・統計的説明・因果的説明・一元化的説明など。"@ja ;
+    rdfs:comment "The mode in which science explains the reasons, causes, and mechanisms of phenomena, including the deductive-nomological model, statistical explanation, causal explanation, and unification."@en ;
+    skos:notation "SHINRA_0007704" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Reductionism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "還元主義"@ja ; rdfs:label "Reductionism"@en ;
+    rdfs:comment "複雑な現象を下位レベルの構成要素・法則に還元して説明できるという立場。物理主義・創発との対立・心の還元主義など。"@ja ;
+    rdfs:comment "The position that complex phenomena can be explained by reducing them to lower-level components and laws, contrasted with emergentism, including physicalism and reductionism in philosophy of mind."@en ;
+    skos:notation "SHINRA_0007705" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Underdetermination
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "過少決定"@ja ; rdfs:label "Underdetermination"@en ;
+    skos:altLabel "理論の不十分決定"@ja ;
+    rdfs:comment "証拠が複数の競合理論を同時に支持しうるという科学哲学の問題。デュエム・クワイン命題・理論選択の基準など。"@ja ;
+    rdfs:comment "The philosophical problem that evidence can simultaneously support multiple competing theories, including the Duhem-Quine thesis and criteria for theory choice."@en ;
+    skos:notation "SHINRA_0007706" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:structure-of-scientific-revolutions-001
+    a shinra:ScientificTheory ;
+    rdfs:label "科学革命の構造"@ja ; rdfs:label "The Structure of Scientific Revolutions"@en ;
+    shinra:wikidataId "Q1075486" ;
+    skos:notation "SHINRA_I007701" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:logic-of-scientific-discovery-001
+    a shinra:ScientificTheory ;
+    rdfs:label "科学的発見の論理"@ja ; rdfs:label "The Logic of Scientific Discovery"@en ;
+    shinra:wikidataId "Q1201311" ;
+    skos:notation "SHINRA_I007702" ; dcterms:created "2026-06-08"^^xsd:date .

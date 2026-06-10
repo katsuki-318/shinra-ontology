@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-aesthetics-detail.ttl  — 美学・芸術哲学詳細ドメイン (Phase 9-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/aesthetics-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 美学・芸術哲学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Aesthetics & Philosophy of Art Detail Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Beauty
+    a owl:Class ; rdfs:subClassOf shinra:AestheticValue ;
+    rdfs:label "美"@ja ; rdfs:label "Beauty"@en ;
+    rdfs:comment "対象が快美な感情・審美的満足をもたらす性質。客観的美・主観的美・崇高との区別・美の基準など。"@ja ;
+    rdfs:comment "The property of objects that elicits pleasurable emotion and aesthetic satisfaction, including objective vs. subjective beauty, distinction from the sublime, and standards of beauty."@en ;
+    skos:notation "SHINRA_0007301" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Sublime
+    a owl:Class ; rdfs:subClassOf shinra:AestheticValue ;
+    rdfs:label "崇高"@ja ; rdfs:label "Sublime"@en ;
+    rdfs:comment "人知を超えた圧倒的大きさ・力への畏怖と快の混合感情。バーク・カントの崇高論・自然の崇高・技術的崇高など。"@ja ;
+    rdfs:comment "A mixed feeling of awe and pleasure before overwhelming magnitude or power beyond human comprehension, including Burke's and Kant's theories, natural and technological sublime."@en ;
+    skos:notation "SHINRA_0007302" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ArtDefinition
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "芸術定義論"@ja ; rdfs:label "Definition of Art"@en ;
+    rdfs:comment "芸術とは何かを定義しようとする哲学的試み。制度論・表現論・形式論・模倣論・家族的類似性など。"@ja ;
+    rdfs:comment "Philosophical attempts to define what art is, including institutional theory, expression theory, formalism, imitation theory, and family resemblance."@en ;
+    skos:notation "SHINRA_0007303" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:AestheticJudgment
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "審美的判断"@ja ; rdfs:label "Aesthetic Judgment"@en ;
+    rdfs:comment "対象の審美的価値を評価する判断。カントの趣味判断・主観的普遍性・共通感覚・批判的評価など。"@ja ;
+    rdfs:comment "A judgment evaluating the aesthetic value of objects, including Kant's judgment of taste, subjective universality, sensus communis, and critical evaluation."@en ;
+    skos:notation "SHINRA_0007304" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Catharsis
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "カタルシス"@ja ; rdfs:label "Catharsis"@en ;
+    rdfs:comment "芸術・悲劇の体験による感情の浄化・解放。アリストテレスの詩学・悲劇論・現代心理学での応用など。"@ja ;
+    rdfs:comment "The purification and release of emotion through artistic or tragic experience, including Aristotle's Poetics, tragedy theory, and modern psychological applications."@en ;
+    skos:notation "SHINRA_0007305" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Mimesis
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ミメーシス"@ja ; rdfs:label "Mimesis"@en ;
+    skos:altLabel "模倣"@ja ;
+    rdfs:comment "芸術・文学が現実を模倣・再現するという概念。プラトン・アリストテレスの模倣論・リアリズム・再現表象など。"@ja ;
+    rdfs:comment "The concept of art and literature imitating and representing reality, including Plato's and Aristotle's theories of imitation, realism, and representational art."@en ;
+    skos:notation "SHINRA_0007306" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:kants-critique-of-judgment-001
+    a shinra:ScientificTheory ;
+    rdfs:label "カントの判断力批判"@ja ; rdfs:label "Critique of Judgment"@en ;
+    shinra:wikidataId "Q36534" ;
+    skos:notation "SHINRA_I007301" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:wabi-sabi-001
+    a shinra:AestheticValue ;
+    rdfs:label "侘び寂び"@ja ; rdfs:label "Wabi-Sabi"@en ;
+    shinra:wikidataId "Q672083" ;
+    skos:notation "SHINRA_I007302" ; dcterms:created "2026-06-08"^^xsd:date .

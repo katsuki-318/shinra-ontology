@@ -1,0 +1,82 @@
+# ===========================================================================
+# shinra-mythology.ttl  — 神話学・民俗学ドメイン (Phase 9-k)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/mythology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 神話学・民俗学ドメイン"@ja ,
+                    "Shinra Ontology — Mythology & Folklore Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Myth
+    a owl:Class ; rdfs:subClassOf shinra:FolkLiterature ;
+    rdfs:label "神話"@ja ; rdfs:label "Myth"@en ;
+    rdfs:comment "宇宙・人類・神・自然の起源・秩序を語る聖なる伝承物語。創造神話・英雄神話・終末神話・神話的思考など。"@ja ;
+    rdfs:comment "A sacred traditional story explaining the origin and order of the cosmos, humanity, gods, and nature, including creation myths, hero myths, eschatological myths, and mythological thinking."@en ;
+    skos:notation "SHINRA_0007501" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Deity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "神格"@ja ; rdfs:label "Deity"@en ;
+    skos:altLabel "神"@ja ;
+    rdfs:comment "宗教・神話において崇拝・信仰の対象となる超自然的存在。一神教の神・多神教の神々・自然神・英雄神格化など。"@ja ;
+    rdfs:comment "A supernatural being revered and worshipped in religion and mythology, including monotheistic God, polytheistic gods, nature deities, and deified heroes."@en ;
+    skos:notation "SHINRA_0007502" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Archetype
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "元型"@ja ; rdfs:label "Archetype"@en ;
+    skos:altLabel "アーキタイプ"@ja ;
+    rdfs:comment "人類に普遍的に共有される象徴・イメージ・物語パターン。ユングの集合的無意識・英雄・影・アニマ・老賢者など。"@ja ;
+    rdfs:comment "Universal symbols, images, and narrative patterns shared across humanity, including Jung's collective unconscious, hero, shadow, anima, and wise old man archetypes."@en ;
+    skos:notation "SHINRA_0007503" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Folklore
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "民俗"@ja ; rdfs:label "Folklore"@en ;
+    rdfs:comment "民間に伝承された習慣・伝説・信仰・芸能・工芸の総体。無形文化遺産・民俗学・口承伝統・年中行事など。"@ja ;
+    rdfs:comment "The totality of customs, legends, beliefs, performing arts, and crafts transmitted in communities, including intangible cultural heritage, folkloristics, oral traditions, and annual events."@en ;
+    skos:notation "SHINRA_0007504" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:CosmogonyMyth
+    a owl:Class ; rdfs:subClassOf shinra:Myth ;
+    rdfs:label "宇宙創造神話"@ja ; rdfs:label "Cosmogony"@en ;
+    skos:altLabel "創世神話"@ja ;
+    rdfs:comment "世界・宇宙の創造を語る神話。天地創造・ビッグバン神話・卵宇宙論・混沌から秩序へなど。"@ja ;
+    rdfs:comment "A myth narrating the creation of the world and cosmos, including Genesis, Big Bang mythology, cosmic egg, and order from chaos."@en ;
+    skos:notation "SHINRA_0007505" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Trickster
+    a owl:Class ; rdfs:subClassOf shinra:Archetype ;
+    rdfs:label "トリックスター"@ja ; rdfs:label "Trickster"@en ;
+    rdfs:comment "神話・民話に登場する狡猾・変幻自在の存在。既存秩序を撹乱し創造・変化をもたらす。コヨーテ・ロキ・猿など。"@ja ;
+    rdfs:comment "A cunning and shape-shifting figure in myth and folklore who disrupts existing order and brings creativity and change, including Coyote, Loki, and Monkey King."@en ;
+    skos:notation "SHINRA_0007506" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:greek-mythology-001
+    a shinra:Mythology ;
+    rdfs:label "ギリシア神話"@ja ; rdfs:label "Greek Mythology"@en ;
+    shinra:wikidataId "Q34726" ;
+    skos:notation "SHINRA_I007501" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:japanese-mythology-001
+    a shinra:Mythology ;
+    rdfs:label "日本神話"@ja ; rdfs:label "Japanese Mythology"@en ;
+    shinra:wikidataId "Q476839" ;
+    skos:notation "SHINRA_I007502" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:prometheus-001
+    a shinra:Archetype ;
+    rdfs:label "プロメテウス"@ja ; rdfs:label "Prometheus"@en ;
+    shinra:wikidataId "Q104506" ;
+    skos:notation "SHINRA_I007503" ; dcterms:created "2026-06-08"^^xsd:date .

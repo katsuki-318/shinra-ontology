@@ -1,0 +1,73 @@
+# ===========================================================================
+# shinra-knowledge-management.ttl  — 知識管理・組織学習ドメイン (Phase 9-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/knowledge-management>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 知識管理・組織学習ドメイン"@ja ,
+                    "Shinra Ontology — Knowledge Management & Organizational Learning Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:TacitKnowledge
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "暗黙知"@ja ; rdfs:label "Tacit Knowledge"@en ;
+    rdfs:comment "言語化・形式化が困難な主観的・経験的知識。ポランニーの「知ることのできる以上を知る」・職人技・直感など。"@ja ;
+    rdfs:comment "Subjective and experiential knowledge difficult to articulate or formalize, including Polanyi's 'we know more than we can tell', craftsmanship, and intuition."@en ;
+    skos:notation "SHINRA_0007401" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ExplicitKnowledge
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "形式知"@ja ; rdfs:label "Explicit Knowledge"@en ;
+    rdfs:comment "言語・数値・図表で表現・伝達可能な知識。マニュアル・仕様書・データベース・手続き書など。"@ja ;
+    rdfs:comment "Knowledge that can be expressed and transmitted through language, numbers, and diagrams, including manuals, specifications, databases, and procedural documents."@en ;
+    skos:notation "SHINRA_0007402" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:KnowledgeCreation
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "知識創造"@ja ; rdfs:label "Knowledge Creation"@en ;
+    rdfs:comment "組織・個人が新たな知識を生み出す過程。野中・竹内のSECIモデル（共同化・表出化・連結化・内面化）など。"@ja ;
+    rdfs:comment "The process by which organizations and individuals generate new knowledge, including Nonaka and Takeuchi's SECI model (Socialization, Externalization, Combination, Internalization)."@en ;
+    skos:notation "SHINRA_0007403" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:OrganizationalLearning
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "組織学習"@ja ; rdfs:label "Organizational Learning"@en ;
+    rdfs:comment "組織が経験から知識を獲得・共有・適用し能力を向上させる過程。シングルループ・ダブルループ学習・学習する組織など。"@ja ;
+    rdfs:comment "The process by which organizations acquire, share, and apply knowledge from experience to improve capabilities, including single-loop and double-loop learning and the learning organization."@en ;
+    skos:notation "SHINRA_0007404" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:BestPractice
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ベストプラクティス"@ja ; rdfs:label "Best Practice"@en ;
+    rdfs:comment "特定の分野・状況で最も効果的とされる方法・手順の実例。業界標準・ベンチマーキング・知識移転の対象など。"@ja ;
+    rdfs:comment "An example of the most effective method or procedure in a specific field or situation, serving as an industry standard, benchmarking target, and object of knowledge transfer."@en ;
+    skos:notation "SHINRA_0007405" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:CommunityOfPractice
+    a owl:Class ; rdfs:subClassOf shinra:CommunityGroup ;
+    rdfs:label "実践共同体"@ja ; rdfs:label "Community of Practice"@en ;
+    rdfs:comment "共通の関心・課題・情熱を持つ人々が交流・学習する非公式な集団。ウェンガーの実践共同体論・周辺的正統参加など。"@ja ;
+    rdfs:comment "An informal group of people who share common interests, problems, or passions and learn through interaction, including Wenger's community of practice theory and legitimate peripheral participation."@en ;
+    skos:notation "SHINRA_0007406" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:seci-model-001
+    a shinra:KnowledgeCreation ;
+    rdfs:label "SECIモデル"@ja ; rdfs:label "SECI Model"@en ;
+    shinra:wikidataId "Q1308028" ;
+    skos:notation "SHINRA_I007401" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:wikipedia-knowledge-001
+    a shinra:KnowledgeBase ;
+    rdfs:label "ウィキペディア（知識管理の例）"@ja ; rdfs:label "Wikipedia as Knowledge Base"@en ;
+    shinra:wikidataId "Q52" ;
+    skos:notation "SHINRA_I007402" ; dcterms:created "2026-06-08"^^xsd:date .

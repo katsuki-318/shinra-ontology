@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-computational-biology.ttl  — 計算生物学・バイオインフォマティクスドメイン (Phase 9-l)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/computational-biology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 計算生物学・バイオインフォマティクスドメイン"@ja ,
+                    "Shinra Ontology — Computational Biology & Bioinformatics Domain"@en ;
+    dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:Bioinformatics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "バイオインフォマティクス"@ja ; rdfs:label "Bioinformatics"@en ;
+    skos:altLabel "生物情報学"@ja ;
+    rdfs:comment "生物学的データを計算・統計手法で解析する学際分野。ゲノム解析・配列アライメント・タンパク質構造予測など。"@ja ;
+    rdfs:comment "An interdisciplinary field analyzing biological data through computational and statistical methods, including genome analysis, sequence alignment, and protein structure prediction."@en ;
+    skos:notation "SHINRA_0007601" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SequenceAlignment
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "配列アライメント"@ja ; rdfs:label "Sequence Alignment"@en ;
+    rdfs:comment "DNA・RNA・タンパク質配列の類似領域を整列させる計算的手法。BLAST・ClustalW・ペアワイズ・多重アライメントなど。"@ja ;
+    rdfs:comment "A computational method aligning similar regions of DNA, RNA, or protein sequences, including BLAST, ClustalW, pairwise, and multiple sequence alignment."@en ;
+    skos:notation "SHINRA_0007602" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:PhylogeneticTree
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "系統樹"@ja ; rdfs:label "Phylogenetic Tree"@en ;
+    skos:altLabel "進化系統樹"@ja ;
+    rdfs:comment "生物種間の進化的関係を木構造で表現した図。最節約法・最尤法・ベイズ法・分子時計など。"@ja ;
+    rdfs:comment "A tree-structured diagram representing evolutionary relationships between species, constructed using parsimony, maximum likelihood, Bayesian methods, and molecular clocks."@en ;
+    skos:notation "SHINRA_0007603" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:ProteinStructure
+    a owl:Class ; rdfs:subClassOf shinra:Protein ;
+    rdfs:label "タンパク質構造"@ja ; rdfs:label "Protein Structure"@en ;
+    rdfs:comment "タンパク質の一次・二次・三次・四次構造の階層的組織。AlphaFold・X線結晶解析・クライオ電子顕微鏡など。"@ja ;
+    rdfs:comment "The hierarchical organization of protein primary, secondary, tertiary, and quaternary structure, determined by AlphaFold, X-ray crystallography, and cryo-electron microscopy."@en ;
+    skos:notation "SHINRA_0007604" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra:SystemsBiology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "システム生物学"@ja ; rdfs:label "Systems Biology"@en ;
+    rdfs:comment "生物システムを構成要素の相互作用として統合的に研究する分野。代謝ネットワーク・遺伝子制御ネットワーク・モデル化など。"@ja ;
+    rdfs:comment "A field studying biological systems integrating component interactions, including metabolic networks, gene regulatory networks, and mathematical modeling."@en ;
+    skos:notation "SHINRA_0007605" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:alphafold-001
+    a shinra:Bioinformatics ;
+    rdfs:label "AlphaFold"@ja ; rdfs:label "AlphaFold"@en ;
+    shinra:wikidataId "Q96833098" ;
+    skos:notation "SHINRA_I007601" ; dcterms:created "2026-06-08"^^xsd:date .
+
+shinra-data:ncbi-001
+    a shinra:KnowledgeBase ;
+    rdfs:label "国立生物工学情報センター"@ja ; rdfs:label "NCBI"@en ;
+    shinra:wikidataId "Q1156454" ;
+    skos:notation "SHINRA_I007602" ; dcterms:created "2026-06-08"^^xsd:date .
