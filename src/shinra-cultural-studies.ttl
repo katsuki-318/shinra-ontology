@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-cultural-studies.ttl  — 文化研究・カルチュラルスタディーズドメイン (Phase 9-n)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cultural-studies>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 文化研究・カルチュラルスタディーズドメイン"@ja ,
+                    "Shinra Ontology — Cultural Studies Domain"@en ;
+    dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:PopularCulture
+    a owl:Class ; rdfs:subClassOf shinra:Culture ;
+    rdfs:label "大衆文化"@ja ; rdfs:label "Popular Culture"@en ;
+    skos:altLabel "ポップカルチャー"@ja ;
+    rdfs:comment "大衆メディアと消費を通じて広く普及した文化形式。映画・音楽・ファッション・ゲーム・SNSコンテンツなど。"@ja ;
+    rdfs:comment "Cultural forms widely disseminated through mass media and consumption, including films, music, fashion, games, and social media content."@en ;
+    skos:notation "SHINRA_0007801" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:Subculture
+    a owl:Class ; rdfs:subClassOf shinra:Culture ;
+    rdfs:label "サブカルチャー"@ja ; rdfs:label "Subculture"@en ;
+    rdfs:comment "主流文化から区別された独自の価値・規範・スタイルを持つ集団文化。ヒップホップ・パンク・オタク文化・コスプレなど。"@ja ;
+    rdfs:comment "A group culture with distinct values, norms, and styles differentiated from mainstream culture, including hip-hop, punk, otaku culture, and cosplay."@en ;
+    skos:notation "SHINRA_0007802" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:CulturalIdentity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文化的アイデンティティ"@ja ; rdfs:label "Cultural Identity"@en ;
+    rdfs:comment "特定の文化・民族・国家への帰属意識に基づく自己規定。多文化主義・ディアスポラ・ハイブリッドアイデンティティなど。"@ja ;
+    rdfs:comment "Self-definition based on belonging to a specific culture, ethnicity, or nation, including multiculturalism, diaspora, and hybrid identity."@en ;
+    skos:notation "SHINRA_0007803" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:Hegemony
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ヘゲモニー"@ja ; rdfs:label "Hegemony"@en ;
+    skos:altLabel "文化的覇権"@ja ;
+    rdfs:comment "支配的集団が同意・文化的影響力で従属集団を統治するグラムシの概念。文化的ヘゲモニー・対抗文化・文化的抵抗など。"@ja ;
+    rdfs:comment "Gramsci's concept of dominant groups governing subordinate groups through consent and cultural influence, including cultural hegemony, counter-hegemony, and cultural resistance."@en ;
+    skos:notation "SHINRA_0007804" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:Representation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "表象"@ja ; rdfs:label "Representation"@en ;
+    skos:altLabel "文化的表象"@ja ;
+    rdfs:comment "文化・メディアが意味を産出・流通させる実践。スチュアート・ホールの表象論・ステレオタイプ・他者化など。"@ja ;
+    rdfs:comment "The practice by which culture and media produce and circulate meaning, including Stuart Hall's representation theory, stereotyping, and othering."@en ;
+    skos:notation "SHINRA_0007805" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra:PostcolonialStudies
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "ポストコロニアル研究"@ja ; rdfs:label "Postcolonial Studies"@en ;
+    rdfs:comment "植民地主義の遺産・影響・抵抗を研究する学際分野。サイードのオリエンタリズム・スピヴァク・バーバの模倣など。"@ja ;
+    rdfs:comment "An interdisciplinary field studying the legacies, impacts, and resistance to colonialism, including Said's Orientalism, Spivak's subaltern, and Bhabha's mimicry."@en ;
+    skos:notation "SHINRA_0007806" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra-data:orientalism-001
+    a shinra:ScientificTheory ;
+    rdfs:label "オリエンタリズム"@ja ; rdfs:label "Orientalism"@en ;
+    shinra:wikidataId "Q1028174" ;
+    skos:notation "SHINRA_I007801" ; dcterms:created "2026-06-09"^^xsd:date .
+
+shinra-data:anime-culture-001
+    a shinra:Subculture ;
+    rdfs:label "アニメ文化"@ja ; rdfs:label "Anime Culture"@en ;
+    shinra:wikidataId "Q1107" ;
+    skos:notation "SHINRA_I007802" ; dcterms:created "2026-06-09"^^xsd:date .

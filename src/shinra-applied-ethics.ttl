@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-applied-ethics.ttl  — 応用倫理学詳細（医療・技術・環境）ドメイン (Phase 9-p)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/applied-ethics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 応用倫理学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Applied Ethics Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ResponsibleInnovation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "責任ある技術革新"@ja ; rdfs:label "Responsible Innovation"@en ;
+    rdfs:comment "技術革新の社会的影響・リスク・倫理的含意を予期的に考慮する枠組み。RRI・倫理的設計・予防原則など。"@ja ;
+    rdfs:comment "A framework proactively considering the social impacts, risks, and ethical implications of technological innovation, including RRI, ethics by design, and the precautionary principle."@en ;
+    skos:notation "SHINRA_0008001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DataEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "データ倫理"@ja ; rdfs:label "Data Ethics"@en ;
+    rdfs:comment "データの収集・利用・共有における倫理的問題を扱う分野。インフォームドコンセント・差別・プロファイリング・データ主権など。"@ja ;
+    rdfs:comment "A field addressing ethical issues in data collection, use, and sharing, including informed consent, discrimination, profiling, and data sovereignty."@en ;
+    skos:notation "SHINRA_0008002" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AnimalEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "動物倫理学"@ja ; rdfs:label "Animal Ethics"@en ;
+    skos:altLabel "動物の権利"@ja ;
+    rdfs:comment "動物の道徳的地位・権利・福祉を研究する分野。ピーター・シンガーの功利主義・トムリーガンの権利論・動物福祉など。"@ja ;
+    rdfs:comment "A field studying the moral status, rights, and welfare of animals, including Peter Singer's utilitarianism, Tom Regan's rights theory, and animal welfare."@en ;
+    skos:notation "SHINRA_0008003" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DistributiveJustice
+    a owl:Class ; rdfs:subClassOf shinra:EthicalValue ;
+    rdfs:label "分配的正義"@ja ; rdfs:label "Distributive Justice"@en ;
+    rdfs:comment "社会的利益・負担の公正な分配を扱う倫理的概念。ロールズの格差原理・功利主義的分配・能力アプローチなど。"@ja ;
+    rdfs:comment "The ethical concept of fair distribution of social benefits and burdens, including Rawls' difference principle, utilitarian distribution, and the capability approach."@en ;
+    skos:notation "SHINRA_0008004" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Whistleblowing
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "内部告発"@ja ; rdfs:label "Whistleblowing"@en ;
+    skos:altLabel "公益通報"@ja ;
+    rdfs:comment "組織内の不正・危険を外部に公表する行為。職業倫理・忠誠と告発の葛藤・法的保護・公益通報者保護法など。"@ja ;
+    rdfs:comment "The act of publicly exposing organizational wrongdoing or danger, including professional ethics, loyalty vs. disclosure conflicts, legal protection, and whistleblower protection laws."@en ;
+    skos:notation "SHINRA_0008005" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GenerationalJustice
+    a owl:Class ; rdfs:subClassOf shinra:EthicalValue ;
+    rdfs:label "世代間正義"@ja ; rdfs:label "Intergenerational Justice"@en ;
+    rdfs:comment "現在世代の行動が将来世代に与える影響の公正さを問う倫理概念。気候倫理・長期主義・将来世代の権利など。"@ja ;
+    rdfs:comment "An ethical concept questioning the fairness of current generations' actions on future generations, including climate ethics, longtermism, and the rights of future generations."@en ;
+    skos:notation "SHINRA_0008006" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:rawls-theory-justice-001
+    a shinra:EthicalValue ;
+    rdfs:label "ロールズの正義論"@ja ; rdfs:label "Rawls' Theory of Justice"@en ;
+    shinra:wikidataId "Q1128707" ;
+    skos:notation "SHINRA_I008001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:effective-altruism-001
+    a shinra:PhilosophicalThought ;
+    rdfs:label "効果的利他主義"@ja ; rdfs:label "Effective Altruism"@en ;
+    shinra:wikidataId "Q15809544" ;
+    skos:notation "SHINRA_I008002" ; dcterms:created "2026-06-10"^^xsd:date .

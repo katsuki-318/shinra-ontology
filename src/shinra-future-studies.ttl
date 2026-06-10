@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-future-studies.ttl  — 未来学・長期思考ドメイン (Phase 9-q)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/future-studies>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 未来学・長期思考ドメイン"@ja ,
+                    "Shinra Ontology — Future Studies & Long-Term Thinking Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Foresight
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "フォーサイト"@ja ; rdfs:label "Foresight"@en ;
+    skos:altLabel "未来洞察"@ja ;
+    rdfs:comment "将来の可能性・トレンド・不確実性を体系的に探索・評価する実践。シナリオプランニング・デルファイ法・ホライズンスキャニングなど。"@ja ;
+    rdfs:comment "The systematic practice of exploring, assessing, and evaluating future possibilities, trends, and uncertainties, including scenario planning, Delphi method, and horizon scanning."@en ;
+    skos:notation "SHINRA_0008101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Scenario
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "シナリオ"@ja ; rdfs:label "Scenario"@en ;
+    rdfs:comment "複数の仮定・条件に基づいて構築された将来の可能的状態の記述。楽観・悲観・基準シナリオ・ワイルドカードなど。"@ja ;
+    rdfs:comment "A description of a possible future state constructed from multiple assumptions and conditions, including optimistic, pessimistic, baseline scenarios, and wild cards."@en ;
+    skos:notation "SHINRA_0008102" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ExistentialRisk
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "実存的リスク"@ja ; rdfs:label "Existential Risk"@en ;
+    skos:altLabel "X-リスク"@ja ;
+    rdfs:comment "人類の長期的可能性を永続的に制限・消滅させるリスク。超知能AI・核戦争・パンデミック・気候崩壊・小惑星衝突など。"@ja ;
+    rdfs:comment "Risks that would permanently limit or destroy humanity's long-term potential, including superintelligent AI, nuclear war, pandemic, climate collapse, and asteroid impact."@en ;
+    skos:notation "SHINRA_0008103" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:TechnologicalSingularity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "技術的特異点"@ja ; rdfs:label "Technological Singularity"@en ;
+    skos:altLabel "シンギュラリティ"@ja ;
+    rdfs:comment "人工超知能が人間の知性を超え技術進歩が急加速・予測不能となる仮想的な時点。ヴィンジ・カーツワイルなど。"@ja ;
+    rdfs:comment "A hypothetical point at which artificial superintelligence surpasses human intelligence and technological progress accelerates unpredictably, associated with Vinge and Kurzweil."@en ;
+    skos:notation "SHINRA_0008104" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Longtermism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "長期主義"@ja ; rdfs:label "Longtermism"@en ;
+    rdfs:comment "将来世代・遠い未来への影響を現在と同等に重視すべきという倫理的立場。効果的利他主義・実存的リスク低減との関連など。"@ja ;
+    rdfs:comment "The ethical position that the far future and future generations should be given equal moral weight to the present, related to effective altruism and existential risk reduction."@en ;
+    skos:notation "SHINRA_0008105" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Transhumanism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "トランスヒューマニズム"@ja ; rdfs:label "Transhumanism"@en ;
+    rdfs:comment "技術によって人間の身体・認知・感情能力を根本的に増強・変容させることを支持する思想。H+・ポストヒューマン・人体拡張など。"@ja ;
+    rdfs:comment "A philosophy supporting the fundamental enhancement and transformation of human physical, cognitive, and emotional capacities through technology, including H+, posthumanism, and human augmentation."@en ;
+    skos:notation "SHINRA_0008106" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:un-2030-agenda-001
+    a shinra:ConceptualEntity ;
+    rdfs:label "国連2030アジェンダ"@ja ; rdfs:label "UN 2030 Agenda"@en ;
+    shinra:wikidataId "Q16748603" ;
+    skos:notation "SHINRA_I008101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:fermi-paradox-001
+    a shinra:ThoughtExperiment ;
+    rdfs:label "フェルミのパラドックス"@ja ; rdfs:label "Fermi Paradox"@en ;
+    shinra:wikidataId "Q843844" ;
+    skos:notation "SHINRA_I008102" ; dcterms:created "2026-06-10"^^xsd:date .

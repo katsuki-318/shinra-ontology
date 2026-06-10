@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-cosmology.ttl  — 宇宙論・宇宙物理学詳細ドメイン (Phase 9-o)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cosmology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 宇宙論・宇宙物理学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Cosmology & Astrophysics Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:BigBangEvent
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "ビッグバン"@ja ; rdfs:label "Big Bang"@en ;
+    rdfs:comment "約138億年前に宇宙が極小・極高温・高密の状態から急膨張を始めた宇宙論的出来事。宇宙背景放射・元素合成など。"@ja ;
+    rdfs:comment "The cosmological event approximately 13.8 billion years ago when the universe began rapidly expanding from an extremely small, hot, and dense state, including cosmic microwave background and nucleosynthesis."@en ;
+    skos:notation "SHINRA_0007901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CosmicInflation
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "宇宙のインフレーション"@ja ; rdfs:label "Cosmic Inflation"@en ;
+    rdfs:comment "ビッグバン直後に宇宙が指数関数的に急膨張したとされる理論。一様性・平坦性問題の解決・原始重力波など。"@ja ;
+    rdfs:comment "The theory that the universe underwent exponential expansion immediately after the Big Bang, solving the horizon and flatness problems and predicting primordial gravitational waves."@en ;
+    skos:notation "SHINRA_0007902" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CosmicWebStructure
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "宇宙の大規模構造"@ja ; rdfs:label "Cosmic Web"@en ;
+    skos:altLabel "宇宙網"@ja ;
+    rdfs:comment "銀河・銀河団・フィラメント・ボイドからなる宇宙の大規模構造。暗黒物質ハローとの関係など。"@ja ;
+    rdfs:comment "The large-scale structure of the universe comprising galaxies, galaxy clusters, filaments, and voids, related to dark matter halos."@en ;
+    skos:notation "SHINRA_0007903" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Multiverse
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "多宇宙"@ja ; rdfs:label "Multiverse"@en ;
+    skos:altLabel "並行宇宙"@ja ;
+    rdfs:comment "我々の宇宙以外にも複数の宇宙が存在するという仮説。バブル宇宙・多世界解釈・膜宇宙・人間原理との関係など。"@ja ;
+    rdfs:comment "The hypothesis that multiple universes exist beyond our own, including bubble universes, many-worlds interpretation, brane cosmology, and the anthropic principle."@en ;
+    skos:notation "SHINRA_0007904" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CosmologicalConstant
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalConstant ;
+    rdfs:label "宇宙定数"@ja ; rdfs:label "Cosmological Constant"@en ;
+    skos:altLabel "λ（ラムダ）"@ja ;
+    rdfs:comment "アインシュタイン方程式に導入された真空エネルギー項。宇宙の加速膨張・暗黒エネルギーとの同一視など。"@ja ;
+    rdfs:comment "A vacuum energy term introduced into Einstein's equations, identified with the accelerating expansion of the universe and dark energy."@en ;
+    skos:notation "SHINRA_0007905" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Singularity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "特異点"@ja ; rdfs:label "Singularity"@en ;
+    rdfs:comment "物理量が無限大になる時空の点。ブラックホール特異点・ビッグバン特異点・ペンローズ・ホーキングの特異点定理など。"@ja ;
+    rdfs:comment "A point in spacetime where physical quantities become infinite, including black hole singularities, the Big Bang singularity, and the Penrose-Hawking singularity theorems."@en ;
+    skos:notation "SHINRA_0007906" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:hubble-constant-001
+    a shinra:PhysicalConstant ;
+    rdfs:label "ハッブル定数"@ja ; rdfs:label "Hubble Constant"@en ;
+    shinra:wikidataId "Q177567" ;
+    skos:notation "SHINRA_I007901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:cmb-001
+    a shinra:NaturalProcess ;
+    rdfs:label "宇宙マイクロ波背景放射"@ja ; rdfs:label "Cosmic Microwave Background"@en ;
+    shinra:wikidataId "Q484048" ;
+    skos:notation "SHINRA_I007902" ; dcterms:created "2026-06-10"^^xsd:date .
