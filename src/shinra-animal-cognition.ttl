@@ -1,0 +1,73 @@
+# ===========================================================================
+# shinra-animal-cognition.ttl  — 動物認知・比較心理学ドメイン (Phase 10-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/animal-cognition>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 動物認知・比較心理学ドメイン"@ja ,
+                    "Shinra Ontology — Animal Cognition & Comparative Psychology Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AnimalIntelligence
+    a owl:Class ; rdfs:subClassOf shinra:Capability ;
+    rdfs:label "動物知性"@ja ; rdfs:label "Animal Intelligence"@en ;
+    rdfs:comment "動物が問題解決・道具使用・社会的学習・言語に類する能力を持つことを示す認知的能力。類人猿・イルカ・カラス・タコなど。"@ja ;
+    rdfs:comment "Cognitive capacities of animals demonstrating problem-solving, tool use, social learning, and language-like abilities, including great apes, dolphins, corvids, and octopuses."@en ;
+    skos:notation "SHINRA_0008701" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ToolUse
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "道具使用"@ja ; rdfs:label "Tool Use"@en ;
+    rdfs:comment "動物が外部の物体を道具として利用する行動。チンパンジーの枝使用・カラスの枝曲げ・カワウソの石使用など。"@ja ;
+    rdfs:comment "The behavior of animals using external objects as tools, including chimpanzees using twigs, New Caledonian crows bending hooks, and sea otters using rocks."@en ;
+    skos:notation "SHINRA_0008702" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SocialLearning
+    a owl:Class ; rdfs:subClassOf shinra:Learning ;
+    rdfs:label "社会的学習"@ja ; rdfs:label "Social Learning"@en ;
+    rdfs:comment "他個体の行動を観察・模倣して情報・技能を習得する学習過程。模倣・エミュレーション・文化的伝達・動物の文化など。"@ja ;
+    rdfs:comment "The learning process of acquiring information and skills by observing and imitating other individuals, including imitation, emulation, cultural transmission, and animal culture."@en ;
+    skos:notation "SHINRA_0008703" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AnimalEmotion
+    a owl:Class ; rdfs:subClassOf shinra:Emotion ;
+    rdfs:label "動物の感情"@ja ; rdfs:label "Animal Emotion"@en ;
+    rdfs:comment "動物が経験するとされる感情状態。恐怖・喜び・悲しみ・嫉妬・共感などの証拠と議論。動物意識・苦痛との関連。"@ja ;
+    rdfs:comment "Emotional states animals are argued to experience, including evidence and debate about fear, joy, grief, jealousy, and empathy, related to animal consciousness and suffering."@en ;
+    skos:notation "SHINRA_0008704" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MirrorSelfRecognition
+    a owl:Class ; rdfs:subClassOf shinra:SelfAwareness ;
+    rdfs:label "鏡像自己認識"@ja ; rdfs:label "Mirror Self-Recognition"@en ;
+    rdfs:comment "鏡に映った像が自分自身であることを認識する能力。類人猿・イルカ・ゾウ・カラスなどで確認。自己意識の指標として用いる。"@ja ;
+    rdfs:comment "The ability to recognize one's own reflection as oneself, demonstrated in great apes, dolphins, elephants, and some corvids, used as an index of self-awareness."@en ;
+    skos:notation "SHINRA_0008705" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ComparativePsychology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "比較心理学"@ja ; rdfs:label "Comparative Psychology"@en ;
+    rdfs:comment "異なる動物種の行動・認知を比較研究する分野。行動の進化・認知の系統的比較・エソロジーとの関連など。"@ja ;
+    rdfs:comment "The field comparatively studying behavior and cognition across different animal species, including the evolution of behavior, phylogenetic comparison of cognition, and ethology."@en ;
+    skos:notation "SHINRA_0008706" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:chimpanzee-culture-001
+    a shinra:SocialLearning ;
+    rdfs:label "チンパンジーの文化"@ja ; rdfs:label "Chimpanzee Culture"@en ;
+    shinra:wikidataId "Q181432" ;
+    skos:notation "SHINRA_I008701" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:corvid-cognition-001
+    a shinra:AnimalIntelligence ;
+    rdfs:label "カラス類の認知"@ja ; rdfs:label "Corvid Cognition"@en ;
+    shinra:wikidataId "Q82562" ;
+    skos:notation "SHINRA_I008702" ; dcterms:created "2026-06-10"^^xsd:date .

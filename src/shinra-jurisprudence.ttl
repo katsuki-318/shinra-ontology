@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-jurisprudence.ttl  — 法哲学・法理学ドメイン (Phase 10-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/jurisprudence>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 法哲学・法理学ドメイン"@ja ,
+                    "Shinra Ontology — Jurisprudence & Legal Philosophy Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:NaturalLaw
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "自然法"@ja ; rdfs:label "Natural Law"@en ;
+    rdfs:comment "人間の本性・理性・神意に基づく普遍的道徳的法の存在を主張する理論。アリストテレス・アクィナス・ロック・現代自然法論など。"@ja ;
+    rdfs:comment "The theory asserting the existence of universal moral law grounded in human nature, reason, or divine will, including Aristotle, Aquinas, Locke, and contemporary natural law theory."@en ;
+    skos:notation "SHINRA_0008601" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LegalPositivism
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "法実証主義"@ja ; rdfs:label "Legal Positivism"@en ;
+    rdfs:comment "法は社会的事実に基づいて制定されたものであり道徳と概念的に分離されるという理論。オースティン・ケルゼン・ハートなど。"@ja ;
+    rdfs:comment "The theory that law is grounded in social facts and is conceptually separate from morality, associated with Austin, Kelsen, and Hart."@en ;
+    skos:notation "SHINRA_0008602" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RuleOfLaw
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "法の支配"@ja ; rdfs:label "Rule of Law"@en ;
+    rdfs:comment "恣意的権力を排し法が最高権威として機能する原則。法の下の平等・予見可能性・司法独立・基本権保護など。"@ja ;
+    rdfs:comment "The principle that law functions as supreme authority excluding arbitrary power, including equality before the law, predictability, judicial independence, and protection of fundamental rights."@en ;
+    skos:notation "SHINRA_0008603" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LegalInterpretation
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "法解釈"@ja ; rdfs:label "Legal Interpretation"@en ;
+    rdfs:comment "法規範の意味を確定する知的実践。文理解釈・体系的解釈・目的論的解釈・歴史的解釈・原意主義など。"@ja ;
+    rdfs:comment "The intellectual practice of determining the meaning of legal norms, including literal, systematic, teleological, historical interpretation, and originalism."@en ;
+    skos:notation "SHINRA_0008604" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:LegalPersonhood
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "法人格"@ja ; rdfs:label "Legal Personhood"@en ;
+    skos:altLabel "法的人格"@ja ;
+    rdfs:comment "法的権利・義務の主体となる資格。自然人・法人・国家・AIの法人格論・将来世代の法的地位など。"@ja ;
+    rdfs:comment "The qualification to be a subject of legal rights and obligations, including natural persons, corporations, states, the legal personhood of AI, and the legal status of future generations."@en ;
+    skos:notation "SHINRA_0008605" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CriticalLegalStudies
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "批判的法学研究"@ja ; rdfs:label "Critical Legal Studies"@en ;
+    skos:altLabel "CLS"@ja ;
+    rdfs:comment "法が中立でなく支配的な権力関係を再生産するという批判的視点から法を研究する学派。フェミニスト法学・批判的人種理論など。"@ja ;
+    rdfs:comment "A school studying law from a critical perspective that law is not neutral but reproduces dominant power relations, including feminist jurisprudence and critical race theory."@en ;
+    skos:notation "SHINRA_0008606" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:hart-concept-law-001
+    a shinra:LegalPositivism ;
+    rdfs:label "ハートの法の概念"@ja ; rdfs:label "Hart's The Concept of Law"@en ;
+    shinra:wikidataId "Q1143499" ;
+    skos:notation "SHINRA_I008601" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:lon-fuller-morality-001
+    a shinra:NaturalLaw ;
+    rdfs:label "フラーの法の道徳性"@ja ; rdfs:label "Fuller's The Morality of Law"@en ;
+    shinra:wikidataId "Q5758481" ;
+    skos:notation "SHINRA_I008602" ; dcterms:created "2026-06-10"^^xsd:date .

@@ -1,0 +1,76 @@
+# ===========================================================================
+# shinra-philosophy-of-mathematics.ttl  — 数学哲学ドメイン (Phase 10-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-mathematics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 数学哲学ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Mathematics Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MathematicalPlatonism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "数学的プラトン主義"@ja ; rdfs:label "Mathematical Platonism"@en ;
+    skos:altLabel "数学的実在論"@ja ;
+    rdfs:comment "数学的対象（数・集合・関数）は人間の精神から独立して客観的に存在するという立場。フレーゲ・ゲーデル・現代数学的実在論など。"@ja ;
+    rdfs:comment "The position that mathematical objects (numbers, sets, functions) exist objectively and independently of the human mind, associated with Frege, Gödel, and contemporary mathematical realism."@en ;
+    skos:notation "SHINRA_0008901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Formalism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "形式主義"@ja ; rdfs:label "Formalism"@en ;
+    skos:altLabel "数学的形式主義"@ja ;
+    rdfs:comment "数学は意味を持たない記号の形式的操作であるというヒルベルトの立場。ヒルベルトプログラム・ゲーデルの不完全性定理による危機など。"@ja ;
+    rdfs:comment "Hilbert's position that mathematics is the formal manipulation of meaningless symbols, including the Hilbert program and its crisis following Gödel's incompleteness theorems."@en ;
+    skos:notation "SHINRA_0008902" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Intuitionism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "直観主義"@ja ; rdfs:label "Intuitionism"@en ;
+    skos:altLabel "数学的直観主義"@ja ;
+    rdfs:comment "数学的対象は精神的構成であり存在しないとされるものは証明できないというブラウアーの立場。排中律の否定・構成的証明など。"@ja ;
+    rdfs:comment "Brouwer's position that mathematical objects are mental constructions and what cannot be proved to exist does not exist, rejecting the law of excluded middle and requiring constructive proofs."@en ;
+    skos:notation "SHINRA_0008903" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Logicism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "論理主義"@ja ; rdfs:label "Logicism"@en ;
+    rdfs:comment "数学は論理学に還元可能であるというフレーゲ・ラッセルの立場。プリンキピア・マテマティカ・ラッセルのパラドックスなど。"@ja ;
+    rdfs:comment "Frege and Russell's position that mathematics is reducible to logic, including Principia Mathematica and Russell's paradox."@en ;
+    skos:notation "SHINRA_0008904" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MathematicalBeauty
+    a owl:Class ; rdfs:subClassOf shinra:AestheticValue ;
+    rdfs:label "数学的美"@ja ; rdfs:label "Mathematical Beauty"@en ;
+    rdfs:comment "数学的証明・定理・構造が持つ審美的性質。エレガントな証明・予期せぬ結びつき・簡潔さ・オイラーの等式など。"@ja ;
+    rdfs:comment "The aesthetic qualities of mathematical proofs, theorems, and structures, including elegant proofs, unexpected connections, simplicity, and Euler's identity."@en ;
+    skos:notation "SHINRA_0008905" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MathematicalUnreasonableEffectiveness
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "数学の不合理な有効性"@ja ; rdfs:label "Unreasonable Effectiveness of Mathematics"@en ;
+    rdfs:comment "なぜ純粋数学が物理的現実の記述にこれほど有効なのかというウィグナーの問い。数学と物理の深い関係・数学的実在論との関連。"@ja ;
+    rdfs:comment "Wigner's question of why pure mathematics is so unreasonably effective in describing physical reality, related to the deep connection between mathematics and physics and mathematical realism."@en ;
+    skos:notation "SHINRA_0008906" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:eulers-identity-001
+    a shinra:MathematicalObject ;
+    rdfs:label "オイラーの等式"@ja ; rdfs:label "Euler's Identity"@en ;
+    shinra:wikidataId "Q272166" ;
+    skos:notation "SHINRA_I008901" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:principia-mathematica-001
+    a shinra:Logicism ;
+    rdfs:label "プリンキピア・マテマティカ"@ja ; rdfs:label "Principia Mathematica"@en ;
+    shinra:wikidataId "Q209530" ;
+    skos:notation "SHINRA_I008902" ; dcterms:created "2026-06-10"^^xsd:date .

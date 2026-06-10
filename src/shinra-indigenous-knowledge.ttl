@@ -1,0 +1,83 @@
+# ===========================================================================
+# shinra-indigenous-knowledge.ttl  — 先住民知識・伝統的知識ドメイン (Phase 10-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/indigenous-knowledge>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 先住民知識・伝統的知識ドメイン"@ja ,
+                    "Shinra Ontology — Indigenous Knowledge & Traditional Knowledge Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:TraditionalEcologicalKnowledge
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "伝統的生態学的知識"@ja ; rdfs:label "Traditional Ecological Knowledge"@en ;
+    skos:altLabel "TEK"@ja ;
+    rdfs:comment "先住民・地域共同体が世代を超えて蓄積した生態系・生物・環境に関する知識体系。農業・医療・自然資源管理に応用。"@ja ;
+    rdfs:comment "The body of knowledge about ecosystems, organisms, and environments accumulated over generations by indigenous and local communities, applied to agriculture, medicine, and natural resource management."@en ;
+    skos:notation "SHINRA_0008801" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:IndigenousWorldview
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "先住民的世界観"@ja ; rdfs:label "Indigenous Worldview"@en ;
+    rdfs:comment "先住民族が持つ宇宙・自然・人間・時間・共同体に関する独自の価値・信念・知識体系。万物の関係性・霊性・土地との絆など。"@ja ;
+    rdfs:comment "The unique systems of values, beliefs, and knowledge about cosmos, nature, humanity, time, and community held by indigenous peoples, including relational ontologies, spirituality, and connection to land."@en ;
+    skos:notation "SHINRA_0008802" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:OralTradition
+    a owl:Class ; rdfs:subClassOf shinra:InformationContentEntity ;
+    rdfs:label "口承伝統"@ja ; rdfs:label "Oral Tradition"@en ;
+    skos:altLabel "口承文化"@ja ;
+    rdfs:comment "文字によらず口述・唱歌・儀礼を通じて世代間で知識・物語・文化を伝達する体系。ホメロス・グリオット・アボリジニの夢の物語など。"@ja ;
+    rdfs:comment "A system of transmitting knowledge, stories, and culture across generations through oral recitation, song, and ritual without writing, including Homer, griots, and Aboriginal Dreamtime stories."@en ;
+    skos:notation "SHINRA_0008803" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:TraditionalMedicine
+    a owl:Class ; rdfs:subClassOf shinra:MedicalTechnology ;
+    rdfs:label "伝統医療"@ja ; rdfs:label "Traditional Medicine"@en ;
+    skos:altLabel "民間医療"@ja ;
+    rdfs:comment "文化的・歴史的に発展した非近代西洋医学的な治療体系。漢方・アーユルヴェーダ・アフリカ伝統医療・薬草療法など。"@ja ;
+    rdfs:comment "Culturally and historically developed healing systems outside modern Western medicine, including traditional Chinese medicine, Ayurveda, African traditional medicine, and herbal therapy."@en ;
+    skos:notation "SHINRA_0008804" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:BioprospectingEthics
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "生物探索倫理"@ja ; rdfs:label "Bioprospecting Ethics"@en ;
+    skos:altLabel "バイオパイラシー問題"@ja ;
+    rdfs:comment "先住民の伝統的知識・生物資源を企業が許可なく商業利用する問題。名古屋議定書・事前同意・利益配分など。"@ja ;
+    rdfs:comment "The ethical issue of corporations commercially exploiting indigenous traditional knowledge and biological resources without permission, including the Nagoya Protocol, prior informed consent, and benefit-sharing."@en ;
+    skos:notation "SHINRA_0008805" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:IntangibleCulturalHeritage
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "無形文化遺産"@ja ; rdfs:label "Intangible Cultural Heritage"@en ;
+    rdfs:comment "物理的形態を持たない文化的表現・実践・知識。ユネスコの無形文化遺産条約・芸能・儀礼・工芸技術・口承など。"@ja ;
+    rdfs:comment "Cultural expressions, practices, and knowledge without physical form, including UNESCO's Intangible Cultural Heritage Convention, performing arts, rituals, craft skills, and oral traditions."@en ;
+    skos:notation "SHINRA_0008806" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:ayurveda-001
+    a shinra:TraditionalMedicine ;
+    rdfs:label "アーユルヴェーダ"@ja ; rdfs:label "Ayurveda"@en ;
+    shinra:wikidataId "Q132325" ;
+    skos:notation "SHINRA_I008801" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:nagoya-protocol-001
+    a shinra:EnvironmentalPolicy ;
+    rdfs:label "名古屋議定書"@ja ; rdfs:label "Nagoya Protocol"@en ;
+    shinra:wikidataId "Q1754021" ;
+    skos:notation "SHINRA_I008802" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:no-ruz-001
+    a shinra:IntangibleCulturalHeritage ;
+    rdfs:label "ノウルーズ（ペルシャ正月）"@ja ; rdfs:label "Nowruz"@en ;
+    shinra:wikidataId "Q28026" ;
+    skos:notation "SHINRA_I008803" ; dcterms:created "2026-06-10"^^xsd:date .
