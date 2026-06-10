@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-music-cognition.ttl  — 音楽認知・音楽心理学ドメイン (Phase 10-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/music-cognition>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 音楽認知・音楽心理学ドメイン"@ja ,
+                    "Shinra Ontology — Music Cognition & Psychology of Music Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MusicalPerception
+    a owl:Class ; rdfs:subClassOf shinra:Perception ;
+    rdfs:label "音楽知覚"@ja ; rdfs:label "Musical Perception"@en ;
+    rdfs:comment "音楽的刺激（音高・リズム・音色・和声）を知覚・解釈する認知過程。音楽的錯聴・絶対音感・音楽的文脈効果など。"@ja ;
+    rdfs:comment "The cognitive process of perceiving and interpreting musical stimuli (pitch, rhythm, timbre, harmony), including musical illusions, absolute pitch, and musical context effects."@en ;
+    skos:notation "SHINRA_0009001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MusicalEmotion
+    a owl:Class ; rdfs:subClassOf shinra:Emotion ;
+    rdfs:label "音楽的感動"@ja ; rdfs:label "Musical Emotion"@en ;
+    skos:altLabel "音楽が引き起こす感情"@ja ;
+    rdfs:comment "音楽が引き起こす感情・情動状態。快楽・悲しみ・鳥肌（スキン反応）・ASMR・感動・音楽的涙など。"@ja ;
+    rdfs:comment "Emotional and affective states elicited by music, including pleasure, sadness, chills (frisson), ASMR, awe, and musical tears."@en ;
+    skos:notation "SHINRA_0009002" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RhythmProcessing
+    a owl:Class ; rdfs:subClassOf shinra:Cognition ;
+    rdfs:label "リズム処理"@ja ; rdfs:label "Rhythm Processing"@en ;
+    rdfs:comment "リズム・拍・テンポを知覚・処理・同期する認知過程。メトリカル帰属・エントレインメント・ビートへの同期など。"@ja ;
+    rdfs:comment "The cognitive process of perceiving, processing, and synchronizing with rhythm, beat, and tempo, including metrical attribution, entrainment, and beat synchronization."@en ;
+    skos:notation "SHINRA_0009003" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MusicalMemory
+    a owl:Class ; rdfs:subClassOf shinra:Memory ;
+    rdfs:label "音楽記憶"@ja ; rdfs:label "Musical Memory"@en ;
+    rdfs:comment "音楽を記憶・認識・想起する認知過程。耳虫（音楽の自動再生）・音楽と個人記憶の結びつき・アルツハイマーにおける音楽記憶の保存など。"@ja ;
+    rdfs:comment "The cognitive process of storing, recognizing, and recalling music, including earworms (involuntary musical imagery), music-autobiographical memory links, and preserved musical memory in Alzheimer's disease."@en ;
+    skos:notation "SHINRA_0009004" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MusicalDevelopment
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveDevelopment ;
+    rdfs:label "音楽的発達"@ja ; rdfs:label "Musical Development"@en ;
+    rdfs:comment "生涯を通じた音楽能力の発達過程。乳児の音楽知覚・音楽的クリティカルピリオド・音楽訓練の認知効果など。"@ja ;
+    rdfs:comment "The developmental process of musical abilities across the lifespan, including infant music perception, musical critical periods, and cognitive effects of musical training."@en ;
+    skos:notation "SHINRA_0009005" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:MusicTherapy
+    a owl:Class ; rdfs:subClassOf shinra:Psychotherapy ;
+    rdfs:label "音楽療法"@ja ; rdfs:label "Music Therapy"@en ;
+    rdfs:comment "音楽を用いて身体的・心理的・社会的・認知的健康を促進する専門的実践。神経学的音楽療法・緩和ケア・認知症ケアなど。"@ja ;
+    rdfs:comment "A professional practice using music to promote physical, psychological, social, and cognitive health, including neurologic music therapy, palliative care, and dementia care."@en ;
+    skos:notation "SHINRA_0009006" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:absolute-pitch-001
+    a shinra:MusicalPerception ;
+    rdfs:label "絶対音感"@ja ; rdfs:label "Absolute Pitch"@en ;
+    shinra:wikidataId "Q221083" ;
+    skos:notation "SHINRA_I009001" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:mozart-effect-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "モーツァルト効果"@ja ; rdfs:label "Mozart Effect"@en ;
+    shinra:wikidataId "Q1030041" ;
+    skos:notation "SHINRA_I009002" ; dcterms:created "2026-06-10"^^xsd:date .

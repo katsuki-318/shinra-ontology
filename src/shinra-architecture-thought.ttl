@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-architecture-thought.ttl  — 思想史・観念史ドメイン (Phase 10-l)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/history-of-ideas>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 思想史・観念史ドメイン"@ja ,
+                    "Shinra Ontology — History of Ideas & Intellectual History Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:IntellectualMovement
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "知的運動"@ja ; rdfs:label "Intellectual Movement"@en ;
+    rdfs:comment "共通の思想・方法・問題意識を持つ知識人・思想家の歴史的潮流。啓蒙主義・ロマン主義・実存主義・フランクフルト学派など。"@ja ;
+    rdfs:comment "A historical current of intellectuals and thinkers sharing common ideas, methods, and concerns, including the Enlightenment, Romanticism, Existentialism, and the Frankfurt School."@en ;
+    skos:notation "SHINRA_0009301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Enlightenment
+    a owl:Class ; rdfs:subClassOf shinra:IntellectualMovement ;
+    rdfs:label "啓蒙主義"@ja ; rdfs:label "Enlightenment"@en ;
+    skos:altLabel "啓蒙思想"@ja ;
+    rdfs:comment "17〜18世紀ヨーロッパで理性・科学・個人の自律を重視した知的運動。ロック・ヴォルテール・ルソー・カント・百科全書派など。"@ja ;
+    rdfs:comment "A 17th–18th century European intellectual movement emphasizing reason, science, and individual autonomy, including Locke, Voltaire, Rousseau, Kant, and the Encyclopédistes."@en ;
+    skos:notation "SHINRA_0009302" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Romanticism
+    a owl:Class ; rdfs:subClassOf shinra:IntellectualMovement ;
+    rdfs:label "ロマン主義"@ja ; rdfs:label "Romanticism"@en ;
+    rdfs:comment "18〜19世紀に啓蒙主義の合理主義への反動として生まれた知的・芸術的運動。感情・自然・民族・無限への憧憬など。"@ja ;
+    rdfs:comment "An 18th–19th century intellectual and artistic movement arising in reaction to Enlightenment rationalism, emphasizing emotion, nature, nationhood, and longing for the infinite."@en ;
+    skos:notation "SHINRA_0009303" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CriticalTheory
+    a owl:Class ; rdfs:subClassOf shinra:IntellectualMovement ;
+    rdfs:label "批判理論"@ja ; rdfs:label "Critical Theory"@en ;
+    rdfs:comment "フランクフルト学派が発展させた社会批判の理論的枠組み。ホルクハイマー・アドルノ・ハーバーマス・道具的理性批判など。"@ja ;
+    rdfs:comment "A theoretical framework for social criticism developed by the Frankfurt School, including Horkheimer, Adorno, Habermas, and the critique of instrumental reason."@en ;
+    skos:notation "SHINRA_0009304" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Postmodernism
+    a owl:Class ; rdfs:subClassOf shinra:IntellectualMovement ;
+    rdfs:label "ポストモダニズム"@ja ; rdfs:label "Postmodernism"@en ;
+    rdfs:comment "普遍的真理・大きな物語・主体を疑問視する20世紀後半の知的潮流。リオタール・デリダ・フーコー・ボードリヤールなど。"@ja ;
+    rdfs:comment "A late 20th century intellectual trend questioning universal truth, grand narratives, and the subject, associated with Lyotard, Derrida, Foucault, and Baudrillard."@en ;
+    skos:notation "SHINRA_0009305" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Pragmatism
+    a owl:Class ; rdfs:subClassOf shinra:IntellectualMovement ;
+    rdfs:label "プラグマティズム"@ja ; rdfs:label "Pragmatism"@en ;
+    rdfs:comment "実践的結果・有用性を真理・意味の基準とするアメリカ哲学の伝統。パース・ジェームズ・デューイ・ローティなど。"@ja ;
+    rdfs:comment "The American philosophical tradition taking practical consequences and usefulness as the criterion of truth and meaning, associated with Peirce, James, Dewey, and Rorty."@en ;
+    skos:notation "SHINRA_0009306" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:dialectic-of-enlightenment-001
+    a shinra:CriticalTheory ;
+    rdfs:label "啓蒙の弁証法"@ja ; rdfs:label "Dialectic of Enlightenment"@en ;
+    shinra:wikidataId "Q697275" ;
+    skos:notation "SHINRA_I009301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:deconstruction-001
+    a shinra:Postmodernism ;
+    rdfs:label "脱構築"@ja ; rdfs:label "Deconstruction"@en ;
+    shinra:wikidataId "Q182978" ;
+    skos:notation "SHINRA_I009302" ; dcterms:created "2026-06-10"^^xsd:date .

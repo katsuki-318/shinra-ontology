@@ -1,0 +1,73 @@
+# ===========================================================================
+# shinra-political-economy.ttl  — 政治経済学ドメイン (Phase 10-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/political-economy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 政治経済学ドメイン"@ja ,
+                    "Shinra Ontology — Political Economy Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Capitalism
+    a owl:Class ; rdfs:subClassOf shinra:EconomicSystem ;
+    rdfs:label "資本主義"@ja ; rdfs:label "Capitalism"@en ;
+    rdfs:comment "私有財産・市場・利潤動機・資本蓄積を基礎とする経済体制。自由市場資本主義・福祉国家資本主義・金融資本主義など。"@ja ;
+    rdfs:comment "An economic system based on private property, markets, profit motive, and capital accumulation, including free market capitalism, welfare state capitalism, and financial capitalism."@en ;
+    skos:notation "SHINRA_0009101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Socialism
+    a owl:Class ; rdfs:subClassOf shinra:EconomicSystem ;
+    rdfs:label "社会主義"@ja ; rdfs:label "Socialism"@en ;
+    rdfs:comment "生産手段の社会的所有・計画経済・平等の実現を目指す経済体制・思想。民主的社会主義・市場社会主義・科学的社会主義など。"@ja ;
+    rdfs:comment "An economic system and ideology aiming at social ownership of means of production, planned economy, and equality, including democratic socialism, market socialism, and scientific socialism."@en ;
+    skos:notation "SHINRA_0009102" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Neoliberalism
+    a owl:Class ; rdfs:subClassOf shinra:EconomicTheory ;
+    rdfs:label "新自由主義"@ja ; rdfs:label "Neoliberalism"@en ;
+    rdfs:comment "市場の自由化・規制緩和・民営化・国家の縮小を主張する経済思想。サッチャリズム・レーガノミクス・ワシントン・コンセンサスなど。"@ja ;
+    rdfs:comment "An economic ideology advocating market liberalization, deregulation, privatization, and reduced state intervention, including Thatcherism, Reaganomics, and the Washington Consensus."@en ;
+    skos:notation "SHINRA_0009103" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RentSeeking
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "レント・シーキング"@ja ; rdfs:label "Rent-Seeking"@en ;
+    rdfs:comment "生産的活動なしに政治的手段で経済的レント（超過利潤）を獲得しようとする行動。規制捕獲・政治的コネ・腐敗との関連。"@ja ;
+    rdfs:comment "The behavior of gaining economic rents (excess profits) through political means without productive activity, related to regulatory capture, political connections, and corruption."@en ;
+    skos:notation "SHINRA_0009104" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:VarietiesOfCapitalism
+    a owl:Class ; rdfs:subClassOf shinra:EconomicTheory ;
+    rdfs:label "資本主義の多様性"@ja ; rdfs:label "Varieties of Capitalism"@en ;
+    rdfs:comment "資本主義体制の多様な類型を比較研究する政治経済学の枠組み。自由市場経済・調整済み市場経済・発展主義的資本主義など。"@ja ;
+    rdfs:comment "A comparative political economy framework studying diverse types of capitalist systems, including liberal market economies, coordinated market economies, and developmental capitalism."@en ;
+    skos:notation "SHINRA_0009105" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:WelfareState
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalSystem ;
+    rdfs:label "福祉国家"@ja ; rdfs:label "Welfare State"@en ;
+    rdfs:comment "社会保険・公共サービス・所得再分配によって国民の最低限の生活を保障する国家体制。普遍的・選別的・コーポラティスト型など。"@ja ;
+    rdfs:comment "A state system guaranteeing citizens a minimum standard of living through social insurance, public services, and income redistribution, including universal, selective, and corporatist welfare regimes."@en ;
+    skos:notation "SHINRA_0009106" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:marx-capital-001
+    a shinra:ScientificTheory ;
+    rdfs:label "マルクスの資本論"@ja ; rdfs:label "Marx's Capital"@en ;
+    shinra:wikidataId "Q149575" ;
+    skos:notation "SHINRA_I009101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:adam-smith-wealth-001
+    a shinra:EconomicTheory ;
+    rdfs:label "国富論"@ja ; rdfs:label "The Wealth of Nations"@en ;
+    shinra:wikidataId "Q80083" ;
+    skos:notation "SHINRA_I009102" ; dcterms:created "2026-06-10"^^xsd:date .

@@ -1,0 +1,82 @@
+# ===========================================================================
+# shinra-cognitive-biases.ttl  — 認知バイアス・ヒューリスティクス詳細ドメイン (Phase 10-k)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cognitive-biases>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 認知バイアス・ヒューリスティクス詳細ドメイン"@ja ,
+                    "Shinra Ontology — Cognitive Biases & Heuristics Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ConfirmationBias
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "確証バイアス"@ja ; rdfs:label "Confirmation Bias"@en ;
+    rdfs:comment "既存の信念・仮説を支持する情報を優先的に探索・解釈・記憶する傾向。エコーチェンバー・偽情報への脆弱性との関連。"@ja ;
+    rdfs:comment "The tendency to preferentially seek, interpret, and remember information that supports existing beliefs or hypotheses, related to echo chambers and vulnerability to misinformation."@en ;
+    skos:notation "SHINRA_0009201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AnchoringBias
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "アンカリング"@ja ; rdfs:label "Anchoring Bias"@en ;
+    skos:altLabel "係留効果"@ja ;
+    rdfs:comment "最初に提示された情報（アンカー）に過度に依存して判断する傾向。交渉・価格設定・医療診断での影響など。"@ja ;
+    rdfs:comment "The tendency to over-rely on the first piece of information encountered (the anchor) when making judgments, with effects on negotiation, pricing, and medical diagnosis."@en ;
+    skos:notation "SHINRA_0009202" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AvailabilityHeuristic
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "利用可能性ヒューリスティック"@ja ; rdfs:label "Availability Heuristic"@en ;
+    rdfs:comment "思い出しやすい事例を基に頻度・確率を判断する傾向。飛行機事故・テロの過大評価・ニュース報道の影響など。"@ja ;
+    rdfs:comment "The tendency to judge frequency and probability based on how easily examples come to mind, leading to overestimation of plane crashes, terrorism, and news-driven perceptions."@en ;
+    skos:notation "SHINRA_0009203" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DunningKrugerEffect
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "ダニング・クルーガー効果"@ja ; rdfs:label "Dunning-Kruger Effect"@en ;
+    rdfs:comment "能力の低い人が自分の能力を過大評価し、高い人が過小評価する傾向。メタ認知の欠如・専門性と謙虚さの関係など。"@ja ;
+    rdfs:comment "The tendency for low-ability individuals to overestimate their competence and high-ability individuals to underestimate it, related to metacognitive deficits and the relationship between expertise and humility."@en ;
+    skos:notation "SHINRA_0009204" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SurvivorshipBias
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "生存者バイアス"@ja ; rdfs:label "Survivorship Bias"@en ;
+    rdfs:comment "成功例のみを観察し失敗例を無視することで生じる誤った判断。起業家成功神話・軍の損傷分析・投資戦略評価など。"@ja ;
+    rdfs:comment "The erroneous judgment arising from observing only successful cases while ignoring failures, including entrepreneurship success myths, military damage analysis, and investment strategy evaluation."@en ;
+    skos:notation "SHINRA_0009205" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:StatusQuoBias
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "現状維持バイアス"@ja ; rdfs:label "Status Quo Bias"@en ;
+    rdfs:comment "現状を変えることに対する非合理的な選好。損失回避・変化コストの過大評価・政策変更への抵抗などと関連。"@ja ;
+    rdfs:comment "An irrational preference for maintaining the current state of affairs, related to loss aversion, overestimation of change costs, and resistance to policy change."@en ;
+    skos:notation "SHINRA_0009206" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:HindsightBias
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveBias ;
+    rdfs:label "後知恵バイアス"@ja ; rdfs:label "Hindsight Bias"@en ;
+    skos:altLabel "後からなら分かった"@ja ;
+    rdfs:comment "結果を知った後に、自分はその結果を予測できていたと思い込む傾向。歴史の必然性の誤認・専門家評価の歪みなど。"@ja ;
+    rdfs:comment "The tendency to believe, after learning an outcome, that one had predicted it all along, including misperception of historical inevitability and distortion of expert evaluation."@en ;
+    skos:notation "SHINRA_0009207" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:kahneman-thinking-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "ファスト＆スロー思考"@ja ; rdfs:label "Thinking, Fast and Slow"@en ;
+    shinra:wikidataId "Q1051212" ;
+    skos:notation "SHINRA_I009201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:nudge-theory-001
+    a shinra:BehavioralEconomics ;
+    rdfs:label "ナッジ理論"@ja ; rdfs:label "Nudge Theory"@en ;
+    shinra:wikidataId "Q1970819" ;
+    skos:notation "SHINRA_I009202" ; dcterms:created "2026-06-10"^^xsd:date .
