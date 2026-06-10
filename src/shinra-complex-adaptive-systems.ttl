@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-complex-adaptive-systems.ttl  — 複雑適応系・進化計算ドメイン (Phase 10-m)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/complex-adaptive-systems>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 複雑適応系・進化計算ドメイン"@ja ,
+                    "Shinra Ontology — Complex Adaptive Systems & Evolutionary Computation Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ComplexAdaptiveSystem
+    a owl:Class ; rdfs:subClassOf shinra:ComplexSystem ;
+    rdfs:label "複雑適応系"@ja ; rdfs:label "Complex Adaptive System"@en ;
+    skos:altLabel "CAS"@ja ;
+    rdfs:comment "多数の自律エージェントが相互作用し環境に適応・学習・進化する複雑系。免疫系・生態系・市場・脳・都市など。"@ja ;
+    rdfs:comment "A complex system in which many autonomous agents interact and adapt, learn, and evolve in response to their environment, including immune systems, ecosystems, markets, brains, and cities."@en ;
+    skos:notation "SHINRA_0009401" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Agent
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "エージェント"@ja ; rdfs:label "Agent"@en ;
+    rdfs:comment "環境を知覚し行動を選択する自律的単位。ソフトウェアエージェント・マルチエージェント系・AIエージェント・経済主体など。"@ja ;
+    rdfs:comment "An autonomous unit that perceives its environment and selects actions, including software agents, multi-agent systems, AI agents, and economic actors."@en ;
+    skos:notation "SHINRA_0009402" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:EvolutionaryAlgorithm
+    a owl:Class ; rdfs:subClassOf shinra:Algorithm ;
+    rdfs:label "進化的アルゴリズム"@ja ; rdfs:label "Evolutionary Algorithm"@en ;
+    rdfs:comment "生物の進化過程（選択・交叉・突然変異）を模倣した最適化アルゴリズム。遺伝的アルゴリズム・進化戦略・遺伝的プログラミングなど。"@ja ;
+    rdfs:comment "Optimization algorithms mimicking biological evolution (selection, crossover, mutation), including genetic algorithms, evolution strategies, and genetic programming."@en ;
+    skos:notation "SHINRA_0009403" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SelfOrganization
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "自己組織化"@ja ; rdfs:label "Self-Organization"@en ;
+    rdfs:comment "外部からの指示なしにシステムが内部相互作用によって秩序・構造を自発的に形成する過程。散逸構造・アリのコロニー・神経ネットワークなど。"@ja ;
+    rdfs:comment "The process by which a system spontaneously forms order and structure through internal interactions without external direction, including dissipative structures, ant colonies, and neural networks."@en ;
+    skos:notation "SHINRA_0009404" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AdaptiveLandscape
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "適応度地形"@ja ; rdfs:label "Adaptive Landscape"@en ;
+    skos:altLabel "フィットネスランドスケープ"@ja ;
+    rdfs:comment "遺伝子型空間に適応度を対応させた地形的比喩。進化の方向・局所最適・峰渡り・進化的制約の可視化に用いる。"@ja ;
+    rdfs:comment "A topographic metaphor mapping fitness values onto genotype space, used to visualize evolutionary direction, local optima, peak shifts, and evolutionary constraints."@en ;
+    skos:notation "SHINRA_0009405" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SwarmIntelligence
+    a owl:Class ; rdfs:subClassOf shinra:ArtificialIntelligence ;
+    rdfs:label "群知能"@ja ; rdfs:label "Swarm Intelligence"@en ;
+    rdfs:comment "単純なエージェントの集合体が創発的に示す集合的知性。蟻コロニー最適化・粒子群最適化・蜂群アルゴリズムなど。"@ja ;
+    rdfs:comment "The collective intelligence emergently exhibited by a group of simple agents, including ant colony optimization, particle swarm optimization, and bee colony algorithms."@en ;
+    skos:notation "SHINRA_0009406" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:santa-fe-institute-001
+    a shinra:Organization ;
+    rdfs:label "サンタフェ研究所"@ja ; rdfs:label "Santa Fe Institute"@en ;
+    shinra:wikidataId "Q1227003" ;
+    skos:notation "SHINRA_I009401" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:game-of-life-001
+    a shinra:ComplexAdaptiveSystem ;
+    rdfs:label "ライフゲーム"@ja ; rdfs:label "Conway's Game of Life"@en ;
+    shinra:wikidataId "Q244615" ;
+    skos:notation "SHINRA_I009402" ; dcterms:created "2026-06-10"^^xsd:date .

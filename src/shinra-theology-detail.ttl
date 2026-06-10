@@ -1,0 +1,75 @@
+# ===========================================================================
+# shinra-theology-detail.ttl  — 神学・宗教哲学詳細ドメイン (Phase 10-o)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/theology-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 神学・宗教哲学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Theology & Philosophy of Religion Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Theism
+    a owl:Class ; rdfs:subClassOf shinra:ReligiousBelief ;
+    rdfs:label "有神論"@ja ; rdfs:label "Theism"@en ;
+    rdfs:comment "人格的神の存在を肯定する信念立場。一神論・多神論・汎神論・万有内在神論・二元論的有神論など。"@ja ;
+    rdfs:comment "The belief position affirming the existence of a personal God, including monotheism, polytheism, pantheism, panentheism, and dualistic theism."@en ;
+    skos:notation "SHINRA_0009601" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Atheism
+    a owl:Class ; rdfs:subClassOf shinra:ReligiousBelief ;
+    rdfs:label "無神論"@ja ; rdfs:label "Atheism"@en ;
+    rdfs:comment "神の存在を否定する信念立場。積極的無神論・消極的無神論・新無神論（ドーキンス・ヒッチンズ）など。"@ja ;
+    rdfs:comment "The belief position denying the existence of God, including positive atheism, negative atheism, and the New Atheism (Dawkins, Hitchens)."@en ;
+    skos:notation "SHINRA_0009602" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:TheodiceeProblem
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "神義論"@ja ; rdfs:label "Problem of Evil"@en ;
+    skos:altLabel "悪の問題"@ja ;
+    rdfs:comment "善で全能の神が存在するならなぜ悪・苦しみが存在するかという哲学・神学的問題。自由意志論・魂の形成説・不条理の神学など。"@ja ;
+    rdfs:comment "The philosophical and theological problem of why evil and suffering exist if a good and omnipotent God exists, including free will defense, soul-making theodicy, and theology of the absurd."@en ;
+    skos:notation "SHINRA_0009603" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:OntologicalArgument
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "存在論的神証明"@ja ; rdfs:label "Ontological Argument"@en ;
+    rdfs:comment "神の概念から論理的に神の存在を証明しようとする議論。アンセルムス・デカルト・カントの批判・グロウンドベルグの様相版など。"@ja ;
+    rdfs:comment "An argument attempting to logically prove God's existence from the concept of God, including Anselm, Descartes, Kant's critique, and Plantinga's modal version."@en ;
+    skos:notation "SHINRA_0009604" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ReligiousExperience
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "宗教的経験"@ja ; rdfs:label "Religious Experience"@en ;
+    rdfs:comment "神・聖なるもの・超越者との接触・合一を主観的に体験する経験。神秘体験・改宗体験・ウィリアム・ジェームズの宗教的経験論など。"@ja ;
+    rdfs:comment "The subjective experience of contact or union with God, the sacred, or the transcendent, including mystical experience, conversion experience, and William James's varieties of religious experience."@en ;
+    skos:notation "SHINRA_0009605" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Secularism
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "世俗主義"@ja ; rdfs:label "Secularism"@en ;
+    skos:altLabel "政教分離"@ja ;
+    rdfs:comment "宗教と国家・公共領域を分離すべきという原則。政教分離・宗教的中立性・世俗化理論・脱世俗化論争など。"@ja ;
+    rdfs:comment "The principle of separating religion from the state and public sphere, including separation of church and state, religious neutrality, secularization theory, and post-secularism debates."@en ;
+    skos:notation "SHINRA_0009606" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:varieties-religious-experience-001
+    a shinra:ScientificTheory ;
+    rdfs:label "宗教的経験の諸相"@ja ; rdfs:label "The Varieties of Religious Experience"@en ;
+    shinra:wikidataId "Q1341063" ;
+    skos:notation "SHINRA_I009601" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:anselm-ontological-001
+    a shinra:OntologicalArgument ;
+    rdfs:label "アンセルムスの存在論的証明"@ja ; rdfs:label "Anselm's Ontological Argument"@en ;
+    shinra:wikidataId "Q183389" ;
+    skos:notation "SHINRA_I009602" ; dcterms:created "2026-06-10"^^xsd:date .

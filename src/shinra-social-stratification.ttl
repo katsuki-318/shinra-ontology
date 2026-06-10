@@ -1,0 +1,77 @@
+# ===========================================================================
+# shinra-social-stratification.ttl  — 社会階層・不平等詳細ドメイン (Phase 10-n)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/social-stratification>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会階層・不平等詳細ドメイン"@ja ,
+                    "Shinra Ontology — Social Stratification & Inequality Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:CasteSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialStructure ;
+    rdfs:label "カースト制度"@ja ; rdfs:label "Caste System"@en ;
+    rdfs:comment "出生によって決まる世襲的・固定的な社会的階層秩序。インドのヴァルナ・ジャーティ制度・被差別部落など。"@ja ;
+    rdfs:comment "A hereditary and fixed social hierarchy determined by birth, including India's varna and jati system and outcaste communities."@en ;
+    skos:notation "SHINRA_0009501" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GenderInequality
+    a owl:Class ; rdfs:subClassOf shinra:Inequality ;
+    rdfs:label "ジェンダー不平等"@ja ; rdfs:label "Gender Inequality"@en ;
+    rdfs:comment "性別に基づく資源・機会・権力の不均等な分配。賃金格差・ガラスの天井・性別役割分業・GIIなど。"@ja ;
+    rdfs:comment "The unequal distribution of resources, opportunities, and power based on gender, including the wage gap, glass ceiling, gender division of labor, and the Gender Inequality Index."@en ;
+    skos:notation "SHINRA_0009502" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RacialInequality
+    a owl:Class ; rdfs:subClassOf shinra:Inequality ;
+    rdfs:label "人種的不平等"@ja ; rdfs:label "Racial Inequality"@en ;
+    skos:altLabel "人種差別"@ja ;
+    rdfs:comment "人種・民族に基づく不平等・差別。組織的人種差別・富の人種格差・刑事司法の人種的不公正など。"@ja ;
+    rdfs:comment "Inequality and discrimination based on race and ethnicity, including systemic racism, racial wealth gaps, and racial disparities in criminal justice."@en ;
+    skos:notation "SHINRA_0009503" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Intersectionality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "インターセクショナリティ"@ja ; rdfs:label "Intersectionality"@en ;
+    skos:altLabel "交差性"@ja ;
+    rdfs:comment "複数のアイデンティティ（人種・性別・階級・性的指向）が交差し独特の抑圧・特権を生み出すことを示すクレンショーの概念。"@ja ;
+    rdfs:comment "Crenshaw's concept demonstrating how multiple identities (race, gender, class, sexuality) intersect to create unique forms of oppression and privilege."@en ;
+    skos:notation "SHINRA_0009504" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SocialCapital
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会関係資本"@ja ; rdfs:label "Social Capital"@en ;
+    skos:altLabel "ソーシャルキャピタル"@ja ;
+    rdfs:comment "社会的ネットワーク・信頼・規範から生まれる資源と便益。パットナムの橋渡し型・結束型・ブルデューの資本の形態など。"@ja ;
+    rdfs:comment "Resources and benefits arising from social networks, trust, and norms, including Putnam's bridging and bonding capital and Bourdieu's forms of capital."@en ;
+    skos:notation "SHINRA_0009505" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Meritocracy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "能力主義"@ja ; rdfs:label "Meritocracy"@en ;
+    skos:altLabel "メリトクラシー"@ja ;
+    rdfs:comment "能力・努力・才能に基づいて地位・報酬が配分されるべきとする原則と実態。能力主義の神話・機会の平等・スタートラインの不平等など。"@ja ;
+    rdfs:comment "The principle and practice that position and reward should be allocated based on ability, effort, and talent, including the meritocracy myth, equality of opportunity, and unequal starting lines."@en ;
+    skos:notation "SHINRA_0009506" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:apartheid-001
+    a shinra:RacialInequality ;
+    rdfs:label "アパルトヘイト"@ja ; rdfs:label "Apartheid"@en ;
+    shinra:wikidataId "Q8463" ;
+    skos:notation "SHINRA_I009501" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:bourdieu-capital-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ブルデューの資本論"@ja ; rdfs:label "Bourdieu's Theory of Capital"@en ;
+    shinra:wikidataId "Q151083" ;
+    skos:notation "SHINRA_I009502" ; dcterms:created "2026-06-10"^^xsd:date .
