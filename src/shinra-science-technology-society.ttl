@@ -1,0 +1,69 @@
+# ===========================================================================
+# shinra-science-technology-society.ttl  — 科学技術社会論ドメイン (Phase 11-k)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/science-technology-society>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 科学技術社会論ドメイン"@ja ,
+                    "Shinra Ontology — Science, Technology & Society Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:STS
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "科学技術社会論"@ja ; rdfs:label "Science and Technology Studies"@en ;
+    skos:altLabel "STS"@ja ;
+    rdfs:comment "科学・技術・社会の相互作用を研究する学際分野。アクターネットワーク理論・社会構成主義・技術の政治性など。"@ja ;
+    rdfs:comment "An interdisciplinary field studying interactions between science, technology, and society, including Actor-Network Theory, social constructivism, and the politics of technology."@en ;
+    skos:notation "SHINRA_0011101" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:ActorNetworkTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "アクターネットワーク理論"@ja ; rdfs:label "Actor-Network Theory"@en ;
+    skos:altLabel "ANT"@ja ;
+    rdfs:comment "人間・非人間を対称的なアクターとして科学・技術の社会的形成を分析するラトゥール・カロンの理論。翻訳・ブラックボックス化など。"@ja ;
+    rdfs:comment "Latour and Callon's theory analyzing the social formation of science and technology by treating humans and non-humans as symmetrical actors, including translation and black-boxing."@en ;
+    skos:notation "SHINRA_0011102" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:TechnologicalDeterminism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "技術決定論"@ja ; rdfs:label "Technological Determinism"@en ;
+    rdfs:comment "技術が社会変化・文化・政治を決定するという立場。マクルーハンのメディア論・技術楽観主義・技術悲観主義など。"@ja ;
+    rdfs:comment "The position that technology determines social change, culture, and politics, including McLuhan's media theory, technological optimism, and technological pessimism."@en ;
+    skos:notation "SHINRA_0011103" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:SocialConstructionOfTechnology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "技術の社会的構成"@ja ; rdfs:label "Social Construction of Technology"@en ;
+    skos:altLabel "SCOT"@ja ;
+    rdfs:comment "技術の設計・採用・意味が社会的プロセスによって構成されるという理論。解釈の柔軟性・関連社会集団・安定化など。"@ja ;
+    rdfs:comment "The theory that the design, adoption, and meaning of technology are constituted through social processes, including interpretive flexibility, relevant social groups, and stabilization."@en ;
+    skos:notation "SHINRA_0011104" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:InnovationSystem
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "イノベーションシステム"@ja ; rdfs:label "Innovation System"@en ;
+    rdfs:comment "知識・技術の創出・拡散・活用を支える制度・組織・相互作用の体系。国家イノベーションシステム・トリプルヘリックスなど。"@ja ;
+    rdfs:comment "The system of institutions, organizations, and interactions supporting the creation, diffusion, and use of knowledge and technology, including national innovation systems and the triple helix."@en ;
+    skos:notation "SHINRA_0011105" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:medium-is-message-001
+    a shinra:TechnologicalDeterminism ;
+    rdfs:label "メディアはメッセージである"@ja ; rdfs:label "The Medium is the Message"@en ;
+    shinra:wikidataId "Q184827" ;
+    skos:notation "SHINRA_I011101" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:latour-nous-001
+    a shinra:ActorNetworkTheory ;
+    rdfs:label "ラトゥールの科学が作られているとき"@ja ; rdfs:label "Laboratory Life"@en ;
+    shinra:wikidataId "Q25107685" ;
+    skos:notation "SHINRA_I011102" ; dcterms:created "2026-06-11"^^xsd:date .

@@ -1,0 +1,73 @@
+# ===========================================================================
+# shinra-moral-philosophy.ttl  — 道徳哲学詳細ドメイン (Phase 11-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/moral-philosophy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 道徳哲学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Moral Philosophy Detail Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Utilitarianism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "功利主義詳細"@ja ; rdfs:label "Utilitarianism Detail"@en ;
+    rdfs:comment "最大多数の最大幸福を道徳的基準とするベンサム・ミルの倫理学。行為功利主義・規則功利主義・選好功利主義・計算問題など。"@ja ;
+    rdfs:comment "Bentham and Mill's ethics using the greatest happiness of the greatest number as the moral criterion, including act, rule, and preference utilitarianism, and measurement problems."@en ;
+    skos:notation "SHINRA_0011001" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Deontology
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "義務論"@ja ; rdfs:label "Deontology"@en ;
+    rdfs:comment "行為の結果でなく義務・規則・権利に基づいて道徳を判断するカントの倫理学。定言命法・義務の完全性・人格尊重など。"@ja ;
+    rdfs:comment "Kantian ethics judging morality based on duties, rules, and rights rather than consequences, including the categorical imperative, perfect duty, and respect for persons."@en ;
+    skos:notation "SHINRA_0011002" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:VirtueEthics
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "徳倫理学"@ja ; rdfs:label "Virtue Ethics"@en ;
+    rdfs:comment "徳・卓越性・人格を中心とするアリストテレス的倫理学。フロネシス・エウダイモニア・中庸・マッキンタイアの現代的展開など。"@ja ;
+    rdfs:comment "Aristotelian ethics centered on virtue, excellence, and character, including phronesis, eudaimonia, the mean, and MacIntyre's contemporary development."@en ;
+    skos:notation "SHINRA_0011003" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CareEthics
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "ケアの倫理"@ja ; rdfs:label "Ethics of Care"@en ;
+    rdfs:comment "関係・応答性・文脈を重視するギリガン・ノディングスのフェミニスト倫理学。抽象的原則より具体的関係・思いやりを優先する。"@ja ;
+    rdfs:comment "Gilligan and Noddings's feminist ethics emphasizing relationships, responsiveness, and context, prioritizing concrete relationships and compassion over abstract principles."@en ;
+    skos:notation "SHINRA_0011004" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:MetaEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "メタ倫理学"@ja ; rdfs:label "Meta-Ethics"@en ;
+    rdfs:comment "道徳的言語・判断・知識の本質を研究する倫理学の分野。道徳的実在論・非認知主義・エラー理論・表出主義など。"@ja ;
+    rdfs:comment "The field of ethics studying the nature of moral language, judgment, and knowledge, including moral realism, non-cognitivism, error theory, and expressivism."@en ;
+    skos:notation "SHINRA_0011005" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:MoralRealism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "道徳的実在論"@ja ; rdfs:label "Moral Realism"@en ;
+    rdfs:comment "道徳的事実・道徳的真理が客観的に存在するという立場。自然主義的実在論・非自然主義・コーネル実在論など。"@ja ;
+    rdfs:comment "The position that moral facts and moral truths exist objectively, including naturalistic realism, non-naturalism, and Cornell realism."@en ;
+    skos:notation "SHINRA_0011006" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:nicomachean-ethics-001
+    a shinra:VirtueEthics ;
+    rdfs:label "ニコマコス倫理学"@ja ; rdfs:label "Nicomachean Ethics"@en ;
+    shinra:wikidataId "Q212316" ;
+    skos:notation "SHINRA_I011001" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:groundwork-morals-001
+    a shinra:Deontology ;
+    rdfs:label "道徳形而上学の基礎づけ"@ja ; rdfs:label "Groundwork of the Metaphysics of Morals"@en ;
+    shinra:wikidataId "Q154694" ;
+    skos:notation "SHINRA_I011002" ; dcterms:created "2026-06-11"^^xsd:date .

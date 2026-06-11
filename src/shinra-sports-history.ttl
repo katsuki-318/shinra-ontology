@@ -1,0 +1,59 @@
+# ===========================================================================
+# shinra-sports-history.ttl  — スポーツ史・オリンピック研究ドメイン (Phase 11-l)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/sports-history>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — スポーツ史・オリンピック研究ドメイン"@ja ,
+                    "Shinra Ontology — Sports History & Olympic Studies Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:OlympicMovement
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "オリンピックムーブメント"@ja ; rdfs:label "Olympic Movement"@en ;
+    rdfs:comment "クーベルタンが始めた近代オリンピックを中心とする国際スポーツ運動。オリンピズム・IOC・聖火リレー・アマチュアリズムなど。"@ja ;
+    rdfs:comment "The international sport movement centered on the modern Olympics initiated by Coubertin, including Olympism, the IOC, the torch relay, and amateurism."@en ;
+    skos:notation "SHINRA_0011201" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:SportAndPolitics
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "スポーツと政治"@ja ; rdfs:label "Sport and Politics"@en ;
+    rdfs:comment "スポーツが政治・国際関係・ナショナリズムと交差する現象。ボイコット・プロパガンダ・スポーツ外交・人種差別との関係など。"@ja ;
+    rdfs:comment "Phenomena where sport intersects with politics, international relations, and nationalism, including boycotts, propaganda, sport diplomacy, and connections to racial discrimination."@en ;
+    skos:notation "SHINRA_0011202" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:SportMegaEvent
+    a owl:Class ; rdfs:subClassOf shinra:SportingEvent ;
+    rdfs:label "スポーツメガイベント"@ja ; rdfs:label "Sport Mega Event"@en ;
+    rdfs:comment "国際的に大規模な注目を集めるスポーツイベント。オリンピック・FIFAワールドカップ・ラグビーW杯・世界陸上など。"@ja ;
+    rdfs:comment "A sports event attracting large-scale international attention, including the Olympics, FIFA World Cup, Rugby World Cup, and World Athletics Championships."@en ;
+    skos:notation "SHINRA_0011203" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:AmateurismProfessionalism
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "アマチュアリズムとプロフェッショナリズム"@ja ; rdfs:label "Amateurism and Professionalism"@en ;
+    rdfs:comment "スポーツにおける無報酬の純粋な愛好と報酬を得る専門的競技の区別と変遷。NIL・契約・スポーツの商業化との関係など。"@ja ;
+    rdfs:comment "The distinction and evolution between unpaid pure sport participation and paid professional competition, related to NIL, contracts, and the commercialization of sport."@en ;
+    skos:notation "SHINRA_0011204" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:ancient-olympics-001
+    a shinra:SportingEvent ;
+    rdfs:label "古代オリンピック"@ja ; rdfs:label "Ancient Olympic Games"@en ;
+    shinra:wikidataId "Q109231" ;
+    skos:notation "SHINRA_I011201" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:berlin-1936-001
+    a shinra:SportAndPolitics ;
+    rdfs:label "1936年ベルリンオリンピック"@ja ; rdfs:label "1936 Berlin Olympics"@en ;
+    shinra:wikidataId "Q8958" ;
+    skos:notation "SHINRA_I011202" ; dcterms:created "2026-06-11"^^xsd:date .
