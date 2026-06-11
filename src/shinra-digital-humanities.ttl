@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-digital-humanities.ttl  — デジタル人文学ドメイン (Phase 11-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/digital-humanities>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — デジタル人文学ドメイン"@ja ,
+                    "Shinra Ontology — Digital Humanities Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DigitalHumanities
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "デジタル人文学"@ja ; rdfs:label "Digital Humanities"@en ;
+    skos:altLabel "DH"@ja ;
+    rdfs:comment "デジタル技術を人文学研究に応用し人文学の問いでデジタル文化を批判的に研究する学際分野。TEI・GIS・テキストマイニングなど。"@ja ;
+    rdfs:comment "An interdisciplinary field applying digital technology to humanities research and critically studying digital culture with humanistic questions, including TEI, GIS, and text mining."@en ;
+    skos:notation "SHINRA_0010701" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:TextMining
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "テキストマイニング"@ja ; rdfs:label "Text Mining"@en ;
+    rdfs:comment "大規模テキストコーパスから知識・パターンを自動抽出する技術。遠読・感情分析・トピックモデリング・スタイロメトリーなど。"@ja ;
+    rdfs:comment "Technology automatically extracting knowledge and patterns from large text corpora, including distant reading, sentiment analysis, topic modeling, and stylometry."@en ;
+    skos:notation "SHINRA_0010702" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DigitalArchive
+    a owl:Class ; rdfs:subClassOf shinra:Dataset ;
+    rdfs:label "デジタルアーカイブ"@ja ; rdfs:label "Digital Archive"@en ;
+    rdfs:comment "文化遺産・歴史的記録をデジタル形式で保存・公開するシステム。国立デジタルアーカイブ・Europeana・デジタルコレクションなど。"@ja ;
+    rdfs:comment "A system preserving and providing access to cultural heritage and historical records in digital format, including national digital archives, Europeana, and digital collections."@en ;
+    skos:notation "SHINRA_0010703" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:LinkedOpenData
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "リンクトオープンデータ"@ja ; rdfs:label "Linked Open Data"@en ;
+    skos:altLabel "LOD"@ja ;
+    rdfs:comment "標準化されたURIとRDFを用いてウェブ上のデータを相互接続・公開する枠組み。Wikidata・DBpedia・文化遺産LODなど。"@ja ;
+    rdfs:comment "A framework interconnecting and publishing data on the web using standardized URIs and RDF, including Wikidata, DBpedia, and cultural heritage LOD."@en ;
+    skos:notation "SHINRA_0010704" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DistantReading
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "遠読"@ja ; rdfs:label "Distant Reading"@en ;
+    rdfs:comment "個別テキストの精読ではなく大規模コーパスの統計的分析で文学・歴史を研究するモレッティの概念。Ngramビューア・文化計量など。"@ja ;
+    rdfs:comment "Moretti's concept of studying literature and history through statistical analysis of large corpora rather than close reading of individual texts, including Ngram viewer and culturomics."@en ;
+    skos:notation "SHINRA_0010705" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:europeana-001
+    a shinra:DigitalArchive ;
+    rdfs:label "Europeana"@ja ; rdfs:label "Europeana"@en ;
+    shinra:wikidataId "Q1334250" ;
+    skos:notation "SHINRA_I010701" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:tei-standard-001
+    a shinra:Technology ;
+    rdfs:label "TEI（テキスト符号化規範）"@ja ; rdfs:label "Text Encoding Initiative"@en ;
+    shinra:wikidataId "Q1137248" ;
+    skos:notation "SHINRA_I010702" ; dcterms:created "2026-06-11"^^xsd:date .

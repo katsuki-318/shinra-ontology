@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-philosophy-of-mind-detail.ttl  — 心の哲学詳細ドメイン (Phase 11-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-mind-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 心の哲学詳細ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Mind Detail Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Functionalism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "機能主義"@ja ; rdfs:label "Functionalism"@en ;
+    rdfs:comment "心的状態をその因果的・機能的役割によって定義する立場。多重実現可能性・チューリングテスト・計算機能主義・AIへの含意など。"@ja ;
+    rdfs:comment "The position defining mental states by their causal and functional roles, related to multiple realizability, the Turing test, computational functionalism, and implications for AI."@en ;
+    skos:notation "SHINRA_0010501" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Dualism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "心身二元論"@ja ; rdfs:label "Mind-Body Dualism"@en ;
+    rdfs:comment "心と身体が根本的に異なる実体であるという立場。デカルトの実体二元論・性質二元論・随伴現象説・相互作用問題など。"@ja ;
+    rdfs:comment "The position that mind and body are fundamentally different substances, including Descartes' substance dualism, property dualism, epiphenomenalism, and the interaction problem."@en ;
+    skos:notation "SHINRA_0010502" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Physicalism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "物理主義"@ja ; rdfs:label "Physicalism"@en ;
+    skos:altLabel "唯物論"@ja ;
+    rdfs:comment "心を含むすべての存在は物理的であるという立場。トークン同一説・タイプ同一説・脱落論的一元論・消去的唯物論など。"@ja ;
+    rdfs:comment "The position that all entities including mind are physical, including token identity theory, type identity theory, eliminative materialism, and nonreductive physicalism."@en ;
+    skos:notation "SHINRA_0010503" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Panpsychism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "汎心論"@ja ; rdfs:label "Panpsychism"@en ;
+    rdfs:comment "意識・精神的性質がすべての物質・実体に内在するという立場。チャーマーズの汎心論・統合情報理論との関連・コスモサイキズムなど。"@ja ;
+    rdfs:comment "The position that consciousness and mental properties are intrinsic to all matter and entities, including Chalmers's panpsychism, connection to IIT, and cosmopsychism."@en ;
+    skos:notation "SHINRA_0010504" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RepresentationalTheoryOfMind
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "心の表象理論"@ja ; rdfs:label "Representational Theory of Mind"@en ;
+    skos:altLabel "RTM"@ja ;
+    rdfs:comment "心的状態は世界についての内的表象を操作する計算プロセスであるという理論。フォーダー・言語思考仮説・メンタリーズなど。"@ja ;
+    rdfs:comment "The theory that mental states are computational processes manipulating internal representations of the world, including Fodor, the Language of Thought hypothesis, and Mentalese."@en ;
+    skos:notation "SHINRA_0010505" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:chalmers-conscious-mind-001
+    a shinra:ScientificTheory ;
+    rdfs:label "チャーマーズの意識する心"@ja ; rdfs:label "The Conscious Mind"@en ;
+    shinra:wikidataId "Q5101029" ;
+    skos:notation "SHINRA_I010501" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:dennett-consciousness-001
+    a shinra:ScientificTheory ;
+    rdfs:label "デネットの意識の解明"@ja ; rdfs:label "Consciousness Explained"@en ;
+    shinra:wikidataId "Q1098461" ;
+    skos:notation "SHINRA_I010502" ; dcterms:created "2026-06-10"^^xsd:date .

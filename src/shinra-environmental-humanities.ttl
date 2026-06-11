@@ -1,0 +1,70 @@
+# ===========================================================================
+# shinra-environmental-humanities.ttl  — 環境人文学・エコクリティシズムドメイン (Phase 11-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/environmental-humanities>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 環境人文学・エコクリティシズムドメイン"@ja ,
+                    "Shinra Ontology — Environmental Humanities & Ecocriticism Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Ecocriticism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "エコクリティシズム"@ja ; rdfs:label "Ecocriticism"@en ;
+    skos:altLabel "環境批評"@ja ;
+    rdfs:comment "文学・芸術・文化と自然環境の関係を研究する学際分野。自然表象・場所の感覚・環境正義の文学的側面など。"@ja ;
+    rdfs:comment "An interdisciplinary field studying the relationship between literature, art, culture, and the natural environment, including nature representation, sense of place, and the literary dimensions of environmental justice."@en ;
+    skos:notation "SHINRA_0010601" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:HumanNatureRelationship
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "人間と自然の関係"@ja ; rdfs:label "Human-Nature Relationship"@en ;
+    rdfs:comment "人間と自然環境の多様な関係様式。バイオフィリア仮説・自然観・荒野概念・ドミニオン・スチュワードシップなど。"@ja ;
+    rdfs:comment "The diverse modes of relationship between humans and the natural environment, including the biophilia hypothesis, views of nature, wilderness concept, dominion, and stewardship."@en ;
+    skos:notation "SHINRA_0010602" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PlaceSense
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "場所の感覚"@ja ; rdfs:label "Sense of Place"@en ;
+    skos:altLabel "場所感"@ja ;
+    rdfs:comment "特定の場所に結びついたアイデンティティ・意味・感情の総体。トポフィリア・場所喪失・ジオポエティクスなど。"@ja ;
+    rdfs:comment "The totality of identity, meaning, and emotion tied to a specific place, including topophilia, placelessness, and geopoetics."@en ;
+    skos:notation "SHINRA_0010603" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:AnthropoceneConcepte
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "人新世"@ja ; rdfs:label "Anthropocene"@en ;
+    skos:altLabel "アントロポセン"@ja ;
+    rdfs:comment "人間活動が地球システムを規定する新たな地質年代の概念。地球の境界線・プラネタリーバウンダリー・気候危機との関連など。"@ja ;
+    rdfs:comment "The concept of a new geological epoch in which human activity determines Earth's systems, including planetary boundaries and connection to the climate crisis."@en ;
+    skos:notation "SHINRA_0010604" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:NatureWrighting
+    a owl:Class ; rdfs:subClassOf shinra:LiteraryGenre ;
+    rdfs:label "自然文学"@ja ; rdfs:label "Nature Writing"@en ;
+    skos:altLabel "ネイチャーライティング"@ja ;
+    rdfs:comment "自然・野生・風景との関わりを探求する文学ジャンル。ソローのウォールデン・ミューア・ルシ・ロビン・ウォール・キマラーなど。"@ja ;
+    rdfs:comment "A literary genre exploring relationships with nature, wilderness, and landscape, including Thoreau's Walden, Muir, Lacy, and Robin Wall Kimmerer."@en ;
+    skos:notation "SHINRA_0010605" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:walden-001
+    a shinra:NatureWrighting ;
+    rdfs:label "ウォールデン"@ja ; rdfs:label "Walden"@en ;
+    shinra:wikidataId "Q232229" ;
+    skos:notation "SHINRA_I010601" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:anthropocene-concept-001
+    a shinra:AnthropoceneConcepte ;
+    rdfs:label "人新世（地質学的概念）"@ja ; rdfs:label "Anthropocene (geological)"@en ;
+    shinra:wikidataId "Q183318" ;
+    skos:notation "SHINRA_I010602" ; dcterms:created "2026-06-11"^^xsd:date .

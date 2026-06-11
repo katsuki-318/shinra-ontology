@@ -1,0 +1,70 @@
+# ===========================================================================
+# shinra-narrative-theory.ttl  — 物語論・서사학ドメイン (Phase 11-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/narrative-theory>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 物語論・서사학ドメイン"@ja ,
+                    "Shinra Ontology — Narratology & Narrative Theory Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Narratology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "物語論"@ja ; rdfs:label "Narratology"@en ;
+    skos:altLabel "서사학"@ja ;
+    rdfs:comment "物語の構造・要素・機能を体系的に研究する学問。ジュネット・グレマス・バルト・プロップの形態論など。"@ja ;
+    rdfs:comment "The systematic study of narrative structure, elements, and functions, including Genette, Greimas, Barthes, and Propp's morphology of folktales."@en ;
+    skos:notation "SHINRA_0010801" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:NarrativeVoice
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "語り手"@ja ; rdfs:label "Narrative Voice"@en ;
+    skos:altLabel "ナレーター"@ja ;
+    rdfs:comment "物語を語る主体とその語りの様式。信頼できない語り手・全知語り手・一人称・三人称・焦点化など。"@ja ;
+    rdfs:comment "The subject narrating a story and the mode of narration, including unreliable narrators, omniscient narrators, first-person, third-person, and focalization."@en ;
+    skos:notation "SHINRA_0010802" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PlotStructure
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "プロット構造"@ja ; rdfs:label "Plot Structure"@en ;
+    skos:altLabel "筋立て"@ja ;
+    rdfs:comment "物語の出来事の配列・展開の構造。発端・展開・クライマックス・解決・反転・インメディアスレスなど。"@ja ;
+    rdfs:comment "The arrangement and development structure of events in a narrative, including exposition, rising action, climax, resolution, reversal, and in medias res."@en ;
+    skos:notation "SHINRA_0010803" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DigitalNarrative
+    a owl:Class ; rdfs:subClassOf shinra:Narrative ;
+    rdfs:label "デジタル物語"@ja ; rdfs:label "Digital Narrative"@en ;
+    skos:altLabel "インタラクティブ物語"@ja ;
+    rdfs:comment "デジタルメディアで展開される非線形・インタラクティブな物語。ハイパーテキスト小説・ゲームナラティブ・ARGなど。"@ja ;
+    rdfs:comment "Non-linear and interactive stories developed in digital media, including hypertext fiction, game narratives, and alternate reality games."@en ;
+    skos:notation "SHINRA_0010804" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:NarrativeIdentity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "語り的アイデンティティ"@ja ; rdfs:label "Narrative Identity"@en ;
+    rdfs:comment "自己を物語として構成・理解するアイデンティティ概念。リクールの物語的自己・自伝的記憶・ライフストーリーなど。"@ja ;
+    rdfs:comment "The concept of identity as constituted and understood through narrative, including Ricoeur's narrative self, autobiographical memory, and life stories."@en ;
+    skos:notation "SHINRA_0010805" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:proppian-morphology-001
+    a shinra:Narratology ;
+    rdfs:label "プロップの昔話の形態学"@ja ; rdfs:label "Propp's Morphology of the Folktale"@en ;
+    shinra:wikidataId "Q1197052" ;
+    skos:notation "SHINRA_I010801" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:quixote-narrative-001
+    a shinra:NarrativeVoice ;
+    rdfs:label "ドン・キホーテの語りの枠"@ja ; rdfs:label "Don Quixote Narrative Frame"@en ;
+    shinra:wikidataId "Q480" ;
+    skos:notation "SHINRA_I010802" ; dcterms:created "2026-06-11"^^xsd:date .

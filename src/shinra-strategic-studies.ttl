@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-strategic-studies.ttl  — 戦略論・安全保障研究ドメイン (Phase 11-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/strategic-studies>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 戦略論・安全保障研究ドメイン"@ja ,
+                    "Shinra Ontology — Strategic Studies & Security Studies Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:MilitaryStrategy
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "軍事戦略"@ja ; rdfs:label "Military Strategy"@en ;
+    rdfs:comment "軍事力を政治目的のために運用する計画・原則。クラウゼヴィッツの戦争論・孫子の兵法・抑止論・核戦略など。"@ja ;
+    rdfs:comment "Plans and principles for employing military force to achieve political objectives, including Clausewitz's On War, Sun Tzu's Art of War, deterrence theory, and nuclear strategy."@en ;
+    skos:notation "SHINRA_0010901" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Deterrence
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "抑止"@ja ; rdfs:label "Deterrence"@en ;
+    rdfs:comment "潜在的攻撃者に対して報復の脅威を示して行動を思いとどまらせる戦略。核抑止・拡大抑止・信頼性・抑止の失敗など。"@ja ;
+    rdfs:comment "A strategy dissuading potential aggressors by threatening retaliation, including nuclear deterrence, extended deterrence, credibility, and deterrence failure."@en ;
+    skos:notation "SHINRA_0010902" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Asymmetric Warfare
+    a owl:Class ; rdfs:subClassOf shinra:War ;
+    rdfs:label "非対称戦争"@ja ; rdfs:label "Asymmetric Warfare"@en ;
+    rdfs:comment "戦力・資源・戦術が著しく異なる主体間の武力紛争。ゲリラ戦・テロ・対反乱作戦・ハイブリッド戦争など。"@ja ;
+    rdfs:comment "Armed conflict between parties with significantly different capabilities, resources, and tactics, including guerrilla warfare, terrorism, counterinsurgency, and hybrid warfare."@en ;
+    skos:notation "SHINRA_0010903" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CyberWarfare
+    a owl:Class ; rdfs:subClassOf shinra:War ;
+    rdfs:label "サイバー戦"@ja ; rdfs:label "Cyber Warfare"@en ;
+    rdfs:comment "国家・非国家主体がサイバー空間で遂行する攻撃・防御・情報作戦。重要インフラ攻撃・ハクティビズム・サイバー抑止など。"@ja ;
+    rdfs:comment "Offensive, defensive, and information operations conducted in cyberspace by state and non-state actors, including critical infrastructure attacks, hacktivism, and cyber deterrence."@en ;
+    skos:notation "SHINRA_0010904" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:HumanSecurity
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "人間の安全保障"@ja ; rdfs:label "Human Security"@en ;
+    rdfs:comment "国家安全保障を超えて個人・地域社会の安全・尊厳・生計を重視する安全保障概念。UNDP・「恐怖からの自由」・「欠乏からの自由」など。"@ja ;
+    rdfs:comment "A security concept prioritizing the safety, dignity, and livelihoods of individuals and communities beyond state security, including UNDP, 'freedom from fear', and 'freedom from want'."@en ;
+    skos:notation "SHINRA_0010905" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:art-of-war-001
+    a shinra:MilitaryStrategy ;
+    rdfs:label "孫子の兵法"@ja ; rdfs:label "The Art of War"@en ;
+    shinra:wikidataId "Q134790" ;
+    skos:notation "SHINRA_I010901" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:on-war-001
+    a shinra:MilitaryStrategy ;
+    rdfs:label "戦争論（クラウゼヴィッツ）"@ja ; rdfs:label "On War"@en ;
+    shinra:wikidataId "Q471520" ;
+    skos:notation "SHINRA_I010902" ; dcterms:created "2026-06-11"^^xsd:date .
