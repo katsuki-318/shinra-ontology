@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-health-science.ttl  — 健康科学・予防医学ドメイン (Phase 11-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/health-science>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 健康科学・予防医学ドメイン"@ja ,
+                    "Shinra Ontology — Health Science & Preventive Medicine Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:HealthDeterminant
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "健康決定要因"@ja ; rdfs:label "Health Determinant"@en ;
+    rdfs:comment "個人・集団の健康状態に影響する要因。社会的決定要因・生物学的・行動的・環境的・医療アクセスなど。"@ja ;
+    rdfs:comment "Factors influencing the health of individuals and populations, including social determinants, biological, behavioral, environmental factors, and healthcare access."@en ;
+    skos:notation "SHINRA_0010201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:PreventiveMedicine
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "予防医学"@ja ; rdfs:label "Preventive Medicine"@en ;
+    rdfs:comment "疾患の発生・進行を予防することを目的とする医学の分野。一次予防・二次予防・三次予防・ワクチン・スクリーニングなど。"@ja ;
+    rdfs:comment "The field of medicine aimed at preventing disease onset and progression, including primary, secondary, and tertiary prevention, vaccines, and screening."@en ;
+    skos:notation "SHINRA_0010202" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:HealthBehavior
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "健康行動"@ja ; rdfs:label "Health Behavior"@en ;
+    rdfs:comment "健康の維持・増進・疾病予防に関わる行動。食習慣・身体活動・睡眠・喫煙・飲酒・ヘルスリテラシーなど。"@ja ;
+    rdfs:comment "Behaviors related to maintaining and promoting health and preventing disease, including dietary habits, physical activity, sleep, smoking, alcohol consumption, and health literacy."@en ;
+    skos:notation "SHINRA_0010203" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GlobalHealthIssue
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "グローバルヘルス課題"@ja ; rdfs:label "Global Health Issue"@en ;
+    rdfs:comment "国境を超えた健康課題。感染症・非感染性疾患・精神保健・母子保健・薬剤耐性・健康の公平性など。"@ja ;
+    rdfs:comment "Health challenges transcending national borders, including infectious diseases, non-communicable diseases, mental health, maternal and child health, antimicrobial resistance, and health equity."@en ;
+    skos:notation "SHINRA_0010204" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:OccupationalHealth
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "産業保健"@ja ; rdfs:label "Occupational Health"@en ;
+    skos:altLabel "労働衛生"@ja ;
+    rdfs:comment "労働環境が健康に与える影響を研究・改善する分野。職業病・労働安全・メンタルヘルス・人間工学・バーンアウトなど。"@ja ;
+    rdfs:comment "The field studying and improving the health effects of the work environment, including occupational diseases, workplace safety, mental health, ergonomics, and burnout."@en ;
+    skos:notation "SHINRA_0010205" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:who-001
+    a shinra:InternationalOrganization ;
+    rdfs:label "世界保健機関"@ja ; rdfs:label "World Health Organization"@en ;
+    shinra:wikidataId "Q7817" ;
+    skos:notation "SHINRA_I010201" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:one-health-001
+    a shinra:PublicHealth ;
+    rdfs:label "ワンヘルス"@ja ; rdfs:label "One Health"@en ;
+    shinra:wikidataId "Q7093905" ;
+    skos:notation "SHINRA_I010202" ; dcterms:created "2026-06-10"^^xsd:date .

@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-sport-philosophy.ttl  — スポーツ哲学・身体論ドメイン (Phase 11-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/sport-philosophy>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — スポーツ哲学・身体論ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Sport & Body Theory Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:FairPlay
+    a owl:Class ; rdfs:subClassOf shinra:EthicalValue ;
+    rdfs:label "フェアプレー"@ja ; rdfs:label "Fair Play"@en ;
+    rdfs:comment "スポーツにおける公正・誠実・相手への尊重の原則。競技規則の遵守・精神的フェアプレー・反則行為の問題など。"@ja ;
+    rdfs:comment "The principle of fairness, honesty, and respect for opponents in sport, including rule compliance, spirit of fair play, and the problem of rule violations."@en ;
+    skos:notation "SHINRA_0010301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:FlowState
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "フロー状態"@ja ; rdfs:label "Flow State"@en ;
+    skos:altLabel "ゾーン"@ja ;
+    rdfs:comment "活動に完全に没入した最適経験状態。チクセントミハイのフロー理論・スポーツ・芸術・仕事での応用など。"@ja ;
+    rdfs:comment "The optimal experience state of complete immersion in an activity, including Csikszentmihalyi's flow theory and its applications in sport, art, and work."@en ;
+    skos:notation "SHINRA_0010302" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:EmbodiedPractice
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "身体的実践"@ja ; rdfs:label "Embodied Practice"@en ;
+    rdfs:comment "身体を通じて獲得・表現される技術・知識・経験。職人技・武道・スポーツ技能・身体知・暗黙知との関連。"@ja ;
+    rdfs:comment "Skills, knowledge, and experience acquired and expressed through the body, including craftsmanship, martial arts, sports skills, bodily knowledge, and tacit knowledge."@en ;
+    skos:notation "SHINRA_0010303" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:SportEthics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "スポーツ倫理学"@ja ; rdfs:label "Sport Ethics"@en ;
+    rdfs:comment "スポーツにおける道徳的問題を研究する応用倫理学の分野。フェアプレー・ドーピング・性差別・競技目標の意味など。"@ja ;
+    rdfs:comment "The field of applied ethics studying moral issues in sport, including fair play, doping, sexism, and the meaning of competitive goals."@en ;
+    skos:notation "SHINRA_0010304" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Play
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "遊び"@ja ; rdfs:label "Play"@en ;
+    skos:altLabel "プレイ"@ja ;
+    rdfs:comment "内発的動機・自由・喜びを特徴とする活動。ホイジンハのホモ・ルーデンス・遊びの文化的機能・子どもの遊びと発達など。"@ja ;
+    rdfs:comment "An activity characterized by intrinsic motivation, freedom, and joy, including Huizinga's Homo Ludens, the cultural function of play, and children's play and development."@en ;
+    skos:notation "SHINRA_0010305" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:homo-ludens-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ホモ・ルーデンス"@ja ; rdfs:label "Homo Ludens"@en ;
+    shinra:wikidataId "Q1628979" ;
+    skos:notation "SHINRA_I010301" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:flow-theory-001
+    a shinra:PsychologicalTheory ;
+    rdfs:label "フロー理論"@ja ; rdfs:label "Flow Theory"@en ;
+    shinra:wikidataId "Q946226" ;
+    skos:notation "SHINRA_I010302" ; dcterms:created "2026-06-10"^^xsd:date .

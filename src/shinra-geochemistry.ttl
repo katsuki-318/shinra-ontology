@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-geochemistry.ttl  — 地球化学・鉱物学ドメイン (Phase 11-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/geochemistry>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 地球化学・鉱物学ドメイン"@ja ,
+                    "Shinra Ontology — Geochemistry & Mineralogy Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Mineral
+    a owl:Class ; rdfs:subClassOf shinra:ChemicalSubstance ;
+    rdfs:label "鉱物"@ja ; rdfs:label "Mineral"@en ;
+    rdfs:comment "自然に産出する無機固体で一定の化学組成・結晶構造を持つ物質。石英・長石・雲母・方解石・金属鉱物など。"@ja ;
+    rdfs:comment "A naturally occurring inorganic solid with a definite chemical composition and crystal structure, including quartz, feldspar, mica, calcite, and metallic minerals."@en ;
+    skos:notation "SHINRA_0010101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Rock
+    a owl:Class ; rdfs:subClassOf shinra:MaterialEntity ;
+    rdfs:label "岩石"@ja ; rdfs:label "Rock"@en ;
+    rdfs:comment "鉱物・有機物・ガラスが集合した固体地殻物質。火成岩・堆積岩・変成岩の三大岩石に分類される。"@ja ;
+    rdfs:comment "Solid crustal material comprising minerals, organic matter, or glass, classified into the three major rock types: igneous, sedimentary, and metamorphic."@en ;
+    skos:notation "SHINRA_0010102" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:Isotope
+    a owl:Class ; rdfs:subClassOf shinra:Element ;
+    rdfs:label "同位体"@ja ; rdfs:label "Isotope"@en ;
+    rdfs:comment "陽子数が同じで中性子数が異なる原子。安定同位体・放射性同位体・放射年代測定・安定同位体比分析など。"@ja ;
+    rdfs:comment "Atoms of the same element with the same number of protons but different neutrons, including stable isotopes, radioactive isotopes, radiometric dating, and stable isotope ratio analysis."@en ;
+    skos:notation "SHINRA_0010103" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:RadiometricDating
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "放射年代測定"@ja ; rdfs:label "Radiometric Dating"@en ;
+    rdfs:comment "放射性同位体の崩壊を利用して岩石・鉱物・有機物の年代を測定する地質学的手法。放射性炭素・ウラン鉛・カリウムアルゴン法など。"@ja ;
+    rdfs:comment "A geological technique using radioactive isotope decay to date rocks, minerals, and organic matter, including radiocarbon, uranium-lead, and potassium-argon dating."@en ;
+    skos:notation "SHINRA_0010104" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:PlateMovement
+    a owl:Class ; rdfs:subClassOf shinra:GeologicalProcess ;
+    rdfs:label "プレート運動"@ja ; rdfs:label "Plate Movement"@en ;
+    rdfs:comment "リソスフェアのプレートが移動する地質過程。収束境界・発散境界・変換断層・沈み込み・火山弧など。"@ja ;
+    rdfs:comment "The geological process of lithospheric plate movement, including convergent boundaries, divergent boundaries, transform faults, subduction, and volcanic arcs."@en ;
+    skos:notation "SHINRA_0010105" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:diamond-001
+    a shinra:Mineral ;
+    rdfs:label "ダイヤモンド"@ja ; rdfs:label "Diamond"@en ;
+    shinra:wikidataId "Q5283" ;
+    skos:notation "SHINRA_I010101" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:carbon-14-001
+    a shinra:Isotope ;
+    rdfs:label "炭素14"@ja ; rdfs:label "Carbon-14"@en ;
+    shinra:wikidataId "Q168744" ;
+    skos:notation "SHINRA_I010102" ; dcterms:created "2026-06-10"^^xsd:date .

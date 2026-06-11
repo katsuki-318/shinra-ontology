@@ -1,0 +1,74 @@
+# ===========================================================================
+# shinra-computational-creativity.ttl  — 計算創造性・生成AI・創造性研究ドメイン (Phase 11-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/computational-creativity>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 計算創造性・生成AI・創造性研究ドメイン"@ja ,
+                    "Shinra Ontology — Computational Creativity & Generative AI Domain"@en ;
+    dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:GenerativeAI
+    a owl:Class ; rdfs:subClassOf shinra:ArtificialIntelligence ;
+    rdfs:label "生成AI"@ja ; rdfs:label "Generative AI"@en ;
+    skos:altLabel "生成的AI"@ja ;
+    rdfs:comment "テキスト・画像・音声・動画などのコンテンツを生成するAI技術。LLM・拡散モデル・GAN・VAEなど。"@ja ;
+    rdfs:comment "AI technology generating content such as text, images, audio, and video, including LLMs, diffusion models, GANs, and VAEs."@en ;
+    skos:notation "SHINRA_0010401" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:DiffusionModel
+    a owl:Class ; rdfs:subClassOf shinra:DeepLearning ;
+    rdfs:label "拡散モデル"@ja ; rdfs:label "Diffusion Model"@en ;
+    rdfs:comment "ノイズ除去の逆過程を学習してデータを生成するディープラーニングモデル。Stable Diffusion・DALL-E・Midjourneyなど。"@ja ;
+    rdfs:comment "A deep learning model generating data by learning the reverse process of denoising, including Stable Diffusion, DALL-E, and Midjourney."@en ;
+    skos:notation "SHINRA_0010402" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:ComputationalCreativity
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "計算創造性"@ja ; rdfs:label "Computational Creativity"@en ;
+    rdfs:comment "コンピュータによる創造的行動・産物の生成を研究する学際分野。機械創造性の評価・創造的AIシステム・マーガレット・ボーデンなど。"@ja ;
+    rdfs:comment "An interdisciplinary field studying creative behavior and product generation by computers, including evaluation of machine creativity, creative AI systems, and Margaret Boden's work."@en ;
+    skos:notation "SHINRA_0010403" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:PromptEngineering
+    a owl:Class ; rdfs:subClassOf shinra:Technology ;
+    rdfs:label "プロンプトエンジニアリング"@ja ; rdfs:label "Prompt Engineering"@en ;
+    rdfs:comment "LLM・生成AIの出力を最適化するための入力設計技術。Chain-of-Thought・Few-shot・RAG・プロンプトインジェクションなど。"@ja ;
+    rdfs:comment "The technique of designing inputs to optimize the output of LLMs and generative AI, including Chain-of-Thought, few-shot prompting, RAG, and prompt injection."@en ;
+    skos:notation "SHINRA_0010404" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:AIAlignment
+    a owl:Class ; rdfs:subClassOf shinra:AIEthics ;
+    rdfs:label "AIアライメント"@ja ; rdfs:label "AI Alignment"@en ;
+    rdfs:comment "AIシステムが人間の意図・価値・目標と整合するよう設計する研究分野。RLHF・Constitutional AI・安全性・コントロール問題など。"@ja ;
+    rdfs:comment "The research field designing AI systems to be aligned with human intentions, values, and goals, including RLHF, Constitutional AI, safety, and the control problem."@en ;
+    skos:notation "SHINRA_0010405" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra:TransformerArchitecture
+    a owl:Class ; rdfs:subClassOf shinra:DeepLearning ;
+    rdfs:label "トランスフォーマー"@ja ; rdfs:label "Transformer Architecture"@en ;
+    rdfs:comment "自己注意機構に基づくニューラルネットワーク構造。BERT・GPT・LLMの基盤・Attention Is All You Needなど。"@ja ;
+    rdfs:comment "A neural network architecture based on self-attention mechanisms, serving as the foundation for BERT, GPT, and LLMs, introduced in the Attention Is All You Need paper."@en ;
+    skos:notation "SHINRA_0010406" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:gpt4-001
+    a shinra:LargeLanguageModel ;
+    rdfs:label "GPT-4"@ja ; rdfs:label "GPT-4"@en ;
+    shinra:wikidataId "Q116401855" ;
+    skos:notation "SHINRA_I010401" ; dcterms:created "2026-06-10"^^xsd:date .
+
+shinra-data:stable-diffusion-001
+    a shinra:DiffusionModel ;
+    rdfs:label "Stable Diffusion"@ja ; rdfs:label "Stable Diffusion"@en ;
+    shinra:wikidataId "Q112440150" ;
+    skos:notation "SHINRA_I010402" ; dcterms:created "2026-06-10"^^xsd:date .
