@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-philosophy-of-action.ttl  — 行為論・意思論ドメイン (Phase 11-p)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-action>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 行為論・意思論ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Action & Will Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:IntentionalAction
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "意図的行為"@ja ; rdfs:label "Intentional Action"@en ;
+    rdfs:comment "行為者が意図・理由・目的を持って行う行為。アンスコムの行為論・理由による説明・行為の基本単位など。"@ja ;
+    rdfs:comment "An action performed by an agent with intention, reasons, and purposes, including Anscombe's theory of action, explanation by reasons, and basic action units."@en ;
+    skos:notation "SHINRA_0011601" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Akrasia
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "意思の弱さ"@ja ; rdfs:label "Akrasia"@en ;
+    skos:altLabel "アクラシア"@ja ;
+    rdfs:comment "より良い判断に反して行動する意思の弱さ・自制の失敗。アリストテレス・プラトン・デイヴィドソンの合理性と行為論など。"@ja ;
+    rdfs:comment "Weakness of will, acting against one's better judgment, including Aristotle, Plato, and Davidson's discussion of rationality and action theory."@en ;
+    skos:notation "SHINRA_0011602" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PracticalReason
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "実践理性"@ja ; rdfs:label "Practical Reason"@en ;
+    rdfs:comment "行為・意思決定を導く理性の働き。カントの実践理性・欲求・信念モデル・手段目的推論・ヒュームの理性は情念の奴隷など。"@ja ;
+    rdfs:comment "The operation of reason guiding action and decision-making, including Kant's practical reason, the belief-desire model, means-end reasoning, and Hume's 'reason is slave to the passions'."@en ;
+    skos:notation "SHINRA_0011603" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CollectiveAction
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "集合行為"@ja ; rdfs:label "Collective Action"@en ;
+    rdfs:comment "複数の行為者が共同して目標を追求する行為。集合行為問題・フリーライダー・協力のジレンマ・集合的意図など。"@ja ;
+    rdfs:comment "Action in which multiple agents jointly pursue a goal, including the collective action problem, free-rider problem, cooperation dilemma, and collective intentionality."@en ;
+    skos:notation "SHINRA_0011604" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:MoralResponsibility
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "道徳的責任"@ja ; rdfs:label "Moral Responsibility"@en ;
+    rdfs:comment "行為者が自己の行為に対して称賛・非難・罰を受ける資格の条件。自由意志・因果的歴史・応答可能性・コントロール条件など。"@ja ;
+    rdfs:comment "The conditions under which an agent deserves praise, blame, or punishment for their actions, including free will, causal history, responsiveness, and control conditions."@en ;
+    skos:notation "SHINRA_0011605" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:davidson-actions-001
+    a shinra:ScientificTheory ;
+    rdfs:label "デイヴィドソンの行為と出来事"@ja ; rdfs:label "Davidson's Actions and Events"@en ;
+    shinra:wikidataId "Q244638" ;
+    skos:notation "SHINRA_I011601" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:anscombe-intention-001
+    a shinra:IntentionalAction ;
+    rdfs:label "アンスコムの意図"@ja ; rdfs:label "Anscombe's Intention"@en ;
+    shinra:wikidataId "Q230" ;
+    skos:notation "SHINRA_I011602" ; dcterms:created "2026-06-11"^^xsd:date .

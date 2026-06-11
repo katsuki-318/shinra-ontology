@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-space-physics.ttl  — 宇宙物理・高エネルギー物理ドメイン (Phase 11-n)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/space-physics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 宇宙物理・高エネルギー物理ドメイン"@ja ,
+                    "Shinra Ontology — Astrophysics & High-Energy Physics Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:NeutronStar
+    a owl:Class ; rdfs:subClassOf shinra:CelestialObject ;
+    rdfs:label "中性子星"@ja ; rdfs:label "Neutron Star"@en ;
+    rdfs:comment "超新星爆発後に残る超高密度・高速自転する天体。パルサー・マグネター・キロノバ・重力波源としての役割など。"@ja ;
+    rdfs:comment "An ultra-dense, rapidly rotating object remaining after a supernova explosion, including pulsars, magnetars, kilonovas, and their role as gravitational wave sources."@en ;
+    skos:notation "SHINRA_0011401" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Supernova
+    a owl:Class ; rdfs:subClassOf shinra:StellarEvolution ;
+    rdfs:label "超新星"@ja ; rdfs:label "Supernova"@en ;
+    rdfs:comment "恒星の爆発的な終末過程。Ia型（炭素爆燃）・II型（重力崩壊）・宇宙の膨張加速の発見・重元素合成など。"@ja ;
+    rdfs:comment "The explosive end-of-life process of a star, including Type Ia (carbon deflagration), Type II (core collapse), the discovery of cosmic acceleration, and heavy element synthesis."@en ;
+    skos:notation "SHINRA_0011402" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CosmicRay
+    a owl:Class ; rdfs:subClassOf shinra:PhysicalPhenomenon ;
+    rdfs:label "宇宙線"@ja ; rdfs:label "Cosmic Ray"@en ;
+    rdfs:comment "宇宙から地球に降り注ぐ高エネルギー粒子。超高エネルギー宇宙線・ガンマ線バースト・ニュートリノ天文学との関連など。"@ja ;
+    rdfs:comment "High-energy particles raining on Earth from space, related to ultra-high-energy cosmic rays, gamma-ray bursts, and neutrino astronomy."@en ;
+    skos:notation "SHINRA_0011403" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:ParticleAccelerator
+    a owl:Class ; rdfs:subClassOf shinra:ArtifactualObject ;
+    rdfs:label "粒子加速器"@ja ; rdfs:label "Particle Accelerator"@en ;
+    rdfs:comment "電磁場で荷電粒子を加速する実験装置。LHC・ILC・シンクロトロン・サイクロトロン・医療用加速器など。"@ja ;
+    rdfs:comment "An experimental device accelerating charged particles with electromagnetic fields, including the LHC, ILC, synchrotron, cyclotron, and medical accelerators."@en ;
+    skos:notation "SHINRA_0011404" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:StringTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "超弦理論"@ja ; rdfs:label "String Theory"@en ;
+    skos:altLabel "M理論"@ja ;
+    rdfs:comment "素粒子を1次元の弦として扱い量子重力を統一しようとする理論。超対称性・余剰次元・M理論・ランドスケープなど。"@ja ;
+    rdfs:comment "A theory treating elementary particles as one-dimensional strings to unify quantum gravity, including supersymmetry, extra dimensions, M-theory, and the landscape."@en ;
+    skos:notation "SHINRA_0011405" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:lhc-001
+    a shinra:ParticleAccelerator ;
+    rdfs:label "大型ハドロン衝突型加速器"@ja ; rdfs:label "Large Hadron Collider"@en ;
+    shinra:wikidataId "Q44585" ;
+    skos:notation "SHINRA_I011401" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:crab-nebula-001
+    a shinra:Nebula ;
+    rdfs:label "かに星雲"@ja ; rdfs:label "Crab Nebula"@en ;
+    shinra:wikidataId "Q3337" ;
+    skos:notation "SHINRA_I011402" ; dcterms:created "2026-06-11"^^xsd:date .

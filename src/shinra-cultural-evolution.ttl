@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-cultural-evolution.ttl  — 文化進化・ミームドメイン (Phase 11-m)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cultural-evolution>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 文化進化・ミームドメイン"@ja ,
+                    "Shinra Ontology — Cultural Evolution & Memetics Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Meme
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "ミーム"@ja ; rdfs:label "Meme"@en ;
+    rdfs:comment "文化の基本的伝達・複製単位としてドーキンスが提唱した概念。アイデア・行動・スタイルが模倣によって広まる。"@ja ;
+    rdfs:comment "Dawkins's concept of the basic unit of cultural transmission and replication, as ideas, behaviors, and styles spread through imitation."@en ;
+    skos:notation "SHINRA_0011301" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CulturalTransmission
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "文化的伝達"@ja ; rdfs:label "Cultural Transmission"@en ;
+    rdfs:comment "知識・技能・信念・価値が世代間・個人間で伝達される過程。垂直伝達・水平伝達・斜行伝達・模倣・言語など。"@ja ;
+    rdfs:comment "The process of transmitting knowledge, skills, beliefs, and values between generations and individuals, including vertical, horizontal, and oblique transmission, imitation, and language."@en ;
+    skos:notation "SHINRA_0011302" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CulturalFitness
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "文化的適応度"@ja ; rdfs:label "Cultural Fitness"@en ;
+    rdfs:comment "ある文化的特性・実践が集団内で広まりやすい程度。文化的選択・適応・ドリフト・偏向伝達など。"@ja ;
+    rdfs:comment "The degree to which a cultural trait or practice tends to spread within a population, related to cultural selection, adaptation, drift, and biased transmission."@en ;
+    skos:notation "SHINRA_0011303" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Niche Construction
+    a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
+    rdfs:label "ニッチ構築"@ja ; rdfs:label "Niche Construction"@en ;
+    rdfs:comment "生物が自らの環境を改変することで自然選択の圧力を変化させる進化的過程。人間の農業・道具・都市による環境改変など。"@ja ;
+    rdfs:comment "The evolutionary process by which organisms modify their environment, changing natural selection pressures, including human modification through agriculture, tools, and cities."@en ;
+    skos:notation "SHINRA_0011304" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:ExtendedEvolutionarySynthesis
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "拡張された進化的統合"@ja ; rdfs:label "Extended Evolutionary Synthesis"@en ;
+    skos:altLabel "EES"@ja ;
+    rdfs:comment "遺伝子中心の現代的統合を超えて可塑性・エピジェネティクス・ニッチ構築・文化進化を統合する進化論の拡張。"@ja ;
+    rdfs:comment "An extension of the Modern Synthesis beyond gene-centric evolution to integrate phenotypic plasticity, epigenetics, niche construction, and cultural evolution."@en ;
+    skos:notation "SHINRA_0011305" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:memetics-dawkins-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ミーム論（ドーキンス）"@ja ; rdfs:label "Memetics"@en ;
+    shinra:wikidataId "Q1195003" ;
+    skos:notation "SHINRA_I011301" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:dual-inheritance-001
+    a shinra:CulturalTransmission ;
+    rdfs:label "二重継承理論"@ja ; rdfs:label "Dual Inheritance Theory"@en ;
+    shinra:wikidataId "Q4264316" ;
+    skos:notation "SHINRA_I011302" ; dcterms:created "2026-06-11"^^xsd:date .

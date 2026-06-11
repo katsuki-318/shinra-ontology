@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-human-evolution.ttl  — 人類進化・古人類学ドメイン (Phase 11-o)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/human-evolution>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 人類進化・古人類学ドメイン"@ja ,
+                    "Shinra Ontology — Human Evolution & Paleoanthropology Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Bipedalism
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "二足歩行"@ja ; rdfs:label "Bipedalism"@en ;
+    rdfs:comment "二本の後肢で直立歩行する運動様式とその進化。アウストラロピテクスの二足歩行・脳拡大との関係・自由になった手など。"@ja ;
+    rdfs:comment "The locomotor pattern of upright walking on two hind limbs and its evolution, including Australopithecus bipedalism, relationship to brain expansion, and freeing of the hands."@en ;
+    skos:notation "SHINRA_0011501" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:BrainExpansion
+    a owl:Class ; rdfs:subClassOf shinra:BiologicalProcess ;
+    rdfs:label "脳の拡大"@ja ; rdfs:label "Brain Expansion"@en ;
+    skos:altLabel "脳化"@ja ;
+    rdfs:comment "ホモ族における脳容量の増大過程。ホモ・エレクトス・ホモ・サピエンスの脳化指数・社会脳仮説・認知革命など。"@ja ;
+    rdfs:comment "The process of increasing brain volume in the Homo lineage, including encephalization quotients of Homo erectus and Homo sapiens, social brain hypothesis, and the cognitive revolution."@en ;
+    skos:notation "SHINRA_0011502" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:OutOfAfrica
+    a owl:Class ; rdfs:subClassOf shinra:MigrationProcess ;
+    rdfs:label "アフリカ単一起源説"@ja ; rdfs:label "Out of Africa Theory"@en ;
+    skos:altLabel "アフリカ出アフリカ"@ja ;
+    rdfs:comment "現生人類がアフリカで誕生し世界に拡散したという仮説。ミトコンドリアイブ・Y染色体アダム・古代ゲノム研究など。"@ja ;
+    rdfs:comment "The hypothesis that modern humans originated in Africa and dispersed globally, supported by mitochondrial Eve, Y-chromosome Adam, and ancient genome studies."@en ;
+    skos:notation "SHINRA_0011503" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PaleolithicCulture
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "旧石器文化"@ja ; rdfs:label "Paleolithic Culture"@en ;
+    rdfs:comment "打製石器・狩猟採集・洞窟壁画・象徴的思考を特徴とする旧石器時代の文化。前期・中期・後期旧石器に分類される。"@ja ;
+    rdfs:comment "The culture of the Paleolithic period characterized by flaked stone tools, hunter-gatherer subsistence, cave art, and symbolic thinking, divided into Lower, Middle, and Upper Paleolithic."@en ;
+    skos:notation "SHINRA_0011504" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CognitivRevolution
+    a owl:Class ; rdfs:subClassOf shinra:HistoricalPeriod ;
+    rdfs:label "認知革命"@ja ; rdfs:label "Cognitive Revolution"@en ;
+    rdfs:comment "約7〜10万年前に現生人類で言語・象徴・抽象思考が急発展した歴史的転換。ユヴァル・ノア・ハラリの概念・洞窟壁画・装飾品など。"@ja ;
+    rdfs:comment "The historical transition approximately 70,000-100,000 years ago when modern humans rapidly developed language, symbolism, and abstract thinking, including Harari's concept, cave paintings, and ornaments."@en ;
+    skos:notation "SHINRA_0011505" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:lucy-fossil-001
+    a shinra:HominidSpecies ;
+    rdfs:label "ルーシー（アウストラロピテクス）"@ja ; rdfs:label "Lucy"@en ;
+    shinra:wikidataId "Q273173" ;
+    skos:notation "SHINRA_I011501" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:lascaux-cave-001
+    a shinra:PaleolithicCulture ;
+    rdfs:label "ラスコー洞窟壁画"@ja ; rdfs:label "Lascaux Cave Paintings"@en ;
+    shinra:wikidataId "Q178204" ;
+    skos:notation "SHINRA_I011502" ; dcterms:created "2026-06-11"^^xsd:date .
