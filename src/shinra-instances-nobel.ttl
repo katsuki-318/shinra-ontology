@@ -1,0 +1,1186 @@
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/shinra/ont/instances-nobel>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title "神羅万象オントロジー — ノーベル賞受賞者インスタンス"@ja , "Shinra Ontology — Nobel Laureate Instances"@en ;
+    dcterms:created "2026-06-19"^^xsd:date .
+
+
+shinra-data:person-nobel-reinhard-genzel-Q65807
+    a shinra:Person ;
+    rdfs:label "ラインハルト・ゲンツェル"@ja ; rdfs:label "Reinhard Genzel"@en ;
+    shinra:wikidataId "Q65807" ;
+    skos:notation "SHINRA_I012001" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-david-j-wineland-Q61045
+    a shinra:Person ;
+    rdfs:label "デービッド・ワインランド"@ja ; rdfs:label "David J. Wineland"@en ;
+    shinra:wikidataId "Q61045" ;
+    skos:notation "SHINRA_I012002" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-johannes-hans-daniel-jensen-Q76797
+    a shinra:Person ;
+    rdfs:label "ヨハネス・ハンス・イェンゼン"@ja ; rdfs:label "Johannes Hans Daniel Jensen"@en ;
+    shinra:wikidataId "Q76797" ;
+    skos:notation "SHINRA_I012003" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-albert-einstein-Q937
+    a shinra:Person ;
+    rdfs:label "アルベルト・アインシュタイン"@ja ; rdfs:label "Albert Einstein"@en ;
+    shinra:wikidataId "Q937" ;
+    skos:notation "SHINRA_I012004" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-andrews-millikan-Q130975
+    a shinra:Person ;
+    rdfs:label "ロバート・ミリカン"@ja ; rdfs:label "Robert Andrews Millikan"@en ;
+    shinra:wikidataId "Q130975" ;
+    skos:notation "SHINRA_I012005" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-gustav-ludwig-hertz-Q57070
+    a shinra:Person ;
+    rdfs:label "グスタフ・ヘルツ"@ja ; rdfs:label "Gustav Ludwig Hertz"@en ;
+    shinra:wikidataId "Q57070" ;
+    skos:notation "SHINRA_I012006" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-philipp-lenard-Q57063
+    a shinra:Person ;
+    rdfs:label "フィリップ・レーナルト"@ja ; rdfs:label "Philipp Lenard"@en ;
+    shinra:wikidataId "Q57063" ;
+    skos:notation "SHINRA_I012007" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-max-von-laue-Q57067
+    a shinra:Person ;
+    rdfs:label "マックス・フォン・ラウエ"@ja ; rdfs:label "Max von Laue"@en ;
+    shinra:wikidataId "Q57067" ;
+    skos:notation "SHINRA_I012008" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wilhelm-wien-Q57068
+    a shinra:Person ;
+    rdfs:label "ヴィルヘルム・ヴィーン"@ja ; rdfs:label "Wilhelm Wien"@en ;
+    shinra:wikidataId "Q57068" ;
+    skos:notation "SHINRA_I012009" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-karl-ferdinand-braun-Q57077
+    a shinra:Person ;
+    rdfs:label "フェルディナント・ブラウン"@ja ; rdfs:label "Karl Ferdinand Braun"@en ;
+    shinra:wikidataId "Q57077" ;
+    skos:notation "SHINRA_I012010" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-pierre-curie-Q37463
+    a shinra:Person ;
+    rdfs:label "ピエール・キュリー"@ja ; rdfs:label "Pierre Curie"@en ;
+    shinra:wikidataId "Q37463" ;
+    skos:notation "SHINRA_I012011" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-werner-heisenberg-Q40904
+    a shinra:Person ;
+    rdfs:label "ヴェルナー・ハイゼンベルク"@ja ; rdfs:label "Werner Heisenberg"@en ;
+    shinra:wikidataId "Q40904" ;
+    skos:notation "SHINRA_I012012" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-abdus-salam-Q28189
+    a shinra:Person ;
+    rdfs:label "アブダス・サラム"@ja ; rdfs:label "Abdus Salam"@en ;
+    shinra:wikidataId "Q28189" ;
+    skos:notation "SHINRA_I012013" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-johannes-stark-Q57092
+    a shinra:Person ;
+    rdfs:label "ヨハネス・シュタルク"@ja ; rdfs:label "Johannes Stark"@en ;
+    shinra:wikidataId "Q57092" ;
+    skos:notation "SHINRA_I012014" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-vitaly-ginzburg-Q104668
+    a shinra:Person ;
+    rdfs:label "ヴィタリー・ギンツブルク"@ja ; rdfs:label "Vitaly Ginzburg"@en ;
+    shinra:wikidataId "Q104668" ;
+    skos:notation "SHINRA_I012015" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-william-strutt-Q83297
+    a shinra:Person ;
+    rdfs:label "ジョン・ウィリアム・ストラット"@ja ; rdfs:label "John William Strutt"@en ;
+    shinra:wikidataId "Q83297" ;
+    skos:notation "SHINRA_I012016" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-leon-cooper-Q82563
+    a shinra:Person ;
+    rdfs:label "レオン・クーパー"@ja ; rdfs:label "Leon Cooper"@en ;
+    shinra:wikidataId "Q82563" ;
+    skos:notation "SHINRA_I012017" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hugh-david-politzer-Q107407
+    a shinra:Person ;
+    rdfs:label "H. デビッド・ポリツァー"@ja ; rdfs:label "Hugh David Politzer"@en ;
+    shinra:wikidataId "Q107407" ;
+    skos:notation "SHINRA_I012018" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-norman-foster-ramsey-Q107419
+    a shinra:Person ;
+    rdfs:label "ノーマン・ラムゼー"@ja ; rdfs:label "Norman Foster Ramsey"@en ;
+    shinra:wikidataId "Q107419" ;
+    skos:notation "SHINRA_I012019" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-sheldon-glashow-Q107420
+    a shinra:Person ;
+    rdfs:label "シェルドン・グラショー"@ja ; rdfs:label "Sheldon Glashow"@en ;
+    shinra:wikidataId "Q107420" ;
+    skos:notation "SHINRA_I012020" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-martin-lewis-perl-Q107416
+    a shinra:Person ;
+    rdfs:label "マーチン・パール"@ja ; rdfs:label "Martin Lewis Perl"@en ;
+    shinra:wikidataId "Q107416" ;
+    skos:notation "SHINRA_I012021" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-bardeen-Q949
+    a shinra:Person ;
+    rdfs:label "ジョン・バーディーン"@ja ; rdfs:label "John Bardeen"@en ;
+    shinra:wikidataId "Q949" ;
+    skos:notation "SHINRA_I012022" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-maria-g-ppert-mayer-Q57100
+    a shinra:Person ;
+    rdfs:label "マリア・ゲッパート＝メイヤー"@ja ; rdfs:label "Maria Göppert Mayer"@en ;
+    shinra:wikidataId "Q57100" ;
+    skos:notation "SHINRA_I012023" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-max-born-Q58978
+    a shinra:Person ;
+    rdfs:label "マックス・ボルン"@ja ; rdfs:label "Max Born"@en ;
+    shinra:wikidataId "Q58978" ;
+    skos:notation "SHINRA_I012024" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-adrien-maurice-dirac-Q47480
+    a shinra:Person ;
+    rdfs:label "ポール・ディラック"@ja ; rdfs:label "Paul Adrien Maurice Dirac"@en ;
+    shinra:wikidataId "Q47480" ;
+    skos:notation "SHINRA_I012025" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ben-roy-mottelson-Q107423
+    a shinra:Person ;
+    rdfs:label "ベン・ロイ・モッテルソン"@ja ; rdfs:label "Ben Roy Mottelson"@en ;
+    shinra:wikidataId "Q107423" ;
+    skos:notation "SHINRA_I012026" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hans-georg-dehmelt-Q70532
+    a shinra:Person ;
+    rdfs:label "ハンス・デーメルト"@ja ; rdfs:label "Hans Georg Dehmelt"@en ;
+    shinra:wikidataId "Q70532" ;
+    skos:notation "SHINRA_I012027" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-hofstadter-Q130113
+    a shinra:Person ;
+    rdfs:label "ロバート・ホフスタッター"@ja ; rdfs:label "Robert Hofstadter"@en ;
+    shinra:wikidataId "Q130113" ;
+    skos:notation "SHINRA_I012028" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-david-gross-Q40262
+    a shinra:Person ;
+    rdfs:label "デイビッド・グロス"@ja ; rdfs:label "David Gross"@en ;
+    shinra:wikidataId "Q40262" ;
+    skos:notation "SHINRA_I012029" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-louis-de-broglie-Q83331
+    a shinra:Person ;
+    rdfs:label "ルイ・ド・ブロイ"@ja ; rdfs:label "Louis de Broglie"@en ;
+    shinra:wikidataId "Q83331" ;
+    skos:notation "SHINRA_I012030" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-horst-ludwig-st-rmer-Q71015
+    a shinra:Person ;
+    rdfs:label "ホルスト・ルートヴィヒ・シュテルマー"@ja ; rdfs:label "Horst Ludwig Störmer"@en ;
+    shinra:wikidataId "Q71015" ;
+    skos:notation "SHINRA_I012031" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-theodor-w-h-nsch-Q71013
+    a shinra:Person ;
+    rdfs:label "テオドール・ヘンシュ"@ja ; rdfs:label "Theodor W. Hänsch"@en ;
+    shinra:wikidataId "Q71013" ;
+    skos:notation "SHINRA_I012032" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ernst-ruska-Q71022
+    a shinra:Person ;
+    rdfs:label "エルンスト・ルスカ"@ja ; rdfs:label "Ernst Ruska"@en ;
+    shinra:wikidataId "Q71022" ;
+    skos:notation "SHINRA_I012033" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-alfred-kastler-Q71023
+    a shinra:Person ;
+    rdfs:label "アルフレッド・カストレル"@ja ; rdfs:label "Alfred Kastler"@en ;
+    shinra:wikidataId "Q71023" ;
+    skos:notation "SHINRA_I012034" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-serge-haroche-Q109588
+    a shinra:Person ;
+    rdfs:label "セルジュ・アロシュ"@ja ; rdfs:label "Serge Haroche"@en ;
+    shinra:wikidataId "Q109588" ;
+    skos:notation "SHINRA_I012035" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-simon-van-der-meer-Q104779
+    a shinra:Person ;
+    rdfs:label "シモン・ファンデルメール"@ja ; rdfs:label "Simon van der Meer"@en ;
+    shinra:wikidataId "Q104779" ;
+    skos:notation "SHINRA_I012036" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wolfgang-pauli-Q65989
+    a shinra:Person ;
+    rdfs:label "ヴォルフガング・パウリ"@ja ; rdfs:label "Wolfgang Pauli"@en ;
+    shinra:wikidataId "Q65989" ;
+    skos:notation "SHINRA_I012037" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wilhelm-conrad-r-ntgen-Q35149
+    a shinra:Person ;
+    rdfs:label "ヴィルヘルム・レントゲン"@ja ; rdfs:label "Wilhelm Conrad Röntgen"@en ;
+    shinra:wikidataId "Q35149" ;
+    skos:notation "SHINRA_I012038" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-klaus-von-klitzing-Q71024
+    a shinra:Person ;
+    rdfs:label "クラウス・フォン・クリッツィング"@ja ; rdfs:label "Klaus von Klitzing"@en ;
+    shinra:wikidataId "Q71024" ;
+    skos:notation "SHINRA_I012039" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-clinton-joseph-davisson-Q133222
+    a shinra:Person ;
+    rdfs:label "クリントン・デイヴィソン"@ja ; rdfs:label "Clinton Joseph Davisson"@en ;
+    shinra:wikidataId "Q133222" ;
+    skos:notation "SHINRA_I012040" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-douglas-cockcroft-Q62897
+    a shinra:Person ;
+    rdfs:label "ジョン・コッククロフト"@ja ; rdfs:label "John Douglas Cockcroft"@en ;
+    shinra:wikidataId "Q62897" ;
+    skos:notation "SHINRA_I012041" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-willard-boyle-Q73058
+    a shinra:Person ;
+    rdfs:label "ウィラード・ボイル"@ja ; rdfs:label "Willard Boyle"@en ;
+    shinra:wikidataId "Q73058" ;
+    skos:notation "SHINRA_I012042" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-gabriel-lippmann-Q133232
+    a shinra:Person ;
+    rdfs:label "ガブリエル・リップマン"@ja ; rdfs:label "Gabriel Lippmann"@en ;
+    shinra:wikidataId "Q133232" ;
+    skos:notation "SHINRA_I012043" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-rudolf-ludwig-m-ssbauer-Q44286
+    a shinra:Person ;
+    rdfs:label "ルドルフ・メスバウアー"@ja ; rdfs:label "Rudolf Ludwig Mössbauer"@en ;
+    shinra:wikidataId "Q44286" ;
+    skos:notation "SHINRA_I012045" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-marie-sklodowska-curie-Q7186
+    a shinra:Person ;
+    rdfs:label "マリ・キュリー"@ja ; rdfs:label "Marie Sklodowska-Curie"@en ;
+    shinra:wikidataId "Q7186" ;
+    skos:notation "SHINRA_I012046" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-chandrasekhara-venkata-raman-Q60429
+    a shinra:Person ;
+    rdfs:label "チャンドラセカール・ラマン"@ja ; rdfs:label "Chandrasekhara Venkata Raman"@en ;
+    shinra:wikidataId "Q60429" ;
+    skos:notation "SHINRA_I012047" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-aage-bohr-Q103854
+    a shinra:Person ;
+    rdfs:label "オーゲ・ニールス・ボーア"@ja ; rdfs:label "Aage Bohr"@en ;
+    shinra:wikidataId "Q103854" ;
+    skos:notation "SHINRA_I012048" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-max-karl-ernst-ludwig-planck-Q9021
+    a shinra:Person ;
+    rdfs:label "マックス・プランク"@ja ; rdfs:label "Max Karl Ernst Ludwig Planck"@en ;
+    shinra:wikidataId "Q9021" ;
+    skos:notation "SHINRA_I012049" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-enrico-fermi-Q8753
+    a shinra:Person ;
+    rdfs:label "エンリコ・フェルミ"@ja ; rdfs:label "Enrico Fermi"@en ;
+    shinra:wikidataId "Q8753" ;
+    skos:notation "SHINRA_I012051" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-frank-wilczek-Q107450
+    a shinra:Person ;
+    rdfs:label "フランク・ウィルチェック"@ja ; rdfs:label "Frank Wilczek"@en ;
+    shinra:wikidataId "Q107450" ;
+    skos:notation "SHINRA_I012052" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-victor-francis-hess-Q78520
+    a shinra:Person ;
+    rdfs:label "ヴィクトール・フランツ・ヘス"@ja ; rdfs:label "Victor Francis Hess"@en ;
+    shinra:wikidataId "Q78520" ;
+    skos:notation "SHINRA_I012053" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-otto-stern-Q57072
+    a shinra:Person ;
+    rdfs:label "オットー・シュテルン"@ja ; rdfs:label "Otto Stern"@en ;
+    shinra:wikidataId "Q57072" ;
+    skos:notation "SHINRA_I012054" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wolfgang-paul-Q57227
+    a shinra:Person ;
+    rdfs:label "ヴォルフガング・パウル"@ja ; rdfs:label "Wolfgang Paul"@en ;
+    shinra:wikidataId "Q57227" ;
+    skos:notation "SHINRA_I012055" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-lev-landau-Q133267
+    a shinra:Person ;
+    rdfs:label "レフ・ランダウ"@ja ; rdfs:label "Lev Landau"@en ;
+    shinra:wikidataId "Q133267" ;
+    skos:notation "SHINRA_I012056" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-erwin-schr-dinger-Q9130
+    a shinra:Person ;
+    rdfs:label "エルヴィン・シュレーディンガー"@ja ; rdfs:label "Erwin Schrödinger"@en ;
+    shinra:wikidataId "Q9130" ;
+    skos:notation "SHINRA_I012057" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-georg-bednorz-Q76687
+    a shinra:Person ;
+    rdfs:label "ヨハネス・ベドノルツ"@ja ; rdfs:label "Georg Bednorz"@en ;
+    shinra:wikidataId "Q76687" ;
+    skos:notation "SHINRA_I012058" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-peter-gr-nberg-Q57120
+    a shinra:Person ;
+    rdfs:label "ペーター・グリューンベルク"@ja ; rdfs:label "Peter Grünberg"@en ;
+    shinra:wikidataId "Q57120" ;
+    skos:notation "SHINRA_I012059" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-donald-arthur-glaser-Q80905
+    a shinra:Person ;
+    rdfs:label "ドナルド・グレーザー"@ja ; rdfs:label "Donald Arthur Glaser"@en ;
+    shinra:wikidataId "Q80905" ;
+    skos:notation "SHINRA_I012060" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-adam-riess-Q106454
+    a shinra:Person ;
+    rdfs:label "アダム・リース"@ja ; rdfs:label "Adam Riess"@en ;
+    shinra:wikidataId "Q106454" ;
+    skos:notation "SHINRA_I012061" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-james-franck-Q57066
+    a shinra:Person ;
+    rdfs:label "ジェイムス・フランク"@ja ; rdfs:label "James Franck"@en ;
+    shinra:wikidataId "Q57066" ;
+    skos:notation "SHINRA_I012062" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-charles-douard-guillaume-Q123026
+    a shinra:Person ;
+    rdfs:label "シャルル・エドゥアール・ギヨーム"@ja ; rdfs:label "Charles Édouard Guillaume"@en ;
+    shinra:wikidataId "Q123026" ;
+    skos:notation "SHINRA_I012063" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-heinrich-rohrer-Q123029
+    a shinra:Person ;
+    rdfs:label "ハインリッヒ・ローラー"@ja ; rdfs:label "Heinrich Rohrer"@en ;
+    shinra:wikidataId "Q123029" ;
+    skos:notation "SHINRA_I012064" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-herbert-kroemer-Q71016
+    a shinra:Person ;
+    rdfs:label "ハーバート・クレーマー"@ja ; rdfs:label "Herbert Kroemer"@en ;
+    shinra:wikidataId "Q71016" ;
+    skos:notation "SHINRA_I012065" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-james-chadwick-Q80884
+    a shinra:Person ;
+    rdfs:label "ジェームズ・チャドウィック"@ja ; rdfs:label "James Chadwick"@en ;
+    shinra:wikidataId "Q80884" ;
+    skos:notation "SHINRA_I012066" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-joseph-john-thomson-Q47285
+    a shinra:Person ;
+    rdfs:label "ジョゼフ・ジョン・トムソン"@ja ; rdfs:label "Joseph John Thomson"@en ;
+    shinra:wikidataId "Q47285" ;
+    skos:notation "SHINRA_I012067" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wolfgang-ketterle-Q76462
+    a shinra:Person ;
+    rdfs:label "ヴォルフガング・ケターレ"@ja ; rdfs:label "Wolfgang Ketterle"@en ;
+    shinra:wikidataId "Q76462" ;
+    skos:notation "SHINRA_I012068" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-guglielmo-marconi-Q36488
+    a shinra:Person ;
+    rdfs:label "グリエルモ・マルコーニ"@ja ; rdfs:label "Guglielmo Marconi"@en ;
+    shinra:wikidataId "Q36488" ;
+    skos:notation "SHINRA_I012069" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-arthur-holly-compton-Q127944
+    a shinra:Person ;
+    rdfs:label "アーサー・コンプトン"@ja ; rdfs:label "Arthur Holly Compton"@en ;
+    shinra:wikidataId "Q127944" ;
+    skos:notation "SHINRA_I012070" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-roy-j-glauber-Q64188
+    a shinra:Person ;
+    rdfs:label "ロイ・グラウバー"@ja ; rdfs:label "Roy J. Glauber"@en ;
+    shinra:wikidataId "Q64188" ;
+    skos:notation "SHINRA_I012071" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-saul-perlmutter-Q106949
+    a shinra:Person ;
+    rdfs:label "ソール・パールマッター"@ja ; rdfs:label "Saul Perlmutter"@en ;
+    shinra:wikidataId "Q106949" ;
+    skos:notation "SHINRA_I012072" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-george-e-smith-Q76373
+    a shinra:Person ;
+    rdfs:label "ジョージ・スミス"@ja ; rdfs:label "George E. Smith"@en ;
+    shinra:wikidataId "Q76373" ;
+    skos:notation "SHINRA_I012073" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-walther-bothe-Q76474
+    a shinra:Person ;
+    rdfs:label "ヴァルター・ボーテ"@ja ; rdfs:label "Walther Bothe"@en ;
+    shinra:wikidataId "Q76474" ;
+    skos:notation "SHINRA_I012074" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-michel-mayor-Q123975
+    a shinra:Person ;
+    rdfs:label "ミシェル・マイヨール"@ja ; rdfs:label "Michel Mayor"@en ;
+    shinra:wikidataId "Q123975" ;
+    skos:notation "SHINRA_I012075" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hannes-alfv-n-Q54945
+    a shinra:Person ;
+    rdfs:label "ハンス・アルヴェーン"@ja ; rdfs:label "Hannes Alfvén"@en ;
+    shinra:wikidataId "Q54945" ;
+    skos:notation "SHINRA_I012076" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-heike-kamerlingh-onnes-Q62891
+    a shinra:Person ;
+    rdfs:label "ヘイケ・カメルリング・オネス"@ja ; rdfs:label "Heike Kamerlingh Onnes"@en ;
+    shinra:wikidataId "Q62891" ;
+    skos:notation "SHINRA_I012077" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-anton-zeilinger-Q78610
+    a shinra:Person ;
+    rdfs:label "アントン・ツァイリンガー"@ja ; rdfs:label "Anton Zeilinger"@en ;
+    shinra:wikidataId "Q78610" ;
+    skos:notation "SHINRA_I012078" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-albert-abraham-michelson-Q127234
+    a shinra:Person ;
+    rdfs:label "アルバート・マイケルソン"@ja ; rdfs:label "Albert Abraham Michelson"@en ;
+    shinra:wikidataId "Q127234" ;
+    skos:notation "SHINRA_I012079" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hendrik-antoon-lorentz-Q41688
+    a shinra:Person ;
+    rdfs:label "ヘンドリック・ローレンツ"@ja ; rdfs:label "Hendrik Antoon Lorentz"@en ;
+    shinra:wikidataId "Q41688" ;
+    skos:notation "SHINRA_I012080" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-william-henry-bragg-Q133747
+    a shinra:Person ;
+    rdfs:label "ヘンリー・ブラッグ"@ja ; rdfs:label "William Henry Bragg"@en ;
+    shinra:wikidataId "Q133747" ;
+    skos:notation "SHINRA_I012081" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-konstantin-novoselov-Q106494
+    a shinra:Person ;
+    rdfs:label "コンスタンチン・ノボセロフ"@ja ; rdfs:label "Konstantin Novoselov"@en ;
+    shinra:wikidataId "Q106494" ;
+    skos:notation "SHINRA_I012082" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-andre-geim-Q104104
+    a shinra:Person ;
+    rdfs:label "アンドレ・ガイム"@ja ; rdfs:label "Andre Geim"@en ;
+    shinra:wikidataId "Q104104" ;
+    skos:notation "SHINRA_I012083" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-didier-queloz-Q124013
+    a shinra:Person ;
+    rdfs:label "ディディエ・ケロー"@ja ; rdfs:label "Didier Queloz"@en ;
+    shinra:wikidataId "Q124013" ;
+    skos:notation "SHINRA_I012085" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-johannes-diderik-van-der-waals-Q131721
+    a shinra:Person ;
+    rdfs:label "ヨハネス・ファン・デル・ワールス"@ja ; rdfs:label "Johannes Diderik van der Waals"@en ;
+    shinra:wikidataId "Q131721" ;
+    skos:notation "SHINRA_I012086" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-william-lawrence-bragg-Q131729
+    a shinra:Person ;
+    rdfs:label "ローレンス・ブラッグ"@ja ; rdfs:label "William Lawrence Bragg"@en ;
+    shinra:wikidataId "Q131729" ;
+    skos:notation "SHINRA_I012087" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-pavel-cherenkov-Q76970
+    a shinra:Person ;
+    rdfs:label "パーヴェル・チェレンコフ"@ja ; rdfs:label "Pavel Cherenkov"@en ;
+    shinra:wikidataId "Q76970" ;
+    skos:notation "SHINRA_I012088" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-felix-bloch-Q123022
+    a shinra:Person ;
+    rdfs:label "フェリックス・ブロッホ"@ja ; rdfs:label "Felix Bloch"@en ;
+    shinra:wikidataId "Q123022" ;
+    skos:notation "SHINRA_I012089" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-karl-alexander-m-ller-Q122298
+    a shinra:Person ;
+    rdfs:label "カール・アレクサンダー・ミュラー"@ja ; rdfs:label "Karl Alexander Müller"@en ;
+    shinra:wikidataId "Q122298" ;
+    skos:notation "SHINRA_I012090" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-william-alfred-fowler-Q46120
+    a shinra:Person ;
+    rdfs:label "ウィリアム・ファウラー"@ja ; rdfs:label "William Alfred Fowler"@en ;
+    shinra:wikidataId "Q46120" ;
+    skos:notation "SHINRA_I012091" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-charles-k-kao-Q16389
+    a shinra:Person ;
+    rdfs:label "チャールズ・カオ"@ja ; rdfs:label "Charles K. Kao"@en ;
+    shinra:wikidataId "Q16389" ;
+    skos:notation "SHINRA_I012092" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-alexander-mikhailovich-prokhorov-Q83552
+    a shinra:Person ;
+    rdfs:label "アレクサンドル・プロホロフ"@ja ; rdfs:label "Alexander Mikhailovich Prokhorov"@en ;
+    shinra:wikidataId "Q83552" ;
+    skos:notation "SHINRA_I012093" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-c-mather-Q104651
+    a shinra:Person ;
+    rdfs:label "ジョン・C・マザー"@ja ; rdfs:label "John C. Mather"@en ;
+    shinra:wikidataId "Q104651" ;
+    skos:notation "SHINRA_I012094" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ferenc-krausz-Q86970
+    a shinra:Person ;
+    rdfs:label "フェレンツ・クラウス"@ja ; rdfs:label "Ferenc Krausz"@en ;
+    shinra:wikidataId "Q86970" ;
+    skos:notation "SHINRA_I012095" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-antoine-henri-becquerel-Q41269
+    a shinra:Person ;
+    rdfs:label "アンリ・ベクレル"@ja ; rdfs:label "Antoine Henri Becquerel"@en ;
+    shinra:wikidataId "Q41269" ;
+    skos:notation "SHINRA_I012096" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-nikolay-gennadiyevich-basov-Q83557
+    a shinra:Person ;
+    rdfs:label "ニコライ・バソフ"@ja ; rdfs:label "Nikolay Gennadiyevich Basov"@en ;
+    shinra:wikidataId "Q83557" ;
+    skos:notation "SHINRA_I012097" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-pieter-zeeman-Q79000
+    a shinra:Person ;
+    rdfs:label "ピーター・ゼーマン"@ja ; rdfs:label "Pieter Zeeman"@en ;
+    shinra:wikidataId "Q79000" ;
+    skos:notation "SHINRA_I012098" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-gerd-binnig-Q76766
+    a shinra:Person ;
+    rdfs:label "ゲルト・ビーニッヒ"@ja ; rdfs:label "Gerd Binnig"@en ;
+    shinra:wikidataId "Q76766" ;
+    skos:notation "SHINRA_I012099" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-walter-kohn-Q78510
+    a shinra:Person ;
+    rdfs:label "ウォルター・コーン"@ja ; rdfs:label "Walter Kohn"@en ;
+    shinra:wikidataId "Q78510" ;
+    skos:notation "SHINRA_I012101" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-earl-wilbur-sutherland-jr-Q68118
+    a shinra:Person ;
+    rdfs:label "エール・サザランド"@ja ; rdfs:label "Earl Wilbur Sutherland, Jr."@en ;
+    shinra:wikidataId "Q68118" ;
+    skos:notation "SHINRA_I012102" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-werner-forssmann-Q77152
+    a shinra:Person ;
+    rdfs:label "ヴェルナー・フォルスマン"@ja ; rdfs:label "Werner Forssmann"@en ;
+    shinra:wikidataId "Q77152" ;
+    skos:notation "SHINRA_I012103" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-georges-j-f-k-hler-Q77160
+    a shinra:Person ;
+    rdfs:label "ジョルジュ・J・F・ケーラー"@ja ; rdfs:label "Georges J. F. Köhler"@en ;
+    shinra:wikidataId "Q77160" ;
+    skos:notation "SHINRA_I012104" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-shinya-yamanaka-Q80917
+    a shinra:Person ;
+    rdfs:label "山中伸弥"@ja ; rdfs:label "Shinya Yamanaka"@en ;
+    shinra:wikidataId "Q80917" ;
+    skos:notation "SHINRA_I012105" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-stefan-hell-Q91410
+    a shinra:Person ;
+    rdfs:label "シュテファン・ヘル"@ja ; rdfs:label "Stefan Hell"@en ;
+    shinra:wikidataId "Q91410" ;
+    skos:notation "SHINRA_I012106" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-kurt-alder-Q76595
+    a shinra:Person ;
+    rdfs:label "クルト・アルダー"@ja ; rdfs:label "Kurt Alder"@en ;
+    shinra:wikidataId "Q76595" ;
+    skos:notation "SHINRA_I012107" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-manfred-eigen-Q76600
+    a shinra:Person ;
+    rdfs:label "マンフレート・アイゲン"@ja ; rdfs:label "Manfred Eigen"@en ;
+    shinra:wikidataId "Q76600" ;
+    skos:notation "SHINRA_I012108" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ei-ichi-negishi-Q105927
+    a shinra:Person ;
+    rdfs:label "根岸英一"@ja ; rdfs:label "Ei-ichi Negishi"@en ;
+    shinra:wikidataId "Q105927" ;
+    skos:notation "SHINRA_I012109" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-wendell-meredith-stanley-Q105937
+    a shinra:Person ;
+    rdfs:label "ウェンデル・スタンリー"@ja ; rdfs:label "Wendell Meredith Stanley"@en ;
+    shinra:wikidataId "Q105937" ;
+    skos:notation "SHINRA_I012110" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-huber-Q76623
+    a shinra:Person ;
+    rdfs:label "ロベルト・フーバー"@ja ; rdfs:label "Robert Huber"@en ;
+    shinra:wikidataId "Q76623" ;
+    skos:notation "SHINRA_I012111" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-har-gobind-khorana-Q107462
+    a shinra:Person ;
+    rdfs:label "ハー・ゴビンド・コラナ"@ja ; rdfs:label "Har Gobind Khorana"@en ;
+    shinra:wikidataId "Q107462" ;
+    skos:notation "SHINRA_I012112" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-christiane-n-sslein-volhard-Q77174
+    a shinra:Person ;
+    rdfs:label "クリスティアーネ・ニュスライン＝フォルハルト"@ja ; rdfs:label "Christiane Nüsslein-Volhard"@en ;
+    shinra:wikidataId "Q77174" ;
+    skos:notation "SHINRA_I012113" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-otto-loewi-Q77173
+    a shinra:Person ;
+    rdfs:label "オットー・レーヴィ"@ja ; rdfs:label "Otto Loewi"@en ;
+    shinra:wikidataId "Q77173" ;
+    skos:notation "SHINRA_I012114" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-richard-kuhn-Q78483
+    a shinra:Person ;
+    rdfs:label "リヒャルト・クーン"@ja ; rdfs:label "Richard Kuhn"@en ;
+    shinra:wikidataId "Q78483" ;
+    skos:notation "SHINRA_I012115" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-jack-szostak-Q104600
+    a shinra:Person ;
+    rdfs:label "ジャック・W・ショスタク"@ja ; rdfs:label "Jack Szostak"@en ;
+    shinra:wikidataId "Q104600" ;
+    skos:notation "SHINRA_I012116" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-otto-heinrich-warburg-Q76464
+    a shinra:Person ;
+    rdfs:label "オットー・ワールブルク"@ja ; rdfs:label "Otto Heinrich Warburg"@en ;
+    shinra:wikidataId "Q76464" ;
+    skos:notation "SHINRA_I012117" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-gerhard-herzberg-Q76602
+    a shinra:Person ;
+    rdfs:label "ゲルハルト・ヘルツベルク"@ja ; rdfs:label "Gerhard Herzberg"@en ;
+    shinra:wikidataId "Q76602" ;
+    skos:notation "SHINRA_I012118" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-heinrich-otto-wieland-Q76610
+    a shinra:Person ;
+    rdfs:label "ハインリッヒ・ヴィーラント"@ja ; rdfs:label "Heinrich Otto Wieland"@en ;
+    shinra:wikidataId "Q76610" ;
+    skos:notation "SHINRA_I012119" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-edwards-Q104913
+    a shinra:Person ;
+    rdfs:label "ロバート・G・エドワーズ"@ja ; rdfs:label "Robert Edwards"@en ;
+    shinra:wikidataId "Q104913" ;
+    skos:notation "SHINRA_I012120" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-friedrich-bergius-Q76614
+    a shinra:Person ;
+    rdfs:label "フリードリッヒ・ベルギウス"@ja ; rdfs:label "Friedrich Bergius"@en ;
+    shinra:wikidataId "Q76614" ;
+    skos:notation "SHINRA_I012121" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-johann-deisenhofer-Q76612
+    a shinra:Person ;
+    rdfs:label "ヨハン・ダイゼンホーファー"@ja ; rdfs:label "Johann Deisenhofer"@en ;
+    shinra:wikidataId "Q76612" ;
+    skos:notation "SHINRA_I012122" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-otto-diels-Q76616
+    a shinra:Person ;
+    rdfs:label "オットー・ディールス"@ja ; rdfs:label "Otto Diels"@en ;
+    shinra:wikidataId "Q76616" ;
+    skos:notation "SHINRA_I012123" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-jules-a-hoffmann-Q105605
+    a shinra:Person ;
+    rdfs:label "ジュール・ホフマン"@ja ; rdfs:label "Jules A. Hoffmann"@en ;
+    shinra:wikidataId "Q105605" ;
+    skos:notation "SHINRA_I012124" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-andrew-huxley-Q104607
+    a shinra:Person ;
+    rdfs:label "アンドリュー・フィールディング・ハクスリー"@ja ; rdfs:label "Andrew Huxley"@en ;
+    shinra:wikidataId "Q104607" ;
+    skos:notation "SHINRA_I012125" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-henri-moissan-Q102804
+    a shinra:Person ;
+    rdfs:label "アンリ・モアッサン"@ja ; rdfs:label "Henri Moissan"@en ;
+    shinra:wikidataId "Q102804" ;
+    skos:notation "SHINRA_I012126" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-akira-suzuki-Q105949
+    a shinra:Person ;
+    rdfs:label "鈴木章"@ja ; rdfs:label "Akira Suzuki"@en ;
+    shinra:wikidataId "Q105949" ;
+    skos:notation "SHINRA_I012127" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-bert-sakmann-Q77081
+    a shinra:Person ;
+    rdfs:label "ベルト・ザクマン"@ja ; rdfs:label "Bert Sakmann"@en ;
+    shinra:wikidataId "Q77081" ;
+    skos:notation "SHINRA_I012128" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-lars-onsager-Q107405
+    a shinra:Person ;
+    rdfs:label "ラルス・オンサーガー"@ja ; rdfs:label "Lars Onsager"@en ;
+    shinra:wikidataId "Q107405" ;
+    skos:notation "SHINRA_I012129" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-frederick-soddy-Q102830
+    a shinra:Person ;
+    rdfs:label "フレデリック・ソディ"@ja ; rdfs:label "Frederick Soddy"@en ;
+    shinra:wikidataId "Q102830" ;
+    skos:notation "SHINRA_I012130" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ronald-ross-Q102034
+    a shinra:Person ;
+    rdfs:label "ロナルド・ロス"@ja ; rdfs:label "Ronald Ross"@en ;
+    shinra:wikidataId "Q102034" ;
+    skos:notation "SHINRA_I012131" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-howard-northrop-Q106399
+    a shinra:Person ;
+    rdfs:label "ジョン・ノースロップ"@ja ; rdfs:label "John Howard Northrop"@en ;
+    shinra:wikidataId "Q106399" ;
+    skos:notation "SHINRA_I012132" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-gurdon-Q81218
+    a shinra:Person ;
+    rdfs:label "ジョン・ガードン"@ja ; rdfs:label "John Gurdon"@en ;
+    shinra:wikidataId "Q81218" ;
+    skos:notation "SHINRA_I012134" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-peter-agre-Q102250
+    a shinra:Person ;
+    rdfs:label "ピーター・アグレ"@ja ; rdfs:label "Peter Agre"@en ;
+    shinra:wikidataId "Q102250" ;
+    skos:notation "SHINRA_I012135" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hermann-emil-fischer-Q70554
+    a shinra:Person ;
+    rdfs:label "エミール・フィッシャー"@ja ; rdfs:label "Hermann Emil Fischer"@en ;
+    shinra:wikidataId "Q70554" ;
+    skos:notation "SHINRA_I012136" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ahmed-zewail-Q106624
+    a shinra:Person ;
+    rdfs:label "アハメッド・ズウェイル"@ja ; rdfs:label "Ahmed Zewail"@en ;
+    shinra:wikidataId "Q106624" ;
+    skos:notation "SHINRA_I012137" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-baruch-samuel-blumberg-Q105830
+    a shinra:Person ;
+    rdfs:label "バルーク・サミュエル・ブランバーグ"@ja ; rdfs:label "Baruch Samuel Blumberg"@en ;
+    shinra:wikidataId "Q105830" ;
+    skos:notation "SHINRA_I012138" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-fritz-pregl-Q78482
+    a shinra:Person ;
+    rdfs:label "フリッツ・プレーグル"@ja ; rdfs:label "Fritz Pregl"@en ;
+    shinra:wikidataId "Q78482" ;
+    skos:notation "SHINRA_I012139" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-max-perutz-Q78480
+    a shinra:Person ;
+    rdfs:label "マックス・ペルーツ"@ja ; rdfs:label "Max Perutz"@en ;
+    shinra:wikidataId "Q78480" ;
+    skos:notation "SHINRA_I012140" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-richard-adolf-zsigmondy-Q78481
+    a shinra:Person ;
+    rdfs:label "リヒャルト・ジグモンディ"@ja ; rdfs:label "Richard Adolf Zsigmondy"@en ;
+    shinra:wikidataId "Q78481" ;
+    skos:notation "SHINRA_I012141" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-richard-willst-tter-Q77072
+    a shinra:Person ;
+    rdfs:label "リヒャルト・ヴィルシュテッター"@ja ; rdfs:label "Richard Willstätter"@en ;
+    shinra:wikidataId "Q77072" ;
+    skos:notation "SHINRA_I012142" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-george-porter-Q106762
+    a shinra:Person ;
+    rdfs:label "ジョージ・ポーター"@ja ; rdfs:label "George Porter"@en ;
+    shinra:wikidataId "Q106762" ;
+    skos:notation "SHINRA_I012143" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-marie-sklodowska-curie-Q7186
+    a shinra:Person ;
+    rdfs:label "マリ・キュリー"@ja ; rdfs:label "Marie Sklodowska-Curie"@en ;
+    shinra:wikidataId "Q7186" ;
+    skos:notation "SHINRA_I012144" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-sidney-altman-Q102266
+    a shinra:Person ;
+    rdfs:label "シドニー・アルトマン"@ja ; rdfs:label "Sidney Altman"@en ;
+    shinra:wikidataId "Q102266" ;
+    skos:notation "SHINRA_I012145" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-luc-montagnier-Q103598
+    a shinra:Person ;
+    rdfs:label "リュック・モンタニエ"@ja ; rdfs:label "Luc Montagnier"@en ;
+    shinra:wikidataId "Q103598" ;
+    skos:notation "SHINRA_I012146" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hartmut-michel-Q77086
+    a shinra:Person ;
+    rdfs:label "ハルトムート・ミヒェル"@ja ; rdfs:label "Hartmut Michel"@en ;
+    shinra:wikidataId "Q77086" ;
+    skos:notation "SHINRA_I012147" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-christian-b-anfinsen-Q102278
+    a shinra:Person ;
+    rdfs:label "クリスチャン・アンフィンセン"@ja ; rdfs:label "Christian B. Anfinsen"@en ;
+    shinra:wikidataId "Q102278" ;
+    skos:notation "SHINRA_I012148" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-karrer-Q73093
+    a shinra:Person ;
+    rdfs:label "パウル・カラー"@ja ; rdfs:label "Paul Karrer"@en ;
+    shinra:wikidataId "Q73093" ;
+    skos:notation "SHINRA_I012149" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-william-p-murphy-Q80323
+    a shinra:Person ;
+    rdfs:label "ウィリアム・P・マーフィ"@ja ; rdfs:label "William P. Murphy"@en ;
+    shinra:wikidataId "Q80323" ;
+    skos:notation "SHINRA_I012150" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-francis-william-aston-Q102291
+    a shinra:Person ;
+    rdfs:label "フランシス・アストン"@ja ; rdfs:label "Francis William Aston"@en ;
+    shinra:wikidataId "Q102291" ;
+    skos:notation "SHINRA_I012151" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-lefkowitz-Q80910
+    a shinra:Person ;
+    rdfs:label "ロバート・レフコウィッツ"@ja ; rdfs:label "Robert Lefkowitz"@en ;
+    shinra:wikidataId "Q80910" ;
+    skos:notation "SHINRA_I012152" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-benjamin-list-Q105572
+    a shinra:Person ;
+    rdfs:label "ベンジャミン・リスト"@ja ; rdfs:label "Benjamin List"@en ;
+    shinra:wikidataId "Q105572" ;
+    skos:notation "SHINRA_I012153" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-sabatier-Q104575
+    a shinra:Person ;
+    rdfs:label "ポール・サバティエ"@ja ; rdfs:label "Paul Sabatier"@en ;
+    shinra:wikidataId "Q104575" ;
+    skos:notation "SHINRA_I012154" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-victor-grignard-Q104582
+    a shinra:Person ;
+    rdfs:label "ヴィクトル・グリニャール"@ja ; rdfs:label "Victor Grignard"@en ;
+    shinra:wikidataId "Q104582" ;
+    skos:notation "SHINRA_I012155" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-adolf-windaus-Q77142
+    a shinra:Person ;
+    rdfs:label "アドルフ・ヴィンダウス"@ja ; rdfs:label "Adolf Windaus"@en ;
+    shinra:wikidataId "Q77142" ;
+    skos:notation "SHINRA_I012156" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-brian-kobilka-Q80907
+    a shinra:Person ;
+    rdfs:label "ブライアン・コビルカ"@ja ; rdfs:label "Brian Kobilka"@en ;
+    shinra:wikidataId "Q80907" ;
+    skos:notation "SHINRA_I012157" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-peter-debye-Q103835
+    a shinra:Person ;
+    rdfs:label "ピーター・デバイ"@ja ; rdfs:label "Peter Debye"@en ;
+    shinra:wikidataId "Q103835" ;
+    skos:notation "SHINRA_I012158" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-lauterbur-Q106547
+    a shinra:Person ;
+    rdfs:label "ポール・ラウターバー"@ja ; rdfs:label "Paul Lauterbur"@en ;
+    shinra:wikidataId "Q106547" ;
+    skos:notation "SHINRA_I012159" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hermann-joseph-muller-Q83598
+    a shinra:Person ;
+    rdfs:label "ハーマン・J・マラー"@ja ; rdfs:label "Hermann Joseph Muller"@en ;
+    shinra:wikidataId "Q83598" ;
+    skos:notation "SHINRA_I012160" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-georg-wittig-Q77171
+    a shinra:Person ;
+    rdfs:label "ゲオルク・ウィッティヒ"@ja ; rdfs:label "Georg Wittig"@en ;
+    shinra:wikidataId "Q77171" ;
+    skos:notation "SHINRA_I012161" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-henry-hallett-dale-Q72194
+    a shinra:Person ;
+    rdfs:label "ヘンリー・ハレット・デール"@ja ; rdfs:label "Henry Hallett Dale"@en ;
+    shinra:wikidataId "Q72194" ;
+    skos:notation "SHINRA_I012162" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-rosalyn-sussman-yalow-Q107402
+    a shinra:Person ;
+    rdfs:label "ロサリン・ヤロー"@ja ; rdfs:label "Rosalyn Sussman Yalow"@en ;
+    shinra:wikidataId "Q107402" ;
+    skos:notation "SHINRA_I012163" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-fran-oise-barr-sinoussi-Q103844
+    a shinra:Person ;
+    rdfs:label "フランソワーズ・バレ＝シヌシ"@ja ; rdfs:label "Françoise Barré-Sinoussi."@en ;
+    shinra:wikidataId "Q103844" ;
+    skos:notation "SHINRA_I012164" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-daniel-carleton-gajdusek-Q108576
+    a shinra:Person ;
+    rdfs:label "ダニエル・カールトン・ガジュセック"@ja ; rdfs:label "Daniel Carleton Gajdusek"@en ;
+    shinra:wikidataId "Q108576" ;
+    skos:notation "SHINRA_I012165" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-alan-j-heeger-Q106751
+    a shinra:Person ;
+    rdfs:label "アラン・ヒーガー"@ja ; rdfs:label "Alan J. Heeger"@en ;
+    shinra:wikidataId "Q106751" ;
+    skos:notation "SHINRA_I012166" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-vladimir-prelog-Q83501
+    a shinra:Person ;
+    rdfs:label "ウラジミール・プレローグ"@ja ; rdfs:label "Vladimir Prelog"@en ;
+    shinra:wikidataId "Q83501" ;
+    skos:notation "SHINRA_I012167" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-max-delbr-ck-Q76807
+    a shinra:Person ;
+    rdfs:label "マックス・デルブリュック"@ja ; rdfs:label "Max Delbrück"@en ;
+    shinra:wikidataId "Q76807" ;
+    skos:notation "SHINRA_I012168" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-jean-marie-lehn-Q107690
+    a shinra:Person ;
+    rdfs:label "ジャン＝マリー・レーン"@ja ; rdfs:label "Jean-Marie Lehn"@en ;
+    shinra:wikidataId "Q107690" ;
+    skos:notation "SHINRA_I012169" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-svante-august-arrhenius-Q80956
+    a shinra:Person ;
+    rdfs:label "スヴァンテ・アレニウス"@ja ; rdfs:label "Svante August Arrhenius"@en ;
+    shinra:wikidataId "Q80956" ;
+    skos:notation "SHINRA_I012170" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-martin-chalfie-Q106699
+    a shinra:Person ;
+    rdfs:label "マーティン・チャルフィー"@ja ; rdfs:label "Martin Chalfie"@en ;
+    shinra:wikidataId "Q106699" ;
+    skos:notation "SHINRA_I012171" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-richard-f-heck-Q106471
+    a shinra:Person ;
+    rdfs:label "リチャード・ヘック"@ja ; rdfs:label "Richard F. Heck"@en ;
+    shinra:wikidataId "Q106471" ;
+    skos:notation "SHINRA_I012172" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-berg-Q102379
+    a shinra:Person ;
+    rdfs:label "ポール・バーグ"@ja ; rdfs:label "Paul Berg"@en ;
+    shinra:wikidataId "Q102379" ;
+    skos:notation "SHINRA_I012173" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-jacobus-henricus-van-t-hoff-Q102822
+    a shinra:Person ;
+    rdfs:label "ヤコブス・ヘンリクス・ファント・ホッフ"@ja ; rdfs:label "Jacobus Henricus van 't Hoff"@en ;
+    shinra:wikidataId "Q102822" ;
+    skos:notation "SHINRA_I012174" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-james-watson-Q83333
+    a shinra:Person ;
+    rdfs:label "ジェームズ・ワトソン"@ja ; rdfs:label "James Watson"@en ;
+    shinra:wikidataId "Q83333" ;
+    skos:notation "SHINRA_I012175" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-karl-ziegler-Q76624
+    a shinra:Person ;
+    rdfs:label "カール・ツィーグラー"@ja ; rdfs:label "Karl Ziegler"@en ;
+    shinra:wikidataId "Q76624" ;
+    skos:notation "SHINRA_I012176" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-george-de-hevesy-Q76951
+    a shinra:Person ;
+    rdfs:label "ゲオルク・ド・ヘヴェシー"@ja ; rdfs:label "George de Hevesy"@en ;
+    shinra:wikidataId "Q76951" ;
+    skos:notation "SHINRA_I012177" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-hans-fischer-Q76604
+    a shinra:Person ;
+    rdfs:label "ハンス・フィッシャー"@ja ; rdfs:label "Hans Fischer"@en ;
+    shinra:wikidataId "Q76604" ;
+    skos:notation "SHINRA_I012178" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-erwin-neher-Q77126
+    a shinra:Person ;
+    rdfs:label "エルヴィン・ネーアー"@ja ; rdfs:label "Erwin Neher"@en ;
+    shinra:wikidataId "Q77126" ;
+    skos:notation "SHINRA_I012179" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-richard-smalley-Q106746
+    a shinra:Person ;
+    rdfs:label "リチャード・スモーリー"@ja ; rdfs:label "Richard Smalley"@en ;
+    shinra:wikidataId "Q106746" ;
+    skos:notation "SHINRA_I012180" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-paul-d-boyer-Q102395
+    a shinra:Person ;
+    rdfs:label "ポール・ボイヤー"@ja ; rdfs:label "Paul D. Boyer"@en ;
+    shinra:wikidataId "Q102395" ;
+    skos:notation "SHINRA_I012181" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-herbert-c-brown-Q102406
+    a shinra:Person ;
+    rdfs:label "ハーバート・ブラウン"@ja ; rdfs:label "Herbert C. Brown"@en ;
+    shinra:wikidataId "Q102406" ;
+    skos:notation "SHINRA_I012182" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-thomas-c-s-dhof-Q97270
+    a shinra:Person ;
+    rdfs:label "トーマス・スードフ"@ja ; rdfs:label "Thomas C. Südhof"@en ;
+    shinra:wikidataId "Q97270" ;
+    skos:notation "SHINRA_I012183" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-karl-landsteiner-Q84405
+    a shinra:Person ;
+    rdfs:label "カール・ラントシュタイナー"@ja ; rdfs:label "Karl Landsteiner"@en ;
+    shinra:wikidataId "Q84405" ;
+    skos:notation "SHINRA_I012184" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-jerome-karle-Q106733
+    a shinra:Person ;
+    rdfs:label "ジェローム・カール"@ja ; rdfs:label "Jerome Karle"@en ;
+    shinra:wikidataId "Q106733" ;
+    skos:notation "SHINRA_I012185" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-john-fenn-Q106738
+    a shinra:Person ;
+    rdfs:label "ジョン・フェン"@ja ; rdfs:label "John Fenn"@en ;
+    shinra:wikidataId "Q106738" ;
+    skos:notation "SHINRA_I012186" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-derek-barton-Q102419
+    a shinra:Person ;
+    rdfs:label "デレック・バートン"@ja ; rdfs:label "Derek Barton"@en ;
+    shinra:wikidataId "Q102419" ;
+    skos:notation "SHINRA_I012187" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-robert-b-r-ny-Q78478
+    a shinra:Person ;
+    rdfs:label "ローベルト・バーラーニ"@ja ; rdfs:label "Robert Bárány"@en ;
+    shinra:wikidataId "Q78478" ;
+    skos:notation "SHINRA_I012188" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-julius-wagner-jauregg-Q78479
+    a shinra:Person ;
+    rdfs:label "ユリウス・ワーグナー＝ヤウレック"@ja ; rdfs:label "Julius Wagner-Jauregg"@en ;
+    shinra:wikidataId "Q78479" ;
+    skos:notation "SHINRA_I012189" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-bruce-beutler-Q104592
+    a shinra:Person ;
+    rdfs:label "ブルース・ボイトラー"@ja ; rdfs:label "Bruce Beutler"@en ;
+    shinra:wikidataId "Q104592" ;
+    skos:notation "SHINRA_I012190" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-james-batcheller-sumner-Q106756
+    a shinra:Person ;
+    rdfs:label "ジェームズ・サムナー"@ja ; rdfs:label "James Batcheller Sumner"@en ;
+    shinra:wikidataId "Q106756" ;
+    skos:notation "SHINRA_I012191" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-konrad-zacharias-lorenz-Q78496
+    a shinra:Person ;
+    rdfs:label "コンラート・ローレンツ"@ja ; rdfs:label "Konrad Zacharias Lorenz"@en ;
+    shinra:wikidataId "Q78496" ;
+    skos:notation "SHINRA_I012192" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-carl-ferdinand-cori-Q78501
+    a shinra:Person ;
+    rdfs:label "カール・コリ"@ja ; rdfs:label "Carl Ferdinand Cori"@en ;
+    shinra:wikidataId "Q78501" ;
+    skos:notation "SHINRA_I012193" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-harald-zur-hausen-Q75847
+    a shinra:Person ;
+    rdfs:label "ハラルド・ツア・ハウゼン"@ja ; rdfs:label "Harald zur Hausen"@en ;
+    shinra:wikidataId "Q75847" ;
+    skos:notation "SHINRA_I012194" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-fritz-albert-lipmann-Q77104
+    a shinra:Person ;
+    rdfs:label "フリッツ・アルベルト・リップマン"@ja ; rdfs:label "Fritz Albert Lipmann"@en ;
+    shinra:wikidataId "Q77104" ;
+    skos:notation "SHINRA_I012195" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-emil-von-behring-Q76425
+    a shinra:Person ;
+    rdfs:label "エミール・アドルフ・フォン・ベーリング"@ja ; rdfs:label "Emil von Behring"@en ;
+    shinra:wikidataId "Q76425" ;
+    skos:notation "SHINRA_I012196" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-herbert-a-hauptman-Q107422
+    a shinra:Person ;
+    rdfs:label "ハーバート・ハウプトマン"@ja ; rdfs:label "Herbert A. Hauptman"@en ;
+    shinra:wikidataId "Q107422" ;
+    skos:notation "SHINRA_I012197" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-ralph-steinman-Q105494
+    a shinra:Person ;
+    rdfs:label "ラルフ・スタインマン"@ja ; rdfs:label "Ralph Steinman"@en ;
+    shinra:wikidataId "Q105494" ;
+    skos:notation "SHINRA_I012198" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-christiaan-eijkman-Q107609
+    a shinra:Person ;
+    rdfs:label "クリスティアーン・エイクマン"@ja ; rdfs:label "Christiaan Eijkman"@en ;
+    shinra:wikidataId "Q107609" ;
+    skos:notation "SHINRA_I012199" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:person-nobel-carl-bosch-Q76606
+    a shinra:Person ;
+    rdfs:label "カール・ボッシュ"@ja ; rdfs:label "Carl Bosch"@en ;
+    shinra:wikidataId "Q76606" ;
+    skos:notation "SHINRA_I012200" ; dcterms:created "2026-06-19"^^xsd:date .

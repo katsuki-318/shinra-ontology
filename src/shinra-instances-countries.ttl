@@ -1,0 +1,1234 @@
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/shinra/ont/instances-countries>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title "神羅万象オントロジー — 国家インスタンス"@ja , "Shinra Ontology — Country Instances"@en ;
+    dcterms:created "2026-06-19"^^xsd:date .
+
+
+shinra-data:country-palestine-Q219060
+    a shinra:Country ;
+    rdfs:label "パレスチナ国"@ja ; rdfs:label "Palestine"@en ;
+    shinra:wikidataId "Q219060" ;
+    skos:notation "SHINRA_I060001" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-south-africa-Q258
+    a shinra:Country ;
+    rdfs:label "南アフリカ共和国"@ja ; rdfs:label "South Africa"@en ;
+    shinra:wikidataId "Q258" ;
+    skos:notation "SHINRA_I060002" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-algeria-Q262
+    a shinra:Country ;
+    rdfs:label "アルジェリア"@ja ; rdfs:label "Algeria"@en ;
+    shinra:wikidataId "Q262" ;
+    skos:notation "SHINRA_I060003" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-uzbekistan-Q265
+    a shinra:Country ;
+    rdfs:label "ウズベキスタン"@ja ; rdfs:label "Uzbekistan"@en ;
+    shinra:wikidataId "Q265" ;
+    skos:notation "SHINRA_I060004" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-chile-Q298
+    a shinra:Country ;
+    rdfs:label "チリ"@ja ; rdfs:label "Chile"@en ;
+    shinra:wikidataId "Q298" ;
+    skos:notation "SHINRA_I060005" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-singapore-Q334
+    a shinra:Country ;
+    rdfs:label "シンガポール"@ja ; rdfs:label "Singapore"@en ;
+    shinra:wikidataId "Q334" ;
+    skos:notation "SHINRA_I060006" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-liechtenstein-Q347
+    a shinra:Country ;
+    rdfs:label "リヒテンシュタイン"@ja ; rdfs:label "Liechtenstein"@en ;
+    shinra:wikidataId "Q347" ;
+    skos:notation "SHINRA_I060007" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bahrain-Q398
+    a shinra:Country ;
+    rdfs:label "バーレーン"@ja ; rdfs:label "Bahrain"@en ;
+    shinra:wikidataId "Q398" ;
+    skos:notation "SHINRA_I060008" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-armenia-Q399
+    a shinra:Country ;
+    rdfs:label "アルメニア"@ja ; rdfs:label "Armenia"@en ;
+    shinra:wikidataId "Q399" ;
+    skos:notation "SHINRA_I060009" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-serbia-Q403
+    a shinra:Country ;
+    rdfs:label "セルビア"@ja ; rdfs:label "Serbia"@en ;
+    shinra:wikidataId "Q403" ;
+    skos:notation "SHINRA_I060010" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-australia-Q408
+    a shinra:Country ;
+    rdfs:label "オーストラリア"@ja ; rdfs:label "Australia"@en ;
+    shinra:wikidataId "Q408" ;
+    skos:notation "SHINRA_I060011" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-argentina-Q414
+    a shinra:Country ;
+    rdfs:label "アルゼンチン"@ja ; rdfs:label "Argentina"@en ;
+    shinra:wikidataId "Q414" ;
+    skos:notation "SHINRA_I060012" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-peru-Q419
+    a shinra:Country ;
+    rdfs:label "ペルー"@ja ; rdfs:label "Peru"@en ;
+    shinra:wikidataId "Q419" ;
+    skos:notation "SHINRA_I060013" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-north-korea-Q423
+    a shinra:Country ;
+    rdfs:label "朝鮮民主主義人民共和国"@ja ; rdfs:label "North Korea"@en ;
+    shinra:wikidataId "Q423" ;
+    skos:notation "SHINRA_I060014" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cambodia-Q424
+    a shinra:Country ;
+    rdfs:label "カンボジア"@ja ; rdfs:label "Cambodia"@en ;
+    shinra:wikidataId "Q424" ;
+    skos:notation "SHINRA_I060015" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-timor-leste-Q574
+    a shinra:Country ;
+    rdfs:label "東ティモール"@ja ; rdfs:label "Timor-Leste"@en ;
+    shinra:wikidataId "Q574" ;
+    skos:notation "SHINRA_I060016" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-chad-Q657
+    a shinra:Country ;
+    rdfs:label "チャド"@ja ; rdfs:label "Chad"@en ;
+    shinra:wikidataId "Q657" ;
+    skos:notation "SHINRA_I060017" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-new-zealand-Q664
+    a shinra:Country ;
+    rdfs:label "ニュージーランド"@ja ; rdfs:label "New Zealand"@en ;
+    shinra:wikidataId "Q664" ;
+    skos:notation "SHINRA_I060018" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-india-Q668
+    a shinra:Country ;
+    rdfs:label "インド"@ja ; rdfs:label "India"@en ;
+    shinra:wikidataId "Q668" ;
+    skos:notation "SHINRA_I060019" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-tuvalu-Q672
+    a shinra:Country ;
+    rdfs:label "ツバル"@ja ; rdfs:label "Tuvalu"@en ;
+    shinra:wikidataId "Q672" ;
+    skos:notation "SHINRA_I060020" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-tonga-Q678
+    a shinra:Country ;
+    rdfs:label "トンガ"@ja ; rdfs:label "Tonga"@en ;
+    shinra:wikidataId "Q678" ;
+    skos:notation "SHINRA_I060021" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-samoa-Q683
+    a shinra:Country ;
+    rdfs:label "サモア"@ja ; rdfs:label "Samoa"@en ;
+    shinra:wikidataId "Q683" ;
+    skos:notation "SHINRA_I060022" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-vanuatu-Q686
+    a shinra:Country ;
+    rdfs:label "バヌアツ"@ja ; rdfs:label "Vanuatu"@en ;
+    shinra:wikidataId "Q686" ;
+    skos:notation "SHINRA_I060023" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-solomon-islands-Q685
+    a shinra:Country ;
+    rdfs:label "ソロモン諸島"@ja ; rdfs:label "Solomon Islands"@en ;
+    shinra:wikidataId "Q685" ;
+    skos:notation "SHINRA_I060024" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-papua-new-guinea-Q691
+    a shinra:Country ;
+    rdfs:label "パプアニューギニア"@ja ; rdfs:label "Papua New Guinea"@en ;
+    shinra:wikidataId "Q691" ;
+    skos:notation "SHINRA_I060025" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-palau-Q695
+    a shinra:Country ;
+    rdfs:label "パラオ"@ja ; rdfs:label "Palau"@en ;
+    shinra:wikidataId "Q695" ;
+    skos:notation "SHINRA_I060026" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-nauru-Q697
+    a shinra:Country ;
+    rdfs:label "ナウル"@ja ; rdfs:label "Nauru"@en ;
+    shinra:wikidataId "Q697" ;
+    skos:notation "SHINRA_I060027" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-federated-states-of-micronesia-Q702
+    a shinra:Country ;
+    rdfs:label "ミクロネシア連邦"@ja ; rdfs:label "Federated States of Micronesia"@en ;
+    shinra:wikidataId "Q702" ;
+    skos:notation "SHINRA_I060028" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kiribati-Q710
+    a shinra:Country ;
+    rdfs:label "キリバス"@ja ; rdfs:label "Kiribati"@en ;
+    shinra:wikidataId "Q710" ;
+    skos:notation "SHINRA_I060029" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mongolia-Q711
+    a shinra:Country ;
+    rdfs:label "モンゴル国"@ja ; rdfs:label "Mongolia"@en ;
+    shinra:wikidataId "Q711" ;
+    skos:notation "SHINRA_I060030" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-marshall-islands-Q709
+    a shinra:Country ;
+    rdfs:label "マーシャル諸島"@ja ; rdfs:label "Marshall Islands"@en ;
+    shinra:wikidataId "Q709" ;
+    skos:notation "SHINRA_I060031" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-fiji-Q712
+    a shinra:Country ;
+    rdfs:label "フィジー"@ja ; rdfs:label "Fiji"@en ;
+    shinra:wikidataId "Q712" ;
+    skos:notation "SHINRA_I060032" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-venezuela-Q717
+    a shinra:Country ;
+    rdfs:label "ベネズエラ"@ja ; rdfs:label "Venezuela"@en ;
+    shinra:wikidataId "Q717" ;
+    skos:notation "SHINRA_I060033" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-suriname-Q730
+    a shinra:Country ;
+    rdfs:label "スリナム"@ja ; rdfs:label "Suriname"@en ;
+    shinra:wikidataId "Q730" ;
+    skos:notation "SHINRA_I060034" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-guyana-Q734
+    a shinra:Country ;
+    rdfs:label "ガイアナ"@ja ; rdfs:label "Guyana"@en ;
+    shinra:wikidataId "Q734" ;
+    skos:notation "SHINRA_I060035" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-paraguay-Q733
+    a shinra:Country ;
+    rdfs:label "パラグアイ"@ja ; rdfs:label "Paraguay"@en ;
+    shinra:wikidataId "Q733" ;
+    skos:notation "SHINRA_I060036" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ecuador-Q736
+    a shinra:Country ;
+    rdfs:label "エクアドル"@ja ; rdfs:label "Ecuador"@en ;
+    shinra:wikidataId "Q736" ;
+    skos:notation "SHINRA_I060037" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cura-ao-Q25279
+    a shinra:Country ;
+    rdfs:label "キュラソー"@ja ; rdfs:label "Curaçao"@en ;
+    shinra:wikidataId "Q25279" ;
+    skos:notation "SHINRA_I060038" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-sint-maarten-Q26273
+    a shinra:Country ;
+    rdfs:label "シント・マールテン"@ja ; rdfs:label "Sint Maarten"@en ;
+    shinra:wikidataId "Q26273" ;
+    skos:notation "SHINRA_I060039" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cook-islands-Q26988
+    a shinra:Country ;
+    rdfs:label "クック諸島"@ja ; rdfs:label "Cook Islands"@en ;
+    shinra:wikidataId "Q26988" ;
+    skos:notation "SHINRA_I060040" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kingdom-of-the-netherlands-Q29999
+    a shinra:Country ;
+    rdfs:label "オランダ王国"@ja ; rdfs:label "Kingdom of the Netherlands"@en ;
+    shinra:wikidataId "Q29999" ;
+    skos:notation "SHINRA_I060041" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-canada-Q16
+    a shinra:Country ;
+    rdfs:label "カナダ"@ja ; rdfs:label "Canada"@en ;
+    shinra:wikidataId "Q16" ;
+    skos:notation "SHINRA_I060042" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-japan-Q17
+    a shinra:Country ;
+    rdfs:label "日本"@ja ; rdfs:label "Japan"@en ;
+    shinra:wikidataId "Q17" ;
+    skos:notation "SHINRA_I060043" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-norway-Q20
+    a shinra:Country ;
+    rdfs:label "ノルウェー"@ja ; rdfs:label "Norway"@en ;
+    shinra:wikidataId "Q20" ;
+    skos:notation "SHINRA_I060044" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ireland-Q27
+    a shinra:Country ;
+    rdfs:label "アイルランド"@ja ; rdfs:label "Ireland"@en ;
+    shinra:wikidataId "Q27" ;
+    skos:notation "SHINRA_I060045" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-united-states-Q30
+    a shinra:Country ;
+    rdfs:label "アメリカ合衆国"@ja ; rdfs:label "United States"@en ;
+    shinra:wikidataId "Q30" ;
+    skos:notation "SHINRA_I060046" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-belgium-Q31
+    a shinra:Country ;
+    rdfs:label "ベルギー"@ja ; rdfs:label "Belgium"@en ;
+    shinra:wikidataId "Q31" ;
+    skos:notation "SHINRA_I060047" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-hungary-Q28
+    a shinra:Country ;
+    rdfs:label "ハンガリー"@ja ; rdfs:label "Hungary"@en ;
+    shinra:wikidataId "Q28" ;
+    skos:notation "SHINRA_I060048" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-spain-Q29
+    a shinra:Country ;
+    rdfs:label "スペイン"@ja ; rdfs:label "Spain"@en ;
+    shinra:wikidataId "Q29" ;
+    skos:notation "SHINRA_I060049" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-sweden-Q34
+    a shinra:Country ;
+    rdfs:label "スウェーデン"@ja ; rdfs:label "Sweden"@en ;
+    shinra:wikidataId "Q34" ;
+    skos:notation "SHINRA_I060050" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-denmark-Q35
+    a shinra:Country ;
+    rdfs:label "デンマーク"@ja ; rdfs:label "Denmark"@en ;
+    shinra:wikidataId "Q35" ;
+    skos:notation "SHINRA_I060051" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-luxembourg-Q32
+    a shinra:Country ;
+    rdfs:label "ルクセンブルク"@ja ; rdfs:label "Luxembourg"@en ;
+    shinra:wikidataId "Q32" ;
+    skos:notation "SHINRA_I060052" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-finland-Q33
+    a shinra:Country ;
+    rdfs:label "フィンランド"@ja ; rdfs:label "Finland"@en ;
+    shinra:wikidataId "Q33" ;
+    skos:notation "SHINRA_I060053" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-italy-Q38
+    a shinra:Country ;
+    rdfs:label "イタリア"@ja ; rdfs:label "Italy"@en ;
+    shinra:wikidataId "Q38" ;
+    skos:notation "SHINRA_I060054" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-switzerland-Q39
+    a shinra:Country ;
+    rdfs:label "スイス"@ja ; rdfs:label "Switzerland"@en ;
+    shinra:wikidataId "Q39" ;
+    skos:notation "SHINRA_I060055" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-poland-Q36
+    a shinra:Country ;
+    rdfs:label "ポーランド"@ja ; rdfs:label "Poland"@en ;
+    shinra:wikidataId "Q36" ;
+    skos:notation "SHINRA_I060056" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-lithuania-Q37
+    a shinra:Country ;
+    rdfs:label "リトアニア"@ja ; rdfs:label "Lithuania"@en ;
+    shinra:wikidataId "Q37" ;
+    skos:notation "SHINRA_I060057" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-turkey-Q43
+    a shinra:Country ;
+    rdfs:label "トルコ"@ja ; rdfs:label "Turkey"@en ;
+    shinra:wikidataId "Q43" ;
+    skos:notation "SHINRA_I060058" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-austria-Q40
+    a shinra:Country ;
+    rdfs:label "オーストリア"@ja ; rdfs:label "Austria"@en ;
+    shinra:wikidataId "Q40" ;
+    skos:notation "SHINRA_I060059" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-greece-Q41
+    a shinra:Country ;
+    rdfs:label "ギリシャ"@ja ; rdfs:label "Greece"@en ;
+    shinra:wikidataId "Q41" ;
+    skos:notation "SHINRA_I060060" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-portugal-Q45
+    a shinra:Country ;
+    rdfs:label "ポルトガル"@ja ; rdfs:label "Portugal"@en ;
+    shinra:wikidataId "Q45" ;
+    skos:notation "SHINRA_I060061" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-egypt-Q79
+    a shinra:Country ;
+    rdfs:label "エジプト"@ja ; rdfs:label "Egypt"@en ;
+    shinra:wikidataId "Q79" ;
+    skos:notation "SHINRA_I060062" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-uruguay-Q77
+    a shinra:Country ;
+    rdfs:label "ウルグアイ"@ja ; rdfs:label "Uruguay"@en ;
+    shinra:wikidataId "Q77" ;
+    skos:notation "SHINRA_I060063" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mexico-Q96
+    a shinra:Country ;
+    rdfs:label "メキシコ"@ja ; rdfs:label "Mexico"@en ;
+    shinra:wikidataId "Q96" ;
+    skos:notation "SHINRA_I060064" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kenya-Q114
+    a shinra:Country ;
+    rdfs:label "ケニア"@ja ; rdfs:label "Kenya"@en ;
+    shinra:wikidataId "Q114" ;
+    skos:notation "SHINRA_I060065" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ethiopia-Q115
+    a shinra:Country ;
+    rdfs:label "エチオピア"@ja ; rdfs:label "Ethiopia"@en ;
+    shinra:wikidataId "Q115" ;
+    skos:notation "SHINRA_I060066" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ghana-Q117
+    a shinra:Country ;
+    rdfs:label "ガーナ"@ja ; rdfs:label "Ghana"@en ;
+    shinra:wikidataId "Q117" ;
+    skos:notation "SHINRA_I060067" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-france-Q142
+    a shinra:Country ;
+    rdfs:label "フランス"@ja ; rdfs:label "France"@en ;
+    shinra:wikidataId "Q142" ;
+    skos:notation "SHINRA_I060068" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-united-kingdom-Q145
+    a shinra:Country ;
+    rdfs:label "イギリス"@ja ; rdfs:label "United Kingdom"@en ;
+    shinra:wikidataId "Q145" ;
+    skos:notation "SHINRA_I060069" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-people-s-republic-of-china-Q148
+    a shinra:Country ;
+    rdfs:label "中華人民共和国"@ja ; rdfs:label "People's Republic of China"@en ;
+    shinra:wikidataId "Q148" ;
+    skos:notation "SHINRA_I060070" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-brazil-Q155
+    a shinra:Country ;
+    rdfs:label "ブラジル"@ja ; rdfs:label "Brazil"@en ;
+    shinra:wikidataId "Q155" ;
+    skos:notation "SHINRA_I060071" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-russia-Q159
+    a shinra:Country ;
+    rdfs:label "ロシア"@ja ; rdfs:label "Russia"@en ;
+    shinra:wikidataId "Q159" ;
+    skos:notation "SHINRA_I060072" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-germany-Q183
+    a shinra:Country ;
+    rdfs:label "ドイツ"@ja ; rdfs:label "Germany"@en ;
+    shinra:wikidataId "Q183" ;
+    skos:notation "SHINRA_I060073" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-belarus-Q184
+    a shinra:Country ;
+    rdfs:label "ベラルーシ"@ja ; rdfs:label "Belarus"@en ;
+    shinra:wikidataId "Q184" ;
+    skos:notation "SHINRA_I060074" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-estonia-Q191
+    a shinra:Country ;
+    rdfs:label "エストニア"@ja ; rdfs:label "Estonia"@en ;
+    shinra:wikidataId "Q191" ;
+    skos:notation "SHINRA_I060075" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-iceland-Q189
+    a shinra:Country ;
+    rdfs:label "アイスランド"@ja ; rdfs:label "Iceland"@en ;
+    shinra:wikidataId "Q189" ;
+    skos:notation "SHINRA_I060076" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-latvia-Q211
+    a shinra:Country ;
+    rdfs:label "ラトビア"@ja ; rdfs:label "Latvia"@en ;
+    shinra:wikidataId "Q211" ;
+    skos:notation "SHINRA_I060077" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-slovakia-Q214
+    a shinra:Country ;
+    rdfs:label "スロバキア"@ja ; rdfs:label "Slovakia"@en ;
+    shinra:wikidataId "Q214" ;
+    skos:notation "SHINRA_I060078" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-slovenia-Q215
+    a shinra:Country ;
+    rdfs:label "スロベニア"@ja ; rdfs:label "Slovenia"@en ;
+    shinra:wikidataId "Q215" ;
+    skos:notation "SHINRA_I060079" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ukraine-Q212
+    a shinra:Country ;
+    rdfs:label "ウクライナ"@ja ; rdfs:label "Ukraine"@en ;
+    shinra:wikidataId "Q212" ;
+    skos:notation "SHINRA_I060080" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-czech-republic-Q213
+    a shinra:Country ;
+    rdfs:label "チェコ共和国"@ja ; rdfs:label "Czech Republic"@en ;
+    shinra:wikidataId "Q213" ;
+    skos:notation "SHINRA_I060081" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-romania-Q218
+    a shinra:Country ;
+    rdfs:label "ルーマニア"@ja ; rdfs:label "Romania"@en ;
+    shinra:wikidataId "Q218" ;
+    skos:notation "SHINRA_I060082" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bulgaria-Q219
+    a shinra:Country ;
+    rdfs:label "ブルガリア"@ja ; rdfs:label "Bulgaria"@en ;
+    shinra:wikidataId "Q219" ;
+    skos:notation "SHINRA_I060083" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-moldova-Q217
+    a shinra:Country ;
+    rdfs:label "モルドバ"@ja ; rdfs:label "Moldova"@en ;
+    shinra:wikidataId "Q217" ;
+    skos:notation "SHINRA_I060084" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-albania-Q222
+    a shinra:Country ;
+    rdfs:label "アルバニア"@ja ; rdfs:label "Albania"@en ;
+    shinra:wikidataId "Q222" ;
+    skos:notation "SHINRA_I060085" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-greenland-Q223
+    a shinra:Country ;
+    rdfs:label "グリーンランド"@ja ; rdfs:label "Greenland"@en ;
+    shinra:wikidataId "Q223" ;
+    skos:notation "SHINRA_I060086" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-north-macedonia-Q221
+    a shinra:Country ;
+    rdfs:label "北マケドニア"@ja ; rdfs:label "North Macedonia"@en ;
+    shinra:wikidataId "Q221" ;
+    skos:notation "SHINRA_I060087" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-azerbaijan-Q227
+    a shinra:Country ;
+    rdfs:label "アゼルバイジャン"@ja ; rdfs:label "Azerbaijan"@en ;
+    shinra:wikidataId "Q227" ;
+    skos:notation "SHINRA_I060088" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-croatia-Q224
+    a shinra:Country ;
+    rdfs:label "クロアチア"@ja ; rdfs:label "Croatia"@en ;
+    shinra:wikidataId "Q224" ;
+    skos:notation "SHINRA_I060089" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bosnia-and-herzegovina-Q225
+    a shinra:Country ;
+    rdfs:label "ボスニア・ヘルツェゴビナ"@ja ; rdfs:label "Bosnia and Herzegovina"@en ;
+    shinra:wikidataId "Q225" ;
+    skos:notation "SHINRA_I060090" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-georgia-Q230
+    a shinra:Country ;
+    rdfs:label "ジョージア"@ja ; rdfs:label "Georgia"@en ;
+    shinra:wikidataId "Q230" ;
+    skos:notation "SHINRA_I060091" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-andorra-Q228
+    a shinra:Country ;
+    rdfs:label "アンドラ"@ja ; rdfs:label "Andorra"@en ;
+    shinra:wikidataId "Q228" ;
+    skos:notation "SHINRA_I060092" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cyprus-Q229
+    a shinra:Country ;
+    rdfs:label "キプロス"@ja ; rdfs:label "Cyprus"@en ;
+    shinra:wikidataId "Q229" ;
+    skos:notation "SHINRA_I060093" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-monaco-Q235
+    a shinra:Country ;
+    rdfs:label "モナコ"@ja ; rdfs:label "Monaco"@en ;
+    shinra:wikidataId "Q235" ;
+    skos:notation "SHINRA_I060094" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kazakhstan-Q232
+    a shinra:Country ;
+    rdfs:label "カザフスタン"@ja ; rdfs:label "Kazakhstan"@en ;
+    shinra:wikidataId "Q232" ;
+    skos:notation "SHINRA_I060095" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-malta-Q233
+    a shinra:Country ;
+    rdfs:label "マルタ"@ja ; rdfs:label "Malta"@en ;
+    shinra:wikidataId "Q233" ;
+    skos:notation "SHINRA_I060096" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-san-marino-Q238
+    a shinra:Country ;
+    rdfs:label "サンマリノ"@ja ; rdfs:label "San Marino"@en ;
+    shinra:wikidataId "Q238" ;
+    skos:notation "SHINRA_I060097" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-montenegro-Q236
+    a shinra:Country ;
+    rdfs:label "モンテネグロ"@ja ; rdfs:label "Montenegro"@en ;
+    shinra:wikidataId "Q236" ;
+    skos:notation "SHINRA_I060098" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-vatican-city-Q237
+    a shinra:Country ;
+    rdfs:label "バチカン"@ja ; rdfs:label "Vatican City"@en ;
+    shinra:wikidataId "Q237" ;
+    skos:notation "SHINRA_I060099" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-belize-Q242
+    a shinra:Country ;
+    rdfs:label "ベリーズ"@ja ; rdfs:label "Belize"@en ;
+    shinra:wikidataId "Q242" ;
+    skos:notation "SHINRA_I060100" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-barbados-Q244
+    a shinra:Country ;
+    rdfs:label "バルバドス"@ja ; rdfs:label "Barbados"@en ;
+    shinra:wikidataId "Q244" ;
+    skos:notation "SHINRA_I060101" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-indonesia-Q252
+    a shinra:Country ;
+    rdfs:label "インドネシア"@ja ; rdfs:label "Indonesia"@en ;
+    shinra:wikidataId "Q252" ;
+    skos:notation "SHINRA_I060102" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-niue-Q34020
+    a shinra:Country ;
+    rdfs:label "ニウエ"@ja ; rdfs:label "Niue"@en ;
+    shinra:wikidataId "Q34020" ;
+    skos:notation "SHINRA_I060103" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-colombia-Q739
+    a shinra:Country ;
+    rdfs:label "コロンビア"@ja ; rdfs:label "Colombia"@en ;
+    shinra:wikidataId "Q739" ;
+    skos:notation "SHINRA_I060104" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bolivia-Q750
+    a shinra:Country ;
+    rdfs:label "ボリビア"@ja ; rdfs:label "Bolivia"@en ;
+    shinra:wikidataId "Q750" ;
+    skos:notation "SHINRA_I060105" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-trinidad-and-tobago-Q754
+    a shinra:Country ;
+    rdfs:label "トリニダード・トバゴ"@ja ; rdfs:label "Trinidad and Tobago"@en ;
+    shinra:wikidataId "Q754" ;
+    skos:notation "SHINRA_I060106" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-saint-vincent-and-the-grenadines-Q757
+    a shinra:Country ;
+    rdfs:label "セントビンセント・グレナディーン"@ja ; rdfs:label "Saint Vincent and the Grenadines"@en ;
+    shinra:wikidataId "Q757" ;
+    skos:notation "SHINRA_I060107" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-saint-kitts-and-nevis-Q763
+    a shinra:Country ;
+    rdfs:label "セントクリストファー・ネイビス"@ja ; rdfs:label "Saint Kitts and Nevis"@en ;
+    shinra:wikidataId "Q763" ;
+    skos:notation "SHINRA_I060108" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-saint-lucia-Q760
+    a shinra:Country ;
+    rdfs:label "セントルシア"@ja ; rdfs:label "Saint Lucia"@en ;
+    shinra:wikidataId "Q760" ;
+    skos:notation "SHINRA_I060109" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-jamaica-Q766
+    a shinra:Country ;
+    rdfs:label "ジャマイカ"@ja ; rdfs:label "Jamaica"@en ;
+    shinra:wikidataId "Q766" ;
+    skos:notation "SHINRA_I060110" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-grenada-Q769
+    a shinra:Country ;
+    rdfs:label "グレナダ"@ja ; rdfs:label "Grenada"@en ;
+    shinra:wikidataId "Q769" ;
+    skos:notation "SHINRA_I060111" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-guatemala-Q774
+    a shinra:Country ;
+    rdfs:label "グアテマラ"@ja ; rdfs:label "Guatemala"@en ;
+    shinra:wikidataId "Q774" ;
+    skos:notation "SHINRA_I060112" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-the-bahamas-Q778
+    a shinra:Country ;
+    rdfs:label "バハマ"@ja ; rdfs:label "The Bahamas"@en ;
+    shinra:wikidataId "Q778" ;
+    skos:notation "SHINRA_I060113" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-honduras-Q783
+    a shinra:Country ;
+    rdfs:label "ホンジュラス"@ja ; rdfs:label "Honduras"@en ;
+    shinra:wikidataId "Q783" ;
+    skos:notation "SHINRA_I060114" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-antigua-and-barbuda-Q781
+    a shinra:Country ;
+    rdfs:label "アンティグア・バーブーダ"@ja ; rdfs:label "Antigua and Barbuda"@en ;
+    shinra:wikidataId "Q781" ;
+    skos:notation "SHINRA_I060115" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-dominican-republic-Q786
+    a shinra:Country ;
+    rdfs:label "ドミニカ共和国"@ja ; rdfs:label "Dominican Republic"@en ;
+    shinra:wikidataId "Q786" ;
+    skos:notation "SHINRA_I060116" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-dominica-Q784
+    a shinra:Country ;
+    rdfs:label "ドミニカ国"@ja ; rdfs:label "Dominica"@en ;
+    shinra:wikidataId "Q784" ;
+    skos:notation "SHINRA_I060117" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-haiti-Q790
+    a shinra:Country ;
+    rdfs:label "ハイチ"@ja ; rdfs:label "Haiti"@en ;
+    shinra:wikidataId "Q790" ;
+    skos:notation "SHINRA_I060118" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-iran-Q794
+    a shinra:Country ;
+    rdfs:label "イラン"@ja ; rdfs:label "Iran"@en ;
+    shinra:wikidataId "Q794" ;
+    skos:notation "SHINRA_I060119" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-el-salvador-Q792
+    a shinra:Country ;
+    rdfs:label "エルサルバドル"@ja ; rdfs:label "El Salvador"@en ;
+    shinra:wikidataId "Q792" ;
+    skos:notation "SHINRA_I060120" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-iraq-Q796
+    a shinra:Country ;
+    rdfs:label "イラク"@ja ; rdfs:label "Iraq"@en ;
+    shinra:wikidataId "Q796" ;
+    skos:notation "SHINRA_I060121" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-costa-rica-Q800
+    a shinra:Country ;
+    rdfs:label "コスタリカ"@ja ; rdfs:label "Costa Rica"@en ;
+    shinra:wikidataId "Q800" ;
+    skos:notation "SHINRA_I060122" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-israel-Q801
+    a shinra:Country ;
+    rdfs:label "イスラエル"@ja ; rdfs:label "Israel"@en ;
+    shinra:wikidataId "Q801" ;
+    skos:notation "SHINRA_I060123" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-panama-Q804
+    a shinra:Country ;
+    rdfs:label "パナマ"@ja ; rdfs:label "Panama"@en ;
+    shinra:wikidataId "Q804" ;
+    skos:notation "SHINRA_I060124" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-yemen-Q805
+    a shinra:Country ;
+    rdfs:label "イエメン"@ja ; rdfs:label "Yemen"@en ;
+    shinra:wikidataId "Q805" ;
+    skos:notation "SHINRA_I060125" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-jordan-Q810
+    a shinra:Country ;
+    rdfs:label "ヨルダン"@ja ; rdfs:label "Jordan"@en ;
+    shinra:wikidataId "Q810" ;
+    skos:notation "SHINRA_I060126" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-nicaragua-Q811
+    a shinra:Country ;
+    rdfs:label "ニカラグア"@ja ; rdfs:label "Nicaragua"@en ;
+    shinra:wikidataId "Q811" ;
+    skos:notation "SHINRA_I060127" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kyrgyzstan-Q813
+    a shinra:Country ;
+    rdfs:label "キルギス"@ja ; rdfs:label "Kyrgyzstan"@en ;
+    shinra:wikidataId "Q813" ;
+    skos:notation "SHINRA_I060128" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-laos-Q819
+    a shinra:Country ;
+    rdfs:label "ラオス"@ja ; rdfs:label "Laos"@en ;
+    shinra:wikidataId "Q819" ;
+    skos:notation "SHINRA_I060129" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kuwait-Q817
+    a shinra:Country ;
+    rdfs:label "クウェート"@ja ; rdfs:label "Kuwait"@en ;
+    shinra:wikidataId "Q817" ;
+    skos:notation "SHINRA_I060130" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-lebanon-Q822
+    a shinra:Country ;
+    rdfs:label "レバノン"@ja ; rdfs:label "Lebanon"@en ;
+    shinra:wikidataId "Q822" ;
+    skos:notation "SHINRA_I060131" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-maldives-Q826
+    a shinra:Country ;
+    rdfs:label "モルディブ"@ja ; rdfs:label "Maldives"@en ;
+    shinra:wikidataId "Q826" ;
+    skos:notation "SHINRA_I060132" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-malaysia-Q833
+    a shinra:Country ;
+    rdfs:label "マレーシア"@ja ; rdfs:label "Malaysia"@en ;
+    shinra:wikidataId "Q833" ;
+    skos:notation "SHINRA_I060133" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-myanmar-Q836
+    a shinra:Country ;
+    rdfs:label "ミャンマー"@ja ; rdfs:label "Myanmar"@en ;
+    shinra:wikidataId "Q836" ;
+    skos:notation "SHINRA_I060134" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-nepal-Q837
+    a shinra:Country ;
+    rdfs:label "ネパール"@ja ; rdfs:label "Nepal"@en ;
+    shinra:wikidataId "Q837" ;
+    skos:notation "SHINRA_I060135" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-oman-Q842
+    a shinra:Country ;
+    rdfs:label "オマーン"@ja ; rdfs:label "Oman"@en ;
+    shinra:wikidataId "Q842" ;
+    skos:notation "SHINRA_I060136" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-pakistan-Q843
+    a shinra:Country ;
+    rdfs:label "パキスタン"@ja ; rdfs:label "Pakistan"@en ;
+    shinra:wikidataId "Q843" ;
+    skos:notation "SHINRA_I060137" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-qatar-Q846
+    a shinra:Country ;
+    rdfs:label "カタール"@ja ; rdfs:label "Qatar"@en ;
+    shinra:wikidataId "Q846" ;
+    skos:notation "SHINRA_I060138" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-saudi-arabia-Q851
+    a shinra:Country ;
+    rdfs:label "サウジアラビア"@ja ; rdfs:label "Saudi Arabia"@en ;
+    shinra:wikidataId "Q851" ;
+    skos:notation "SHINRA_I060139" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-sri-lanka-Q854
+    a shinra:Country ;
+    rdfs:label "スリランカ"@ja ; rdfs:label "Sri Lanka"@en ;
+    shinra:wikidataId "Q854" ;
+    skos:notation "SHINRA_I060140" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-syria-Q858
+    a shinra:Country ;
+    rdfs:label "シリア"@ja ; rdfs:label "Syria"@en ;
+    shinra:wikidataId "Q858" ;
+    skos:notation "SHINRA_I060141" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-tajikistan-Q863
+    a shinra:Country ;
+    rdfs:label "タジキスタン"@ja ; rdfs:label "Tajikistan"@en ;
+    shinra:wikidataId "Q863" ;
+    skos:notation "SHINRA_I060142" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-taiwan-Q865
+    a shinra:Country ;
+    rdfs:label "中華民国"@ja ; rdfs:label "Taiwan"@en ;
+    shinra:wikidataId "Q865" ;
+    skos:notation "SHINRA_I060143" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-thailand-Q869
+    a shinra:Country ;
+    rdfs:label "タイ王国"@ja ; rdfs:label "Thailand"@en ;
+    shinra:wikidataId "Q869" ;
+    skos:notation "SHINRA_I060144" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-turkmenistan-Q874
+    a shinra:Country ;
+    rdfs:label "トルクメニスタン"@ja ; rdfs:label "Turkmenistan"@en ;
+    shinra:wikidataId "Q874" ;
+    skos:notation "SHINRA_I060145" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-united-arab-emirates-Q878
+    a shinra:Country ;
+    rdfs:label "アラブ首長国連邦"@ja ; rdfs:label "United Arab Emirates"@en ;
+    shinra:wikidataId "Q878" ;
+    skos:notation "SHINRA_I060146" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-vietnam-Q881
+    a shinra:Country ;
+    rdfs:label "ベトナム"@ja ; rdfs:label "Vietnam"@en ;
+    shinra:wikidataId "Q881" ;
+    skos:notation "SHINRA_I060147" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-south-korea-Q884
+    a shinra:Country ;
+    rdfs:label "大韓民国"@ja ; rdfs:label "South Korea"@en ;
+    shinra:wikidataId "Q884" ;
+    skos:notation "SHINRA_I060148" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-afghanistan-Q889
+    a shinra:Country ;
+    rdfs:label "アフガニスタン"@ja ; rdfs:label "Afghanistan"@en ;
+    shinra:wikidataId "Q889" ;
+    skos:notation "SHINRA_I060149" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bangladesh-Q902
+    a shinra:Country ;
+    rdfs:label "バングラデシュ"@ja ; rdfs:label "Bangladesh"@en ;
+    shinra:wikidataId "Q902" ;
+    skos:notation "SHINRA_I060150" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mali-Q912
+    a shinra:Country ;
+    rdfs:label "マリ共和国"@ja ; rdfs:label "Mali"@en ;
+    shinra:wikidataId "Q912" ;
+    skos:notation "SHINRA_I060151" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-angola-Q916
+    a shinra:Country ;
+    rdfs:label "アンゴラ"@ja ; rdfs:label "Angola"@en ;
+    shinra:wikidataId "Q916" ;
+    skos:notation "SHINRA_I060152" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-bhutan-Q917
+    a shinra:Country ;
+    rdfs:label "ブータン"@ja ; rdfs:label "Bhutan"@en ;
+    shinra:wikidataId "Q917" ;
+    skos:notation "SHINRA_I060153" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-brunei-Q921
+    a shinra:Country ;
+    rdfs:label "ブルネイ"@ja ; rdfs:label "Brunei"@en ;
+    shinra:wikidataId "Q921" ;
+    skos:notation "SHINRA_I060154" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-tanzania-Q924
+    a shinra:Country ;
+    rdfs:label "タンザニア"@ja ; rdfs:label "Tanzania"@en ;
+    shinra:wikidataId "Q924" ;
+    skos:notation "SHINRA_I060155" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-philippines-Q928
+    a shinra:Country ;
+    rdfs:label "フィリピン"@ja ; rdfs:label "Philippines"@en ;
+    shinra:wikidataId "Q928" ;
+    skos:notation "SHINRA_I060156" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-central-african-republic-Q929
+    a shinra:Country ;
+    rdfs:label "中央アフリカ共和国"@ja ; rdfs:label "Central African Republic"@en ;
+    shinra:wikidataId "Q929" ;
+    skos:notation "SHINRA_I060157" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-togo-Q945
+    a shinra:Country ;
+    rdfs:label "トーゴ"@ja ; rdfs:label "Togo"@en ;
+    shinra:wikidataId "Q945" ;
+    skos:notation "SHINRA_I060158" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-tunisia-Q948
+    a shinra:Country ;
+    rdfs:label "チュニジア"@ja ; rdfs:label "Tunisia"@en ;
+    shinra:wikidataId "Q948" ;
+    skos:notation "SHINRA_I060159" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-zimbabwe-Q954
+    a shinra:Country ;
+    rdfs:label "ジンバブエ"@ja ; rdfs:label "Zimbabwe"@en ;
+    shinra:wikidataId "Q954" ;
+    skos:notation "SHINRA_I060160" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-zambia-Q953
+    a shinra:Country ;
+    rdfs:label "ザンビア"@ja ; rdfs:label "Zambia"@en ;
+    shinra:wikidataId "Q953" ;
+    skos:notation "SHINRA_I060161" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-south-sudan-Q958
+    a shinra:Country ;
+    rdfs:label "南スーダン"@ja ; rdfs:label "South Sudan"@en ;
+    shinra:wikidataId "Q958" ;
+    skos:notation "SHINRA_I060162" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-benin-Q962
+    a shinra:Country ;
+    rdfs:label "ベナン"@ja ; rdfs:label "Benin"@en ;
+    shinra:wikidataId "Q962" ;
+    skos:notation "SHINRA_I060163" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-botswana-Q963
+    a shinra:Country ;
+    rdfs:label "ボツワナ"@ja ; rdfs:label "Botswana"@en ;
+    shinra:wikidataId "Q963" ;
+    skos:notation "SHINRA_I060164" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-burundi-Q967
+    a shinra:Country ;
+    rdfs:label "ブルンジ"@ja ; rdfs:label "Burundi"@en ;
+    shinra:wikidataId "Q967" ;
+    skos:notation "SHINRA_I060165" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-burkina-faso-Q965
+    a shinra:Country ;
+    rdfs:label "ブルキナファソ"@ja ; rdfs:label "Burkina Faso"@en ;
+    shinra:wikidataId "Q965" ;
+    skos:notation "SHINRA_I060166" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-comoros-Q970
+    a shinra:Country ;
+    rdfs:label "コモロ"@ja ; rdfs:label "Comoros"@en ;
+    shinra:wikidataId "Q970" ;
+    skos:notation "SHINRA_I060167" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-republic-of-the-congo-Q971
+    a shinra:Country ;
+    rdfs:label "コンゴ共和国"@ja ; rdfs:label "Republic of the Congo"@en ;
+    shinra:wikidataId "Q971" ;
+    skos:notation "SHINRA_I060168" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-democratic-republic-of-the-congo-Q974
+    a shinra:Country ;
+    rdfs:label "コンゴ民主共和国"@ja ; rdfs:label "Democratic Republic of the Congo"@en ;
+    shinra:wikidataId "Q974" ;
+    skos:notation "SHINRA_I060169" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-djibouti-Q977
+    a shinra:Country ;
+    rdfs:label "ジブチ"@ja ; rdfs:label "Djibouti"@en ;
+    shinra:wikidataId "Q977" ;
+    skos:notation "SHINRA_I060170" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-equatorial-guinea-Q983
+    a shinra:Country ;
+    rdfs:label "赤道ギニア"@ja ; rdfs:label "Equatorial Guinea"@en ;
+    shinra:wikidataId "Q983" ;
+    skos:notation "SHINRA_I060171" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-eritrea-Q986
+    a shinra:Country ;
+    rdfs:label "エリトリア"@ja ; rdfs:label "Eritrea"@en ;
+    shinra:wikidataId "Q986" ;
+    skos:notation "SHINRA_I060172" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-gabon-Q1000
+    a shinra:Country ;
+    rdfs:label "ガボン"@ja ; rdfs:label "Gabon"@en ;
+    shinra:wikidataId "Q1000" ;
+    skos:notation "SHINRA_I060173" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-guinea-Q1006
+    a shinra:Country ;
+    rdfs:label "ギニア"@ja ; rdfs:label "Guinea"@en ;
+    shinra:wikidataId "Q1006" ;
+    skos:notation "SHINRA_I060174" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-guinea-bissau-Q1007
+    a shinra:Country ;
+    rdfs:label "ギニアビサウ共和国"@ja ; rdfs:label "Guinea-Bissau"@en ;
+    shinra:wikidataId "Q1007" ;
+    skos:notation "SHINRA_I060175" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-the-gambia-Q1005
+    a shinra:Country ;
+    rdfs:label "ガンビア"@ja ; rdfs:label "The Gambia"@en ;
+    shinra:wikidataId "Q1005" ;
+    skos:notation "SHINRA_I060176" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cape-verde-Q1011
+    a shinra:Country ;
+    rdfs:label "カーボベルデ"@ja ; rdfs:label "Cape Verde"@en ;
+    shinra:wikidataId "Q1011" ;
+    skos:notation "SHINRA_I060177" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-ivory-coast-Q1008
+    a shinra:Country ;
+    rdfs:label "コートジボワール"@ja ; rdfs:label "Ivory Coast"@en ;
+    shinra:wikidataId "Q1008" ;
+    skos:notation "SHINRA_I060178" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cameroon-Q1009
+    a shinra:Country ;
+    rdfs:label "カメルーン"@ja ; rdfs:label "Cameroon"@en ;
+    shinra:wikidataId "Q1009" ;
+    skos:notation "SHINRA_I060179" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-liberia-Q1014
+    a shinra:Country ;
+    rdfs:label "リベリア"@ja ; rdfs:label "Liberia"@en ;
+    shinra:wikidataId "Q1014" ;
+    skos:notation "SHINRA_I060180" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-lesotho-Q1013
+    a shinra:Country ;
+    rdfs:label "レソト"@ja ; rdfs:label "Lesotho"@en ;
+    shinra:wikidataId "Q1013" ;
+    skos:notation "SHINRA_I060181" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-madagascar-Q1019
+    a shinra:Country ;
+    rdfs:label "マダガスカル"@ja ; rdfs:label "Madagascar"@en ;
+    shinra:wikidataId "Q1019" ;
+    skos:notation "SHINRA_I060182" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-libya-Q1016
+    a shinra:Country ;
+    rdfs:label "リビア"@ja ; rdfs:label "Libya"@en ;
+    shinra:wikidataId "Q1016" ;
+    skos:notation "SHINRA_I060183" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-malawi-Q1020
+    a shinra:Country ;
+    rdfs:label "マラウイ"@ja ; rdfs:label "Malawi"@en ;
+    shinra:wikidataId "Q1020" ;
+    skos:notation "SHINRA_I060184" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mauritius-Q1027
+    a shinra:Country ;
+    rdfs:label "モーリシャス"@ja ; rdfs:label "Mauritius"@en ;
+    shinra:wikidataId "Q1027" ;
+    skos:notation "SHINRA_I060185" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mauritania-Q1025
+    a shinra:Country ;
+    rdfs:label "モーリタニア"@ja ; rdfs:label "Mauritania"@en ;
+    shinra:wikidataId "Q1025" ;
+    skos:notation "SHINRA_I060186" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-namibia-Q1030
+    a shinra:Country ;
+    rdfs:label "ナミビア"@ja ; rdfs:label "Namibia"@en ;
+    shinra:wikidataId "Q1030" ;
+    skos:notation "SHINRA_I060187" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-morocco-Q1028
+    a shinra:Country ;
+    rdfs:label "モロッコ"@ja ; rdfs:label "Morocco"@en ;
+    shinra:wikidataId "Q1028" ;
+    skos:notation "SHINRA_I060188" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-mozambique-Q1029
+    a shinra:Country ;
+    rdfs:label "モザンビーク"@ja ; rdfs:label "Mozambique"@en ;
+    shinra:wikidataId "Q1029" ;
+    skos:notation "SHINRA_I060189" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-niger-Q1032
+    a shinra:Country ;
+    rdfs:label "ニジェール"@ja ; rdfs:label "Niger"@en ;
+    shinra:wikidataId "Q1032" ;
+    skos:notation "SHINRA_I060190" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-nigeria-Q1033
+    a shinra:Country ;
+    rdfs:label "ナイジェリア"@ja ; rdfs:label "Nigeria"@en ;
+    shinra:wikidataId "Q1033" ;
+    skos:notation "SHINRA_I060191" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-s-o-tom-and-pr-ncipe-Q1039
+    a shinra:Country ;
+    rdfs:label "サントメ・プリンシペ"@ja ; rdfs:label "São Tomé and Príncipe"@en ;
+    shinra:wikidataId "Q1039" ;
+    skos:notation "SHINRA_I060192" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-uganda-Q1036
+    a shinra:Country ;
+    rdfs:label "ウガンダ"@ja ; rdfs:label "Uganda"@en ;
+    shinra:wikidataId "Q1036" ;
+    skos:notation "SHINRA_I060193" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-rwanda-Q1037
+    a shinra:Country ;
+    rdfs:label "ルワンダ"@ja ; rdfs:label "Rwanda"@en ;
+    shinra:wikidataId "Q1037" ;
+    skos:notation "SHINRA_I060194" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-seychelles-Q1042
+    a shinra:Country ;
+    rdfs:label "セーシェル"@ja ; rdfs:label "Seychelles"@en ;
+    shinra:wikidataId "Q1042" ;
+    skos:notation "SHINRA_I060195" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-senegal-Q1041
+    a shinra:Country ;
+    rdfs:label "セネガル"@ja ; rdfs:label "Senegal"@en ;
+    shinra:wikidataId "Q1041" ;
+    skos:notation "SHINRA_I060196" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-sierra-leone-Q1044
+    a shinra:Country ;
+    rdfs:label "シエラレオネ"@ja ; rdfs:label "Sierra Leone"@en ;
+    shinra:wikidataId "Q1044" ;
+    skos:notation "SHINRA_I060197" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-somalia-Q1045
+    a shinra:Country ;
+    rdfs:label "ソマリア"@ja ; rdfs:label "Somalia"@en ;
+    shinra:wikidataId "Q1045" ;
+    skos:notation "SHINRA_I060198" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-eswatini-Q1050
+    a shinra:Country ;
+    rdfs:label "エスワティニ"@ja ; rdfs:label "Eswatini"@en ;
+    shinra:wikidataId "Q1050" ;
+    skos:notation "SHINRA_I060199" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-sudan-Q1049
+    a shinra:Country ;
+    rdfs:label "スーダン"@ja ; rdfs:label "Sudan"@en ;
+    shinra:wikidataId "Q1049" ;
+    skos:notation "SHINRA_I060200" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-kosovo-Q1246
+    a shinra:Country ;
+    rdfs:label "コソボ共和国"@ja ; rdfs:label "Kosovo"@en ;
+    shinra:wikidataId "Q1246" ;
+    skos:notation "SHINRA_I060201" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-aruba-Q21203
+    a shinra:Country ;
+    rdfs:label "アルバ"@ja ; rdfs:label "Aruba"@en ;
+    shinra:wikidataId "Q21203" ;
+    skos:notation "SHINRA_I060202" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:country-cuba-Q241
+    a shinra:Country ;
+    rdfs:label "キューバ"@ja ; rdfs:label "Cuba"@en ;
+    shinra:wikidataId "Q241" ;
+    skos:notation "SHINRA_I060203" ; dcterms:created "2026-06-19"^^xsd:date .

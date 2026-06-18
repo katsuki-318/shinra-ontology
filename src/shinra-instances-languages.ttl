@@ -1,0 +1,604 @@
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/shinra/ont/instances-languages>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title "神羅万象オントロジー — 主要言語インスタンス"@ja , "Shinra Ontology — Major Language Instances"@en ;
+    dcterms:created "2026-06-19"^^xsd:date .
+
+
+shinra-data:language-mandarin-Q9192
+    a shinra:NaturalLanguage ;
+    rdfs:label "官話"@ja ; rdfs:label "Mandarin"@en ;
+    shinra:wikidataId "Q9192" ;
+    skos:notation "SHINRA_I043001" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-standard-chinese-Q727694
+    a shinra:NaturalLanguage ;
+    rdfs:label "現代標準中国語"@ja ; rdfs:label "Standard Chinese"@en ;
+    shinra:wikidataId "Q727694" ;
+    skos:notation "SHINRA_I043002" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-english-Q1860
+    a shinra:NaturalLanguage ;
+    rdfs:label "英語"@ja ; rdfs:label "English"@en ;
+    shinra:wikidataId "Q1860" ;
+    skos:notation "SHINRA_I043003" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-spanish-Q1321
+    a shinra:NaturalLanguage ;
+    rdfs:label "スペイン語"@ja ; rdfs:label "Spanish"@en ;
+    shinra:wikidataId "Q1321" ;
+    skos:notation "SHINRA_I043004" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-arabic-Q13955
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語"@ja ; rdfs:label "Arabic"@en ;
+    shinra:wikidataId "Q13955" ;
+    skos:notation "SHINRA_I043005" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-arabic-Q13955
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語"@ja ; rdfs:label "Arabic"@en ;
+    shinra:wikidataId "Q13955" ;
+    skos:notation "SHINRA_I043006" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-french-Q150
+    a shinra:NaturalLanguage ;
+    rdfs:label "フランス語"@ja ; rdfs:label "French"@en ;
+    shinra:wikidataId "Q150" ;
+    skos:notation "SHINRA_I043007" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-indonesian-Q9240
+    a shinra:NaturalLanguage ;
+    rdfs:label "インドネシア語"@ja ; rdfs:label "Indonesian"@en ;
+    shinra:wikidataId "Q9240" ;
+    skos:notation "SHINRA_I043008" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-russian-Q7737
+    a shinra:NaturalLanguage ;
+    rdfs:label "ロシア語"@ja ; rdfs:label "Russian"@en ;
+    shinra:wikidataId "Q7737" ;
+    skos:notation "SHINRA_I043009" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-punjabi-Q58635
+    a shinra:NaturalLanguage ;
+    rdfs:label "パンジャーブ語"@ja ; rdfs:label "Punjabi"@en ;
+    shinra:wikidataId "Q58635" ;
+    skos:notation "SHINRA_I043010" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-kiswahili-Q3197533
+    a shinra:NaturalLanguage ;
+    rdfs:label "スワヒリ語"@ja ; rdfs:label "Kiswahili"@en ;
+    shinra:wikidataId "Q3197533" ;
+    skos:notation "SHINRA_I043011" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-french-Q150
+    a shinra:NaturalLanguage ;
+    rdfs:label "フランス語"@ja ; rdfs:label "French"@en ;
+    shinra:wikidataId "Q150" ;
+    skos:notation "SHINRA_I043012" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-malay-Q9237
+    a shinra:NaturalLanguage ;
+    rdfs:label "マレー語"@ja ; rdfs:label "Malay"@en ;
+    shinra:wikidataId "Q9237" ;
+    skos:notation "SHINRA_I043013" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-yue-chinese-Q7033959
+    a shinra:NaturalLanguage ;
+    rdfs:label "粤語"@ja ; rdfs:label "Yue Chinese"@en ;
+    shinra:wikidataId "Q7033959" ;
+    skos:notation "SHINRA_I043014" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-javanese-Q33549
+    a shinra:NaturalLanguage ;
+    rdfs:label "ジャワ語"@ja ; rdfs:label "Javanese"@en ;
+    shinra:wikidataId "Q33549" ;
+    skos:notation "SHINRA_I043015" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-iranian-persian-Q3513637
+    a shinra:NaturalLanguage ;
+    rdfs:label "西ペルシア語"@ja ; rdfs:label "Iranian Persian"@en ;
+    shinra:wikidataId "Q3513637" ;
+    skos:notation "SHINRA_I043016" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-nigerian-pidgin-Q33655
+    a shinra:NaturalLanguage ;
+    rdfs:label "ナイジェリア・ピジン"@ja ; rdfs:label "Nigerian Pidgin"@en ;
+    shinra:wikidataId "Q33655" ;
+    skos:notation "SHINRA_I043017" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-jin-Q56479
+    a shinra:NaturalLanguage ;
+    rdfs:label "晋語"@ja ; rdfs:label "Jin"@en ;
+    shinra:wikidataId "Q56479" ;
+    skos:notation "SHINRA_I043018" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-persian-Q9168
+    a shinra:NaturalLanguage ;
+    rdfs:label "ペルシア語"@ja ; rdfs:label "Persian"@en ;
+    shinra:wikidataId "Q9168" ;
+    skos:notation "SHINRA_I043019" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-levantine-arabic-Q56593
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語レバント方言"@ja ; rdfs:label "Levantine Arabic"@en ;
+    shinra:wikidataId "Q56593" ;
+    skos:notation "SHINRA_I043020" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-indonesian-Q9240
+    a shinra:NaturalLanguage ;
+    rdfs:label "インドネシア語"@ja ; rdfs:label "Indonesian"@en ;
+    shinra:wikidataId "Q9240" ;
+    skos:notation "SHINRA_I043021" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-odia-Q33810
+    a shinra:NaturalLanguage ;
+    rdfs:label "オリヤー語"@ja ; rdfs:label "Odia"@en ;
+    shinra:wikidataId "Q33810" ;
+    skos:notation "SHINRA_I043022" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-sundanese-Q34002
+    a shinra:NaturalLanguage ;
+    rdfs:label "スンダ語"@ja ; rdfs:label "Sundanese"@en ;
+    shinra:wikidataId "Q34002" ;
+    skos:notation "SHINRA_I043023" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-igbo-Q33578
+    a shinra:NaturalLanguage ;
+    rdfs:label "イボ語"@ja ; rdfs:label "Igbo"@en ;
+    shinra:wikidataId "Q33578" ;
+    skos:notation "SHINRA_I043024" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-north-levantine-arabic-Q22809485
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語シリア方言"@ja ; rdfs:label "North Levantine Arabic"@en ;
+    shinra:wikidataId "Q22809485" ;
+    skos:notation "SHINRA_I043025" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-oromo-Q33864
+    a shinra:NaturalLanguage ;
+    rdfs:label "オロモ語"@ja ; rdfs:label "Oromo"@en ;
+    shinra:wikidataId "Q33864" ;
+    skos:notation "SHINRA_I043026" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-sa-idi-arabic-Q56592
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語サイード方言"@ja ; rdfs:label "Saʽidi Arabic"@en ;
+    shinra:wikidataId "Q56592" ;
+    skos:notation "SHINRA_I043027" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-awadhi-Q29579
+    a shinra:NaturalLanguage ;
+    rdfs:label "アワディー語"@ja ; rdfs:label "Awadhi"@en ;
+    shinra:wikidataId "Q29579" ;
+    skos:notation "SHINRA_I043028" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-kurdish-Q36368
+    a shinra:NaturalLanguage ;
+    rdfs:label "クルド語"@ja ; rdfs:label "Kurdish"@en ;
+    shinra:wikidataId "Q36368" ;
+    skos:notation "SHINRA_I043029" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-thai-Q9217
+    a shinra:NaturalLanguage ;
+    rdfs:label "タイ語"@ja ; rdfs:label "Thai"@en ;
+    shinra:wikidataId "Q9217" ;
+    skos:notation "SHINRA_I043030" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-khmer-Q9205
+    a shinra:NaturalLanguage ;
+    rdfs:label "クメール語"@ja ; rdfs:label "Khmer"@en ;
+    shinra:wikidataId "Q9205" ;
+    skos:notation "SHINRA_I043032" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-kiswahili-Q3197533
+    a shinra:NaturalLanguage ;
+    rdfs:label "スワヒリ語"@ja ; rdfs:label "Kiswahili"@en ;
+    shinra:wikidataId "Q3197533" ;
+    skos:notation "SHINRA_I043033" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-cebuano-Q33239
+    a shinra:NaturalLanguage ;
+    rdfs:label "セブアノ語"@ja ; rdfs:label "Cebuano"@en ;
+    shinra:wikidataId "Q33239" ;
+    skos:notation "SHINRA_I043034" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-modern-greek-Q36510
+    a shinra:NaturalLanguage ;
+    rdfs:label "現代ギリシア語"@ja ; rdfs:label "Modern Greek"@en ;
+    shinra:wikidataId "Q36510" ;
+    skos:notation "SHINRA_I043035" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-nigerian-fulfulde-Q36129
+    a shinra:NaturalLanguage ;
+    rdfs:label "ナイジェリア・フラニ語"@ja ; rdfs:label "Nigerian Fulfulde"@en ;
+    shinra:wikidataId "Q36129" ;
+    skos:notation "SHINRA_I043036" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-bavarian-Q29540
+    a shinra:NaturalLanguage ;
+    rdfs:label "バイエルン・オーストリア語"@ja ; rdfs:label "Bavarian"@en ;
+    shinra:wikidataId "Q29540" ;
+    skos:notation "SHINRA_I043037" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-south-azerbaijani-Q3449805
+    a shinra:NaturalLanguage ;
+    rdfs:label "南アゼルバイジャン語"@ja ; rdfs:label "South Azerbaijani"@en ;
+    shinra:wikidataId "Q3449805" ;
+    skos:notation "SHINRA_I043038" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-banyumasan-Q33219
+    a shinra:NaturalLanguage ;
+    rdfs:label "バニュマス語"@ja ; rdfs:label "Banyumasan"@en ;
+    shinra:wikidataId "Q33219" ;
+    skos:notation "SHINRA_I043039" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tsonga-Q34327
+    a shinra:NaturalLanguage ;
+    rdfs:label "ツォンガ語"@ja ; rdfs:label "Tsonga"@en ;
+    shinra:wikidataId "Q34327" ;
+    skos:notation "SHINRA_I043040" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-chittagonian-Q33173
+    a shinra:NaturalLanguage ;
+    rdfs:label "チッタゴン語"@ja ; rdfs:label "Chittagonian"@en ;
+    shinra:wikidataId "Q33173" ;
+    skos:notation "SHINRA_I043041" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-dakhan-Q669431
+    a shinra:NaturalLanguage ;
+    rdfs:label "ダッキニー語"@ja ; rdfs:label "Dakhanī"@en ;
+    shinra:wikidataId "Q669431" ;
+    skos:notation "SHINRA_I043042" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-hungarian-Q9067
+    a shinra:NaturalLanguage ;
+    rdfs:label "ハンガリー語"@ja ; rdfs:label "Hungarian"@en ;
+    shinra:wikidataId "Q9067" ;
+    skos:notation "SHINRA_I043043" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-zulu-Q10179
+    a shinra:NaturalLanguage ;
+    rdfs:label "ズールー語"@ja ; rdfs:label "Zulu"@en ;
+    shinra:wikidataId "Q10179" ;
+    skos:notation "SHINRA_I043044" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-northern-min-Q36457
+    a shinra:NaturalLanguage ;
+    rdfs:label "閩北語"@ja ; rdfs:label "Northern Min"@en ;
+    shinra:wikidataId "Q36457" ;
+    skos:notation "SHINRA_I043045" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-alemannic-Q131339
+    a shinra:NaturalLanguage ;
+    rdfs:label "アレマン語"@ja ; rdfs:label "Alemannic"@en ;
+    shinra:wikidataId "Q131339" ;
+    skos:notation "SHINRA_I043046" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-haitian-creole-Q33491
+    a shinra:NaturalLanguage ;
+    rdfs:label "ハイチ語"@ja ; rdfs:label "Haitian Creole"@en ;
+    shinra:wikidataId "Q33491" ;
+    skos:notation "SHINRA_I043047" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-hebrew-Q9288
+    a shinra:NaturalLanguage ;
+    rdfs:label "ヘブライ語"@ja ; rdfs:label "Hebrew"@en ;
+    shinra:wikidataId "Q9288" ;
+    skos:notation "SHINRA_I043048" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-central-kanuri-Q15637215
+    a shinra:NaturalLanguage ;
+    rdfs:label "中央カヌリ語"@ja ; rdfs:label "Central Kanuri"@en ;
+    shinra:wikidataId "Q15637215" ;
+    skos:notation "SHINRA_I043049" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-swedish-Q9027
+    a shinra:NaturalLanguage ;
+    rdfs:label "スウェーデン語"@ja ; rdfs:label "Swedish"@en ;
+    shinra:wikidataId "Q9027" ;
+    skos:notation "SHINRA_I043050" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-ilocano-Q35936
+    a shinra:NaturalLanguage ;
+    rdfs:label "イロカノ語"@ja ; rdfs:label "Ilocano"@en ;
+    shinra:wikidataId "Q35936" ;
+    skos:notation "SHINRA_I043051" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-bulgarian-Q7918
+    a shinra:NaturalLanguage ;
+    rdfs:label "ブルガリア語"@ja ; rdfs:label "Bulgarian"@en ;
+    shinra:wikidataId "Q7918" ;
+    skos:notation "SHINRA_I043052" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-serbian-Q9299
+    a shinra:NaturalLanguage ;
+    rdfs:label "セルビア語"@ja ; rdfs:label "Serbian"@en ;
+    shinra:wikidataId "Q9299" ;
+    skos:notation "SHINRA_I043053" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-austrian-german-Q306626
+    a shinra:NaturalLanguage ;
+    rdfs:label "オーストリアドイツ語"@ja ; rdfs:label "Austrian German"@en ;
+    shinra:wikidataId "Q306626" ;
+    skos:notation "SHINRA_I043054" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-marwari-Q65455884
+    a shinra:NaturalLanguage ;
+    rdfs:label "マールワーリー語"@ja ; rdfs:label "Marwari"@en ;
+    shinra:wikidataId "Q65455884" ;
+    skos:notation "SHINRA_I043055" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-marwari-Q65455884
+    a shinra:NaturalLanguage ;
+    rdfs:label "マールワーリー語"@ja ; rdfs:label "Marwari"@en ;
+    shinra:wikidataId "Q65455884" ;
+    skos:notation "SHINRA_I043056" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-marwari-Q65455884
+    a shinra:NaturalLanguage ;
+    rdfs:label "マールワーリー語"@ja ; rdfs:label "Marwari"@en ;
+    shinra:wikidataId "Q65455884" ;
+    skos:notation "SHINRA_I043057" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-belarusian-Q9091
+    a shinra:NaturalLanguage ;
+    rdfs:label "ベラルーシ語"@ja ; rdfs:label "Belarusian"@en ;
+    shinra:wikidataId "Q9091" ;
+    skos:notation "SHINRA_I043058" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-moor-Q36096
+    a shinra:NaturalLanguage ;
+    rdfs:label "モシ語"@ja ; rdfs:label "Mooré"@en ;
+    shinra:wikidataId "Q36096" ;
+    skos:notation "SHINRA_I043059" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tigrinya-Q34124
+    a shinra:NaturalLanguage ;
+    rdfs:label "ティグリニャ語"@ja ; rdfs:label "Tigrinya"@en ;
+    shinra:wikidataId "Q34124" ;
+    skos:notation "SHINRA_I043060" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-sorani-Q36811
+    a shinra:NaturalLanguage ;
+    rdfs:label "ソラニー"@ja ; rdfs:label "Sorani"@en ;
+    shinra:wikidataId "Q36811" ;
+    skos:notation "SHINRA_I043061" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-luba-kasai-Q34173
+    a shinra:NaturalLanguage ;
+    rdfs:label "ルバ語"@ja ; rdfs:label "Luba-Kasai"@en ;
+    shinra:wikidataId "Q34173" ;
+    skos:notation "SHINRA_I043062" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-slovak-Q9058
+    a shinra:NaturalLanguage ;
+    rdfs:label "スロバキア語"@ja ; rdfs:label "Slovak"@en ;
+    shinra:wikidataId "Q9058" ;
+    skos:notation "SHINRA_I043063" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-wolayttattuwa-Q36943
+    a shinra:NaturalLanguage ;
+    rdfs:label "ウォライタ語"@ja ; rdfs:label "Wolayttattuwa"@en ;
+    shinra:wikidataId "Q36943" ;
+    skos:notation "SHINRA_I043064" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tigrinya-Q34124
+    a shinra:NaturalLanguage ;
+    rdfs:label "ティグリニャ語"@ja ; rdfs:label "Tigrinya"@en ;
+    shinra:wikidataId "Q34124" ;
+    skos:notation "SHINRA_I043065" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-minangkabau-Q13324
+    a shinra:NaturalLanguage ;
+    rdfs:label "ミナンカバウ語"@ja ; rdfs:label "Minangkabau"@en ;
+    shinra:wikidataId "Q13324" ;
+    skos:notation "SHINRA_I043066" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-sukuma-Q2638144
+    a shinra:NaturalLanguage ;
+    rdfs:label "スクマ語"@ja ; rdfs:label "Sukuma"@en ;
+    shinra:wikidataId "Q2638144" ;
+    skos:notation "SHINRA_I043067" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-lao-Q9211
+    a shinra:NaturalLanguage ;
+    rdfs:label "ラーオ語"@ja ; rdfs:label "Lao"@en ;
+    shinra:wikidataId "Q9211" ;
+    skos:notation "SHINRA_I043068" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-norwegian-Q9043
+    a shinra:NaturalLanguage ;
+    rdfs:label "ノルウェー語"@ja ; rdfs:label "Norwegian"@en ;
+    shinra:wikidataId "Q9043" ;
+    skos:notation "SHINRA_I043069" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-bugis-Q33190
+    a shinra:NaturalLanguage ;
+    rdfs:label "ブギス語"@ja ; rdfs:label "Bugis"@en ;
+    shinra:wikidataId "Q33190" ;
+    skos:notation "SHINRA_I043070" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-ghanaian-pidgin-english-Q5555465
+    a shinra:NaturalLanguage ;
+    rdfs:label "ガーナピジン英語"@ja ; rdfs:label "Ghanaian Pidgin English"@en ;
+    shinra:wikidataId "Q5555465" ;
+    skos:notation "SHINRA_I043072" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-catalan-Q7026
+    a shinra:NaturalLanguage ;
+    rdfs:label "カタルーニャ語"@ja ; rdfs:label "Catalan"@en ;
+    shinra:wikidataId "Q7026" ;
+    skos:notation "SHINRA_I043073" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-paraguayan-guaran-Q17478066
+    a shinra:NaturalLanguage ;
+    rdfs:label "パラグアイ・グアラニー語"@ja ; rdfs:label "Paraguayan Guaraní"@en ;
+    shinra:wikidataId "Q17478066" ;
+    skos:notation "SHINRA_I043074" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-nigerian-pidgin-Q33655
+    a shinra:NaturalLanguage ;
+    rdfs:label "ナイジェリア・ピジン"@ja ; rdfs:label "Nigerian Pidgin"@en ;
+    shinra:wikidataId "Q33655" ;
+    skos:notation "SHINRA_I043075" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-sango-Q33954
+    a shinra:NaturalLanguage ;
+    rdfs:label "サンゴ語"@ja ; rdfs:label "Sango"@en ;
+    shinra:wikidataId "Q33954" ;
+    skos:notation "SHINRA_I043076" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-huizhou-chinese-Q56546
+    a shinra:NaturalLanguage ;
+    rdfs:label "徽語"@ja ; rdfs:label "Huizhou Chinese"@en ;
+    shinra:wikidataId "Q56546" ;
+    skos:notation "SHINRA_I043077" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tswana-Q34137
+    a shinra:NaturalLanguage ;
+    rdfs:label "ツワナ語"@ja ; rdfs:label "Tswana"@en ;
+    shinra:wikidataId "Q34137" ;
+    skos:notation "SHINRA_I043078" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-guarani-Q35876
+    a shinra:NaturalLanguage ;
+    rdfs:label "グアラニー語"@ja ; rdfs:label "Guarani"@en ;
+    shinra:wikidataId "Q35876" ;
+    skos:notation "SHINRA_I043079" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-southern-thai-Q56508
+    a shinra:NaturalLanguage ;
+    rdfs:label "南タイ語"@ja ; rdfs:label "Southern Thai"@en ;
+    shinra:wikidataId "Q56508" ;
+    skos:notation "SHINRA_I043080" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-pulaar-Q1420205
+    a shinra:NaturalLanguage ;
+    rdfs:label "プラール語"@ja ; rdfs:label "Pulaar"@en ;
+    shinra:wikidataId "Q1420205" ;
+    skos:notation "SHINRA_I043081" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tarifit-Q34174
+    a shinra:NaturalLanguage ;
+    rdfs:label "リーフ語"@ja ; rdfs:label "Tarifit"@en ;
+    shinra:wikidataId "Q34174" ;
+    skos:notation "SHINRA_I043082" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-nynorsk-Q25164
+    a shinra:NaturalLanguage ;
+    rdfs:label "ニーノシュク"@ja ; rdfs:label "Nynorsk"@en ;
+    shinra:wikidataId "Q25164" ;
+    skos:notation "SHINRA_I043083" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-northern-sotho-Q33890
+    a shinra:NaturalLanguage ;
+    rdfs:label "北ソト語"@ja ; rdfs:label "Northern Sotho"@en ;
+    shinra:wikidataId "Q33890" ;
+    skos:notation "SHINRA_I043084" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tsonga-Q34327
+    a shinra:NaturalLanguage ;
+    rdfs:label "ツォンガ語"@ja ; rdfs:label "Tsonga"@en ;
+    shinra:wikidataId "Q34327" ;
+    skos:notation "SHINRA_I043085" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-miao-Q33813
+    a shinra:NaturalLanguage ;
+    rdfs:label "ミャオ語"@ja ; rdfs:label "Miao"@en ;
+    shinra:wikidataId "Q33813" ;
+    skos:notation "SHINRA_I043086" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-lithuanian-Q9083
+    a shinra:NaturalLanguage ;
+    rdfs:label "リトアニア語"@ja ; rdfs:label "Lithuanian"@en ;
+    shinra:wikidataId "Q9083" ;
+    skos:notation "SHINRA_I043087" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-s-gaw-karen-Q56410
+    a shinra:NaturalLanguage ;
+    rdfs:label "スゴー語"@ja ; rdfs:label "S'gaw Karen"@en ;
+    shinra:wikidataId "Q56410" ;
+    skos:notation "SHINRA_I043088" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-bokm-l-Q25167
+    a shinra:NaturalLanguage ;
+    rdfs:label "ブークモール"@ja ; rdfs:label "Bokmål"@en ;
+    shinra:wikidataId "Q25167" ;
+    skos:notation "SHINRA_I043089" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-merwari-Q11732445
+    a shinra:NaturalLanguage ;
+    rdfs:label "メールワーリー語"@ja ; rdfs:label "Merwari"@en ;
+    shinra:wikidataId "Q11732445" ;
+    skos:notation "SHINRA_I043090" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-kamba-Q2574767
+    a shinra:NaturalLanguage ;
+    rdfs:label "カンバ語"@ja ; rdfs:label "Kamba"@en ;
+    shinra:wikidataId "Q2574767" ;
+    skos:notation "SHINRA_I043091" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-hassaniya-arabic-Q56231
+    a shinra:NaturalLanguage ;
+    rdfs:label "アラビア語ハッサニア方言"@ja ; rdfs:label "Hassaniya Arabic"@en ;
+    shinra:wikidataId "Q56231" ;
+    skos:notation "SHINRA_I043092" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-goan-konkani-Q5575236
+    a shinra:NaturalLanguage ;
+    rdfs:label "ゴア・コンカニ語"@ja ; rdfs:label "Goan Konkani"@en ;
+    shinra:wikidataId "Q5575236" ;
+    skos:notation "SHINRA_I043093" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-bemba-Q33052
+    a shinra:NaturalLanguage ;
+    rdfs:label "ベンバ語"@ja ; rdfs:label "Bemba"@en ;
+    shinra:wikidataId "Q33052" ;
+    skos:notation "SHINRA_I043094" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-acehnese-Q27683
+    a shinra:NaturalLanguage ;
+    rdfs:label "アチェ語"@ja ; rdfs:label "Acehnese"@en ;
+    shinra:wikidataId "Q27683" ;
+    skos:notation "SHINRA_I043095" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-banjar-Q33151
+    a shinra:NaturalLanguage ;
+    rdfs:label "バンジャル語"@ja ; rdfs:label "Banjar"@en ;
+    shinra:wikidataId "Q33151" ;
+    skos:notation "SHINRA_I043096" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-tsonga-Q34327
+    a shinra:NaturalLanguage ;
+    rdfs:label "ツォンガ語"@ja ; rdfs:label "Tsonga"@en ;
+    shinra:wikidataId "Q34327" ;
+    skos:notation "SHINRA_I043097" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-mazanderani-Q13356
+    a shinra:NaturalLanguage ;
+    rdfs:label "マーザンダラーン語"@ja ; rdfs:label "Mazanderani"@en ;
+    shinra:wikidataId "Q13356" ;
+    skos:notation "SHINRA_I043098" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-dagbanli-Q32238
+    a shinra:NaturalLanguage ;
+    rdfs:label "ダバニ語"@ja ; rdfs:label "Dagbanli"@en ;
+    shinra:wikidataId "Q32238" ;
+    skos:notation "SHINRA_I043099" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:language-swedish-Q9027
+    a shinra:NaturalLanguage ;
+    rdfs:label "スウェーデン語"@ja ; rdfs:label "Swedish"@en ;
+    shinra:wikidataId "Q9027" ;
+    skos:notation "SHINRA_I043100" ; dcterms:created "2026-06-19"^^xsd:date .

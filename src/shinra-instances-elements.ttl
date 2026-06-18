@@ -1,0 +1,736 @@
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/shinra/ont/instances-elements>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title "神羅万象オントロジー — 化学元素インスタンス"@ja , "Shinra Ontology — Chemical Element Instances"@en ;
+    dcterms:created "2026-06-19"^^xsd:date .
+
+
+shinra-data:element-hydrogen-001
+    a shinra:Element ;
+    rdfs:label "水素"@ja ; rdfs:label "hydrogen"@en ;
+    shinra:wikidataId "Q556" ;
+    skos:notation "SHINRA_I020001" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-helium-002
+    a shinra:Element ;
+    rdfs:label "ヘリウム"@ja ; rdfs:label "helium"@en ;
+    shinra:wikidataId "Q560" ;
+    skos:notation "SHINRA_I020002" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-lithium-003
+    a shinra:Element ;
+    rdfs:label "リチウム"@ja ; rdfs:label "lithium"@en ;
+    shinra:wikidataId "Q568" ;
+    skos:notation "SHINRA_I020003" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-beryllium-004
+    a shinra:Element ;
+    rdfs:label "ベリリウム"@ja ; rdfs:label "beryllium"@en ;
+    shinra:wikidataId "Q569" ;
+    skos:notation "SHINRA_I020004" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-boron-005
+    a shinra:Element ;
+    rdfs:label "ホウ素"@ja ; rdfs:label "boron"@en ;
+    shinra:wikidataId "Q618" ;
+    skos:notation "SHINRA_I020005" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-carbon-006
+    a shinra:Element ;
+    rdfs:label "炭素"@ja ; rdfs:label "carbon"@en ;
+    shinra:wikidataId "Q623" ;
+    skos:notation "SHINRA_I020006" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-nitrogen-007
+    a shinra:Element ;
+    rdfs:label "窒素"@ja ; rdfs:label "nitrogen"@en ;
+    shinra:wikidataId "Q627" ;
+    skos:notation "SHINRA_I020007" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-oxygen-008
+    a shinra:Element ;
+    rdfs:label "酸素"@ja ; rdfs:label "oxygen"@en ;
+    shinra:wikidataId "Q629" ;
+    skos:notation "SHINRA_I020008" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-fluorine-009
+    a shinra:Element ;
+    rdfs:label "フッ素"@ja ; rdfs:label "fluorine"@en ;
+    shinra:wikidataId "Q650" ;
+    skos:notation "SHINRA_I020009" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-neon-010
+    a shinra:Element ;
+    rdfs:label "ネオン"@ja ; rdfs:label "neon"@en ;
+    shinra:wikidataId "Q654" ;
+    skos:notation "SHINRA_I020010" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-sodium-011
+    a shinra:Element ;
+    rdfs:label "ナトリウム"@ja ; rdfs:label "sodium"@en ;
+    shinra:wikidataId "Q658" ;
+    skos:notation "SHINRA_I020011" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-magnesium-012
+    a shinra:Element ;
+    rdfs:label "マグネシウム"@ja ; rdfs:label "magnesium"@en ;
+    shinra:wikidataId "Q660" ;
+    skos:notation "SHINRA_I020012" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-aluminium-013
+    a shinra:Element ;
+    rdfs:label "アルミニウム"@ja ; rdfs:label "aluminium"@en ;
+    shinra:wikidataId "Q663" ;
+    skos:notation "SHINRA_I020013" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-silicon-014
+    a shinra:Element ;
+    rdfs:label "ケイ素"@ja ; rdfs:label "silicon"@en ;
+    shinra:wikidataId "Q670" ;
+    skos:notation "SHINRA_I020014" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-phosphorus-015
+    a shinra:Element ;
+    rdfs:label "リン"@ja ; rdfs:label "phosphorus"@en ;
+    shinra:wikidataId "Q674" ;
+    skos:notation "SHINRA_I020015" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-sulfur-016
+    a shinra:Element ;
+    rdfs:label "硫黄"@ja ; rdfs:label "sulfur"@en ;
+    shinra:wikidataId "Q682" ;
+    skos:notation "SHINRA_I020016" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-chlorine-017
+    a shinra:Element ;
+    rdfs:label "塩素"@ja ; rdfs:label "chlorine"@en ;
+    shinra:wikidataId "Q688" ;
+    skos:notation "SHINRA_I020017" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-argon-018
+    a shinra:Element ;
+    rdfs:label "アルゴン"@ja ; rdfs:label "argon"@en ;
+    shinra:wikidataId "Q696" ;
+    skos:notation "SHINRA_I020018" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-potassium-019
+    a shinra:Element ;
+    rdfs:label "カリウム"@ja ; rdfs:label "potassium"@en ;
+    shinra:wikidataId "Q703" ;
+    skos:notation "SHINRA_I020019" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-calcium-020
+    a shinra:Element ;
+    rdfs:label "カルシウム"@ja ; rdfs:label "calcium"@en ;
+    shinra:wikidataId "Q706" ;
+    skos:notation "SHINRA_I020020" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-scandium-021
+    a shinra:Element ;
+    rdfs:label "スカンジウム"@ja ; rdfs:label "scandium"@en ;
+    shinra:wikidataId "Q713" ;
+    skos:notation "SHINRA_I020021" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-titanium-022
+    a shinra:Element ;
+    rdfs:label "チタン"@ja ; rdfs:label "titanium"@en ;
+    shinra:wikidataId "Q716" ;
+    skos:notation "SHINRA_I020022" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-vanadium-023
+    a shinra:Element ;
+    rdfs:label "バナジウム"@ja ; rdfs:label "vanadium"@en ;
+    shinra:wikidataId "Q722" ;
+    skos:notation "SHINRA_I020023" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-chromium-024
+    a shinra:Element ;
+    rdfs:label "クロム"@ja ; rdfs:label "chromium"@en ;
+    shinra:wikidataId "Q725" ;
+    skos:notation "SHINRA_I020024" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-manganese-025
+    a shinra:Element ;
+    rdfs:label "マンガン"@ja ; rdfs:label "manganese"@en ;
+    shinra:wikidataId "Q731" ;
+    skos:notation "SHINRA_I020025" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-iron-026
+    a shinra:Element ;
+    rdfs:label "鉄"@ja ; rdfs:label "iron"@en ;
+    shinra:wikidataId "Q677" ;
+    skos:notation "SHINRA_I020026" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-cobalt-027
+    a shinra:Element ;
+    rdfs:label "コバルト"@ja ; rdfs:label "cobalt"@en ;
+    shinra:wikidataId "Q740" ;
+    skos:notation "SHINRA_I020027" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-nickel-028
+    a shinra:Element ;
+    rdfs:label "ニッケル"@ja ; rdfs:label "nickel"@en ;
+    shinra:wikidataId "Q744" ;
+    skos:notation "SHINRA_I020028" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-copper-029
+    a shinra:Element ;
+    rdfs:label "銅"@ja ; rdfs:label "copper"@en ;
+    shinra:wikidataId "Q753" ;
+    skos:notation "SHINRA_I020029" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-zinc-030
+    a shinra:Element ;
+    rdfs:label "亜鉛"@ja ; rdfs:label "zinc"@en ;
+    shinra:wikidataId "Q758" ;
+    skos:notation "SHINRA_I020030" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-gallium-031
+    a shinra:Element ;
+    rdfs:label "ガリウム"@ja ; rdfs:label "gallium"@en ;
+    shinra:wikidataId "Q861" ;
+    skos:notation "SHINRA_I020031" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-germanium-032
+    a shinra:Element ;
+    rdfs:label "ゲルマニウム"@ja ; rdfs:label "germanium"@en ;
+    shinra:wikidataId "Q867" ;
+    skos:notation "SHINRA_I020032" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-arsenic-033
+    a shinra:Element ;
+    rdfs:label "ヒ素"@ja ; rdfs:label "arsenic"@en ;
+    shinra:wikidataId "Q871" ;
+    skos:notation "SHINRA_I020033" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-selenium-034
+    a shinra:Element ;
+    rdfs:label "セレン"@ja ; rdfs:label "selenium"@en ;
+    shinra:wikidataId "Q876" ;
+    skos:notation "SHINRA_I020034" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-bromine-035
+    a shinra:Element ;
+    rdfs:label "臭素"@ja ; rdfs:label "bromine"@en ;
+    shinra:wikidataId "Q879" ;
+    skos:notation "SHINRA_I020035" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-krypton-036
+    a shinra:Element ;
+    rdfs:label "クリプトン"@ja ; rdfs:label "krypton"@en ;
+    shinra:wikidataId "Q888" ;
+    skos:notation "SHINRA_I020036" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-rubidium-037
+    a shinra:Element ;
+    rdfs:label "ルビジウム"@ja ; rdfs:label "rubidium"@en ;
+    shinra:wikidataId "Q895" ;
+    skos:notation "SHINRA_I020037" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-strontium-038
+    a shinra:Element ;
+    rdfs:label "ストロンチウム"@ja ; rdfs:label "strontium"@en ;
+    shinra:wikidataId "Q938" ;
+    skos:notation "SHINRA_I020038" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-yttrium-039
+    a shinra:Element ;
+    rdfs:label "イットリウム"@ja ; rdfs:label "yttrium"@en ;
+    shinra:wikidataId "Q941" ;
+    skos:notation "SHINRA_I020039" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-zirconium-040
+    a shinra:Element ;
+    rdfs:label "ジルコニウム"@ja ; rdfs:label "zirconium"@en ;
+    shinra:wikidataId "Q1038" ;
+    skos:notation "SHINRA_I020040" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-niobium-041
+    a shinra:Element ;
+    rdfs:label "ニオブ"@ja ; rdfs:label "niobium"@en ;
+    shinra:wikidataId "Q1046" ;
+    skos:notation "SHINRA_I020041" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-molybdenum-042
+    a shinra:Element ;
+    rdfs:label "モリブデン"@ja ; rdfs:label "molybdenum"@en ;
+    shinra:wikidataId "Q1053" ;
+    skos:notation "SHINRA_I020042" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-technetium-043
+    a shinra:Element ;
+    rdfs:label "テクネチウム"@ja ; rdfs:label "technetium"@en ;
+    shinra:wikidataId "Q1054" ;
+    skos:notation "SHINRA_I020043" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-ruthenium-044
+    a shinra:Element ;
+    rdfs:label "ルテニウム"@ja ; rdfs:label "ruthenium"@en ;
+    shinra:wikidataId "Q1086" ;
+    skos:notation "SHINRA_I020044" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-rhodium-045
+    a shinra:Element ;
+    rdfs:label "ロジウム"@ja ; rdfs:label "rhodium"@en ;
+    shinra:wikidataId "Q1087" ;
+    skos:notation "SHINRA_I020045" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-palladium-046
+    a shinra:Element ;
+    rdfs:label "パラジウム"@ja ; rdfs:label "palladium"@en ;
+    shinra:wikidataId "Q1089" ;
+    skos:notation "SHINRA_I020046" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-silver-047
+    a shinra:Element ;
+    rdfs:label "銀"@ja ; rdfs:label "silver"@en ;
+    shinra:wikidataId "Q1090" ;
+    skos:notation "SHINRA_I020047" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-cadmium-048
+    a shinra:Element ;
+    rdfs:label "カドミウム"@ja ; rdfs:label "cadmium"@en ;
+    shinra:wikidataId "Q1091" ;
+    skos:notation "SHINRA_I020048" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-indium-049
+    a shinra:Element ;
+    rdfs:label "インジウム"@ja ; rdfs:label "indium"@en ;
+    shinra:wikidataId "Q1094" ;
+    skos:notation "SHINRA_I020049" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-tin-050
+    a shinra:Element ;
+    rdfs:label "スズ"@ja ; rdfs:label "tin"@en ;
+    shinra:wikidataId "Q1096" ;
+    skos:notation "SHINRA_I020050" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-antimony-051
+    a shinra:Element ;
+    rdfs:label "アンチモン"@ja ; rdfs:label "antimony"@en ;
+    shinra:wikidataId "Q1099" ;
+    skos:notation "SHINRA_I020051" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-tellurium-052
+    a shinra:Element ;
+    rdfs:label "テルル"@ja ; rdfs:label "tellurium"@en ;
+    shinra:wikidataId "Q1100" ;
+    skos:notation "SHINRA_I020052" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-iodine-053
+    a shinra:Element ;
+    rdfs:label "ヨウ素"@ja ; rdfs:label "iodine"@en ;
+    shinra:wikidataId "Q1103" ;
+    skos:notation "SHINRA_I020053" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-xenon-054
+    a shinra:Element ;
+    rdfs:label "キセノン"@ja ; rdfs:label "xenon"@en ;
+    shinra:wikidataId "Q1106" ;
+    skos:notation "SHINRA_I020054" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-caesium-055
+    a shinra:Element ;
+    rdfs:label "セシウム"@ja ; rdfs:label "caesium"@en ;
+    shinra:wikidataId "Q1108" ;
+    skos:notation "SHINRA_I020055" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-barium-056
+    a shinra:Element ;
+    rdfs:label "バリウム"@ja ; rdfs:label "barium"@en ;
+    shinra:wikidataId "Q1112" ;
+    skos:notation "SHINRA_I020056" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-lanthanum-057
+    a shinra:Element ;
+    rdfs:label "ランタン"@ja ; rdfs:label "lanthanum"@en ;
+    shinra:wikidataId "Q1801" ;
+    skos:notation "SHINRA_I020057" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-cerium-058
+    a shinra:Element ;
+    rdfs:label "セリウム"@ja ; rdfs:label "cerium"@en ;
+    shinra:wikidataId "Q1385" ;
+    skos:notation "SHINRA_I020058" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-praseodymium-059
+    a shinra:Element ;
+    rdfs:label "プラセオジム"@ja ; rdfs:label "praseodymium"@en ;
+    shinra:wikidataId "Q1386" ;
+    skos:notation "SHINRA_I020059" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-neodymium-060
+    a shinra:Element ;
+    rdfs:label "ネオジム"@ja ; rdfs:label "neodymium"@en ;
+    shinra:wikidataId "Q1388" ;
+    skos:notation "SHINRA_I020060" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-promethium-061
+    a shinra:Element ;
+    rdfs:label "プロメチウム"@ja ; rdfs:label "promethium"@en ;
+    shinra:wikidataId "Q1809" ;
+    skos:notation "SHINRA_I020061" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-samarium-062
+    a shinra:Element ;
+    rdfs:label "サマリウム"@ja ; rdfs:label "samarium"@en ;
+    shinra:wikidataId "Q1819" ;
+    skos:notation "SHINRA_I020062" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-europium-063
+    a shinra:Element ;
+    rdfs:label "ユウロピウム"@ja ; rdfs:label "europium"@en ;
+    shinra:wikidataId "Q1396" ;
+    skos:notation "SHINRA_I020063" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-gadolinium-064
+    a shinra:Element ;
+    rdfs:label "ガドリニウム"@ja ; rdfs:label "gadolinium"@en ;
+    shinra:wikidataId "Q1832" ;
+    skos:notation "SHINRA_I020064" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-terbium-065
+    a shinra:Element ;
+    rdfs:label "テルビウム"@ja ; rdfs:label "terbium"@en ;
+    shinra:wikidataId "Q1838" ;
+    skos:notation "SHINRA_I020065" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-dysprosium-066
+    a shinra:Element ;
+    rdfs:label "ジスプロシウム"@ja ; rdfs:label "dysprosium"@en ;
+    shinra:wikidataId "Q1843" ;
+    skos:notation "SHINRA_I020066" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-holmium-067
+    a shinra:Element ;
+    rdfs:label "ホルミウム"@ja ; rdfs:label "holmium"@en ;
+    shinra:wikidataId "Q1846" ;
+    skos:notation "SHINRA_I020067" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-erbium-068
+    a shinra:Element ;
+    rdfs:label "エルビウム"@ja ; rdfs:label "erbium"@en ;
+    shinra:wikidataId "Q1849" ;
+    skos:notation "SHINRA_I020068" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-thulium-069
+    a shinra:Element ;
+    rdfs:label "ツリウム"@ja ; rdfs:label "thulium"@en ;
+    shinra:wikidataId "Q1853" ;
+    skos:notation "SHINRA_I020069" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-ytterbium-070
+    a shinra:Element ;
+    rdfs:label "イッテルビウム"@ja ; rdfs:label "ytterbium"@en ;
+    shinra:wikidataId "Q1855" ;
+    skos:notation "SHINRA_I020070" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-lutetium-071
+    a shinra:Element ;
+    rdfs:label "ルテチウム"@ja ; rdfs:label "lutetium"@en ;
+    shinra:wikidataId "Q1857" ;
+    skos:notation "SHINRA_I020071" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-hafnium-072
+    a shinra:Element ;
+    rdfs:label "ハフニウム"@ja ; rdfs:label "hafnium"@en ;
+    shinra:wikidataId "Q1119" ;
+    skos:notation "SHINRA_I020072" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-tantalum-073
+    a shinra:Element ;
+    rdfs:label "タンタル"@ja ; rdfs:label "tantalum"@en ;
+    shinra:wikidataId "Q1123" ;
+    skos:notation "SHINRA_I020073" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-tungsten-074
+    a shinra:Element ;
+    rdfs:label "タングステン"@ja ; rdfs:label "tungsten"@en ;
+    shinra:wikidataId "Q743" ;
+    skos:notation "SHINRA_I020074" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-rhenium-075
+    a shinra:Element ;
+    rdfs:label "レニウム"@ja ; rdfs:label "rhenium"@en ;
+    shinra:wikidataId "Q737" ;
+    skos:notation "SHINRA_I020075" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-osmium-076
+    a shinra:Element ;
+    rdfs:label "オスミウム"@ja ; rdfs:label "osmium"@en ;
+    shinra:wikidataId "Q751" ;
+    skos:notation "SHINRA_I020076" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-iridium-077
+    a shinra:Element ;
+    rdfs:label "イリジウム"@ja ; rdfs:label "iridium"@en ;
+    shinra:wikidataId "Q877" ;
+    skos:notation "SHINRA_I020077" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-platinum-078
+    a shinra:Element ;
+    rdfs:label "白金"@ja ; rdfs:label "platinum"@en ;
+    shinra:wikidataId "Q880" ;
+    skos:notation "SHINRA_I020078" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-gold-079
+    a shinra:Element ;
+    rdfs:label "金"@ja ; rdfs:label "gold"@en ;
+    shinra:wikidataId "Q897" ;
+    skos:notation "SHINRA_I020079" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-mercury-080
+    a shinra:Element ;
+    rdfs:label "水銀"@ja ; rdfs:label "mercury"@en ;
+    shinra:wikidataId "Q925" ;
+    skos:notation "SHINRA_I020080" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-thallium-081
+    a shinra:Element ;
+    rdfs:label "タリウム"@ja ; rdfs:label "thallium"@en ;
+    shinra:wikidataId "Q932" ;
+    skos:notation "SHINRA_I020081" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-lead-082
+    a shinra:Element ;
+    rdfs:label "鉛"@ja ; rdfs:label "lead"@en ;
+    shinra:wikidataId "Q708" ;
+    skos:notation "SHINRA_I020082" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-bismuth-083
+    a shinra:Element ;
+    rdfs:label "ビスマス"@ja ; rdfs:label "bismuth"@en ;
+    shinra:wikidataId "Q942" ;
+    skos:notation "SHINRA_I020083" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-polonium-084
+    a shinra:Element ;
+    rdfs:label "ポロニウム"@ja ; rdfs:label "polonium"@en ;
+    shinra:wikidataId "Q979" ;
+    skos:notation "SHINRA_I020084" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-astatine-085
+    a shinra:Element ;
+    rdfs:label "アスタチン"@ja ; rdfs:label "astatine"@en ;
+    shinra:wikidataId "Q999" ;
+    skos:notation "SHINRA_I020085" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-radon-086
+    a shinra:Element ;
+    rdfs:label "ラドン"@ja ; rdfs:label "radon"@en ;
+    shinra:wikidataId "Q1133" ;
+    skos:notation "SHINRA_I020086" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-francium-087
+    a shinra:Element ;
+    rdfs:label "フランシウム"@ja ; rdfs:label "francium"@en ;
+    shinra:wikidataId "Q671" ;
+    skos:notation "SHINRA_I020087" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-radium-088
+    a shinra:Element ;
+    rdfs:label "ラジウム"@ja ; rdfs:label "radium"@en ;
+    shinra:wikidataId "Q1128" ;
+    skos:notation "SHINRA_I020088" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-actinium-089
+    a shinra:Element ;
+    rdfs:label "アクチニウム"@ja ; rdfs:label "actinium"@en ;
+    shinra:wikidataId "Q1121" ;
+    skos:notation "SHINRA_I020089" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-thorium-090
+    a shinra:Element ;
+    rdfs:label "トリウム"@ja ; rdfs:label "thorium"@en ;
+    shinra:wikidataId "Q1115" ;
+    skos:notation "SHINRA_I020090" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-protactinium-091
+    a shinra:Element ;
+    rdfs:label "プロトアクチニウム"@ja ; rdfs:label "protactinium"@en ;
+    shinra:wikidataId "Q1109" ;
+    skos:notation "SHINRA_I020091" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-uranium-092
+    a shinra:Element ;
+    rdfs:label "ウラン"@ja ; rdfs:label "uranium"@en ;
+    shinra:wikidataId "Q1098" ;
+    skos:notation "SHINRA_I020092" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-neptunium-093
+    a shinra:Element ;
+    rdfs:label "ネプツニウム"@ja ; rdfs:label "neptunium"@en ;
+    shinra:wikidataId "Q1105" ;
+    skos:notation "SHINRA_I020093" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-plutonium-094
+    a shinra:Element ;
+    rdfs:label "プルトニウム"@ja ; rdfs:label "plutonium"@en ;
+    shinra:wikidataId "Q1102" ;
+    skos:notation "SHINRA_I020094" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-americium-095
+    a shinra:Element ;
+    rdfs:label "アメリシウム"@ja ; rdfs:label "americium"@en ;
+    shinra:wikidataId "Q1872" ;
+    skos:notation "SHINRA_I020095" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-curium-096
+    a shinra:Element ;
+    rdfs:label "キュリウム"@ja ; rdfs:label "curium"@en ;
+    shinra:wikidataId "Q1876" ;
+    skos:notation "SHINRA_I020096" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-berkelium-097
+    a shinra:Element ;
+    rdfs:label "バークリウム"@ja ; rdfs:label "berkelium"@en ;
+    shinra:wikidataId "Q1882" ;
+    skos:notation "SHINRA_I020097" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-californium-098
+    a shinra:Element ;
+    rdfs:label "カリホルニウム"@ja ; rdfs:label "californium"@en ;
+    shinra:wikidataId "Q1888" ;
+    skos:notation "SHINRA_I020098" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-einsteinium-099
+    a shinra:Element ;
+    rdfs:label "アインスタイニウム"@ja ; rdfs:label "einsteinium"@en ;
+    shinra:wikidataId "Q1892" ;
+    skos:notation "SHINRA_I020099" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-fermium-100
+    a shinra:Element ;
+    rdfs:label "フェルミウム"@ja ; rdfs:label "fermium"@en ;
+    shinra:wikidataId "Q1896" ;
+    skos:notation "SHINRA_I020100" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-mendelevium-101
+    a shinra:Element ;
+    rdfs:label "メンデレビウム"@ja ; rdfs:label "mendelevium"@en ;
+    shinra:wikidataId "Q1898" ;
+    skos:notation "SHINRA_I020101" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-nobelium-102
+    a shinra:Element ;
+    rdfs:label "ノーベリウム"@ja ; rdfs:label "nobelium"@en ;
+    shinra:wikidataId "Q1901" ;
+    skos:notation "SHINRA_I020102" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-lawrencium-103
+    a shinra:Element ;
+    rdfs:label "ローレンシウム"@ja ; rdfs:label "lawrencium"@en ;
+    shinra:wikidataId "Q1905" ;
+    skos:notation "SHINRA_I020103" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-rutherfordium-104
+    a shinra:Element ;
+    rdfs:label "ラザホージウム"@ja ; rdfs:label "rutherfordium"@en ;
+    shinra:wikidataId "Q1226" ;
+    skos:notation "SHINRA_I020104" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-dubnium-105
+    a shinra:Element ;
+    rdfs:label "ドブニウム"@ja ; rdfs:label "dubnium"@en ;
+    shinra:wikidataId "Q1232" ;
+    skos:notation "SHINRA_I020105" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-seaborgium-106
+    a shinra:Element ;
+    rdfs:label "シーボーギウム"@ja ; rdfs:label "seaborgium"@en ;
+    shinra:wikidataId "Q1234" ;
+    skos:notation "SHINRA_I020106" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-bohrium-107
+    a shinra:Element ;
+    rdfs:label "ボーリウム"@ja ; rdfs:label "bohrium"@en ;
+    shinra:wikidataId "Q1249" ;
+    skos:notation "SHINRA_I020107" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-hassium-108
+    a shinra:Element ;
+    rdfs:label "ハッシウム"@ja ; rdfs:label "hassium"@en ;
+    shinra:wikidataId "Q1252" ;
+    skos:notation "SHINRA_I020108" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-meitnerium-109
+    a shinra:Element ;
+    rdfs:label "マイトネリウム"@ja ; rdfs:label "meitnerium"@en ;
+    shinra:wikidataId "Q1258" ;
+    skos:notation "SHINRA_I020109" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-darmstadtium-110
+    a shinra:Element ;
+    rdfs:label "ダームスタチウム"@ja ; rdfs:label "darmstadtium"@en ;
+    shinra:wikidataId "Q1266" ;
+    skos:notation "SHINRA_I020110" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-roentgenium-111
+    a shinra:Element ;
+    rdfs:label "レントゲニウム"@ja ; rdfs:label "roentgenium"@en ;
+    shinra:wikidataId "Q1272" ;
+    skos:notation "SHINRA_I020111" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-copernicium-112
+    a shinra:Element ;
+    rdfs:label "コペルニシウム"@ja ; rdfs:label "copernicium"@en ;
+    shinra:wikidataId "Q1278" ;
+    skos:notation "SHINRA_I020112" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-nihonium-113
+    a shinra:Element ;
+    rdfs:label "ニホニウム"@ja ; rdfs:label "nihonium"@en ;
+    shinra:wikidataId "Q1301" ;
+    skos:notation "SHINRA_I020113" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-flerovium-114
+    a shinra:Element ;
+    rdfs:label "フレロビウム"@ja ; rdfs:label "flerovium"@en ;
+    shinra:wikidataId "Q1302" ;
+    skos:notation "SHINRA_I020114" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-moscovium-115
+    a shinra:Element ;
+    rdfs:label "モスコビウム"@ja ; rdfs:label "moscovium"@en ;
+    shinra:wikidataId "Q1303" ;
+    skos:notation "SHINRA_I020115" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-livermorium-116
+    a shinra:Element ;
+    rdfs:label "リバモリウム"@ja ; rdfs:label "livermorium"@en ;
+    shinra:wikidataId "Q1304" ;
+    skos:notation "SHINRA_I020116" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-tennessine-117
+    a shinra:Element ;
+    rdfs:label "テネシン"@ja ; rdfs:label "tennessine"@en ;
+    shinra:wikidataId "Q1306" ;
+    skos:notation "SHINRA_I020117" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-oganesson-118
+    a shinra:Element ;
+    rdfs:label "オガネソン"@ja ; rdfs:label "oganesson"@en ;
+    shinra:wikidataId "Q1307" ;
+    skos:notation "SHINRA_I020118" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-ununennium-119
+    a shinra:Element ;
+    rdfs:label "ウンウンエンニウム"@ja ; rdfs:label "ununennium"@en ;
+    shinra:wikidataId "Q1139" ;
+    skos:notation "SHINRA_I020119" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:element-unbinilium-120
+    a shinra:Element ;
+    rdfs:label "ウンビニリウム"@ja ; rdfs:label "unbinilium"@en ;
+    shinra:wikidataId "Q1146" ;
+    skos:notation "SHINRA_I020120" ; dcterms:created "2026-06-19"^^xsd:date .

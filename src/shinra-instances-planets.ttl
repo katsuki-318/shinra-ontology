@@ -1,0 +1,40 @@
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+
+<https://w3id.org/shinra/ont/instances-planets>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title "神羅万象オントロジー — 惑星インスタンス"@ja , "Shinra Ontology — Planet Instances"@en ;
+    dcterms:created "2026-06-19"^^xsd:date .
+
+
+shinra-data:planet-earth
+    a shinra:Planet ;
+    rdfs:label "地球"@ja ; rdfs:label "Earth"@en ;
+    shinra:wikidataId "Q2" ;
+    skos:notation "SHINRA_I021001" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:planet-mars
+    a shinra:Planet ;
+    rdfs:label "火星"@ja ; rdfs:label "Mars"@en ;
+    shinra:wikidataId "Q111" ;
+    skos:notation "SHINRA_I021002" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:planet-mercury
+    a shinra:Planet ;
+    rdfs:label "水星"@ja ; rdfs:label "Mercury"@en ;
+    shinra:wikidataId "Q308" ;
+    skos:notation "SHINRA_I021003" ; dcterms:created "2026-06-19"^^xsd:date .
+
+shinra-data:planet-venus
+    a shinra:Planet ;
+    rdfs:label "金星"@ja ; rdfs:label "Venus"@en ;
+    shinra:wikidataId "Q313" ;
+    skos:notation "SHINRA_I021004" ; dcterms:created "2026-06-19"^^xsd:date .
