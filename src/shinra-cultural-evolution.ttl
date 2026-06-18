@@ -39,7 +39,7 @@ shinra:CulturalFitness
     rdfs:comment "The degree to which a cultural trait or practice tends to spread within a population, related to cultural selection, adaptation, drift, and biased transmission."@en ;
     skos:notation "SHINRA_0011303" ; dcterms:created "2026-06-11"^^xsd:date .
 
-shinra:Niche Construction
+shinra:NicheConstruction
     a owl:Class ; rdfs:subClassOf shinra:NaturalProcess ;
     rdfs:label "ニッチ構築"@ja ; rdfs:label "Niche Construction"@en ;
     rdfs:comment "生物が自らの環境を改変することで自然選択の圧力を変化させる進化的過程。人間の農業・道具・都市による環境改変など。"@ja ;

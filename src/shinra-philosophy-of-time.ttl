@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-philosophy-of-time.ttl  — 時間の哲学・存在論的時間論ドメイン (Phase 11-q)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-time>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 時間の哲学・存在論的時間論ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Time Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PresentMoment
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "現在の瞬間"@ja ; rdfs:label "Present Moment"@en ;
+    rdfs:comment "時間的な「今」の哲学的分析。過去・現在・未来の存在論・A系列とB系列・ブロック宇宙論・流れとしての時間など。"@ja ;
+    rdfs:comment "The philosophical analysis of the temporal 'now', including the ontology of past, present, and future, A-series and B-series, block universe theory, and time as flow."@en ;
+    skos:notation "SHINRA_0011701" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Eternalism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "永遠主義"@ja ; rdfs:label "Eternalism"@en ;
+    skos:altLabel "四次元主義"@ja ;
+    rdfs:comment "過去・現在・未来のすべての時点が等しく実在するという立場。ブロック宇宙・四次元主義・相対性理論との親和性など。"@ja ;
+    rdfs:comment "The position that all temporal moments — past, present, and future — equally exist, including the block universe, four-dimensionalism, and its compatibility with relativity."@en ;
+    skos:notation "SHINRA_0011702" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Presentism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalThought ;
+    rdfs:label "現在主義"@ja ; rdfs:label "Presentism"@en ;
+    rdfs:comment "現在だけが実在し過去と未来は実在しないという立場。特殊相対性理論との緊張・同時性の相対性・超実質主義など。"@ja ;
+    rdfs:comment "The position that only the present exists and past and future are not real, including tensions with special relativity, the relativity of simultaneity, and hyper-realism."@en ;
+    skos:notation "SHINRA_0011703" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:TimeArrow
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "時間の矢"@ja ; rdfs:label "Arrow of Time"@en ;
+    rdfs:comment "時間が特定の方向にのみ流れる非対称性。熱力学的時間の矢・因果の非対称性・宇宙論的矢・記憶と時間の関係など。"@ja ;
+    rdfs:comment "The asymmetry by which time flows only in a specific direction, including the thermodynamic arrow of time, causal asymmetry, cosmological arrow, and the relationship between memory and time."@en ;
+    skos:notation "SHINRA_0011704" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:TimeTravelPhilosophy
+    a owl:Class ; rdfs:subClassOf shinra:ThoughtExperiment ;
+    rdfs:label "時間旅行の哲学"@ja ; rdfs:label "Philosophy of Time Travel"@en ;
+    rdfs:comment "時間旅行の論理的可能性・一貫性を検討する哲学的問題。祖父のパラドックス・固定された過去・多世界解釈との関連など。"@ja ;
+    rdfs:comment "The philosophical examination of the logical possibility and consistency of time travel, including the grandfather paradox, the fixed past, and connections to many-worlds interpretation."@en ;
+    skos:notation "SHINRA_0011705" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:mcctaggart-unreality-time-001
+    a shinra:ScientificTheory ;
+    rdfs:label "マクタガートの時間の非実在性"@ja ; rdfs:label "McTaggart's Unreality of Time"@en ;
+    shinra:wikidataId "Q1291897" ;
+    skos:notation "SHINRA_I011701" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:augustine-time-001
+    a shinra:PresentMoment ;
+    rdfs:label "アウグスティヌスの時間論"@ja ; rdfs:label "Augustine on Time"@en ;
+    shinra:wikidataId "Q8018" ;
+    skos:notation "SHINRA_I011702" ; dcterms:created "2026-06-11"^^xsd:date .

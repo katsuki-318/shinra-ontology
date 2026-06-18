@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-global-governance.ttl  — グローバルガバナンス・多国間主義ドメイン (Phase 11-r)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/global-governance>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — グローバルガバナンス・多国間主義ドメイン"@ja ,
+                    "Shinra Ontology — Global Governance & Multilateralism Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:GlobalGovernance
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "グローバルガバナンス"@ja ; rdfs:label "Global Governance"@en ;
+    rdfs:comment "国際的問題を解決するための多主体・多層的なルール・規範・制度の体系。国連・条約・国際NGO・多国籍企業の役割など。"@ja ;
+    rdfs:comment "The multi-stakeholder, multi-level system of rules, norms, and institutions for solving international problems, including the UN, treaties, international NGOs, and the role of multinational corporations."@en ;
+    skos:notation "SHINRA_0011801" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Multilateralism
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "多国間主義"@ja ; rdfs:label "Multilateralism"@en ;
+    skos:altLabel "マルチラテラリズム"@ja ;
+    rdfs:comment "複数の国家が共通の原則・ルールのもとで協調行動する国際関係の形態。WTO・国連安保理・気候変動協定・多国間主義の危機など。"@ja ;
+    rdfs:comment "A form of international relations in which multiple states coordinate action under common principles and rules, including the WTO, UN Security Council, climate agreements, and the crisis of multilateralism."@en ;
+    skos:notation "SHINRA_0011802" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Populism
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalIdeology ;
+    rdfs:label "ポピュリズム"@ja ; rdfs:label "Populism"@en ;
+    rdfs:comment "「純粋な人民」と「腐敗したエリート」の対立を核心とする薄い政治イデオロギー。右派・左派ポピュリズム・民主主義への挑戦など。"@ja ;
+    rdfs:comment "A thin political ideology centered on the opposition between 'the pure people' and 'the corrupt elite', including right-wing and left-wing populism and challenges to democracy."@en ;
+    skos:notation "SHINRA_0011803" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:GlobalCivilSociety
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "グローバル市民社会"@ja ; rdfs:label "Global Civil Society"@en ;
+    rdfs:comment "国境を超えて活動する市民社会組織・運動・ネットワーク。国際NGO・トランスナショナルアドボカシーネットワーク・世界社会フォーラムなど。"@ja ;
+    rdfs:comment "Civil society organizations, movements, and networks operating across borders, including international NGOs, transnational advocacy networks, and the World Social Forum."@en ;
+    skos:notation "SHINRA_0011804" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DigitalGovernance
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "デジタルガバナンス"@ja ; rdfs:label "Digital Governance"@en ;
+    rdfs:comment "インターネット・デジタル技術・データの国際的管理・規制の体系。インターネットガバナンス・データ主権・AI規制の国際調整など。"@ja ;
+    rdfs:comment "The international management and regulatory framework for the internet, digital technology, and data, including internet governance, data sovereignty, and international coordination of AI regulation."@en ;
+    skos:notation "SHINRA_0011805" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:un-general-assembly-001
+    a shinra:Organization ;
+    rdfs:label "国連総会"@ja ; rdfs:label "UN General Assembly"@en ;
+    shinra:wikidataId "Q37470" ;
+    skos:notation "SHINRA_I011801" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:g20-001
+    a shinra:InternationalOrganization ;
+    rdfs:label "G20"@ja ; rdfs:label "G20"@en ;
+    shinra:wikidataId "Q41550" ;
+    skos:notation "SHINRA_I011802" ; dcterms:created "2026-06-11"^^xsd:date .

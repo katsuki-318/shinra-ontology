@@ -32,7 +32,7 @@ shinra:Deterrence
     rdfs:comment "A strategy dissuading potential aggressors by threatening retaliation, including nuclear deterrence, extended deterrence, credibility, and deterrence failure."@en ;
     skos:notation "SHINRA_0010902" ; dcterms:created "2026-06-11"^^xsd:date .
 
-shinra:Asymmetric Warfare
+shinra:AsymmetricWarfare
     a owl:Class ; rdfs:subClassOf shinra:War ;
     rdfs:label "非対称戦争"@ja ; rdfs:label "Asymmetric Warfare"@en ;
     rdfs:comment "戦力・資源・戦術が著しく異なる主体間の武力紛争。ゲリラ戦・テロ・対反乱作戦・ハイブリッド戦争など。"@ja ;

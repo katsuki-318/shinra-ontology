@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-philosophy-of-space.ttl  — 空間の哲学・位相哲学ドメイン (Phase 11-s)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-space>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 空間の哲学・位相哲学ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Space Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:AbsoluteSpace
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "絶対空間"@ja ; rdfs:label "Absolute Space"@en ;
+    rdfs:comment "物体・運動から独立して存在するニュートンの空間概念。バケツの実験・ライプニッツの関係論・マッハ原理との対比など。"@ja ;
+    rdfs:comment "Newton's concept of space existing independently of matter and motion, contrasted with Leibniz's relational theory through the bucket experiment and Mach's principle."@en ;
+    skos:notation "SHINRA_0011901" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:RelationalSpace
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "関係的空間"@ja ; rdfs:label "Relational Space"@en ;
+    rdfs:comment "空間は物体間の関係としてのみ存在するライプニッツの空間観。相対性理論による支持・位相的性質の重要性など。"@ja ;
+    rdfs:comment "Leibniz's view that space exists only as relations between objects, supported by relativity theory and the importance of topological properties."@en ;
+    skos:notation "SHINRA_0011902" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:SpaceTime
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "時空"@ja ; rdfs:label "Spacetime"@en ;
+    rdfs:comment "アインシュタインの相対性理論における時間と空間の統一的記述。ミンコフスキー時空・曲がった時空・ホール論争など。"@ja ;
+    rdfs:comment "The unified description of time and space in Einstein's relativity theory, including Minkowski spacetime, curved spacetime, and the hole argument."@en ;
+    skos:notation "SHINRA_0011903" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:PhilosophyOfGeography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "地理哲学"@ja ; rdfs:label "Philosophy of Geography"@en ;
+    rdfs:comment "地理学の概念・方法・説明を哲学的に分析する分野。場所・空間・領域・スケール・地図の知識論など。"@ja ;
+    rdfs:comment "The philosophical analysis of geographic concepts, methods, and explanation, including place, space, territory, scale, and the epistemology of maps."@en ;
+    skos:notation "SHINRA_0011904" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:TopologicalProperty
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalObject ;
+    rdfs:label "位相的性質"@ja ; rdfs:label "Topological Property"@en ;
+    rdfs:comment "連続変形で保存される空間の性質。連結性・コンパクト性・次元数・向き付け可能性・穴の数（ホモロジー）など。"@ja ;
+    rdfs:comment "Properties of spaces preserved under continuous deformation, including connectedness, compactness, dimension, orientability, and the number of holes (homology)."@en ;
+    skos:notation "SHINRA_0011905" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:leibniz-newton-space-001
+    a shinra:ConceptualEntity ;
+    rdfs:label "ライプニッツ＝ニュートン空間論争"@ja ; rdfs:label "Leibniz-Newton Space Debate"@en ;
+    shinra:wikidataId "Q47488" ;
+    skos:notation "SHINRA_I011901" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:klein-bottle-001
+    a shinra:TopologicalProperty ;
+    rdfs:label "クラインの壺"@ja ; rdfs:label "Klein Bottle"@en ;
+    shinra:wikidataId "Q152415" ;
+    skos:notation "SHINRA_I011902" ; dcterms:created "2026-06-11"^^xsd:date .

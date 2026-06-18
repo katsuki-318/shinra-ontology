@@ -1,0 +1,68 @@
+# ===========================================================================
+# shinra-social-movements.ttl  — 社会運動・市民参加詳細ドメイン (Phase 11-t)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/social-movements>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会運動・市民参加詳細ドメイン"@ja ,
+                    "Shinra Ontology — Social Movements & Civic Participation Domain"@en ;
+    dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:Activism
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "社会活動"@ja ; rdfs:label "Activism"@en ;
+    skos:altLabel "アクティビズム"@ja ;
+    rdfs:comment "社会的・政治的変化を目指す積極的関与・行動。草の根運動・デジタルアクティビズム・直接行動・非暴力抵抗など。"@ja ;
+    rdfs:comment "Active engagement and action aiming at social and political change, including grassroots movements, digital activism, direct action, and nonviolent resistance."@en ;
+    skos:notation "SHINRA_0012001" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CollectiveBehavior
+    a owl:Class ; rdfs:subClassOf shinra:SocialProcess ;
+    rdfs:label "集合的行動"@ja ; rdfs:label "Collective Behavior"@en ;
+    rdfs:comment "群集・パニック・暴動・流行・社会運動など比較的自発的で構造が少ない社会的行動。資源動員論・フレーミング理論など。"@ja ;
+    rdfs:comment "Relatively spontaneous and loosely structured social behavior including crowds, panics, riots, fads, and social movements, analyzed through resource mobilization and framing theories."@en ;
+    skos:notation "SHINRA_0012002" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:CivilDisobedience
+    a owl:Class ; rdfs:subClassOf shinra:Action ;
+    rdfs:label "市民的不服従"@ja ; rdfs:label "Civil Disobedience"@en ;
+    rdfs:comment "不正な法律・政策に対して公然と・非暴力的に反抗する行動。ソロー・ガンジー・キング・気候活動家などの実践など。"@ja ;
+    rdfs:comment "The open and nonviolent defiance of unjust laws or policies, practiced by Thoreau, Gandhi, King, and climate activists."@en ;
+    skos:notation "SHINRA_0012003" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:EnvironmentalMovement
+    a owl:Class ; rdfs:subClassOf shinra:SocialMovement ;
+    rdfs:label "環境運動"@ja ; rdfs:label "Environmental Movement"@en ;
+    rdfs:comment "自然環境の保護・持続可能性を求める社会運動。グリーンピース・気候正義・先住民権利・脱成長運動など。"@ja ;
+    rdfs:comment "A social movement advocating for natural environment protection and sustainability, including Greenpeace, climate justice, indigenous rights, and degrowth movements."@en ;
+    skos:notation "SHINRA_0012004" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra:DigitalActivism
+    a owl:Class ; rdfs:subClassOf shinra:Activism ;
+    rdfs:label "デジタルアクティビズム"@ja ; rdfs:label "Digital Activism"@en ;
+    skos:altLabel "オンライン活動"@ja ;
+    rdfs:comment "ソーシャルメディア・インターネットを活用した社会変革活動。ハッシュタグ運動・スラックティビズム・アラブの春・#MeTooなど。"@ja ;
+    rdfs:comment "Social change activities leveraging social media and the internet, including hashtag movements, slacktivism, the Arab Spring, and #MeToo."@en ;
+    skos:notation "SHINRA_0012005" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:metoo-movement-001
+    a shinra:DigitalActivism ;
+    rdfs:label "#MeToo運動"@ja ; rdfs:label "#MeToo Movement"@en ;
+    shinra:wikidataId "Q35567510" ;
+    skos:notation "SHINRA_I012001" ; dcterms:created "2026-06-11"^^xsd:date .
+
+shinra-data:gandhi-nonviolence-001
+    a shinra:CivilDisobedience ;
+    rdfs:label "ガンジーの非暴力運動"@ja ; rdfs:label "Gandhi's Nonviolent Movement"@en ;
+    shinra:wikidataId "Q1001" ;
+    skos:notation "SHINRA_I012002" ; dcterms:created "2026-06-11"^^xsd:date .
