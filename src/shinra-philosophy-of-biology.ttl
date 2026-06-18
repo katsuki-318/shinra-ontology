@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-philosophy-of-biology.ttl  — 生物学の哲学ドメイン (Phase 12-f)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/philosophy-of-biology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 生物学の哲学ドメイン"@ja ,
+                    "Shinra Ontology — Philosophy of Biology Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:PhilosophyOfBiology
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "生物学の哲学"@ja ; rdfs:label "Philosophy of Biology"@en ;
+    rdfs:comment "生物学の概念・方法・説明・理論的基盤を哲学的に分析する分野。種の概念・機能概念・還元論・適応論・生命の定義など。"@ja ;
+    rdfs:comment "The philosophical analysis of biological concepts, methods, explanations, and theoretical foundations, including species concepts, function, reductionism, adaptationism, and definitions of life."@en ;
+    skos:notation "SHINRA_0012601" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SpeciesConcept
+    a owl:Class ; rdfs:subClassOf shinra:ScientificConcept ;
+    rdfs:label "種の概念"@ja ; rdfs:label "Species Concept"@en ;
+    rdfs:comment "生物種をどう定義・区別するかの問い。生物学的種概念・系統的種概念・形態学的種概念・種の実在論・種多元主義など。"@ja ;
+    rdfs:comment "The question of how to define and delimit biological species, including the biological, phylogenetic, and morphological species concepts, species realism, and species pluralism."@en ;
+    skos:notation "SHINRA_0012602" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Teleology
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalPosition ;
+    rdfs:label "目的論"@ja ; rdfs:label "Teleology"@en ;
+    rdfs:comment "目的・機能・方向性によって現象を説明する考え方。生物機能の目的論的説明・ライト機能・カミンズ機能・自然選択による機能など。"@ja ;
+    rdfs:comment "Explaining phenomena through purposes, functions, and directionality, including teleological explanation of biological function, Wright functions, Cummins functions, and functions by natural selection."@en ;
+    skos:notation "SHINRA_0012603" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Adaptationism
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "適応主義"@ja ; rdfs:label "Adaptationism"@en ;
+    rdfs:comment "生物の形質を自然選択による適応として説明しようとする方法論的・実証的立場。グールド＝ルウォンティンのスパンドレル批判・適応論争など。"@ja ;
+    rdfs:comment "The methodological and empirical stance explaining biological traits as adaptations by natural selection, including Gould-Lewontin's spandrel critique and the adaptationism debate."@en ;
+    skos:notation "SHINRA_0012604" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:UnitOfSelection
+    a owl:Class ; rdfs:subClassOf shinra:ScientificConcept ;
+    rdfs:label "選択の単位"@ja ; rdfs:label "Unit of Selection"@en ;
+    rdfs:comment "自然選択が作用する階層的レベルをめぐる論争。遺伝子選択説・個体選択・群選択・多層選択・包括適応度など。"@ja ;
+    rdfs:comment "The debate over the hierarchical level at which natural selection operates, including gene selection, individual selection, group selection, multilevel selection, and inclusive fitness."@en ;
+    skos:notation "SHINRA_0012605" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:dawkins-selfish-gene-001
+    a shinra:ScientificTheory ;
+    rdfs:label "利己的な遺伝子（ドーキンス）"@ja ; rdfs:label "The Selfish Gene"@en ;
+    shinra:wikidataId "Q175651" ;
+    skos:notation "SHINRA_I012601" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:gould-spandrels-001
+    a shinra:ScientificTheory ;
+    rdfs:label "サン・マルコのスパンドレル（グールド＝ルウォンティン）"@ja ; rdfs:label "The Spandrels of San Marco"@en ;
+    shinra:wikidataId "Q7573736" ;
+    skos:notation "SHINRA_I012602" ; dcterms:created "2026-06-18"^^xsd:date .

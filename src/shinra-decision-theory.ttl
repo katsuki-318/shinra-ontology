@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-decision-theory.ttl  — 意思決定理論・合理的選択ドメイン (Phase 12-a)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/decision-theory>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 意思決定理論・合理的選択ドメイン"@ja ,
+                    "Shinra Ontology — Decision Theory & Rational Choice Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:DecisionTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "意思決定理論"@ja ; rdfs:label "Decision Theory"@en ;
+    rdfs:comment "不確実性・リスク下での合理的選択を研究する分野。規範的・記述的・処方的意思決定、期待効用理論、ベイズ意思決定など。"@ja ;
+    rdfs:comment "The study of rational choice under uncertainty and risk, including normative, descriptive, and prescriptive decision-making, expected utility theory, and Bayesian decision theory."@en ;
+    skos:notation "SHINRA_0012101" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ExpectedUtility
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "期待効用"@ja ; rdfs:label "Expected Utility"@en ;
+    rdfs:comment "結果の効用に確率を掛けた加重平均として合理的選好を表すフォン・ノイマン＝モルゲンシュテルンの理論。リスク回避・リスク愛好・リスク中立など。"@ja ;
+    rdfs:comment "Von Neumann-Morgenstern theory representing rational preference as a probability-weighted average of outcome utilities, including risk aversion, risk seeking, and risk neutrality."@en ;
+    skos:notation "SHINRA_0012102" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ProspectTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificTheory ;
+    rdfs:label "プロスペクト理論"@ja ; rdfs:label "Prospect Theory"@en ;
+    rdfs:comment "カーネマン＝トヴェルスキーが提唱した行動意思決定モデル。損失回避・参照点依存・確率の重みづけ歪曲・フレーミング効果など。"@ja ;
+    rdfs:comment "Kahneman and Tversky's behavioral decision model featuring loss aversion, reference dependence, probability weighting distortions, and framing effects."@en ;
+    skos:notation "SHINRA_0012103" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:BoundedRationality
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "限定合理性"@ja ; rdfs:label "Bounded Rationality"@en ;
+    rdfs:comment "認知能力・情報・時間の制約下で人間が「十分に良い」解を求めるサイモンの概念。ヒューリスティクス・満足化・認知的限界など。"@ja ;
+    rdfs:comment "Simon's concept of humans seeking 'good enough' solutions under cognitive, informational, and time constraints, including heuristics, satisficing, and cognitive limitations."@en ;
+    skos:notation "SHINRA_0012104" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:MultiCriteriaDecision
+    a owl:Class ; rdfs:subClassOf shinra:DecisionTheory ;
+    rdfs:label "多基準意思決定"@ja ; rdfs:label "Multi-Criteria Decision Making"@en ;
+    skos:altLabel "MCDM"@en ;
+    rdfs:comment "複数の対立する基準・目標を同時に考慮する意思決定手法。AHP・TOPSIS・パレート最適・重み付き合計モデルなど。"@ja ;
+    rdfs:comment "Decision-making methods that simultaneously consider multiple conflicting criteria and objectives, including AHP, TOPSIS, Pareto optimality, and weighted sum models."@en ;
+    skos:notation "SHINRA_0012105" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:kahneman-thinking-001
+    a shinra:ScientificTheory ;
+    rdfs:label "ファスト＆スロー（カーネマン）"@ja ; rdfs:label "Thinking, Fast and Slow"@en ;
+    shinra:wikidataId "Q1076708" ;
+    skos:notation "SHINRA_I012101" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:allais-paradox-001
+    a shinra:ConceptualEntity ;
+    rdfs:label "アレーのパラドックス"@ja ; rdfs:label "Allais Paradox"@en ;
+    shinra:wikidataId "Q602951" ;
+    skos:notation "SHINRA_I012102" ; dcterms:created "2026-06-18"^^xsd:date .

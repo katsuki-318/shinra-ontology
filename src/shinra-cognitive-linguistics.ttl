@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-cognitive-linguistics.ttl  — 認知言語学・概念化ドメイン (Phase 12-h)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/cognitive-linguistics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 認知言語学・概念化ドメイン"@ja ,
+                    "Shinra Ontology — Cognitive Linguistics & Conceptualization Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:CognitiveLinguistics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "認知言語学"@ja ; rdfs:label "Cognitive Linguistics"@en ;
+    rdfs:comment "言語は一般的認知能力・身体的経験・概念化によって形成されるという観点から言語を研究する分野。レイコフ・ラネカー・タルミー・フォーコニエなど。"@ja ;
+    rdfs:comment "The study of language as shaped by general cognitive abilities, embodied experience, and conceptualization, associated with Lakoff, Langacker, Talmy, and Fauconnier."@en ;
+    skos:notation "SHINRA_0012801" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ConceptualMetaphor
+    a owl:Class ; rdfs:subClassOf shinra:LinguisticConcept ;
+    rdfs:label "概念メタファー"@ja ; rdfs:label "Conceptual Metaphor"@en ;
+    rdfs:comment "抽象的概念を具体的・身体的経験によって理解する認知的マッピング。「議論は戦争」「時間はお金」・身体化された意味など。"@ja ;
+    rdfs:comment "Cognitive mappings understanding abstract concepts through concrete, embodied experience, as in 'argument is war', 'time is money', and embodied meaning."@en ;
+    skos:notation "SHINRA_0012802" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ConstructionGrammar
+    a owl:Class ; rdfs:subClassOf shinra:LinguisticTheory ;
+    rdfs:label "構文文法"@ja ; rdfs:label "Construction Grammar"@en ;
+    rdfs:comment "言語の基本単位を形式と意味のペアとしての「構文」とする文法理論。ゴールドバーグ・クロフト・フィルモアの枠組み・用法基盤モデルなど。"@ja ;
+    rdfs:comment "A grammatical theory treating 'constructions' — form-meaning pairings — as the basic units of language, including frameworks by Goldberg, Croft, and Fillmore's usage-based model."@en ;
+    skos:notation "SHINRA_0012803" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:FrameSemantics
+    a owl:Class ; rdfs:subClassOf shinra:LinguisticTheory ;
+    rdfs:label "フレーム意味論"@ja ; rdfs:label "Frame Semantics"@en ;
+    rdfs:comment "語の意味は百科事典的知識の枠組み（フレーム）の中で理解されるというフィルモアの理論。FrameNet・概念フレーム・背景知識など。"@ja ;
+    rdfs:comment "Fillmore's theory that word meanings are understood within encyclopedic knowledge frames, including FrameNet, conceptual frames, and background knowledge."@en ;
+    skos:notation "SHINRA_0012804" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:MentalSpace
+    a owl:Class ; rdfs:subClassOf shinra:CognitiveLinguistics ;
+    rdfs:label "メンタルスペース"@ja ; rdfs:label "Mental Space"@en ;
+    rdfs:comment "発話理解中に構築される小規模な概念パッケージ。フォーコニエの理論・概念ブレンディング・反事実的思考・比喩的投射など。"@ja ;
+    rdfs:comment "Small conceptual packages constructed during utterance comprehension, as in Fauconnier's theory, conceptual blending, counterfactual thinking, and metaphorical projection."@en ;
+    skos:notation "SHINRA_0012805" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:lakoff-women-fire-001
+    a shinra:ScientificTheory ;
+    rdfs:label "女・火・危険なもの（レイコフ）"@ja ; rdfs:label "Women, Fire, and Dangerous Things"@en ;
+    shinra:wikidataId "Q7978139" ;
+    skos:notation "SHINRA_I012801" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:framenet-001
+    a shinra:KnowledgeBase ;
+    rdfs:label "FrameNet"@ja ; rdfs:label "FrameNet"@en ;
+    shinra:wikidataId "Q1124531" ;
+    skos:notation "SHINRA_I012802" ; dcterms:created "2026-06-18"^^xsd:date .

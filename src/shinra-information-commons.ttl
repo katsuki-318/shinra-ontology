@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-information-commons.ttl  — 知識コモンズ・オープンアクセスドメイン (Phase 12-e)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/information-commons>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 知識コモンズ・オープンアクセスドメイン"@ja ,
+                    "Shinra Ontology — Knowledge Commons & Open Access Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:KnowledgeCommons
+    a owl:Class ; rdfs:subClassOf shinra:SocialInstitution ;
+    rdfs:label "知識コモンズ"@ja ; rdfs:label "Knowledge Commons"@en ;
+    rdfs:comment "共有される知識資源・情報資源をコミュニティが集合的に管理・維持する制度的取り決め。オストロムのコモンズ論の情報への応用など。"@ja ;
+    rdfs:comment "Institutional arrangements for collective management and stewardship of shared knowledge and information resources, applying Ostrom's commons theory to information."@en ;
+    skos:notation "SHINRA_0012501" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:OpenAccess
+    a owl:Class ; rdfs:subClassOf shinra:KnowledgeCommons ;
+    rdfs:label "オープンアクセス"@ja ; rdfs:label "Open Access"@en ;
+    rdfs:comment "学術・研究成果を無料・無制限に誰もがアクセスできる状態。ゴールドOA・グリーンOA・ダイヤモンドOA・プレプリント・APCなど。"@ja ;
+    rdfs:comment "The state of academic and research outputs being freely and unreservedly accessible to all, including Gold OA, Green OA, Diamond OA, preprints, and APCs."@en ;
+    skos:notation "SHINRA_0012502" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:OpenSourceSoftware
+    a owl:Class ; rdfs:subClassOf shinra:KnowledgeCommons ;
+    rdfs:label "オープンソースソフトウェア"@ja ; rdfs:label "Open Source Software"@en ;
+    skos:altLabel "OSS"@ja ;
+    rdfs:comment "ソースコードが公開・改変・再配布可能なソフトウェア。GPL・MIT・Apacheライセンス・コピーレフト・フリーソフトウェア運動など。"@ja ;
+    rdfs:comment "Software whose source code is publicly available for modification and redistribution, including GPL, MIT, Apache licenses, copyleft, and the free software movement."@en ;
+    skos:notation "SHINRA_0012503" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:CommonsGovernance
+    a owl:Class ; rdfs:subClassOf shinra:Governance ;
+    rdfs:label "コモンズガバナンス"@ja ; rdfs:label "Commons Governance"@en ;
+    rdfs:comment "共有資源の持続的管理に必要な制度設計原則。オストロムの8原則・自治・境界定義・制裁・紛争解決メカニズムなど。"@ja ;
+    rdfs:comment "Institutional design principles for sustainable management of shared resources, including Ostrom's 8 principles, self-governance, boundary definition, sanctions, and conflict resolution."@en ;
+    skos:notation "SHINRA_0012504" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:CreativeCommons
+    a owl:Class ; rdfs:subClassOf shinra:LegalConcept ;
+    rdfs:label "クリエイティブ・コモンズ"@ja ; rdfs:label "Creative Commons"@en ;
+    rdfs:comment "著作権者が作品の利用条件を明示的に設定できる標準化されたライセンス体系。CC BY・CC BY-SA・CC0・コピーレフトとの関係など。"@ja ;
+    rdfs:comment "A standardized licensing framework allowing creators to explicitly set usage conditions for their works, including CC BY, CC BY-SA, CC0, and relationships to copyleft."@en ;
+    skos:notation "SHINRA_0012505" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:wikipedia-001
+    a shinra:KnowledgeCommons ;
+    rdfs:label "ウィキペディア"@ja ; rdfs:label "Wikipedia"@en ;
+    shinra:wikidataId "Q52" ;
+    skos:notation "SHINRA_I012501" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:ostrom-governing-commons-001
+    a shinra:ScientificTheory ;
+    rdfs:label "コモンズのガバナンス（オストロム）"@ja ; rdfs:label "Governing the Commons"@en ;
+    shinra:wikidataId "Q3110023" ;
+    skos:notation "SHINRA_I012502" ; dcterms:created "2026-06-18"^^xsd:date .

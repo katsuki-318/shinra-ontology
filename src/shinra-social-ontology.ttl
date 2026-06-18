@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-social-ontology.ttl  — 社会的存在論・集合的志向性ドメイン (Phase 12-b)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/social-ontology>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 社会的存在論・集合的志向性ドメイン"@ja ,
+                    "Shinra Ontology — Social Ontology & Collective Intentionality Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SocialFact
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会的事実"@ja ; rdfs:label "Social Fact"@en ;
+    rdfs:comment "物理的事実ではなく集合的承認・制度的文脈に依存して存在する事実。サールの「制度的事実」・デュルケームの「社会的事実」など。"@ja ;
+    rdfs:comment "Facts that exist through collective acceptance and institutional context rather than physical reality, including Searle's institutional facts and Durkheim's social facts."@en ;
+    skos:notation "SHINRA_0012201" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:CollectiveIntentionality
+    a owl:Class ; rdfs:subClassOf shinra:MentalProcess ;
+    rdfs:label "集合的志向性"@ja ; rdfs:label "Collective Intentionality"@en ;
+    rdfs:comment "「私たちはXをする/Xを信じる」という共有志向性。サール・タグ・ギルバートの複数主体論・共同行為・共有行為主体性など。"@ja ;
+    rdfs:comment "Shared intentionality of the form 'we do/believe X', including Searle's, Tuomela's, and Gilbert's plural subject theories, joint action, and shared agency."@en ;
+    skos:notation "SHINRA_0012202" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:InstitutionalReality
+    a owl:Class ; rdfs:subClassOf shinra:SocialFact ;
+    rdfs:label "制度的実在"@ja ; rdfs:label "Institutional Reality"@en ;
+    rdfs:comment "「XはYという文脈でZとして機能する」という地位関数によって構成される社会的現実。貨幣・政府・婚姻・財産権など。"@ja ;
+    rdfs:comment "Social reality constituted by status functions of the form 'X counts as Y in context Z', including money, government, marriage, and property rights."@en ;
+    skos:notation "SHINRA_0012203" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SocialConstruction
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "社会的構成"@ja ; rdfs:label "Social Construction"@en ;
+    rdfs:comment "知識・カテゴリ・アイデンティティ・現実が社会的実践・言語・権力関係によって構成されるという視点。バーガー＝ルックマン・ハッキングなど。"@ja ;
+    rdfs:comment "The view that knowledge, categories, identities, and reality are constituted through social practices, language, and power relations, as in Berger-Luckmann and Hacking."@en ;
+    skos:notation "SHINRA_0012204" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SocialRole
+    a owl:Class ; rdfs:subClassOf shinra:SocialFact ;
+    rdfs:label "社会的役割"@ja ; rdfs:label "Social Role"@en ;
+    rdfs:comment "社会的地位に付随する期待される行動・義務・権利のパターン。役割葛藤・役割距離・役割理論・ゴッフマンのドラマトゥルギーなど。"@ja ;
+    rdfs:comment "Patterns of expected behavior, obligations, and rights associated with a social position, including role conflict, role distance, role theory, and Goffman's dramaturgical approach."@en ;
+    skos:notation "SHINRA_0012205" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:searle-social-reality-001
+    a shinra:ScientificTheory ;
+    rdfs:label "社会的現実の構成（サール）"@ja ; rdfs:label "The Construction of Social Reality"@en ;
+    shinra:wikidataId "Q7742017" ;
+    skos:notation "SHINRA_I012201" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:berger-luckmann-001
+    a shinra:ScientificTheory ;
+    rdfs:label "現実の社会的構成（バーガー＝ルックマン）"@ja ; rdfs:label "The Social Construction of Reality"@en ;
+    shinra:wikidataId "Q826598" ;
+    skos:notation "SHINRA_I012202" ; dcterms:created "2026-06-18"^^xsd:date .

@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-metaphysics-detail.ttl  — 形而上学詳細・様相論理・可能世界ドメイン (Phase 12-c)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/metaphysics-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 形而上学詳細・様相論理・可能世界ドメイン"@ja ,
+                    "Shinra Ontology — Metaphysics Detail: Modality & Possible Worlds Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:PossibleWorld
+    a owl:Class ; rdfs:subClassOf shinra:AbstractObject ;
+    rdfs:label "可能世界"@ja ; rdfs:label "Possible World"@en ;
+    rdfs:comment "現実世界と並列して存在する完全に規定された事態の総体。ルイスの様相実在論・クリプキ意味論・可能世界の論理的利用など。"@ja ;
+    rdfs:comment "A maximally determinate state of affairs existing parallel to the actual world, used in Lewis's modal realism, Kripke semantics, and logical applications of possible worlds."@en ;
+    skos:notation "SHINRA_0012301" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Modality
+    a owl:Class ; rdfs:subClassOf shinra:LogicalConcept ;
+    rdfs:label "様相"@ja ; rdfs:label "Modality"@en ;
+    rdfs:comment "必然性・可能性・不可能性・偶然性の論理的区分。形而上学的様相・認識的様相・義務論的様相・時制様相など。"@ja ;
+    rdfs:comment "The logical distinctions of necessity, possibility, impossibility, and contingency, including metaphysical, epistemic, deontic, and temporal modalities."@en ;
+    skos:notation "SHINRA_0012302" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SubstanceOntology
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalPosition ;
+    rdfs:label "実体論"@ja ; rdfs:label "Substance Ontology"@en ;
+    rdfs:comment "世界の究極的構成要素としての実体を中心に据える形而上学的立場。アリストテレスの実体形相論・スピノザの一元論・ライプニッツの単子論など。"@ja ;
+    rdfs:comment "A metaphysical position placing substance as the ultimate constituent of the world, including Aristotle's hylomorphism, Spinoza's monism, and Leibniz's monadology."@en ;
+    skos:notation "SHINRA_0012303" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:PropertyDualism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalPosition ;
+    rdfs:label "性質二元論"@ja ; rdfs:label "Property Dualism"@en ;
+    rdfs:comment "物理的実体は一種類だが心的性質は物理的性質に還元できないという立場。非還元的物理主義・随伴現象論・創発論との関係など。"@ja ;
+    rdfs:comment "The position that there is one kind of substance but mental properties cannot be reduced to physical properties, relating to non-reductive physicalism, epiphenomenalism, and emergence."@en ;
+    skos:notation "SHINRA_0012304" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:GroundingRelation
+    a owl:Class ; rdfs:subClassOf shinra:MetaphysicalRelation ;
+    rdfs:label "根拠付け関係"@ja ; rdfs:label "Grounding Relation"@en ;
+    rdfs:comment "一方の事実が他方の事実の「存在根拠」となる非因果的形而上学的依存関係。スコラールスキー・ファイン・ロウの根拠付け論など。"@ja ;
+    rdfs:comment "A non-causal metaphysical dependence relation in which one fact is the 'grounding' of another, as in Schaffer, Fine, and Rowe on the metaphysics of grounding."@en ;
+    skos:notation "SHINRA_0012305" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:lewis-on-plurality-001
+    a shinra:ScientificTheory ;
+    rdfs:label "世界の複数性について（ルイス）"@ja ; rdfs:label "On the Plurality of Worlds"@en ;
+    shinra:wikidataId "Q1827988" ;
+    skos:notation "SHINRA_I012301" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:kripke-naming-001
+    a shinra:ScientificTheory ;
+    rdfs:label "名指しと必然性（クリプキ）"@ja ; rdfs:label "Naming and Necessity"@en ;
+    shinra:wikidataId "Q1361654" ;
+    skos:notation "SHINRA_I012302" ; dcterms:created "2026-06-18"^^xsd:date .

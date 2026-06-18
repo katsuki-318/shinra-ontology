@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-welfare-economics.ttl  — 厚生経済学・分配的正義ドメイン (Phase 12-i)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/welfare-economics>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 厚生経済学・分配的正義ドメイン"@ja ,
+                    "Shinra Ontology — Welfare Economics & Distributive Justice Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:WelfareEconomics
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "厚生経済学"@ja ; rdfs:label "Welfare Economics"@en ;
+    rdfs:comment "経済的効率性・公平性・社会的厚生の評価基準を研究する経済学の規範的分野。パレート効率・厚生関数・不可能性定理など。"@ja ;
+    rdfs:comment "The normative branch of economics studying criteria for economic efficiency, equity, and social welfare, including Pareto efficiency, welfare functions, and impossibility theorems."@en ;
+    skos:notation "SHINRA_0012901" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ParetoEfficiency
+    a owl:Class ; rdfs:subClassOf shinra:EconomicConcept ;
+    rdfs:label "パレート効率性"@ja ; rdfs:label "Pareto Efficiency"@en ;
+    rdfs:comment "誰かを悪化させずに誰かを改善できない資源配分状態。パレート改善・パレート最適・カルドア＝ヒックス基準・一般均衡など。"@ja ;
+    rdfs:comment "A resource allocation state in which no one can be made better off without making someone else worse off, including Pareto improvement, Kaldor-Hicks criterion, and general equilibrium."@en ;
+    skos:notation "SHINRA_0012902" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:CapabilityApproach
+    a owl:Class ; rdfs:subClassOf shinra:EconomicTheory ;
+    rdfs:label "ケイパビリティアプローチ"@ja ; rdfs:label "Capability Approach"@en ;
+    rdfs:comment "センとヌスバウムが提唱する人間の潜在能力・機能・自由を中心とした厚生・開発の評価枠組み。人間開発指数・潜在能力の剥奪など。"@ja ;
+    rdfs:comment "Sen and Nussbaum's framework for evaluating welfare and development centered on human capabilities, functionings, and freedom, including the Human Development Index and capability deprivation."@en ;
+    skos:notation "SHINRA_0012903" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:DistributiveJustice
+    a owl:Class ; rdfs:subClassOf shinra:EthicalConcept ;
+    rdfs:label "分配的正義"@ja ; rdfs:label "Distributive Justice"@en ;
+    rdfs:comment "社会における便益・負担の公正な配分をめぐる規範的問い。ロールズの差異原理・功利主義的配分・平等主義・優先主義・充足主義など。"@ja ;
+    rdfs:comment "The normative question of fair allocation of benefits and burdens in society, including Rawls's difference principle, utilitarian distribution, egalitarianism, prioritarianism, and sufficientarianism."@en ;
+    skos:notation "SHINRA_0012904" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ArrowImpossibility
+    a owl:Class ; rdfs:subClassOf shinra:MathematicalTheorem ;
+    rdfs:label "アローの不可能性定理"@ja ; rdfs:label "Arrow's Impossibility Theorem"@en ;
+    rdfs:comment "普遍性・パレート原理・無関係な選択肢からの独立性・非独裁性を同時に満たす社会的選択関数は存在しないというアローの定理。社会的選択理論の基礎など。"@ja ;
+    rdfs:comment "Arrow's theorem that no social choice function simultaneously satisfies universality, Pareto principle, independence of irrelevant alternatives, and non-dictatorship, foundational to social choice theory."@en ;
+    skos:notation "SHINRA_0012905" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:sen-development-freedom-001
+    a shinra:ScientificTheory ;
+    rdfs:label "自由と経済開発（セン）"@ja ; rdfs:label "Development as Freedom"@en ;
+    shinra:wikidataId "Q838895" ;
+    skos:notation "SHINRA_I012901" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:hdi-001
+    a shinra:MeasurementScale ;
+    rdfs:label "人間開発指数"@ja ; rdfs:label "Human Development Index"@en ;
+    shinra:wikidataId "Q171043" ;
+    skos:notation "SHINRA_I012902" ; dcterms:created "2026-06-18"^^xsd:date .

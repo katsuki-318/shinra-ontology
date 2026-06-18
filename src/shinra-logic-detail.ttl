@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-logic-detail.ttl  — 論理学詳細・非古典論理ドメイン (Phase 12-g)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/logic-detail>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 論理学詳細・非古典論理ドメイン"@ja ,
+                    "Shinra Ontology — Logic Detail & Non-Classical Logics Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ModalLogic
+    a owl:Class ; rdfs:subClassOf shinra:FormalLanguage ;
+    rdfs:label "様相論理"@ja ; rdfs:label "Modal Logic"@en ;
+    rdfs:comment "必然性・可能性の演算子を含む論理体系。クリプキ意味論・到達可能性関係・正規様相論理・認識論理・義務論理など。"@ja ;
+    rdfs:comment "A logical system containing operators for necessity and possibility, including Kripke semantics, accessibility relations, normal modal logics, epistemic logic, and deontic logic."@en ;
+    skos:notation "SHINRA_0012701" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:IntuitionisticLogic
+    a owl:Class ; rdfs:subClassOf shinra:FormalLanguage ;
+    rdfs:label "直観主義論理"@ja ; rdfs:label "Intuitionistic Logic"@en ;
+    rdfs:comment "排中律・二重否定除去を認めないブラウワー＝ハイティングの構成主義的論理。カリー＝ハワード同型・型理論との対応など。"@ja ;
+    rdfs:comment "Brouwer-Heyting's constructivist logic rejecting the law of excluded middle and double negation elimination, corresponding to the Curry-Howard isomorphism and type theory."@en ;
+    skos:notation "SHINRA_0012702" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ParaconsistentLogic
+    a owl:Class ; rdfs:subClassOf shinra:FormalLanguage ;
+    rdfs:label "矛盾許容論理"@ja ; rdfs:label "Paraconsistent Logic"@en ;
+    rdfs:comment "矛盾から任意の命題が導かれる爆発律を回避する論理体系。対話的論理・ダイアレテイズム・矛盾許容推論の応用など。"@ja ;
+    rdfs:comment "A logical system avoiding the explosion principle that any proposition follows from a contradiction, including dialogical logic, dialetheism, and applications of paraconsistent reasoning."@en ;
+    skos:notation "SHINRA_0012703" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:FuzzyLogic
+    a owl:Class ; rdfs:subClassOf shinra:FormalLanguage ;
+    rdfs:label "ファジー論理"@ja ; rdfs:label "Fuzzy Logic"@en ;
+    rdfs:comment "真偽を0と1の間の連続値で表す多値論理。ザデーのファジー集合・言語変数・ファジー制御・ファジー推論システムなど。"@ja ;
+    rdfs:comment "A many-valued logic representing truth as a continuous value between 0 and 1, including Zadeh's fuzzy sets, linguistic variables, fuzzy control, and fuzzy inference systems."@en ;
+    skos:notation "SHINRA_0012704" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:ProofTheory
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "証明論"@ja ; rdfs:label "Proof Theory"@en ;
+    rdfs:comment "数学的証明を形式的対象として研究する論理学の分野。ヒルベルトプログラム・ゲンツェンの切断除去・自然演繹・シークェント計算など。"@ja ;
+    rdfs:comment "The branch of logic studying mathematical proofs as formal objects, including Hilbert's program, Gentzen's cut elimination, natural deduction, and sequent calculus."@en ;
+    skos:notation "SHINRA_0012705" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:goedel-incompleteness-001
+    a shinra:MathematicalTheorem ;
+    rdfs:label "ゲーデルの不完全性定理"@ja ; rdfs:label "Gödel's Incompleteness Theorems"@en ;
+    shinra:wikidataId "Q176645" ;
+    skos:notation "SHINRA_I012701" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:tarski-truth-001
+    a shinra:ScientificTheory ;
+    rdfs:label "タルスキの真理論"@ja ; rdfs:label "Tarski's Truth Theory"@en ;
+    shinra:wikidataId "Q1439334" ;
+    skos:notation "SHINRA_I012702" ; dcterms:created "2026-06-18"^^xsd:date .

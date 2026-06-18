@@ -1,0 +1,66 @@
+# ===========================================================================
+# shinra-political-theory.ttl  — 政治理論・規範的政治哲学ドメイン (Phase 12-d)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/political-theory>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 政治理論・規範的政治哲学ドメイン"@ja ,
+                    "Shinra Ontology — Political Theory & Normative Political Philosophy Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Republicanism
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalIdeology ;
+    rdfs:label "共和主義"@ja ; rdfs:label "Republicanism"@en ;
+    rdfs:comment "市民的徳・公共善・専制への非支配的自由を重視する政治思想。ペティット・スキナー・アーレントの共和主義論・市民的ヒューマニズムなど。"@ja ;
+    rdfs:comment "Political thought emphasizing civic virtue, the common good, and non-domination freedom against tyranny, including Pettit's, Skinner's, and Arendt's republicanism and civic humanism."@en ;
+    skos:notation "SHINRA_0012401" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Communitarianism
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalIdeology ;
+    rdfs:label "共同体主義"@ja ; rdfs:label "Communitarianism"@en ;
+    rdfs:comment "個人はコミュニティ・伝統・共有の善によって構成されるという立場。サンデル・マッキンタイア・テイラー・ウォルツァーのリベラリズム批判など。"@ja ;
+    rdfs:comment "The position that individuals are constituted by their community, traditions, and shared goods, including Sandel's, MacIntyre's, Taylor's, and Walzer's critiques of liberalism."@en ;
+    skos:notation "SHINRA_0012402" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:DeliberativeDemocracy
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalConcept ;
+    rdfs:label "審議民主主義"@ja ; rdfs:label "Deliberative Democracy"@en ;
+    rdfs:comment "政治的意思決定は理由の公開的交換・理性的審議によって正統性を得るという民主主義論。ハーバーマス・コーエン・ガットマン＝トンプソンなど。"@ja ;
+    rdfs:comment "The theory that political decisions gain legitimacy through public exchange of reasons and rational deliberation, as in Habermas, Cohen, and Gutmann-Thompson."@en ;
+    skos:notation "SHINRA_0012403" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:SocialContract
+    a owl:Class ; rdfs:subClassOf shinra:PoliticalConcept ;
+    rdfs:label "社会契約"@ja ; rdfs:label "Social Contract"@en ;
+    rdfs:comment "政治的権威の正統性を個人間・個人と国家間の（仮想）契約に求める理論。ホッブズ・ロック・ルソー・ロールズの社会契約論など。"@ja ;
+    rdfs:comment "The theory grounding the legitimacy of political authority in a (hypothetical) contract between individuals or between individuals and the state, as in Hobbes, Locke, Rousseau, and Rawls."@en ;
+    skos:notation "SHINRA_0012404" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:NonDomination
+    a owl:Class ; rdfs:subClassOf shinra:ConceptualEntity ;
+    rdfs:label "非支配的自由"@ja ; rdfs:label "Non-Domination"@en ;
+    rdfs:comment "他者による恣意的干渉の可能性がない状態としての自由。ペティットの共和主義的自由概念。消極的自由・積極的自由との対比など。"@ja ;
+    rdfs:comment "Freedom as the absence of the capacity for arbitrary interference by others; Pettit's republican freedom concept, contrasted with negative and positive liberty."@en ;
+    skos:notation "SHINRA_0012405" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:rawls-theory-justice-001
+    a shinra:ScientificTheory ;
+    rdfs:label "正義論（ロールズ）"@ja ; rdfs:label "A Theory of Justice"@en ;
+    shinra:wikidataId "Q858656" ;
+    skos:notation "SHINRA_I012401" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:sandel-liberalism-001
+    a shinra:ScientificTheory ;
+    rdfs:label "自由主義と正義の限界（サンデル）"@ja ; rdfs:label "Liberalism and the Limits of Justice"@en ;
+    shinra:wikidataId "Q6535847" ;
+    skos:notation "SHINRA_I012402" ; dcterms:created "2026-06-18"^^xsd:date .

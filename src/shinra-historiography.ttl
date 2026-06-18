@@ -1,0 +1,67 @@
+# ===========================================================================
+# shinra-historiography.ttl  — 歴史学方法論・史学史ドメイン (Phase 12-j)
+# ===========================================================================
+
+@prefix shinra:      <https://w3id.org/shinra/ont/> .
+@prefix shinra-data: <https://w3id.org/shinra/data/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/shinra/ont/historiography>
+    a owl:Ontology ;
+    owl:versionInfo "0.5.0" ;
+    owl:imports <https://w3id.org/shinra/ont/mid> ;
+    dcterms:title   "神羅万象オントロジー — 歴史学方法論・史学史ドメイン"@ja ,
+                    "Shinra Ontology — Historiography & Historical Methodology Domain"@en ;
+    dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:Historiography
+    a owl:Class ; rdfs:subClassOf shinra:ScientificDiscipline ;
+    rdfs:label "歴史記述学"@ja ; rdfs:label "Historiography"@en ;
+    skos:altLabel "史学史"@ja ;
+    rdfs:comment "歴史がいかに書かれてきたかを研究する学問。歴史叙述の方法・前提・価値観・史料批判・歴史学派の変遷など。"@ja ;
+    rdfs:comment "The study of how history has been written, including historical methods, assumptions, values, source criticism, and the evolution of historical schools."@en ;
+    skos:notation "SHINRA_0013001" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:HistoricalNarrativism
+    a owl:Class ; rdfs:subClassOf shinra:PhilosophicalPosition ;
+    rdfs:label "歴史的ナラティビズム"@ja ; rdfs:label "Historical Narrativism"@en ;
+    rdfs:comment "歴史的説明は本質的に物語的構造を持つというメタ歴史学的立場。ホワイトのメタヒストリー・ダントーの物語文・歴史的説明論争など。"@ja ;
+    rdfs:comment "The meta-historical position that historical explanations have an inherently narrative structure, as in White's Metahistory, Danto's narrative sentences, and debates over historical explanation."@en ;
+    skos:notation "SHINRA_0013002" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:AnnalesSchool
+    a owl:Class ; rdfs:subClassOf shinra:ScientificSchool ;
+    rdfs:label "アナール学派"@ja ; rdfs:label "Annales School"@en ;
+    rdfs:comment "20世紀フランスの歴史学革新運動。構造・長期持続・社会経済史・ブローデルの地中海・心性史・新文化史への展開など。"@ja ;
+    rdfs:comment "The 20th-century French historical reform movement emphasizing structure, longue durée, social-economic history, Braudel's Mediterranean, history of mentalities, and the new cultural history."@en ;
+    skos:notation "SHINRA_0013003" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:PostcolonialHistory
+    a owl:Class ; rdfs:subClassOf shinra:Historiography ;
+    rdfs:label "ポストコロニアル歴史学"@ja ; rdfs:label "Postcolonial History"@en ;
+    rdfs:comment "植民地主義の遺産・ヨーロッパ中心主義を批判的に問い直す歴史学。サバルタン研究・チャクラバルティの地方化・オリエンタリズムなど。"@ja ;
+    rdfs:comment "Historical scholarship critically interrogating the legacy of colonialism and Eurocentrism, including Subaltern Studies, Chakrabarty's provincializing, and Orientalism."@en ;
+    skos:notation "SHINRA_0013004" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra:BigHistory
+    a owl:Class ; rdfs:subClassOf shinra:Historiography ;
+    rdfs:label "ビッグヒストリー"@ja ; rdfs:label "Big History"@en ;
+    rdfs:comment "宇宙・地球・生命・人類の歴史を統一的に叙述する超長期的歴史記述。クリスチャンの閾値概念・コスモロジーと人類史の統合など。"@ja ;
+    rdfs:comment "An ultra-long-term historical narrative describing the unified history of the cosmos, Earth, life, and humanity, including Christian's threshold concept and integration of cosmology with human history."@en ;
+    skos:notation "SHINRA_0013005" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:braudel-mediterranean-001
+    a shinra:ScientificWork ;
+    rdfs:label "地中海（ブローデル）"@ja ; rdfs:label "The Mediterranean"@en ;
+    shinra:wikidataId "Q1100992" ;
+    skos:notation "SHINRA_I013001" ; dcterms:created "2026-06-18"^^xsd:date .
+
+shinra-data:white-metahistory-001
+    a shinra:ScientificWork ;
+    rdfs:label "メタヒストリー（ホワイト）"@ja ; rdfs:label "Metahistory"@en ;
+    shinra:wikidataId "Q6818543" ;
+    skos:notation "SHINRA_I013002" ; dcterms:created "2026-06-18"^^xsd:date .
